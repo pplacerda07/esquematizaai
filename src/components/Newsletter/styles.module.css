@@ -1,0 +1,71 @@
+.newsletterSection {
+  background-color: var(--color-hot-primary);
+  padding: 4rem 5%;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-neutral-light);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: rgba(247, 247, 247, 0.8);
+  margin-bottom: 2rem;
+}
+
+.formGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-neutral-dark);
+  outline: none;
+}
+
+.btnSubmit {
+  background-color: var(--color-cold-dark);
+  color: var(--color-neutral-light);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0 2rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btnSubmit:hover {
+  background-color: var(--color-green-dark);
+}
+
+@media (max-width: 600px) {
+  .formGroup {
+    flex-direction: column;
+  }
+  .btnSubmit {
+    padding: 1rem;
+    justify-content: center;
+  }
+}

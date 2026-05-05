@@ -1,0 +1,152 @@
+.aboutSection {
+  background-color: var(--color-neutral-light);
+  padding: 6rem 5%;
+}
+
+.container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.imageColumn {
+  flex: 1;
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+.floatingBadge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--color-hot-primary);
+  color: var(--color-neutral-light);
+  font-family: var(--font-heading);
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 30px rgba(255, 115, 69, 0.3);
+  text-align: center;
+}
+
+.badgeNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.badgeLabel {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.contentColumn {
+  flex: 1;
+}
+
+.sectionTag {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-hot-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--color-neutral-dark);
+  line-height: 1.1;
+  margin-bottom: 2.5rem;
+}
+
+.titleAccent {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+  font-size: 4rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.blocksGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.block {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.blockIcon {
+  color: var(--color-cold-primary);
+  background-color: var(--color-cold-light);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blockContent h3 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-neutral-dark);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.blockContent p {
+  font-family: var(--font-body);
+  color: var(--color-cold-dark);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.btnCta {
+  background-color: transparent;
+  color: var(--color-hot-primary);
+  border: 2px solid var(--color-hot-primary);
+  font-family: var(--font-body);
+  font-weight: 500;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.btnCta:hover {
+  background-color: var(--color-hot-primary);
+  color: var(--color-neutral-light);
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  .floatingBadge {
+    right: 20px;
+  }
+}

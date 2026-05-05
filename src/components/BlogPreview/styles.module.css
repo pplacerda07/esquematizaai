@@ -1,0 +1,117 @@
+.blogSection {
+  background-color: var(--color-green-light);
+  padding: 5rem 5%;
+}
+
+.sectionTag {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-green-dark);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--color-neutral-dark);
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+.titleAccent {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--color-neutral-light);
+  border: 2px solid var(--color-green-primary);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.badge {
+  align-self: flex-start;
+  background-color: var(--color-cold-light);
+  color: var(--color-cold-dark);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+.date {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-cold-primary);
+  margin-bottom: 1rem;
+}
+
+.articleTitle {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--color-neutral-dark);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.excerpt {
+  font-family: var(--font-body);
+  color: var(--color-cold-dark);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-cold-light);
+  padding-top: 1rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-green-light);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.readMore {
+  font-family: var(--font-body);
+  color: var(--color-hot-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}

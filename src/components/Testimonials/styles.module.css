@@ -1,0 +1,119 @@
+.testimonialsSection {
+  background-color: var(--color-neutral-light);
+  padding: 5rem 5%;
+}
+
+.sectionTag {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-hot-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  display: block;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--color-neutral-dark);
+  line-height: 1.1;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.titleAccent {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background-color: var(--color-neutral-light);
+  border: 2px solid var(--color-cold-light);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.photoBlob {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-green-light);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--color-neutral-dark);
+}
+
+.role {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-cold-primary);
+}
+
+.stars {
+  color: var(--color-hot-primary);
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.text {
+  font-family: var(--font-body);
+  color: var(--color-cold-dark);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-cold-light);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dot.active {
+  background-color: var(--color-hot-primary);
+}

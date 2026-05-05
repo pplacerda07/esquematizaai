@@ -1,49 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Rubik:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Cores Quentes */
+  --color-hot-primary: #FF7345;
+  --color-hot-dark: #95321F;
+  --color-hot-light: #ff9481;
+
+  /* Cores Frias */
+  --color-cold-primary: #4eaed9;
+  --color-cold-dark: #26344f;
+  --color-cold-light: #bbe3f0;
+
+  /* Cores Verdes */
+  --color-green-primary: #8be095;
+  --color-green-dark: #195350;
+  --color-green-light: #d1f0d5;
+
+  /* Neutros */
+  --color-neutral-dark: #23212c;
+  --color-neutral-light: #f7f7f7;
+
+  /* Tipografia */
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body: 'Rubik', sans-serif;
+  --font-accent: 'The Moonlight Clean', cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'The Moonlight Clean';
+  src: url('/fonts/TheMoonlight-Clean.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-html {
-  height: 100%;
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+  margin: 0;
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.font-accent {
+  font-family: var(--font-accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Utilitários globais úteis baseados no design system */
+.bg-neutral-light { background-color: var(--color-neutral-light); }
+.bg-neutral-dark { background-color: var(--color-neutral-dark); }
+.bg-hot-primary { background-color: var(--color-hot-primary); }
+.bg-cold-dark { background-color: var(--color-cold-dark); }
+.bg-green-light { background-color: var(--color-green-light); }
+.bg-green-dark { background-color: var(--color-green-dark); }
+
+.text-neutral-dark { color: var(--color-neutral-dark); }
+.text-neutral-light { color: var(--color-neutral-light); }
+.text-hot-primary { color: var(--color-hot-primary); }
+.text-cold-light { color: var(--color-cold-light); }
+
+.btn-primary {
+  background-color: var(--color-hot-primary);
+  color: var(--color-neutral-light);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-hot-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-cold-dark);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  border: 2px solid var(--color-cold-dark);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-green-light);
+  border-color: var(--color-green-light);
 }
