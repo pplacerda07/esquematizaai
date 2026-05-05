@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './styles.module.css';
 
 const team = [
@@ -21,7 +22,7 @@ export default function TeamSection() {
           <div key={idx} className={styles.card}>
             <div className={styles.photoWrapper}>
               <div className={styles.blobBg}></div>
-              <img src={member.image} alt={member.name} className={styles.photo} />
+              <Image src={member.image} alt={member.name} fill className={styles.photo} />
             </div>
             <h3 className={styles.name}>{member.name}</h3>
             <p className={styles.role}>{member.role}</p>
