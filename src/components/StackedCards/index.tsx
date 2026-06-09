@@ -12,13 +12,26 @@ const pad = (n: number) => String(n).padStart(2, '0');
 export default function StackedCards({ items, eyebrow = 'O que está incluso', title }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [p, setP] = useState(0);
-  const [reduce, setReduce] = useState(false);
+  // "simple" = mobile ou reduced-motion → lista normal (sem pin/scroll-jacking),
+  // que no celular rola muito mais fluido que o deck travado.
+  const [simple, setSimple] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
-      setReduce(true);
-      return;
-    }
+    // deck travado é experiência de desktop (mouse). Toque (celular/tablet),
+    // tela pequena ou reduced-motion caem na lista simples, que rola liso.
+    const queries = [
+      window.matchMedia('(max-width: 768px)'),
+      window.matchMedia('(pointer: coarse)'),
+      window.matchMedia('(prefers-reduced-motion: reduce)'),
+    ];
+    const update = () => setSimple(queries.some((q) => q.matches));
+    update();
+    queries.forEach((q) => q.addEventListener('change', update));
+    return () => queries.forEach((q) => q.removeEventListener('change', update));
+  }, []);
+
+  useEffect(() => {
+    if (simple) return; // no modo lista não precisa de scroll listener
     const el = ref.current;
     if (!el) return;
 
@@ -40,28 +53,29 @@ export default function StackedCards({ items, eyebrow = 'O que está incluso', t
       window.removeEventListener('resize', update);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [simple]);
 
   const N = items.length;
 
-  // Fallback acessível: lista normal empilhada, sem pin nem scroll-jacking.
-  if (reduce) {
+  // ===== Mobile / reduced-motion: lista vertical simples (rola liso) =====
+  if (simple) {
     return (
       <section className={styles.section}>
         <div className={styles.head}>
           <span className={styles.label}>{eyebrow}</span>
           {title && <h2 className={styles.title}>{title}</h2>}
         </div>
-        <div className={styles.fallbackGrid}>
+        <div className={styles.list}>
           {items.map((it, i) => (
-            <Card key={it.title} item={it} index={i} static />
+            <Card key={it.title} item={it} index={i} flat />
           ))}
         </div>
       </section>
     );
   }
 
-  const active = p * N; // 0..N
+  // ===== Desktop: deck travado (pin) com os cards se sobrepondo =====
+  const active = p * N;
   const idx = Math.min(N, Math.floor(active) + 1);
 
   return (
@@ -90,20 +104,15 @@ export default function StackedCards({ items, eyebrow = 'O que está incluso', t
             let opacity = 1;
 
             if (local <= 0) {
-              // ainda não entrou: espera embaixo, invisível
               transform = 'translate(-50%, calc(-50% + 70px)) scale(0.96)';
               opacity = 0;
             } else if (local < 1) {
-              // entrando: sobe e fica OPACO rápido (por ~28% do passo),
-              // assim cobre o card anterior de forma sólida e legível
               const t = local;
               const ty = (1 - t) * 70;
               const sc = 0.96 + t * 0.04;
               transform = `translate(-50%, calc(-50% + ${ty}px)) scale(${sc})`;
               opacity = Math.min(1, t / 0.28);
             } else {
-              // já passou pra trás: encolhe e sobe um pouco, formando o deck.
-              // fica 100% opaco (e coberto pelo da frente); só os bem fundos somem
               const back = local - 1;
               const capped = Math.min(back, 3);
               const off = capped * 14;
@@ -128,9 +137,9 @@ export default function StackedCards({ items, eyebrow = 'O que está incluso', t
   );
 }
 
-function Card({ item, index, static: isStatic }: { item: Item; index: number; static?: boolean }) {
+function Card({ item, index, flat }: { item: Item; index: number; flat?: boolean }) {
   return (
-    <article className={`${styles.card} ${isStatic ? styles.cardStatic : ''}`}>
+    <article className={`${styles.card} ${flat ? styles.cardFlat : ''}`}>
       <span className={styles.num}>{pad(index + 1)}</span>
       <span className={styles.check}>✓</span>
       <h4 className={styles.cardTitle}>{item.title}</h4>
