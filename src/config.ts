@@ -4,8 +4,7 @@
 export const CHECKOUT_URL = 'https://typebot.co/esquematizaapp';
 
 // CGU (LP de captura): grupo VIP no WhatsApp (todos os CTAs de /cgu apontam aqui).
-// ⚠️ PREENCHER com o convite do grupo (https://chat.whatsapp.com/XXXX).
-export const GRUPO_VIP_URL = 'https://chat.whatsapp.com/COLE_AQUI_O_LINK_DO_GRUPO';
+export const GRUPO_VIP_URL = 'https://chat.whatsapp.com/DfqbvIRKC1UBQKdZL7qrar';
 
 // Site principal (logo / navegação de volta).
 export const SITE_URL = 'https://esquematizaai.com';
