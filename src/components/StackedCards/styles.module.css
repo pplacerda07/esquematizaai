@@ -1,0 +1,207 @@
+/* fundo pontilhado (mesma textura das outras seções claras) — sem overflow:hidden
+   pra não quebrar o position: sticky */
+.section {
+  position: relative;
+  background-color: #fbfbfd;
+  background-image: radial-gradient(rgba(38, 52, 79, 0.07) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  padding: 0 5%;
+  overflow: hidden;
+}
+
+/* cabeçalho fixo da seção travada */
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 1.08;
+  font-weight: 700;
+  color: var(--color-neutral-dark);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* contador + barra de progresso */
+.meter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-cold-dark);
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  background-color: rgba(78, 174, 217, 0.14);
+  border: 1px solid rgba(78, 174, 217, 0.3);
+}
+
+.counter {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-neutral-dark);
+  letter-spacing: 0.02em;
+}
+
+.cur { color: var(--color-hot-primary); }
+.sep { opacity: 0.4; }
+
+.progress {
+  width: min(420px, 80vw);
+  height: 4px;
+  border-radius: 4px;
+  background-color: rgba(38, 52, 79, 0.1);
+  overflow: hidden;
+}
+
+.progressFill {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--color-hot-primary), var(--color-cold-primary));
+}
+
+/* palco onde os cards se empilham */
+.stage {
+  position: relative;
+  width: min(560px, 92vw);
+  height: 300px;
+}
+
+.cardWrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  will-change: transform, opacity;
+  transition: transform 0.12s linear, opacity 0.12s linear;
+}
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'num check'
+    'title title'
+    'desc desc';
+  align-items: center;
+  gap: 0.35rem 1rem;
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.08);
+  border-radius: 1.25rem;
+  padding: 2rem 2.1rem;
+  box-shadow: 0 30px 70px rgba(38, 52, 79, 0.18);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  right: 2rem;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, var(--color-hot-primary), var(--color-cold-primary));
+}
+
+.num {
+  grid-area: num;
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-cold-light);
+}
+
+.check {
+  grid-area: check;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-green-primary), var(--color-green-dark));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.cardTitle {
+  grid-area: title;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-cold-dark);
+  margin: 0.5rem 0 0;
+  line-height: 1.1;
+}
+
+.cardDesc {
+  grid-area: desc;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--color-neutral-dark);
+  opacity: 0.85;
+  margin: 0.4rem 0 0;
+}
+
+/* ====== Fallback (prefers-reduced-motion): grid normal ====== */
+.fallbackGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  max-width: 920px;
+  margin: 2rem auto 0;
+  padding: 0 5%;
+}
+
+.cardStatic {
+  box-shadow: 0 10px 30px rgba(38, 52, 79, 0.06);
+}
+
+.section:has(.fallbackGrid) {
+  padding: 4.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 1.8rem; }
+  .stage { width: 92vw; height: 340px; }
+  .card { padding: 1.6rem 1.5rem; }
+  .cardTitle { font-size: 1.35rem; }
+  .counter { font-size: 1.6rem; }
+  .fallbackGrid { grid-template-columns: 1fr; }
+}

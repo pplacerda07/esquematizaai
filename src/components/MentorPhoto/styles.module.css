@@ -1,0 +1,102 @@
+.photo {
+  position: relative;
+  width: 100%;
+}
+
+.glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 1.6rem;
+  background: linear-gradient(140deg, var(--color-hot-primary), var(--color-cold-primary), var(--color-green-primary));
+  filter: blur(22px);
+  opacity: 0.5;
+  z-index: 0;
+  animation: glowShift 8s ease-in-out infinite;
+}
+
+@keyframes glowShift {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.6; }
+}
+
+.frame {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 5;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.4);
+  background-color: #0e1626;
+}
+
+.img {
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0;
+  transition: opacity 0.9s ease, scale 6s ease;
+  scale: 1;
+}
+
+.imgActive {
+  opacity: 1;
+  scale: 1.06; /* leve zoom lento (efeito Ken Burns) enquanto a foto está visível */
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent 55%, rgba(14, 22, 38, 0.82));
+  pointer-events: none;
+}
+
+.caption {
+  position: absolute;
+  z-index: 3;
+  left: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.4rem 0.85rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(6px);
+}
+
+.captionDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-hot-primary);
+  box-shadow: 0 0 0 3px rgba(255, 115, 69, 0.25);
+}
+
+.dots {
+  position: absolute;
+  z-index: 3;
+  right: 1rem;
+  bottom: 1.15rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.dotActive {
+  width: 20px;
+  border-radius: 4px;
+  background-color: var(--color-hot-primary);
+}

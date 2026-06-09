@@ -77,11 +77,12 @@
 }
 
 .name {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 1.3rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
   color: var(--color-neutral-dark);
   margin-bottom: 0.25rem;
+  line-height: 1.1;
 }
 
 .role {

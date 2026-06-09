@@ -1,0 +1,114 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.4rem;
+  background: linear-gradient(120deg, var(--color-hot-primary), var(--color-cold-primary), var(--color-green-primary));
+  filter: blur(18px);
+  opacity: 0.55;
+  z-index: 0;
+  animation: glowShift 7s ease-in-out infinite;
+}
+
+@keyframes glowShift {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+.frame {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 16 / 9;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 70px rgba(38, 52, 79, 0.32);
+  background-color: #0e1626;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: #0e1626;
+  display: block;
+}
+
+.thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: scale 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.82);
+}
+
+.facade:hover .thumb {
+  scale: 1.04;
+  filter: brightness(0.7);
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: var(--color-hot-primary);
+  color: #fff;
+  font-size: 1.9rem;
+  padding-left: 6px;
+  box-shadow: 0 14px 36px rgba(255, 115, 69, 0.55);
+  transition: scale 0.25s ease;
+  animation: playPulse 2.4s ease-in-out infinite;
+}
+
+.facade:hover .play { scale: 1.08; }
+
+@keyframes playPulse {
+  0%, 100% { box-shadow: 0 14px 36px rgba(255, 115, 69, 0.55); }
+  50% { box-shadow: 0 18px 46px rgba(255, 115, 69, 0.75); }
+}
+
+.badge {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 0.45rem 1rem;
+  border-radius: 2rem;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 600px) {
+  .play { width: 64px; height: 64px; font-size: 1.5rem; }
+  .badge { font-size: 0.8rem; }
+}

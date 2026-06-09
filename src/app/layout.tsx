@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Esquematiza Aí | Plataforma de Educação Online",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

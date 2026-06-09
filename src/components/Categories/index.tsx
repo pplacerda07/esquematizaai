@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './styles.module.css';
 
 const categories = [
@@ -38,12 +39,15 @@ export default function Categories() {
         </div>
         
         <div className={styles.rightColumn}>
-          <div className={styles.blobBackground}></div>
-          <div className={styles.logosGrid}>
-            <img src="/assets/2.png" alt="Parceiro" className={styles.partnerLogo} />
-            <img src="/assets/3.png" alt="Parceiro" className={styles.partnerLogo} />
-            <img src="/assets/4.png" alt="Parceiro" className={styles.partnerLogo} />
-            <img src="/assets/5.png" alt="Parceiro" className={styles.partnerLogo} />
+          <div className={styles.imageShape}>
+            <Image
+              src="/assets/mulher-esquematiza.webp"
+              alt="Aluna do Esquematiza Aí"
+              width={520}
+              height={650}
+              className={styles.heroImage}
+              priority={false}
+            />
           </div>
         </div>
       </div>

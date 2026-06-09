@@ -1,0 +1,52 @@
+.fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9998;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 2rem;
+  background-color: #25D366;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  cursor: pointer;
+}
+
+.fab svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+.fab:hover {
+  background-color: #1ebe5b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+}
+
+.fab:focus-visible {
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4), 0 0 0 3px rgba(37, 211, 102, 0.35);
+}
+
+@media (max-width: 600px) {
+  .fab {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem;
+  }
+  .label {
+    display: none;
+  }
+}
