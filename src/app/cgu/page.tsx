@@ -97,7 +97,7 @@ export default function CguCapturePage() {
               </div>
               <div className={styles.statDivider} />
               <div className={styles.stat}>
-                <span className={styles.statNum}>R$ <CountUp end={22} />mil</span>
+                <span className={styles.statNum}>R$ <CountUp end={22000} />,00</span>
                 <span className={styles.statLabel}>por mês, com auxílios</span>
               </div>
             </div>

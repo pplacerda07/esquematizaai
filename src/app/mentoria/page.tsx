@@ -41,8 +41,8 @@ const DELIVERABLES: [string, string][] = [
   ['Plataforma com metas diárias', 'Você abre o app e já sabe o que estudar no dia, entre teoria, questões e revisão, no tempo que você tem.'],
   ['Relatórios semanais de desempenho', 'Toda segunda você recebe o painel da sua evolução, com comparativo entre os mentorados pra saber exatamente onde está.'],
   ['Encontros quinzenais de mentoria ao vivo', 'Ora com tema específico da sua área pra aprofundar, ora como plantão de dúvidas com o Pietro e o Sérgio.'],
-  ['Assinatura Total Esquematiza Aí', 'Resumos e flashcards de todas as matérias, pré-edital e os combos de pós-edital, atualizados pelo tempo que você ficar na mentoria. Vendida à parte por R$ 1.997.'],
-  ['Assinatura Premium do Estratégia Concursos', 'O material teórico mais completo do mercado, incluído no plano pra você estudar a teoria de qualquer matéria. Vendida à parte por R$ 2.628.'],
+  ['Assinatura Total Esquematiza Aí', 'Resumos e flashcards de todas as matérias, pré-edital e os combos de pós-edital, atualizados pelo tempo que você ficar na mentoria. Vendida à parte por R$ 1.997,00.'],
+  ['Assinatura Premium do Estratégia Concursos', 'O material teórico mais completo do mercado, incluído no plano pra você estudar a teoria de qualquer matéria. Vendida à parte por R$ 2.628,00.'],
   ['Módulo de Discursiva', 'O passo a passo da redação técnica que a banca espera, pra você não ser eliminado na segunda fase.'],
   ['Simulados exclusivos dos mentorados', 'Provas no ritmo e no ambiente oficiais pra medir desempenho e acostumar com a prova.'],
   ['Acesso direto ao Pietro e ao Sérgio todos os dias', 'Dúvida por texto, áudio ou vídeo no WhatsApp, mais a comunidade exclusiva de mentorados.'],
@@ -359,7 +359,7 @@ export default function MentoriaPage() {
             <p className={styles.highlightNote} data-reveal>
               Repare numa coisa: na maioria das mentorias do mercado, o preço cobre apenas
               o acompanhamento, e o material teórico e o de revisão você compra por fora.
-              Aqui, as duas assinaturas, que somam <strong>R$ 4.625</strong>, já estão
+              Aqui, as duas assinaturas, que somam <strong>R$ 4.625,00</strong>, já estão
               dentro do mesmo valor.
             </p>
           </div>
@@ -383,7 +383,7 @@ export default function MentoriaPage() {
                   que entra como a sua primeira tarefa pra você estudar do jeito certo desde
                   o primeiro dia.
                 </p>
-                <span className={styles.bonusValue}>Valor: R$ 397</span>
+                <span className={styles.bonusValue}>Valor: R$ 397,00</span>
               </div>
               <div className={styles.bonusCard} data-reveal="fade" style={delay(130)}>
                 <span className={styles.bonusTag}>Bônus 2</span>
@@ -401,7 +401,7 @@ export default function MentoriaPage() {
                   O treinamento de técnicas de revisão pra você transformar o nosso
                   material no seu, com os seus erros e os seus pontos fracos mapeados.
                 </p>
-                <span className={styles.bonusValue}>Valor: R$ 397</span>
+                <span className={styles.bonusValue}>Valor: R$ 397,00</span>
               </div>
             </div>
           </div>
@@ -415,29 +415,29 @@ export default function MentoriaPage() {
             <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>O que custaria montar tudo isso separado.</h2>
 
             <div className={styles.stackCard} data-reveal="scale" style={delay(120)}>
-              <div className={styles.stackRow}><span>Mentoria de 12 meses</span><span>R$ 4.764</span></div>
-              <div className={styles.stackRow}><span>Assinatura Premium do Estratégia Concursos</span><span>R$ 2.628</span></div>
-              <div className={styles.stackRow}><span>Assinatura Total Esquematiza Aí</span><span>R$ 1.997</span></div>
+              <div className={styles.stackRow}><span>Mentoria de 12 meses</span><span>R$ 4.764,00</span></div>
+              <div className={styles.stackRow}><span>Assinatura Premium do Estratégia Concursos</span><span>R$ 2.628,00</span></div>
+              <div className={styles.stackRow}><span>Assinatura Total Esquematiza Aí</span><span>R$ 1.997,00</span></div>
               <div className={`${styles.stackRow} ${styles.stackTotal}`}>
-                <span>Total se você contratasse tudo separado</span><span>R$ 9.389</span>
+                <span>Total se você contratasse tudo separado</span><span>R$ 9.389,00</span>
               </div>
 
               <div className={styles.priceBox}>
                 <span className={styles.priceLabel}>Hoje, num lugar só, a mentoria de 12 meses com tudo incluído</span>
                 <div className={styles.priceMain}>
                   <span className={styles.priceCurrency}>R$</span>
-                  <span className={styles.priceValue}>3.997</span>
+                  <span className={styles.priceValue}>3.997,00</span>
                   <span className={styles.priceSuffix}>à vista</span>
                 </div>
                 <span className={styles.priceSub}>+5% de desconto no pix · ou 12x de R$ 413,38 no cartão</span>
-                <span className={styles.priceSave}>Você economiza mais de R$ 5.300</span>
+                <span className={styles.priceSave}>Você economiza mais de R$ 5.300,00</span>
               </div>
             </div>
 
             <p className={styles.stackNote} data-reveal>
               E tem um detalhe que muda a conta: nas outras mentorias, o ticket que você vê
               na frente cobre só o acompanhamento. O material teórico e o de revisão vêm
-              separados, somando facilmente mais de R$ 4 mil por fora. Aqui, esses R$ 4.625
+              separados, somando facilmente mais de R$ 4 mil por fora. Aqui, esses R$ 4.625,00
               de material já estão dentro do preço, e você não precisa juntar mais nada.
             </p>
 
@@ -704,8 +704,8 @@ export default function MentoriaPage() {
             </ul>
 
             <p className={styles.prose} data-reveal>
-              Montar tudo isso separado custaria R$ 9.389. Na mentoria de doze meses, com
-              tudo incluído, sai por <strong>R$ 3.997 à vista</strong>, com mais 5% de
+              Montar tudo isso separado custaria R$ 9.389,00. Na mentoria de doze meses, com
+              tudo incluído, sai por <strong>R$ 3.997,00 à vista</strong>, com mais 5% de
               desconto no pix, ou em doze vezes de R$ 413,38. Se você já é aluno do
               Estratégia, ganha um desconto exclusivo de 15% e fica em R$ 3.397,45 com o
               cupom <strong>ESTRATÉGIA15</strong>, porque você não precisa do material
