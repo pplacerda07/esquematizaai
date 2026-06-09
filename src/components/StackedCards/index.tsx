@@ -11,6 +11,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
 
 export default function StackedCards({ items, eyebrow = 'O que está incluso', title }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const [p, setP] = useState(0);
   // "simple" = mobile ou reduced-motion → lista normal (sem pin/scroll-jacking),
   // que no celular rola muito mais fluido que o deck travado.
@@ -55,6 +56,32 @@ export default function StackedCards({ items, eyebrow = 'O que está incluso', t
     };
   }, [simple]);
 
+  // No modo lista (mobile), revela cada card ao entrar na tela — leve e fluido,
+  // sem recalcular nada a cada frame de scroll.
+  useEffect(() => {
+    if (!simple) return;
+    const el = listRef.current;
+    if (!el) return;
+    const cards = Array.from(el.children) as HTMLElement[];
+    if (!('IntersectionObserver' in window)) {
+      cards.forEach((c) => c.classList.add(styles.revealIn));
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add(styles.revealIn);
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' },
+    );
+    cards.forEach((c) => io.observe(c));
+    return () => io.disconnect();
+  }, [simple]);
+
   const N = items.length;
 
   // ===== Mobile / reduced-motion: lista vertical simples (rola liso) =====
@@ -65,7 +92,7 @@ export default function StackedCards({ items, eyebrow = 'O que está incluso', t
           <span className={styles.label}>{eyebrow}</span>
           {title && <h2 className={styles.title}>{title}</h2>}
         </div>
-        <div className={styles.list}>
+        <div className={styles.list} ref={listRef}>
           {items.map((it, i) => (
             <Card key={it.title} item={it} index={i} flat />
           ))}

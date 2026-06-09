@@ -188,9 +188,29 @@
   margin: 1.75rem auto 0;
 }
 
-/* card "deitado" na lista (sem o sombrão flutuante do deck) */
+/* card "deitado" na lista (sem o sombrão flutuante do deck) +
+   entrada suave (fade/subida) disparada ao entrar na tela */
 .cardFlat {
   box-shadow: 0 10px 26px rgba(38, 52, 79, 0.07);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.cardFlat.revealIn {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardFlat {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .section:has(.list) {
