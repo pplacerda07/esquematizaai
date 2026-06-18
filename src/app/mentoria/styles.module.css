@@ -14,17 +14,12 @@
   background-color: var(--color-neutral-light);
 }
 
-.sectionTint {
-  background:
-    radial-gradient(1200px 500px at 100% 0%, rgba(187, 227, 240, 0.55), transparent 60%),
-    radial-gradient(900px 500px at 0% 100%, rgba(209, 240, 213, 0.45), transparent 55%),
-    var(--color-neutral-light);
-}
-
+/* sectionTint e sectionGreen agora usam o mesmo fundo branco quadriculado (clean) */
+.sectionTint,
 .sectionGreen {
-  background:
-    radial-gradient(900px 480px at 0% 0%, rgba(139, 224, 149, 0.35), transparent 55%),
-    linear-gradient(180deg, #f3fbf4, #eef8f0);
+  background-color: #fbfbfd;
+  background-image: radial-gradient(rgba(38, 52, 79, 0.07) 1px, transparent 1.4px);
+  background-size: 22px 22px;
 }
 
 .sectionDark {
@@ -57,6 +52,14 @@
   z-index: 0;
   pointer-events: none;
   animation: floatOrb 16s ease-in-out infinite alternate;
+  /* por padrão escondidos — os círculos coloridos só ficam nas seções
+     de fundo escuro e no hero */
+  display: none;
+}
+
+.hero .orb,
+.sectionDark .orb {
+  display: block;
 }
 
 @keyframes floatOrb {
@@ -522,9 +525,9 @@
   position: relative;
   overflow: hidden;
   padding: 4.5rem 5%;
-  background:
-    radial-gradient(700px 400px at 50% 0%, rgba(255, 255, 255, 0.4), transparent 60%),
-    linear-gradient(120deg, var(--color-cold-primary), var(--color-green-primary));
+  background-color: #fbfbfd;
+  background-image: radial-gradient(rgba(38, 52, 79, 0.07) 1px, transparent 1.4px);
+  background-size: 22px 22px;
   text-align: center;
 }
 
@@ -1181,9 +1184,9 @@
    Bloco 15 — Oferta final
    ============================================================ */
 .sectionFinal {
-  background:
-    radial-gradient(900px 500px at 50% 0%, rgba(187, 227, 240, 0.6), transparent 60%),
-    linear-gradient(180deg, #ffffff, var(--color-cold-light));
+  background-color: #fbfbfd;
+  background-image: radial-gradient(rgba(38, 52, 79, 0.07) 1px, transparent 1.4px);
+  background-size: 22px 22px;
 }
 
 .finalList {
