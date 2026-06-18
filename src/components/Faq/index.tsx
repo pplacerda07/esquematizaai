@@ -7,8 +7,8 @@ type QA = { q: string; a: string };
 
 const ITEMS: QA[] = [
   {
-    q: 'R$ 3.997 cabe no meu orçamento?',
-    a: 'Dá pra pagar à vista por R$ 3.997, com mais 5% de desconto no pix, ou em até doze vezes de R$ 413,38 no cartão. Como inclui acompanhamento, material teórico e material de revisão, você não gasta mais nada por fora. E se já é aluno do Estratégia, tem 15% de desconto.',
+    q: 'Quanto custa e como funciona o pagamento?',
+    a: 'Com tudo incluído (acompanhamento, material teórico e material de revisão), sai por cerca de R$ 333 por mês, e você não gasta nada por fora. Frente aos R$ 9.389,00 que tudo custaria separado, é uma economia de mais de R$ 5 mil. A condição exata e as formas de pagamento, à vista, pix ou cartão, a equipe acerta com você no WhatsApp. Quem já é aluno do Estratégia tem desconto.',
   },
   {
     q: 'Trabalho quarenta horas por semana, dou conta?',
@@ -16,7 +16,7 @@ const ITEMS: QA[] = [
   },
   {
     q: 'E se eu não passar?',
-    a: 'Garantia de aprovação não existe em produto sério nenhum, porque depende da sua execução na prova. O que a gente garante é o que você vai aprender a estudar competitivamente, o método, o acompanhamento e o material que colocaram alunos da casa nos quatro grandes fiscos em 2026. E você ainda tem sete dias pra testar tudo por dentro e pedir reembolso se não fizer sentido.',
+    a: 'Garantia de aprovação não existe em produto sério nenhum, porque depende da sua execução na prova. O que a gente garante é o que você vai aprender a estudar competitivamente, o método, o acompanhamento e o material que colocaram nossos alunos nos quatro grandes fiscos em 2026. E você ainda tem sete dias pra testar tudo por dentro e pedir reembolso se não fizer sentido.',
   },
   {
     q: 'Funciona pra quem está começando do zero?',
@@ -28,7 +28,7 @@ const ITEMS: QA[] = [
   },
   {
     q: 'Já assino o Estratégia, vale a pena mesmo assim?',
-    a: 'Vale, e sai mais barato. Como você não precisa do material teórico de novo, tem 15% de desconto e a mentoria fica em R$ 3.397,45.',
+    a: 'Vale, e sai mais barato. Como você não precisa do material teórico de novo, tem 15% de desconto. A condição exata a equipe acerta com você no WhatsApp.',
   },
   {
     q: 'Em quanto tempo vejo resultado?',

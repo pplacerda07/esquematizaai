@@ -23,7 +23,7 @@ export default function SalesNav() {
         rel="noopener noreferrer"
         className={styles.cta}
       >
-        Quero minha vaga
+        Fazer aplicação
       </a>
     </nav>
   );

@@ -9,7 +9,7 @@ type Props = { items: Item[]; eyebrow?: string; title?: string };
 const STEP_VH = 44; // quanto de scroll cada card "consome" (quanto maior, mais devagar)
 const pad = (n: number) => String(n).padStart(2, '0');
 
-export default function StackedCards({ items, eyebrow = 'O que está incluso', title }: Props) {
+export default function StackedCards({ items, title }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const counterRef = useRef<HTMLSpanElement>(null);
@@ -91,7 +91,6 @@ export default function StackedCards({ items, eyebrow = 'O que está incluso', t
     return (
       <section className={styles.section}>
         <div className={styles.head}>
-          <span className={styles.label}>{eyebrow}</span>
           {title && <h2 className={styles.title}>{title}</h2>}
         </div>
         <div className={styles.list}>
@@ -107,7 +106,6 @@ export default function StackedCards({ items, eyebrow = 'O que está incluso', t
     <section ref={sectionRef} className={styles.section} style={{ height: `${N * STEP_VH + 100}vh` }}>
       <div className={styles.sticky}>
         <div className={styles.head}>
-          <span className={styles.label}>{eyebrow}</span>
           {title && <h2 className={styles.title}>{title}</h2>}
         </div>
 

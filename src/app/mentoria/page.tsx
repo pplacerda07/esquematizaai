@@ -17,7 +17,7 @@ import StackedCards from '@/components/StackedCards';
 export const metadata: Metadata = {
   title: 'Esquematiza Mentoria | Aprovação em concursos fiscais e de controle',
   description:
-    'A mentoria que prioriza o que cada banca cobra, com plano individual e mentores aprovados. Alunos da casa nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e SEFAZ-RN em 2026.',
+    'A mentoria que prioriza o que cada banca cobra, com plano individual e mentores aprovados. Nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e SEFAZ-RN em 2026.',
 };
 
 // stagger: define o atraso da animação de entrada de cada elemento
@@ -63,11 +63,6 @@ export default function MentoriaPage() {
           <div className={styles.heroGrid} aria-hidden="true" />
 
           <div className={styles.heroContainer}>
-            <div className={`${styles.heroBadge} ${styles.heroIn}`} style={delay(0)}>
-              <span className={styles.pulseDot} />
-              Concursos fiscais e de controle
-            </div>
-
             <h1 className={`${styles.heroTitle} ${styles.heroIn}`} style={delay(90)}>
               Estudar mais horas é o conselho que mais{' '}
               <span className={styles.titleHighlight}>reprova</span>.
@@ -95,8 +90,7 @@ export default function MentoriaPage() {
                 <span className={styles.checkIcon}>✓</span>
                 Cada mês adiado sem direção é um contracheque de R$ 20 mil que não entra
                 na sua conta. Tendo duas horas por dia ou o dia inteiro livre, o plano se
-                ajusta à sua rotina e mira a prova mais próxima ou uma preparação pra sua
-                área como um todo.
+                ajusta à sua rotina e mira a prova mais próxima.
               </li>
               <li className={styles.heroIn} style={delay(600)}>
                 <span className={styles.checkIcon}>✓</span>
@@ -107,12 +101,11 @@ export default function MentoriaPage() {
             </ul>
 
             <div className={`${styles.heroCta} ${styles.heroIn}`} style={delay(700)}>
-              <CtaButton variant="gradient">Quero o diagnóstico do meu plano de estudos</CtaButton>
-              <p className={styles.heroCtaNote}>Sem checkout. A conversa começa direto no WhatsApp.</p>
+              <CtaButton variant="gradient">Quero fazer minha aplicação pra mentoria</CtaButton>
             </div>
 
             <div className={`${styles.trustStrip} ${styles.heroIn}`} style={delay(800)}>
-              <span className={styles.trustLabel}>Alunos da casa aprovados em 2026</span>
+              <span className={styles.trustLabel}>Nossos alunos já foram aprovados em 2026 para as maiores provas:</span>
               <div className={styles.trustBadges}>
                 <span>SEFAZ-SP</span>
                 <span>SEFA-PA</span>
@@ -127,7 +120,6 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionDark}`}>
           <div className={`${styles.orb} ${styles.orbDarkRight}`} />
           <div className={styles.containerNarrow}>
-            <span className={`${styles.eyebrow} ${styles.eyebrowHot}`} data-reveal>Por que você empaca</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Existe um motivo técnico pra você estudar muito e render pouco em concursos
               fiscais e de controle.
@@ -168,9 +160,8 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionTint}`}>
           <div className={`${styles.orb} ${styles.orbTintLeft}`} />
           <div className={styles.containerNarrow}>
-            <span className={styles.eyebrow} data-reveal>Resultados 2026</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
-              Quatro provas fiscais em 2026, e o mesmo nome de material aparecendo em todas
+              Quatro provas fiscais em 2026, e o mesmo material aparecendo em todas
               as listas.
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>
@@ -195,7 +186,7 @@ export default function MentoriaPage() {
               <div className={styles.statCard} data-reveal="fade" style={delay(200)}>
                 <span className={styles.statNumber}><CountUp end={156} /></span>
                 <span className={styles.statLabel}>aprovados na SEFAZ-MT</span>
-                <span className={styles.statDetail}>alunos da casa nas listas oficiais</span>
+                <span className={styles.statDetail}>nossos alunos nas listas oficiais</span>
               </div>
               <div className={styles.statCard} data-reveal="fade" style={delay(300)}>
                 <span className={styles.statNumber}><CountUp end={28} suffix="%" /></span>
@@ -205,7 +196,7 @@ export default function MentoriaPage() {
             </div>
 
             <div className={styles.bigStat} data-reveal="scale" style={delay(120)}>
-              <span className={styles.bigStatNumber}><CountUp end={28} prefix="+" suffix=" mil" /></span>
+              <span className={styles.bigStatNumber}><CountUp end={29} prefix="+" suffix=" mil" /></span>
               <span className={styles.bigStatLabel}>alunos já estudaram com os nossos materiais</span>
             </div>
           </div>
@@ -217,12 +208,11 @@ export default function MentoriaPage() {
           <div className={`${styles.orb} ${styles.orbBandRight}`} />
           <div className={styles.containerNarrow}>
             <p className={styles.ctaBandText} data-reveal>
-              Se você chegou até aqui e se reconheceu, o caminho pra virar esse jogo começa
-              antes de estudar mais uma hora. Começa por entender onde o seu plano de hoje
-              está gastando tempo com matérias que quase não caem.
+              Virar esse jogo começa antes de estudar mais uma hora. Começa por entender
+              onde o seu plano de hoje está gastando tempo com matérias que quase não caem.
             </p>
             <div data-reveal style={delay(120)}>
-              <CtaButton>Quero o diagnóstico do meu plano de estudos</CtaButton>
+              <CtaButton>Quero fazer minha aplicação pra mentoria</CtaButton>
             </div>
           </div>
         </section>
@@ -230,13 +220,12 @@ export default function MentoriaPage() {
         {/* Bloco 05 — Método */}
         <section className={`${styles.section} ${styles.sectionDots}`}>
           <div className={styles.containerNarrow}>
-            <span className={styles.eyebrow} data-reveal>O Método Esquematizado</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               A ordem em que você estuda decide mais que o número de horas.
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>
               A Esquematiza Mentoria organiza a sua preparação no Método Esquematizado, o
-              mesmo que colocou alunos da casa nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e
+              mesmo que colocou nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e
               SEFAZ-RN em 2026. Ele se apoia em três fases de preparação e em quatro
               pilares de estudo que se repetem todos os dias, do primeiro PDF até a véspera
               da prova.
@@ -317,7 +306,6 @@ export default function MentoriaPage() {
         {/* Bloco 06 — Para quem é / não é */}
         <section className={`${styles.section} ${styles.sectionTint}`}>
           <div className={styles.containerNarrow}>
-            <span className={styles.eyebrow} data-reveal>Diagnóstico de perfil</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Antes de entrar, veja se você é o tipo de concurseiro que essa mentoria
               costuma aprovar.
@@ -349,7 +337,6 @@ export default function MentoriaPage() {
 
         {/* Bloco 07 — Entregáveis (deck que trava no scroll, título junto) */}
         <StackedCards
-          eyebrow="O que está incluso"
           title="Tudo que entra na sua preparação no dia em que você assina."
           items={DELIVERABLES.map(([title, desc]) => ({ title, desc }))}
         />
@@ -369,7 +356,6 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionGreen}`}>
           <div className={`${styles.orb} ${styles.orbGreen}`} />
           <div className={styles.containerNarrow}>
-            <span className={`${styles.eyebrow} ${styles.eyebrowGreen}`} data-reveal>Bônus exclusivos</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               O que você ainda leva além de toda a estrutura da mentoria.
             </h2>
@@ -411,7 +397,6 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionDark}`}>
           <div className={`${styles.orb} ${styles.orbDarkRight}`} />
           <div className={styles.containerNarrow}>
-            <span className={`${styles.eyebrow} ${styles.eyebrowHot} ${styles.eyebrowCenter}`} data-reveal>A conta real</span>
             <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>O que custaria montar tudo isso separado.</h2>
 
             <div className={styles.stackCard} data-reveal="scale" style={delay(120)}>
@@ -423,14 +408,14 @@ export default function MentoriaPage() {
               </div>
 
               <div className={styles.priceBox}>
-                <span className={styles.priceLabel}>Hoje, num lugar só, a mentoria de 12 meses com tudo incluído</span>
+                <span className={styles.priceLabel}>Na mentoria, tudo num lugar só, por cerca de</span>
                 <div className={styles.priceMain}>
                   <span className={styles.priceCurrency}>R$</span>
-                  <span className={styles.priceValue}>3.997,00</span>
-                  <span className={styles.priceSuffix}>à vista</span>
+                  <span className={styles.priceValue}>333</span>
+                  <span className={styles.priceSuffix}>/mês</span>
                 </div>
-                <span className={styles.priceSub}>+5% de desconto no pix · ou 12x de R$ 413,38 no cartão</span>
-                <span className={styles.priceSave}>Você economiza mais de R$ 5.300,00</span>
+                <span className={styles.priceSub}>Uma economia de mais de R$ 5 mil, e você não compra nada por fora.</span>
+                <span className={styles.priceSave}>A condição exata e as formas de pagamento, a equipe fecha com você no WhatsApp</span>
               </div>
             </div>
 
@@ -442,7 +427,7 @@ export default function MentoriaPage() {
             </p>
 
             <div className={styles.centerCta} data-reveal style={delay(80)}>
-              <CtaButton variant="gradient">Quero garantir minha vaga na mentoria</CtaButton>
+              <CtaButton variant="gradient">Quero fazer minha aplicação pra mentoria</CtaButton>
             </div>
           </div>
         </section>
@@ -451,7 +436,6 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionTint}`}>
           <div className={`${styles.orb} ${styles.orbTintLeft}`} />
           <div className={styles.containerNarrow}>
-            <span className={styles.eyebrow} data-reveal>Quem já está dentro</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Antes de aparecer na lista, a diferença já aparece na sua rotina de estudo.
             </h2>
@@ -509,7 +493,6 @@ export default function MentoriaPage() {
         {/* Bloco 11 — Suporte */}
         <section className={`${styles.section} ${styles.sectionDots}`}>
           <div className={styles.containerNarrow}>
-            <span className={styles.eyebrow} data-reveal>Suporte de verdade</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Na hora em que a dúvida trava o seu estudo, você não fica esperando resposta
               por dias.
@@ -536,7 +519,6 @@ export default function MentoriaPage() {
                 <span className={styles.guaranteeDaysLabel}>dias</span>
               </div>
               <div>
-                <span className={`${styles.eyebrow} ${styles.eyebrowGreen}`}>Risco zero</span>
                 <h2 className={styles.guaranteeTitle}>
                   Você tem sete dias pra entrar, testar tudo por dentro e decidir sem risco.
                 </h2>
@@ -557,15 +539,14 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionDark}`}>
           <div className={`${styles.orb} ${styles.orbDarkLeft}`} />
           <div className={styles.containerNarrow}>
-            <span className={`${styles.eyebrow} ${styles.eyebrowHot}`} data-reveal>Seus mentores</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Quem vai montar o seu plano já sentou nas cadeiras que você quer ocupar.
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>
               A Esquematiza Mentoria é conduzida por dois auditores que cobrem as duas
               frentes que você pode mirar. Por trás dos dois está a marca que já levou mais
-              de 28 mil alunos a estudar com os seus materiais e que, só em 2026, viu alunos
-              da casa aprovados na SEFAZ-SP, na SEFA-PA, na SEFAZ-MT e na SEFAZ-RN. Quem vai
+              de 29 mil alunos a estudar com os seus materiais e que, só em 2026, viu nossos
+              alunos aprovados na SEFAZ-SP, na SEFA-PA, na SEFAZ-MT e na SEFAZ-RN. Quem vai
               ler a sua banca e ajustar o seu plano não aprendeu isso na teoria, aprendeu
               passando.
             </p>
@@ -666,7 +647,6 @@ export default function MentoriaPage() {
         {/* Bloco 14 — FAQ */}
         <section className={`${styles.section} ${styles.sectionDots}`}>
           <div className={styles.containerNarrow}>
-            <span className={`${styles.eyebrow} ${styles.eyebrowCenter}`} data-reveal>Tira-dúvidas</span>
             <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>As perguntas que todo mundo faz antes de entrar.</h2>
             <div data-reveal style={delay(120)}>
               <Faq />
@@ -679,7 +659,6 @@ export default function MentoriaPage() {
           <div className={`${styles.orb} ${styles.orbFinalLeft}`} />
           <div className={`${styles.orb} ${styles.orbFinalRight}`} />
           <div className={styles.containerNarrow}>
-            <span className={`${styles.eyebrow} ${styles.eyebrowHot}`} data-reveal>Sua vaga</span>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Tudo que você precisa pra passar, num lugar só, sem comprar mais nada por fora.
             </h2>
@@ -704,17 +683,16 @@ export default function MentoriaPage() {
             </ul>
 
             <p className={styles.prose} data-reveal>
-              Montar tudo isso separado custaria R$ 9.389,00. Na mentoria de doze meses, com
-              tudo incluído, sai por <strong>R$ 3.997,00 à vista</strong>, com mais 5% de
-              desconto no pix, ou em doze vezes de R$ 413,38. Se você já é aluno do
-              Estratégia, ganha um desconto exclusivo de 15% e fica em R$ 3.397,45 com o
-              cupom <strong>ESTRATÉGIA15</strong>, porque você não precisa do material
-              teórico de novo. E você ainda tem sete dias de garantia incondicional pra
-              testar tudo por dentro e pedir o dinheiro de volta se não fizer sentido.
+              De mais de <strong>R$ 9.389,00</strong> se contratado separado, na mentoria
+              tudo fica num lugar só por <strong>cerca de R$ 333/mês</strong>. Você ainda tem
+              sete dias de garantia incondicional pra testar tudo por dentro e pedir o
+              dinheiro de volta se não fizer sentido. A sua condição exata, as formas de
+              pagamento e o desconto pra quem já é aluno do Estratégia, a equipe acerta com
+              você no WhatsApp.
             </p>
 
             <div className={styles.centerCta} data-reveal style={delay(80)}>
-              <CtaButton variant="gradient">Quero garantir minha vaga na mentoria</CtaButton>
+              <CtaButton variant="gradient">Quero fazer minha aplicação pra mentoria</CtaButton>
               <p className={styles.finalNote}>
                 Ao continuar, você concorda com os termos de uso e a política de privacidade.
               </p>

@@ -409,12 +409,12 @@
 
 .trustLabel {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.98rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-neutral-dark);
-  opacity: 0.55;
+  letter-spacing: 0.01em;
+  color: var(--color-cold-dark);
+  opacity: 0.85;
+  text-align: center;
 }
 
 .trustBadges {

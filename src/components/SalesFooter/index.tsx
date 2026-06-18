@@ -27,7 +27,7 @@ export default function SalesFooter() {
         <div className={styles.ctaCol}>
           <h4 className={styles.colTitle}>Pronto pra começar?</h4>
           <p className={styles.ctaText}>
-            A compra é feita pelo WhatsApp, sem checkout. Fale com a gente e garanta sua vaga.
+            Faça sua aplicação pra mentoria e a equipe acerta tudo com você no WhatsApp.
           </p>
           <a
             href={CHECKOUT_URL}
@@ -35,7 +35,7 @@ export default function SalesFooter() {
             rel="noopener noreferrer"
             className={styles.cta}
           >
-            Quero garantir minha vaga
+            Quero fazer minha aplicação
           </a>
         </div>
       </div>
