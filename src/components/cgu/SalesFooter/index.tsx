@@ -44,7 +44,7 @@ export default function SalesFooter() {
 
       <div className={styles.bottomBar}>
         <span>&copy; {new Date().getFullYear()} Esquematiza Aí. Todos os direitos reservados.</span>
-        <span>Conteúdo informativo. Não garantimos aprovação — o resultado depende da sua dedicação.</span>
+        <span>Conteúdo informativo. Não garantimos aprovação. O resultado depende da sua dedicação.</span>
       </div>
     </footer>
   );

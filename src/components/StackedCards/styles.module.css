@@ -109,14 +109,9 @@
 
 .card {
   position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    'num check'
-    'title title'
-    'desc desc';
-  align-items: center;
-  gap: 0.35rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
   background-color: #fff;
   border: 1px solid rgba(38, 52, 79, 0.08);
   border-radius: 1.25rem;

@@ -79,6 +79,66 @@
 .orbFinalRight { bottom: -110px; right: -90px; width: 360px; height: 360px; background-color: var(--color-hot-light); opacity: 0.35; animation-duration: 20s; }
 
 /* ============================================================
+   Ícones da marca como marca-d'água ao fundo de seções escuras
+   (o PNG é azul-marinho; clareamos pra branco e deixamos bem sutil)
+   ============================================================ */
+.bgIcon {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 420px;
+  height: 530px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('/assets/icones/legislacao-3.png');
+  filter: brightness(0) invert(1);
+  opacity: 0.06;
+}
+
+.bgIconLeft {
+  left: -150px;
+  bottom: -90px;
+  rotate: -14deg;
+}
+
+.bgIconRight {
+  right: -160px;
+  top: -70px;
+  rotate: 12deg;
+}
+
+@media (max-width: 700px) {
+  .bgIcon { width: 300px; height: 380px; opacity: 0.05; }
+  .bgIconLeft { left: -130px; bottom: -70px; }
+  .bgIconRight { right: -130px; top: -50px; }
+}
+
+/* ============================================================
+   Logo símbolo como marca-d'água ao fundo (gigante, repetida e tortinha)
+   ============================================================ */
+.bgLogo {
+  position: absolute;
+  z-index: 0;
+  width: clamp(20rem, 34vw, 32rem);
+  height: clamp(20rem, 34vw, 32rem);
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url('/logos/logo_esquematiza_bg.png');
+  opacity: 0.07;
+}
+
+.bgLogoA { right: -11%; bottom: -16%; rotate: 13deg; }
+.bgLogoB { left: -13%; top: -12%; rotate: -17deg; }
+.bgLogoC { left: 34%; bottom: -24%; rotate: 7deg; opacity: 0.05; }
+
+@media (max-width: 700px) {
+  .bgLogo { width: 17rem; height: 17rem; opacity: 0.06; }
+  .bgLogoC { display: none; }
+}
+
+/* ============================================================
    Tipografia de seção
    ============================================================ */
 .eyebrow {
@@ -196,7 +256,6 @@
   padding: 4rem 5% 5rem;
   background:
     radial-gradient(1000px 600px at 80% -10%, rgba(187, 227, 240, 0.5), transparent 60%),
-    radial-gradient(800px 500px at 0% 110%, rgba(255, 148, 129, 0.25), transparent 55%),
     var(--color-neutral-light);
 }
 
@@ -353,36 +412,36 @@
 .vslLabel { font-size: 1.05rem; font-weight: 600; color: #fff; letter-spacing: 0.01em; }
 .vslHint { font-size: 0.85rem; opacity: 0.6; }
 
-.heroBullets {
-  list-style: none;
+/* bloco de copy do hero — texto que prende a leitura, sem cards/checks */
+.heroPitch {
+  max-width: 640px;
   margin: 0 auto 2.5rem;
-  padding: 0;
-  max-width: 760px;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  text-align: left;
 }
 
-.heroBullets li {
-  display: flex;
-  gap: 0.85rem;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(38, 52, 79, 0.08);
-  border-radius: 0.85rem;
-  padding: 1rem 1.15rem;
+.heroPitch p {
   font-family: var(--font-body);
-  font-size: 1.02rem;
-  line-height: 1.55;
-  color: var(--color-neutral-dark);
-  transition: translate 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-cold-dark);
+  opacity: 0.92;
+  padding: 1.15rem 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(38, 52, 79, 0.1);
 }
 
-.heroBullets li:hover {
-  translate: 0 -3px;
-  border-color: var(--color-cold-light);
-  box-shadow: 0 12px 28px rgba(38, 52, 79, 0.1);
+.heroPitch p:first-child { padding-top: 0; }
+.heroPitch p:last-child { border-bottom: none; padding-bottom: 0; }
+
+.heroPitch strong {
+  font-weight: 700;
+  color: var(--color-hot-primary);
+}
+
+.heroPitch em {
+  font-style: italic;
+  color: var(--color-cold-dark);
 }
 
 .heroCta {
@@ -449,39 +508,70 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin: 2.5rem 0 1.75rem;
+  gap: 1.75rem 1.5rem;
+  margin: 2.75rem 0 2rem;
 }
 
+/* ===== Post-its (prova social) — papelzinho colado, na identidade da marca ===== */
 .statCard {
   position: relative;
-  background-color: #fff;
-  border: 1px solid rgba(38, 52, 79, 0.08);
-  border-radius: 1rem;
-  padding: 1.75rem 1.5rem;
+  background-color: var(--noteBg, #ffe3d8);
+  padding: 1.6rem 1.5rem 1.7rem;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  box-shadow: 0 14px 34px rgba(38, 52, 79, 0.08);
-  overflow: hidden;
+  border-radius: 2px;
+  transition: opacity 0.7s ease, rotate 0.3s ease, translate 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* curl: um cantinho do papel levantando no canto inferior direito */
+.statCard::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.14));
+  border-top-left-radius: 12px;
+  box-shadow: -3px -3px 8px rgba(38, 52, 79, 0.16);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* variações: uns mais "levantados" (sombra maior + giro), outros mais grudados */
+.statsGrid .statCard:nth-child(1) {
+  --noteBg: #ffe1d4;
+  --noteInk: var(--color-hot-dark);
+  rotate: -2.5deg;
+  box-shadow: 6px 16px 28px rgba(38, 52, 79, 0.2);
+}
+.statsGrid .statCard:nth-child(2) {
+  --noteBg: #d8edf7;
+  --noteInk: var(--color-cold-dark);
+  rotate: 1.5deg;
+  box-shadow: 3px 8px 14px rgba(38, 52, 79, 0.13);
+}
+.statsGrid .statCard:nth-child(3) {
+  --noteBg: #dcf2df;
+  --noteInk: var(--color-green-dark);
+  rotate: -1.2deg;
+  box-shadow: 3px 8px 14px rgba(38, 52, 79, 0.13);
+}
+.statsGrid .statCard:nth-child(4) {
+  --noteBg: #ffe8cc;
+  --noteInk: #b5651d;
+  rotate: 2.5deg;
+  box-shadow: 6px 16px 28px rgba(38, 52, 79, 0.2);
 }
 
 .statsGrid .statCard {
-  transition: opacity 0.7s ease, translate 0.28s ease, scale 0.28s ease, box-shadow 0.28s ease;
-}
-
-.statCard::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-hot-primary), var(--color-cold-primary));
+  transition: opacity 0.7s ease, rotate 0.3s ease, translate 0.3s ease, box-shadow 0.3s ease;
 }
 
 .statsGrid .statCard:hover {
+  rotate: 0deg;
   translate: 0 -6px;
-  scale: 1.015;
-  box-shadow: 0 24px 50px rgba(38, 52, 79, 0.16);
+  box-shadow: 8px 22px 40px rgba(38, 52, 79, 0.22);
 }
 
 .statNumber {
@@ -489,23 +579,47 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--color-hot-primary);
+  color: var(--noteInk, var(--color-hot-dark));
 }
 
-.statLabel { font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; color: var(--color-cold-dark); }
-.statDetail { font-family: var(--font-body); font-size: 0.9rem; color: var(--color-neutral-dark); opacity: 0.7; line-height: 1.45; }
+.statLabel { font-family: var(--font-body); font-weight: 700; font-size: 1.05rem; color: var(--color-cold-dark); }
+.statDetail { font-family: var(--font-body); font-size: 0.9rem; color: var(--color-cold-dark); opacity: 0.65; line-height: 1.45; }
 
+/* post-it de destaque (mesma identidade dos outros) */
 .bigStat {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 0.25rem;
-  padding: 1.75rem;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, var(--color-cold-dark), #1b2740);
-  color: var(--color-neutral-light);
-  box-shadow: 0 18px 40px rgba(38, 52, 79, 0.2);
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 1.75rem 2rem;
+  border-radius: 2px;
+  background-color: #dcf2df;
+  rotate: -1.2deg;
+  box-shadow: 5px 14px 26px rgba(38, 52, 79, 0.18);
+  transition: rotate 0.3s ease, translate 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bigStat::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.14));
+  border-top-left-radius: 12px;
+  box-shadow: -3px -3px 8px rgba(38, 52, 79, 0.16);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+.bigStat:hover {
+  rotate: 0deg;
+  translate: 0 -5px;
+  box-shadow: 8px 20px 36px rgba(38, 52, 79, 0.22);
 }
 
 .bigStatNumber {
@@ -513,10 +627,10 @@
   font-size: 3.25rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--color-green-primary);
+  color: var(--color-green-dark);
 }
 
-.bigStatLabel { font-family: var(--font-body); font-size: 1.05rem; opacity: 0.9; }
+.bigStatLabel { font-family: var(--font-body); font-size: 1.05rem; color: var(--color-cold-dark); opacity: 0.85; }
 
 /* ============================================================
    Bloco 04 — CTA band
@@ -904,9 +1018,9 @@
 }
 
 .priceLabel { display: block; font-family: var(--font-body); font-size: 0.95rem; opacity: 0.92; margin-bottom: 0.5rem; }
-.priceMain { display: flex; align-items: baseline; justify-content: center; gap: 0.35rem; margin-bottom: 0.35rem; }
+.priceMain { display: flex; align-items: baseline; justify-content: center; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.45rem; }
 .priceCurrency { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; }
-.priceValue { font-family: var(--font-heading); font-size: 3.75rem; font-weight: 700; line-height: 1; }
+.priceValue { font-family: var(--font-heading); font-size: clamp(2.1rem, 6vw, 3rem); font-weight: 700; line-height: 1; }
 .priceSuffix { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; }
 .priceSub { display: block; font-family: var(--font-body); font-size: 0.95rem; opacity: 0.95; margin-bottom: 0.85rem; }
 
@@ -938,6 +1052,13 @@
   align-items: center;
   gap: 0.85rem;
   margin-top: 2.5rem;
+}
+
+/* nas seções de fundo azul, o glow laranja do botão vira sombra neutra
+   pra não espalhar gradiente laranja no fundo */
+.sectionDark .centerCta a {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  animation: none;
 }
 
 /* ============================================================
@@ -1013,41 +1134,81 @@
 /* ============================================================
    Bloco 12 — Garantia
    ============================================================ */
-.guaranteeCard {
-  display: flex;
+/* Garantia — layout editorial sem caixa; o "7" gigante fica atrás de tudo */
+/* layout em duas colunas: o "7 días" à esquerda, no mesmo eixo do texto */
+.guarantee {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
-  gap: 2rem;
-  background: linear-gradient(135deg, #fff, var(--color-green-light));
-  border: 1.5px solid var(--color-green-primary);
-  border-radius: 1.4rem;
-  padding: 2.4rem;
-  box-shadow: 0 20px 48px rgba(25, 83, 80, 0.12);
+  gap: 2.5rem;
+  padding: 1rem 0;
 }
 
-.guaranteeSeal {
-  flex-shrink: 0;
-  width: 140px; height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--color-green-primary), var(--color-green-dark));
-  color: var(--color-neutral-light);
+/* o "7" colossal + "días" em Moonlight, empilhados e centralizados */
+.guaranteeVisual {
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 4px dashed var(--color-neutral-light);
-  box-shadow: 0 14px 34px rgba(25, 83, 80, 0.4);
-  animation: sealWiggle 5s ease-in-out infinite;
 }
 
-@keyframes sealWiggle {
-  0%, 100% { transform: rotate(0) scale(1); }
-  50% { transform: rotate(-4deg) scale(1.03); }
+.guaranteeBig {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(12rem, 24vw, 23rem);
+  line-height: 0.8;
+  color: rgba(25, 83, 80, 0.12);
 }
 
-.guaranteeDays { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 700; line-height: 1; }
-.guaranteeDaysLabel { font-family: var(--font-body); font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-.guaranteeTitle { font-family: var(--font-heading); font-size: 1.9rem; font-weight: 700; color: var(--color-green-dark); margin: 0 0 0.85rem; line-height: 1.15; }
-.guaranteeText { font-family: var(--font-body); font-size: 1.02rem; line-height: 1.65; color: var(--color-neutral-dark); opacity: 0.88; margin: 0; }
+.guaranteeDias {
+  display: block;
+  margin-top: -0.3em;
+  rotate: -7deg;
+  font-family: var(--font-accent); /* Moonlight — a cara do Esquematiza (minúsculo) */
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  line-height: 1;
+  color: var(--color-green-dark);
+}
+
+.guaranteeBody {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.guaranteeTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-cold-dark);
+  margin: 0 0 1.5rem;
+}
+
+.guaranteePara {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--color-neutral-dark);
+  opacity: 0.85;
+  margin: 0 0 1.5rem;
+}
+
+.guaranteeClose {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-cold-dark);
+  margin: 0;
+}
 
 /* ============================================================
    Bloco 13 — Autoridade (mentores com foto)
@@ -1189,6 +1350,91 @@
   background-size: 22px 22px;
 }
 
+/* oferta final no estilo "gabarito de concurso" (alternativas marcadas) */
+.gabarito {
+  list-style: none;
+  margin: 0 auto 1.35rem;
+  max-width: 760px;
+  padding: 1.85rem 2rem 1.85rem 2.1rem;
+  background-color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(38, 52, 79, 0.1);
+  border-left: 4px solid var(--color-cold-primary);
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0 14px 34px rgba(38, 52, 79, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  counter-reset: none;
+}
+
+.gabItem {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.gabLetter {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(38, 52, 79, 0.32);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-cold-dark);
+}
+
+.gabText {
+  align-self: center;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--color-cold-dark);
+}
+
+/* a alternativa "marcada": bolinha riscada à caneta, como num gabarito */
+.gabMarked {
+  position: relative;
+  border-color: transparent;
+  color: var(--color-hot-dark);
+  font-weight: 800;
+}
+
+.gabMarked::before,
+.gabMarked::after {
+  content: '';
+  position: absolute;
+  border: 2.5px solid var(--color-hot-primary);
+  border-radius: 47% 53% 52% 48% / 50% 47% 53% 50%;
+  pointer-events: none;
+}
+
+.gabMarked::before {
+  inset: -4px;
+  rotate: -6deg;
+}
+
+.gabMarked::after {
+  inset: -1px;
+  rotate: 9deg;
+  opacity: 0.65;
+}
+
+/* a "rabiscadinha" do gabarito: marca-texto na parte principal */
+.gabMark {
+  background: linear-gradient(transparent 56%, rgba(255, 115, 69, 0.32) 56%);
+  color: inherit;
+  font-weight: 700;
+  padding: 0 0.08em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 .finalList {
   list-style: none;
   margin: 0 0 2rem;
@@ -1234,7 +1480,9 @@
   .pillarGrid { grid-template-columns: repeat(2, 1fr); }
   .proofGallery { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
   .proofIntro { font-size: 1.25rem; }
-  .guaranteeCard { flex-direction: column; text-align: center; gap: 1.5rem; }
+  .guarantee { grid-template-columns: 1fr; gap: 0.5rem; text-align: center; }
+  .guaranteeBig { font-size: clamp(11rem, 45vw, 18rem); }
+  .guaranteeBody { max-width: none; }
 }
 
 @media (max-width: 420px) {
@@ -1247,6 +1495,5 @@
   .orb,
   .playIcon,
   .vslGlow,
-  .pulseDot,
-  .guaranteeSeal { animation: none; }
+  .pulseDot { animation: none; }
 }

@@ -12,7 +12,7 @@ import YouTubeEmbed from '@/components/YouTubeEmbed';
 import MentorPhoto from '@/components/MentorPhoto';
 
 export const metadata: Metadata = {
-  title: 'Pré-edital CGU | Aula gratuita + grupo VIP — Esquematiza Aí',
+  title: 'Pré-edital CGU | Aula gratuita + grupo VIP · Esquematiza Aí',
   description:
     'O concurso da CGU já foi autorizado. Assista à aula gratuita com o Pietro (aprovado em 2º lugar na CGU) e entre no grupo VIP do pré-edital para receber o ciclo de estudos e largar na frente.',
 };
@@ -33,7 +33,7 @@ const SERGIO_SHOTS = [
 const GROUP_PERKS: [string, string][] = [
   ['O ciclo de estudos completo', 'Receba o cronograma em Excel pra começar a base hoje, no caminho certo, antes do edital sair.'],
   ['A análise da banca', 'Assim que a banca for definida, eu abro a leitura dela em primeira mão dentro do grupo.'],
-  ['As condições da turma de pré-edital', 'Você fica sabendo das vagas e das condições antes de todo mundo — e elas são limitadas.'],
+  ['As condições da turma de pré-edital', 'Você fica sabendo das vagas e das condições antes de todo mundo, e elas são limitadas.'],
   ['Suas dúvidas respondidas', 'Tire dúvidas sobre o cargo, o concurso e a preparação direto com quem passou.'],
   ['Primeiro a saber da abertura', 'Quando as vagas abrirem, quem está no grupo entra na frente.'],
   ['Acompanhamento de perto', 'Você acompanha a preparação de perto, sem ficar perdido esperando o edital.'],
@@ -72,7 +72,7 @@ export default function CguCapturePage() {
               <YouTubeEmbed
                 id="jo9o6IG7NBE"
                 start={23}
-                title="Aula gratuita — pré-edital CGU"
+                title="Aula gratuita do pré-edital CGU"
                 badge="Assista à aula gratuita"
                 alt="Aula gratuita do pré-edital CGU"
               />
@@ -163,7 +163,7 @@ export default function CguCapturePage() {
             <div className={styles.authorityHead}>
               <span className={`${styles.eyebrow} ${styles.eyebrowHot}`} data-reveal>Quem conduz</span>
               <h2 className={styles.authorityTitle} data-reveal style={delay(80)}>
-                Quem vai te orientar já passou — e ainda senta na cadeira que você quer ocupar.
+                Quem vai te orientar já passou e ainda senta na cadeira que você quer ocupar.
               </h2>
               <p className={styles.authoritySub} data-reveal style={delay(140)}>
                 Não é teoria de quem nunca prestou concurso. São dois auditores na ativa

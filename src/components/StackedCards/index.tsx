@@ -145,7 +145,6 @@ function Card({ item, index, flat }: { item: Item; index: number; flat?: boolean
   return (
     <article className={`${styles.card} ${flat ? styles.cardFlat : ''}`}>
       <span className={styles.num}>{pad(index + 1)}</span>
-      <span className={styles.check}>✓</span>
       <h4 className={styles.cardTitle}>{item.title}</h4>
       <p className={styles.cardDesc}>{item.desc}</p>
     </article>

@@ -13,6 +13,10 @@ import CountUp from '@/components/CountUp';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import ScrollTrail from '@/components/ScrollTrail';
 import StackedCards from '@/components/StackedCards';
+import FitToggle from '@/components/FitToggle';
+import BonusFlip from '@/components/BonusFlip';
+import Pilares from '@/components/Pilares';
+import ReviewsCarousel from '@/components/ReviewsCarousel';
 
 export const metadata: Metadata = {
   title: 'Esquematiza Mentoria | Aprovação em concursos fiscais e de controle',
@@ -22,19 +26,6 @@ export const metadata: Metadata = {
 
 // stagger: define o atraso da animação de entrada de cada elemento
 const delay = (ms: number) => ({ ['--reveal-delay']: `${ms}ms` } as React.CSSProperties);
-
-const PILLARS = [
-  { letter: 'T', title: 'Teoria', desc: 'Para entender o conceito', tone: 'cold' },
-  { letter: 'Q', title: 'Questões', desc: 'Para treinar o que a banca cobra', tone: 'hot' },
-  { letter: 'R', title: 'Revisão', desc: 'Para não esquecer o que aprendeu', tone: 'green' },
-  { letter: 'S', title: 'Simulados', desc: 'Para ensaiar a prova inteira', tone: 'cold' },
-] as const;
-
-const PILLAR_TONE: Record<string, string> = {
-  cold: styles.toneCold,
-  hot: styles.toneHot,
-  green: styles.toneGreen,
-};
 
 const DELIVERABLES: [string, string][] = [
   ['Planejamento estratégico de estudos, pré e pós-edital', 'Reuniões de organização no começo pra montar o seu plano completo, seja do zero ou aproveitando o que você já estudou.'],
@@ -59,7 +50,6 @@ export default function MentoriaPage() {
         {/* Bloco 01 — Hero */}
         <section className={styles.hero}>
           <div className={`${styles.orb} ${styles.orbTopLeft}`} />
-          <div className={`${styles.orb} ${styles.orbBottomRight}`} />
           <div className={styles.heroGrid} aria-hidden="true" />
 
           <div className={styles.heroContainer}>
@@ -79,26 +69,25 @@ export default function MentoriaPage() {
               <YouTubeEmbed />
             </div>
 
-            <ul className={styles.heroBullets}>
-              <li className={styles.heroIn} style={delay(440)}>
-                <span className={styles.checkIcon}>✓</span>
-                Enquanto você revisa aleatoriamente, a banca cobra justamente o que o seu
-                cronograma deixou pra trás. Aqui você revisa pelo peso que cada matéria
-                tem na prova que você quer passar, seja ela fiscal ou de controle.
-              </li>
-              <li className={styles.heroIn} style={delay(520)}>
-                <span className={styles.checkIcon}>✓</span>
-                Cada mês adiado sem direção é um contracheque de R$ 20 mil que não entra
-                na sua conta. Tendo duas horas por dia ou o dia inteiro livre, o plano se
-                ajusta à sua rotina e mira a prova mais próxima.
-              </li>
-              <li className={styles.heroIn} style={delay(600)}>
-                <span className={styles.checkIcon}>✓</span>
-                Os aprovados que você acompanha no Instagram seguiram um critério de
-                incidência por banca. Aqui você recebe esse mesmo critério aplicado ao
-                seu plano individual, semana após semana.
-              </li>
-            </ul>
+            <div className={styles.heroPitch}>
+              <p className={styles.heroIn} style={delay(440)}>
+                Enquanto você revisa <em>aleatoriamente</em>, a banca cobra justamente o que
+                o seu cronograma <strong>deixou pra trás</strong>. Aqui você revisa{' '}
+                <strong>pelo peso que cada matéria tem na prova</strong> que você quer
+                passar, seja ela fiscal ou de controle.
+              </p>
+              <p className={styles.heroIn} style={delay(520)}>
+                Cada mês adiado sem direção é <strong>um contracheque de R$ 20 mil</strong>{' '}
+                que não entra na sua conta. Tendo <em>duas horas por dia</em> ou o dia
+                inteiro livre, o plano se ajusta à sua rotina e mira a prova mais próxima.
+              </p>
+              <p className={styles.heroIn} style={delay(600)}>
+                Os aprovados que você acompanha no Instagram seguiram um{' '}
+                <strong>critério de incidência por banca</strong>. Aqui você recebe{' '}
+                <em>esse mesmo critério</em> aplicado ao <strong>seu plano individual</strong>,
+                semana após semana.
+              </p>
+            </div>
 
             <div className={`${styles.heroCta} ${styles.heroIn}`} style={delay(700)}>
               <CtaButton variant="gradient">Quero fazer minha aplicação pra mentoria</CtaButton>
@@ -118,7 +107,8 @@ export default function MentoriaPage() {
 
         {/* Bloco 02 — Dor */}
         <section className={`${styles.section} ${styles.sectionDark}`}>
-          <div className={`${styles.orb} ${styles.orbDarkRight}`} />
+          <span className={`${styles.bgIcon} ${styles.bgIconLeft}`} aria-hidden="true" />
+          <span className={`${styles.bgIcon} ${styles.bgIconRight}`} aria-hidden="true" />
           <div className={styles.containerNarrow}>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Existe um motivo técnico pra você estudar muito e render pouco em concursos
@@ -263,21 +253,11 @@ export default function MentoriaPage() {
             </div>
 
             <h3 className={styles.subheading} data-reveal>Quatro pilares todos os dias: o TQRS</h3>
-            <div className={styles.pillarGrid}>
-              {PILLARS.map((p, i) => (
-                <div key={p.letter} className={styles.pillar} data-reveal="fade" style={delay(i * 100)}>
-                  <span className={`${styles.pillarBadge} ${PILLAR_TONE[p.tone]}`}>{p.letter}</span>
-                  <h4 className={styles.pillarTitle}>{p.title}</h4>
-                  <p className={styles.pillarDesc}>{p.desc}</p>
-                </div>
-              ))}
+            <div data-reveal style={delay(120)}>
+              <Pilares />
             </div>
 
             <div className={styles.prose}>
-              <p data-reveal>
-                O que muda de uma fase para a outra é a dose de cada pilar, porque no
-                começo pesa a teoria e, perto da prova, pesam questão e simulado.
-              </p>
               <p data-reveal>
                 Antes, sem esse critério, você estudava todas as matérias com o mesmo peso
                 e revisava por data, o que faz esquecer justamente o conteúdo que não
@@ -306,31 +286,13 @@ export default function MentoriaPage() {
         {/* Bloco 06 — Para quem é / não é */}
         <section className={`${styles.section} ${styles.sectionTint}`}>
           <div className={styles.containerNarrow}>
-            <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
+            <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>
               Antes de entrar, veja se você é o tipo de concurseiro que essa mentoria
               costuma aprovar.
             </h2>
 
-            <div className={styles.fitGrid}>
-              <div className={`${styles.fitCard} ${styles.fitYes}`} data-reveal="left">
-                <h3 className={styles.fitTitle}>Para quem é</h3>
-                <ul className={styles.fitList}>
-                  <li>Quem trabalha quarenta horas por semana, tem de duas a três horas líquidas por dia e precisa que cada hora renda o triplo.</li>
-                  <li>Quem já estuda há anos, conhece a rotina, mas empacou numa faixa de acerto e não consegue mais evoluir sozinho.</li>
-                  <li>Quem está começando agora, vindo de Direito, Contábeis, Economia ou de qualquer outra formação, e quer começar certo desde o primeiro dia.</li>
-                  <li>Quem já é servidor de uma carreira menor ou militar e quer dar o salto para uma vaga fiscal ou de controle de R$ 20 mil.</li>
-                  <li>Quem mira concursos fiscais, de SEFAZ, ISS e Receita, ou controle, TCEs, TCU, CGU, CGEs e CGMs, e quer um plano ajustado à banca de cada um.</li>
-                </ul>
-              </div>
-              <div className={`${styles.fitCard} ${styles.fitNo}`} data-reveal="right">
-                <h3 className={styles.fitTitle}>Para quem não é</h3>
-                <ul className={styles.fitList}>
-                  <li>Quem procura um atalho mágico e não aceita de doze a vinte e quatro meses de estudo com disciplina.</li>
-                  <li>Quem prefere estudar totalmente sozinho, sem plano individual e sem mentor acompanhando.</li>
-                  <li>Quem quer apenas comprar material e não vai abrir a plataforma nem seguir as metas combinadas.</li>
-                  <li>Quem não consegue reservar pelo menos duas a três horas de estudo na maioria dos dias.</li>
-                </ul>
-              </div>
+            <div data-reveal style={delay(140)}>
+              <FitToggle />
             </div>
           </div>
         </section>
@@ -352,50 +314,24 @@ export default function MentoriaPage() {
           </div>
         </section>
 
-        {/* Bloco 08 — Bônus */}
-        <section className={`${styles.section} ${styles.sectionGreen}`}>
-          <div className={`${styles.orb} ${styles.orbGreen}`} />
+        {/* Bloco 08 — Bônus (flashcards que giram) */}
+        <section className={`${styles.section} ${styles.sectionDots}`}>
           <div className={styles.containerNarrow}>
-            <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
+            <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>
               O que você ainda leva além de toda a estrutura da mentoria.
             </h2>
 
-            <div className={styles.bonusGrid}>
-              <div className={styles.bonusCard} data-reveal="fade" style={delay(0)}>
-                <span className={styles.bonusTag}>Bônus 1</span>
-                <h4 className={styles.bonusTitle}>Estudo Esquematizado</h4>
-                <p>
-                  O curso completo de técnicas de estudo e planejamento, com treze módulos,
-                  que entra como a sua primeira tarefa pra você estudar do jeito certo desde
-                  o primeiro dia.
-                </p>
-                <span className={styles.bonusValue}>Valor: R$ 397,00</span>
-              </div>
-              <div className={styles.bonusCard} data-reveal="fade" style={delay(130)}>
-                <span className={styles.bonusTag}>Bônus 2</span>
-                <h4 className={styles.bonusTitle}>Sala de Estudos Virtual</h4>
-                <p>
-                  O ambiente onde você estuda junto com outros mentorados, com presença e
-                  foco, como uma biblioteca online da turma.
-                </p>
-                <span className={styles.bonusValue}>Exclusivo dos mentorados</span>
-              </div>
-              <div className={styles.bonusCard} data-reveal="fade" style={delay(260)}>
-                <span className={styles.bonusTag}>Bônus 3</span>
-                <h4 className={styles.bonusTitle}>Revisão Esquematizada</h4>
-                <p>
-                  O treinamento de técnicas de revisão pra você transformar o nosso
-                  material no seu, com os seus erros e os seus pontos fracos mapeados.
-                </p>
-                <span className={styles.bonusValue}>Valor: R$ 397,00</span>
-              </div>
+            <div data-reveal style={delay(140)}>
+              <BonusFlip />
             </div>
           </div>
         </section>
 
         {/* Bloco 09 — Stack de valor */}
         <section className={`${styles.section} ${styles.sectionDark}`}>
-          <div className={`${styles.orb} ${styles.orbDarkRight}`} />
+          <span className={`${styles.bgLogo} ${styles.bgLogoA}`} aria-hidden="true" />
+          <span className={`${styles.bgLogo} ${styles.bgLogoB}`} aria-hidden="true" />
+          <span className={`${styles.bgLogo} ${styles.bgLogoC}`} aria-hidden="true" />
           <div className={styles.containerNarrow}>
             <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>O que custaria montar tudo isso separado.</h2>
 
@@ -408,14 +344,13 @@ export default function MentoriaPage() {
               </div>
 
               <div className={styles.priceBox}>
-                <span className={styles.priceLabel}>Na mentoria, tudo num lugar só, por cerca de</span>
+                <span className={styles.priceLabel}>Na mentoria, tudo num lugar só, por apenas</span>
                 <div className={styles.priceMain}>
-                  <span className={styles.priceCurrency}>R$</span>
-                  <span className={styles.priceValue}>333</span>
+                  <span className={styles.priceValue}>12x R$ 413,38</span>
                   <span className={styles.priceSuffix}>/mês</span>
                 </div>
-                <span className={styles.priceSub}>Uma economia de mais de R$ 5 mil, e você não compra nada por fora.</span>
-                <span className={styles.priceSave}>A condição exata e as formas de pagamento, a equipe fecha com você no WhatsApp</span>
+                <span className={styles.priceSub}>ou R$ 3.997,00 à vista · economia de mais de R$ 5 mil</span>
+                <span className={styles.priceSave}>A condição exata, com as formas de pagamento, a equipe fecha com você no WhatsApp</span>
               </div>
             </div>
 
@@ -440,52 +375,8 @@ export default function MentoriaPage() {
               Antes de aparecer na lista, a diferença já aparece na sua rotina de estudo.
             </h2>
 
-            <div className={styles.testimonialGrid}>
-              <blockquote className={styles.testimonial} data-reveal="fade" style={delay(0)}>
-                <span className={styles.quoteMark}>&ldquo;</span>
-                <p>
-                  Você estabelece o tempo disponível e o planejamento começa pelas
-                  matérias mais necessárias. Conforme vai girando nas disciplinas, outras
-                  vão sendo inseridas e você amplia o conhecimento, até pra ter repertório
-                  de redação. A parceria com o Estratégia, com PDF de fácil entendimento,
-                  deixa a mentoria bem objetiva, estudando o que realmente é necessário.{' '}
-                  <strong>Venho observando minha evolução na hora de resolver as questões.</strong>
-                </p>
-                <cite><span className={styles.citeAvatar}>CC</span>Carla Cristina</cite>
-              </blockquote>
-
-              <blockquote className={styles.testimonial} data-reveal="fade" style={delay(110)}>
-                <span className={styles.quoteMark}>&ldquo;</span>
-                <p>
-                  A plataforma é ótima e{' '}
-                  <strong>aumentou meu nível de acerto nas questões</strong>, por causa do
-                  direcionamento e da orientação. Sou muito grata por essa oportunidade.
-                </p>
-                <cite><span className={styles.citeAvatar}>RM</span>Roseli Maria</cite>
-              </blockquote>
-
-              <blockquote className={styles.testimonial} data-reveal="fade" style={delay(60)}>
-                <span className={styles.quoteMark}>&ldquo;</span>
-                <p>
-                  Tô gostando muito da estrutura da plataforma.{' '}
-                  <strong>Me ajudou demais na organização dos estudos, que era um dos meus
-                  principais problemas.</strong> E o acompanhamento tem sido satisfatório:
-                  sempre que tenho uma dúvida, sou respondido.
-                </p>
-                <cite><span className={styles.citeAvatar}>NB</span>Nayton Brenno</cite>
-              </blockquote>
-
-              <blockquote className={styles.testimonial} data-reveal="fade" style={delay(170)}>
-                <span className={styles.quoteMark}>&ldquo;</span>
-                <p>
-                  A mentoria foi um <strong>divisor de águas</strong> na minha
-                  preparação. O diferencial é o foco absoluto no que realmente é cobrado,
-                  sem enrolação, com uma carga intensa de exercícios pra entender como a
-                  banca se comporta.{' '}
-                  <strong>Em poucas semanas já noto uma evolução clara e consistente.</strong>
-                </p>
-                <cite><span className={styles.citeAvatar}>MJ</span>Maiko Julião</cite>
-              </blockquote>
+            <div data-reveal style={delay(120)}>
+              <ReviewsCarousel />
             </div>
           </div>
         </section>
@@ -513,22 +404,27 @@ export default function MentoriaPage() {
         {/* Bloco 12 — Garantia */}
         <section className={`${styles.section} ${styles.sectionTint}`}>
           <div className={styles.containerNarrow}>
-            <div className={styles.guaranteeCard} data-reveal="scale">
-              <div className={styles.guaranteeSeal}>
-                <span className={styles.guaranteeDays}>7</span>
-                <span className={styles.guaranteeDaysLabel}>dias</span>
+            <div className={styles.guarantee}>
+              <div className={styles.guaranteeVisual} data-reveal="scale">
+                <span className={styles.guaranteeBig}>7</span>
+                <span className={styles.guaranteeDias}>dias</span>
               </div>
-              <div>
-                <h2 className={styles.guaranteeTitle}>
+              <div className={styles.guaranteeBody}>
+                <h2 className={styles.guaranteeTitle} data-reveal style={delay(80)}>
                   Você tem sete dias pra entrar, testar tudo por dentro e decidir sem risco.
                 </h2>
-                <p className={styles.guaranteeText}>
+                <p className={styles.guaranteePara} data-reveal style={delay(230)}>
                   Você assina, recebe o seu plano de estudos individual, participa da sessão
                   de organização, abre a plataforma e acessa tanto o material de revisão da
-                  casa quanto a Assinatura Premium do Estratégia. Tem sete dias pra sentir,
-                  na prática, se a mentoria é pra você. Se em qualquer momento dentro desse
-                  prazo decidir que não faz sentido, devolvemos cem por cento do valor pago,
-                  sem pergunta e sem burocracia. O risco de experimentar fica todo com a gente.
+                  casa quanto a Assinatura Premium do Estratégia.
+                </p>
+                <p className={styles.guaranteePara} data-reveal style={delay(380)}>
+                  Tem sete dias pra sentir, na prática, se a mentoria é pra você. Se em
+                  qualquer momento dentro desse prazo decidir que não faz sentido, devolvemos
+                  cem por cento do valor pago, sem pergunta e sem burocracia.
+                </p>
+                <p className={styles.guaranteeClose} data-reveal style={delay(530)}>
+                  O risco de experimentar fica todo com a gente.
                 </p>
               </div>
             </div>
@@ -664,23 +560,41 @@ export default function MentoriaPage() {
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>Quando você entra na Esquematiza Mentoria, leva:</p>
 
-            <ul className={styles.finalList}>
-              {[
-                'Planejamento estratégico de estudos, pré e pós-edital',
-                'Plataforma com metas diárias de teoria, questões e revisão',
-                'Relatórios semanais de desempenho com comparativo entre os mentorados',
-                'Encontros quinzenais ao vivo com o Pietro e o Sérgio',
-                'Assinatura Total Esquematiza Aí, com resumos e flashcards de todas as matérias, pré e pós-edital',
-                'Assinatura Premium do Estratégia Concursos',
-                'Módulo de Discursiva e simulados exclusivos dos mentorados',
-                'Acesso diário aos mentores no WhatsApp e à comunidade de mentorados',
-                'E os bônus: Estudo Esquematizado, Sala de Estudos Virtual e o treinamento Revisão Esquematizada',
-              ].map((item, i) => (
-                <li key={item} data-reveal="fade" style={delay((i % 2) * 80)}>
-                  <span className={styles.checkIcon}>✓</span>{item}
-                </li>
-              ))}
-            </ul>
+            {([
+              {
+                marked: 2,
+                items: [
+                  ['Planejamento estratégico de estudos', ', pré e pós-edital'],
+                  ['Plataforma com metas diárias', ' de teoria, questões e revisão'],
+                  ['Relatórios semanais de desempenho', ' com comparativo entre os mentorados'],
+                  ['Encontros quinzenais ao vivo', ' com o Pietro e o Sérgio'],
+                  ['Assinatura Total Esquematiza Aí', ', com resumos e flashcards de todas as matérias, pré e pós-edital'],
+                ],
+              },
+              {
+                marked: 1,
+                items: [
+                  ['Assinatura Premium do Estratégia Concursos', ''],
+                  ['Módulo de Discursiva e simulados exclusivos', ' dos mentorados'],
+                  ['Acesso diário aos mentores', ' no WhatsApp e à comunidade de mentorados'],
+                  ['E os bônus', ': Estudo Esquematizado, Sala de Estudos Virtual e o treinamento Revisão Esquematizada'],
+                ],
+              },
+            ] as { marked: number; items: [string, string][] }[]).map((group, g) => (
+              <ol className={styles.gabarito} key={g} data-reveal style={delay(160 + g * 100)}>
+                {group.items.map(([lead, rest], i) => (
+                  <li key={lead} className={styles.gabItem}>
+                    <span className={`${styles.gabLetter} ${i === group.marked ? styles.gabMarked : ''}`}>
+                      {String.fromCharCode(65 + i)}
+                    </span>
+                    <span className={styles.gabText}>
+                      <mark className={styles.gabMark}>{lead}</mark>
+                      {rest}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            ))}
 
             <p className={styles.prose} data-reveal>
               De mais de <strong>R$ 9.389,00</strong> se contratado separado, na mentoria
