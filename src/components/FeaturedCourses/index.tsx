@@ -1,40 +1,91 @@
-import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
+import { produtoPor, ofertaAtual, formatarPreco, capaDe, type Produto, type Oferta } from '@/data/catalogo';
 
-const courses = [
-  { tag: 'Direito Constitucional', title: 'OAB 1ª Fase - Esquematizado', oldPrice: 'R$ 597', newPrice: 'R$ 297', mark: 'C' },
-  { tag: 'Direito Penal', title: 'Teoria do Crime Descomplicada', oldPrice: 'R$ 497', newPrice: 'R$ 197', mark: 'P' },
-  { tag: 'Direito Civil', title: 'Direito de Família na Prática', oldPrice: 'R$ 397', newPrice: 'R$ 147', mark: 'F' },
-];
+// Um combo em destaque por área (todos com capa própria).
+// Se um deles perder preço ou checkout no catálogo, sai da seção sozinho.
+const DESTAQUE_IDS = ['2895045', '2903931', '2903935', '2903937'];
+
+type Destaque = { produto: Produto; oferta: Oferta };
+
+const AREA_THUMB: Record<string, string> = {
+  Fiscal: 'thumbFiscal',
+  Controle: 'thumbControle',
+  Policial: 'thumbPolicial',
+  Tribunais: 'thumbTribunais',
+};
 
 export default function FeaturedCourses() {
+  const destaques: Destaque[] = DESTAQUE_IDS.flatMap((id) => {
+    const produto = produtoPor(id);
+    const oferta = produto ? ofertaAtual(produto) : null;
+    return produto && oferta ? [{ produto, oferta }] : [];
+  });
+
+  if (destaques.length === 0) return null;
+
   return (
-    <section className={styles.coursesSection} id="cursos">
-      <span className={styles.sectionTag}>Cursos</span>
+    <section className={styles.coursesSection} id="combos">
       <h2 className={styles.title}>
-        Nossos Cursos em <span className={styles.titleAccent}>Destaque</span>
+        Combos em <span className={styles.titleAccent}>Destaque</span>
       </h2>
+      <p className={styles.subtitle}>
+        Resumos e flashcards das áreas mais concorridas, reunidos num pacote só e com desconto real.
+      </p>
 
       <div className={styles.grid}>
-        {courses.map((course, idx) => (
-          <div key={idx} className={styles.card}>
-            <div className={styles.thumb}>
-              <span className={styles.thumbMark}>{course.mark}</span>
+        {destaques.map(({ produto, oferta }) => {
+          const capa = capaDe(produto);
+          return (
+          <article key={produto.id} className={styles.card}>
+            <div className={`${styles.thumb} ${styles[AREA_THUMB[produto.area ?? ''] ?? 'thumbFiscal']}`}>
+              {capa ? (
+                <Image
+                  src={capa.src}
+                  alt={`Capa de ${produto.nome}`}
+                  width={capa.width}
+                  height={capa.height}
+                  className={styles.thumbCapa}
+                />
+              ) : (
+                <span className={styles.thumbMark} aria-hidden="true">
+                  {(produto.area ?? 'E').charAt(0)}
+                </span>
+              )}
+              {oferta.percentualOff !== null && (
+                <span className={styles.offBadge}>-{oferta.percentualOff}%</span>
+              )}
             </div>
+
             <div className={styles.cardBody}>
-              <span className={styles.badge}>{course.tag}</span>
-              <h3 className={styles.courseTitle}>{course.title}</h3>
-              <div className={styles.stars}>★★★★★</div>
+              {produto.area && <span className={styles.badge}>Área {produto.area}</span>}
+              <h3 className={styles.courseTitle}>
+                <Link href={`/vitrine/produto/${produto.id}`} className={styles.courseTitleLink}>
+                  {produto.nome}
+                </Link>
+              </h3>
 
               <div className={styles.priceContainer}>
-                <span className={styles.oldPrice}>de {course.oldPrice}</span>
-                <span className={styles.currentPrice}>{course.newPrice}</span>
+                {oferta.precoAntigo !== null && (
+                  <span className={styles.oldPrice}>de {formatarPreco(oferta.precoAntigo)}</span>
+                )}
+                <span className={styles.currentPrice}>{formatarPreco(oferta.preco)}</span>
               </div>
 
-              <button className={styles.btnEnroll}>Matricular →</button>
+              <a
+                className={styles.btnEnroll}
+                href={oferta.checkout}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Comprar ${produto.nome} por ${formatarPreco(oferta.preco)}`}
+              >
+                Garantir agora →
+              </a>
             </div>
-          </div>
-        ))}
+          </article>
+          );
+        })}
       </div>
     </section>
   );

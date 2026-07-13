@@ -10,14 +10,15 @@ import ProductVitrine from '@/components/ProductVitrine';
 import Categories from '@/components/Categories';
 import AboutUs from '@/components/AboutUs';
 import LiveClasses from '@/components/LiveClasses';
-import TeamSection from '@/components/TeamSection';
+import Arsenal from '@/components/Arsenal';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import LeadPopup from '@/components/LeadPopup';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <main>
+    <main className={styles.home}>
       <Navbar />
       <HeroSection />
       <SocialTicker />
@@ -26,11 +27,11 @@ export default function Home() {
       <Testimonials />
       <Newsletter />
       <ProductVitrine />
+      <Arsenal />
+      <AboutUs />
       <StatsTicker />
       <Categories />
-      <AboutUs />
       <LiveClasses />
-      <TeamSection />
       <ContactForm />
       <Footer />
       <LeadPopup />

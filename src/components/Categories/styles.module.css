@@ -21,16 +21,6 @@
   min-height: 680px;
 }
 
-.sectionTag {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--color-hot-primary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  display: block;
-}
-
 .title {
   font-family: var(--font-heading);
   font-size: 3.5rem;
@@ -44,6 +34,7 @@
   color: var(--color-hot-light);
   font-size: 4rem;
   display: block;
+  text-transform: lowercase; /* Moonlight sempre em minúsculas */
 }
 
 .categoryList {
@@ -58,13 +49,19 @@
   padding: 1.5rem 1rem;
   border-bottom: 1px solid rgba(78, 174, 217, 0.3); /* cold-primary with opacity */
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
   border-radius: 0.5rem;
+  text-decoration: none;
 }
 
 .categoryItem:hover {
   background-color: var(--color-green-dark);
   border-bottom-color: transparent;
+}
+
+.categoryItem:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
 }
 
 .categoryInfo {

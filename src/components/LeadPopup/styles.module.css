@@ -53,19 +53,6 @@
   opacity: 1;
 }
 
-.badge {
-  display: inline-block;
-  background-color: var(--color-cold-light);
-  color: var(--color-cold-dark);
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.35rem 0.85rem;
-  border-radius: 2rem;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.02em;
-}
-
 .title {
   font-family: var(--font-heading);
   font-size: 2rem;

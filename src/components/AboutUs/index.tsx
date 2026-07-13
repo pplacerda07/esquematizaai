@@ -1,57 +1,58 @@
 import React from 'react';
+import Link from 'next/link';
 import styles from './styles.module.css';
+import MentorPhotos from './MentorPhotos';
+
+// Cada tópico é uma alternativa de gabarito marcada (A, B...), como num cartão-resposta.
+const blocks = [
+  {
+    title: 'Nossa missão',
+    text: 'Facilitar a aprovação em concursos através de materiais esquematizados, diretos ao ponto e com alta taxa de retenção.',
+  },
+  {
+    title: 'Aprovações em 2026',
+    text: 'Nossos alunos passaram na SEFAZ-SP, na SEFA-PA, na SEFAZ-MT e na SEFAZ-RN estudando com resumos e flashcards da Esquematiza.',
+  },
+];
 
 export default function AboutUs() {
   return (
     <section className={styles.aboutSection} id="sobre">
+      <span className={styles.sectionWatermark} aria-hidden="true">método que aprova</span>
+
       <div className={styles.container}>
         <div className={styles.imageColumn}>
-          <div className={styles.imageWrapper}>
-            <img src="/assets/10.png" alt="Sobre Nós - Esquematiza Aí" className={styles.aboutImage} style={{backgroundColor: 'var(--color-cold-light)'}} />
-          </div>
+          <MentorPhotos />
           <div className={styles.floatingBadge}>
-            <span className={styles.badgeNumber}>10+</span>
-            <span className={styles.badgeLabel}>Anos de<br/>Experiência</span>
+            <span className={styles.badgeNumber}>+29 mil</span>
+            <span className={styles.badgeLabel}>alunos já estudaram<br/>com o método</span>
           </div>
         </div>
-        
+
         <div className={styles.contentColumn}>
-          <span className={styles.sectionTag}>Sobre Nós</span>
-          <h2 className={styles.title}>
-            Especialistas na<br />
-            Área <span className={styles.titleAccent}>Fiscal</span>
-          </h2>
-          
+          <h2 className={styles.title}>Feito por quem já passou.</h2>
+
+          <p className={styles.intro}>
+            A Esquematiza Aí nasceu das mãos de auditores aprovados que viveram a rotina de
+            concurseiro por dentro. O método que você estuda foi construído por quem senta na
+            cadeira do cargo e sabe exatamente o que cada banca cobra.
+          </p>
+
           <div className={styles.blocksGrid}>
-            <div className={styles.block}>
-              <div className={styles.blockIcon}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
+            {blocks.map((block, i) => (
+              <div key={block.title} className={styles.block}>
+                <span className={`${styles.gabLetter} ${styles.gabMarked}`} aria-hidden="true">
+                  {String.fromCharCode(65 + i)}
+                </span>
+                <div className={styles.blockContent}>
+                  <h3>{block.title}</h3>
+                  <p>{block.text}</p>
+                </div>
               </div>
-              <div className={styles.blockContent}>
-                <h3>Nossa Missão</h3>
-                <p>Facilitar a aprovação em concursos fiscais complexos através de materiais esquematizados, diretos ao ponto e com alta taxa de retenção.</p>
-              </div>
-            </div>
-            
-            <div className={styles.block}>
-              <div className={styles.blockIcon}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <circle cx="12" cy="12" r="2"></circle>
-                </svg>
-              </div>
-              <div className={styles.blockContent}>
-                <h3>Nossa Visão</h3>
-                <p>Ser a maior e mais eficiente plataforma de estudos para provas da Receita Federal, SEFAZ e ISS do Brasil.</p>
-              </div>
-            </div>
+            ))}
           </div>
-          
-          <button className={styles.btnCta}>Conheça Nossa História</button>
+
+          <Link href="/mentoria" className={styles.btnCta}>Conheça a mentoria</Link>
         </div>
       </div>
     </section>

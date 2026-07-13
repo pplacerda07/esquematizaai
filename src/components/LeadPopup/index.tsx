@@ -45,7 +45,6 @@ export default function LeadPopup() {
 
         {!submitted ? (
           <>
-            <div className={styles.badge}>📬 Lista exclusiva</div>
             <h3 className={styles.title}>
               Você quer saber quais os <span className={styles.highlight}>próximos concursos</span>?
             </h3>

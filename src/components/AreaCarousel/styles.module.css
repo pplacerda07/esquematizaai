@@ -30,20 +30,6 @@
   margin: 0 auto 2.5rem;
 }
 
-.badge {
-  display: inline-block;
-  background-color: var(--color-cold-light);
-  color: var(--color-cold-dark);
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.4rem 0.9rem;
-  border-radius: 2rem;
-  margin-bottom: 1rem;
-}
-
 .slideTitle {
   font-family: var(--font-heading);
   font-size: 3rem;
@@ -74,7 +60,7 @@
   background-color: var(--color-neutral-light);
   border: 1.5px solid rgba(38, 52, 79, 0.08);
   border-radius: 0.85rem;
-  padding: 1.75rem 1.5rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -86,50 +72,132 @@
   border-color: var(--color-hot-primary);
 }
 
+.capaWrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.capaImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .capaImg {
+  transform: scale(1.03);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  background-color: var(--color-cold-primary);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+}
+
+.offPill {
+  margin-left: auto;
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-light);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.5rem;
+}
+
 .cardTitle {
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--color-neutral-dark);
-  margin: 0 0 0.5rem;
+  margin: 0 0 1rem;
   line-height: 1.15;
   letter-spacing: -0.005em;
+  flex: 1;
 }
 
-.cardDesc {
+.cardTitleLink {
+  color: var(--color-neutral-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cardTitleLink:hover {
+  color: var(--color-hot-primary);
+}
+
+.cardTitleLink:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}
+
+.cardPriceRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  margin-bottom: 1.15rem;
+}
+
+.cardOldPrice {
   font-family: var(--font-body);
-  font-size: 0.92rem;
-  color: var(--color-cold-dark);
-  opacity: 0.85;
-  line-height: 1.5;
-  margin: 0 0 1.25rem;
-  flex: 1;
+  color: var(--color-neutral-dark);
+  opacity: 0.5;
+  text-decoration: line-through;
+  font-size: 0.88rem;
 }
 
 .cardPrice {
   font-family: var(--font-heading);
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: var(--color-cold-dark);
-  margin-bottom: 1rem;
+  color: var(--color-hot-primary);
+  line-height: 1;
 }
 
 .cardBtn {
+  box-sizing: border-box; /* âncora não herda o border-box nativo de <button> */
   background-color: var(--color-hot-primary);
   color: var(--color-neutral-light);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1rem;
+  min-height: 44px;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
 .cardBtn:hover {
   background-color: var(--color-hot-dark);
-  transform: translateY(-1px);
+}
+
+.cardBtn:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
 }
 
 .slideFooter {

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 const classes = [
   { title: 'Revisão RFB - Contabilidade', duration: '1h 30m', image: '/assets/16.png' },
@@ -10,19 +11,18 @@ const classes = [
 export default function LiveClasses() {
   return (
     <section className={styles.liveSection} id="aulas">
-      <span className={styles.sectionTag}>Aulas ao Vivo</span>
       <h2 className={styles.title}>
         Estude com os Melhores <span className={styles.titleAccent}>Em Tempo Real</span>
       </h2>
-      
+
       <div className={styles.container}>
         <div className={styles.mainPlayer}>
-          <img src="/assets/15.png" alt="Aula ao vivo" className={styles.playerThumb} />
-          <div className={styles.playBtn}>
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
-            </svg>
-          </div>
+          <YouTubeEmbed
+            id="4KHfkSuV8WI"
+            title="Aula do Esquematiza Aí no YouTube"
+            badge="Assista à aula"
+            alt="Aula do Esquematiza Aí"
+          />
         </div>
         
         <div className={styles.sidebar}>

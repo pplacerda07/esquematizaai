@@ -129,32 +129,6 @@
   align-items: center;
 }
 
-/* Urgency Badge */
-.urgencyBadge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 6px 18px rgba(255, 115, 69, 0.25);
-}
-
-.pulseDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-neutral-light);
-  position: relative;
-  animation: pulse 1.8s ease-in-out infinite;
-}
-
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.55; transform: scale(1.35); }
@@ -185,6 +159,7 @@
   font-size: 5rem;
   line-height: 1;
   margin-top: 0.4rem;
+  text-transform: lowercase; /* regra da marca: Moonlight sempre em minúsculas */
 }
 
 .subtitle {
@@ -541,75 +516,43 @@
   box-shadow: 0 6px 16px rgba(255, 115, 69, 0.3);
 }
 
-.pixStamp {
-  position: absolute;
-  top: 16px;
-  right: -14px;
-  width: 78px;
-  height: 78px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, var(--color-green-primary), var(--color-green-dark));
-  color: var(--color-neutral-light);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: var(--font-heading);
-  transform: rotate(12deg);
-  box-shadow: 0 8px 20px rgba(25, 83, 80, 0.35);
-  border: 3px dashed var(--color-neutral-light);
-  z-index: 2;
-  animation: stampWiggle 4s ease-in-out infinite;
-}
-
-@keyframes stampWiggle {
-  0%, 100% { transform: rotate(12deg) scale(1); }
-  50% { transform: rotate(8deg) scale(1.04); }
-}
-
-.pixStampLabel {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  opacity: 0.95;
-}
-
-.pixStampValue {
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.05;
-  margin-top: 0.1rem;
-}
-
 .offerLogo {
   object-fit: contain;
   margin-bottom: 1.25rem;
   margin-top: 0.25rem;
 }
 
-.offerLabel {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--color-cold-dark);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+/* slide do carrossel de ofertas */
+.offerSlide {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
+  width: 100%;
+  animation: offerFade 0.35s ease;
 }
 
-.bestseller {
-  display: inline-block;
-  background-color: var(--color-cold-dark);
-  color: var(--color-neutral-light);
-  font-family: var(--font-body);
-  font-size: 0.7rem;
+@keyframes offerFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offerSlide {
+    animation: none;
+  }
+}
+
+.offerName {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 0.25rem 0.7rem;
-  border-radius: 2rem;
+  line-height: 1.15;
+  color: var(--color-cold-dark);
+  margin-bottom: 0.75rem;
+  min-height: 3.45rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .offerPriceRow {
@@ -647,88 +590,11 @@
   color: var(--color-neutral-dark);
 }
 
-.offerCurrency {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-cold-dark);
-  margin-right: 0.2rem;
-}
-
 .offerAmount {
   font-size: 3.25rem;
   font-weight: 700;
   line-height: 1;
-}
-
-.offerSuffix {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-.offerCash {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  color: var(--color-neutral-dark);
-  opacity: 0.85;
-  margin-bottom: 1.25rem;
-}
-
-.noFees {
-  background-color: var(--color-green-light);
-  color: var(--color-green-dark);
-  font-weight: 700;
-  padding: 0.1rem 0.45rem;
-  border-radius: 0.3rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.bonusBox {
-  width: 100%;
-  background: linear-gradient(135deg, var(--color-green-light), rgba(209, 240, 213, 0.5));
-  border: 1.5px dashed var(--color-green-primary);
-  border-radius: 0.65rem;
-  padding: 0.85rem 1rem;
-  margin-bottom: 1.25rem;
-  text-align: left;
-}
-
-.bonusHeader {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--color-green-dark);
-  margin-bottom: 0.4rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.bonusList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.bonusList li {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--color-green-dark);
-  padding-left: 1rem;
-  position: relative;
-  line-height: 1.35;
-}
-
-.bonusList li::before {
-  content: '+';
-  position: absolute;
-  left: 0;
-  font-weight: 700;
-  color: var(--color-green-dark);
+  margin-bottom: 0.85rem;
 }
 
 .offerBtn {
@@ -786,8 +652,36 @@
   gap: 0.35rem;
 }
 
-.lockIcon {
-  font-size: 0.85rem;
+/* pontos de navegação do carrossel */
+.offerDots {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.offerDot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-cold-light);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.offerDot:hover {
+  background-color: var(--color-cold-primary);
+}
+
+.offerDot:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}
+
+.offerDotActive {
+  background-color: var(--color-hot-primary);
+  transform: scale(1.25);
 }
 
 /* Responsive */
@@ -835,13 +729,5 @@
   .urgencyCta {
     font-size: 0.74rem;
     padding: 0.4rem 0.7rem;
-  }
-  .pixStamp {
-    width: 66px;
-    height: 66px;
-    right: -8px;
-  }
-  .pixStampValue {
-    font-size: 0.9rem;
   }
 }

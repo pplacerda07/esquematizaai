@@ -8,8 +8,12 @@ const stats = [
   { number: '24/7', label: 'Atualização Constante' },
 ];
 
+// Marquee infinito: cada "metade" (3 conjuntos) precisa ser mais larga que a tela para
+// nunca aparecer vazio ao rolar. 6 conjuntos + animação de -50% dão loop sem emenda.
+const SETS = 6;
+
 export default function StatsTicker() {
-  const repeatedStats = [...stats, ...stats];
+  const repeatedStats = Array.from({ length: SETS }).flatMap(() => stats);
 
   return (
     <section className={styles.tickerWrapper}>

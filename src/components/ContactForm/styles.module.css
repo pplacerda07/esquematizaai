@@ -8,17 +8,6 @@
   margin: 0 auto;
 }
 
-.sectionTag {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--color-hot-primary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  display: block;
-  text-align: center;
-}
-
 .title {
   font-family: var(--font-heading);
   font-size: 3.5rem;
@@ -31,6 +20,7 @@
 .titleAccent {
   font-family: var(--font-accent);
   color: var(--color-hot-primary);
+  text-transform: lowercase; /* Moonlight sempre em minúsculas */
 }
 
 .form {

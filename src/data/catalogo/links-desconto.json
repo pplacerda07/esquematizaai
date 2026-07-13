@@ -1,0 +1,867 @@
+{
+  "geradoEm": "2026-07-03",
+  "fonte": "Produtos (1).xlsx (aba \"link produtos desconto\")",
+  "observacao": "Escada de preços por produto: cada degrau é um checkout da Eduzz com cupom pré-aplicado. Usada pelo atendimento/campanhas para ofertar descontos progressivos.",
+  "produtos": [
+    {
+      "idEduzz": "2913204",
+      "nome": "Oferta personalizada (PARCELADO SEM JUROS)",
+      "area": null,
+      "ferramenta": null,
+      "formato": null,
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": 1697,
+          "checkout": "https://chk.eduzz.com/mtk2o2gf"
+        },
+        {
+          "preco": 1597,
+          "checkout": "https://chk.eduzz.com/qgyeftr6"
+        },
+        {
+          "preco": 1497,
+          "checkout": "https://chk.eduzz.com/shvedz2w"
+        },
+        {
+          "preco": 1397,
+          "checkout": "https://chk.eduzz.com/kyhx6oro"
+        },
+        {
+          "preco": 1297,
+          "checkout": "https://chk.eduzz.com/2qmij5wt"
+        },
+        {
+          "preco": 1197,
+          "checkout": "https://chk.eduzz.com/uvoobxvm"
+        },
+        {
+          "preco": 1097,
+          "checkout": "https://chk.eduzz.com/2ysmfjcx"
+        },
+        {
+          "preco": 997,
+          "checkout": "https://chk.eduzz.com/ssjoiykp"
+        },
+        {
+          "preco": 897,
+          "checkout": "https://chk.eduzz.com/bwlyz2rv"
+        },
+        {
+          "preco": 797,
+          "checkout": "https://chk.eduzz.com/6fj5clfd"
+        },
+        {
+          "preco": 697,
+          "checkout": "https://chk.eduzz.com/op5p3igf"
+        },
+        {
+          "preco": 597,
+          "checkout": "https://chk.eduzz.com/6cz4gsta"
+        },
+        {
+          "preco": 547,
+          "checkout": "https://chk.eduzz.com/nb65u6te"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2912912",
+      "nome": "Oferta personalizada (À VISTA | 1x NO CRÉDITO )",
+      "area": null,
+      "ferramenta": null,
+      "formato": null,
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": 1297,
+          "checkout": "https://chk.eduzz.com/zf3igq2w"
+        },
+        {
+          "preco": 1197,
+          "checkout": "https://chk.eduzz.com/4knpr6v7"
+        },
+        {
+          "preco": 997,
+          "checkout": "https://chk.eduzz.com/d2br55bo"
+        },
+        {
+          "preco": 897,
+          "checkout": "https://chk.eduzz.com/uhhjakr4"
+        },
+        {
+          "preco": 800,
+          "checkout": "https://sun.eduzz.com/39YDRY6Q9O?cupom=PCTLTOFPS"
+        },
+        {
+          "preco": 797,
+          "checkout": "https://chk.eduzz.com/rpieq25r"
+        },
+        {
+          "preco": 697,
+          "checkout": "https://chk.eduzz.com/n26oxcvf"
+        },
+        {
+          "preco": 597,
+          "checkout": "https://chk.eduzz.com/qsxdou6n"
+        },
+        {
+          "preco": 559,
+          "checkout": "https://sun.eduzz.com/40Q38YOP0B?cupom=19AS12JD"
+        },
+        {
+          "preco": 520,
+          "checkout": "https://sun.eduzz.com/39YDRY6Q9O?cupom=19AHSH1"
+        },
+        {
+          "preco": 497,
+          "checkout": "https://sun.eduzz.com/40Q38YOP0B?cupom=OFPRSEDGARD"
+        },
+        {
+          "preco": 300,
+          "checkout": "https://sun.eduzz.com/40Q38YOP0B?cupom=OFTLT"
+        },
+        {
+          "preco": 249,
+          "checkout": null
+        },
+        {
+          "preco": 249,
+          "checkout": null
+        },
+        {
+          "preco": 197,
+          "checkout": "https://chk.eduzz.com/3wyauam4"
+        },
+        {
+          "preco": 300,
+          "checkout": "https://sun.eduzz.com/40Q38YOP0B?cupom=OFTLT"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2901053",
+      "nome": "Assinatura Anual Flashcards Regular",
+      "area": "Geral",
+      "ferramenta": "R + F + Q + V",
+      "formato": "Regular",
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": 497,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2901056",
+      "nome": "Assinatura Anual Resumos Regular",
+      "area": "Geral",
+      "ferramenta": "R + F + Q + V",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/black-friday-assinaturas/",
+      "escada": [
+        {
+          "preco": 597,
+          "checkout": null
+        },
+        {
+          "preco": 497,
+          "checkout": "https://sun.eduzz.com/D0RAD1YA9Y?cupom=AU1ASHJFB1"
+        },
+        {
+          "preco": 397,
+          "checkout": "https://chk.eduzz.com/amlzbdwn"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2901053",
+      "nome": "Assinatura Anual Flashcards Regular",
+      "area": null,
+      "ferramenta": null,
+      "formato": null,
+      "paginaOferta": "https://esquematizaai.com/black-friday-assinaturas/",
+      "escada": [
+        {
+          "preco": 497,
+          "checkout": null
+        },
+        {
+          "preco": 397,
+          "checkout": "https://sun.eduzz.com/G92EX64OWE?cupom=AU1ASHJFB1"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2913488",
+      "nome": "Assinatura Anual Resumos + Flashcards  (PARCELADO SEM JUROS)",
+      "area": null,
+      "ferramenta": null,
+      "formato": null,
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": null,
+          "checkout": "https://chk.eduzz.com/c33rr3rh"
+        },
+        {
+          "preco": null,
+          "checkout": "https://chk.eduzz.com/ojn6zhzo"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2901041",
+      "nome": "Assinatura Anual Resumos + Flashcards (À VISTA | 1x NO CRÉDITO )",
+      "area": "Geral",
+      "ferramenta": "R + F + Q + V",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/black-friday-assinaturas/",
+      "escada": [
+        {
+          "preco": 697,
+          "checkout": null
+        },
+        {
+          "preco": 597,
+          "checkout": "https://sun.eduzz.com/39VE7G37WR?cupom=ASDQGW"
+        },
+        {
+          "preco": 549,
+          "checkout": "https://sun.eduzz.com/39VE7G37WR?cupom=OPARF100"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2903038",
+      "nome": "Treinamento Revisão Esquematizada",
+      "area": "Geral",
+      "ferramenta": "Assinatura",
+      "formato": "Específico",
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": 997,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2907937",
+      "nome": "Pacote Resumos e Flashcards Legislação Tributária",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-flashcards-legislacao-tributaria-diversa/",
+      "escada": [
+        {
+          "preco": 1597,
+          "checkout": null
+        },
+        {
+          "preco": 1300,
+          "checkout": "https://sun.eduzz.com/E05XRX27WX?cupom=CUPOMLTSUPER"
+        },
+        {
+          "preco": 1200,
+          "checkout": "https://sun.eduzz.com/E05XRX27WX?cupom=CUPOMMGLT"
+        },
+        {
+          "preco": 1300,
+          "checkout": "https://sun.eduzz.com/E05XRX27WX?cupom=CUPOMLTSUPER"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2909130",
+      "nome": "Pacote Resumos Legislação Tributária",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": 997,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2918620",
+      "nome": "Combo Legislação Tributária Estadual SEFAZ-SP",
+      "area": null,
+      "ferramenta": null,
+      "formato": null,
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": 497,
+          "checkout": "https://chk.eduzz.com/76hoow3i"
+        },
+        {
+          "preco": 397,
+          "checkout": "https://chk.eduzz.com/ck6orlf7"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2903930",
+      "nome": "Combo Resumos + Flashcards Fiscal Regular",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/black-friday-area-fiscal/",
+      "escada": [
+        {
+          "preco": 597,
+          "checkout": null
+        },
+        {
+          "preco": 537,
+          "checkout": "https://sun.eduzz.com/VWGZ4BJP07?cupom=CUPMOFRTFISCO"
+        },
+        {
+          "preco": 497,
+          "checkout": "https://sun.eduzz.com/VWGZ4BJP07?cupom=OPCFRF100"
+        },
+        {
+          "preco": 347,
+          "checkout": "https://sun.eduzz.com/VWGZ4BJP07?cupom=CUPOMCOMBFISC"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2903931",
+      "nome": "Combo Resumos + Flashcards Controle Regular",
+      "area": "Controle",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/black-friday-area-controle/",
+      "escada": [
+        {
+          "preco": 597,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2903935",
+      "nome": "Combo Resumos + Flashcards Policial Regular",
+      "area": "Policial",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/black-friday-area-policial/",
+      "escada": [
+        {
+          "preco": 397,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2903937",
+      "nome": "Combo Resumos + Flashcards Tribunal Regular",
+      "area": "Tribunais",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/black-friday-area-tribunal/",
+      "escada": [
+        {
+          "preco": 397,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2901019",
+      "nome": "Combo Flashcards Área Bancária Regular",
+      "area": "Bancária",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-de-resumos-para-concursos-publicos-de-policia/",
+      "escada": [
+        {
+          "preco": 257,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902051",
+      "nome": "Combo Resumos Área Bancária Regular",
+      "area": "Bancária",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-de-resumos-para-concursos-publicos-de-policia/",
+      "escada": [
+        {
+          "preco": 197,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2896270",
+      "nome": "Combo Flashcards Gestão e Controle Regular",
+      "area": "Controle",
+      "ferramenta": "Flashcards",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-combo-regular-gestao-e-controle/",
+      "escada": [
+        {
+          "preco": 297,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2896272",
+      "nome": "Combo Resumo Gestão e Controle Regular",
+      "area": "Controle",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-resumos-para-concursos-publicos-de-controle/",
+      "escada": [
+        {
+          "preco": 397,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2895467",
+      "nome": "Combo Flashcards Fiscal Regular",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-combo-regular-fiscal/",
+      "escada": [
+        {
+          "preco": 297,
+          "checkout": null
+        },
+        {
+          "preco": 227,
+          "checkout": "https://sun.eduzz.com/39ZQN1679E?cupom=OPFHF"
+        },
+        {
+          "preco": 219,
+          "checkout": "https://sun.eduzz.com/39ZQN1679E?cupom=173141"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2895045",
+      "nome": "Combo Resumo Fiscal Regular",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-resumos-fiscal-regular/",
+      "escada": [
+        {
+          "preco": 397,
+          "checkout": null
+        },
+        {
+          "preco": 357,
+          "checkout": "https://sun.eduzz.com/E9OO5X3A9B?cupom=COMBOFISCAL"
+        },
+        {
+          "preco": 317.6,
+          "checkout": "https://sun.eduzz.com/E9OO5X3A9B?cupom=2HK12ASD"
+        },
+        {
+          "preco": 297,
+          "checkout": "https://sun.eduzz.com/E9OO5X3A9B?cupom=CUPOMPSCFISCAL"
+        },
+        {
+          "preco": 247,
+          "checkout": "https://sun.eduzz.com/E9OO5X3A9B?cupom=NASB2U23"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902034",
+      "nome": "Combo Flashcards Policial Regular",
+      "area": "Policial",
+      "ferramenta": "Flashcards",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-combo-regular-policial/",
+      "escada": [
+        {
+          "preco": 197,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2896592",
+      "nome": "Combo Resumos Policial Regular",
+      "area": "Policial",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-de-resumos-para-concursos-publicos-de-policia/",
+      "escada": [
+        {
+          "preco": 297,
+          "checkout": null
+        },
+        {
+          "preco": 247,
+          "checkout": "https://sun.eduzz.com/39YDG3ED9O?cupom=OFERTCOMBPOL"
+        },
+        {
+          "preco": 227,
+          "checkout": "https://sun.eduzz.com/39YDG3ED9O?cupom=OFTCOMPOLI"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902044",
+      "nome": "Combo Flashcards Tribunais Regular",
+      "area": "Tribunais",
+      "ferramenta": "Flashcards",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-combo-regular-tribunais/",
+      "escada": [
+        {
+          "preco": 197,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902050",
+      "nome": "Combo Resumo Tribunais Regular",
+      "area": "Tribunais",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/resumos-combo-regular-tribunais-1-0-2/",
+      "escada": [
+        {
+          "preco": 297,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2840416",
+      "nome": "Combo Legislação Tributária Estadual SEFAZ-GO (pós-edital)",
+      "area": "Fiscal",
+      "ferramenta": "Combo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-legislacao-tributaria-estadual-sefaz-go-pos-edital/",
+      "escada": [
+        {
+          "preco": 417.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902073",
+      "nome": "Flashcards isolado Legislação Tributária SEFA-PA",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-sefa-pa-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902074",
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-AL",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-sefaz-al-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902075",
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-BA",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-sefaz-ba-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2896580",
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-GO",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-legislacao-tributaria-sefaz-go-pos-edital/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902071",
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-RN",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-sefaz-rn-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        },
+        {
+          "preco": 117,
+          "checkout": "https://sun.eduzz.com/R9JJRAYZ9X?cupom=PERSFLPI"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902072",
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-SP",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-sefaz-sp-legislacao-tributaria",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2907984",
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-MT",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-sefaz-mt-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902063",
+      "nome": "Resumo isolado Legislação Tributária SEFA-PA",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-sefa-pa-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902067",
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-AL",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-sefaz-al-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902068",
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-BA",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-sefaz-ba-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2896565",
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-GO",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-legislacao-tributaria-sefaz-go-pos-edital/",
+      "escada": [
+        {
+          "preco": 179.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902060",
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-RN",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-sefaz-rn-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 179.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902062",
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-SP",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-sefaz-sp-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 179.9,
+          "checkout": null
+        },
+        {
+          "preco": 157,
+          "checkout": "https://sun.eduzz.com/1W3Z1JV5W2?cupom=HEQOVA12"
+        },
+        {
+          "preco": 139.9,
+          "checkout": "https://sun.eduzz.com/1W3Z1JV5W2?cupom=RESSP"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2907972",
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-MT",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-sefaz-mt-legislacao-tributaria/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2213430",
+      "nome": "Resumo Isolada Legislação Tributária Estadual Geral",
+      "area": null,
+      "ferramenta": "Resumo",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/resumo-isolada-legislacao-tributaria-estadual-geral/",
+      "escada": [
+        {
+          "preco": 67.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2899989",
+      "nome": "Combo Reforma Tributária (Resumo + Flashcards + Vade Mecum + Questões inéditas literais)",
+      "area": "Fiscal",
+      "ferramenta": "R + F + Q + V",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-regular-reforma-tributaria-para-concursos-publicos/",
+      "escada": [
+        {
+          "preco": 297,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902077",
+      "nome": "Flashcards Reforma Tributária",
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": "Regular",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-reforma-trib/",
+      "escada": [
+        {
+          "preco": 137.9,
+          "checkout": null
+        },
+        {
+          "preco": 117,
+          "checkout": "https://sun.eduzz.com/G92EXPV7WE?cupom=CUPOMRF"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902079",
+      "nome": "Resumo Isolada Reforma Tributária",
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": "Regular",
+      "paginaOferta": null,
+      "escada": [
+        {
+          "preco": null,
+          "checkout": "https://chk.eduzz.com/7ofriocr"
+        },
+        {
+          "preco": 179.9,
+          "checkout": null
+        },
+        {
+          "preco": 149.9,
+          "checkout": "https://sun.eduzz.com/Q9N5QEDB01?cupom=OFERTAPERSORT"
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902045",
+      "nome": "Combo Regimento Interno, Regimento Comum e Código de Ética Câmara dos Deputados",
+      "area": "Legislativo",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/combo-regimentos-camara-dos-deputados/",
+      "escada": [
+        {
+          "preco": 277.9,
+          "checkout": null
+        }
+      ]
+    },
+    {
+      "idEduzz": "2902039",
+      "nome": "Combo Flashcards TJ-SP (pós-edital)",
+      "area": "Tribunais",
+      "ferramenta": "Flashcards",
+      "formato": "Específico",
+      "paginaOferta": "https://esquematizaai.com/produto/flashcards-tj-sp-escrevente-tecnico-judiciario-pos-edital/",
+      "escada": [
+        {
+          "preco": 137,
+          "checkout": null
+        }
+      ]
+    }
+  ]
+}

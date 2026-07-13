@@ -1,0 +1,209 @@
+// Catálogo de produtos do Esquematiza Aí.
+// Dados gerados a partir da planilha "Produtos (1).xlsx" (ver README.md desta pasta).
+// Importe SEMPRE deste index; os JSONs são detalhe interno.
+
+import produtosDb from './produtos.json';
+import cuponsDb from './cupons.json';
+import ofertasDb from './ofertas-personalizadas.json';
+import linksDescontoDb from './links-desconto.json';
+import sumariosDb from './sumarios.json';
+import capasDb from './capas.json';
+
+export interface Produto {
+  /** slug único, bom para URL (/vitrine/produto/[id]) */
+  id: string;
+  /** ID do produto na Eduzz (null quando a planilha não informa) */
+  idEduzz: string | null;
+  nome: string;
+  /** outros nomes com que o produto aparece na planilha */
+  nomesAlternativos: string[];
+  /** "assinatura" | "combo" | "isolado" | "treinamento" | "oferta-personalizada" | "outro" */
+  categoria: string;
+  /** "blackfriday" quando o produto existe só como oferta de campanha */
+  campanha: string | null;
+  /** "ativo" | "inativo" | null (null = planilha não informa) */
+  status: string | null;
+  /** "Combo" | "Isolada" | null (classificação da planilha) */
+  tipo: string | null;
+  /** "Fiscal" | "Controle" | "Policial" | "Tribunais" | "Bancária" | "Legislativo" | "Geral" | null */
+  area: string | null;
+  /** "Resumo" | "Flashcards" | "R + F + Q + V" | "Assinatura" | "Questões Inéditas" | "Vademecum" | ... */
+  ferramenta: string | null;
+  /** "Regular" (conteúdo permanente) | "Específico" (para um edital/órgão) */
+  formato: string | null;
+  /** órgão, quando produto de Legislação Tributária (ex.: "SEFAZ-GO") */
+  sefaz: string | null;
+  /** página de vendas atual no site WordPress antigo */
+  urlSite: string | null;
+  observacao: string | null;
+  precos: {
+    /** preço "de tabela" */
+    cheio: number | null;
+    /** preço promocional (coluna sem título na planilha, ~30% off) */
+    promocional: number | null;
+    /** preço da Black Friday */
+    black: number | null;
+  };
+  /** preços que não deu para converter em número (ex.: "R$ 67,9 (x12)") */
+  precosTexto: Record<string, string> | null;
+  checkouts: {
+    /** checkout Eduzz do preço normal, o link principal de venda */
+    normal: string | null;
+    /** checkout Eduzz da oferta Black Friday */
+    black: string | null;
+    /** demais links (cupom 20%/30%, upgrades, ofertas [VL], alternativos divergentes) */
+    outros: { rotulo: string; preco: number | null; url: string }[];
+  };
+  orderbump: string | null;
+  orderbumpProdutos: string | null;
+  orderbumpPreco: number | null;
+  precoTotalComOrderbump: number | null;
+  layoutCheckout: string | null;
+  upsell: string | null;
+  pastaGdrive: string | null;
+  linkEdicaoEduzz: string | null;
+  atualizacao: string | null;
+  /** texto longo de vendas ("Sobre o produto") */
+  sobre: string | null;
+  /** lista de disciplinas/conteúdo do material */
+  disciplinas: string | null;
+  /** cronograma de entrega dos materiais em elaboração */
+  cronograma: string | null;
+  /** de quais abas/linhas da planilha o registro veio */
+  fontes: string[];
+  /** inconsistências da planilha detectadas ao gerar (ver PENDENCIAS.md) */
+  avisos: string[];
+}
+
+export interface Cupom {
+  codigo: string;
+  percentual: number | null;
+  /** público do cupom: "Não alunos" | "Alunos Padrão" | "Alunos renovação" | "BLACKFRIDAY" | "SOCIAL SELLER" */
+  categoria: string | null;
+  /** descrição livre da planilha sobre onde o cupom vale */
+  produtosElegiveis: string | null;
+  /** mensagem pronta usada pelo atendimento */
+  mensagem: string | null;
+}
+
+export interface OfertaPersonalizada {
+  /** produto guarda-chuva na Eduzz ("Oferta personalizada") */
+  idEduzz: string;
+  /** "parcela c/ juros" | "parcela s/ juros" */
+  parcelamento: string | null;
+  preco: number;
+  checkout: string | null;
+}
+
+export interface DegrauDesconto {
+  preco: number | null;
+  /** checkout Eduzz com o desconto já aplicado (alguns degraus não têm link) */
+  checkout: string | null;
+}
+
+export interface ProdutoComDesconto {
+  idEduzz: string | null;
+  nome: string;
+  area: string | null;
+  ferramenta: string | null;
+  formato: string | null;
+  paginaOferta: string | null;
+  /** escada de preços: do maior para o menor, cada degrau com seu checkout */
+  escada: DegrauDesconto[];
+}
+
+export const produtos = produtosDb.produtos as unknown as Produto[];
+export const cupons = cuponsDb.cupons as unknown as Cupom[];
+export const ofertasPersonalizadas = ofertasDb.ofertas as unknown as OfertaPersonalizada[];
+export const produtosComDesconto = linksDescontoDb.produtos as unknown as ProdutoComDesconto[];
+export const sumarios = sumariosDb;
+
+/** Busca por slug ou por ID da Eduzz. */
+export function produtoPor(idOuIdEduzz: string): Produto | undefined {
+  return produtos.find((p) => p.id === idOuIdEduzz || p.idEduzz === idOuIdEduzz);
+}
+
+/** Produtos de uma categoria ("combo", "isolado", "assinatura"...). */
+export function produtosPorCategoria(categoria: string): Produto[] {
+  return produtos.filter((p) => p.categoria === categoria);
+}
+
+/** Produtos de uma área ("Fiscal", "Policial"...). */
+export function produtosPorArea(area: string): Produto[] {
+  return produtos.filter((p) => p.area === area);
+}
+
+/** Produtos vendáveis hoje: ativos (ou sem status) e com link de checkout. */
+export function produtosVendaveis(): Produto[] {
+  return produtos.filter(
+    (p) => p.status !== 'inativo' && (p.checkouts.normal || p.checkouts.black),
+  );
+}
+
+/** Link de compra principal do produto (normal; cai para black se for o único). */
+export function checkoutPrincipal(p: Produto): string | null {
+  return p.checkouts.normal ?? p.checkouts.black ?? p.checkouts.outros[0]?.url ?? null;
+}
+
+/** Escada de descontos de um produto (links com cupom aplicado), se houver. */
+export function escadaDeDesconto(p: Produto): ProdutoComDesconto | undefined {
+  return produtosComDesconto.find((d) => d.idEduzz && d.idEduzz === p.idEduzz);
+}
+
+/**
+ * Oferta exibível de um produto: par CONSISTENTE de preço e checkout
+ * (o botão de compra cobra exatamente o preço mostrado).
+ * Regra: se existe preço + checkout da Black (desconto vigente segundo a planilha),
+ * usa esse par com o preço cheio riscado; senão cai no par normal, sem risco.
+ */
+export interface Oferta {
+  /** preço cobrado no checkout */
+  preco: number;
+  /** preço "de" para riscar (null = sem desconto a exibir) */
+  precoAntigo: number | null;
+  /** percentual de desconto inteiro (ex.: 45), null quando não há */
+  percentualOff: number | null;
+  /** link de checkout Eduzz que cobra `preco` */
+  checkout: string;
+}
+
+export function ofertaAtual(p: Produto): Oferta | null {
+  const { cheio, black } = p.precos;
+  if (p.checkouts.black && black !== null) {
+    const temRisco = cheio !== null && cheio > black;
+    return {
+      preco: black,
+      precoAntigo: temRisco ? cheio : null,
+      percentualOff: temRisco ? Math.round((1 - black / cheio) * 100) : null,
+      checkout: p.checkouts.black,
+    };
+  }
+  if (p.checkouts.normal && cheio !== null) {
+    return { preco: cheio, precoAntigo: null, percentualOff: null, checkout: p.checkouts.normal };
+  }
+  return null;
+}
+
+const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+/** "R$ 1.094,00" (determinístico: mesmo resultado no servidor e no navegador) */
+export function formatarPreco(valor: number): string {
+  return brl.format(valor);
+}
+
+/**
+ * Capa do produto (WebP otimizado em /public/capas, gerado por scripts/build-capas.js).
+ * null = produto ainda sem capa; a UI usa o fallback desenhado.
+ */
+export interface Capa {
+  src: string;
+  width: number;
+  height: number;
+}
+
+const capas = capasDb.capas as Record<string, Capa>;
+
+export function capaDe(produtoOuId: Produto | string): Capa | null {
+  const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
+  return capas[id] ?? null;
+}

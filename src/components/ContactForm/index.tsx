@@ -7,7 +7,6 @@ export default function ContactForm() {
   return (
     <section className={styles.contactSection} id="contato">
       <div className={styles.container}>
-        <span className={styles.sectionTag}>Contato</span>
         <h2 className={styles.title}>
           Fale com a Nossa <span className={styles.titleAccent}>Equipe</span>
         </h2>

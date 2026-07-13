@@ -1,0 +1,35 @@
+{
+  "geradoEm": "2026-07-03",
+  "fonte": "Produtos (1).xlsx (aba copy)",
+  "mensagensDesconto": [
+    "Aproveite o super desconto e leve esses poderosos flashcards para estudar de forma ativa e fixar os principais detalhes de Legislação Tributária!",
+    "Aproveite o super desconto e leve esses poderosos resumos para estudar os assuntos mais cobrados deLegislação Tributária!",
+    "Aproveite esse SUPER DESCONTO e LEVE AGORA!"
+  ],
+  "produtosDestacados": [
+    {
+      "idEduzz": "2895467",
+      "nome": "Combo Flashcards Fiscal Regular"
+    },
+    {
+      "idEduzz": "2895045",
+      "nome": "Combo Resumo Fiscal Regular"
+    },
+    {
+      "idEduzz": "2902077",
+      "nome": "Flashcards Reforma Tributária"
+    },
+    {
+      "idEduzz": "2902079",
+      "nome": "Resumo Isolada Reforma Tributária"
+    },
+    {
+      "idEduzz": "2902073",
+      "nome": "Flashcards isolado Legislação Tributária SEFA-PA"
+    },
+    {
+      "idEduzz": "2902063",
+      "nome": "Resumo isolado Legislação Tributária SEFA-PA"
+    }
+  ]
+}

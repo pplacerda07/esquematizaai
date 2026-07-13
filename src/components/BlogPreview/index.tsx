@@ -53,7 +53,7 @@ export default function BlogPreview() {
           <div className={styles.newsGrid}>
             <article className={styles.featuredCard}>
               <span className={styles.featuredDate}>
-                <span className={styles.dateDash}>—</span> {newsFeatured.date}
+                <span className={styles.dateDash}>·</span> {newsFeatured.date}
               </span>
               <h3 className={styles.featuredTitle}>{newsFeatured.title}</h3>
             </article>

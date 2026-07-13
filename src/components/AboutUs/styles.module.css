@@ -1,12 +1,37 @@
 .aboutSection {
   background-color: var(--color-neutral-light);
   padding: 6rem 5%;
+  position: relative;
+  overflow: hidden; /* contém a assinatura gigante do fundo */
+}
+
+/* assinatura Moonlight: uma faixa horizontal atravessando a seção inteira (marca d'água) */
+.sectionWatermark {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* uma linha só, atravessando a seção na horizontal */
+  font-family: var(--font-accent);
+  font-size: clamp(8.75rem, 32vw, 30rem); /* ~2,5x maior, gigante ao fundo */
+  line-height: 1;
+  color: var(--color-hot-primary);
+  opacity: 0.09;
+  text-transform: lowercase; /* Moonlight sempre em minúsculas */
+  pointer-events: none;
+  user-select: none;
 }
 
 .container {
   display: flex;
   gap: 4rem;
   align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* conteúdo por cima da assinatura */
 }
 
 .imageColumn {
@@ -16,15 +41,65 @@
 
 .imageWrapper {
   position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   border-radius: 1rem;
   overflow: hidden;
+  box-shadow: 0 20px 45px rgba(38, 52, 79, 0.18);
 }
 
+/* carrossel de fotos: imagens empilhadas, só a ativa visível (fade) */
 .aboutImage {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.aboutImageActive {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutImage {
+    transition: none;
+  }
+}
+
+.photoDots {
+  position: absolute;
+  bottom: 0.9rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.photoDot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(247, 247, 247, 0.55);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.photoDot:hover {
+  background-color: rgba(247, 247, 247, 0.85);
+}
+
+.photoDot:focus-visible {
+  outline: 2px solid var(--color-neutral-light);
+  outline-offset: 2px;
+}
+
+.photoDotActive {
+  background-color: var(--color-hot-primary);
+  transform: scale(1.25);
 }
 
 .floatingBadge {
@@ -58,30 +133,21 @@
   flex: 1;
 }
 
-.sectionTag {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--color-hot-primary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  display: block;
-}
-
 .title {
   font-family: var(--font-heading);
   font-size: 3.5rem;
   color: var(--color-neutral-dark);
   line-height: 1.1;
-  margin-bottom: 2.5rem;
+  margin: 0 0 1.25rem;
 }
 
-.titleAccent {
-  font-family: var(--font-accent);
-  color: var(--color-hot-primary);
-  font-size: 4rem;
-  display: inline-block;
-  margin-left: 0.5rem;
+.intro {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-cold-dark);
+  opacity: 0.85;
+  line-height: 1.65;
+  margin: 0 0 2.5rem;
 }
 
 .blocksGrid {
@@ -94,17 +160,49 @@
 .block {
   display: flex;
   gap: 1.5rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
-.blockIcon {
-  color: var(--color-cold-primary);
-  background-color: var(--color-cold-light);
-  padding: 1rem;
+/* gabarito: uma alternativa por tópico, marcada à caneta como num cartão-resposta */
+.gabLetter {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(38, 52, 79, 0.28);
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-cold-dark);
+}
+
+.gabMarked {
+  position: relative;
+  border-color: transparent;
+  color: var(--color-hot-dark);
+}
+
+.gabMarked::before,
+.gabMarked::after {
+  content: '';
+  position: absolute;
+  border: 2.5px solid var(--color-hot-primary);
+  border-radius: 47% 53% 52% 48% / 50% 47% 53% 50%;
+  pointer-events: none;
+}
+
+.gabMarked::before {
+  inset: -4px;
+  rotate: -6deg;
+}
+
+.gabMarked::after {
+  inset: -1px;
+  rotate: 9deg;
+  opacity: 0.65;
 }
 
 .blockContent h3 {
@@ -125,6 +223,8 @@
 }
 
 .btnCta {
+  box-sizing: border-box; /* âncora não herda o border-box nativo de <button> */
+  display: inline-block;
   background-color: transparent;
   color: var(--color-hot-primary);
   border: 2px solid var(--color-hot-primary);
@@ -133,8 +233,9 @@
   padding: 1rem 2.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 .btnCta:hover {
@@ -142,11 +243,33 @@
   color: var(--color-neutral-light);
 }
 
+.btnCta:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
   }
+  .imageColumn {
+    width: 100%;
+    max-width: 420px;
+  }
   .floatingBadge {
     right: 20px;
+  }
+  .title {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floatingBadge {
+    right: 12px;
+    padding: 1.15rem 1.5rem;
+  }
+  .badgeNumber {
+    font-size: 2.4rem;
   }
 }

@@ -49,7 +49,7 @@ export default function Navbar() {
       </div>
 
       <div className={styles.actions}>
-        <a href="/admin" className={styles.btnLogin}>Entrar</a>
+        <a href="https://esquematizaai.com/minha-conta/" className={styles.btnLogin}>Entrar</a>
         <button className={styles.btnSignup}>Cadastrar</button>
       </div>
     </nav>

@@ -1,0 +1,90 @@
+{
+  "geradoEm": "2026-07-03",
+  "fonte": "Produtos (1).xlsx (aba Cupom)",
+  "cupons": [
+    {
+      "codigo": "RSWU39ZG",
+      "percentual": 10,
+      "categoria": "Não alunos",
+      "produtosElegiveis": "todos os produtos",
+      "mensagem": "Segue cupom de 10%:\n\nCódigo: RSWU39ZG"
+    },
+    {
+      "codigo": "K2H6T2YB",
+      "percentual": 20,
+      "categoria": "Alunos Padrão",
+      "produtosElegiveis": "todos os produtos",
+      "mensagem": "Segue cupom de 20%:\n\nCódigo: K2H6T2YB"
+    },
+    {
+      "codigo": "BQD3T3Q5",
+      "percentual": 25,
+      "categoria": "Alunos renovação",
+      "produtosElegiveis": "Super Combo Resumo + Flashcards\nexclusivo renovação",
+      "mensagem": null
+    },
+    {
+      "codigo": "CRHX5Z6T",
+      "percentual": 30,
+      "categoria": "Alunos renovação",
+      "produtosElegiveis": "todos os produtos",
+      "mensagem": null
+    },
+    {
+      "codigo": "SJQTGV8V",
+      "percentual": 40,
+      "categoria": "Alunos renovação",
+      "produtosElegiveis": "Combo Resumos para concursos da Área Fiscal 2.0\nCombo Flashcards para concursos da Área Fiscal 2.0\n\nResumos Combo Regular Controle 2.0\nFlashcards Combo Regular Gestão e Controle 2.0\n\nResumos Combo Regular Tribunais 1.0\nFlashcards Combo Regular Tribunais\n\nResumos Combo Regular Policial 1.0\nFlashcards Combo Regular Policial",
+      "mensagem": null
+    },
+    {
+      "codigo": "G2VMNWRN",
+      "percentual": 50,
+      "categoria": "Alunos renovação",
+      "produtosElegiveis": "Combo Resumos para concursos da Área Fiscal 2.0\nCombo Flashcards para concursos da Área Fiscal 2.0\n\nResumos Combo Regular Controle 2.0\nFlashcards Combo Regular Gestão e Controle 2.0\n\nResumos Combo Regular Tribunais 1.0\nFlashcards Combo Regular Tribunais\n\nResumos Combo Regular Policial 1.0\nFlashcards Combo Regular Policial",
+      "mensagem": null
+    },
+    {
+      "codigo": "BLACK30",
+      "percentual": 30,
+      "categoria": "BLACKFRIDAY",
+      "produtosElegiveis": null,
+      "mensagem": null
+    },
+    {
+      "codigo": "BLACKVL30",
+      "percentual": 30,
+      "categoria": "BLACKFRIDAY",
+      "produtosElegiveis": null,
+      "mensagem": null
+    },
+    {
+      "codigo": "SSESQ10",
+      "percentual": 10,
+      "categoria": "SOCIAL SELLER",
+      "produtosElegiveis": null,
+      "mensagem": null
+    },
+    {
+      "codigo": "SS15ESQ",
+      "percentual": 15,
+      "categoria": "SOCIAL SELLER",
+      "produtosElegiveis": null,
+      "mensagem": null
+    },
+    {
+      "codigo": "20SSESQ",
+      "percentual": 20,
+      "categoria": "SOCIAL SELLER",
+      "produtosElegiveis": null,
+      "mensagem": null
+    },
+    {
+      "codigo": "SSESQM30",
+      "percentual": 30,
+      "categoria": "SOCIAL SELLER",
+      "produtosElegiveis": null,
+      "mensagem": null
+    }
+  ]
+}

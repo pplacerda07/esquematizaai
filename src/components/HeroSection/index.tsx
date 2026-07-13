@@ -1,11 +1,32 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from './styles.module.css';
 import Countdown from './Countdown';
 import UrgencyBar from './UrgencyBar';
 import LiveTicker from './LiveTicker';
+import OfferCarousel, { type OfertaHero } from './OfferCarousel';
+import { produtoPor, ofertaAtual } from '@/data/catalogo';
+
+// Ofertas reais que giram no card do hero: os 4 combos por área + assinatura.
+// Se um produto perder preço ou checkout no catálogo, sai do carrossel sozinho.
+const HERO_OFERTA_IDS = ['2903930', '2903931', '2903935', '2903937', '2901041'];
 
 export default function HeroSection() {
+  const ofertas: OfertaHero[] = HERO_OFERTA_IDS.flatMap((id) => {
+    const p = produtoPor(id);
+    const o = p ? ofertaAtual(p) : null;
+    return p && o
+      ? [{
+          id: p.id,
+          nome: p.nome,
+          area: p.area,
+          preco: o.preco,
+          precoAntigo: o.precoAntigo,
+          percentualOff: o.percentualOff,
+          checkout: o.checkout,
+        }]
+      : [];
+  });
+
   return (
     <>
       <UrgencyBar />
@@ -16,23 +37,18 @@ export default function HeroSection() {
 
         <div className={styles.container}>
           <div className={styles.columnLeft}>
-            <div className={styles.urgencyBadge}>
-              <span className={styles.pulseDot}></span>
-              Últimas vagas — turma 2026
-            </div>
-
             <h1 className={styles.title}>
               VOCÊ É O <span className={styles.titleHighlight}>PRÓXIMO</span>
               <br />
               aprovado no Fisco
               <br />
-              com o método <span className={styles.titleAccent}>Esquematizado</span>
+              com o método <span className={styles.titleAccent}>esquematizado</span>
             </h1>
 
             <p className={styles.subtitle}>
               Pare de perder meses estudando errado. Mapas mentais, resumos visuais e
-              questões comentadas para você gabaritar <strong>RFB, SEFAZ e ISS</strong> —
-              em metade do tempo.
+              questões comentadas para você gabaritar <strong>RFB, SEFAZ e ISS</strong> em
+              metade do tempo.
             </p>
 
             <div className={styles.benefitList}>
@@ -81,62 +97,7 @@ export default function HeroSection() {
 
             <div className={styles.offerStack}>
               <Countdown />
-
-              <div className={styles.offerCard}>
-                <div className={styles.offerTag}>OFERTA DE LANÇAMENTO</div>
-                <div className={styles.pixStamp}>
-                  <span className={styles.pixStampLabel}>PIX</span>
-                  <span className={styles.pixStampValue}>+10%<br/>OFF</span>
-                </div>
-
-                <Image
-                  src="/logos/logo-horizontal-azul.png"
-                  alt="Esquematiza Aí"
-                  width={200}
-                  height={52}
-                  className={styles.offerLogo}
-                  priority
-                />
-
-                <div className={styles.offerLabel}>
-                  <span className={styles.bestseller}>★ MAIS VENDIDO ★</span>
-                  Plano Anual Completo
-                </div>
-
-                <div className={styles.offerPriceRow}>
-                  <span className={styles.offerOldPrice}>De R$ 1.997</span>
-                  <span className={styles.offerDiscount}>−40%</span>
-                </div>
-
-                <div className={styles.offerPrice}>
-                  <span className={styles.offerCurrency}>12x</span>
-                  <span className={styles.offerAmount}>R$ 99</span>
-                  <span className={styles.offerSuffix}>,90</span>
-                </div>
-
-                <div className={styles.offerCash}>
-                  <span className={styles.noFees}>sem juros</span> · ou R$ 1.197 à vista
-                </div>
-
-                <div className={styles.bonusBox}>
-                  <div className={styles.bonusHeader}>🎁 Bônus de lançamento</div>
-                  <ul className={styles.bonusList}>
-                    <li>1.000 questões CEBRASPE comentadas</li>
-                    <li>Mentoria em grupo no 1º mês</li>
-                    <li>Pacote de flashcards (R$ 197)</li>
-                  </ul>
-                </div>
-
-                <a href="/vitrine" className={styles.offerBtn}>
-                  GARANTIR MINHA VAGA
-                  <span className={styles.offerBtnArrow}>→</span>
-                </a>
-
-                <div className={styles.offerFooter}>
-                  <span className={styles.lockIcon}>🔒</span>
-                  Compra segura · 7 dias de garantia · Mercado Pago
-                </div>
-              </div>
+              <OfferCarousel ofertas={ofertas} />
             </div>
           </div>
         </div>

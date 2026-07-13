@@ -1,181 +1,162 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
-import { MENTORIA_URL } from '@/components/Navbar/areas';
 
-type Product = {
-  title: string;
-  description: string;
-  price?: string;
-};
+export interface VitrineItem {
+  id: string;
+  nome: string;
+  rotulo: string;
+  preco: number;
+  precoAntigo: number | null;
+  percentualOff: number | null;
+  checkout: string;
+  capa: { src: string; width: number; height: number } | null;
+}
 
-type Section = {
+export interface AreaSection {
   key: string;
   title: string;
   subtitle: string;
-  badge: string;
-  products: Product[];
-  cta: { label: string; href: string; external?: boolean };
-};
-
-function buildSections(areaName: string): Section[] {
-  return [
-    {
-      key: 'assinaturas',
-      title: 'Assinaturas',
-      subtitle: `Acesso completo a todo o conteúdo da área ${areaName}.`,
-      badge: 'Recorrente',
-      products: [
-        { title: 'Plano Mensal', description: 'Acesso a todos os materiais por 30 dias.', price: 'R$ 89,90/mês' },
-        { title: 'Plano Anual', description: 'Acesso por 12 meses com 40% de desconto.', price: '12x R$ 99,90' },
-        { title: 'Plano 2 Anos', description: 'O melhor custo-benefício para sua aprovação.', price: '24x R$ 79,90' },
-      ],
-      cta: { label: 'Quero ser assinante', href: '#assinaturas' },
-    },
-    {
-      key: 'combos',
-      title: 'Combos',
-      subtitle: 'Pacotes esquematizados com tudo que você precisa para sua aprovação.',
-      badge: 'Mais vendido',
-      products: [
-        { title: `Combo Completo ${areaName}`, description: 'Mapas, resumos, flashcards e questões.', price: 'R$ 497' },
-        { title: `Combo Essencial ${areaName}`, description: 'Os tópicos mais cobrados nas provas.', price: 'R$ 297' },
-        { title: `Combo Reta Final ${areaName}`, description: 'Revisão intensiva para os últimos 30 dias.', price: 'R$ 197' },
-      ],
-      cta: { label: 'Ver todos os combos', href: '#combos' },
-    },
-    {
-      key: 'resumos',
-      title: 'Resumos isolados',
-      subtitle: 'Conteúdos cirúrgicos por matéria — compre apenas o que você precisa.',
-      badge: 'Por matéria',
-      products: [
-        { title: 'Direito Constitucional', description: 'Resumo esquematizado com jurisprudência atualizada.', price: 'R$ 67' },
-        { title: 'Direito Administrativo', description: 'Conceitos, princípios e súmulas.', price: 'R$ 67' },
-        { title: 'Direito Tributário', description: 'CTN comentado e tabelas de prazos.', price: 'R$ 67' },
-      ],
-      cta: { label: 'Ver todos os resumos', href: '#resumos' },
-    },
-    {
-      key: 'flashcards',
-      title: 'Flashcards isolados',
-      subtitle: 'Revisão ativa e memorização de longo prazo, na medida certa.',
-      badge: 'Repetição espaçada',
-      products: [
-        { title: 'Flashcards Constitucional', description: '+500 cards com gabarito comentado.', price: 'R$ 47' },
-        { title: 'Flashcards Administrativo', description: '+450 cards organizados por tema.', price: 'R$ 47' },
-        { title: 'Flashcards Tributário', description: '+380 cards focados em prova.', price: 'R$ 47' },
-      ],
-      cta: { label: 'Ver todos os flashcards', href: '#flashcards' },
-    },
-    {
-      key: 'mentoria',
-      title: 'Mentoria',
-      subtitle: `Acompanhamento individual para você passar na área ${areaName}.`,
-      badge: 'Vagas limitadas',
-      products: [
-        { title: 'Mentoria Individual', description: 'Plano de estudos sob medida + acompanhamento semanal.' },
-        { title: 'Mentoria em Grupo', description: 'Aulas ao vivo com mentores aprovados.' },
-        { title: 'Consultoria de Edital', description: 'Análise técnica do edital e priorização de matérias.' },
-      ],
-      cta: { label: 'Aplicar para a mentoria', href: MENTORIA_URL, external: true },
-    },
-  ];
+  items: VitrineItem[];
 }
 
-export default function AreaCarousel({ areaName }: { areaName: string }) {
-  const sections = buildSections(areaName);
+const MAX_POR_SECAO = 6;
+
+const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+export default function AreaCarousel({ sections }: { sections: AreaSection[] }) {
   const [active, setActive] = useState(0);
   const total = sections.length;
 
+  if (total === 0) return null;
+
   const go = (idx: number) => setActive(((idx % total) + total) % total);
+  const temControles = total > 1;
 
   return (
     <div className={styles.carousel}>
-      <div className={styles.viewport}>
-        <div
-          className={styles.track}
-          style={{ transform: `translateX(-${active * 100}%)` }}
+      {temControles && (
+        <button
+          type="button"
+          className={`${styles.arrow} ${styles.arrowLeft}`}
+          onClick={() => go(active - 1)}
+          aria-label="Seção anterior"
         >
-          {sections.map((section) => (
-            <div key={section.key} className={styles.slide}>
-              <div className={styles.slideHeader}>
-                <span className={styles.badge}>{section.badge}</span>
-                <h2 className={styles.slideTitle}>{section.title}</h2>
-                <p className={styles.slideSubtitle}>{section.subtitle}</p>
-              </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+      )}
 
-              <div className={styles.cards}>
-                {section.products.map((product, i) => (
-                  <article key={i} className={styles.card}>
-                    <h3 className={styles.cardTitle}>{product.title}</h3>
-                    <p className={styles.cardDesc}>{product.description}</p>
-                    {product.price && (
-                      <div className={styles.cardPrice}>{product.price}</div>
-                    )}
-                    <button className={styles.cardBtn}>Quero esse</button>
-                  </article>
-                ))}
-              </div>
+      <div className={styles.viewport}>
+        <div className={styles.track} style={{ transform: `translateX(-${active * 100}%)` }}>
+          {sections.map((section) => {
+            const visiveis = section.items.slice(0, MAX_POR_SECAO);
+            const restantes = section.items.length - visiveis.length;
+            return (
+              <div key={section.key} className={styles.slide}>
+                <div className={styles.slideHeader}>
+                  <h2 className={styles.slideTitle}>{section.title}</h2>
+                  <p className={styles.slideSubtitle}>{section.subtitle}</p>
+                </div>
 
-              <div className={styles.slideFooter}>
-                {section.cta.external ? (
-                  <a
-                    href={section.cta.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.sectionCta}
-                  >
-                    {section.cta.label} →
-                  </a>
-                ) : (
-                  <a href={section.cta.href} className={styles.sectionCta}>
-                    {section.cta.label} →
-                  </a>
+                <div className={styles.cards}>
+                  {visiveis.map((item) => (
+                    <article key={item.id} className={styles.card}>
+                      {item.capa && (
+                        <Link
+                          href={`/vitrine/produto/${item.id}`}
+                          className={styles.capaWrap}
+                          aria-label={`Ver detalhes de ${item.nome}`}
+                          tabIndex={-1}
+                        >
+                          <Image
+                            src={item.capa.src}
+                            alt={`Capa de ${item.nome}`}
+                            width={item.capa.width}
+                            height={item.capa.height}
+                            className={styles.capaImg}
+                          />
+                        </Link>
+                      )}
+                      <div className={styles.cardHeader}>
+                        <span className={styles.badge}>{item.rotulo}</span>
+                        {item.percentualOff !== null && (
+                          <span className={styles.offPill}>-{item.percentualOff}%</span>
+                        )}
+                      </div>
+
+                      <h3 className={styles.cardTitle}>
+                        <Link href={`/vitrine/produto/${item.id}`} className={styles.cardTitleLink}>
+                          {item.nome}
+                        </Link>
+                      </h3>
+
+                      <div className={styles.cardPriceRow}>
+                        {item.precoAntigo !== null && (
+                          <span className={styles.cardOldPrice}>de {brl.format(item.precoAntigo)}</span>
+                        )}
+                        <span className={styles.cardPrice}>{brl.format(item.preco)}</span>
+                      </div>
+
+                      <a
+                        href={item.checkout}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.cardBtn}
+                        aria-label={`Comprar ${item.nome} por ${brl.format(item.preco)}`}
+                      >
+                        Comprar agora →
+                      </a>
+                    </article>
+                  ))}
+                </div>
+
+                {restantes > 0 && (
+                  <div className={styles.slideFooter}>
+                    <Link href="/#vitrine" className={styles.sectionCta}>
+                      Ver todos os {section.items.length} materiais →
+                    </Link>
+                  </div>
                 )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
-      <button
-        type="button"
-        className={`${styles.arrow} ${styles.arrowLeft}`}
-        onClick={() => go(active - 1)}
-        aria-label="Seção anterior"
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
+      {temControles && (
+        <button
+          type="button"
+          className={`${styles.arrow} ${styles.arrowRight}`}
+          onClick={() => go(active + 1)}
+          aria-label="Próxima seção"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      )}
 
-      <button
-        type="button"
-        className={`${styles.arrow} ${styles.arrowRight}`}
-        onClick={() => go(active + 1)}
-        aria-label="Próxima seção"
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
-
-      <div className={styles.tabs} role="tablist">
-        {sections.map((section, i) => (
-          <button
-            key={section.key}
-            type="button"
-            role="tab"
-            aria-selected={i === active}
-            className={`${styles.tab} ${i === active ? styles.tabActive : ''}`}
-            onClick={() => go(i)}
-          >
-            {section.title}
-          </button>
-        ))}
-      </div>
+      {temControles && (
+        <div className={styles.tabs} role="tablist">
+          {sections.map((section, i) => (
+            <button
+              key={section.key}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              className={`${styles.tab} ${i === active ? styles.tabActive : ''}`}
+              onClick={() => go(i)}
+            >
+              {section.title}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

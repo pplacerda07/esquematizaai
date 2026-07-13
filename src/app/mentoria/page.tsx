@@ -21,7 +21,7 @@ import ReviewsCarousel from '@/components/ReviewsCarousel';
 export const metadata: Metadata = {
   title: 'Esquematiza Mentoria | Aprovação em concursos fiscais e de controle',
   description:
-    'A mentoria que prioriza o que cada banca cobra, com plano individual e mentores aprovados. Nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e SEFAZ-RN em 2026.',
+    'A mentoria que prioriza o que cada banca cobra, com plano individual e mentor aprovado. Nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e SEFAZ-RN em 2026.',
 };
 
 // stagger: define o atraso da animação de entrada de cada elemento
@@ -31,12 +31,12 @@ const DELIVERABLES: [string, string][] = [
   ['Planejamento estratégico de estudos, pré e pós-edital', 'Reuniões de organização no começo pra montar o seu plano completo, seja do zero ou aproveitando o que você já estudou.'],
   ['Plataforma com metas diárias', 'Você abre o app e já sabe o que estudar no dia, entre teoria, questões e revisão, no tempo que você tem.'],
   ['Relatórios semanais de desempenho', 'Toda segunda você recebe o painel da sua evolução, com comparativo entre os mentorados pra saber exatamente onde está.'],
-  ['Encontros quinzenais de mentoria ao vivo', 'Ora com tema específico da sua área pra aprofundar, ora como plantão de dúvidas com o Pietro e o Sérgio.'],
+  ['Encontros quinzenais de mentoria ao vivo', 'Ora com tema específico da sua área pra aprofundar, ora como plantão de dúvidas com o Sérgio.'],
   ['Assinatura Total Esquematiza Aí', 'Resumos e flashcards de todas as matérias, pré-edital e os combos de pós-edital, atualizados pelo tempo que você ficar na mentoria. Vendida à parte por R$ 1.997,00.'],
   ['Assinatura Premium do Estratégia Concursos', 'O material teórico mais completo do mercado, incluído no plano pra você estudar a teoria de qualquer matéria. Vendida à parte por R$ 2.628,00.'],
   ['Módulo de Discursiva', 'O passo a passo da redação técnica que a banca espera, pra você não ser eliminado na segunda fase.'],
   ['Simulados exclusivos dos mentorados', 'Provas no ritmo e no ambiente oficiais pra medir desempenho e acostumar com a prova.'],
-  ['Acesso direto ao Pietro e ao Sérgio todos os dias', 'Dúvida por texto, áudio ou vídeo no WhatsApp, mais a comunidade exclusiva de mentorados.'],
+  ['Acesso direto ao Sérgio todos os dias', 'Dúvida por texto, áudio ou vídeo no WhatsApp, mais a comunidade exclusiva de mentorados.'],
   ['Descontos na rede de parceiros', 'Condições de aluno na TEC Concursos, na DP e em outros parceiros.'],
 ];
 
@@ -60,7 +60,7 @@ export default function MentoriaPage() {
 
             <p className={`${styles.heroSubtitle} ${styles.heroIn}`} style={delay(200)}>
               Em concursos fiscais e de controle, o que aprova é uma estratégia que
-              prioriza o que cada banca cobra, com plano individual e mentores aprovados
+              prioriza o que cada banca cobra, com plano individual e mentor aprovado
               te acompanhando de perto.
             </p>
 
@@ -273,8 +273,8 @@ export default function MentoriaPage() {
                 semana foge do previsto. Você estuda com o melhor material de revisão do
                 mercado, pré e pós-edital, com resumos esquematizados, flashcards e a
                 Legislação Tributária Esquematizada, sem precisar comprar material por
-                fora, e tem reuniões quinzenais com o Pietro e o Sérgio, mentores já
-                aprovados em carreira fiscal e de controle ajustando a sua rota. Para a
+                fora, e tem reuniões quinzenais com o Sérgio, mentor já aprovado em
+                carreira fiscal ajustando a sua rota. Para a
                 hora da prova, você ainda treina o Método das 5 Camadas, que organiza a
                 ordem de ataque das questões para você não travar na prova e aproveitar
                 cada minuto.
@@ -390,7 +390,7 @@ export default function MentoriaPage() {
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>
               O suporte da mentoria não é um formulário que responde em três dias úteis.
-              Você fala direto com o Pietro e o Sérgio pelo WhatsApp, por texto, áudio ou
+              Você fala direto com o Sérgio pelo WhatsApp, por texto, áudio ou
               vídeo quando a situação pede, e a resposta vem no ritmo do seu estudo, no
               mesmo dia. A cada quinze dias acontece o encontro de mentoria ao vivo, ora
               pra aprofundar um tema da sua área, ora como plantão de dúvidas. Toda segunda
@@ -439,8 +439,8 @@ export default function MentoriaPage() {
               Quem vai montar o seu plano já sentou nas cadeiras que você quer ocupar.
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>
-              A Esquematiza Mentoria é conduzida por dois auditores que cobrem as duas
-              frentes que você pode mirar. Por trás dos dois está a marca que já levou mais
+              A Esquematiza Mentoria é conduzida por um auditor que vive na pele a rotina
+              do cargo que você quer. Por trás dele está a marca que já levou mais
               de 29 mil alunos a estudar com os seus materiais e que, só em 2026, viu nossos
               alunos aprovados na SEFAZ-SP, na SEFA-PA, na SEFAZ-MT e na SEFAZ-RN. Quem vai
               ler a sua banca e ajustar o seu plano não aprendeu isso na teoria, aprendeu
@@ -448,39 +448,6 @@ export default function MentoriaPage() {
             </p>
 
             <div className={styles.mentorGrid}>
-              <article className={styles.mentorCard} data-reveal="left">
-                <div className={styles.mentorPhoto}>
-                  <Image
-                    src="/mentores/pietro.jpg"
-                    alt="Pietro Viecili, Auditor Federal de Finanças e Controle na CGU"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 450px"
-                    className={styles.mentorImg}
-                  />
-                </div>
-                <div className={styles.mentorBody}>
-                  <span className={styles.mentorRole}>Auditor Federal de Finanças e Controle · CGU</span>
-                  <h3 className={styles.mentorName}>Pietro Viecili</h3>
-                  <p className={styles.mentorBio}>
-                    Passou em segundo lugar na CGU, com aprovações em primeiro lugar no
-                    TJ-RO e na DPE-RO e aprovação na PF. Hoje está à frente da vertical de
-                    mentoria.
-                  </p>
-                  <blockquote className={styles.mentorQuote}>
-                    Antes de qualquer aprovação, eu colecionei muitas reprovações. Sou um
-                    mero Tecnólogo que terminou o ensino médio pelo ENCCEJA, pai de quatro
-                    filhos, atleta nas horas vagas, e bati na trave sete vezes antes de
-                    virar auditor: TCE-RJ, TCDF por cinco centésimos de ponto, TCE-AM por
-                    errar o preenchimento de uma folha de discursiva, TCU, TCE-SC. Cada uma
-                    dessas doeu demais! Mas foram elas que me ensinaram a estudar com
-                    estratégia em vez de estudar no escuro. Foi assim que vieram os primeiros
-                    lugares no TJ-RO e na DPE-RO, a aprovação na PF e o segundo lugar na CGU.
-                    Agora vou montar pra você o plano que eu queria ter tido lá no começo.
-                    Vem que eu te mostro o caminho!
-                  </blockquote>
-                </div>
-              </article>
-
               <article className={styles.mentorCard} data-reveal="right">
                 <div className={styles.mentorPhoto}>
                   <Image
@@ -520,21 +487,9 @@ export default function MentoriaPage() {
             <div className={styles.proofGallery}>
               <figure className={styles.proofItem} data-reveal="fade" style={delay(0)}>
                 <div className={styles.proofImgWrap}>
-                  <Image src="/mentores/pietro-campo.jpg" alt="Pietro auditando em campo com a polo da CGU" fill sizes="(max-width: 768px) 100vw, 300px" className={styles.proofImg} />
-                </div>
-                <figcaption>Pietro auditando em campo, como servidor da CGU.</figcaption>
-              </figure>
-              <figure className={styles.proofItem} data-reveal="fade" style={delay(110)}>
-                <div className={styles.proofImgWrap}>
                   <Image src="/mentores/sergio-evento.jpg" alt="Sérgio em evento do Estratégia Concursos" fill sizes="(max-width: 768px) 100vw, 300px" className={styles.proofImg} />
                 </div>
                 <figcaption>Sérgio em evento do Estratégia Concursos, nosso parceiro.</figcaption>
-              </figure>
-              <figure className={styles.proofItem} data-reveal="fade" style={delay(220)}>
-                <div className={styles.proofImgWrap}>
-                  <Image src="/mentores/pietro-podcast.jpg" alt="Pietro em entrevista falando sobre preparação para concursos" fill sizes="(max-width: 768px) 100vw, 300px" className={styles.proofImg} />
-                </div>
-                <figcaption>Pietro em entrevista, falando sobre preparação.</figcaption>
               </figure>
             </div>
           </div>
@@ -567,7 +522,7 @@ export default function MentoriaPage() {
                   ['Planejamento estratégico de estudos', ', pré e pós-edital'],
                   ['Plataforma com metas diárias', ' de teoria, questões e revisão'],
                   ['Relatórios semanais de desempenho', ' com comparativo entre os mentorados'],
-                  ['Encontros quinzenais ao vivo', ' com o Pietro e o Sérgio'],
+                  ['Encontros quinzenais ao vivo', ' com o Sérgio'],
                   ['Assinatura Total Esquematiza Aí', ', com resumos e flashcards de todas as matérias, pré e pós-edital'],
                 ],
               },
@@ -576,7 +531,7 @@ export default function MentoriaPage() {
                 items: [
                   ['Assinatura Premium do Estratégia Concursos', ''],
                   ['Módulo de Discursiva e simulados exclusivos', ' dos mentorados'],
-                  ['Acesso diário aos mentores', ' no WhatsApp e à comunidade de mentorados'],
+                  ['Acesso diário ao mentor', ' no WhatsApp e à comunidade de mentorados'],
                   ['E os bônus', ': Estudo Esquematizado, Sala de Estudos Virtual e o treinamento Revisão Esquematizada'],
                 ],
               },

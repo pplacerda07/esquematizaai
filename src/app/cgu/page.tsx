@@ -14,16 +14,10 @@ import MentorPhoto from '@/components/MentorPhoto';
 export const metadata: Metadata = {
   title: 'Pré-edital CGU | Aula gratuita + grupo VIP · Esquematiza Aí',
   description:
-    'O concurso da CGU já foi autorizado. Assista à aula gratuita com o Pietro (aprovado em 2º lugar na CGU) e entre no grupo VIP do pré-edital para receber o ciclo de estudos e largar na frente.',
+    'O concurso da CGU já foi autorizado. Assista à aula gratuita e entre no grupo VIP do pré-edital para receber o ciclo de estudos e largar na frente.',
 };
 
 const delay = (ms: number) => ({ ['--reveal-delay']: `${ms}ms` } as React.CSSProperties);
-
-const PIETRO_SHOTS = [
-  { src: '/mentores/pietro.jpg', caption: 'No estúdio' },
-  { src: '/mentores/pietro-campo.jpg', caption: 'Auditando em campo, na CGU' },
-  { src: '/mentores/pietro-podcast.jpg', caption: 'Em entrevista' },
-];
 
 const SERGIO_SHOTS = [
   { src: '/mentores/sergio.jpg', caption: 'Time Esquematiza' },
@@ -166,34 +160,13 @@ export default function CguCapturePage() {
                 Quem vai te orientar já passou e ainda senta na cadeira que você quer ocupar.
               </h2>
               <p className={styles.authoritySub} data-reveal style={delay(140)}>
-                Não é teoria de quem nunca prestou concurso. São dois auditores na ativa
+                Não é teoria de quem nunca prestou concurso. É auditor na ativa
                 conduzindo a sua preparação de perto.
               </p>
             </div>
 
             <div className={styles.mentorRows}>
               <article className={styles.mentorRow}>
-                <div className={styles.mentorPhotoCol} data-reveal="left">
-                  <MentorPhoto shots={PIETRO_SHOTS} alt="Pietro Viecili, Auditor da CGU" interval={3800} />
-                </div>
-                <div className={styles.mentorTextCol} data-reveal="right">
-                  <span className={styles.mentorRole}>Auditor Federal de Finanças e Controle · CGU</span>
-                  <h3 className={styles.mentorName}>Pietro Viecili</h3>
-                  <p className={styles.mentorBio}>
-                    Aprovado em <strong>segundo lugar</strong> para Auditor da CGU — depois de
-                    reprovar sete vezes. É ele quem conduz a aula gratuita e o grupo do
-                    pré-edital, te entregando o ciclo de estudos e a leitura da banca em
-                    primeira mão.
-                  </p>
-                  <ul className={styles.mentorFacts}>
-                    <li>2º lugar na CGU</li>
-                    <li>Aprovado na PF</li>
-                    <li>1º lugar no TJ-RO e na DPE-RO</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article className={`${styles.mentorRow} ${styles.mentorRowReverse}`}>
                 <div className={styles.mentorPhotoCol} data-reveal="right">
                   <MentorPhoto shots={SERGIO_SHOTS} alt="Sérgio Furtado, Auditor-Fiscal" interval={4300} />
                 </div>

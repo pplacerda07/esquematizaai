@@ -1,0 +1,2387 @@
+{
+  "geradoEm": "2026-07-03",
+  "fonte": "Produtos (1).xlsx (abas sumario_* e modulos_*)",
+  "resumosRegulares": {
+    "totalPaginas": 3200,
+    "totalDisciplinas": 37,
+    "disciplinas": [
+      {
+        "disciplina": "Língua Portuguesa",
+        "versao": "5",
+        "paginas": 166,
+        "sumario": "FORMAÇÃO DAS PALAVRAS\n01. Composição\n02. Derivação\nORTOGRAFIA\n01. Acentuação Gráfica\n01.01. Monossílabos Tônicos\n01.02. Oxítonas\n01.03. Paroxítonas\n01.04. Proparoxítonas\n01.05. Hiato\n01.06. Acentos Diferenciais\n02. Crase\n03. Hífen\n04. Emprego dos “PORQUÊS” \nMORFOLOGIA 1\n01. Substantivos\n01.01. Tipos de Substantivos Quanto à Formação\n01.02. Tipos de Substantivos Quanto à Referência\n01.03. Flexão de Gênero dos Substantivos\n01.04. Flexão em Número de Substantivos Simples\n01.05. Flexão em Número de Substantivos Compostos\n01.06. Flexão em Grau dos Substantivos\n01.07. Substantivação de Palavras\n02. Artigos\n02.01. Formas Combinadas do Artigo Definido\n02.02. Principais Empregos Facultativos do Artigo Definido\n02.03. Semântica dos Artigos\n03. Adjetivos\n03.01. Classificação Quanto à Visão do Observador\n03.02. Classificação dos Adjetivos Quanto à Forma\n03.03. Classificação dos Adjetivos Quando ao Grau\n03.04. Locuções Adjetivas\n04. Numeral\nMORFOLOGIA 2\n01. Pronomes\n01.01. Pronomes Pessoais\n01.02. Pronomes de Tratamento\n01.03. Pronomes Possessivos\n01.04. Pronomes Demonstrativos\n01.05. Pronomes Indefinidos\n01.06. Pronomes Interrogativos\n01.07. Pronomes Relativos\n01.08. Colocação Pronominal\n02. Verbos\n02.01. Classificação Quanto ao Tipo\n02.02. Estrutura do Verbo\n02.03. Conjugação Verbal\n02.04. Formas Nominais (Infinitivo, Gerúndio e Particípio)\n02.05. Classificação Quanto à Formação\n02.06. Locução Verbal\n02.07. Vozes Verbais\n02.08. Verbos Excepcionais\n03. Advérbio\n03.01. Classificação dos Advérbios Quanto ao Tipo\n03.02. Classificação dos Advérbios Quanto ao Grau\n04. Preposições\n05. Conjunções\n05.01. Conjunções Coordenativas\n05.02. Conjunções Subordinativas\n06. Interjeições\nSINTAXE\n01. Frase, Oração e Período\n02. Termos Essenciais da Oração\n02.01. Sujeito\n02.02. Predicado\n03. Termos Integrantes da Oração\n03.01. Predicativo\n03.02. Objeto\n03.03. Complemento Nominal\n03.04. Agente da Passiva\n04. Termos Acessórios da Oração\n04.01. Adjunto Adnominal\n04.02. Adjunto Adverbial\n04.03. Aposto\n04.04. Vocativo\n05. Transitividade Verbal\n06. Período Composto por Coordenação ou Subordinação\n06.01. Período Composto por Coordenação\n06.02. Período Composto por Subordinação\n07. Coerência e Coesão Textual\n07.01. Coerência Textual\n07.02. Coesão Textual\n08. Funções Morfológicas e Sintáticas das Partículas “QUE” e “SE” \n08.01. Funções Morfológicas da Partícula “QUE” \n08.02. Funções Sintáticas da Partícula “QUE” na Função de Pronome Relativo\n08.03. Funções Morfológicas da Partícula “SE” \n08.04. Funções Sintáticas da Partícula “SE” \nCONCORDÂNCIA VERBAL E NOMINAL\n01. Concordância Verbal\n01.01. Sujeito Simples\n01.02. Sujeito Composto\n01.03. Demais Casos\n02. Concordância Nominal\n02.01. Palavras que são Invariáveis\nREGÊNCIA VERBAL E NOMINAL\n01. Regência Verbal\n02. Regência Nominal\nPONTUAÇÃO\n01. Ponto\n02. Ponto de Interrogação\n03. Ponto de Exclamação\n04. Dois-Pontos\n05. Travessão\n06. Parênteses\n07. Ponto e Vírgula\n08. Vírgula\n08.01. Uso Obrigatório da Vírgula\n08.02. Casos de Proibição do Uso da Vírgula\n09. Aspas\nSEMÂNTICA\n01. Principais Áreas da Semântica\n02. Relações de Sentido entre Palavras\n03. Fenômenos Semânticos Importantes\nFIGURAS DE LINGUAGEM\n01. Figuras de Palavras\n02. Figuras de Pensamentos\n03. Figuras de Construção (Sintaxe) \nVÍCIOS DE LINGUAGEM\nTIPOLOGIA TEXTUAL\n01. Texto Narrativo\n02. Texto Descritivo\n03. Texto Dissertativo-Expositivo\n04. Texto Dissertativo-Argumentativo\n05. Texto Injuntivo\n06. Resumo Esquematizado sobre Tipologia e Gênero Textual"
+      },
+      {
+        "disciplina": "Raciocínio Lógico",
+        "versao": "1",
+        "paginas": 31,
+        "sumario": "01.Proposições: Definição, Reconhecimento, Princípios Lógicos\n02.Operadores Lógicos (Representação Simbólica; Diferença entre Proposição Simples e Composta) \n03.Tabela-Verdade das Proposições Compostas\n04.Condição Necessária e Suficiente\n05.Tautologia, Contradição e Contingência\n06.Equivalências Lógicas (Inclui Negação de Proposições Compostas) \n07. Lógica de Argumentação\n08. Diagramas Lógicos, Proposições Categóricas, Negação de Quantificadores\n09. Verdades e Mentiras\n10. Associação de Informações\n11. Tabela Resumo"
+      },
+      {
+        "disciplina": "Matemática Básica",
+        "versao": "1",
+        "paginas": 109,
+        "sumario": "Matemática Básica\n01.Conjuntos Numéricos\n02.Unidades de Medida\n03.Razão e Proporção\n04.Equações\n05.Funções\n06.Função Afim (Função de Primeiro Grau) \n07.Função Quadrática (Função de Segundo Grau) \n08.Função Exponencial\n09.Função Logarítmica\n10.Progressões Aritméticas e Geométricas\nPROBABILIDADE\n11.Probabilidade e Análise Combinatória\n12.Combinação de Eventos\nESTATÍSTICA\n13.Conceitos Iniciais\n14.Formas de Apresentação de Dados\n15.Medidas de Tendência Central\nGEOMETRIA\n16.Geometria Plana\n17.Geometria Espacial"
+      },
+      {
+        "disciplina": "Matemática Financeira",
+        "versao": "5",
+        "paginas": 45,
+        "sumario": "Matemática Financeira\n01.Conceitos Iniciais e Definições\n02.Regime de Juros e Descontos Simples\n03.Regime de Juros e Descontos Compostos\n04.Custo Efetivo em Transações com Tarifas Adicionais\n05.Inflação, Juros Reais e Juros Aparentes\n06.Equivalência de Capitais\n07.Rendas (Séries de Pagamentos) \n08.Rendas Perpétuas\n09.Sistemas de Amortização\n10.Análise de Investimentos\n11.Conceitos Matemáticos"
+      },
+      {
+        "disciplina": "Direito Administrativo",
+        "versao": "5",
+        "paginas": 173,
+        "sumario": "INTRODUÇÃO AO DIREITO ADMINISTRATIVO\n01. Origem, Conceito e Fontes\nREGIME JURÍDICO ADMINISTRATIVO\n01. Regime Jurídico da Administração e Regime Jurídico Administrativo\n02. Princípios Expressos, Explícitos ou Constitucionais\n03. Princípios Implícitos, Reconhecidos e Infraconstitucionais\nATOS ADMINISTRATIVOS\n01. Conceito de Atos Administrativos\n02. Mérito Administrativo\n03. Elementos, Requisitos e Pressupostos\n04. Atributos ou Características dos Atos Administrativos\n05. Espécies, Classificação, Fases de Constituição\n06. Desfazimento do Ato Administrativo\n07. Convalidação e Conversão dos Atos Administrativos\n08. Teoria dos Motivos Determinantes\nPODERES E DEVERES DA ADMINISTRAÇÃO\n01. Poder Vinculado e Discricionário\n02. Poder Regulamentar\n03. Poder Hierárquico\n04. Poder Disciplinar\n05. Poder de Polícia\n06. Abuso de Poder: Excesso de Poder e Desvio de Finalidade\n07. Deveres da Administração\nORGANIZAÇÃO ADMINISTRATIVA\n01. Administração Direta\n02. Administração Indireta\n03. Conselhos Profissionais\n04. Desconcentração e Descentralização\n05. Agências Reguladoras e Executivas\n06. Terceiro Setor\nRESPONSABILIDADE CIVIL DO ESTADO\n01. Conceitos Iniciais e Teoria da Responsabilidade\n02. Responsabilidade Objetiva das Estatais e das Prestadoras de Serviços Públicos\n03. Responsabilidade Civil por Atos Omissivos\n04. Responsabilidade por Atos Legislativos e Judiciais\n05. Excludentes e Atenuantes de Responsabilidade\n06. Responsabilidade dos Agentes Públicos e Direito de Regresso\n07. Casos Especiais\nSERVIÇOS PÚBLICOS\n01. Conceitos\n02. Classificação\n03. Princípios\n04. Repartição de Competências\n05. Concessões\nCONTROLE DA ADMINISTRAÇÃO\n01. Conceitos, Princípios, Abrangência e Classificações\n02. Controle Administrativo\n03. Controle Legislativo ou Parlamentar\n04. Controle Popular ou Social\n05. Controle Jurisdicional\nAGENTES PÚBLICOS\n01. Conceitos para Agentes Públicos\n02. Classificação dos Agentes Públicos\n03. Funções, Cargos e Empregos Públicos\n04. Aspectos Constitucionais Pertinentes aos Servidores Públicos\nIMPROBIDADE ADMINISTRATIVA\n01. Disposições Gerais\n02. Dos Atos de Improbidade\n03. Das Penas\n04. Da Declaração de Bens\n05. Do Procedimento Administrativo e do Processo Judicial\n06. Das Disposições Penais\n07. Da Prescrição\nACESSO à INFORMAÇÃO\n01. Disposições Gerais\n02. Do Acesso à Informação e Da sua Divulgação\n03. Do Procedimento de Acesso à Informação\n04. Das Restrições de Acesso à Informação\n05. Das Responsabilidades\n04. Das Disposições Finais e Transitórias"
+      },
+      {
+        "disciplina": "Direito Constitucional",
+        "versao": "6",
+        "paginas": 163,
+        "sumario": "01. Teoria do Direito Constitucional\n02. Dos Princípios Fundamentais da Constituição\n03. Dos Direitos e Garantias Fundamentais\n04. Da Organização do Estado\n05. Da Organização dos Poderes\n06. Da Defesa do Estado e das Instituições Democráticas\n07. Da Tributação e do Orçamento\n08. Da Ordem Econômica e Financeira\n09. Da Ordem Social\n10. Ato das Disposições Constitucionais Transitórias - ADCT\n11. Controle de Constitucionalidade\n12. Jurisprudências Recentes"
+      },
+      {
+        "disciplina": "Direito Tributário",
+        "versao": "6",
+        "paginas": 206,
+        "sumario": "Introdução ao Direito Tributário\n01. Conceito de Tributo\n01.01.  Modalidade dos Tributos\n01.02.  Classificação Doutrinária dos Tributos\n01.03.  Natureza Jurídica Específica dos Tributos\n02. Espécies de Tributos\n02.01.  Impostos (Conceitos e Classificações) \n02.02.  Taxas (CF/88 e CTN) \n02.03.  Contribuições de Melhoria (CF/1988 e CTN) \n02.04.  Empréstimo Compulsório (CF/1988 e CTN) \n02.05.  Contribuições Especiais (CF/1988 e CTN) \n02.05.01. Contribuições Sociais\n02.05.02. CIDE\n02.05.03. Contribuição de Interesse das Categorias Profissionais ou Econômicas\n02.05.04. Contribuição de Iluminação Pública - COSIP\n03. Limitações Constitucionais ao Poder de Tributar (arts. 150 a 152 da CF) \n03.01.  Princípios Tributários\n03.01.01. Princípio da Legalidade\n03.01.02. Princípio da Isonomia\n03.01.03. Princípio da Irretroatividade e Anterioridade\n03.01.04. Princípio da Vedação ao Confisco\n03.01.05. Princípio da Não Limitação ao Tráfego de Pessoas e Bens\n03.01.06. Princípio da Uniformidade Geográfica\n03.01.07. Princípio da Vedação às Isenções Heterônomas\n03.01.08. Princípio da Não Discriminação baseada em Procedência ou Destino\n03.02.  Princípios Tributários incluídos pela EC nº 132/2023 (Reforma Tributária) \n03.03.  Imunidades Tributárias\n03.03.01. Imunidade Recíproca\n03.03.02. Imunidade Religiosa\n03.03.03. Imunidade dos Partidos Políticos, Entidades Sindicais dos Trabalhadores, Instituições de Educação e de Assistência Social\n03.03.04. Imunidade Cultural\n03.03.05. Imunidade da Música Nacional\n04. Competência Tributária\n04.01 Competência para Legislar sobre Direito Tributário\n04.02 Competência Tributária: Conceitos e Características\n04.03 Repartição da Competência Tributária (privativa, comum, cumulativa, residual, extraordinária e compartilhada) \n04.04. Bitributação e Bis In Idem\n05. Legislação Tributária\n05.01. Disposições Gerais da Legislação (arts. 96 a 100 do CTN) \n05.01.02. Normas Complementares\n05.01.03. Lei Complementar\n05.01.04. Medida Provisória\n05.01.05. Resoluções\n05.02 Vigência e Aplicação da Legislação Tributária (arts. 101 a 106 do CTN) \n05.02.01 Vigência da Legislação Tributária\n05.02.02.  Aplicação da Legislação Tributária\n05.03 Interpretação e Integração da Legislação Tributária (arts. 107 a 112 do CTN) \n06. Obrigação Tributária\n06.01 Disposições Gerais sobre Obrigação Tributária (conceito, obrigação principal e acessória) \n06.02 Fato Gerador (arts. 114 a 118 do CTN) \n06.03 Sujeito: Ativo e Passivo (arts. 119 a 123 do CTN) \n06.03.01 Sujeito Ativo\n06.03.02 Sujeito Passivo\n06.04 Solidariedade (arts. 124 e 125 do CTN) \n06.05 Capacidade Tributária (art. 126 do CTN) \n06.06 Domicílio Tributário (art. 127 do CTN) \n06.07 Responsabilidade Tributária (arts. 128 a 138 do CTN) \n06.07.01 Responsabilidade Por Substituição\n06.07.02 Responsabilidade Por Transferência\n06.07.03 Responsabilidade de Terceiros\n06.07.04 Responsabilidade por infrações\n06.07.05 Denúncia Espontânea\n07. Crédito Tributário\n07.01 Disposições Gerais do Crédito Tributário (arts. 139 a 141 do CTN) \n07.02 Lançamento e Constituição do Crédito Tributário (arts. 142 a 150 do CTN) \n07.02.01. Lançamento de Ofício\n07.02.02. Lançamento por Declaração\n07.02.03. Lançamento por Homologação\n07.03 Suspensão do Crédito Tributário\n07.04 Extinção do Crédito Tributário\n07.05 Exclusão do Crédito Tributário\n07.06 Garantias e Privilégios do Crédito Tributário (arts. 183 a 193 do CTN) \n08. Administração Tributária      \n08.01 Fiscalização Tributária (arts. 194 a 200 do CTN) \n08.02 Dívida Ativa Tributária (arts. 201 a 204 do CTN) \n08.03 Certidão Negativa (arts. 205 a 208 do CTN) \n09. Impostos Federais, Estaduais e Municipais\n09.01 Impostos Federais\n09.01.01 Imposto de Renda - IR\n09.01.02 Imposto sobre Produtos Industrializados - IPI\n09.01.03 Imposto sobre Operações Financeiras - IOF\n09.01.04 Imposto sobre Grandes Fortunas - IGF\n09.01.05 Imposto de Exportação - IE\n09.01.06 Imposto de Importação - II\n09.01.07 Imposto sobre Propriedade Territorial Rural - ITR\n09.02 Impostos Estaduais\n09.02.01 Imposto sobre Circulação de Mercadorias e Serviços - ICMS\n09.02.02 Imposto sobre Propriedade de Veículos Automotores - IPVA\n09.02.03 Imposto de Transmissão Causa Mortis e Doação - ITCMD\n09.03 Impostos Municipais\n09.03.01 Imposto sobre Serviços - ISS\n09.03.02 Imposto Predial e Territorial Urbano - IPTU\n09.03.03 Imposto sobre Transmissão de Bens Imóveis - ITBI\n10. Reforma Tributária\n11. Repartição Constitucional de Receitas Tributárias\n12. Planejamento Tributário: Elisão, Evasão e Elusão Fiscal"
+      },
+      {
+        "disciplina": "Direito Empresarial",
+        "versao": "3",
+        "paginas": 124,
+        "sumario": "Direito Empresarial\nConceito, Autonomia, Fontes, Princípios e Histórico\n01. Conceito de Direito Empresarial\n02. Fontes do Direito Empresarial\n03. Histórico do Direito Empresarial\n04. Princípios do Direito Empresarial\nDireito de Empresa\n01. Empresário\n01.01.  Empresa x Empresário\n01.02.  Agentes Econômicos Excluídos das Regras de Empresário\n01.03.  Empresário Individual x Sociedade Empresária\n01.04.  Capacidade e Impedimento Para Ser Empresário\n01.05.  Empresário Casado\n01.06.  Inscrição\n02. Estabelecimento\nInstitutos Complementares\n01. Registro\n02. Nome Empresarial\n02.01.  Princípios do Nome Empresarial\n02.02.  Cancelamento do Nome Empresarial\n02.03.  Nome Empresarial em Cada Tipo de Sociedade\n03. Prepostos\n03.01. Gerente\n03.02. Contabilista e outros Auxiliares\n04. Escrituração\n04.01. Formalidades\n04.02. Livros Empresariais\n04.03. Sigilo dos Livros\n04.04. Conservação dos Livros\n04.05. Força Probante da Escrituração\nDa Sociedade\n01. Disposições Gerais\n01.01. Conceito e Requisitos de Sociedade\n01.02. Classificação das Sociedades\n02. Sociedades Não Personificadas\n02.01. Sociedade em Comum\n02.02. Sociedade em Conta de Participação\n03. Sociedade Simples\n03.01. Contrato Social\n03.02. Direitos e Obrigações dos Sócios\n03.03. Administração\n03.04. Relações com Terceiros\n04. Sociedade em Nome Coletivo\n05. Sociedade em Comandita Simples\n06. Sociedade em Comandita Por Ações\n07. Cooperativas\n08. Sociedade Limitada\n08.01. Sociedade Unipessoal\n08.02. Capital Social\n08.03. Administração\n08.04. Conselho Fiscal\n08.05. Deliberações dos Sócio\n09. Sociedade Anônima\n09.01. Constituição da Companhia\n09.02. Capital Social\n09.03. Valores Mobiliários\n09.03.01. Ações\n09.03.02. Partes Beneficiárias\n09.03.03. Debêntures\n09.03.04. Bônus de Subscrição\n09.04. Acionistas\n09.04.01. Direitos Essenciais dos Acionistas\n09.04.02. Direito ao Voto\n09.04.03. Acordo de Acionistas\n09.04.04. Acionista Controlador\n09.05. Órgãos Da Sociedade Anônima\n09.05.01. Assembleia Geral\n09.05.02. Órgãos da Administração\n09.06. Dissolução, Liquidação e Extinção das Sociedades Anônimas\n10. Operações Societárias\n10.01. Transformação\n10.02. Incorporação\n10.03. Fusão\n10.04. Cisão\n11. Sociedade Dependente de Autorização - Nacional e Estrangeira\n12. Sociedades Coligadas, Controladas, Filiadas\nTítulos De Crédito\n01. Conceito, Características, Princípios, Teorias e Classificações\n01.01. Princípios\n01.02. Características dos Títulos de Crédito\n01.03. Classificação\n02. Atos Cambiários\n03. Títulos de Crédito no Código Civil\n03.01. Formalidades dos Títulos\n03.02. Títulos Eletrônicos\n03.03. Pagamento\n03.04. Transferência dos Títulos\n04. Letra de Câmbio\n05. Nota Promissória\n06. Cheque\n06.01. Tipos de Cheque\n07. Duplicata\nRecuperação Judicial e Falência (Lei Nº 11.101/2005) \n01. Disposições Preliminares – Conceitos e Princípios\n01.01. Juízo Competente\n02. Disposições Comuns à Recuperação Judicial e à Falência\n02.01. Princípios\n02.02. Administrador Judicial e do Comitê de Credores\n02.03. Verificação e da Habilitação de Créditos\n03. Recuperação Judicial\n03.01. Créditos Sujeitos e Não Sujeitos à Recuperação Judicial\n03.02. Pedido e do Processamento da Recuperação Judicial\n03.03. Plano de Recuperação Judicial\n03.04. Processamento da Recuperação Judicial\n03.05. Encerramento da Recuperação Judicial\n03.06. Plano de Recuperação Judicial para Microempresas e Empresas de Pequeno Porte\n03.07. Convolação da Recuperação Judicial em Falência\n04. Falência\n04.01. Pressupostos que Ensejam o Pedido de Falência\n04.02. Legitimidade Ativa Para Pedir Falência\n04.03. Autofalência\n04.04. Defesa do Devedor\n04.05. Efeitos da Falência\n04.06. Classificação dos Créditos e Pagamento Dos Credores\n04.07. Ineficácia e Revogação dos Atos Praticados Antes da Falência\n04.08. Realização do Ativo\n04.09. Encerramento da Falência e da Extinção das Obrigações do Falido"
+      },
+      {
+        "disciplina": "Auditoria Privada",
+        "versao": "4",
+        "paginas": 151,
+        "sumario": "INTRODUÇÃO À AUDITORIA CONTÁBIL\n01. Conceito\n02. Objetivo\n03. Objeto\nAUDITORIA PRIVADA\n01. Objetivos Gerais do Auditor e da Auditoria\n01.01. Demonstrações Contábeis\n01.02. Estrutura de Relatório Financeiro Aplicável\n02. Princípios Éticos do Auditor\n03. Características Inerentes do Auditor\n03.01 Ceticismo Profissional\n03.02 Julgamento Profissional\n04. Controle de Qualidade da Auditoria\n04.01 Gestão de Qualidade para Firmas\n04.01.01 Abordagem Baseada em Risco\n04.01.02 Definições\n04.02 Gestão de Qualidade da Auditoria de Demonstrações Contábeis\n05. Independência do Auditor\n05.01 Princípios Éticos do Auditor Independente\n05.02 Ameaças à Independência\n05.02.01 Salvaguardas\n06. Normas de Execução do Trabalho do Auditor Independente\n06.01 Trabalho de Asseguração, Asseguração Razoável e Limitada\n07. Planejamento de Auditoria Independente\n07.01 Fluxo do Trabalho da Auditoria\n07.02 Fluxo do Planejamento da Auditoria\n07.03 Documentação de Auditoria\n07.04 Direcionamento, Supervisão e Revisão\n08. Materialidade, Relevância e Risco em Auditoria Independente\n08.01 Risco de Detecção\n08.02 Relevância\n08.03 Materialidade\n09. Evidência em Auditoria\n09.01 Características\n09.02 Confiabilidade\n09.03 Tipos de Evidência\n10. Testes e Procedimentos em Auditoria\n10.01 Testes de Observância e Testes Substantivos (NBC TI 01) \n10.02 Tipos de Procedimentos de Auditoria\n10.03 Confirmações Externas\n10.04 Procedimentos Analíticos\n10.05 Outros Procedimentos\n11. Amostragem em Auditoria\n11.01 Definições\n11.02 Requisitos\n11.03 Tamanho da Amostra\n11.03.01 Fatores que Influenciam o Tamanho da Amostra para os Testes de Controle\n11.03.02 Fatores que Influenciam o Tamanho da Amostra para os Testes de Detalhe\n11.04 Seleção dos Itens para Amostra\n11.05 Estratificação\n11.06 Hipóteses que Não é Recomendado o Uso da Amostragem (IN nº 01/2001) \n12. Contingências e Estimativas Contábeis\n12.01 Conceitos\n12.02 Definições\n12.03 Indicadores de Possível Tendenciosidade da Administração\n13. Fraude e Erro\n13.01 Características da Fraude\n13.02 Avaliação dos Fatores de Risco de Fraude\n13.03 Comunicações à Administração e aos Responsáveis pela Governança\n13.04 Outros Assuntos relacionados à Fraude\n14. Transações com Partes Relacionadas\n14.01 Objetivos do Auditor\n14.02 Responsabilidade do Auditor\n14.03 Outros Assuntos\n15. Transações e Eventos Subsequentes\n15.01 Requisitos\n16. Representações Formais e Carta de Responsabilidade\n16.01 Dúvida Quanto à Confiabilidade das Representações Formais e Representações Solicitadas e Não Fornecidas\n16.01 Requisitos\n17. Continuidade Normal das Atividades da Entidade\n17.01 Implicações no Relatório\n17.02 Procedimentos de Avaliação de Risco e Atividades Relacionadas\n18. Utilização do Trabalho de Outros Profissionais\n18.01 Requisitos (NBC TA 620) \n18.02 Objetivos do Auditor (NBC TA 610) \n19. Documentação de Auditoria (Papéis de Trabalho) \n19.01 Requisitos\n19.02 Descrição dos Papéis de Trabalho\n19.02.01 Compilação\n19.02.02 Arquivamento dos Papéis\n20. Opinião do Auditor Independente\n20.01 Determinação do Tipo de Modificação na Opinião do Auditor\n20.02 Relatório do Auditor Independente\n20.03 Comunicações Adicionais\n20.04 Relação entre Parágrafo de Ênfase e Principais Assuntos de Auditoria no Relatório do Auditor\n21. Testes em Áreas Específicas das Demonstrações Contábeis\n21.01 Presunção de Omissão de Receitas\n21.02 Testes para Subavaliação e Superavaliação\n21.03 Desfalques de Caixa\n22. Controle Interno da Entidade Auditada\n22.01 Deficiências\nAUDITORIA INTERNA\n01. Aspectos Gerais da Auditoria Interna\n02. Normas Técnicas do Auditor Interno (NBC TI 01) \n03. Normas Profissionais do Auditor Interno\n04. Normas Internacionais de Auditoria Interna (IIA) \n05. Diferenças entre Auditoria Interna e Auditoria Independente\nPERÍCIA CONTÁBIL\n01. Perícia Contábil"
+      },
+      {
+        "disciplina": "Direito Civil",
+        "versao": "4",
+        "paginas": 173,
+        "sumario": "LEI DE INTRODUÇÃO ÀS NORMAS DO DIREITO BRASILEIRO\n01. Vigência das Leis\n02. Integração e Aplicação das leis\n03. Eficácia das Leis no Espaço e Direito Internacional Privado\n04. Normas Gerais de Direito Público\nPESSOAS NATURAIS\n01. Personalidade e Capacidade\n02. Direitos da Personalidade\n03. Ausência\n04. Domicílio das Pessoas Naturais\nPESSOAS JURÍDICAS\n01. Objetivos e Disposições Gerais\n02. Desconsideração da Personalidade Jurídica\n03. Associações04. Fundações\n05. Domicílio das Pessoas Jurídicas\nBENS\n01. Bens Imóveis\n02. Bens Móveis\n03. Bens Divisíveis e Bens Indivisíveis\n04. Bens Singulares e Bens Coletivos\n05. Bens Reciprocamente Considerados\n06. Bens Públicos\nFATOS JURÍDICOS\n01. Negócios Jurídicos\n02. Condição, Termo e Encargo\n03. Defeitos do Negócio Jurídico\n04. Invalidade do Negócio Jurídico\n05. Atos Ilícitos\n06. Prescrição e Decadência\n07. Provas dos Fatos Jurídicos\nRESPONSABILIDADE CIVIL\n01. Obrigação de Indenizar\n02. Responsabilidade Objetiva\n03. Da Indenização\nOBRIGAÇÕES\n01. Das Obrigações de Dar\n02. Das Obrigações de Fazer\n03. Das Obrigações Alternativas\n04. Das Obrigações Solidárias\n05. Transmissão das Obrigações\n06. Do Adimplemento/Pagamento das Obrigações\n07. Demais formas de extinção das obrigações\n08. Inadimplemento das Obrigações\nCONTRATOS\n01. Disposições Gerais\n02. Da Formação dos Contratos\n03. Dos Vícios Redibitórios\n04. Da Evicção\n05. Da Extinção do Contrato\nDAS DIVERSAS ESPÉCIES DE CONTRATO\n01. Doação\n02. Compra e Venda\n03. Prestação de Serviço\n04. Depósito\n05. Mandato\n06. Empréstimo\n07. Seguro\n08. Fiança\n09. Contrato Estimatório\n10. Transação\nDIREITO DAS COISAS\n01. Posse\n02. Propriedade\n03. Aquisição da Propriedade Imóvel\n04. Usufruto\n05. Hipoteca\nDIREITO DE FAMÍLIA\n01. Casamento\n02. Regime de Bens\n03. Pacto Antenupcial\n04. Alimentos\n05. Relações de Parentesco\n06. Bem de Família\nDIREITO DAS SUCESSÕES\n01. Ordem da Sucessão Legítima\n02. Direito de Representação na Legítima\n03. Renúncia da Herança\n04. Aceitação da Herança\n05. Excluídos da Sucessão\n06. Colação"
+      },
+      {
+        "disciplina": "Auditoria Governamental",
+        "versao": "1",
+        "paginas": 63,
+        "sumario": "INTRODUÇÃO À AUDITORIA GOVERNAMENTAL\n01. Auditoria Governamental\n01.01 Conceitos Básicos de Auditoria Governamental (ISSAI 1, seção 2; NAGs, 1101 -1124) \n01.02 Objetivos, Aplicabilidade e Estrutura das Normas de Auditoria Governamental\n01.03 Entidades de Fiscalização Superior\n01.04 Profissionais de Auditoria Governamental\n01.05 Trabalho de Auditoria\n01.06 COSO I e COSO II"
+      },
+      {
+        "disciplina": "Lei de Responsabilidade Fiscal (LC 101/00)",
+        "versao": "2",
+        "paginas": 53,
+        "sumario": "LEI DE RESPONSABILIDADE FISCAL (LRF) \n01. Lei de Responsabilidade Fiscal\n01.01 Disposições Preliminares (arts. 1º e 2º da LRF) \n01.02 Planejamento e Orçamento Público (arts. 3º a 10 da LRF) \n01.03 Da Receita Pública (arts. 11 a 14 da LRF) \n01.04 Da Despesa Pública (arts. 15 a 24 da LRF) \n01.05 Das Transferências Voluntárias (art. 25 da LRF) \n01.06 Da Destinação de Recursos para o Setor Privado (arts. 26 a 28 da LRF) \n01.07 Dívida Pública e Endividamento (arts. 29 a 42 da LRF) \n01.08 Gestão Patrimonial (arts. 43 a 47 da LRF) \n01.09 Transparência, Controle e Fiscalização (arts. 48 a 59 da LRF) \n01.10 Disposições Finais e Transitórias"
+      },
+      {
+        "disciplina": "Licitações e Contratos (Lei 14.133/21)",
+        "versao": "1",
+        "paginas": 100,
+        "sumario": "01.  Licitações e Contratos Administrativos\n01.01. Do Âmbito de Aplicação, Definições e Agentes Públicos (arts. 1º a 4º, 6º a 10) \n01.02.Princípios (art. 5º) \n01.03Licitações (arts.11 a 88) \n01.03.01 Objetivos, Fases e Formalidades (arts. 11 a 17) \n01.03.02 Instrução do Processo Licitatório (arts. 18 a 27) \n01.03.03 Modalidades de Licitação (arts. 28 a 32) \n01.03.04 Critérios de Julgamento (arts. 33 a 39) \n01.03.05 Disposições Setoriais, Compras, Serviços (arts. 40 a 52) \n01.03.06 Divulgação do Edital de Licitação (arts. 53 a 54) \n01.03.07 Fases da Licitação - Julgamento, Habilitação e Encerramento (arts. 55 a 71) \n01.03.08 Contratação Direta, Inexigibilidade e Dispensa (arts. 72 a 75) \n01.03.09 Alienações (arts. 76 a 77) \n01.03.10 Instrumentos Auxiliares (arts. 78 a 88) \n01.04. Contratos Administrativos (arts. 89 a 154) \n01.04.01 Formalização dos Contratos (arts. 89 a 95) \n01.04.02 Garantias (arts. 96 a 102) \n01.04.03 Alocação de Riscos (art. 103) \n01.04.04 Prerrogativas da Administração (art. 104) \n01.04.05 Duração dos Contratos (arts. 105 a 114) \n01.04.06 Execução dos Contratos (arts. 115 a 123) \n01.04.07 Alteração dos Contratos e dos Preços (art. 124 a 136) \n01.04.08 Hipóteses de Extinção dos Contratos (arts. 137 a 139) \n01.04.09 Recebimento do Objeto do Contrato (art. 140) \n01.04.10 Pagamentos (arts. 141 a 146) \n01.04.11 Nulidade dos Contratos (arts. 147 a 150) \n01.04.12 Meios Alternativos de Resolução de Controvérsias (arts. 151 a 154) \n01.05. Irregularidades (arts. 155 a 173) \n01.05.01 Infrações e Sanções Administrativas (arts. 155 a 163) \n01.05.02 Impugnações, Pedidos de Esclarecimento e Recursos (arts. 164 a 168) \n01.05.03 Controle das Contratações (arts. 169 a 173) \n01.06. Disposições Gerais (arts. 174 a 194) \n01.06.01 Portal Nacional de Contratações Públicas - PNCP (arts. 174 a 176) \n01.06.02 Alterações Legislativas (arts. 177 a 180) \n01.06.03 Disposições Transitórias e Finais (arts. 181 a 194) \n02.  Jurisprudências em Licitações e Contratos Administrativos"
+      },
+      {
+        "disciplina": "EC nº 132/23",
+        "versao": "7",
+        "paginas": 54,
+        "sumario": "EMENDA CONSTITUCIONAL Nº 132/2023 – REFORMA TRIBUTÁRIA\n01. Aspectos Gerais\n02. Competência do STJ\n03. Limitações do Poder de Tributar\n04. COSIP\n05. IVA – Dual (IBS + CBS) \n06. Imposto Sobre Bens e Serviços - IBS\n07. Fundo Nacional de Desenvolvimento Regional\n08. Contribuição Sobre Bens e Serviços - CBS\n09. Imposto Seletivo - IS\n10. Alterações dos Impostos de Competência Estadual\n11. Alterações dos Impostos de Competência Municipal\n12. Regras de Transição\n13. Cesta Básica Nacional de Alimentos\n14. Regimes Diferenciados de Tributação\n15. Fundo de Compensação de Benefícios Fiscais ou Financeiro-Fiscais ICMS\n16. Fundo de Sustentabilidade e Diversificação Econômica do Estado do Amazonas"
+      },
+      {
+        "disciplina": "Lei Complementar 214/25",
+        "versao": "10",
+        "paginas": 121,
+        "sumario": "LC Nº 214/2025 - REFORMA TRIBUTÁRIA\n01. Normas Gerais do IBS e da CBS\n02. Hipóteses de Incidência\n03. Das Imunidades\n04. Do Momento de Ocorrência do Fato Gerador\n05. Local da Operação\n06. Base de Cálculo do IBS e da CBS\n07. Alíquotas-Padrão\n08. Sujeição Passiva do IBS e da CBS\n09. Modalidades de Extinção dos Débitos\n10. Apuração e Pagamento pelo Contribuinte\n10.01.  Split Payment\n11. Não Cumulatividade\n12. Operacionalização do IBS e da CBS\n12.01.  Cadastro com Identificação Única\n12.02.  Documento Fiscal Eletrônico\n12.03.  Programas de Incentivo à Cidadania Fiscal\n12.04.  Disposições Transitórias\n13. IBS e CBS sobre importações\n13.01.  Hipótese de Incidência\n13.02.  Importação de Bens Imateriais e Serviços\n13.03.  Importação de Bens Materiais\n14. IBS e da CBS sobre exportações\n14.01.  Exportações de Bens Imateriais e de Serviços\n14.02.  Exportações de Bens Materiais\n15. Regimes dos bens de capital\n15.01.  Desoneração da Aquisição de Bens de Capital\n16. Cashback e a Cesta Básica Nacional de Alimentos\n17. Regimes Diferenciados do IBS e da CBS\n17.01.  Reduções de Alíquotas\n17.02.  Transporte Público Coletivo de Passageiros Rodoviário e Metroviário de Caráter Urbano, Semiurbano e Metropolitano\n17.03.  Produtor Rural e do Produtor Rural Integrado Não Contribuinte\n17.04.  Crédito Presumido para Transportador Autônomo de Carga Pessoa Física Não Contribuinte\n17.05.  Créditos Presumidos nas Aquisições de Resíduos Sólidos de Coletores Incentivados\n17.06.  Créditos Presumidos Bens Móveis Usados Adquiridos de Pessoa Física Não Contribuinte para Revenda\n18. Regimes Específicos do IBS e da CBS\n18.01 Operações com Combustíveis Sujeitas a Incidência Monofásica\n18.02 Operações com Etanol Anidro Combustível (EAC) \n18.03 Créditos na Aquisição de Combustíveis Submetidos ao Regime de Tributação Monofásica\n19. Serviços Financeiros\n19.01 Disposições Gerais\n19.02 Disposições Comuns aos Serviços Financeiros\n19.03 Disposições Transitórias\n20. Planos de Assistência à Saúde\n21. Concursos de Prognósticos\n22. Bens Imóveis\n23. Sociedades Cooperativas\n24.  Bares, Restaurantes, Hotelaria, Parques de Diversão e Parques Temáticos, Transporte Coletivo de Passageiros e Agências de Turismo\n24.01 Bares e Restaurantes\n24.02 Hotelaria, Parques de Diversão e Parques Temáticos\n24.03 Transporte Coletivo de Passageiros Rodoviário Intermunicipal e Interestadual, Ferroviário, Hidroviário e Aéreo Regional e do Transporte de Carga Aéreo Regional\n24.04 Agências de Turismo\n25. Sociedade Anônima do Futebol - SAF\n26. Fiscalização e do Procedimento Fiscal\n27. Transição para o IBS e para a CBS\n27.01 Disposições Comuns ao IBS e à CBS em 2026\n28. Imposto Seletivo\n29. Comitê Gestor do IBS (CGIBS) \n29.01 Disposições Gerais\n29.02 Do Conselho Superior do CGIBS\n30. Simples Nacional na LC Nº 214/2025"
+      },
+      {
+        "disciplina": "Administração Financeira e Orçamentária (AFO)",
+        "versao": "5",
+        "paginas": 154,
+        "sumario": "Administração Financeira Orçamentária (AFO)\n01. Constituição Federal: Da tributação e do orçamento (Art.163 a 169) \n01.01 Das Finanças Públicas\n01.02 Dos Orçamentos\n02. Orçamento Público\n02.01 Aspectos/Dimensões do Orçamento Público\n02.02 Técnicas/Espécies Orçamentárias\n02.03 Princípios Orçamentários\n02.04 Instrumentos Orçamentários (PPA, LDO e LOA) \n02.05 Emendas ao Orçamento\n03. Fundos Especiais\n04. Ciclo Orçamentário\n05. Créditos Adicionais\n06. Receita Pública\n06.01 Conceitos Gerais\n06.02 Classificação por Natureza da Receita\n06.03 Classificação da Receita por Esfera Orçamentária\n06.04 Classificação por Fonte / Destinação de Recursos\n06.05 Estágios da Receita Pública\n06.06 Dívida Ativa\n07. Despesa Pública\n07.01 Conceitos Gerais\n07.02 Classificação da Despesa Orçamentária\n07.03 Estágios da Despesa Pública\n07.04 Dívida Pública\n07.05 Despesas de Exercícios Anteriores (DEA) \n07.06 Suprimento de Fundos\n08. Programação e Descentralização Orçamentária e Financeira\n09. Demais temas da LRF\n09.01 Planejamento e Orçamento Público\n09.02 Renúncia de Receita\n09.03 Despesa Obrigatória de Caráter Continuado (DOCC) \n09.04 Despesa com Pessoal\n09.05 Transferências Voluntárias\n09.06 Dívida e Endividamento\n09.07 Transparência, Controle e Fiscalização\n10. Demais temas da Lei nº 4.320/1964\n11. Jurisprudências Recentes"
+      },
+      {
+        "disciplina": "Direito Penal",
+        "versao": "2",
+        "paginas": 162,
+        "sumario": "01. Princípios de Direito Penal\n01.01. Princípios da Legalidade e Anterioridade Penal e Demais Princípios Decorrentes (Art. 1º do CP)\n01.02. Outros Princípios do Direito Penal\n02. Lei Penal\n02.01. Lei Penal no Tempo\n02.01.01 Conflito de Leis Penais no Tempo\n02.02. Lei Penal no Espaço\n02.02.01 Aplicação da Lei Penal no Espaço\n02.03. Conflito Aparente das Normas\n02.04. Contagem de Prazo\n02.05. Lei Penal em Branco\n03. Teoria do Crime\n03.01. Conceito de Crime\n03.02. Fato Típico\n03.03. Ação e Omissão\n03.04. Dolo, Culpa e Preterdoloso\n03.05. Erro de Tipo\n03.06. Tipicidade e Resultado (Nota: A numeração 03.06 se repete na imagem original)\n03.06. Inter Criminis\n03.07. Ilicitude e Suas Excludentes\n03.08. Culpabilidade\n03.09. Sujeitos do Crime\n03.10. Classificações do Crime\n04. Crimes contra a Pessoa\n04.01 Crimes Contra a Vida (Art. 121 a 128 do CP)\n04.02. Das Lesões Corporais (Art. 129 do CP)\n04.03 Dos Crimes Contra a Honra (Arts. 138 a 145 do CP)\n04.04. Dos Crimes Contra a Liberdade Individual (Arts. 146 a 154-B do CP)\n05. Crimes contra o Patrimônio\n05.01. Do Furto (Arts. 155 e 156 do CP)\n05.02. Do Roubo e da Extorsão (Arts. 157 a 160 do CP)\n05.03. Do Estelionato e das Outras Fraudes (Arts. 171 a 179 do CP)\n06. Dos Crimes contra a Fé Pública\n06.01. Da Moeda Falsa (Arts. 289 a 292 do CP)\n06.02. Da Falsidade de Títulos e Outros Papéis Públicos (Arts. 293 a 295 do CP)\n06.03. Da Falsidade Documental (Arts. 296 a 305 do CP)\n07. Dos Crimes contra a Administração Pública\n07.01. Dos Crimes Praticados por Funcionário Público Contra a Administração em Geral (Arts. 312/327 do CP)\n07.01.01 Funcionário Público para Fins Penais (Art. 327 do CP)\n07.01.02. Peculato (Art. 312 do CP)\n07.01.03 Peculato Mediante Erro de Outrem (Art. 313 do CP)\n07.01.04 Inscrição de Dados Falsos em Sistemas de Informações (Art. 313-A do CP)\n07.01.05. Modificação ou Alteração Não Autorizada de Sistema de Informações (Art. 313-B do CP)\n07.01.06. Extravio, Sonegação ou Inutilização de Livro ou Documento (Art. 314 do CP)\n07.01.07. Emprego Irregular de Verbas ou Rendas Públicas (Art. 315 do CP)\n07.01.08. Concussão e Excesso de Exação (Art. 316 do CP)\n07.01.09. Corrupção Passiva (Art. 317 do CP)\n07.01.10. Facilitação de Contrabando ou Descaminho (Art. 318 do CP)\n07.01.11. Prevaricação (Arts. 319 e 319-A do CP)\n07.01.12. Condescendência Criminosa (Art. 320 do CP)\n07.01.13. Advocacia Administrativa (Art. 321 do CP)\n07.01.14. Violência Arbitral (Art. 322 do CP)\n07.01.15. Abandono de Função (Art. 323 do CP)\n07.01.16. Violação de Sigilo Funcional (Art. 325 do CP)\n07.01.17. Violação de Sigilo Proposta de Concorrência (Art. 326 do CP)\n07.02. Dos Crimes Praticados por Particular Contra a Administração em Geral (Art. 328 a 337-A do CP)\n07.03. Dos Crimes em Licitações e Contratos Administrativos (Arts. 337-E a 337-P do CP)\n07.04. Dos Crimes Contra a Administração da Justiça (Arts. 338 a 359 do CP)\n07.05. Dos Crimes contra as Finanças Públicas (Arts. 359-A a 359-H do CP)\n08. Extinção da Punibilidade\n09. Lei nº 7.492/1986 - Lei dos Crimes contra o Sistema Financeiro\n10. Lei nº 8.137/1990 - Crimes contra a Ordem Tributária, Econômica e Relações de Consumo\n11. Lei nº 13.869/2019 - Lei de Abuso de Autoridade"
+      },
+      {
+        "disciplina": "Contabilidade Geral e Avançada",
+        "versao": "4",
+        "paginas": 207,
+        "sumario": "CONTABILIDADE BÁSICA\n01. Conceito, Objeto, Finalidade, Técnicas Contábeis, Equação patrimonial\n02. Teoria das Contas\n03. Princípios Contábeis\n04. Estrutura Conceitual Básica da Contabilidade (CPC 00) \n05. Escrituração\n06. Plano de Contas\n07. Balancete de Verificação\n08. Erros de Escrituração\n09. Atos e Fatos Contábeis\nREGIMES CONTÁBEIS\n01. Competência, Caixa\nESTOQUES\n01. Estoques: Mensuração, Reconhecimento Como Despesa e Divulgação (CPC 16) \n02. Operações com Mercadorias\n03. Critérios de Avaliação do Estoque (PEPS, UEPS, Média Ponderada) \nAPURAÇÃO DO RESULTADO\n01. Apuração do Resultado\nATIVO\n01. Disponibilidades\n02. Contas a Receber e Perda com Créditos de Liquidação Duvidosa\n03. Despesas Antecipadas\n04. Realizável a Longo Prazo\n05. Instrumentos Financeiros\n06. Investimentos\n07. Ativo Não Circulante Mantido para Venda e Operação Descontinuada\n08. Ativo Imobilizado\n09. Ativos Intangíveis\n10. Ativos Biológicos e Produtos Agrícolas\n11. Depreciação, Amortização e Exaustão\n12. Recuperação ao Valor Recuperável de Ativos\n13. Goodwill\nPASSIVO EXIGÍVEL\n01. Fornecedores\n02. Duplicatas Descontadas\n03. Empréstimos e Financiamentos\n04. Folha de Pagamento e Benefícios a Empregados\n05. Receitas Antecipadas\n06. Debêntures e Títulos de Dívida\n07. Tributos Sobre o Lucro\n08. Provisões, Passivos e Ativos Contingentes\nPATRIMÔNIO LÍQUIDO\n01. Capital Social\n02. Ações (Ágio na emissão, Reembolso, Resgate, Amortização, Gastos na Emissão) \n03. Reservas de Lucros\n04. Reservas de Capital\n05. Ajuste de Avaliação Patrimonial\n06. Ações em Tesouraria\n07. Outras Contas do PL\nDEMONSTRAÇÕES CONTÁBEIS\n01. Elaboração e Apresentação das Demonstrações Contábeis\n02. Demonstração do Resultado do Exercício\n03. Balanço Patrimonial\n04. Demonstração dos Lucros ou Prejuízos Acumulados (DLPA) \n05. Demonstração das Mutações do Patrimônio Líquido (DMPL) \n06. Demonstração dos Fluxos de Caixa (DFC) \n07. Demonstração do Valor Adicionado (DVA) \n08. Demonstração de Resultados Abrangentes (DRA) \n09. Origens, Aplicações, Capital Circulante Líquido\n10. Demonstração Contábil Consolidada\n11. Notas Explicativas\nOUTROS CPCs\n01. CPC 02: Efeitos das Mudanças nas Taxas de Câmbio e Conversão das Demonstrações Contábeis\n02. CPC 05: Divulgação Sobre Partes Relacionadas\n03. CPC 06: Arrendamento Mercantil\n04. CPC 07: Subvenção e Assistência Governamentais\n05. CPC 12: Ajuste a Valor Presente\n06. CPC 15: Combinação de Negócios, Fusão, Incorporação e Cisão\n07. CPC 22: Informações Por Segmento\n08. CPC 23: Políticas Contábeis, Mudanças de Estimativa e Retificação de Erro\n09. CPC 24: Eventos Subsequentes\n10. CPC 42: Contabilidade em Economia Hiperinflacionária\n11. CPC 46: Mensuração a Valor Justo\n12. CPC 47: Receita de Contrato com Cliente\n13. CPC PME: Contabilidade para Pequenas e Médias Empresas"
+      },
+      {
+        "disciplina": "Direito Processual Civil",
+        "versao": "2",
+        "paginas": 218,
+        "sumario": "INTRODUÇÃO AO CÓDIGO DE PROCESSO CIVIL\n01. Origem, Conceito e Fontes\nNORMAS FUNDAMENTAIS E APLICAÇÃO DAS NORMAS PROCESSUAIS\n01. Aplicação das Normas Processuais\n02. Princípios Processuais Civis\nDA FUNÇÃO JURISDICIONAL\n01. Da Jurisdição\n02. Da Ação\n03. Dos Limites da Jurisdição Nacional e da Cooperação Internacional\n03.01 Cooperação Internacional (Arts. 26 ao 41) \n04. Da Competência Interna\nDOS SUJEITOS DO PROCESSO\n01. Das Partes e dos Procuradores\n01.01. Da Capacidade Processual (Arts. 70 ao 76) \n01.02. Dos Deveres das Partes e de seus Procuradores (Arts. 77 ao 102) \n01.03. Dos Procuradores (Arts. 103 a 107) \n01.04. Da Sucessão das Partes e dos Procuradores (Arts. 108 ao 112) \n02. Do Litisconsórcio\n03. Da Intervenção de Terceiros\nDOS SUJEITOS DO PROCESSO – PARTE II\n01. Do Juiz e dos Auxiliares de Justiça\n01.01 Dos Poderes, dos Deveres e da Responsabilidade do Juiz (Arts. 139 ao 143) \n01.02.  Dos Impedimentos e da Suspeição (Arts. 144 ao 148) \n01.03.  Dos Auxiliares da Justiça (Arts. 149 ao 175) \n01.04. Do Ministério Público (Arts. 176 ao 181) \n01.05 Da Advocacia Pública (Arts. 182 ao 184) \n01.06 Da Defensoria Pública (Arts. 185 ao 187) \nDOS ATOS PROCESSUAIS\n01. Da Forma dos Atos Processuais\n02. Do Tempo e do Lugar dos Atos Processuais\n03. Dos Prazos\n03.01 Da Verificação dos Prazos e das Penalidades\n04. Da Comunicação dos Atos Processuais\n04.01 Da Citação (Arts. 238 ao 259) \n04.02 Da Cooperação Internacional (Arts. 260 a 268) \n04.03 Das Intimações (Arts. 269 a 275) \n05. Das Nulidades\n06. Da Distribuição e do Registro\n07. Do Valor da Causa\nDA TUTELA PROVISÓRIA\nDA FORMAÇÃO, DA SUSPENSÃO E DA EXTINÇÃO DO PROCESSO\nDO PROCESSO DE CONHECIMENTO E DO CUMPRIMENTO DE SENTENÇA\n01. Do Procedimento Comum\n02. Da Petição Inicial\n03. Da Improcedência Liminar do Pedido\n04. Da Audiência de Conciliação ou de Mediação\n05. Da Contestação\n06. Da Reconvenção\n07. Da Revelia\n08. Da Revelia\n09. Do Julgamento Conforme o Estado do Processo\n10. Do Julgamento Conforme o Estado do Processo\nDAS PROVAS\n01.01 Disposições Gerais (Arts. 369 ao 380) \n01.02. Da Produção Antecipada da Prova (Arts. 381 a 383) \n01.03. Da Ata Notarial (Art. 384 e § único) \n01.04. Do Depoimento Pessoal (Arts. 385 ao 388) \n01.05. Da Confissão (Arts. 389 ao 395) \n01.06. Da Exibição de Documento ou Coisa (Arts. 396 ao 404) \n01.07. Da Prova Documental (Arts. 405 ao 484) \n01.07.01 Da Força Probante dos Documentos\n01.07.02 Da Arguição de Falsidade\n01.07.03 Da Produção da Prova Documental\n01.07.04 Dos Documentos Eletrônicos\n01.07.05 Da Admissibilidade e d Valor da Prova Testemunhal\nDA SENTENÇA E DA COISA JULGADA\n01. Da Liquidação de Sentença\n02. Do Cumprimento da Sentença\nDOS PROCEDIMENTOS ESPECIAIS\n01.01 Da Ação de Consignação em Pagamento (Arts. 539 ao 549) \n01.02 Ação de Exigir Contas (Arts. 550 ao 553) \n01.03 Das Ações Possessórias (Arts. 554 ao 568) \n01.04 Da Ação de Divisão e da Demarcação de Terras Particulares (Arts. 569 ao 598) \n01.05 Da Ação de Dissolução Parcial de Sociedade (Arts. 599 ao 609) \n01.06 Do Inventário e da Partilha (Arts. 610 ao 673) \n01.07 Dos Embargos de Terceiros (Arts. 674 ao 681) \n01.08 Da Oposição (Arts. 682 ao 686) \n01.09 Das Ações da Família (Arts. 693 ao 699-A) \n01.10 Da Ação Monitória (Arts. 700 ao 702) \n01.11 Da Homologação do Penhor Legal (Arts. 703 ao 706) \nDO PROCESSO DE EXECUÇÃO\n01. Da Execução em Geral\n02. Das Diversas Espécies de Execução\n02.01 Disposições Gerais (Arts. 797 ao 805) \n02.02 Da Execução para a Entrega de Coisa (Arts. 806 ao 813) \n02.03 Da Execução das Obrigações de Fazer ou Não Fazer (Arts. 814 ao 823)\n02.04 Da Execução por Quantia Certa (Arts. 824 ao 909) \n 02.05 Da Execução Contra a Fazenda Pública (Art. 910, § § 1º ao 3º) \n02.06 Da Execução de Alimentos (Arts. 911 ao 913) \n03. Dos Embargos à Execução\n04. Da Suspensão e da Extinção do Processo de Execução\nDOS PROCESSOS NOS TRIBUNAIS E DOS MEIOS DE IMPUGNAÇÃO DAS DECISÕES JUDICIAIS\n01. Disposições Gerais\n02. Da Ordem dos Processos no Tribunal\n03. Dos Incidentes de Assunção e de Arguição\n04. Do Conflito de Competência\n05. Da Homologação de Decisão Estrangeira e da Decisão do Exequatur à Carta Rogatória\n06. Da Ação Rescisória\n07. Do Incidente de Resolução de demandas Repetitivas\n08. Da Reclamação\n09. Dos Recursos\n10. Da Apelação\n11. Do Agravo de Instrumento\n12. Do Agravo Interno\n13. Dos Embargos de Declaração\n14. Dos Recursos para o STF e STJ\nDISPOSIÇÕES FINAIS E TRANSITÓRIAS"
+      },
+      {
+        "disciplina": "Macroeconomia",
+        "versao": "3",
+        "paginas": 48,
+        "sumario": "01. Macroeconomia\n01.01 Conceitos Básicos da Macroeconomia: Objetivos e Tipos de Mercados\n01.02 Contas Nacionais\n01.03 Balanço de Pagamentos\n01.04 Economia Clássica\n01.05 Modelo Keynesiano\n01.06 Moeda\n01.07 Modelo IS-LM de Determinação da Renda e dos Juros\n01.08 Modelo de Oferta e Demanda Agregada (OA-DA) de Determinação da Renda e dos Preços\n01.09 Curvas de Phillips\n01.10 Inflação\n01.11 Políticas de Governo ou Atuação do Estado na Economia\n01.12 Regimes Cambiais\n01.13 Determinantes do Investimento\n01.14 Economia Intertemporal e Crescimento Econômico\n01.15 Teoria dos Ciclos Econômicos Reais"
+      },
+      {
+        "disciplina": "Microeconomia",
+        "versao": "1",
+        "paginas": 64,
+        "sumario": "01. Introdução à Economia\n01.01 Conceitos Básicos (Microeconomia) \n01.02 Demanda e Oferta\n01.03 Elasticidades\n01.04 Teoria do Consumidor\n01.05 Produção\n01.06 Custos\n01.07 Estruturas de Mercado\n01.08 Eficiência e Equilíbrio Geral\n01.09 Falhas de Mercado\n01.10 Incidência Tributária - Impacto da Carga Tributária sobre a Economia\n01.11 Teoria dos Jogos\n01.12 Teoria da Regulação\n01.13 Políticas de Comércio Internacional"
+      },
+      {
+        "disciplina": "Finanças Públicas",
+        "versao": "1",
+        "paginas": 27,
+        "sumario": "Finanças Públicas\n01. Bem-estar e funções de governo\n02. Tributação – financiamento dos gastos Públicos\n03. Dívida Pública, NFSP e Tipos de Déficit Público no Brasil"
+      },
+      {
+        "disciplina": "Estatística",
+        "versao": "3",
+        "paginas": 104,
+        "sumario": "ESTATÍSTICA DESCRITIVA\n01.Conceitos Iniciais\n02.Formas de Apresentação de Dados\n03.Medidas de Posição\n04.Medidas de Dispersão\n05.Assimetria e Curtose\n06.Box Plot e Outliers\nPROBABILIDADE\n07.Probabilidade e Análise Combinatória\n08.Combinações de Eventos\n09.Principais Distribuições Discretas de Probabilidade\n10.Principais Distribuições Contínuas de Probabilidade\nESTATÍSTICA INFERENCIAL\n11.Amostragem\n12.Estimadores\n13.Intervalos de Confiança\n14.Testes de Hipóteses\n15.Análise de Variância (ANOVA) \n16.Regressão Linear\n17.Consulta à Tabela Normal Padrão"
+      },
+      {
+        "disciplina": "Contabilidade Aplicada ao Setor Pública (CASP)",
+        "versao": "2",
+        "paginas": 135,
+        "sumario": "01. Introdução à Contabilidade Aplicada ao Setor Público\n01.01 Conceitos, Objeto, Objetivos e Campo de Aplicação\n01.02 Regimes Orçamentário e Patrimonial e Exercício Financeiro\n02. Aspectos Patrimoniais da Contabilidade Pública\n02.01 Patrimônio Público\n02.02 Bens Públicos\n02.03 Inventário. Material Permanente e de Consumo\n02.04 Variações Patrimoniais\n02.05 Avaliação de Elementos Patrimoniais Conforme o art. 106 da Lei nº 4.320/1964\n02.06 Bases de Mensuração de Ativos e Passivos (MCASP e NBC TSP EC) \n02.07 Disponibilidades (MCASP e NBC TSP 12) \n02.08 Créditos e Obrigações (MCASP) \n02.09 Estoques (MCASP e NBC TSP 04) \n02.10 Investimentos Permanentes, em Coligada e Empreendimento Controlado em Conjunto (MCASP e NBC TSP 18) \n02.11 Ativo Imobilizado (MCASP e NBC TSP 07) \n02.12 Ativo Intangível (MCASP e NBC TSP 08) \n02.13 Redução ao Valor Recuperável (MCASP, NBC TSP 09 e 10) \n02.14 Depreciação, Amortização e Exaustão (NBC TSP 07, MCASP) \n02.15 Provisões, Passivos e Ativos Contingentes (MCASP e NBC TSP 03) \n02.16 Receita de Transação sem Contraprestação (MCASP e NBC TSP 01) \n02.17 Receita de Transação com Contraprestação (MCASP e NBC TSP 02) \n02.18 Propriedade para Investimento (MCASP e NBC TSP 06) \n02.19 Custos de Empréstimos (MCASP e NBC TSP 14) \n02.20 Contratos de Concessão de Serviços Públicos (MCASP e NBC TSP 05) \n02.21 Ativo Biológico e Produto Agrícola (MCASP e NBC TSP 26) \n02.22 Combinações no Setor Público (MCASP e NBC TSP 21) \n02.23 Efeitos das Mudanças nas Taxas de Câmbio (MCASP e NBC TSP 24) \n02.24 Evento Subsequente (MCASP e NBC TSP 25) \n02.25 Políticas Contábeis, Mudança de Estimativa e Retificação de Erro (MCASP e NBC TSP 23) \n02.26 Divulgação de Participações em Outras Entidades (MCASP e NBC TSP 20) \n02.27 Divulgação Sobre Partes Relacionadas (MCASP e NBC TSP 22) \n03. Plano de Contas (PCASP) \n04. Escrituração Contábil Pública\n05. Demonstrações Contábeis Aplicadas ao Setor Público\n05.01 Introdução às DCASP (Parte V, Capítulo 1 do MCASP e NBC TSP 11) \n05.02 Balanço Orçamentário (MCASP e NBC TSP 13) \n05.03 Balanço Financeiro\n05.04 Balanço Patrimonial (AFO e CPU) \n05.05 Demonstração das Variações Patrimoniais (DVP) \n05.06 Demonstração de Fluxo de Caixa (MCASP e NBC TSP 12) \n05.07 Demonstração das Mutações do Patrimônio Líquido (AFO e CPU) \n05.08 Notas Explicativas (AFO e CPU) \n05.09 Consolidação das Demonstrações Contábeis\n06. Custos no Setor Público\n06.01 NBC T 16.11 e MIC 1ª Edição - Sistema de Informação de Custos do Setor Público\n06.02 NBC TSP 34 - Custos no Setor Público\n07. Índices e Análise de Demonstração no Setor Público"
+      },
+      {
+        "disciplina": "Legislação Tributária Estadual Geral",
+        "versao": "6",
+        "paginas": 135,
+        "sumario": "01. ICMS NA CF/88\n02. Jurisprudências relacionadas ao ICMS\n03. Lei Complementar nº 87/1996 – LEI KANDIR\n03.01 Fato Gerador, Hipóteses de Incidência (arts. 1º ao 3º e 12) \n03.02 Sujeito Passivo (arts. 4º ao 6º da LC nº 87/1996) \n03.03 Substituição Tributária (arts. 7º ao 10) \n03.04 Local (art. 11) \n03.05 Base de Cálculo (arts. 13 ao 18) \n03.06 Da Não-Cumulatividade - crédito, estorno, transferência, etc (arts. 19 ao 23) \n03.07 Da Apuração do ICMS (arts. 24 ao 26) \n03.08 Dispositivos Finais (arts. 27 ao 35) \n03.08.01 Crédito de Material de Uso e Consumo, Energia Elétrica e Telecomunicações\n04. Lei Complementar nº 24/1975\n05. Lei Complementar nº 160/2017\n07. Lei Complementar nº 192/2022\n08. IPVA NA CF/88\n09. Jurisprudências relacionadas ao IPVA\n10. ITCMD NA CF/88\n11. Jurisprudências relacionadas ao ITCMD"
+      },
+      {
+        "disciplina": "Legislação Tributária Municipal Geral",
+        "versao": "1",
+        "paginas": 43,
+        "sumario": "01. Imposto sobre Serviços - ISS\n01.01. Fato Gerador e Incidência\n01.02 Não-incidência\n01.03 Local\n01.04 Responsáveis \n01.05 Base de cálculo e Aliquotas\n01.06. Jurisprudências relacionadas ao ISS\n02. Imposto Predial e Territorial Urbano - IPTU\n02.01. Progressividade do IPTU\n02.02. Fato Gerador\n02.03. Conceito de Zona Urbana\n02.04. Base de Cálculo e Contribuinte\n02.05. Jurisprudências relacionadas ao IPTU\n03. Imposto sobre Transmissão de Bens Imóveis - ITBI\n03.01. Jurisprudências relacionadas ao ITBI\n04. Contribuições de Melhoria (CF/1988 e CTN)\n05. Contribuição de Iluminação Publica - COSIP\n06. IBS (Imposto sobre Bens e Serviços)\n07. Taxas"
+      },
+      {
+        "disciplina": "Simples Nacional",
+        "versao": "3",
+        "paginas": 80,
+        "sumario": "01. Simples Nacional na Constituição Federal\n02. Disposições Preliminares\n03. Da Definição de ME/EPP\n04. Da Inscrição e da Baixa\n05. Dos Tributos e Contribuições\n05.01 Sociedade de Propósito Específico\n05.02 Concessão de Benefícios do Simples Nacional\n05.03 Microempreendedor Individual - MEI\n05.03.01 MEI Transportador Autônomo de Cargas \n05.04 Enquadramento diferenciado por Estado, DF ou Município\n05.05 Recolhimento dos Tributos Devidos\n05.06 Créditos\n05.07 Obrigações Fiscais Acessórias\n05.08 Exclusão do Simples Nacional\n05.09 Fiscalização\n05.10 Omissão de Receita\n05.11 Acréscimos Legais\n05.12 Processo Administrativo Fiscal\n05.13 Processo Judicial\n06. Acesso aos Mercados\n07. Obrigações Trabalhistas\n08. Investidor-Anjo\n09. Estímulo à inovação \n10. Deliberações Sociais e Estrutura Organizacional\n10.01 Processo Judicial\n11. Acesso à Justiça\n12. Simples Nacional na LC Nº 214/2025\n13. Jurisprudências relacionadas ao Simples Nacional"
+      },
+      {
+        "disciplina": "Contabilidade de Custos",
+        "versao": "1",
+        "paginas": 55,
+        "sumario": "01. Contabilidade de Custos, Financeira e Gerencial.\n\n02. Diferença entre Gastos, Despesas, Custos e Perdas\n\n03. Classificação de Custos: Variável, Fixo, Direto, Indireto, Primário\n\n04. Custeio por Absorção\n\n04.01 Produtos em elaboração e acabados. CPP, CPA E CPV.\n\n04.02 Equivalente de Produção. Custo por Ordem e por Processo\n\n04.03 Departamentalização\n\n05. Materiais Direto\n\n05.01 Critérios de Valoração dos Estoques\n\n05.01.01 PEPS - Primeiro a Entrar, Primeiro a Sair\n\n05.01.02 UEPS - Último a Entrar, Primeiro a Sair\n\n05.01.03 MÉDIA PONDERADA (Móvel ou Fixa)\n\n06. Subprodutos, Sucatas e Coprodutos\n\n07. Custos para Decisão\n\n07.01 Custeio Variável/Direto.\n\n07.02 Margem de Contribuição\n\n07.03 Ponto de Equilibrio\n\n07.04 Alavancagem Operacional\n\n07.05 Custeio ABC\n\n07.06 Custeio Pleno (RKW)\n\n07.07 Markup - Formação de Preços\n\n08. Custo Padrão\n\n09. Custos Imputados e Custos Perdidos (sunk costs)"
+      },
+      {
+        "disciplina": "Análise das Demonstrações Contábeis",
+        "versao": "1",
+        "paginas": 36,
+        "sumario": "01. Introdução (Conceito, Usuários, Interesses e Tipos de Análise)\n02. Análise Vertical e Horizontal das Demonstrações Contábeis\n02.01 Análise Vertical (ou de Estrutura) \n02.02 Análise Horizontal (ou de Evolução)\n03. Análise por Índices ou Quocientes \n03.01 Índices de Liquidez \n03.01.01 Índice de Liquidez Imediata (ou instantânea / Absoluta)\n03.01.02 Índice de Liquidez Seca (ou Teste Ácido)\n03.01.03 Índice de Liquidez Corrente (ou comum)\n03.01.04 Índice de Liquidez Geral\n03.01.05 Índice de Solvência (ou Margem de Garantia)\n03.02 índices de Endividamento\n03.02.01 Índice de Endividamento Total (ou Geral / Debt Ratio)\n03.02.02 índice de Composição do Endividamento\n03.02.03 Grau de Endividamento\n03.02.04 Índice de Participação do Capital Próprio \n03.02.05 Índice de Imobilização do Patrimônio Líquido (IPL)\n03.02.06 Índice de Imobilização do Investimento Total (IIT)\n03.02.07 Índice de Imobilização dos Recursos Não Correntes (IRNC).\n03.02.08 Garantia do Capital Próprio ao Capital de Terceiros\n03.03 Índices de Rentabilidade\n03.03.01 Índice de Retorno sobre o Patrimônio Líquido (ROE)\n03.03.02 Índice de Rentabilidade do Ativo (ROA)\n03.03.03 Retorno sobre o Investimento (ROI)\n03.03.04 Giro do Ativo\n03.04 Índices de Lucratividade (ou Índices de Margem)\n03.04.01 Margem Bruta\n03.04.02 Margem Operacional\n03.04.03 Margem Líquida\n03.05 Índices de Rotatividade\n03.05.01 Prazo Médio de Rotação dos Estoques - PMRE\n03.05.02 Prazo Médio de Recebimento de Vendas (clientes) - PMRV\n03.05.03 Prazo Médio de Pagamento de Compras (Fornecedores) - PMPC\n03.06 Ciclo Operacional e Ciclo Financeiro \n03.07 Grau de Alavancagem Financeira (GAF)\n03.08 Capital de Giro"
+      },
+      {
+        "disciplina": "Auditoria Fiscal Eletrônica",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      },
+      {
+        "disciplina": "Administração Geral",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      },
+      {
+        "disciplina": "Administração Pública",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      },
+      {
+        "disciplina": "Informática Básica",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      },
+      {
+        "disciplina": "Controle Externo",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      },
+      {
+        "disciplina": "Conhecimentos Bancários",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      },
+      {
+        "disciplina": "Vendas e Negociações",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      },
+      {
+        "disciplina": "Normas Regulamentadoras",
+        "versao": "1",
+        "paginas": null,
+        "sumario": null
+      }
+    ]
+  },
+  "flashcardsRegulares": [
+    {
+      "disciplina": "Administração Financeira e Orçamentária (AFO)",
+      "versao": "6",
+      "cards": 108,
+      "arvoreAssuntos": "01. Constituição Federal: Da Fiscalização Contábil, Financeira e Orçamentária e Da Tributação e do Orçamento (art. 163 a 169)\n02. Orçamento Público\n02.01. Princípios Orçamentários\n02.02. Tipos de Orçamento\nOrçamento Base-Zero\nOrçamento Desempenho\nOrçamento Incremental\nOrçamento Participativo\nOrçamento Tradicional\nOrçamento-Programa\n03. Leis Orçamentárias\n03.01. Plano Plurianual (PPA)\n03.02. Lei de Diretrizes Orçamentárias (LDO)\n03.03. Lei Orçamentária Anual (LOA)\n03.04. Emendas parlamentares ao Orçamento\n04. Créditos Adicionais\n04.01. Suplementar\n04.02. Especial\n04.03. Extraordinário\n05. Receitas Orçamentárias\n05.01. Conceitos\n05.02. Classificações\n05.03. Etapas\n06. Despesas Orçamentárias\n06.01. Conceitos\n06.02. Classificações\n06.03. Etapas\n07. Lei de Responsabilidade Fiscal (Lei Complementar n° 101/2000)\n08. Normas Gerais de Direito Financeiro (Lei Federal n° 4.320/1964)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Administração Pública",
+      "versao": "1",
+      "cards": 301,
+      "arvoreAssuntos": "01. Organização do Estado e da Administração Pública.\n02. Modelos teóricos de Administração Pública: patrimonialista, burocrático e gerencial.\n03. Processo de modernização da Administração Pública. Reformas administrativas.\n04. Governabilidade, governança e accountability.\n05. Governança Pública.\n06. Conselhos, Organizações Sociais, Organizações da Sociedade Civil de Interesse Público (OSCIPs), Agências Reguladoras, Agências Executivas, Consórcios Públicos.07. Governo eletrônico; transparência da administração pública.\n08. Gestão da Qualidade na Administração Pública.\n09. Novas tecnologias gerenciais e organizacionais e sua aplicação na Administração Pública.\n01. Indicadores de Desempenho.\n02. Ciclo PDCA.\n03. Balanced Scorecard.\n10. Processo de formulação e desenvolvimento de políticas públicas: construção de agendas, formulação\n11. Planejamento e avaliação nas políticas públicas.\n12. Comunicação na gestão pública e gestão de redes organizacionais.\n13. Controles da Administração Pública.\n14. Ética no exercício da função pública.",
+      "observacao": null
+    },
+    {
+      "disciplina": "Ajustes SINIEF",
+      "versao": "1",
+      "cards": 120,
+      "arvoreAssuntos": "Ajuste SINIEF n° 07/05 (NF-e Serviços de Comunicação e DANFE Serviços de Comunicação)\nAjuste SINIEF n° 19/16 (Cláusula I a XI) (NFe Consumidor e DANFE Consumidor)\nAjuste SINIEF n° 21/10 (MDF-e)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Análise das Demonstrações Contábeis",
+      "versao": "1",
+      "cards": 61,
+      "arvoreAssuntos": "01. Análise vertical e horizontal das demonstrações contábeis\n02. Índices de liquidez\n03. Índices de rentabilidade\n04. Estrutura de capital e Índices de endividamento\n05. Índices de atividades (rotação)\n06. Alavancagem",
+      "observacao": null
+    },
+    {
+      "disciplina": "Atualidades",
+      "versao": "1",
+      "cards": 53,
+      "arvoreAssuntos": "Fatos de 2025",
+      "observacao": "Falta dividir em assuntos"
+    },
+    {
+      "disciplina": "Auditoria Governamental",
+      "versao": "1",
+      "cards": 95,
+      "arvoreAssuntos": "01. Conceitos Básicos de Auditoria Governamental\n02. Entidades de Fiscalização Superior\n03. Profissionais de Auditoria Governamental\n04. Trabalho de Auditoria",
+      "observacao": "Falta dividir em assuntos"
+    },
+    {
+      "disciplina": "Auditoria Privada",
+      "versao": "3",
+      "cards": 530,
+      "arvoreAssuntos": "- 01. Normas Profissionais do Auditor Independente\n01.01. Objetivos Gerais do Auditor\n01.02. Princípios Éticos do Auditor\n01.03. Características Interentes ao Auditor (julgamento e ceticismo)\n01.04. Controle de Qualidade da Auditoria\n01.05. Independência (Auditor)\n01.06. Normas de Execução do Trabalho do Auditor Independente\n02. Planejamento de Auditoria Independente\n03. Materialidade, Relevância e Risco em Auditoria Independente\n04. Evidência em Auditoria\n05. Documentação de Auditoria e Papéis de Trabalho\n06. Amostragem em Auditoria\n07. Fraude e Erro (Auditoria)\n08. Opinião do auditor independente / Relatórios e Pareceres de Auditoria\n09. Testes e Procedimentos em Auditoria\n10. Testes em Áreas Específicas das Demonstrações Contábeis",
+      "observacao": null
+    },
+    {
+      "disciplina": "Contabilidade de Custos",
+      "versao": "3",
+      "cards": 103,
+      "arvoreAssuntos": "01. Conceitos básicos\n02. Contabilidade Financeira, Gerencial e de Custos\n03. Classificação de custos\n04. Custeio por absorção\n05. Custo por ordem e por processo\n06. Margem de Contribuição e Ponto de Equilíbrio",
+      "observacao": null
+    },
+    {
+      "disciplina": "Contabilidade Geral e Avançada",
+      "versao": "4",
+      "cards": 70,
+      "arvoreAssuntos": "01. Objeto, campo de atuação e finalidade\n02. Teoria das Contas\n03. Escrituração Contábil\n04. Fatos Contábeis\n05. Técnicas Contábeis\n06. Lançamentos\n07. Exercício Social\n08. Insubsistência e Superveniência\n09. Princípios Contábeis\n10. Patrimônio\n11. Plano de Contas\n12. Balancete de Verificação",
+      "observacao": null
+    },
+    {
+      "disciplina": "Contabilidade Aplicada ao Setor Pública (CASP)",
+      "versao": "4",
+      "cards": 265,
+      "arvoreAssuntos": "01. Conceito, campo de aplicação, objeto e objetivos.\n02. Características Qualitativas.\n03. Normas Brasileiras de Contabilidade Aplicadas ao Setor Público (NBC TSP).\n04. Normas Internacionais de Contabilidade Aplicadas ao Setor Público (IPSAS).\n06. Manual de Contabilidade Aplicada ao Setor Público (MCASP), 9ª edição.\n07. Receita: conceito, classificação e estágios, aspectos patrimoniais, aspectos legais, contabilização, deduções, renúncia e destinação da receita, dívida ativa.\n08. Despesa: conceito, classificação e estágios, aspectos patrimoniais, aspectos legais, contabilização, dívida pública, operações de crédito.\n09. Demonstrações Contábeis: Balanços Financeiro, Patrimonial e Orçamentário e Demonstração das Variações Patrimoniais. Conceitos, aspectos legais, forma de apresentação, elaboração.\n10. Renúncia de Receita.\n11. Geração de Despesas.\n12. Despesas Obrigatórias de Caráter Continuado.\n13. Dívida e Endividamento: definições básicas.\n14. Relatório de Gestão Fiscal: estrutura, composição e limites.\n15. Relatório Resumido da Execução Orçamentária.\n16. Sistema de Informação de Custos: NBC T 16.11.",
+      "observacao": null
+    },
+    {
+      "disciplina": "Decreto 6.022/07 (SPED)",
+      "versao": "1",
+      "cards": 13,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Decreto-Lei 3.688/41 (Contravenções Penais)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Decreto-Lei 4.657/42 (LINDB)",
+      "versao": "1",
+      "cards": 27,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Decreto-Lei 911/69 (Alienação Fiduciária de Bens Móveis",
+      "versao": "1",
+      "cards": 10,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Administrativo",
+      "versao": "7",
+      "cards": 507,
+      "arvoreAssuntos": "01. Conceitos, Princípios e Fontes do Direito Administrativo\n02. Poderes e Deveres da Administração Pública\n03. Atos Administrativos\n04. Organização da Administração Pública e Terceiro Setor\n05. Serviços Públicos\n06. Responsabilidade Civil do Estado\n07. Controle da Administração Pública\n08. Bens Públicos\n09. Intervenção do Estado na propriedade privada",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Civil",
+      "versao": "5",
+      "cards": 473,
+      "arvoreAssuntos": "01. Código Civil\n02.01. Das Pessoas (arts. 1º a 78)\n02.02. Dos Bens (arts. 79 a 103)\n02.03. Dos Fatos Jurídicos (arts. 104 a 232)\n02.04. Do Direito das Obrigações (arts. 233 a 420)\n02.05. Dos Contratos em Geral (arts. 421 a 480)\n02.06. Das Várias Espécies de Contrato (arts. 481 a 853)\n02.07. Da Responsabilidade Civil (arts. 927 a 954)\n02.08. Do Direito das Coisas (arts. 1.196 a 1.510)\n02.09. Do Direito de Família (arts. 1.511 a 1.783)\n02.10. Do Direito das Sucessões (arts. 1.784 a 2.027)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Constitucional",
+      "versao": "8",
+      "cards": 719,
+      "arvoreAssuntos": "01. Introdução ao Direito Constitucional\n    01.01. Concepção / Sentidos da Constituição\n    01.02. Classificação das Constituições\n    01.03. Eficácia e Aplicabilidade das Normas Constitucionais\n    01.04. Normas Constitucionais no Tempo\n    01.05. Poder Constituinte\n    01.06. Métodos de Interpretação da Constituição\n    01.07. Princípios de Interpretação da Constituição\n02. Constituição Federal (Lei Seca)\n    TÍTULO I - Dos Princípios Fundamentais da Constituição (arts. 1º ao 4º do CF/1988)\n    TÍTULO II - Dos Direitos e Garantias Fundamentais (arts. 5º a 17 da CF/1988)\n    TÍTULO III - Da Organização do Estado (arts. 18 a 43 da CF/1988)\n    TÍTULO IV - Da Organização dos Poderes (arts. 44 a 135 da CF/1988)\n    TÍTULO V - Defesa do Estado e das Instituições Democráticas (arts. 136 a 144 da CF/1988)\n    TÍTULO VI - Da Tributação e do Orçamento (arts. 145 a 169 da CF/1988)\n        Capítulo II - Das Finanças Públicas (arts. 163 a 169 da CF/1988)\n    TÍTULO VII - Da Ordem Econômica e Financeira (arts. 170 a 192 da CF/1988)\n    TÍTULO VIII - Ordem Social (arts. 193 a 232 da CF/1988)\n03. Controle de Constitucionalidade",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito do Trabalho",
+      "versao": "1",
+      "cards": 338,
+      "arvoreAssuntos": "01. Princípios e Fontes do Dir. do Trab\n02. Fraude aos preceitos protetivos da CLT; fraude à relação de emprego; terceirização lícita e ilícita\n03. Contrato Individual de Trabalho\n04. Formas de rescisão do contrato de trabalho\n05. Duração do Trabalho\n06. Salário-mínimo; irredutibilidade e garantia; Salário e remuneração\n07. Férias, direito, duração, concessão, época das férias, remuneração e abono de férias\n08. Benefícios aos trabalhadores e trabalhadoras: vale transporte, FGTS, seguro-desemprego e abono salarial\n09. Prescrição e Decadência\n10. Proteção ao Trabalho da Mulher\n11. Direito Coletivo do Trabalho\n12. Direito de Greve. Greve nos Serviços Essenciais\n13. Trabalho Infantil e Proteção do Adolescente\n14. Trabalho em Condições Análogas à de Escravo\n15. Trabalho Esportivo\n16. Trabalho em Atividades Petrolíferas (Lei 5.811 e NR 37)\n17. Trabalho do Artista e do Técnico em Espetáculos de Diversões (Lei 6.533)\n18. Trabalho da Pessoa Com Deficiência e Reabilitada\n19. Aprendizagem Profissional\n20. Convenções da OIT\n21. Trabalho Cooperado\n22. Decreto 4552: Regulamento da Inspeção do Trabalho (RIT)\n23. Lei 14.457: Programa Emprega Mais Mulheres",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Empresarial",
+      "versao": "5",
+      "cards": 567,
+      "arvoreAssuntos": "01. Direito de Empresa (Código Civil)\n    01.01. Do Empresário (arts. 966 a 980 do CC)\n    01.02. Do Estabelecimento (arts. 1142 a 1149 do CC)\n    01.03. Do Registro (arts. 1150 a 1154 do CC)\n    01.04. Do Nome Empresarial (arts. 1155 a 1168 do CC)\n    01.05. Dos Prepostos (arts. 1169 a 1178 do CC)\n    01.06. Da Escrituração (arts. 1179 a 1195 do CC)\n02. Da Sociedade (Código Civil)\n    02.01. Sociedades: disposições gerais (arts. 981 a 985 do CC)\n    02.02. Sociedades não personificadas\n        02.02.01. Sociedade Comum (arts. 986 a 990 do CC)\n        02.02.02. Sociedade em Conta de Participação (arts. 991 a 996 do CC)\n    02.03. Sociedade Personificada\n        02.03.01. Sociedade Simples (arts. 997 a 1.027 do CC)\n        02.03.02. Sociedade em Nome Coletivo (arts. 1.039 a 1.044 do CC)\n        02.03.03. Sociedade em Comandita Simples (arts. 1.045 a 1.051 do CC)\n        02.03.04. Sociedade Limitada (arts. 1.052 a 1.087 do CC)\n        02.03.05. Sociedade Cooperativa (arts. 1.093 a 1.096 do CC)\n    02.04. Dissolução, liquidação e extinção das sociedades (arts. 1.028 a 1.038, 1.102 a 1.112 do CC)\n    02.05. Operações societárias (arts. 1.113 a 1.122 do CC)\n    02.06. Sociedades Coligadas, Controladas, Filiadas (arts. 1.097 a 1.101)\n03. Sociedade Anônima (Lei 6.404/76)\n    03.01. Características e Natureza da Companhia ou Sociedade Anônima (arts. 1º a 4º da Lei nº 6.404/76)\n    03.02. Capital Social e Modificação do Capital Social (arts. 5º a 10 e 166 a 174 da Lei nº 6.404/76)\n    03.03. Acionistas (arts. 106 a 120 da Lei nº 6.404/76)\n    03.04. Ações, Partes Beneficiárias, Debêntures, Bônus de Subscrição (arts. 11 a 79 da Lei nº 6.404/76)\n    03.05. Assembleia Geral, Conselhos, Diretoria (arts. 121 a 165-A da Lei nº 6.404/76)\n    03.06. Dissolução, Liquidação e Extinção da SA (arts. 206 a 219 da Lei nº 6.404/76)\n    03.07. Operações de reorganização societária: transformação, incorporação, fusão e cisão. (Art. 220 a 234, Lei 6.404/76)\n    03.08. Sociedades controladoras, controladas e coligadas; subsidiária integral. (Art. 243 a 253, Lei 6.404/76)\n04. Títulos de Crédito\n    - 04.01. Código Civil\n        04.01.01. Disposições Gerais (arts. 887 a 903, CC)\n        04.01.02. Do Título ao Portador (arts. 904 a 909, CC)\n        04.01.03. Do Título à Ordem (arts. 910 a 920, CC)\n        04.01.04. Do Título Nominativo (arts. 921 a 926, CC)\n05. Contratos no direito empresarial\n    - 05.01. Contratos de troca\n    05.01. Compra e venda mercantil\n    05.01.02. Alienação Fiduciária em Garantia\n    05.01.03. Arrendamento mercantil\n    - 05.02. Contratos de colaboração\n    05.02.01. Sociedade\n    05.02.02. Representação comercial\n    05.02.03. Comissão mercantil\n    05.02.04. Distribuição\n    05.02.05. Concessão comercial\n    05.02.06. Franquia\n    05.02.07. Faturização\n\n06. Recuperação Judicial e Falência (Lei nº 11.101/2005)\n    06.01. Conceitos Iniciais, princípios - disposições preliminares (Arts. 1º a 3º da Lei nº 11.101/2005)\n    06.02. Disposições Comuns à Recuperação Judicial e à Falência (Arts. 5º a 46 da Lei nº 11.101/2005)\n    06.03. Da Recuperação Judicial e da Convolação da Recuperação Judicial em Falência (Arts. 47 a 74)\n    06.04. Da Falência (Arts. 75 a 160 da Lei nº 11.101/2005)\n    06.05. Da Recuperação Extrajudicial (Arts. 161 a 167 da Lei nº 11.101/2005)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Penal",
+      "versao": "7",
+      "cards": 594,
+      "arvoreAssuntos": "01. Princípios do Direito Penal\n02. Código Penal (Parte Geral)\n    - TÍTULO I - Da Aplicação da Lei Penal (arts. 1º a 12 do CP)\n        Aplicação da Lei Penal no Espaço\n        Aplicação da Lei Penal no Tempo\n    - TÍTULO II - Do Crime (arts. 13 a 25 do CP)\n        Arrependimento Eficaz\n        Arrependimento Posterior\n        Ação e Omissão\n        Conceito de Crime\n        Considerações Gerais sobre a Ilicitude e suas Excludentes\n        Consumação\n        Crime Impossível\n        Desistência Voluntária\n        Dolo, Culpa e Preterdolo\n        Elementos do Fato Típico\n        Erro de Tipo\n        Estado de Necessidade\n        Estrito Cumprimento de Dever Legal\n        Exercício Regular de Direito\n        Legítima Defesa\n        Nexo de Causalidade: Concausas\n        Nexo de Causalidade: Teorias\n        Tentativa\n- TÍTULO III - Da Imputabilidade Penal (arts. 26 a 28 do CP)\n    Conceitos Gerais da Culpabilidade\n    Exigibilidade de Conduta Diversa\n    Imputabilidade Penal\n    Potencial Consciência da Ilicitude (Erro de Proibição e Descriminantes Putativas)\n- TÍTULO IV - Do Concurso de Pessoas (arts. 29 a 31 do CP)\n    Concurso de Pessoas\n03. Código Penal (Parte Especial)\n- TÍTULO I - Dos Crimes contra a Pessoa\n    Da Periclitação da Vida e da Saúde (arts. 130 a 136 do CP)\n    Das Lesões Corporais (art. 129 do CP)\n    Dos Crimes contra a Honra (arts. 138 a 145 do CP)\n    Dos Crimes contra a Liberdade Individual (arts. 146 a 154-B do CP)\n    Dos Crimes contra a Vida (arts. 121 a 128 do CP)\n- TÍTULO II - Dos Crimes contra o Patrimônio\n    Da Apropriação Indébita (arts. 168 a 170 do CP)\n    Das Disposições Gerais dos Crimes contra o Patrimônio (arts. 181 a 183 do CP)\n    Do Estelionato e das Outras Fraudes (arts. 171 a 179 do CP)\n    Do Furto (arts. 155 a 156 do CP)\n    Do Roubo e da Extorsão (arts. 157 a 160 do CP)\nTÍTULO X - Dos Crimes contra a Fé Pública (arts. 289 a 311 do CP)\n    Da Falsidade de Títulos e Outros Papéis Públicos (arts. 293 a 295 do CP)\n    Da Falsidade Documental (arts. 296 a 305 do CP)\n    Da Moeda Falsa (arts. 289 a 292 do CP)\n    De Outras Falsidades e das Fraudes em Certame de Interesse Público (arts. 306 a 311-A do CP)\nTÍTULO XI - Dos Crimes contra a Administração Pública\n01. Peculato (art. 312 do CP)\n02. Peculato Mediante Erro de Outrem (art. 313 do CP)\n03. Inserção de Dados Falsos em Sistema de Informações (art. 313-A do CP)\n04. Modificação ou Alteração Não Autorizada de Sistema de Informações (art. 313-B do CP)\n05. Extravio, Sonegação ou Inutilização de Livro ou Documento (art. 314 do CP)\n06. Emprego Irregular de Verbas ou Rendas Públicas (art. 315 do CP)\n07. Concussão e Excesso de Exação (art. 316 do CP)\n08. Corrupção Passiva (art. 317 do CP)\n09. Facilitação de Contrabando ou Descaminho (art. 318 do CP)\n10. Prevaricação (arts. 319 a 319-A do CP)\n11. Condescendência Criminosa (art. 320 do CP)\n12. Advocacia Administrativa (art. 321 do CP)\n13. Violência Arbitrária (art. 322 do CP)\n14. Abandono de Função (art. 323 do CP)\n15. Exercício Funcional Ilegalmente Antecipado ou Prolongado (art. 324 do CP)\n16. Violação de Sigilo Funcional (art. 325 do CP)\n17. Violação do Sigilo de Proposta de Concorrência (art. 326 do CP)\n18. Funcionário Público para Fins Penais (art. 327 do CP)\n19. Dos Crimes Praticados por Particular contra a Administração em Geral (arts. 328 a 337-A do CP)\n20. Dos Crimes contra a Administração da Justiça (arts. 338 a 359 do CP)\n21. Dos Crimes em Licitações e Contratos Administrativos (Lei n.º 14.133/2021)\nTÍTULO XII - Dos Crimes contra o Estado Democrático de Direito\n    Dos Crimes contra a Soberania Nacional (arts. 359-I a 359-K do CP)\n    Dos Crimes contra as Instituições Democráticas (arts. 359-L a 359-M do CP)\n    Dos Crimes contra o Funcionamento das Instituições Democráticas no Processo Eleitoral (arts. 359-N a 359-P do CP)\n    Dos Crimes contra o Funcionamento dos Serviços Essenciais (arts. 359-R do CP)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Processual Civil",
+      "versao": "1",
+      "cards": 460,
+      "arvoreAssuntos": "01. Parte Geral\n- 01.01. Das Normas Processuais Civis\n    01.01.01. Do Juiz e Dos Auxiliares Da Justiça\n        01.01.01.01. Dos Impedimentos e Da Suspeição\n        01.01.01.02. Dos Auxiliares Da Justiça\n    - 01.01.02. Do Escrivão, do Chefe de Secretaria e do Oficial de Justiça\n- 01.02. Dos Atos Processuais\n    - 01.02.01. Da Forma, Do Tempo e Do Lugar dos Atos Processuais\n        01.02.01.01. Da Forma dos Atos Processuais\n            01.02.01.01.01. Dos Atos em Geral\n            01.02.01.01.02. Da Prática Eletrônica de Atos Processuais\n            01.02.01.01.03. Dos Atos das Partes\n            01.02.01.01.04. Dos Pronunciamentos do Juiz\n            01.02.01.01.05. Dos Atos do Escrivão ou do Chefe de Secretaria\n        - 01.02.01.02. Do Tempo e Do Lugar dos Atos Processuais\n            01.02.01.02.01. Do Tempo\n            01.02.01.02.02. Do Lugar\n        - 01.02.01.03. Dos Prazos\n            01.02.01.03.01. Disposições Gerais\n            01.02.01.03.02. Da Verificação dos Prazos e das Penalidades\n    - 01.02.02. Da Comunicação Dos Atos Processuais\n        01.02.02.01. Disposições Gerais\n        01.02.02.02. Da Citação\n01.02.02.03. Das Cartas\n01.02.02.04. Das Intimações\n\n- 01.03. Da Tutela Provisória\n    01.03.01. Disposições Gerais\n    - 01.03.02. Da Tutela de Urgência\n        01.03.02.01. Disposições Gerais\n        01.03.02.02. Do Procedimento da Tutela Antecipada Requerida em Caráter Antecedente\n        01.03.02.03. Do Procedimento da Tutela Cautelar Requerida em Caráter Antecedente\n    01.03.03. Da Tutela da Evidência\n\n02. Parte Especial\n    - 02.01. Do Processo de Conhecimento e do Cumprimento de Sentença\n        - 02.01.01. Do Procedimento Comum\n            02.01.01.01. Disposições Gerais\n            - 02.01.01.02. Da Petição Inicial\n                02.01.01.02.01. Dos Requisitos da Petição Inicial\n                02.01.01.02.02. Do Pedido\n                02.01.01.02.03. Do Indeferimento da Petição Inicial\n                02.01.01.03. Da Improcedência Liminar do Pedido\n                02.01.01.04. Da Audiência de Conciliação ou de Mediação\n                02.01.01.05. Da Contestação\n                02.01.01.06. Da Reconvenção\n                02.01.01.07. Da Revelia\n                - 02.01.01.08. Das Provisões Preliminares e Do Saneamento\n                    02.01.01.08.01. Da Não Incidência dos Efeitos da Revelia\n02.01.01.08.02. Do Fato Impeditivo, Modificativo ou Extintivo do Direito do Autor\n02.01.01.08.03. Das Alegações do Réu\n\n- 02.01.01.09. Do Julgamento Conforme o Estado do Processo\n    02.01.01.09.01. Do Julgamento Antecipado do Mérito\n    02.01.01.09.02. Do Julgamento Antecipado Parcial do Mérito\n    02.01.01.09.03. Do Saneamento e da Organização do Processo\n    02.01.01.10. Da Audiência de Instrução e Julgamento\n- 02.01.01.11. Das Provas\n    02.01.01.11.01. Disposições Gerais\n    02.01.01.11.02. Da Produção Antecipada da Prova\n    02.01.01.11.03. Da Ata Notarial\n    02.01.01.11.04. Do Depoimento Pessoal\n    02.01.01.11.05. Da Confissão\n    02.01.01.11.06. Da Exibição de Documento ou Coisa\n    - 02.01.01.11.07. Da Prova Documental\n        02.01.01.11.07.01. Da Força Probante dos Documentos\n        02.01.01.11.07.02. Da Arguição de Falsidade\n        02.01.01.11.07.03. Da Produção da Prova Documental\n        02.01.01.11.08. Dos Documentos Eletrônicos\n    - 02.01.01.11.09. Da Prova Testemunhal\n        02.01.01.11.09.01. Da Admissibilidade e do Valor da Prova Testemunhal\n        02.01.01.11.09.02. Da Produção da Prova Testemunhal\n    02.01.01.11.10. Da Prova Pericial\n    02.01.01.11.11. Da Inspeção Judicial\n02.01.01.12. Da Sentença e Da Coisa Julgada\n    02.01.01.12.01. Disposições Gerais\n    02.01.01.12.02. Dos Elementos e dos Efeitos da Sentença\n    02.01.01.12.03. Da Remessa Necessária\n    02.01.01.12.04. Do Julgamento das Ações Relativas às Prestações de Fazer, de Não Fazer e de Entregar Coisa\n    02.01.01.12.05. Da Coisa Julgada\n    02.01.01.13. Da Liquidação de Sentença\n\n- 02.01.02. Do Cumprimento da Sentença\n    02.01.02.01. Disposições Gerais\n    02.01.02.02. Do Cumprimento Provisório da Sentença que Reconhece a Exigibilidade de Obrigação de Pagar Quantia Certa\n    02.01.02.03. Do Cumprimento Definitivo da Sentença que Reconhece a Exigibilidade de Obrigação de Pagar Quantia Certa\n    02.01.02.04. Do Cumprimento de Sentença que Reconheça a Exigibilidade de Obrigação de Prestar Alimentos\n    02.01.02.05. Do Cumprimento de Sentença que Reconheça a Exigibilidade de Obrigação de Pagar Quantia Certa Pela Fazenda Pública\n    - 02.01.02.06. Do Cumprimento de Sentença que Reconheça a Exigibilidade de Obrigação de Fazer, de Não Fazer ou de Entregar Coisa\n        02.01.02.06.01. Do Cumprimento de Sentença que Reconheça a Exigibilidade de Obrigação de Fazer ou de Não Fazer\n        02.01.02.06.02. Do Cumprimento de Sentença que Reconheça a Exigibilidade de Obrigação de Entregar Coisa\n\n02.02. Dos Processos nos Tribunais e Dos Meios de Impugnação das Decisões Judiciais\n- 02.02.01. Dos Recursos\n    02.02.01.01. Disposições Gerais\n    02.02.01.02. Da Apelação\n    02.02.01.03. Do Agravo de Instrumento\n    02.02.01.04. Do Agravo Interno\n    02.02.01.05. Dos Embargos de Declaração",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Processual Penal",
+      "versao": "4",
+      "cards": 435,
+      "arvoreAssuntos": "01. Sistemas e Princípios.\n02. Aplicação da Lei Processual Penal.\n    01. Interpretação e Integração da Lei Processual.\n    02. Lei Processual no Tempo e no Espaço.\n03. Inquérito Policial.\n04. Ação Penal.\n07. Da Prova.\n    07.01. Do Exame de Corpo de Delito.\n    07.02. Do Interrogatório do Acusado.\n    07.03. Da Confissão.\n    07.04. Do Ofendido e Das Testemunhas.\n    07.05. Do Reconhecimento de Coisas e Pessoas.\n    07.06. Da Acareação.\n    07.07. Dos Documentos.\n    07.08. Dos Indícios.\n    07.09. Da Busca e Apreensão.\n08. Sujeitos do Processo Penal.\n09. Da Prisão, das Medidas Cautelares e da Liberdade Provisória.\n    09.01. Prisão em Flagrante.\n    09.02. Prisão Preventiva.\n    09.03. Medidas Cautelares Diversa da Prisão.\n10. Da Comunicação dos Atos Processuais.\n    10.01. Das Citações.\n    10.02. Das Intimações.\n11. Dos Processos em Espécie.\n    - 11.01. Do Processo Comum.\n        11.01.01. Da Instrução Criminal.\n        - 11.01.02. Do Procedimento Relativo aos Processos da Competência do Tribunal do Júri.\n            11.01.02.01. Da Acusação e da Instrução Preliminar\n            11.01.02.02. Da Pronúncia, da Impronúncia e da Absolvição Sumária\n            11.01.02.03. Da Preparação do Processo para Julgamento em Plenário\n            11.01.02.04. Do Alistamento dos Jurados\n            11.01.02.05. Do Desaforamento\n            11.01.02.06. Da Organização da Pauta\n            11.01.02.07. Do Sorteio e da Convocação dos Jurados\n            11.01.02.08. Da Função do Jurado\n            11.01.02.09. Da Composição do Tribunal do Júri e da Formação do Conselho de Sentença\n            11.01.02.10. Da Reunião e das Sessões do Tribunal do Júri\n            11.01.02.11. Da Instrução em Plenário\n            11.01.02.12. Dos Debates\n            11.01.02.13. Do Questionário e sua Votação\n            11.01.02.14. Da Sentença\n            11.01.02.15. Da Ata dos Trabalhos\n            11.01.02.16. Das Atribuições do Presidente do Tribunal do Júri\n        11.01.03. Do Processo Sumário.\n        11.01.04. Do Processo de Restauração de Autos Extraviados ou Destruídos.\n    - 11.02. Dos Recursos em Geral.\n        11.02.01. Disposições Gerais.\n11.02.02. Do Recurso em Sentido Estrito.\n11.02.03. Da Apelação.\n11.02.04. Do Processo e Do Julgamento dos Recursos em Sentido Estrito e Das Apelações, nos Tribunais de Apelação.\n11.02.05. Dos Embargos.\n11.02.06. Da Revisão.\n11.02.07. Do Recurso Extraordinário.\n11.02.08. Da Carta Testemunhável.\n11.02.09. Do Habeas Corpus e Seu Processo.",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direito Tributário",
+      "versao": "9",
+      "cards": 534,
+      "arvoreAssuntos": "01. Introdução ao Direito Tributário\n02. Do Sistema Tributário Nacional - arts. 145 e 162 da CF/88 (Lei Seca)\n    02.01. Princípios Gerais (arts. 145 a 149-A da CF/1988)\n    02.02. Das Limitações ao Poder de Tributar (arts. 150 a 152 da CF/1988)\n    02.03. Dos Impostos da União (arts. 153 e 154 da CF/1988)\n    02.04. Dos Impostos dos Estados e do Distrito Federal (arts. 155 da CF/1988)\n    02.05. Dos Impostos dos Municípios (arts. 156 da CF/1988)\n    02.06. Da Repartição das Receitas Tributárias (arts. 157 a 162 da CF/1988)\n03. Código Tributário Nacional (Lei Seca)\n    03.01. Disposições Gerais (CTN, arts. 1º ao 5º)\n    03.02. Taxas (CTN, arts. 77 a 80)\n    03.03. Contribuição de Melhoria (CTN, arts. 81 e 82)\n    03.04. Legislação Tributária (CTN, arts. 96 a 112)\n    03.05. Obrigação Tributária (CTN, arts. 113 a 138)\n    03.06. Crédito Tributário (CTN, arts. 139 a 193)\n    03.07. Administração Tributária (CTN, arts. 194 a 208)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Direitos Humanos",
+      "versao": "3",
+      "cards": 150,
+      "arvoreAssuntos": "01. Conceitos, Históricos e Gerações.\n02. DUDH e Pactos de 1966 (Sistema Global de DH).\n03. Fontes, Classificação e Princípios.\n04. Direitos Humanos na Constituição Federal.\n05. Convenção Americana de DH - Pacto de San José da Costa Rica.\n06. Convenção Internacional Sobre Eliminação de Todas as Formas de Discriminação Racial.\n07. Direitos Humanos e Auditoria Fiscal do Trabalho.\n08. OIT e suas Convenções.\n09. Pacto de San José e CF/88.",
+      "observacao": null
+    },
+    {
+      "disciplina": "Economia brasileira",
+      "versao": "1",
+      "cards": 21,
+      "arvoreAssuntos": "01. Planos Econômicos\n    01.01. Plano Cruzado\n    01.02. Plano Bresser\n    01.03. Plano Verão\n    01.04. Plano Real",
+      "observacao": null
+    },
+    {
+      "disciplina": "Emenda Constitucional 132/23 (Reforma Tributária)",
+      "versao": "8",
+      "cards": 185,
+      "arvoreAssuntos": "CBS\nIBS\nImposto Seletivo\nIPI\nIPTU\nIPVA\nITCMD\nOutros assuntos",
+      "observacao": null
+    },
+    {
+      "disciplina": "Estatística",
+      "versao": "3",
+      "cards": 124,
+      "arvoreAssuntos": "01. Medidas de Posição e Dispersão\n02. Amostragem\n03. Distribuições discretas de probabilidade\n04. Intervalo de Confiança\n05. Teste de Hipóteses\n06. Correlação e Regressão",
+      "observacao": null
+    },
+    {
+      "disciplina": "Finanças Públicas",
+      "versao": "3",
+      "cards": 61,
+      "arvoreAssuntos": "01. Bem estar e funções do governo\n02. Tributação\n02.01. Princípios\n02.02. Tipos de impostos\n02.03. Curva de Laffer\n03. Dívida Pública, Déficit Público, Necessidades de Financiamento do Setor Público.",
+      "observacao": null
+    },
+    {
+      "disciplina": "IN 2.003/21 (Escrituração Contábil Digital)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": null,
+      "observacao": null
+    },
+    {
+      "disciplina": "Informática Básica",
+      "versao": "6",
+      "cards": 745,
+      "arvoreAssuntos": "01. Fundamentos da Computação\n01.01. Hardware\n01.02. Software\n01.03. Memórias\n02. Sistemas Operacionais\n02.01. Noções básicas\n02.02. Windows\n- 02.03. Linux\n02.03.01. Conceitos Gerais\n02.03.02. Comandos\n02.03.03. Diretórios\n03. Suítes de Escritórios\n03.01. MS - Word\n03.02. MS - Excel\n03.03. MS - Power Point\n04. Rede de Computadores\n04.01. Equipamentos de rede\n04.02. Meios de transmissão\n04.03. Arquiteturas de Rede\n04.04. Internet, intranet e extranet\n04.05. IaaS, PaaS e SaaS\n04.06. Pilhas de protocolos\n04.07. Protocolos de rede\n04.08. Computação em nuvem\n04.09. Topologia de rede\n05. Segurança da Informação\n05.01. Criptografia\n05.02. Ferramentas de proteção\n05.03. Certificado digital\n05.04. Backup\n05.05. Programas Maliciosos\n05.06. Práticas e ataques\n05.07. Assinatura digital\n06. Correio Eletrônico\n07. Internet\n08. MS Teams",
+      "observacao": null
+    },
+    {
+      "disciplina": "Jurisprudência Direito Administrativo",
+      "versao": "4",
+      "cards": 156,
+      "arvoreAssuntos": "01. Informativos (por tema)\n01.01. Princípios administrativos\n01.02. Organização administrativa\n01.03. Atos administrativos\n01.04. Poderes administrativos\n01.05. Serviços Públicos\n01.06. Responsabilidade Civil\n01.07. Bens Públicos\n01.08. Improbidade administrativa\n01.09. Licitação\n01.10. Contratos administrativo\n01.11. Intervenção do estado na propriedade privada\n02. Súmulas",
+      "observacao": null
+    },
+    {
+      "disciplina": "Jurisprudência Direito Constitucional",
+      "versao": "3",
+      "cards": 151,
+      "arvoreAssuntos": "01. Informativos (por tema)\n01.01. Direitos e Garantias Fundamentais\n01.02. Organização do Estado\n01.03. Controle de Constitucionalidade\nSúmulas",
+      "observacao": null
+    },
+    {
+      "disciplina": "Jurisprudência Direito Tributário",
+      "versao": "2",
+      "cards": 158,
+      "arvoreAssuntos": "01. Informativos (por tema)\n01.01. Princípios Tributários\n01.02. Impostos Federais\n01.03. Impostos Estaduais\n01.04. Impostos Municipais\n02. Súmulas",
+      "observacao": null
+    },
+    {
+      "disciplina": "Legislação Tributária Municipal Geral",
+      "versao": "2",
+      "cards": 51,
+      "arvoreAssuntos": "01. COSIP\n01.01. Disposições Constitucionais\n02. IPTU\n02.01. Disposições Constitucionais\n02.02. Código Tributário Nacional\n03. ITBI\n03.01. Disposições Constitucionais\n04. ISSQN\n04.01. Disposições Constitucionais\n- 04.02. Lei Complementar 116\n04.02.01. Fato Gerador e Incidência\n04.02.02. Não-Incidência\n04.02.03. Contribuinte\n04.02.04. Responsáveis\n04.02.05. Base de Cálculo\n04.02.06. Alíquotas\n04.02.07. Local",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 10.028/00 (Crimes contra as Finanças Públicas)",
+      "versao": "1",
+      "cards": 18,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 10.826/03 (Estatuto do Desarmamento)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": "01. Do Sistema Nacional de Armas\n02. Do Registro\n03. Do Porte\n04. Dos Crimes e Das Penas",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 11.340/06 (Lei Maria da Penha)",
+      "versao": "1",
+      "cards": 24,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 11.343/06 (Lei de Drogas)",
+      "versao": "1",
+      "cards": 35,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 12.527/11 (Lei de Acesso à Informação)",
+      "versao": "1",
+      "cards": 54,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 12.850/13 (Lei de Organização Criminosa)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 13.146/15 (Estatuto da Pessoa com Deficiência)",
+      "versao": "1",
+      "cards": 42,
+      "arvoreAssuntos": "01. Parte Geral\n- 01. Disposições Preliminares\n01. Disposições Gerais\n- 02. Da Igualdade e da Não Discriminação\n01. Do Atendimento Prioritário\n- 02. Dos Direitos Fundamentais\n01. Do Direito à Vida\n- 02. Do Direito ao Trabalho\n01. Disposições Gerais\n02. Da Habilitação Profissional e Reabilitação Profissional\n03. Da Inclusão da Pessoa com Deficiência no Trabalho",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 13.709/18 (Lei Geral de Proteção de Dados Pessoais)",
+      "versao": "1",
+      "cards": 100,
+      "arvoreAssuntos": "01. Disposições Preliminares (arts. 1º ao 6º da LGPD)\n02. Do Tratamento de Dados Pessoais (arts. 7º ao 16 da LGPD)\n03. Dos Direitos do Titular (arts. 17 ao 22 da LGPD)\n04. Do Tratamento de Dados Pessoais pelo Poder Público (arts. 23 ao 32 da LGPD)\n05. Da Transferência Internacional de Dados (arts. 33 ao 36 da LGPD)\n06. Dos Agentes de Tratamento de Dados Pessoais (arts. 37 ao 45 da LGPD)\n07. Da Segurança e das Boas Práticas (arts. 46 ao 51 da LGPD)\n08. Da Fiscalização (arts. 52 ao 54 da LGPD)\n09. Da ANPD e do CNPD (arts. 55-A ao 58-B da LGPD)\n10. Disposições Finais e Transitórias (arts. 60 ao 65 da LGPD)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 13.869/19 (Crimes de Abuso de Autoridade)",
+      "versao": "1",
+      "cards": 70,
+      "arvoreAssuntos": "01. Disposições Gerais\n02. Crimes em Espécie",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 13.874/19 (Liberdade Econômica)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Licitações e Contratos (Lei 14.133/21)",
+      "versao": "1",
+      "cards": 543,
+      "arvoreAssuntos": "TÍTULO I - Disposições Preliminares (arts. 1 a 10)\nTÍTULO II - Das Licitações (arts. 11 a 87)\nTÍTULO III - Dos Contratos Administrativos\nTÍTULO IV - Das Irregularidades\nTÍTULO V - Das disposições Gerais",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 14.230/21 (Improbidade Administrativa)",
+      "versao": "1",
+      "cards": 75,
+      "arvoreAssuntos": "01. Disposições Gerais\n02. Atos de Improbidade\n03. Das Penas\n04. Declaração de Bens\n05. Procedimento administrativo e Processo Judicial\n06. Disposições Penais\n07. Prescrição",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 4.320/64 (Normas Gerais de Direito Financeiro)",
+      "versao": "1",
+      "cards": 52,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 7.210/84 (Lei de Execução Penal)",
+      "versao": "1",
+      "cards": 15,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 7.492/86 (Crimes Contra o Sistema Financeiro)",
+      "versao": "1",
+      "cards": 35,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 7.716/89 (Crimes de Preconceito Racial)",
+      "versao": "1",
+      "cards": 17,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 7.960/89 (Prisão Temporária)",
+      "versao": "1",
+      "cards": 15,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 8.069/90 (Estatuto da Criança e do Adolescente)",
+      "versao": "1",
+      "cards": 10,
+      "arvoreAssuntos": "II - PARTE ESPECIAL\n06. Do Acesso à Justiça\n07. Dos Crimes e das Infrações Administrativas",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 8.072/90 (Crimes Hediondos)",
+      "versao": "1",
+      "cards": 21,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 8.112/90 (Estatuto dos Servidores Públicos Federais)",
+      "versao": "1",
+      "cards": 84,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 8.137/90 (Crimes contra a Ordem Tributária)",
+      "versao": "1",
+      "cards": 33,
+      "arvoreAssuntos": "Lei nº 8.137/1990 - Crimes contra a Ordem Tributária, Econômica e Relações de Consumo\nRepresentação Fiscal para Fins Penais",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 9.099/95 (Juizados Especiais)",
+      "versao": "1",
+      "cards": 13,
+      "arvoreAssuntos": "02. Dos Juizados Especiais Criminais",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 9.296/96 (Interceptação Telefônica)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 9.455/97 (Tortura)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 9.514/97 (Alienação Fiduciária de Bens Imóveis)",
+      "versao": "1",
+      "cards": 10,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei 9.784/99 (Processo Administrativo Fiscal)",
+      "versao": "2",
+      "cards": 85,
+      "arvoreAssuntos": "01. Disposições Gerais, Direitos e Deveres (Arts. 1º a 4º)\n02. Trâmite do Processo (Arts 5º a 10º e 29º a 50º)\n03. Da Competência (Arts. 11º a 17º)\n04. Dos Impedimentos e da Suspeição (Arts. 18º a 21º)\n05. Forma, Tempo e Lugar dos Atos do Processo (Arts. 22º a 25º)\n06. Da Comunicação dos Atos (Arts. 26º a 28º)\n07. Da Desistência e Outros Casos de Extinção do Processo (Arts. 51º e 52º)\n08. Da Anulação, Revogação e Convalidação (Arts. 53º a 55º)\n09. Do Recurso Administrativo e da Revisão (Arts. 56º a 65º)\n10. Dos Prazos e das Sanções (Arts. 66º a 68º)",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei Complementar 1.111/10 (Plano de Carreira dos Servidores do TJ-SP)",
+      "versao": "1",
+      "cards": 20,
+      "arvoreAssuntos": "01. Do Quadro de Pessoal\n02. Dos Vencimentos, das Jornadas de Trabalho e das Vantagens Pecuniárias\n03. Do Ingresso\n04. Do Estágio Probatório\n- 05. Do Desenvolvimento na Carreira\n05.01. Da Progressão\n05.02. Da Promoção\n05.03. Do Acesso\n06. Do Comitê de Recursos Humanos\n07. Das Gratificações\n08. Das Disposições Gerais e Finais",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei de Responsabilidade Fiscal (LC 101/00)",
+      "versao": "1",
+      "cards": 45,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei Complementar 160/17 (Benefícios ICMS)",
+      "versao": "1",
+      "cards": 34,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei Complementar 192 (ICMS Monofásico)",
+      "versao": "1",
+      "cards": 38,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei Complementar 194/22 (Bens e Serviços Essenciais)",
+      "versao": "1",
+      "cards": 44,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei Complementar 214/25",
+      "versao": "9",
+      "cards": 538,
+      "arvoreAssuntos": "01. IBS e CBS\n- 01. Normas Gerais do IBS e da CBS\n01. Disposições Preliminares\n- 02. IBS e CBS Sobre Operações Com Bens e Serviços\n01. Hipóteses de Incidência\n02. Imunidades\n03. Momento de Ocorrência do Fato Gerador\n04. Local da Operação\n05. Base de Cálculo\n- 06. Alíquotas\n01. Alíquotas-Padrão\n02. Alíquotas de Referência\n07. Sujeição Passiva\n- 08. Modalidades de Extinção dos Débitos\n01. Disposições Gerais\n02. Pagamento pelo Contribuinte\n03. Recolhimento na Liquidação Financeira (Split Payment)\n04. Recolhimento pelo Adquirente\n09. Pagamento Indevido ou a Maior\n10. Ressarcimento\n11. Regimes de Apuração\n12. Não Cumulatividade\n- 03. Operacionalização do IBS e da CBS\n01. Disposições Gerais\n02. Do Cadastro com Identificação Única\n03. Documento Fiscal Eletrônico\n04. Programas de Incentivo à Cidadania Fiscal\n- 04. IBS e CBS sobre importações\n01. Hipótese de Incidência\n02. Importação de Bens Imateriais e Serviços\n03. Importação de Bens Materiais\n05. IBS e CBS sobre exportações\n02. Regimes Aduaneiros Especiais e Regimes de Bagagem, Remessas Internacionais e de Fornecimento de Combustível Para Aeronaves em Tráfego Internacional\n01. Regimes Aduaneiros Especiais\n02. Zonas de Processamento de Exportação\n03. Regimes dos Bens de Capital\n04. Desoneração da aquisição de bens de capital\n03. Cashback\n01. Devolução Personalizada do IBS e da CBS (Cashback)\n02. Cesta Básica Nacional de Alimentos\n04. Regimes Diferenciados do IBS e da CBS\n01. Disposições Gerais\n02. Redução em 30% das Alíquotas do IBS e da CBS\n03. Redução em 60% das Alíquotas do IBS e da CBS\n04. Redução a Zero das Alíquotas do IBS e da CBS\n05. Transporte Público Coletivo de Passageiros Rodoviário e Ferroviário de Caráter Urbano, Semiurbano e Metropolitano\n06. Reabilitação Urbana de Zonas Históricas e de Áreas Críticas de Recuperação e Reconversão Urbanística\n07. Produtor Rural Integrado Não Contribuinte\n08. Transportador Autônomo de Carga Pessoa Física Não Contribuinte\n09. Resíduos e Demais Materiais Destinados à Reciclagem, Reutilização ou Logística Reversa Adquiridos de Pessoa Física, Cooperativa ou Outra Forma de Organização Popular\n10. Bens Móveis Usados Adquiridos de Pessoa Física Não Contribuinte Para Revenda\n\n- 05. Regimes Específicos do IBS e da CBS\n  - 01. Combustíveis\n    01. Disposições Gerais\n    02. Base de Cálculo\n    03. Alíquotas\n    04. Sujeição Passiva\n  06. Créditos na Aquisição de Combustíveis Submetidos ao Regime de Tributação Monofásica\n  - 02. Serviços Financeiros\n    01. Disposições Gerais\n    02. Disposições Comuns aos Serviços Financeiros\n  03. Planos de Assistência à Saúde\n  04. Concursos de Prognósticos\n  05. Bens Imóveis\n  06. Sociedades Cooperativas\n  - 07. Bares, Restaurantes, Hotelaria, Parques de Diversão e Parques Temáticos, Transporte Coletivo de Passageiros e Agências de Turismo\n    01. Bares e Restaurantes\n    02. Hotelaria, Parques de Diversão e Parques Temáticos\n    03. Transporte Coletivo de Passageiros Rodoviário Intermunicipal e Interestadual, Ferroviário, Hidroviário e Aéreo Regional e Do Transporte de Carga Aéreo Regional\n    04. Agências de Turismo\n\n- 06. Regimes Diferenciados da CBS\n01. Programa Universidade Para Todos - PROUNI\n- 07. Administração do IBS e da CBS\n  01. Regulamento do IBS e da CBS\n  02. Harmonização do IBS e da CBS\n- 03. Fiscalização e Lançamento de Ofício\n  01. Competência para Fiscalizar\n  02. Fiscalização e Procedimento Fiscal\n  03. Lançamento de Ofício\n  04. Domicílio Tributário Eletrônico - DTE e Intimações\n  05. Presunções Legais\n  06. Documentação Fiscal e Auxiliar\n  07. Regime Especial de Fiscalização - REF\n08. Transição para o IBS e para a CBS\n02. Imposto Seletivo\n01. Disposições Preliminares\n- 02. Normas Gerais do Imposto Seletivo\n  01. Momento de Ocorrência do Fato Gerador\n  02. Não Incidência\n  03. Base de Cálculo\n- 04. Alíquotas\n  01. Veículos\n  02. Aeronaves e Embarcações\n  03. Demais Produtos Sujeitos ao Imposto Seletivo\n05. Sujeição Passiva\n06. Empresa Comercial Exportadora\n07. Pena de Perdimento\n08. Apuração\n09. Pagamento\n03. Imposto Seletivo Sobre Importações\n\n- 03. Demais Disposições\n  01. Avaliação Quinquenal\n  02. Compensação de eventual redução do montante entregue, em razão da substituição do IPI pelo IS\n- 03. Disposições Transitórias\n\n- 03. Comitê Gestor do IBS\n  01. Disposições Gerais\n  02. Conselho Superior do CGIBS",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei Complementar 24/75 (CONFAZ)",
+      "versao": "1",
+      "cards": 32,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Lei Complementar 87/96 (Lei Kandir)",
+      "versao": "1",
+      "cards": 213,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    },
+    {
+      "disciplina": "Língua Portuguesa",
+      "versao": "7",
+      "cards": 1625,
+      "arvoreAssuntos": "01. Formação de Palavras\n02. Ortografia\n- 02.01. Regras de Acentuação\n02.01.01. Acentuação de Monossílabos, Oxítonas, Paroxítonas e Proparoxítonas\n02.01.02. Acentuação de Hiato\n02.01.03. Acentos Diferenciais\n02.02. Crase\n02.03. Hífen\n02.04. Uso dos \"Porquês\"\n02.05. Expressões da Norma Culta\n03. Morfologia\n03.01. Substantivos\n03.02. Artigos\n03.03. Adjetivos\n03.04. Numerais\n- 03.05. Pronomes\n03.05.01. Regras Gerais\n03.05.02. Colocação Pronominal\n- 03.06. Verbos\n03.06.01. Regras Gerais\n03.06.02. Conjugação Verbal\n03.06.03. Vozes Verbais\n03.07. Advérbios\n03.08. Preposições\n03.09. Conjunções\n03.10. Interjeições\n04. Sintaxe\n04.01. Sujeito e Predicado\n04.02. Adjunto Adnominal e Complemento Nominal\n04.03. Adjunto Adverbial\n04.04. Transitividade verbal\n04.05. Aposto e Vocativo\n04.06. Agente da Passiva\n05. Período Composto\n05.01. Por Coordenação\n05.02. Por Subordinação\n06. Concordância Verbal e Nominal\n07. Regência Verbal e Nominal\n08. Uso do \"QUE\" e do \"SE\"\n09. Pontuação\n10. Semântica\n10.01. Sinônimos e Antônimos\n10.02. Homônimos e Parônimos\n11. Figuras de Linguagem\n11.01. Figuras de Palavras\n11.02. Figuras de Pensamento\n11.03. Figuras de Construção (Sintaxe)\n12. Vícios de Linguagem\n13. Tipologias e Gêneros Textuais",
+      "observacao": null
+    },
+    {
+      "disciplina": "Macroeconomia",
+      "versao": "3",
+      "cards": 136,
+      "arvoreAssuntos": "01. Conceitos básicos (Macroeconomia)\n02. Contas Nacionais\n02.01. Conceitos e identidades macroeconômicos\n02.02. Produto nominal X produto real (deflator do PIB)\n03. Balanço de pagamentos\n04. Modelo Keynesiano\n05. Moeda\n05.01. Demanda por moeda\n05.02. Oferta de moeda e agregados monetários\n05.03. Multiplicador monetário\n06. Modelo IS-LM de determinação da renda e dos juros\n06.01. Economia fechada\n06.02. Economia aberta (modelo Mundell-Flemming)\n07. Modelo de Oferta e Demanda agregada (OA-DA) de determinação da renda e dos preços\n08. Curvas de Phillips\n09. Inflação\n10. Políticas de governo ou atuação do Estado na economia\n10.01. Política fiscal\n10.02. Política monetária\n11. Regimes cambiais\n12. Determinantes do investimento\n13. Modelo de Solow\n14. Números Índices",
+      "observacao": null
+    },
+    {
+      "disciplina": "Matemática Básica",
+      "versao": "1",
+      "cards": 71,
+      "arvoreAssuntos": "01. MMC e MDC\n02. Razão e Proporção\n03. Regra de Três Simples e Composta\n04. Equação do 1º e 2º graus\n05. Sistema de Equações do 1º grau\n06. Relação Entre Grandezas: Tabelas e Gráficos\n- 07. Sistemas de Medidas Usuais\n07.01. Unidades de Distância\n07.02. Unidades de Massa\n07.03. Unidades de Volume\n07.04. Unidades de Área\n07.05. Unidades de Tempo\n08. Noções de Geometria: Forma, Perímetro, Área, Volume, Ângulo, Teorema de Pitágoras\n09. Resolução de Situações-Problema",
+      "observacao": null
+    },
+    {
+      "disciplina": "Matemática Financeira",
+      "versao": "3",
+      "cards": 93,
+      "arvoreAssuntos": "01. Regime de Juros e Descontos - Simples e Compostos\n02. Taxas (nominal, efetiva e equivalente)\n03. Inflação e Juros (reais e aparentes)\n04. Série de Pagamentos (anuidade)\n05. Sistemas de Amortização\n06. Análise de Investimentos",
+      "observacao": null
+    },
+    {
+      "disciplina": "Microeconomia",
+      "versao": "3",
+      "cards": 126,
+      "arvoreAssuntos": "01. Conceitos gerais (Microeconomia)\n01.01. Conceito de Economia\n01.02. Escassez, escolha e custo de oportunidade\n01.03. Curva de possibilidade de produção\n02. Demanda e oferta\n03. Teoria do Consumidor\n03.01. Restrição orçamentária\n03.02. Preferências e curvas da indiferença\n03.03. Equilíbrio do consumidor\n03.04. Efeitos renda e substituição\n04. Estrutura de mercado\n04.01. Tipos de estrutura\n04.02. Monopólio\n04.03. Oligopólio\n04.04. Concorrência monopolística\n04.05. Monopsônio e outros\n04.06. Concorrência perfeita\n05. Falhas de mercado\n05.01. Bens Públicos\n05.02. Externalidades\n05.03. Informações assimétricas",
+      "observacao": null
+    },
+    {
+      "disciplina": "Pronunciamentos Contábeis (CPCs)",
+      "versao": "4",
+      "cards": 513,
+      "arvoreAssuntos": "CPC 00 - Estrutura Conceitual\nCPC 01 - Redução ao Valor Recuperável\nCPC 02 - Efeitos das mudanças nas taxas de câmbio e conversão de demonstrações contábeis\nCPC 03 - Demonstração dos Fluxos de Caixa\nCPC 04 - Ativos Intangíveis\nCPC 05 - Divulgação sobre Partes Relacionadas\nCPC 06 - Arrendamento Mercantil\nCPC 07 - Subvenção e assistência Governamentais\nCPC 08 - Empréstimos, Debêntures, Custo de Transação e Prêmios\nCPC 09 - Demonstração do Valor Adicionado (DVA)\nCPC 12 - Ajuste a Valor Presente\nCPC 14, 38, 39, 40 e 48 - Instrumentos Financeiros\nCPC 15 - Combinação de Negócios\nCPC 16 - Estoques\nCPC 18 - Investimento em Coligada ou Controlada\nCPC 22 - Informações por Segmento\nCPC 23 - Políticas Contábeis, Mudança de Estimativa e Retificação de Erro\nCPC 24 - Evento Subsequente\nCPC 27 - Ativo Imobilizado\nCPC 36 - Demonstrações Consolidadas",
+      "observacao": null
+    },
+    {
+      "disciplina": "Raciocínio Lógico",
+      "versao": "5",
+      "cards": 63,
+      "arvoreAssuntos": "01. Conjuntos\n02. Conectivos\n03. Número de linhas da tabela verdade\n04. Porcentagem\n05. Proposições; valores lógicos das proposições\n06. Tautologia",
+      "observacao": null
+    },
+    {
+      "disciplina": "Simples Nacional",
+      "versao": "3",
+      "cards": 102,
+      "arvoreAssuntos": "01. Disposições Constitucionais\n02. Lei Complementar nº 123 (Estatuto Nacional da ME e EPP)\n02.01. Disposições Preliminares\n02.02. Instâncias Gestoras do SN\n02.03. Definições\n02.04. EPP que exceder o limite da RB\n02.05. Vedações\n02.06. Regime Único de Arrecadação\n02.07. MEI\n02.08. Sublimite Estados\n02.09. Recolhimento dos Tributos Devidos\n02.10. Créditos\n02.11. Processo Judicial\n03. Resolução CGSN nº 140/18 (Regime Especial Unificado de Arrecadação)",
+      "observacao": null
+    },
+    {
+      "disciplina": "TI - Banco de Dados Dimensional",
+      "versao": "4",
+      "cards": 236,
+      "arvoreAssuntos": "01. Modelagem Multidimensional e BI\n01.01. Características / Abordagens / Principais Componentes\n01.02. Sistemas de Suporte à Decisão (DSS – Decision Support System)\n01.03. Sistemas de Informações Gerenciais (MIS – Management Information Systems)\n01.04. Sistemas de Informação Corporativos (EIS – Enterprise Information Systems)\n01.05. Modelagem Multidimensional\n01.06. Modelos de Representação dos Dados\n01.07. Bizus\n02. Data Warehouse. ETL. OLAP.\n02.01. Data Warehouse (Armazém de Dados)\n02.02. ETL (Extract / Transform / Load)\n02.03. OLAP (On-Line Analytical Processing)\n02.04. Operações OLAP\n03. Big Data\n04. Hadoop\n05. MapReduce\n06. Change Data Capture (CDC)\n07. NoSQL",
+      "observacao": null
+    },
+    {
+      "disciplina": "TI - Banco de Dados Relacional",
+      "versao": "6",
+      "cards": 636,
+      "arvoreAssuntos": "01. Definições e Propriedades\n01.01. Conceitos Iniciais\n01.02. Dados Abertos\n01.03. Metadados\n01.04. Dados: estruturados; não estruturados; semiestruturados.\n01.05. Redundância / Inconsistência / Dependência\n01.06. Replicação dos dados\n01.07. Recuperação de informações\n01.08. Administrador de BD x Administrador de Dados\n01.09. Entropia\n01.10. Teoria da Informação\n02. SGBD. Transações. Views. Triggers\n02.01. SGBD: Conceitos, Termos ligados e Funções\n02.02. SGBD: Algoritmos de Junção\n02.03. SGBD: Performance\n02.04. SGBD: Modelos\n02.05. SGBD: Características, Vantagens e Benefícios\n02.06. Transações: Conceitos e TCL\n02.07. Transações: ACID e Assuntos Relacionados\n02.08. Locks (bloqueios)\n02.09. View e Materialized View (Visão e Visão Materializada)\n02.10. Trigger (Gatilho)\n02.11. Lógica de Três Valores\n03. Modelagem Conceitual - Modelo ER\n03.01. Modelos: Conceitual, Lógico e Físico\n03.02. MER: Definição e Entidades\n03.03. MER: Atributos\n03.04. MER: Relacionamentos e Diagramas\n03.05. Cardinalidade: Conceitos e Notação Pé-de-galinha\n03.06. Notação IDEF1X\n03.07. Transformação do Modelo ER Para Modelo Relacional\n03.08. Axiomas de Armstrong\n03.09. Outros conceitos\n04. Modelagem Lógica. Modelo Relacional.\n04.01 Modelagem Lógica\n04.02 Modelo Relacional\n04.03 As 12 Regras de Edgar F. Codd\n04.04 Chaves\n04.05 Atributos\n04.06 Restrição de Integridade\n04.07 Relacionamentos\n04.08 Tabela Referenciada x Tabela Referenciadora\n04.09 Anomalias\n04.10 Álgebra Relacional\n04.11 Bizus\n05. Normalização\n05.01 Conceitos Iniciais\n05.02 Primeira Forma Normal\n05.03 Segunda Forma Normal\n05.04 Terceira Forma Normal\n05.05 Quarta Forma Normal\n05.06 Quinta Forma Normal\n05.07 Forma Normal De Boyce Codd (FNBC) (3.5FN)\n06. Mineração de Dados (Data Mining)\n07. Knowledge Discovery in Databases (KDD)\n08. CRISP-DM",
+      "observacao": null
+    },
+    {
+      "disciplina": "TI - Gestão e Governaça",
+      "versao": "6",
+      "cards": 804,
+      "arvoreAssuntos": "01. COBIT 2019\n01.01. Definições e Conceitos Iniciais\n01.02. Componentes\n01.03. Princípios\n01.04. Domínios\n01.05. Objetivos\n01.06. Fatores de Design (Design Factors)\n01.07. Cascata de Objetivos\n01.08. Cobit Performance Management (CPM)\n01.09. Fases da Implementação do Cobit\n01.10. Critérios de Qualidade da Informação\n01.11. Níveis de Capacidade Para os Processos\n01.12. Áreas de Foco\n02. ITIL v4\n02.01 Definições e Conceitos Iniciais\n02.02 Princípios Orientadores (Guiding Principles)\n02.03 Dimensões\n02.04 Sistema de Valor de Serviços - Conceitos Iniciais\n02.05 Sistema de Valor de Serviços - Governança\n02.06 Sistema de Valor de Serviços - Cadeia de Valor de Serviço\n02.07 Sistema de Valor de Serviços - Práticas de Gestão Geral\n02.08 Sistema de Valor de Serviços - Práticas de Gestão de Serviço\n02.09 Sistema de Valor de Serviços - Práticas de Gerenciamento Técnico\n02.10 Sistema de Valor de Serviços - Melhoria Contínua\n03. BPM\n03.01. Conceitos Básicos\n03.02. Ciclo de Vida\n03.03. Modelagem AS-IS / TO-BE\n03.04. Tipos de Processos\n03.05. Mensuração e Controle de Processos\n03.06. Cultura e Estratégia de BPM\n03.07. Maturidade do BPM\n03.08. Notações de Modelagem de Processos\n03.09. Benefícios\n03.10. Bizus\n04. PMBOK 7\n04.01. Conceitos Iniciais\n04.02. Sistema de Entrega de Valor\n04.03. Princípios\n04.04. Domínios de Desempenho dos Projetos\n04.05. Modelos, Métodos e Artefatos\n04.06. Planos de Gerenciamento do Projeto\n05. PMBOK 6\n05.01. Noções Introdutórias\n05.02. Ciclo de Vida de Projetos\n05.03. Atribuições do Escritório de Projetos\n05.04. Termo de Abertura do Projeto (Project Charter)\n05.05. Estimativa de Custos\n05.06. Grupos de Processos de Gerenciamento de Projetos\n05.07. Gerenciamento de Riscos, Requisitos e Escopo\n05.08. Caminho Crítico no Diagrama de Redes\n05.09. Recomendações do PMBOK para Gerenciamento de Projetos de Software",
+      "observacao": null
+    },
+    {
+      "disciplina": "TI - IA e Machine Learning",
+      "versao": "5",
+      "cards": 137,
+      "arvoreAssuntos": "01. Conceitos Iniciais e Definições\n02. Aprendizado Supervisionado\n03. Aprendizado Não Supervisionado e Por Reforço. Redução de Dimensionalidade.\n04. Outros Conceitos e Sistemas de Recomendação",
+      "observacao": null
+    },
+    {
+      "disciplina": "TI - SQL",
+      "versao": "2",
+      "cards": 74,
+      "arvoreAssuntos": "-",
+      "observacao": null
+    }
+  ],
+  "modulosPorArea": [
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Língua Portuguesa",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Raciocínio Lógico",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Matemática Básica",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Direito Constitucional",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Direito Administrativo",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Matemática Financeira",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Estatística",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Contabilidade Geral e Avançada",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Lei de Responsabilidade Fiscal (LC 101/00)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Licitações e Contratos (Lei 14.133/21)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Administração Financeira e Orçamentária (AFO)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Direito Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Direito Empresarial",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Direito Penal",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Microeconomia",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Macroeconomia",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Finanças Públicas",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Auditoria Privada",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Direito Tributário",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Legislação Tributária Estadual Geral",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Simples Nacional",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "15/11/2025",
+      "postagemAlunos": "30/11/2025",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Contabilidade de Custos",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "confirmar",
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Análise das Demonstrações Contábeis",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "confirmar",
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Legislação Tributária Municipal Geral",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "15/11/2025",
+      "postagemAlunos": "30/11/2025",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Ajustes SINIEF",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "20/11/2025",
+      "postagemAlunos": "30/11/2025",
+      "observacao": "lalaibmartins@gmail.com ajustar/compilar SEFAZ-GO",
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Administração Geral",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "15/3/2026",
+      "postagemAlunos": "23/3/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Administração Pública",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "25/4/2026",
+      "postagemAlunos": "1/5/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Informática Básica",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "25/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Fiscal",
+      "disciplina": "Auditoria Fiscal Eletrônica",
+      "modulo": "Módulo V",
+      "status": "Elaboração",
+      "entregaElaborador": "25/12/2025",
+      "postagemAlunos": "30/12/2025",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Língua Portuguesa",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Raciocínio Lógico",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Matemática Básica",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Direito Constitucional",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Direito Administrativo",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Matemática Financeira",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Estatística",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Contabilidade Geral e Avançada",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Lei de Responsabilidade Fiscal (LC 101/00)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Licitações e Contratos (Lei 14.133/21)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Administração Financeira e Orçamentária (AFO)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Direito Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Direito Penal",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Microeconomia",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Macroeconomia",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Finanças Públicas",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Auditoria Privada",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Auditoria Governamental",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Contabilidade Aplicada ao Setor Pública (CASP)",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Direito Processual Civil",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Controle Externo",
+      "modulo": "Módulo V",
+      "status": "Disponível",
+      "entregaElaborador": "25/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Administração Geral",
+      "modulo": "Módulo V",
+      "status": "Disponível",
+      "entregaElaborador": "15/3/2026",
+      "postagemAlunos": "30/3/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Gestão e Controle",
+      "disciplina": "Administração Pública",
+      "modulo": "Módulo V",
+      "status": "Disponível",
+      "entregaElaborador": "25/4/2026",
+      "postagemAlunos": "30/4/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Língua Portuguesa",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Raciocínio Lógico",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Matemática Básica",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Direito Constitucional",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Direito Administrativo",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Matemática Financeira",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Estatística",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Contabilidade Geral e Avançada",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Lei de Responsabilidade Fiscal (LC 101/00)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Licitações e Contratos (Lei 14.133/21)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Administração Financeira e Orçamentária (AFO)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Direito Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Direito Processual Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Direito Penal",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Direito Processual Penal",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "23/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Administração Geral",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "15/3/2026",
+      "postagemAlunos": "23/3/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Administração Pública",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/4/2026",
+      "postagemAlunos": "1/5/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Policial",
+      "disciplina": "Informática Básica",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Língua Portuguesa",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Raciocínio Lógico",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Matemática Básica",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Direito Constitucional",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Direito Administrativo",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Matemática Financeira",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Estatística",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Contabilidade Geral e Avançada",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Lei de Responsabilidade Fiscal (LC 101/00)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Licitações e Contratos (Lei 14.133/21)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Administração Financeira e Orçamentária (AFO)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Direito Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Direito Processual Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Direito Penal",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Direito Processual Penal",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "23/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Administração Geral",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "15/3/2026",
+      "postagemAlunos": "23/3/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Administração Pública",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/4/2026",
+      "postagemAlunos": "1/5/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Informática Básica",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Tribunal",
+      "disciplina": "Direito do Trabalho",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "confirmar",
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Língua Portuguesa",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Raciocínio Lógico",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Matemática Básica",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Direito Constitucional",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Direito Administrativo",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Matemática Financeira",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Estatística",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Contabilidade Geral e Avançada",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Lei de Responsabilidade Fiscal (LC 101/00)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Licitações e Contratos (Lei 14.133/21)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Administração Financeira e Orçamentária (AFO)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Direito Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Direito Processual Civil",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Direito Penal",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Direito Processual Penal",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "23/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Administração Geral",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "15/3/2026",
+      "postagemAlunos": "23/3/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Administração Pública",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/4/2026",
+      "postagemAlunos": "1/5/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Legislativo",
+      "disciplina": "Informática Básica",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Língua Portuguesa",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Raciocínio Lógico",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Direito Constitucional",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Direito Administrativo",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Matemática Financeira",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Estatística",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Contabilidade Geral e Avançada",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Pronunciamentos Contábeis (CPCs)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Direito Civil",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Direito Penal",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Direito Empresarial",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Administração Financeira e Orçamentária (AFO)",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Microeconomia",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Macroeconomia",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Economia brasileira",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Finanças Públicas",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Auditoria Privada",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Direito Tributário",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Simples Nacional",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Contabilidade de Custos",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Análise das Demonstrações Contábeis",
+      "modulo": "Módulo III",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Legislação Tributária Municipal Geral",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Legislação Tributária Estadual Geral",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Administração Pública",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Informática Básica",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Jurisprudência Direito Tributário",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Jurisprudência Direito Administrativo",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Jurisprudência Direito Constitucional",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Flashcards",
+      "area": "Fiscal",
+      "disciplina": "Ajustes SINIEF",
+      "modulo": "Módulo IV",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Língua Portuguesa",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Raciocínio Lógico",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Matemática Básica",
+      "modulo": "Módulo I",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Matemática Financeira",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Estatística",
+      "modulo": "Módulo II",
+      "status": "Disponível",
+      "entregaElaborador": null,
+      "postagemAlunos": null,
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Informática Básica",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/1/2026",
+      "postagemAlunos": "30/1/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Conhecimentos Bancários",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/5/2026",
+      "postagemAlunos": "28/2/2026",
+      "observacao": null,
+      "sumario": null
+    },
+    {
+      "formato": "Resumo",
+      "area": "Bancária",
+      "disciplina": "Vendas e Negociações",
+      "modulo": "Módulo IV",
+      "status": "Elaboração",
+      "entregaElaborador": "25/5/2026",
+      "postagemAlunos": "30/3/2026",
+      "observacao": null,
+      "sumario": null
+    }
+  ]
+}

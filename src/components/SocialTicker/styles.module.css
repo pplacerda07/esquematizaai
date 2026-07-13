@@ -8,15 +8,24 @@
 
 .tickerContent {
   display: flex;
-  gap: 3rem;
+  width: max-content;
   white-space: nowrap;
-  animation: scrollLeft 25s linear infinite;
+  animation: scrollLeft 50s linear infinite;
+  will-change: transform;
 }
 
 .tickerItem {
   display: flex;
   align-items: center;
   gap: 3rem;
+  /* espaçamento no próprio item (não em flex-gap) para o loop de -50% alinhar exato */
+  margin-right: 3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tickerContent {
+    animation: none;
+  }
 }
 
 .text {
