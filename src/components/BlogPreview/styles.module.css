@@ -294,9 +294,16 @@
   }
 }
 
+/* mobile: seção enxuta (cards e respiros bem menores) */
 @media (max-width: 640px) {
   .blogSection {
-    padding: 3.5rem 5%;
+    padding: 2.75rem 4%;
+  }
+  .container {
+    gap: 2.25rem;
+  }
+  .block {
+    gap: 1rem;
   }
   .title {
     font-size: 2rem;
@@ -310,12 +317,69 @@
   .outlineBtn {
     width: 100%;
     justify-content: center;
+    padding: 0.55rem 1rem;
+    font-size: 0.72rem;
+  }
+
+  .newsGrid {
+    gap: 0.75rem;
+  }
+  .featuredCard {
+    min-height: 0;
+    padding: 1.15rem 1.25rem;
+    gap: 0.6rem;
+  }
+  .featuredDate {
+    font-size: 0.78rem;
+  }
+  .featuredTitle {
+    font-size: 1.35rem;
   }
   .newsSmallGrid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    gap: 0.75rem;
   }
+  .newsCard {
+    min-height: 0;
+    padding: 0.9rem 1.1rem;
+    gap: 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .newsTitle {
+    font-size: 0.98rem;
+  }
+
   .articlesRow {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    row-gap: 1.9rem;
+  }
+  .articleCard {
+    margin-top: 24px;
+    padding: 1.75rem 0.7rem 0.9rem;
+  }
+  .articleIconWrap {
+    width: 48px;
+    height: 48px;
+    top: -24px;
+    border-width: 2px;
+  }
+  .articleIconWrap img {
+    width: 40px;
+    height: 40px;
+  }
+  .articleTitle {
+    font-size: 0.94rem;
+    margin-bottom: 0.7rem;
+  }
+  .articleMeta {
+    gap: 0.2rem;
+    padding-top: 0.3rem;
+  }
+  .articleDate, .articleAuthor {
+    font-size: 0.7rem;
   }
 }

@@ -175,3 +175,37 @@
     display: none;
   }
 }
+
+/* mobile: logo e botões compactos para caber tudo sem cortar */
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0.7rem 4%;
+    gap: 0.6rem;
+  }
+  .logoLink img {
+    width: 132px;
+    height: auto;
+  }
+  .actions {
+    gap: 0.45rem;
+  }
+  .btnLogin {
+    font-size: 0.82rem;
+    padding: 0.42rem 0.75rem;
+    border-width: 1.5px;
+  }
+  .btnSignup {
+    font-size: 0.82rem;
+    padding: 0.46rem 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .logoLink img {
+    width: 112px;
+  }
+  .btnLogin, .btnSignup {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

@@ -9,7 +9,7 @@ import FeaturedCourses from '@/components/FeaturedCourses';
 import ProductVitrine from '@/components/ProductVitrine';
 import Categories from '@/components/Categories';
 import AboutUs from '@/components/AboutUs';
-import LiveClasses from '@/components/LiveClasses';
+import InstagramSection from '@/components/InstagramSection';
 import Arsenal from '@/components/Arsenal';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -31,7 +31,7 @@ export default function Home() {
       <AboutUs />
       <StatsTicker />
       <Categories />
-      <LiveClasses />
+      <InstagramSection />
       <ContactForm />
       <Footer />
       <LeadPopup />
