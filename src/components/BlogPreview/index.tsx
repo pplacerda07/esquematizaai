@@ -1,29 +1,21 @@
-import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
+import { getPostsPublicados, getNoticias, formatarDataCurta } from '@/lib/blog';
 import styles from './styles.module.css';
 
-const newsFeatured = {
-  date: '13/Maio',
-  title: 'Concurso CGM Porto Velho (RO): edital retificado',
-};
+// "13/Maio" — formato do card de destaque das notícias
+function dataDestaque(iso: string) {
+  const d = new Date(iso);
+  const mes = d.toLocaleDateString('pt-BR', { month: 'long' });
+  return `${String(d.getDate()).padStart(2, '0')}/${mes.charAt(0).toUpperCase()}${mes.slice(1)}`;
+}
 
-const newsItems = [
-  { date: '13/05', title: 'Concurso ISS Porto Velho (RO): edital retificado' },
-  { date: '13/05', title: 'Concurso Hidrolândia GO: provas em junho!' },
-  { date: '13/05', title: 'Concurso CGM Porto Velho 2026: salários de R$ 21,2 mil!' },
-  { date: '13/05', title: 'Concurso ISS Porto Velho: salários de até R$ 18,4 mil!' },
-];
+function dataArtigo(iso: string | null) {
+  if (!iso) return '';
+  return new Date(iso).toLocaleDateString('pt-BR');
+}
 
-const articles = [
-  { title: 'Estatuto da PcD: principais pontos que caem em questões de prova', date: '10/05/2026', author: 'Gabriela Maia de Gouvêa' },
-  { title: 'Concurso Petrobras e Transpetro: como conciliar os dois editais', date: '10/05/2026', author: 'Teo Brum Breunig' },
-  { title: 'Hábitos atômicos para concurseiros que trabalham: como vencer o cansaço com pequenas vitórias', date: '09/05/2026', author: 'Jazon Paulino Lisboa Moreira' },
-  { title: 'Concurso TRF: qual é o tribunal com o salário mais atrativo?', date: '09/05/2026', author: 'Gabriela Maia de Gouvêa' },
-  { title: 'Concurso PM/AL: Comando e Subordinação', date: '09/05/2026', author: 'Icaro Alves de Souza' },
-  { title: 'Mudança nos estudos', date: '09/05/2026', author: 'Carlos Augusto Canada Silva' },
-];
-
-function Dots({ active = 0, count = 5 }: { active?: number; count?: number }) {
+function Dots({ active = 2, count = 5 }: { active?: number; count?: number }) {
   return (
     <div className={styles.dots} aria-hidden="true">
       {Array.from({ length: count }).map((_, i) => (
@@ -33,75 +25,97 @@ function Dots({ active = 0, count = 5 }: { active?: number; count?: number }) {
   );
 }
 
-export default function BlogPreview() {
+export default async function BlogPreview() {
+  const [noticias, posts] = await Promise.all([getNoticias(5), getPostsPublicados(6)]);
+
+  const destaque = noticias[0];
+  const demais = noticias.slice(1, 5);
+
+  if (noticias.length === 0 && posts.length === 0) return null;
+
   return (
     <section className={styles.blogSection} id="blog">
       <div className={styles.container}>
 
-        {/* Últimas notícias */}
-        <div className={styles.block}>
-          <div className={styles.header}>
-            <div className={styles.headerLeft}>
-              <h2 className={styles.title}>
-                Últimas <span className={styles.titleAccent}>notícias</span>
-              </h2>
-              <Dots active={2} count={5} />
+        {/* Últimas notícias (curadoria: manchete + link para a fonte) */}
+        {destaque && (
+          <div className={styles.block}>
+            <div className={styles.header}>
+              <div className={styles.headerLeft}>
+                <h2 className={styles.title}>
+                  Últimas <span className={styles.titleAccent}>notícias</span>
+                </h2>
+                <Dots active={2} count={5} />
+              </div>
+              <Link href="/noticias" className={styles.outlineBtn}>Ver todas as notícias</Link>
             </div>
-            <a href="#" className={styles.outlineBtn}>Ver todas as notícias</a>
+
+            <div className={styles.newsGrid}>
+              <a
+                className={styles.featuredCard}
+                href={destaque.url_fonte ?? '/noticias'}
+                target={destaque.url_fonte ? '_blank' : undefined}
+                rel={destaque.url_fonte ? 'noopener noreferrer' : undefined}
+              >
+                <span className={styles.featuredDate}>
+                  <span className={styles.dateDash}>·</span> {dataDestaque(destaque.publicado_em)}
+                </span>
+                <h3 className={styles.featuredTitle}>{destaque.titulo}</h3>
+              </a>
+
+              <div className={styles.newsSmallGrid}>
+                {demais.map((item) => (
+                  <a
+                    key={item.id}
+                    className={styles.newsCard}
+                    href={item.url_fonte ?? '/noticias'}
+                    target={item.url_fonte ? '_blank' : undefined}
+                    rel={item.url_fonte ? 'noopener noreferrer' : undefined}
+                  >
+                    <h4 className={styles.newsTitle}>{item.titulo}</h4>
+                    <span className={styles.newsDate}>{formatarDataCurta(item.publicado_em)}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
+        )}
 
-          <div className={styles.newsGrid}>
-            <article className={styles.featuredCard}>
-              <span className={styles.featuredDate}>
-                <span className={styles.dateDash}>·</span> {newsFeatured.date}
-              </span>
-              <h3 className={styles.featuredTitle}>{newsFeatured.title}</h3>
-            </article>
+        {/* Artigos em destaque (blog próprio) */}
+        {posts.length > 0 && (
+          <div className={styles.block}>
+            <div className={styles.header}>
+              <div className={styles.headerLeft}>
+                <h2 className={styles.title}>
+                  Artigos em <span className={styles.titleAccent}>destaque</span>
+                </h2>
+                <Dots active={2} count={5} />
+              </div>
+              <Link href="/blog" className={styles.outlineBtn}>Ver todos os artigos</Link>
+            </div>
 
-            <div className={styles.newsSmallGrid}>
-              {newsItems.map((item, i) => (
-                <article key={i} className={styles.newsCard}>
-                  <h4 className={styles.newsTitle}>{item.title}</h4>
-                  <span className={styles.newsDate}>{item.date}</span>
-                </article>
+            <div className={styles.articlesRow}>
+              {posts.map((post) => (
+                <Link key={post.id} href={`/blog/${post.slug}`} className={styles.articleCard}>
+                  <div className={styles.articleIconWrap}>
+                    <Image
+                      src="/logos/logo-simbolo-semlinhas.png"
+                      alt=""
+                      width={56}
+                      height={56}
+                      className={styles.articleIcon}
+                    />
+                  </div>
+                  <h4 className={styles.articleTitle}>{post.titulo}</h4>
+                  <div className={styles.articleMeta}>
+                    <span className={styles.articleDate}>{dataArtigo(post.publicado_em)}</span>
+                    <span className={styles.articleAuthor}>por {post.autor}</span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Artigos em destaque */}
-        <div className={styles.block}>
-          <div className={styles.header}>
-            <div className={styles.headerLeft}>
-              <h2 className={styles.title}>
-                Artigos em <span className={styles.titleAccent}>destaque</span>
-              </h2>
-              <Dots active={2} count={5} />
-            </div>
-            <a href="#" className={styles.outlineBtn}>Ver todos os artigos</a>
-          </div>
-
-          <div className={styles.articlesRow}>
-            {articles.map((article, i) => (
-              <article key={i} className={styles.articleCard}>
-                <div className={styles.articleIconWrap}>
-                  <Image
-                    src="/logos/logo-simbolo-semlinhas.png"
-                    alt=""
-                    width={56}
-                    height={56}
-                    className={styles.articleIcon}
-                  />
-                </div>
-                <h4 className={styles.articleTitle}>{article.title}</h4>
-                <div className={styles.articleMeta}>
-                  <span className={styles.articleDate}>{article.date}</span>
-                  <span className={styles.articleAuthor}>por {article.author}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
+        )}
 
       </div>
     </section>

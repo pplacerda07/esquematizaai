@@ -87,6 +87,11 @@
   color: var(--color-neutral-light);
 }
 
+.outlineBtn:focus-visible {
+  outline: 3px solid var(--color-cold-dark);
+  outline-offset: 2px;
+}
+
 /* Notícias grid */
 .newsGrid {
   display: grid;
@@ -104,11 +109,18 @@
   min-height: 240px;
   box-shadow: 0 4px 14px rgba(38, 52, 79, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .featuredCard:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(38, 52, 79, 0.1);
+}
+
+.featuredCard:focus-visible {
+  outline: 3px solid var(--color-cold-dark);
+  outline-offset: 2px;
 }
 
 .featuredDate {
@@ -153,11 +165,18 @@
   min-height: 110px;
   box-shadow: 0 4px 14px rgba(38, 52, 79, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .newsCard:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(38, 52, 79, 0.1);
+}
+
+.newsCard:focus-visible {
+  outline: 3px solid var(--color-cold-dark);
+  outline-offset: 2px;
 }
 
 .newsTitle {
@@ -196,11 +215,17 @@
   margin-top: 32px;
   box-shadow: 0 4px 14px rgba(38, 52, 79, 0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
 }
 
 .articleCard:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(38, 52, 79, 0.1);
+}
+
+.articleCard:focus-visible {
+  outline: 3px solid var(--color-cold-dark);
+  outline-offset: 2px;
 }
 
 .articleIconWrap {

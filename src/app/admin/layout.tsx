@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { sair } from './login/actions';
 import styles from './layout.module.css';
 
 const IconPackage = () => (
@@ -29,6 +30,11 @@ const navItems = [
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+
+  // A tela de login não usa a moldura do painel (sidebar).
+  if (pathname === '/admin/login') {
+    return <>{children}</>;
+  }
 
   const isActive = (href: string) => {
     if (href === '/admin') return pathname === '/admin';
@@ -75,6 +81,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <IconArrowLeft />
             <span>Voltar ao Site</span>
           </Link>
+          <form action={sair}>
+            <button type="submit" className={styles.logoutBtn}>Sair</button>
+          </form>
         </div>
       </aside>
 

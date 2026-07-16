@@ -142,8 +142,14 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 cards por linha no desktop */
   gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .card {
@@ -420,6 +426,64 @@
     margin-left: 0;
   }
   .vitrineSection {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem;
+  }
+}
+
+/* mobile: grade compacta de marketplace (2 por linha), botão de dedo */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .card {
+    padding: 0.85rem;
+    border-radius: 10px;
+  }
+  .capaWrap {
+    margin-bottom: 0.7rem;
+    border-radius: 0.45rem;
+  }
+  .cardHeader {
+    gap: 0.35rem;
+    margin-bottom: 0.6rem;
+  }
+  .badgeArea {
+    display: none; /* no card estreito fica só ferramenta + desconto */
+  }
+  .badge {
+    font-size: 0.62rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .offPill {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.45rem;
+  }
+  .productTitle {
+    font-size: 1.08rem;
+    margin-bottom: 0.6rem;
+  }
+  .oldPrice {
+    font-size: 0.78rem;
+  }
+  .currentPrice {
+    font-size: 1.35rem;
+  }
+  .priceContainer {
+    margin-bottom: 0.75rem;
+  }
+  .btnBuy {
+    font-size: 0.88rem;
+    padding: 0.7rem 0.4rem;
+  }
+  .filters {
+    gap: 0.5rem;
+  }
+  .filterBtn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.9rem;
+  }
+  .areaFilters {
+    margin-bottom: 2rem;
   }
 }

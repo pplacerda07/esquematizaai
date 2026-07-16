@@ -1,6 +1,3 @@
-'use client';
-
-import { useRef } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.css';
 
@@ -13,16 +10,12 @@ const reviews = [
   { src: '/reviews/review-5.webp', alt: 'Aluno dizendo que confia no trabalho do Esquematiza Aí' },
 ];
 
-export default function Testimonials() {
-  const trackRef = useRef<HTMLDivElement>(null);
+// Marquee infinito: cada metade (2 conjuntos) fica mais larga que a tela,
+// e a animação de -50% fecha o loop sem emenda. Pausa no hover para leitura.
+const SETS = 4;
 
-  const rolar = (direcao: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector('figure');
-    const passo = card ? card.getBoundingClientRect().width + 28 : 388;
-    track.scrollBy({ left: direcao * passo, behavior: 'smooth' });
-  };
+export default function Testimonials() {
+  const trilha = Array.from({ length: SETS }).flatMap(() => reviews);
 
   return (
     <section className={styles.testimonialsSection}>
@@ -30,24 +23,17 @@ export default function Testimonials() {
         O Que Dizem Nossos <span className={styles.titleAccent}>Alunos</span>
       </h2>
 
-      <div className={styles.carousel}>
-        <button
-          type="button"
-          className={`${styles.arrow} ${styles.arrowLeft}`}
-          onClick={() => rolar(-1)}
-          aria-label="Reviews anteriores"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-
-        <div className={styles.track} ref={trackRef}>
-          {reviews.map((review) => (
-            <figure key={review.src} className={styles.card}>
+      <div className={styles.marquee}>
+        <div className={styles.track}>
+          {trilha.map((review, i) => (
+            <figure
+              key={`${review.src}-${i}`}
+              className={styles.card}
+              aria-hidden={i >= reviews.length ? 'true' : undefined}
+            >
               <Image
                 src={review.src}
-                alt={review.alt}
+                alt={i < reviews.length ? review.alt : ''}
                 width={720}
                 height={560}
                 className={styles.print}
@@ -55,17 +41,6 @@ export default function Testimonials() {
             </figure>
           ))}
         </div>
-
-        <button
-          type="button"
-          className={`${styles.arrow} ${styles.arrowRight}`}
-          onClick={() => rolar(1)}
-          aria-label="Próximas reviews"
-        >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
       </div>
     </section>
   );

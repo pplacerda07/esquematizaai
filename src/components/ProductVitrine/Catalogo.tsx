@@ -53,8 +53,11 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
       if (area !== 'todas' && item.area !== area) return false;
       return true;
     });
-    // maiores descontos primeiro; sem desconto vem depois, em ordem alfabética
+    // na visão geral (sem filtro), produtos com capa abrem a vitrine;
+    // dentro de cada grupo: maiores descontos primeiro, depois ordem alfabética
+    const visaoGeral = segmento === 'todos' && area === 'todas';
     return lista.sort((a, b) => {
+      if (visaoGeral && !!a.capa !== !!b.capa) return a.capa ? -1 : 1;
       const offA = a.percentualOff ?? -1;
       const offB = b.percentualOff ?? -1;
       if (offA !== offB) return offB - offA;

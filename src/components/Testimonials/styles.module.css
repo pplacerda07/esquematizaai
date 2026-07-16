@@ -1,6 +1,7 @@
 .testimonialsSection {
   background-color: var(--color-neutral-light);
-  padding: 5rem 5%;
+  padding: 5rem 0 5.5rem;
+  overflow: hidden;
 }
 
 .title {
@@ -8,7 +9,7 @@
   font-size: 3.5rem;
   color: var(--color-neutral-dark);
   line-height: 1.1;
-  margin-bottom: 3rem;
+  margin: 0 5% 3rem;
   text-align: center;
 }
 
@@ -18,41 +19,41 @@
   text-transform: lowercase; /* Moonlight sempre em minúsculas */
 }
 
-/* ---------- carrossel ---------- */
+/* ---------- esteira infinita ---------- */
 
-.carousel {
-  position: relative;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 3rem;
+.marquee {
+  overflow: hidden;
 }
 
 .track {
   display: flex;
-  gap: 1.75rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* firefox */
-  padding: 0.5rem 0.25rem 1rem;
+  width: max-content;
+  animation: rolarReviews 55s linear infinite;
+  will-change: transform;
 }
 
-.track::-webkit-scrollbar {
-  display: none;
+/* pausa quando o mouse está em cima, para dar tempo de ler */
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes rolarReviews {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* -50% = uma metade exata (conteúdo duplicado) */
 }
 
 .card {
-  flex: 0 0 360px;
-  scroll-snap-align: start;
-  margin: 0;
+  flex: 0 0 340px;
+  /* espaçamento no próprio item (não flex-gap) para o loop de -50% alinhar exato */
+  margin-right: 1.75rem;
   background-color: #fff;
   border: 2px solid var(--color-cold-light);
   border-radius: 1rem;
   overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
   border-color: var(--color-hot-primary);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
 }
@@ -63,48 +64,21 @@
   display: block;
 }
 
-/* setas (mesma linguagem do carrossel da vitrine por área) */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 1.5px solid rgba(38, 52, 79, 0.12);
-  color: var(--color-cold-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(38, 52, 79, 0.12);
-  transition: background-color 0.2s ease, color 0.2s ease;
-  z-index: 2;
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto; /* sem animação, mas ainda dá para rolar à mão */
+  }
+  .track {
+    animation: none;
+  }
 }
-
-.arrow:hover {
-  background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
-  border-color: var(--color-hot-primary);
-}
-
-.arrow:focus-visible {
-  outline: 3px solid var(--color-cold-primary);
-  outline-offset: 2px;
-}
-
-.arrowLeft { left: 0; }
-.arrowRight { right: 0; }
 
 @media (max-width: 600px) {
   .title {
     font-size: 2.5rem;
   }
-  .carousel {
-    padding: 0 2.5rem;
-  }
   .card {
-    flex-basis: 300px;
+    flex-basis: 290px;
+    margin-right: 1.25rem;
   }
 }

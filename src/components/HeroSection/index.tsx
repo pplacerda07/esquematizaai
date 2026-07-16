@@ -74,7 +74,6 @@ export default function HeroSection() {
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
-              <a href="#planos" className={styles.btnSec}>Comparar planos</a>
             </div>
 
             <LiveTicker />
