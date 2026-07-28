@@ -48,8 +48,6 @@ export default function Navbar() {
         {/* leva ao /blog, e não ao /noticias: é lá que ficam as matérias
             completas sobre editais e vagas */}
         <Link href="/blog" className={styles.link}>Notícias de concurso</Link>
-
-        <Link href="/#newsletter" className={styles.link}>Materiais gratuitos</Link>
       </div>
 
       <div className={styles.actions}>

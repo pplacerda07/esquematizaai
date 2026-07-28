@@ -177,18 +177,18 @@
     padding: 0.875rem 3%;
   }
   .navLinks {
-    gap: 0.45rem;
+    gap: 0.8rem;
   }
   .link,
   .dropdownTrigger {
-    font-size: 0.78rem;
+    font-size: 0.88rem;
   }
   .btnSignup {
-    padding: 0.45rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.88rem;
   }
   .logoLink img {
-    width: 118px;
+    width: 142px;
     height: auto;
   }
 }
