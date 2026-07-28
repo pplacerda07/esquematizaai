@@ -73,6 +73,10 @@ export interface Produto {
   fontes: string[];
   /** inconsistências da planilha detectadas ao gerar (ver PENDENCIAS.md) */
   avisos: string[];
+  /** arquivo e URL originais da capa na planilha (o WebP local sai daqui) */
+  capaOrigem?: { arquivo: string | null; url: string | null } | null;
+  /** produto correspondente no catálogo anterior, quando o id foi herdado */
+  herdouDe?: { id: string; nome: string; score: number } | null;
 }
 
 export interface Cupom {
@@ -133,16 +137,22 @@ export function produtosPorArea(area: string): Produto[] {
   return produtos.filter((p) => p.area === area);
 }
 
-/** Produtos vendáveis hoje: ativos (ou sem status) e com link de checkout. */
+/**
+ * Produtos vendáveis hoje: ativos e com algum destino de compra.
+ * Metade do catálogo não tem checkout Eduzz próprio e é vendida pela página do
+ * produto no site; por isso `urlSite` também conta como destino.
+ */
 export function produtosVendaveis(): Produto[] {
   return produtos.filter(
-    (p) => p.status !== 'inativo' && (p.checkouts.normal || p.checkouts.black),
+    (p) => p.status !== 'inativo' && (p.checkouts.normal || p.checkouts.black || p.urlSite),
   );
 }
 
-/** Link de compra principal do produto (normal; cai para black se for o único). */
+/** Link de compra principal do produto (checkout direto; cai para a página de vendas). */
 export function checkoutPrincipal(p: Produto): string | null {
-  return p.checkouts.normal ?? p.checkouts.black ?? p.checkouts.outros[0]?.url ?? null;
+  return (
+    p.checkouts.normal ?? p.checkouts.black ?? p.checkouts.outros[0]?.url ?? p.urlSite ?? null
+  );
 }
 
 /** Escada de descontos de um produto (links com cupom aplicado), se houver. */
@@ -157,14 +167,20 @@ export function escadaDeDesconto(p: Produto): ProdutoComDesconto | undefined {
  * usa esse par com o preço cheio riscado; senão cai no par normal, sem risco.
  */
 export interface Oferta {
-  /** preço cobrado no checkout */
+  /** preço cobrado no destino */
   preco: number;
   /** preço "de" para riscar (null = sem desconto a exibir) */
   precoAntigo: number | null;
   /** percentual de desconto inteiro (ex.: 45), null quando não há */
   percentualOff: number | null;
-  /** link de checkout Eduzz que cobra `preco` */
+  /** para onde o botão de compra leva */
   checkout: string;
+  /**
+   * true = o destino é a página do produto no site, não um checkout que já cobra.
+   * A UI usa isso para rotular o botão com honestidade ("Ver na loja" em vez de
+   * "Comprar agora"), porque ainda falta um passo até o pagamento.
+   */
+  viaPaginaDeVendas: boolean;
 }
 
 export function ofertaAtual(p: Produto): Oferta | null {
@@ -176,10 +192,28 @@ export function ofertaAtual(p: Produto): Oferta | null {
       precoAntigo: temRisco ? cheio : null,
       percentualOff: temRisco ? Math.round((1 - black / cheio) * 100) : null,
       checkout: p.checkouts.black,
+      viaPaginaDeVendas: false,
     };
   }
-  if (p.checkouts.normal && cheio !== null) {
-    return { preco: cheio, precoAntigo: null, percentualOff: null, checkout: p.checkouts.normal };
+  if (cheio === null) return null;
+  if (p.checkouts.normal) {
+    return {
+      preco: cheio,
+      precoAntigo: null,
+      percentualOff: null,
+      checkout: p.checkouts.normal,
+      viaPaginaDeVendas: false,
+    };
+  }
+  // sem checkout próprio: a venda acontece na página do produto
+  if (p.urlSite) {
+    return {
+      preco: cheio,
+      precoAntigo: null,
+      percentualOff: null,
+      checkout: p.urlSite,
+      viaPaginaDeVendas: true,
+    };
   }
   return null;
 }

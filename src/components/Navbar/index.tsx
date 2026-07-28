@@ -45,12 +45,19 @@ export default function Navbar() {
 
         <Link href="/mentoria" className={styles.link}>Mentoria</Link>
 
+        {/* leva ao /blog, e não ao /noticias: é lá que ficam as matérias
+            completas sobre editais e vagas */}
+        <Link href="/blog" className={styles.link}>Notícias de concurso</Link>
+
         <Link href="/#newsletter" className={styles.link}>Materiais gratuitos</Link>
       </div>
 
       <div className={styles.actions}>
-        <a href="https://esquematizaai.com/minha-conta/" className={styles.btnLogin}>Entrar</a>
-        <button className={styles.btnSignup}>Cadastrar</button>
+        {/* um botão só: "Entrar" e "Cadastrar" iam para o mesmo destino, então
+            o par disputava espaço sem oferecer escolha nenhuma */}
+        <a href="https://esquematizaai.com/minha-conta/" className={styles.btnSignup}>
+          Cadastrar
+        </a>
       </div>
     </nav>
   );

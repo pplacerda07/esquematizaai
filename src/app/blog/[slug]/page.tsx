@@ -2,12 +2,15 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getPostPorSlug, getSlugsPublicados, formatarData } from '@/lib/blog';
+import Conteudo from '@/components/Artigo/Conteudo';
+import Sumario from '@/components/Artigo/Sumario';
+import Compartilhar from '@/components/Artigo/Compartilhar';
+import { getPostPorSlug, getSlugsPublicados, getPostsPublicados } from '@/lib/blog';
+import { extrairSumario, tempoDeLeitura, dataPorExtenso } from '@/lib/artigo';
 import { SITE_URL } from '@/config';
-import styles from './styles.module.css';
+import styles from '@/components/Artigo/artigo.module.css';
 
 export const revalidate = 60;
 
@@ -38,6 +41,7 @@ export async function generateMetadata({
       url,
       type: 'article',
       publishedTime: post.publicado_em ?? undefined,
+      modifiedTime: post.atualizado_em,
       authors: [post.autor],
       images: post.capa_url ? [{ url: post.capa_url }] : undefined,
     },
@@ -54,8 +58,15 @@ export default async function ArtigoPage({
   if (!post) notFound();
 
   const url = `${SITE_URL}/blog/${post.slug}`;
+  const sumario = extrairSumario(post.conteudo);
+  const minutos = tempoDeLeitura(post.conteudo);
+  const publicado = dataPorExtenso(post.publicado_em);
+  const atualizado = dataPorExtenso(post.atualizado_em);
+  // só anuncia "atualizado em" quando a data mudou de fato
+  const mostrarAtualizacao = atualizado && atualizado !== publicado;
 
-  // JSON-LD: ajuda Google e motores de IA (ChatGPT, Perplexity) a entenderem o artigo.
+  const relacionados = (await getPostsPublicados(4)).filter((p) => p.slug !== post.slug).slice(0, 3);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -63,18 +74,16 @@ export default async function ArtigoPage({
     description: post.resumo ?? undefined,
     datePublished: post.publicado_em ?? undefined,
     dateModified: post.atualizado_em,
-    author: { '@type': 'Organization', name: post.autor },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Esquematiza Aí',
-      url: SITE_URL,
-    },
+    author: { '@type': 'Person', name: post.autor },
+    publisher: { '@type': 'Organization', name: 'Esquematiza Aí', url: SITE_URL },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    articleSection: post.categoria,
+    wordCount: post.conteudo.split(/\s+/).filter(Boolean).length,
     ...(post.capa_url ? { image: post.capa_url } : {}),
   };
 
   return (
-    <main className={styles.main}>
+    <main>
       <Navbar />
 
       <script
@@ -82,20 +91,52 @@ export default async function ArtigoPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <article className={styles.article}>
+      <div className={styles.faixa}>
+        <span className={styles.faixaMarca} aria-hidden="true">
+          <Image
+            src="/logos/logo-simbolo-3cores.png"
+            alt=""
+            width={90}
+            height={108}
+            className={styles.faixaSimbolo}
+          />
+          esquematiza aí
+        </span>
+      </div>
+
+      <article className={styles.artigo}>
         <nav className={styles.breadcrumb} aria-label="Você está em">
           <Link href="/">Início</Link>
           <span aria-hidden="true">/</span>
           <Link href="/blog">Blog</Link>
         </nav>
 
-        <header className={styles.header}>
-          <span className={styles.badge}>{post.categoria}</span>
-          <h1 className={styles.title}>{post.titulo}</h1>
-          <div className={styles.meta}>
-            <span className={styles.autor}>{post.autor}</span>
-            <span aria-hidden="true">·</span>
-            <time dateTime={post.publicado_em ?? undefined}>{formatarData(post.publicado_em)}</time>
+        <header>
+          <span className={styles.categoria}>{post.categoria}</span>
+          <h1 className={styles.titulo}>{post.titulo}</h1>
+          {post.resumo && <p className={styles.linhaFina}>{post.resumo}</p>}
+
+          <div className={styles.assinatura}>
+            <Image
+              src="/mentores/sergio.jpg"
+              alt=""
+              width={44}
+              height={44}
+              className={styles.assinaturaFoto}
+            />
+            <p className={styles.assinaturaTexto}>
+              Por <span className={styles.assinaturaAutor}>{post.autor}</span>
+              <span className={styles.assinaturaSep}>·</span>
+              <time dateTime={post.publicado_em ?? undefined}>{publicado}</time>
+              {mostrarAtualizacao && (
+                <>
+                  <span className={styles.assinaturaSep}>·</span>
+                  Atualizado em <time dateTime={post.atualizado_em}>{atualizado}</time>
+                </>
+              )}
+              <span className={styles.assinaturaSep}>·</span>
+              leitura de {minutos} min
+            </p>
           </div>
         </header>
 
@@ -112,14 +153,45 @@ export default async function ArtigoPage({
           </div>
         )}
 
-        <div className={styles.conteudo}>
-          <ReactMarkdown>{post.conteudo}</ReactMarkdown>
-        </div>
+        <Sumario itens={sumario} />
 
-        <div className={styles.footerCta}>
-          <Link href="/blog" className={styles.voltar}>← Ver todos os artigos</Link>
-        </div>
+        <Conteudo markdown={post.conteudo} />
+
+        <p className={styles.verificacao}>
+          Informações conferidas nas fontes citadas e atualizadas em{' '}
+          {mostrarAtualizacao ? atualizado : publicado}.
+        </p>
+
+        <Compartilhar url={url} titulo={post.titulo} />
       </article>
+
+      {relacionados.length > 0 && (
+        <section className={styles.relacionados}>
+          <h2 className={styles.relacionadosTitulo}>Outros conteúdos do blog</h2>
+          <div className={styles.relacionadosGrid}>
+            {relacionados.map((p) => (
+              <Link key={p.id} href={`/blog/${p.slug}`} className={styles.relacionadoCard}>
+                {p.capa_url ? (
+                  <Image
+                    src={p.capa_url}
+                    alt=""
+                    width={400}
+                    height={148}
+                    className={styles.relacionadoCapa}
+                  />
+                ) : (
+                  <span className={styles.relacionadoCapa} aria-hidden="true" />
+                )}
+                <div className={styles.relacionadoCorpo}>
+                  <span className={styles.relacionadoCategoria}>{p.categoria}</span>
+                  <h3 className={styles.relacionadoTitulo}>{p.titulo}</h3>
+                  <span className={styles.relacionadoData}>{dataPorExtenso(p.publicado_em)}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <Footer />
     </main>

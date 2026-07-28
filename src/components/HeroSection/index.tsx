@@ -6,9 +6,28 @@ import LiveTicker from './LiveTicker';
 import OfferCarousel, { type OfertaHero } from './OfferCarousel';
 import { produtoPor, ofertaAtual } from '@/data/catalogo';
 
-// Ofertas reais que giram no card do hero: os 4 combos por área + assinatura.
-// Se um produto perder preço ou checkout no catálogo, sai do carrossel sozinho.
-const HERO_OFERTA_IDS = ['2903930', '2903931', '2903935', '2903937', '2901041'];
+// Ofertas reais que giram no card do hero: o combo completo de cada área + a
+// assinatura mais completa. Se um produto perder preço ou destino de compra no
+// catálogo, sai do carrossel sozinho.
+// Por slug e não por ID da Eduzz: depois da planilha de jul/2026 só 31 dos 107
+// produtos têm ID Eduzz, então o slug é a chave estável.
+const HERO_OFERTA_IDS = [
+  'combo-resumos-flashcards-fiscal-regular',
+  'combo-resumos-flashcards-controle-regular',
+  'combo-resumos-flashcards-policial-regular',
+  'combo-resumos-flashcards-tribunais-regular',
+  'assinatura-resumos-regular-flashcards-regular',
+];
+
+/**
+ * Marcador da lista de benefícios: UMA camada do símbolo do Esquematiza.
+ * Lidas de cima para baixo (azul, laranja, verde), as três remontam o logo.
+ */
+const CamadaDaMarca = ({ className }: { className: string }) => (
+  <svg className={className} width="24" height="18" viewBox="0 0 24 18" aria-hidden="true">
+    <path d="M4.6 3.2 L22 2.2 L21.1 7.6 L11.6 8.2 L9.6 14.4 L2 15.4 Z" />
+  </svg>
+);
 
 export default function HeroSection() {
   const ofertas: OfertaHero[] = HERO_OFERTA_IDS.flatMap((id) => {
@@ -38,30 +57,27 @@ export default function HeroSection() {
         <div className={styles.container}>
           <div className={styles.columnLeft}>
             <h1 className={styles.title}>
-              VOCÊ É O <span className={styles.titleHighlight}>PRÓXIMO</span>
-              <br />
-              aprovado no Fisco
-              <br />
-              com o método <span className={styles.titleAccent}>esquematizado</span>
+              Cansado de estudar conteúdos{' '}
+              <span className={styles.titleHighlight}>desnecessários</span>?
             </h1>
 
             <p className={styles.subtitle}>
-              Pare de perder meses estudando errado. Mapas mentais, resumos visuais e
-              questões comentadas para você gabaritar <strong>RFB, SEFAZ e ISS</strong> em
-              metade do tempo.
+              Aqui no Esquematiza Aí utilizamos uma metodologia baseada no histórico de
+              cobrança em provas para direcionar seus estudos e encurtar o tempo até a
+              aprovação!
             </p>
 
             <div className={styles.benefitList}>
               <div className={styles.benefitItem}>
-                <span className={styles.checkIcon}>✓</span>
+                <CamadaDaMarca className={`${styles.benefitMark} ${styles.markAzul}`} />
                 Material atualizado conforme cada edital
               </div>
               <div className={styles.benefitItem}>
-                <span className={styles.checkIcon}>✓</span>
+                <CamadaDaMarca className={`${styles.benefitMark} ${styles.markLaranja}`} />
                 Professores aprovados em concursos fiscais
               </div>
               <div className={styles.benefitItem}>
-                <span className={styles.checkIcon}>✓</span>
+                <CamadaDaMarca className={`${styles.benefitMark} ${styles.markVerde}`} />
                 Acesso vitalício + garantia de 7 dias
               </div>
             </div>
@@ -78,14 +94,14 @@ export default function HeroSection() {
 
             <LiveTicker />
 
+            {/* saíram os avatares genéricos: a nota real ancora o bloco melhor
+                do que três bolinhas coloridas sem rosto nenhum atrás */}
             <div className={styles.socialProof}>
-              <div className={styles.avatars}>
-                <div className={styles.avatar}></div>
-                <div className={styles.avatar}></div>
-                <div className={styles.avatar}></div>
-              </div>
+              <span className={styles.proofScore}>
+                4,9<span className={styles.proofScoreMax}>/5</span>
+              </span>
               <div className={styles.proofText}>
-                <div className={styles.stars}>★★★★★ <span className={styles.proofRating}>4.9/5</span></div>
+                <div className={styles.stars}>★★★★★</div>
                 <span><strong>+2.500 auditores</strong> já passaram com o Esquematiza</span>
               </div>
             </div>

@@ -35,7 +35,7 @@
 /* mosaico estilo feed */
 .grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.85rem;
   max-width: 1200px;
   margin: 0 auto 2.5rem;
@@ -44,7 +44,8 @@
 .tile {
   position: relative;
   display: block;
-  aspect-ratio: 1 / 1;
+  /* 4:5, o mesmo formato do feed do Instagram: a arte inteira aparece */
+  aspect-ratio: 4 / 5;
   border-radius: 0.75rem;
   overflow: hidden;
   background-color: var(--color-cold-light);
@@ -54,7 +55,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   display: block;
   transition: transform 0.35s ease;
 }
@@ -136,9 +137,43 @@
   opacity: 0.65;
 }
 
+/* No mobile o mosaico vira faixa deslizante: some o card órfão de uma grade
+   que não fecha e o gesto fica igual ao de rolar o feed no celular. */
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+  .tile {
+    /* menos de metade: sempre sobra a "prévia" do próximo, que convida a arrastar */
+    flex: 0 0 46%;
+    scroll-snap-align: center;
+  }
+  /* o overlay some no touch, então a marca fica sempre visível no canto */
+  .tileOverlay {
+    opacity: 1;
+    background: none;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0.6rem;
+  }
+  /* fundo escuro no ícone: as artes claras engoliriam um ícone branco solto */
+  .tileOverlay svg {
+    background-color: rgba(35, 33, 44, 0.55);
+    border-radius: 50%;
+    padding: 0.3rem;
+    width: 28px;
+    height: 28px;
+  }
+  .tileHandle {
+    display: none;
   }
 }
 
@@ -157,6 +192,7 @@
     margin-bottom: 1.75rem;
   }
   .tile {
+    flex-basis: 62%;
     border-radius: 0.55rem;
   }
   .ctaBtn {

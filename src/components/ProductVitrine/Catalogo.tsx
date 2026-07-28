@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { rotuloDeFerramenta } from '@/data/catalogo/rotulos';
@@ -16,6 +16,8 @@ export interface ItemVitrine {
   precoAntigo: number | null;
   percentualOff: number | null;
   checkout: string;
+  /** true = o link leva à página do produto, não a um checkout que já cobra */
+  viaPaginaDeVendas: boolean;
   capa: { src: string; width: number; height: number } | null;
 }
 
@@ -38,32 +40,73 @@ const SEGMENTOS = [
 
 const AREAS = ['Fiscal', 'Controle', 'Policial', 'Tribunais', 'Bancária', 'Legislativo'] as const;
 
-const POR_PAGINA = 8;
+// 6 = duas fileiras de 3 no desktop. Com 8, a última fileira ficava pela metade.
+const POR_PAGINA = 6;
 
 const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+/**
+ * Legenda de cada faixa de filtro. O catálogo filtra em dois níveis (tipo de
+ * material e depois área), e sem dizer isso a pessoa lê como se fossem duas
+ * alternativas, não duas escolhas somadas.
+ *
+ * Ela pisca em ciclo: sobe, aparece, segura um tempo e some. É uma dica, não
+ * um rótulo permanente, então não pode brigar por atenção com os botões nem
+ * empurrar o catálogo para baixo (por isso opacidade, e não display).
+ */
+function PassoFiltro({ numero, children }: { numero: number; children: ReactNode }) {
+  return (
+    <p className={`${styles.passo} ${numero === 2 ? styles.passoAtrasado : ''}`}>
+      <span className={styles.passoNumero} aria-hidden="true">
+        {numero}
+      </span>
+      {children}
+    </p>
+  );
+}
+
+/** tira acento e caixa para a busca casar "tributaria" com "Tributária" */
+function normalizar(texto: string) {
+  return texto
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .trim();
+}
 
 export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
   const [segmento, setSegmento] = useState<string>('todos');
   const [area, setArea] = useState<string>('todas');
   const [visiveis, setVisiveis] = useState(POR_PAGINA);
+  const [buscaAberta, setBuscaAberta] = useState(false);
+  const [busca, setBusca] = useState('');
+  const inputBusca = useRef<HTMLInputElement>(null);
 
   const filtrados = useMemo(() => {
+    const termo = normalizar(busca);
     const lista = itens.filter((item) => {
       if (segmento !== 'todos' && item.categoria !== segmento) return false;
       if (area !== 'todas' && item.area !== area) return false;
+      if (termo && !normalizar(item.nome).includes(termo)) return false;
       return true;
     });
-    // na visão geral (sem filtro), produtos com capa abrem a vitrine;
-    // dentro de cada grupo: maiores descontos primeiro, depois ordem alfabética
-    const visaoGeral = segmento === 'todos' && area === 'todas';
+    // na visão geral (sem filtro nem busca): produtos com capa abrem a vitrine e,
+    // dentro deles, os combos vêm primeiro (é o carro-chefe da loja);
+    // depois: maiores descontos primeiro e, por fim, ordem alfabética
+    const visaoGeral = segmento === 'todos' && area === 'todas' && !termo;
     return lista.sort((a, b) => {
       if (visaoGeral && !!a.capa !== !!b.capa) return a.capa ? -1 : 1;
+      if (visaoGeral) {
+        const comboA = a.categoria === 'combo';
+        const comboB = b.categoria === 'combo';
+        if (comboA !== comboB) return comboA ? -1 : 1;
+      }
       const offA = a.percentualOff ?? -1;
       const offB = b.percentualOff ?? -1;
       if (offA !== offB) return offB - offA;
       return a.nome.localeCompare(b.nome, 'pt-BR');
     });
-  }, [itens, segmento, area]);
+  }, [itens, segmento, area, busca]);
 
   const contagemSegmento = useMemo(() => {
     const mapa: Record<string, number> = { todos: 0 };
@@ -99,6 +142,8 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
           </p>
         </div>
 
+        <PassoFiltro numero={1}>Escolha seu produto</PassoFiltro>
+
         <div className={styles.filters} role="group" aria-label="Filtrar por tipo de produto">
           {SEGMENTOS.map((s) => (
             <button
@@ -112,7 +157,63 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
               <span className={styles.filterCount}>{contagemSegmento[s.valor] ?? 0}</span>
             </button>
           ))}
+
+          <button
+            type="button"
+            className={`${styles.searchToggle} ${buscaAberta ? styles.searchToggleAtivo : ''}`}
+            aria-label={buscaAberta ? 'Fechar busca' : 'Buscar material pelo nome'}
+            aria-expanded={buscaAberta}
+            onClick={() => {
+              const abrindo = !buscaAberta;
+              setBuscaAberta(abrindo);
+              if (abrindo) setTimeout(() => inputBusca.current?.focus(), 60);
+              else { setBusca(''); setVisiveis(POR_PAGINA); }
+            }}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
         </div>
+
+        {buscaAberta && (
+          <div className={styles.searchRow}>
+            <div className={styles.searchField}>
+              <svg className={styles.searchIcon} width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input
+                ref={inputBusca}
+                type="search"
+                className={styles.searchInput}
+                placeholder="Buscar material pelo nome. Ex.: legislação tributária"
+                value={busca}
+                onChange={(e) => { setBusca(e.target.value); setVisiveis(POR_PAGINA); }}
+                onKeyDown={(e) => { if (e.key === 'Escape') { setBusca(''); setBuscaAberta(false); } }}
+                aria-label="Buscar material pelo nome"
+              />
+              {busca && (
+                <button
+                  type="button"
+                  className={styles.searchClear}
+                  onClick={() => { setBusca(''); setVisiveis(POR_PAGINA); inputBusca.current?.focus(); }}
+                  aria-label="Limpar busca"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+            {busca && (
+              <span className={styles.searchResultado}>
+                {filtrados.length} {filtrados.length === 1 ? 'resultado' : 'resultados'}
+              </span>
+            )}
+          </div>
+        )}
+
+        <PassoFiltro numero={2}>Escolha sua área de concurso</PassoFiltro>
 
         <div className={styles.areaFilters} role="group" aria-label="Filtrar por área de concurso">
           <button
@@ -138,7 +239,9 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
 
         {emTela.length === 0 ? (
           <p className={styles.emptyState}>
-            Nenhum produto encontrado com esses filtros. Tente outra combinação.
+            {busca
+              ? `Nada encontrado para "${busca}". Tente outro termo, como "resumo" ou "flashcards".`
+              : 'Nenhum produto encontrado com esses filtros. Tente outra combinação.'}
           </p>
         ) : (
           <div className={styles.grid}>
@@ -195,9 +298,9 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
                     href={item.checkout}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Comprar ${item.nome} por ${brl.format(item.preco)}`}
+                    aria-label={`${item.viaPaginaDeVendas ? 'Ver na loja' : 'Comprar'} ${item.nome} por ${brl.format(item.preco)}`}
                   >
-                    Comprar agora →
+                    {item.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
                   </a>
                 </div>
               </article>

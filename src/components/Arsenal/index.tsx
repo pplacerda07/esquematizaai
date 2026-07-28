@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import HeadlineEsquema from '@/components/HeadlineEsquema';
 import styles from './styles.module.css';
 
 // Resumos reais (public/amostras-produto), duplicados para o scroll em loop.
@@ -15,14 +16,10 @@ export default function Arsenal() {
       <span className={`${styles.bgIcon} ${styles.bgIconLeft}`} aria-hidden="true" />
       <span className={`${styles.bgIcon} ${styles.bgIconRight}`} aria-hidden="true" />
 
+      {/* A headline da seção é o esquema das duas janelas: a promessa e a entrega.
+          O flashcard e o iPad abaixo são a demonstração dela, e seguem intocados. */}
       <div className={styles.header}>
-        <h2 className={styles.title}>
-          Nossos materiais <span className={styles.titleLight}>de estudo.</span>
-        </h2>
-        <p className={styles.subtitle}>
-          Resumos para entender a teoria e flashcards para fixar de vez. Tudo pronto para
-          você usar.
-        </p>
+        <HeadlineEsquema />
       </div>
 
       <div className={styles.grid}>

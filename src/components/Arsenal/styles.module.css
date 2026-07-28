@@ -32,8 +32,9 @@
   rotate: 12deg;
 }
 
+/* 1080px e não 900: a headline em duas janelas lado a lado precisa da largura */
 .header {
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto 4rem;
   text-align: center;
   position: relative;

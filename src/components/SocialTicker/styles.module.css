@@ -1,5 +1,5 @@
 .tickerWrapper {
-  background-color: var(--color-green-dark);
+  background-color: var(--color-green-primary);
   padding: 1.5rem 0;
   overflow: hidden;
   position: relative;
@@ -28,17 +28,22 @@
   }
 }
 
+/* A faixa é verde-menta claro, então o texto vira escuro. Azul-escuro e não
+   verde-escuro: é texto em movimento, e aqui o contraste sobe de 5,5:1 para
+   7,8:1 sem sair da paleta. */
 .text {
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color-neutral-light);
+  color: var(--color-cold-dark);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+/* estrela no verde-escuro da paleta: tom sobre tom, separa as frases sem
+   competir com elas e sem devolver laranja para a faixa */
 .star {
-  color: var(--color-hot-primary);
+  color: var(--color-green-dark);
   font-size: 1.5rem;
 }
 

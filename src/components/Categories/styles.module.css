@@ -29,11 +29,15 @@
   margin-bottom: 3rem;
 }
 
+/* "área de concurso" é bem mais longo que o "área" antigo: por isso o corpo
+   caiu de 4rem para clamp, senão a frase estoura a coluna no desktop e quebra
+   feio no celular. */
 .titleAccent {
   font-family: var(--font-accent);
   color: var(--color-hot-light);
-  font-size: 4rem;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
   display: block;
+  line-height: 1.05;
   text-transform: lowercase; /* Moonlight sempre em minúsculas */
 }
 

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getNoticias, formatarData } from '@/lib/blog';
+import Link from 'next/link';
+import { getConteudoProprio, formatarData } from '@/lib/blog';
 import { SITE_URL } from '@/config';
 import styles from './styles.module.css';
 
@@ -10,12 +11,13 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: 'Notícias de concursos | Esquematiza Aí',
   description:
-    'Curadoria das principais notícias de concursos públicos das áreas fiscal, controle, tribunais e mais, com link direto para a fonte.',
+    'Notícias de concursos públicos das áreas fiscal, controle, tribunais e mais, apuradas e escritas pelo time do Esquematiza Aí.',
   alternates: { canonical: `${SITE_URL}/noticias` },
 };
 
 export default async function NoticiasPage() {
-  const noticias = await getNoticias();
+  // só conteúdo com página nossa: nenhuma manchete daqui joga o leitor para fora
+  const noticias = await getConteudoProprio();
 
   return (
     <main className={styles.main}>
@@ -37,24 +39,20 @@ export default async function NoticiasPage() {
         {noticias.length === 0 ? (
           <p className={styles.empty}>Nenhuma notícia por aqui ainda. Volte em breve.</p>
         ) : (
-          noticias.map((n) => (
-            <a
-              key={n.id}
-              className={styles.item}
-              href={n.url_fonte ?? '#'}
-              target={n.url_fonte ? '_blank' : undefined}
-              rel={n.url_fonte ? 'noopener noreferrer' : undefined}
-            >
-              <div className={styles.itemBody}>
-                <h2 className={styles.itemTitulo}>{n.titulo}</h2>
-                <div className={styles.itemMeta}>
-                  <span className={styles.itemData}>{formatarData(n.publicado_em)}</span>
-                  {n.fonte && <span className={styles.itemFonte}>Fonte: {n.fonte}</span>}
+          noticias.map((n) => {
+            return (
+              <Link key={n.id} className={styles.item} href={n.href}>
+                <div className={styles.itemBody}>
+                  <h2 className={styles.itemTitulo}>{n.titulo}</h2>
+                  <div className={styles.itemMeta}>
+                    <span className={styles.itemData}>{formatarData(n.publicado_em)}</span>
+                    <span className={styles.itemMateria}>Matéria completa</span>
+                  </div>
                 </div>
-              </div>
-              <span className={styles.itemSeta} aria-hidden="true">→</span>
-            </a>
-          ))
+                <span className={styles.itemSeta} aria-hidden="true">→</span>
+              </Link>
+            );
+          })
         )}
       </section>
 

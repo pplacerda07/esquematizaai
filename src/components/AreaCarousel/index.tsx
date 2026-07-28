@@ -13,6 +13,8 @@ export interface VitrineItem {
   precoAntigo: number | null;
   percentualOff: number | null;
   checkout: string;
+  /** true = o link leva à página do produto, não a um checkout que já cobra */
+  viaPaginaDeVendas: boolean;
   capa: { src: string; width: number; height: number } | null;
 }
 
@@ -107,9 +109,9 @@ export default function AreaCarousel({ sections }: { sections: AreaSection[] }) 
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.cardBtn}
-                        aria-label={`Comprar ${item.nome} por ${brl.format(item.preco)}`}
+                        aria-label={`${item.viaPaginaDeVendas ? 'Ver na loja' : 'Comprar'} ${item.nome} por ${brl.format(item.preco)}`}
                       >
-                        Comprar agora →
+                        {item.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
                       </a>
                     </article>
                   ))}

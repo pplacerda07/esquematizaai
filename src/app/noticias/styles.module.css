@@ -93,10 +93,19 @@
   margin: 0 0 0.45rem;
 }
 
+.itemResumo {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0 0 0.6rem;
+}
+
 .itemMeta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.9rem;
   font-family: var(--font-body);
   font-size: 0.85rem;
   color: var(--color-cold-dark);
@@ -105,6 +114,19 @@
 
 .itemFonte {
   font-weight: 600;
+}
+
+/* selo que diferencia matéria própria de link externo */
+.itemMateria {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: var(--color-green-light);
+  color: var(--color-green-dark);
+  padding: 0.22rem 0.55rem;
+  border-radius: 5px;
+  opacity: 1;
 }
 
 .itemSeta {

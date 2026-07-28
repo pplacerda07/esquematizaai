@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
 
 export default function Footer() {
@@ -6,10 +8,17 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logoCol}>
-          <a href="#" className={styles.logo}><span className={styles.logoAccent}>E</span>squematiza Aí</a>
-          <p className={styles.description}>
-            A plataforma definitiva para quem busca aprovação de forma rápida e esquematizada.
-          </p>
+          {/* logotipo de verdade no lugar do nome digitado; versão branca
+              porque o rodapé é escuro */}
+          <Link href="/" className={styles.logo} aria-label="Esquematiza Aí, ir para o início">
+            <Image
+              src="/logos/logo-horizontal-branco.png"
+              alt="Esquematiza Aí"
+              width={200}
+              height={51}
+              className={styles.logoImg}
+            />
+          </Link>
           <div className={styles.social}>
             <a href="#" className={styles.socialIcon}>IG</a>
             <a href="#" className={styles.socialIcon}>FB</a>

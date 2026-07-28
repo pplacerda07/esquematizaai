@@ -45,6 +45,63 @@
 
 /* ---------- filtros ---------- */
 
+/* Dica discreta acima de cada faixa de filtro. */
+.passo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(38, 52, 79, 0.55);
+  margin: 0 0 0.3rem;
+  /* a altura fica reservada mesmo quando invisível: sem isso o catálogo
+     inteiro pula para cima e para baixo a cada ciclo da animação */
+  min-height: 1.25rem;
+  opacity: 0;
+  animation: passoCiclo 8s ease-in-out infinite;
+}
+
+/* o segundo entra depois do primeiro, ensinando a ordem das escolhas */
+.passoAtrasado {
+  animation-delay: 1.1s;
+}
+
+.passoNumero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid rgba(38, 52, 79, 0.3);
+  color: rgba(38, 52, 79, 0.65);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+@keyframes passoCiclo {
+  0% { opacity: 0; transform: translateY(7px) scale(0.97); }
+  5% { opacity: 1; transform: translateY(0) scale(1.05); } /* o "plim" */
+  9% { opacity: 1; transform: translateY(0) scale(1); }
+  48% { opacity: 1; transform: translateY(0) scale(1); }
+  56% { opacity: 0; transform: translateY(-6px) scale(0.99); }
+  100% { opacity: 0; transform: translateY(-6px) scale(0.99); }
+}
+
+/* quem pediu menos movimento no sistema recebe a dica parada e sempre visível */
+@media (prefers-reduced-motion: reduce) {
+  .passo {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -104,12 +161,144 @@
   color: var(--color-neutral-light, #f7f7f7);
 }
 
+/* lupa: mesmo formato dos filtros, só que redonda */
+.searchToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--color-cold-light, #bbe3f0);
+  background-color: transparent;
+  color: var(--color-cold-dark, #26344f);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.searchToggle:hover {
+  border-color: var(--color-cold-primary, #4eaed9);
+  color: var(--color-cold-primary, #4eaed9);
+}
+
+.searchToggleAtivo,
+.searchToggleAtivo:hover {
+  background-color: var(--color-hot-primary, #FF7345);
+  border-color: var(--color-hot-primary, #FF7345);
+  color: var(--color-neutral-light, #f7f7f7);
+}
+
+.searchToggle:focus-visible {
+  outline: 3px solid var(--color-cold-primary, #4eaed9);
+  outline-offset: 2px;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  animation: abrirBusca 0.2s ease;
+}
+
+@keyframes abrirBusca {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .searchRow { animation: none; }
+}
+
+.searchField {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 460px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.95rem;
+  color: var(--color-cold-dark, #26344f);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.searchInput {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: var(--font-body, 'Rubik', sans-serif);
+  font-size: 0.95rem;
+  color: var(--color-neutral-dark, #23212c);
+  padding: 0.75rem 2.5rem 0.75rem 2.65rem;
+  min-height: 46px;
+  border: 2px solid var(--color-cold-light, #bbe3f0);
+  border-radius: 2rem;
+  outline: none;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--color-hot-primary, #FF7345);
+}
+
+.searchInput::-webkit-search-cancel-button {
+  display: none; /* usamos o nosso botão de limpar */
+}
+
+.searchClear {
+  position: absolute;
+  right: 0.6rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  color: var(--color-cold-dark, #26344f);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.searchClear:hover {
+  background-color: rgba(38, 52, 79, 0.08);
+}
+
+.searchClear:focus-visible {
+  outline: 3px solid var(--color-cold-primary, #4eaed9);
+  outline-offset: 1px;
+}
+
+.searchResultado {
+  font-family: var(--font-body, 'Rubik', sans-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-cold-dark, #26344f);
+  opacity: 0.75;
+}
+
 .areaFilters {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 2.75rem;
+}
+
+/* o passo 2 respira depois da faixa de tipos */
+.passo + .filters,
+.passo + .areaFilters {
+  margin-top: 0.2rem;
+}
+
+.areaFilters + .passo,
+.filters + .passo {
+  margin-top: 1.35rem;
 }
 
 .areaBtn {

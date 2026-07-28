@@ -24,7 +24,8 @@ export default function Categories() {
       <div className={styles.container}>
         <div className={styles.leftColumn}>
           <h2 className={styles.title}>
-            Explore por <span className={styles.titleAccent}>Área</span>
+            Explore nossos materiais por{' '}
+            <span className={styles.titleAccent}>área de concurso</span>
           </h2>
 
           <div className={styles.categoryList}>
@@ -50,7 +51,10 @@ export default function Categories() {
         <div className={styles.rightColumn}>
           <div className={styles.imageShape}>
             <Image
-              src="/assets/mulher-esquematiza.webp"
+              /* -v2: nome novo de propósito. Sobrescrever o arquivo antigo mantendo
+                 o mesmo nome fazia o otimizador do Next (e o cache do navegador e
+                 da Vercel) continuarem servindo os bytes velhos. */
+              src="/assets/mulher-esquematiza-v2.webp"
               alt="Aluna do Esquematiza Aí"
               width={520}
               height={650}

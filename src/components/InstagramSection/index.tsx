@@ -1,17 +1,12 @@
 import Image from 'next/image';
+import instagram from '@/data/instagram.json';
 import styles from './styles.module.css';
 
 const INSTAGRAM_URL = 'https://www.instagram.com/esquematizaai/';
 
-// Mosaico estilo feed com imagens reais da marca (fotos, materiais e capas).
-const TILES = [
-  { src: '/mentores/sergio-evento.jpg', alt: 'Sérgio Furtado em evento do Estratégia Concursos' },
-  { src: '/capas/combo-resumo-fiscal-regular.webp', alt: 'Capa do Combo Resumo Fiscal Regular' },
-  { src: '/amostras-produto/9.png', alt: 'Página de um resumo esquematizado' },
-  { src: '/mentores/sergio.jpg', alt: 'Sérgio Furtado, do time Esquematiza Aí' },
-  { src: '/capas/combo-resumos-flashcards-controle-regular.webp', alt: 'Capa do Combo Resumos e Flashcards Controle' },
-  { src: '/amostras-produto/13.png', alt: 'Página de um resumo esquematizado com quadros' },
-];
+// Publicações reais do perfil. As imagens moram em public/instagram e são geradas
+// por scripts/build-instagram.js a partir dos links dos posts.
+const TILES = instagram.itens;
 
 const IconInstagram = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -39,21 +34,22 @@ export default function InstagramSection() {
           <a
             key={tile.src}
             className={styles.tile}
-            href={INSTAGRAM_URL}
+            href={tile.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Abrir o Instagram do Esquematiza Aí: ${tile.alt}`}
+            aria-label={`Ver no Instagram: ${tile.alt}`}
           >
             <Image
               src={tile.src}
               alt={tile.alt}
-              width={400}
-              height={400}
+              width={tile.width}
+              height={tile.height}
+              sizes="(max-width: 900px) 60vw, 20vw"
               className={styles.tileImg}
             />
             <span className={styles.tileOverlay} aria-hidden="true">
               <IconInstagram size={26} />
-              <span className={styles.tileHandle}>@esquematizaai</span>
+              <span className={styles.tileHandle}>ver publicação</span>
             </span>
           </a>
         ))}

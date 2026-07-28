@@ -7,9 +7,11 @@ export default function Newsletter() {
   return (
     <section className={styles.newsletterSection}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Dicas e Materiais Gratuitos</h2>
+        <h2 className={styles.title}>
+          Cadastre-se em nossa <span className={styles.titleAccent}>newsletter</span>
+        </h2>
         <p className={styles.subtitle}>
-          Junte-se a mais de 20.000 estudantes e receba conteúdos exclusivos semanalmente.
+          E fique por dentro de todas as notícias de concurso!
         </p>
         
         <form className={styles.formGroup} onSubmit={(e) => e.preventDefault()}>

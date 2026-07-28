@@ -82,11 +82,15 @@ export default async function ProdutoPage({
         href={oferta.checkout}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Comprar ${produto.nome} por ${formatarPreco(oferta.preco)}`}
+        aria-label={`${oferta.viaPaginaDeVendas ? 'Ver na loja' : 'Comprar'} ${produto.nome} por ${formatarPreco(oferta.preco)}`}
       >
-        Comprar agora →
+        {oferta.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
       </a>
-      <p className={styles.buyNote}>Pagamento processado pela Eduzz.</p>
+      <p className={styles.buyNote}>
+        {oferta.viaPaginaDeVendas
+          ? 'A compra é finalizada na página do produto.'
+          : 'Pagamento processado pela Eduzz.'}
+      </p>
     </div>
   );
 

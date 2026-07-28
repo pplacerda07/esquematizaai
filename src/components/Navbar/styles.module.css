@@ -37,6 +37,12 @@
   color: var(--color-hot-primary);
 }
 
+.link:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 3px;
+  border-radius: 0.2rem;
+}
+
 /* Dropdown */
 .dropdownWrap {
   position: relative;
@@ -55,6 +61,9 @@
   color: var(--color-neutral-dark);
   padding: 0.5rem 0;
   transition: color 0.2s ease;
+  /* sem isto a frase quebrava em três linhas na faixa 900-1024 e esticava a
+     barra inteira; os outros links da navbar já tinham nowrap */
+  white-space: nowrap;
 }
 
 .dropdownTrigger:hover,
@@ -126,27 +135,6 @@
   gap: 0.75rem;
 }
 
-.btnLogin {
-  background-color: transparent;
-  color: var(--color-cold-dark);
-  border: 2px solid var(--color-cold-dark);
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.375rem;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.2s ease;
-}
-
-.btnLogin:hover {
-  background-color: var(--color-cold-dark);
-  color: var(--color-neutral-light);
-}
-
 .btnSignup {
   background-color: var(--color-hot-primary);
   color: var(--color-neutral-light);
@@ -164,9 +152,44 @@
   background-color: var(--color-hot-dark);
 }
 
-@media (max-width: 1024px) {
+/* Entre 900 e 1250px a barra ficou apertada depois que entrou o
+   "Notícias de concurso": são 5 itens + o menu de áreas + os dois botões.
+   Aperta o espaçamento e a fonte em vez de esconder item, que era o que
+   empurrava o "Cadastrar" para fora da tela. */
+@media (max-width: 1250px) {
+  .navbar {
+    gap: 1rem;
+  }
   .navLinks {
-    gap: 1.25rem;
+    gap: 1rem;
+  }
+  .link,
+  .dropdownTrigger {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    gap: 0.75rem;
+    /* 5% de cada lado custava ~92px nesta faixa e era o que faltava para o
+       "Cadastrar" caber; nenhum item precisou ser escondido */
+    padding: 0.875rem 3%;
+  }
+  .navLinks {
+    gap: 0.45rem;
+  }
+  .link,
+  .dropdownTrigger {
+    font-size: 0.78rem;
+  }
+  .btnSignup {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  .logoLink img {
+    width: 118px;
+    height: auto;
   }
 }
 
@@ -189,11 +212,6 @@
   .actions {
     gap: 0.45rem;
   }
-  .btnLogin {
-    font-size: 0.82rem;
-    padding: 0.42rem 0.75rem;
-    border-width: 1.5px;
-  }
   .btnSignup {
     font-size: 0.82rem;
     padding: 0.46rem 0.75rem;
@@ -204,7 +222,7 @@
   .logoLink img {
     width: 112px;
   }
-  .btnLogin, .btnSignup {
+  .btnSignup {
     font-size: 0.78rem;
     padding: 0.4rem 0.6rem;
   }

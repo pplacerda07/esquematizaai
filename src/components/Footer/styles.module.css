@@ -1,5 +1,8 @@
+/* Azul Marinho #26344f. O Brand Guide lista o rodapé junto com stats e
+   categorias sob essa cor; estava com o #23212c, que na paleta é a cor de
+   TEXTO, não de fundo de seção. */
 .footer {
-  background-color: var(--color-neutral-dark);
+  background-color: var(--color-cold-dark);
   padding: 4rem 5% 2rem;
   color: var(--color-neutral-light);
 }
@@ -18,25 +21,21 @@
 }
 
 .logo {
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--color-neutral-light);
+  display: inline-block;
   text-decoration: none;
-  margin-bottom: 1rem;
-}
-
-.logoAccent {
-  color: var(--color-hot-primary);
-}
-
-.description {
-  font-family: var(--font-body);
-  color: var(--color-cold-light);
-  line-height: 1.6;
-  opacity: 0.8;
   margin-bottom: 1.5rem;
-  max-width: 300px;
+}
+
+.logoImg {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.logo:focus-visible {
+  outline: 3px solid var(--color-hot-primary);
+  outline-offset: 4px;
+  border-radius: 0.25rem;
 }
 
 .social {

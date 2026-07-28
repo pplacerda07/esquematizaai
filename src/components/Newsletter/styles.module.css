@@ -17,6 +17,16 @@
   margin-bottom: 1rem;
 }
 
+/* Moonlight no azul-escuro da marca: o fundo aqui é laranja, então o laranja
+   de destaque usado nas outras seções sumiria. */
+.titleAccent {
+  font-family: var(--font-accent);
+  color: var(--color-cold-dark);
+  text-transform: lowercase; /* regra da marca: Moonlight sempre em minúsculas */
+  font-size: 1.15em;
+  padding: 0 0.06em;
+}
+
 .subtitle {
   font-family: var(--font-body);
   font-size: 1.1rem;

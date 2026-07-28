@@ -22,6 +22,7 @@ export default function ProductVitrine() {
       precoAntigo: oferta.precoAntigo,
       percentualOff: oferta.percentualOff,
       checkout: oferta.checkout,
+      viaPaginaDeVendas: oferta.viaPaginaDeVendas,
       capa: capaDe(p),
     });
   }
