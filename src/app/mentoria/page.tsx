@@ -16,7 +16,6 @@ import StackedCards from '@/components/StackedCards';
 import FitToggle from '@/components/FitToggle';
 import BonusFlip from '@/components/BonusFlip';
 import Pilares from '@/components/Pilares';
-import ReviewsCarousel from '@/components/ReviewsCarousel';
 
 export const metadata: Metadata = {
   title: 'Esquematiza Mentoria | Aprovação em concursos fiscais e de controle',
@@ -367,19 +366,9 @@ export default function MentoriaPage() {
           </div>
         </section>
 
-        {/* Bloco 10 — Depoimentos */}
-        <section className={`${styles.section} ${styles.sectionTint}`}>
-          <div className={`${styles.orb} ${styles.orbTintLeft}`} />
-          <div className={styles.containerNarrow}>
-            <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
-              Antes de aparecer na lista, a diferença já aparece na sua rotina de estudo.
-            </h2>
-
-            <div data-reveal style={delay(120)}>
-              <ReviewsCarousel />
-            </div>
-          </div>
-        </section>
+        {/* Bloco 10 (Depoimentos) removido: os prints do carrossel eram de teste
+            ("Teste, Teste, Teste"), não depoimentos reais de alunos. Volta quando
+            houver review de verdade da mentoria. */}
 
         {/* Bloco 11 — Suporte */}
         <section className={`${styles.section} ${styles.sectionDots}`}>
