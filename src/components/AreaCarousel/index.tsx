@@ -104,15 +104,14 @@ export default function AreaCarousel({ sections }: { sections: AreaSection[] }) 
                         <span className={styles.cardPrice}>{brl.format(item.preco)}</span>
                       </div>
 
-                      <a
-                        href={item.checkout}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      {/* leva à página do produto; o checkout fica lá dentro */}
+                      <Link
+                        href={`/vitrine/produto/${item.id}`}
                         className={styles.cardBtn}
-                        aria-label={`${item.viaPaginaDeVendas ? 'Ver na loja' : 'Comprar'} ${item.nome} por ${brl.format(item.preco)}`}
+                        aria-label={`Ver detalhes de ${item.nome}`}
                       >
-                        {item.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
-                      </a>
+                        Ver produto →
+                      </Link>
                     </article>
                   ))}
                 </div>

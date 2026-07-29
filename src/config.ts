@@ -9,6 +9,9 @@ export const GRUPO_VIP_URL = 'https://chat.whatsapp.com/DfqbvIRKC1UBQKdZL7qrar';
 // Site principal (logo / navegação de volta).
 export const SITE_URL = 'https://esquematizaai.com';
 
+// Área do aluno (botão do topo). Substituiu o antigo /minha-conta do WordPress.
+export const AREA_ALUNO_URL = 'https://membros.esquematizaai.com/logar';
+
 // VSL padrão (usada em /mentoria pelo componente YouTubeEmbed).
 export const YOUTUBE_ID = 'cr-ZiaBDSf8';
 export const YOUTUBE_START = 0;

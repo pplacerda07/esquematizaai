@@ -95,15 +95,15 @@ export default function FeaturedCourses() {
                 </div>
               </div>
 
-              <a
+              {/* leva à página do plano, não ao checkout: assinatura é compra
+                  cara, e ninguém assina sem ler o que está incluído */}
+              <Link
                 className={styles.btnEnroll}
-                href={oferta.checkout}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Assinar ${produto.nome} por ${formatarPreco(oferta.preco)}`}
+                href={`/vitrine/produto/${produto.id}`}
+                aria-label={`Ver detalhes de ${produto.nome}`}
               >
-                {oferta.viaPaginaDeVendas ? 'Ver na loja →' : 'Assinar agora →'}
-              </a>
+                Ver assinatura →
+              </Link>
             </article>
           );
         })}

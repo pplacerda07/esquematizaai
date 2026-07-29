@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css';
 import { AREAS } from './areas';
+import { AREA_ALUNO_URL } from '@/config';
 
 export default function Navbar() {
   return (
@@ -53,7 +54,7 @@ export default function Navbar() {
       <div className={styles.actions}>
         {/* um botão só: "Entrar" e "Cadastrar" iam para o mesmo destino, então
             o par disputava espaço sem oferecer escolha nenhuma */}
-        <a href="https://esquematizaai.com/minha-conta/" className={styles.btnSignup}>
+        <a href={AREA_ALUNO_URL} className={styles.btnSignup}>
           Cadastrar
         </a>
       </div>

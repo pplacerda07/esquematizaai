@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
 
 export interface OfertaHero {
@@ -68,16 +69,16 @@ export default function OfferCarousel({ ofertas }: { ofertas: OfertaHero[] }) {
           <span className={styles.offerAmount}>{brl.format(oferta.preco)}</span>
         </div>
 
-        <a
-          href={oferta.checkout}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* mesma regra dos cards: cai na página do produto primeiro, e o
+            checkout fica lá dentro, depois da descrição */}
+        <Link
+          href={`/vitrine/produto/${oferta.id}`}
           className={styles.offerBtn}
-          aria-label={`Comprar ${oferta.nome} por ${brl.format(oferta.preco)}`}
+          aria-label={`Ver detalhes de ${oferta.nome}`}
         >
-          GARANTIR AGORA
+          QUERO CONHECER
           <span className={styles.offerBtnArrow}>→</span>
-        </a>
+        </Link>
       </div>
 
       {ofertas.length > 1 && (

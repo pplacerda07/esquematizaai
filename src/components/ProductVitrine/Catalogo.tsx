@@ -293,15 +293,15 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
                 </div>
 
                 <div className={styles.cardFooter}>
-                  <a
+                  {/* leva à página do produto, não ao checkout: o botão de compra
+                      só aparece depois que a pessoa lê o que está levando */}
+                  <Link
                     className={styles.btnBuy}
-                    href={item.checkout}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${item.viaPaginaDeVendas ? 'Ver na loja' : 'Comprar'} ${item.nome} por ${brl.format(item.preco)}`}
+                    href={`/vitrine/produto/${item.id}`}
+                    aria-label={`Ver detalhes de ${item.nome}`}
                   >
-                    {item.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
-                  </a>
+                    Ver produto →
+                  </Link>
                 </div>
               </article>
             ))}
