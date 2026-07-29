@@ -55,7 +55,7 @@ export default function Navbar() {
         {/* um botão só: "Entrar" e "Cadastrar" iam para o mesmo destino, então
             o par disputava espaço sem oferecer escolha nenhuma */}
         <a href={AREA_ALUNO_URL} className={styles.btnSignup}>
-          Cadastrar
+          Login
         </a>
       </div>
     </nav>
