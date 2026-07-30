@@ -1,0 +1,65 @@
+/* Letreiro de selos abaixo do botão de compra. */
+
+.faixa {
+  background-color: var(--color-green-primary);
+  border-radius: 0.55rem;
+  overflow: hidden;
+  padding: 0.6rem 0;
+  /* a faixa mede o container, não o conteúdo do trilho */
+  width: 100%;
+  position: relative;
+}
+
+.trilho {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+  animation: correr 38s linear infinite;
+  will-change: transform;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-cold-dark);
+  /* espaçamento no item e NÃO em `gap`: o gap final não entra na largura que
+     o -50% considera, e a emenda do loop sai desalinhada */
+  margin-right: 2.25rem;
+}
+
+/* bolinha no tom escuro da faixa, separando os selos */
+.marca {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-green-dark);
+  flex-shrink: 0;
+}
+
+@keyframes correr {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* quem pediu menos movimento lê a faixa parada e rolando na mão */
+@media (prefers-reduced-motion: reduce) {
+  .trilho {
+    animation: none;
+  }
+  .faixa {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .item {
+    font-size: 0.76rem;
+    margin-right: 1.6rem;
+  }
+}

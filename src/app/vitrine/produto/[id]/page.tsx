@@ -5,7 +5,8 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Conteudo from '@/components/Artigo/Conteudo';
-import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, sobreRicoDe, type Produto } from '@/data/catalogo';
+import SelosTicker from '@/components/SelosTicker';
+import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, sobreRicoDe, selosDe, type Produto } from '@/data/catalogo';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
 import styles from './styles.module.css';
 
@@ -58,6 +59,7 @@ export default async function ProdutoPage({
   const capa = capaDe(produto);
   const amostra = amostraDe(produto);
   const sobre = sobreRicoDe(produto);
+  const selos = selosDe(produto);
 
   const cardCompra = (
     <div className={styles.buyCard}>
@@ -105,6 +107,10 @@ export default async function ProdutoPage({
           ? 'A compra é finalizada na página do produto.'
           : 'Pagamento processado pela Eduzz.'}
       </p>
+
+      {/* letreiro com o que está incluído; os selos saem do texto do próprio
+          produto, então nenhum deles promete algo que aquele item não tem */}
+      <SelosTicker selos={selos} />
     </div>
   );
 

@@ -275,3 +275,34 @@ export function sobreRicoDe(produtoOuId: Produto | string): string | null {
   const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
   return sobreRico[id] ?? null;
 }
+
+/**
+ * Selos de confiança do produto, para o letreiro abaixo do botão de compra.
+ *
+ * Cada selo é DEDUZIDO do texto do próprio produto, nunca fixo. Medido no
+ * catálogo: "12 meses de acesso" vale para 107 de 107, mas "7 dias de
+ * garantia" só aparece em 33. Um letreiro igual para todos prometeria
+ * devolução em 74 produtos que não declaram isso.
+ */
+export function selosDe(p: Produto): string[] {
+  const texto = `${p.sobre ?? ''} ${sobreRico[p.id] ?? ''}`.toLowerCase();
+  const tem = (re: RegExp) => re.test(texto);
+  const selos: string[] = [];
+
+  if (tem(/12 meses|1 ano de acesso|acesso de 12/)) selos.push('Acesso por 12 meses');
+  if (tem(/atualiza(ç|c)(õ|o)es inclu|com atualiza/)) selos.push('Atualizações incluídas');
+  if (tem(/download/)) selos.push('Download imediato');
+  if (tem(/impress(ã|a)o/)) selos.push('Pode imprimir');
+  if (tem(/12x|parcel/)) selos.push('Parcelamento em até 12x');
+  if (tem(/reembolso de 7|7 dias/)) selos.push('7 dias de garantia');
+  // Anki sai da FERRAMENTA e não do texto: a descrição da Assinatura de
+  // Resumos cita flashcards numa recomendação cruzada, e a busca por texto
+  // colava "Compatível com o Anki" num produto que é só PDF.
+  if (p.ferramenta === 'Flashcards' || /^Flashcards/i.test(p.nome)) {
+    selos.push('Compatível com o Anki');
+  }
+  if (tem(/suporte/)) selos.push('Suporte por WhatsApp');
+  if (p.checkouts.normal || p.checkouts.black) selos.push('Pagamento seguro pela Eduzz');
+
+  return selos;
+}
