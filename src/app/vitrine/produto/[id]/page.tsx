@@ -6,7 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Conteudo from '@/components/Artigo/Conteudo';
 import SelosTicker from '@/components/SelosTicker';
-import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, sobreRicoDe, selosDe, type Produto } from '@/data/catalogo';
+import BarraCompra from '@/components/BarraCompra';
+import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
 import styles from './styles.module.css';
 
@@ -58,11 +59,12 @@ export default async function ProdutoPage({
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';
   const capa = capaDe(produto);
   const amostra = amostraDe(produto);
-  const sobre = sobreRicoDe(produto);
+  const conteudo = conteudoDe(produto);
+  const sobre = conteudo.sobre ?? null;
   const selos = selosDe(produto);
 
   const cardCompra = (
-    <div className={styles.buyCard}>
+    <div className={styles.buyCard} id="card-compra">
       {capa && (
         <Image
           src={capa.src}
@@ -158,25 +160,44 @@ export default async function ProdutoPage({
               </section>
             )}
 
-            {produto.disciplinas && (
+            {/* Detalhes: os módulos, com o que já está liberado e o que vem depois */}
+            {(conteudo.detalhes || produto.disciplinas) && (
               <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
-                  O que vem <span className={styles.sectionAccent}>dentro</span>
+                  Detalhes do <span className={styles.sectionAccent}>produto</span>
                 </h2>
-                <div className={styles.longText}>{produto.disciplinas}</div>
+                {conteudo.detalhesTitulo && (
+                  <p className={styles.detalhesEtiqueta}>{conteudo.detalhesTitulo}</p>
+                )}
+                {conteudo.detalhes ? (
+                  <Conteudo markdown={conteudo.detalhes} />
+                ) : (
+                  <div className={styles.longText}>{produto.disciplinas}</div>
+                )}
               </section>
             )}
 
-            {produto.cronograma && (
+            {conteudo.sumario && (
+              <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>
+                  Sumário <span className={styles.sectionAccent}>completo</span>
+                </h2>
+                <Conteudo markdown={conteudo.sumario} />
+              </section>
+            )}
+
+            {/* Cronograma: alguns materiais vão à venda antes de ficarem
+                prontos, e quem compra precisa saber disso ANTES de pagar */}
+            {conteudo.cronograma && (
               <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
                   Cronograma de <span className={styles.sectionAccent}>entrega</span>
                 </h2>
-                <div className={styles.longText}>{produto.cronograma}</div>
+                <Conteudo markdown={conteudo.cronograma} />
               </section>
             )}
 
-            {!produto.sobre && !produto.disciplinas && !produto.cronograma && (
+            {!sobre && !produto.sobre && !conteudo.detalhes && !produto.disciplinas && (
               <section className={styles.section}>
                 <p className={styles.longText}>
                   A descrição completa deste material está sendo preparada. Qualquer dúvida,
@@ -195,6 +216,16 @@ export default async function ProdutoPage({
           </Link>
         </div>
       </div>
+
+      {/* aparece só quando o card de compra sai de vista */}
+      <BarraCompra
+        alvoId="card-compra"
+        preco={formatarPreco(oferta.preco)}
+        precoAntigo={oferta.precoAntigo !== null ? formatarPreco(oferta.precoAntigo) : null}
+        rotulo={oferta.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
+        href={oferta.checkout}
+        externo
+      />
 
       <Footer />
     </main>

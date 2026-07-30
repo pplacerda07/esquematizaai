@@ -9,7 +9,7 @@ import linksDescontoDb from './links-desconto.json';
 import sumariosDb from './sumarios.json';
 import capasDb from './capas.json';
 import amostrasDb from './amostras.json';
-import sobreDb from './sobre.json';
+import conteudoDb from './conteudo-produto.json';
 
 export interface Produto {
   /** slug único, bom para URL (/vitrine/produto/[id]) */
@@ -265,15 +265,33 @@ export function amostraDe(produtoOuId: Produto | string): Amostra | null {
 
 /**
  * Descrição longa de vendas, em Markdown, capturada da página do produto no
- * WordPress por scripts/build-sobre.js. É a versão com hierarquia (listas,
+ * WordPress por scripts/build-conteudo-produto.js. É a versão com hierarquia (listas,
  * destaques, caixas), diferente do campo `sobre` da planilha, que é um
  * parágrafo corrido bom para meta description mas ruim para ler na tela.
  */
-const sobreRico = sobreDb.sobre as Record<string, string>;
+export interface ConteudoProduto {
+  /** argumento de venda ("Sobre o produto") */
+  sobre?: string;
+  /** módulos e disciplinas, com o que já está liberado */
+  detalhes?: string;
+  /** nome da aba de detalhes no WordPress (varia entre combo e isolado) */
+  detalhesTitulo?: string;
+  /** tópicos de cada disciplina */
+  sumario?: string;
+  /** se o material está pronto ou tem entrega marcada para o futuro */
+  cronograma?: string;
+}
+
+const conteudo = conteudoDb.conteudo as Record<string, ConteudoProduto>;
+
+/** Todo o conteúdo editorial do produto capturado da página de venda. */
+export function conteudoDe(produtoOuId: Produto | string): ConteudoProduto {
+  const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
+  return conteudo[id] ?? {};
+}
 
 export function sobreRicoDe(produtoOuId: Produto | string): string | null {
-  const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
-  return sobreRico[id] ?? null;
+  return conteudoDe(produtoOuId).sobre ?? null;
 }
 
 /**
@@ -285,7 +303,7 @@ export function sobreRicoDe(produtoOuId: Produto | string): string | null {
  * devolução em 74 produtos que não declaram isso.
  */
 export function selosDe(p: Produto): string[] {
-  const texto = `${p.sobre ?? ''} ${sobreRico[p.id] ?? ''}`.toLowerCase();
+  const texto = `${p.sobre ?? ''} ${conteudoDe(p).sobre ?? ''}`.toLowerCase();
   const tem = (re: RegExp) => re.test(texto);
   const selos: string[] = [];
 

@@ -1,0 +1,110 @@
+/* Barra fixa de compra, no rodapé da tela. */
+
+.barra {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90; /* abaixo da navbar (100), acima do conteúdo */
+  background-color: var(--color-cold-dark);
+  border-top: 3px solid var(--color-hot-primary);
+  padding: 0.7rem 5%;
+  box-shadow: 0 -8px 26px rgba(38, 52, 79, 0.22);
+
+  /* escondida por padrão: entra deslizando quando o botão real sai de vista */
+  transform: translateY(110%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.28s ease, opacity 0.28s ease, visibility 0.28s;
+}
+
+.barraVisivel {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barra {
+    transition: opacity 0.2s ease, visibility 0.2s;
+    transform: none;
+  }
+}
+
+.conteudo {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.precos {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.antigo {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--color-neutral-light);
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+.preco {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-neutral-light);
+}
+
+.botao {
+  box-sizing: border-box; /* âncora não herda o border-box nativo de <button> */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-hot-primary);
+  color: var(--color-neutral-light);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.55rem;
+  text-decoration: none;
+  min-height: 48px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.botao:hover {
+  background-color: var(--color-hot-dark);
+}
+
+.botao:focus-visible {
+  outline: 3px solid var(--color-cold-light);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .barra {
+    padding: 0.6rem 4%;
+    /* respeita a faixa do gesto de voltar no iPhone */
+    padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
+  }
+  .preco {
+    font-size: 1.3rem;
+  }
+  .antigo {
+    font-size: 0.72rem;
+  }
+  .botao {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.1rem;
+    flex-shrink: 0;
+  }
+}

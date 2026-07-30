@@ -147,6 +147,9 @@
 .sidebar {
   position: sticky;
   top: 6rem;
+  /* item de grid tem min-width auto por padrão, o que deixa o conteúdo
+     empurrar a coluna; o .content já tinha essa proteção */
+  min-width: 0;
 }
 
 .buyCard {
@@ -162,6 +165,11 @@
 
 .buyCapa {
   width: 100%;
+  /* max-width obrigatório: o projeto não tem reset global de imagem, e em
+     telas ≤900px a coluna do grid é minmax(auto, 1fr). Sem o teto, a coluna
+     cresce para caber a imagem e a imagem cresce para 100% da coluna, em
+     bola de neve (chegava a 4.632px numa tela de 375). */
+  max-width: 100%;
   height: auto;
   border-radius: 0.6rem;
   display: block;
@@ -268,6 +276,17 @@
   font-size: 0.76rem;
   font-weight: 500;
   opacity: 0.65;
+}
+
+/* nome da aba de conteúdo que veio do WordPress (varia por tipo de produto) */
+.detalhesEtiqueta {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cold-primary);
+  margin: 0 0 0.9rem;
 }
 
 .buyNote {
