@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, type Produto } from '@/data/catalogo';
+import Conteudo from '@/components/Artigo/Conteudo';
+import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, sobreRicoDe, type Produto } from '@/data/catalogo';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
 import styles from './styles.module.css';
 
@@ -56,6 +57,7 @@ export default async function ProdutoPage({
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';
   const capa = capaDe(produto);
   const amostra = amostraDe(produto);
+  const sobre = sobreRicoDe(produto);
 
   const cardCompra = (
     <div className={styles.buyCard}>
@@ -135,12 +137,18 @@ export default async function ProdutoPage({
 
         <div className={styles.layout}>
           <article className={styles.content}>
-            {produto.sobre && (
+            {/* Prefere a descrição rica da página de vendas (listas, destaques
+                e caixas) e cai no parágrafo corrido da planilha se faltar. */}
+            {(sobre || produto.sobre) && (
               <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
                   Sobre o <span className={styles.sectionAccent}>material</span>
                 </h2>
-                <div className={styles.longText}>{produto.sobre}</div>
+                {sobre ? (
+                  <Conteudo markdown={sobre} />
+                ) : (
+                  <div className={styles.longText}>{produto.sobre}</div>
+                )}
               </section>
             )}
 

@@ -9,6 +9,7 @@ import linksDescontoDb from './links-desconto.json';
 import sumariosDb from './sumarios.json';
 import capasDb from './capas.json';
 import amostrasDb from './amostras.json';
+import sobreDb from './sobre.json';
 
 export interface Produto {
   /** slug único, bom para URL (/vitrine/produto/[id]) */
@@ -260,4 +261,17 @@ const amostras = amostrasDb.amostras as Record<string, Amostra>;
 export function amostraDe(produtoOuId: Produto | string): Amostra | null {
   const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
   return amostras[id] ?? null;
+}
+
+/**
+ * Descrição longa de vendas, em Markdown, capturada da página do produto no
+ * WordPress por scripts/build-sobre.js. É a versão com hierarquia (listas,
+ * destaques, caixas), diferente do campo `sobre` da planilha, que é um
+ * parágrafo corrido bom para meta description mas ruim para ler na tela.
+ */
+const sobreRico = sobreDb.sobre as Record<string, string>;
+
+export function sobreRicoDe(produtoOuId: Produto | string): string | null {
+  const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
+  return sobreRico[id] ?? null;
 }
