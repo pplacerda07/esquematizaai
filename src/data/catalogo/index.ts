@@ -8,6 +8,7 @@ import ofertasDb from './ofertas-personalizadas.json';
 import linksDescontoDb from './links-desconto.json';
 import sumariosDb from './sumarios.json';
 import capasDb from './capas.json';
+import amostrasDb from './amostras.json';
 
 export interface Produto {
   /** slug único, bom para URL (/vitrine/produto/[id]) */
@@ -240,4 +241,23 @@ const capas = capasDb.capas as Record<string, Capa>;
 export function capaDe(produtoOuId: Produto | string): Capa | null {
   const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
   return capas[id] ?? null;
+}
+
+/**
+ * Amostra grátis do produto (PDF em /public/amostras, gerado por
+ * scripts/build-amostras.js). null = produto sem amostra, e nesse caso a página
+ * não mostra o botão. O mapa é escrito à mão porque as amostras vêm por
+ * disciplina e o catálogo é por produto; ver o comentário do script.
+ */
+export interface Amostra {
+  src: string;
+  /** tamanho do arquivo, para avisar o peso antes de a pessoa baixar */
+  kb: number;
+}
+
+const amostras = amostrasDb.amostras as Record<string, Amostra>;
+
+export function amostraDe(produtoOuId: Produto | string): Amostra | null {
+  const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
+  return amostras[id] ?? null;
 }

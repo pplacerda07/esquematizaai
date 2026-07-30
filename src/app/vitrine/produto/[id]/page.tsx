@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, type Produto } from '@/data/catalogo';
+import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, type Produto } from '@/data/catalogo';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
 import styles from './styles.module.css';
 
@@ -55,6 +55,7 @@ export default async function ProdutoPage({
   const areaSlug = produto.area ? SLUG_DA_AREA[produto.area] : null;
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';
   const capa = capaDe(produto);
+  const amostra = amostraDe(produto);
 
   const cardCompra = (
     <div className={styles.buyCard}>
@@ -86,6 +87,17 @@ export default async function ProdutoPage({
       >
         {oferta.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
       </a>
+
+      {/* Amostra grátis: só aparece em quem tem arquivo mapeado. Sem `target`,
+          com `download`: o PDF baixa direto em vez de abrir num leitor do
+          navegador, que no celular costuma ser ruim. */}
+      {amostra && (
+        <a className={styles.btnAmostra} href={amostra.src} download>
+          Ver amostra grátis
+          <span className={styles.amostraPeso}>PDF · {amostra.kb > 1024 ? `${(amostra.kb / 1024).toFixed(1)} MB` : `${amostra.kb} KB`}</span>
+        </a>
+      )}
+
       <p className={styles.buyNote}>
         {oferta.viaPaginaDeVendas
           ? 'A compra é finalizada na página do produto.'
