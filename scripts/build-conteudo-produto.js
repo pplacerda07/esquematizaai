@@ -61,6 +61,12 @@ function recortar(html, marcador, container) {
 function paraMarkdown(bloco) {
   let t = bloco;
 
+  // PRIMEIRO de tudo: fora <style>, <script> e <noscript> COM o conteúdo.
+  // A limpeza de tags lá embaixo só tira os sinais de menor/maior, então o
+  // CSS do tema sobrevivia como texto e ia parar na tela do produto
+  // (".elementor-1054 .elementor-element{...}"). Pegou 101 dos 107 produtos.
+  t = t.replace(/<(style|script|noscript)\b[\s\S]*?<\/\1>/gi, ' ');
+
   t = t.replace(/<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi, (_, href, txt) => {
     const limpo = txt.replace(/<[^>]+>/g, '').trim();
     return `[${limpo}](${href})`;
@@ -104,6 +110,7 @@ function paraMarkdown(bloco) {
     if (/^⭐/.test(linha)) { saida.push('- ' + linha.replace(/^⭐️?\s*/, '')); continue; }
     if (/^[▸▹]/.test(linha)) { saida.push('  - ' + linha.replace(/^[▸▹]\s*/, '')); continue; }
     if (/^[↓⬇]/.test(linha)) continue;
+    if (pareceCss(linha)) continue; // rede de segurança, caso escape algum
 
     // "01. Tema ➞ 12 páginas": a seta é separador, não marcador de lista
     saida.push(linha.replace(/\s*[➞→]\s*/g, ' · '));
@@ -116,6 +123,22 @@ function paraMarkdown(bloco) {
     .join('\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
+}
+
+/**
+ * Segunda barreira contra CSS na tela: reconhece seletor e declaração soltos.
+ * A primeira (remover <style> com conteúdo) já resolve, mas se o tema mudar e
+ * passar CSS por outro caminho, é melhor a linha sumir do que o cliente
+ * descobrir isso numa página de venda.
+ */
+function pareceCss(linha) {
+  if (!linha) return false;
+  return (
+    /^[.#][a-z][\w-]*[\s.,>{]/i.test(linha) ||           // .classe { ou .a .b
+    /\{[a-z-]+\s*:[^}]*\}/i.test(linha) ||               // { prop: valor }
+    /^[a-z-]+\s*:\s*[^;]+;$/i.test(linha) ||             // prop: valor;
+    /^(@media|@import|@font-face|--[a-z-]+:)/i.test(linha)
+  );
 }
 
 /** Marcador ímpar faz o Markdown grifar o texto errado; o solitário sai. */
