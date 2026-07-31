@@ -1,0 +1,67 @@
+{
+ "geradoEm": "2026-07-31",
+ "resumos": [
+  {
+   "src": "/amostras-produto/resumo-1.webp",
+   "width": 900,
+   "height": 1273
+  },
+  {
+   "src": "/amostras-produto/resumo-2.webp",
+   "width": 900,
+   "height": 1273
+  },
+  {
+   "src": "/amostras-produto/resumo-3.webp",
+   "width": 900,
+   "height": 1273
+  },
+  {
+   "src": "/amostras-produto/resumo-4.webp",
+   "width": 900,
+   "height": 1273
+  },
+  {
+   "src": "/amostras-produto/resumo-5.webp",
+   "width": 900,
+   "height": 1273
+  },
+  {
+   "src": "/amostras-produto/resumo-6.webp",
+   "width": 900,
+   "height": 1273
+  },
+  {
+   "src": "/amostras-produto/resumo-7.webp",
+   "width": 900,
+   "height": 1273
+  },
+  {
+   "src": "/amostras-produto/resumo-8.webp",
+   "width": 900,
+   "height": 1273
+  }
+ ],
+ "flashcards": [
+  {
+   "src": "/amostras-produto/flashcard-1.webp",
+   "width": 450,
+   "height": 762
+  },
+  {
+   "src": "/amostras-produto/flashcard-2.webp",
+   "width": 442,
+   "height": 816
+  },
+  {
+   "src": "/amostras-produto/flashcard-3.webp",
+   "width": 446,
+   "height": 631
+  },
+  {
+   "src": "/amostras-produto/flashcard-4.webp",
+   "width": 438,
+   "height": 678
+  }
+ ]
+}

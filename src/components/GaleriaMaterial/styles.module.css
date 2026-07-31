@@ -1,0 +1,90 @@
+/* Galeria com prints do material, na página do produto. */
+
+.secao {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+  /* a galeria rola dentro de si; a seção nunca empurra a página de lado */
+  overflow: hidden;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-neutral-dark);
+  margin: 0 0 0.5rem;
+  line-height: 1.15;
+}
+
+.acento {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+  text-transform: lowercase; /* regra da marca: Moonlight sempre em minúsculas */
+  font-size: 1.2em;
+}
+
+/* a ressalva de que são exemplos do formato fica visível, não escondida */
+.nota {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-neutral-dark);
+  opacity: 0.65;
+  margin: 0 0 1.35rem;
+}
+
+.trilho {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  /* espaço para a sombra dos quadros não ser cortada pelo overflow */
+  margin: 0 -0.25rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.trilho::-webkit-scrollbar {
+  height: 6px;
+}
+
+.trilho::-webkit-scrollbar-thumb {
+  background-color: rgba(38, 52, 79, 0.25);
+  border-radius: 3px;
+}
+
+.quadro {
+  margin: 0;
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  border: 1px solid rgba(38, 52, 79, 0.12);
+  box-shadow: 0 6px 18px rgba(38, 52, 79, 0.08);
+  background-color: var(--color-neutral-light);
+}
+
+.imagem {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .secao {
+    padding: 1.35rem;
+  }
+  .titulo {
+    font-size: 1.5rem;
+  }
+  .quadro {
+    /* sobra a prévia do próximo, que convida a arrastar */
+    flex-basis: 76%;
+  }
+}

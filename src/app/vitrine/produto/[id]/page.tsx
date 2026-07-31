@@ -9,6 +9,7 @@ import SelosTicker from '@/components/SelosTicker';
 import BarraCompra from '@/components/BarraCompra';
 import FaqProduto from '@/components/FaqProduto';
 import AutoridadeCientifica from '@/components/AutoridadeCientifica';
+import GaleriaMaterial from '@/components/GaleriaMaterial';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
 import { SITE_URL } from '@/config';
@@ -62,6 +63,7 @@ export default async function ProdutoPage({
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';
   const capa = capaDe(produto);
   const amostra = amostraDe(produto);
+  const ehFlashcards = produto.ferramenta === 'Flashcards' || /^Flashcards/i.test(produto.nome);
   const conteudo = conteudoDe(produto);
   const sobre = conteudo.sobre ?? null;
   const selos = selosDe(produto);
@@ -241,12 +243,12 @@ export default async function ProdutoPage({
               </section>
             )}
 
+            <GaleriaMaterial ehFlashcards={ehFlashcards} />
+
             {/* o argumento muda por material: para flashcard a evidência de
                 recuperação e espaçamento é direta; para resumo ela é de outra
                 natureza, e usar a do flashcard esticaria o que a pesquisa diz */}
-            <AutoridadeCientifica
-              ehFlashcards={produto.ferramenta === 'Flashcards' || /^Flashcards/i.test(produto.nome)}
-            />
+            <AutoridadeCientifica ehFlashcards={ehFlashcards} />
 
             {conteudo.faq && conteudo.faq.length > 0 && (
               <FaqProduto perguntas={conteudo.faq} nomeDoProduto={produto.nome} />

@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import HeadlineEsquema from '@/components/HeadlineEsquema';
+import amostras from '@/data/amostras-visuais.json';
 import styles from './styles.module.css';
 
 // Resumos reais (public/amostras-produto), duplicados para o scroll em loop.
-const RESUMOS = ['9', '11', '12', '13', '14', '16'];
+// A lista vem do índice gerado por scripts/build-amostras-visuais.js, então
+// acrescentar uma amostra nova não exige tocar neste arquivo.
+const RESUMOS = amostras.resumos.slice(0, 6);
 
 export default function Arsenal() {
   const [flipped, setFlipped] = useState(false);
@@ -83,13 +86,13 @@ export default function Arsenal() {
             <span className={styles.ipadCamera} aria-hidden="true"></span>
             <div className={styles.ipadScreen}>
               <div className={styles.ipadScroll}>
-                {[...RESUMOS, ...RESUMOS].map((n, i) => (
+                {[...RESUMOS, ...RESUMOS].map((pagina, i) => (
                   <Image
-                    key={`${n}-${i}`}
-                    src={`/amostras-produto/${n}.png`}
+                    key={`${pagina.src}-${i}`}
+                    src={pagina.src}
                     alt="Página de um resumo esquematizado do Esquematiza Aí"
-                    width={1414}
-                    height={2000}
+                    width={pagina.width}
+                    height={pagina.height}
                     className={styles.resumoImg}
                     aria-hidden={i >= RESUMOS.length ? 'true' : undefined}
                   />
