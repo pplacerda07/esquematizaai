@@ -1,0 +1,199 @@
+/* Principais dúvidas do produto + bloco de suporte. */
+
+.secao {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-neutral-dark);
+  margin: 0 0 1.4rem;
+  line-height: 1.15;
+}
+
+.acento {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+  text-transform: lowercase; /* regra da marca: Moonlight sempre em minúsculas */
+  font-size: 1.2em;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.item {
+  border: 1px solid rgba(38, 52, 79, 0.12);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.item[open] {
+  border-color: var(--color-cold-primary);
+}
+
+.pergunta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--color-cold-dark);
+  cursor: pointer;
+  list-style: none; /* some com o triângulo padrão do Firefox */
+  background-color: rgba(187, 227, 240, 0.18);
+  transition: background-color 0.2s ease;
+}
+
+/* o triângulo do Chrome/Safari é outro seletor */
+.pergunta::-webkit-details-marker {
+  display: none;
+}
+
+.pergunta:hover {
+  background-color: rgba(187, 227, 240, 0.36);
+}
+
+.item[open] .pergunta {
+  background-color: rgba(187, 227, 240, 0.36);
+}
+
+.pergunta:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: -3px;
+}
+
+/* sinal de mais que vira menos quando abre, desenhado em CSS */
+.sinal {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.sinal::before,
+.sinal::after {
+  content: '';
+  position: absolute;
+  background-color: var(--color-cold-primary);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.sinal::before {
+  top: 6px;
+  left: 0;
+  width: 14px;
+  height: 2px;
+}
+
+.sinal::after {
+  top: 0;
+  left: 6px;
+  width: 2px;
+  height: 14px;
+}
+
+.item[open] .sinal::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.resposta {
+  padding: 0.35rem 1.1rem 1rem;
+}
+
+/* a resposta é texto de apoio: menor e mais leve que o corpo do artigo */
+.resposta :global(p) {
+  font-size: 0.92rem;
+  margin-bottom: 0.7rem;
+}
+
+/* ------------------------------------------------------------- suporte */
+
+.suporte {
+  margin-top: 1.75rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-cold-dark);
+  text-align: center;
+}
+
+.suporteTitulo {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-neutral-light);
+  margin: 0 0 0.4rem;
+}
+
+.suporteTexto {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-neutral-light);
+  opacity: 0.8;
+  margin: 0 0 1.1rem;
+}
+
+.suporteBotao {
+  box-sizing: border-box; /* âncora não herda o border-box nativo de <button> */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #25d366;
+  color: #0b3d20;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 0.55rem;
+  text-decoration: none;
+  min-height: 48px;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.suporteBotao:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+}
+
+.suporteBotao:focus-visible {
+  outline: 3px solid var(--color-cold-light);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .secao {
+    padding: 1.35rem;
+  }
+  .titulo {
+    font-size: 1.5rem;
+  }
+  .pergunta {
+    font-size: 0.9rem;
+    padding: 0.8rem 0.9rem;
+  }
+  .resposta {
+    padding: 0.3rem 0.9rem 0.9rem;
+  }
+  .suporte {
+    padding: 1.25rem 1rem;
+  }
+  .suporteBotao {
+    width: 100%;
+  }
+}

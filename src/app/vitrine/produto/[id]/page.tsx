@@ -7,8 +7,10 @@ import Footer from '@/components/Footer';
 import Conteudo from '@/components/Artigo/Conteudo';
 import SelosTicker from '@/components/SelosTicker';
 import BarraCompra from '@/components/BarraCompra';
+import FaqProduto from '@/components/FaqProduto';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
+import { SITE_URL } from '@/config';
 import styles from './styles.module.css';
 
 // Uma página por produto vendável (mesmo critério da vitrine da home):
@@ -116,9 +118,50 @@ export default async function ProdutoPage({
     </div>
   );
 
+  // Product + FAQPage para o Google: o primeiro dá direito ao selo de preço e
+  // disponibilidade na busca, o segundo faz as dúvidas aparecerem expandidas
+  // no resultado. Tudo já está na tela; aqui só está em formato de máquina.
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: produto.nome,
+      description: (produto.sobre ?? '').replace(/\s+/g, ' ').trim().slice(0, 500) || undefined,
+      category: produto.area ?? undefined,
+      ...(capa ? { image: `${SITE_URL}${capa.src}` } : {}),
+      brand: { '@type': 'Brand', name: 'Esquematiza Aí' },
+      offers: {
+        '@type': 'Offer',
+        price: oferta.preco,
+        priceCurrency: 'BRL',
+        availability: 'https://schema.org/InStock',
+        url: `${SITE_URL}/vitrine/produto/${produto.id}`,
+      },
+    },
+    ...(conteudo.faq?.length
+      ? [{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: conteudo.faq.map((q) => ({
+            '@type': 'Question',
+            name: q.pergunta,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: q.resposta.replace(/\*\*/g, '').replace(/\s+/g, ' ').trim(),
+            },
+          })),
+        }]
+      : []),
+  ];
+
   return (
     <main className={styles.main}>
       <Navbar />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <div className={styles.page}>
         <nav className={styles.breadcrumb} aria-label="Você está em">
@@ -195,6 +238,10 @@ export default async function ProdutoPage({
                 </h2>
                 <Conteudo markdown={conteudo.cronograma} />
               </section>
+            )}
+
+            {conteudo.faq && conteudo.faq.length > 0 && (
+              <FaqProduto perguntas={conteudo.faq} nomeDoProduto={produto.nome} />
             )}
 
             {!sobre && !produto.sobre && !conteudo.detalhes && !produto.disciplinas && (

@@ -269,9 +269,16 @@ export function amostraDe(produtoOuId: Produto | string): Amostra | null {
  * destaques, caixas), diferente do campo `sobre` da planilha, que é um
  * parágrafo corrido bom para meta description mas ruim para ler na tela.
  */
+export interface PerguntaFrequente {
+  pergunta: string;
+  resposta: string;
+}
+
 export interface ConteudoProduto {
   /** argumento de venda ("Sobre o produto") */
   sobre?: string;
+  /** dúvidas que travam a compra: reembolso, prazo de liberação, download */
+  faq?: PerguntaFrequente[];
   /** módulos e disciplinas, com o que já está liberado */
   detalhes?: string;
   /** nome da aba de detalhes no WordPress (varia entre combo e isolado) */
@@ -312,7 +319,10 @@ export function selosDe(p: Produto): string[] {
   if (tem(/download/)) selos.push('Download imediato');
   if (tem(/impress(ã|a)o/)) selos.push('Pode imprimir');
   if (tem(/12x|parcel/)) selos.push('Parcelamento em até 12x');
-  if (tem(/reembolso de 7|7 dias/)) selos.push('7 dias de garantia');
+  // vale para todos, e não só para os 33 cuja descrição menciona: o próprio FAQ
+  // do Esquematiza diz que segue o art. 49 do Código de Defesa do Consumidor,
+  // que dá 7 dias de arrependimento em qualquer compra online
+  selos.push('7 dias de garantia');
   // Anki sai da FERRAMENTA e não do texto: a descrição da Assinatura de
   // Resumos cita flashcards numa recomendação cruzada, e a busca por texto
   // colava "Compatível com o Anki" num produto que é só PDF.

@@ -206,7 +206,7 @@ function lerAcordeao(html) {
   const alvo = produtos.filter((p) => p.urlSite);
   const lista = SO_TESTE ? alvo.slice(0, 2) : alvo;
   const conteudo = {};
-  const contagem = { sobre: 0, detalhes: 0, sumario: 0, cronograma: 0 };
+  const contagem = { sobre: 0, detalhes: 0, sumario: 0, cronograma: 0, faq: 0 };
   const falhas = [];
 
   for (const [n, p] of lista.entries()) {
@@ -242,6 +242,15 @@ function lerAcordeao(html) {
         const md = paraMarkdown(abaSumario.html);
         if (md.length >= 30) { item.sumario = md; contagem.sumario++; }
       }
+
+      // As perguntas do FAQ vêm no mesmo acordeão e antes eram só descartadas.
+      // São as dúvidas que travam a compra (reembolso, prazo, download), então
+      // valem mais respondidas na página do que escondidas.
+      const faq = lerAcordeao(html)
+        .filter((a) => EH_FAQ.test(a.titulo))
+        .map((a) => ({ pergunta: a.titulo, resposta: paraMarkdown(a.html) }))
+        .filter((a) => a.resposta.length >= 15);
+      if (faq.length) { item.faq = faq; contagem.faq++; }
       if (Object.keys(item).length) conteudo[p.id] = item;
 
       if (SO_TESTE) {

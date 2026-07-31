@@ -12,6 +12,12 @@ export const SITE_URL = 'https://esquematizaai.com';
 // Área do aluno (botão do topo). Substituiu o antigo /minha-conta do WordPress.
 export const AREA_ALUNO_URL = 'https://membros.esquematizaai.com/logar';
 
+// ATENÇÃO: número de exemplo, veio assim do início do projeto. Todo botão de
+// WhatsApp do site aponta para cá, então trocar aqui conserta o site inteiro.
+export const WHATSAPP_NUMERO = '5511999999999';
+export const whatsappUrl = (mensagem: string) =>
+  `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
+
 // VSL padrão (usada em /mentoria pelo componente YouTubeEmbed).
 export const YOUTUBE_ID = 'cr-ZiaBDSf8';
 export const YOUTUBE_START = 0;
