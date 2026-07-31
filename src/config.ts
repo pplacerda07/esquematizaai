@@ -12,9 +12,9 @@ export const SITE_URL = 'https://esquematizaai.com';
 // Área do aluno (botão do topo). Substituiu o antigo /minha-conta do WordPress.
 export const AREA_ALUNO_URL = 'https://membros.esquematizaai.com/logar';
 
-// ATENÇÃO: número de exemplo, veio assim do início do projeto. Todo botão de
-// WhatsApp do site aponta para cá, então trocar aqui conserta o site inteiro.
-export const WHATSAPP_NUMERO = '5511999999999';
+// Suporte do Esquematiza Aí: +55 11 5286-5954.
+// Todo botão de WhatsApp do site aponta para cá; trocar aqui muda o site inteiro.
+export const WHATSAPP_NUMERO = '551152865954';
 export const whatsappUrl = (mensagem: string) =>
   `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
 

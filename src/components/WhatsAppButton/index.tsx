@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
+import { whatsappUrl } from '@/config';
 import styles from './styles.module.css';
 
-const PHONE = '5511999999999';
 const MESSAGE = 'Olá! Quero saber mais sobre o Esquematiza Aí.';
 
 export default function WhatsAppButton() {
@@ -15,7 +15,9 @@ export default function WhatsAppButton() {
     return null;
   }
 
-  const href = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
+  // número vem do config: este componente tinha a própria cópia, e o número
+  // ficava desatualizado em metade do site quando alguém trocava só um lugar
+  const href = whatsappUrl(MESSAGE);
 
   return (
     <a
