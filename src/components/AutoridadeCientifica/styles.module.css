@@ -1,0 +1,165 @@
+/* Base científica do método, na página do produto. */
+
+.secao {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-neutral-dark);
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.acento {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+  text-transform: lowercase; /* regra da marca: Moonlight sempre em minúsculas */
+  font-size: 1.2em;
+}
+
+.abertura {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-neutral-dark);
+  opacity: 0.8;
+  margin: 0 0 1.6rem;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: var(--color-cold-light);
+  color: var(--color-cold-dark);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 0.1rem;
+}
+
+.destaque {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-cold-dark);
+  margin: 0 0 0.3rem;
+}
+
+.texto {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--color-neutral-dark);
+  opacity: 0.82;
+  margin: 0;
+}
+
+/* ------------------------------------------------------------- fontes */
+
+/* Fechado por padrão: quem quer o argumento lê a lista acima, quem quer
+   conferir a procedência abre. Esconder a referência seria pedir confiança
+   sem oferecer como verificar. */
+.fontes {
+  margin-top: 1.75rem;
+  border-top: 1px solid rgba(38, 52, 79, 0.12);
+  padding-top: 1.1rem;
+}
+
+.fontesTitulo {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-cold-primary);
+  cursor: pointer;
+  list-style: none;
+}
+
+.fontesTitulo::-webkit-details-marker {
+  display: none;
+}
+
+.fontesTitulo::before {
+  content: '↓ ';
+}
+
+.fontes[open] .fontesTitulo::before {
+  content: '↑ ';
+}
+
+.fontesTitulo:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 3px;
+  border-radius: 0.2rem;
+}
+
+.fontesLista {
+  margin: 0.9rem 0 0;
+  padding-left: 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--color-neutral-dark);
+  opacity: 0.7;
+}
+
+.fontesLista li {
+  margin-bottom: 0.55rem;
+}
+
+/* o limite do que os estudos sustentam, dito na cara */
+.fontesNota {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--color-neutral-dark);
+  opacity: 0.6;
+  font-style: italic;
+  margin: 0.9rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .secao {
+    padding: 1.35rem;
+  }
+  .titulo {
+    font-size: 1.5rem;
+  }
+  .destaque {
+    font-size: 1.02rem;
+  }
+  .numero {
+    width: 26px;
+    height: 26px;
+    font-size: 0.88rem;
+  }
+}
