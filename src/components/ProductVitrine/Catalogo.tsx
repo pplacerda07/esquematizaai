@@ -19,6 +19,8 @@ export interface ItemVitrine {
   /** true = o link leva à página do produto, não a um checkout que já cobra */
   viaPaginaDeVendas: boolean;
   capa: { src: string; width: number; height: number } | null;
+  /** marcado como destaque no painel */
+  destaque: boolean;
 }
 
 // fallback desenhado quando o produto ainda não tem capa
@@ -95,6 +97,8 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
     // depois: maiores descontos primeiro e, por fim, ordem alfabética
     const visaoGeral = segmento === 'todos' && area === 'todas' && !termo;
     return lista.sort((a, b) => {
+      // o que o painel marcou como destaque abre a vitrine
+      if (a.destaque !== b.destaque) return a.destaque ? -1 : 1;
       if (visaoGeral && !!a.capa !== !!b.capa) return a.capa ? -1 : 1;
       if (visaoGeral) {
         const comboA = a.categoria === 'combo';

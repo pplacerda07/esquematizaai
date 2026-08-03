@@ -1,5 +1,5 @@
 import { criarSupabaseServer } from '@/lib/supabase/server';
-import type { Post, PostResumo } from '@/lib/blog';
+import type { Post, PostResumo, NoticiaCompleta } from '@/lib/blog';
 
 /**
  * Consultas do PAINEL (usuário autenticado). Diferente de lib/blog.ts, aqui o cliente
@@ -22,6 +22,21 @@ export async function listarPostsAdmin(): Promise<PostResumo[]> {
     return [];
   }
   return (data ?? []) as PostResumo[];
+}
+
+/** Todas as notícias (publicadas e rascunhos), mais recentes primeiro. */
+export async function listarNoticiasAdmin(): Promise<NoticiaCompleta[]> {
+  const supabase = await criarSupabaseServer();
+  const { data, error } = await supabase
+    .from('noticias')
+    .select('*')
+    .order('publicado_em', { ascending: false });
+
+  if (error) {
+    console.error('[admin] erro ao listar notícias:', error.message);
+    return [];
+  }
+  return (data ?? []) as NoticiaCompleta[];
 }
 
 /** Um post completo por id (para editar), independente do status. */

@@ -1,0 +1,311 @@
+.pagina {
+  max-width: 980px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-cold-dark);
+  margin: 0 0 0.25rem;
+}
+
+.subtitulo {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-neutral-dark);
+  opacity: 0.65;
+  margin: 0;
+}
+
+.dica {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-cold-dark);
+  background-color: rgba(187, 227, 240, 0.28);
+  border-left: 3px solid var(--color-cold-primary);
+  border-radius: 0 0.4rem 0.4rem 0;
+  padding: 0.7rem 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+/* ------------------------------------------------------------- botões */
+
+.btnPrimario,
+.btnSecundario {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.65rem 1.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  min-height: 42px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btnPrimario {
+  background-color: var(--color-hot-primary);
+  color: #fff;
+}
+
+.btnPrimario:hover:not(:disabled) {
+  background-color: var(--color-hot-dark);
+}
+
+.btnSecundario {
+  background-color: transparent;
+  color: var(--color-cold-dark);
+  border: 1.5px solid rgba(38, 52, 79, 0.25);
+}
+
+.btnPrimario:disabled,
+.btnSecundario:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* ---------------------------------------------------------- formulário */
+
+.formulario {
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.12);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.linha .campo:only-child {
+  grid-column: 1 / -1;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.rotulo {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-cold-dark);
+}
+
+.ajuda {
+  font-weight: 400;
+  font-style: normal;
+  opacity: 0.6;
+  margin-left: 0.35rem;
+}
+
+.input,
+.textarea,
+.textareaGrande {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-neutral-dark);
+  padding: 0.6rem 0.7rem;
+  border: 1.5px solid rgba(38, 52, 79, 0.18);
+  border-radius: 0.45rem;
+  background-color: #fff;
+}
+
+.textarea,
+.textareaGrande {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* o texto da matéria é escrito em Markdown; monoespaçada ajuda a enxergar
+   a indentação das listas e o fechamento dos blocos ::: */
+.textareaGrande {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+.input:focus,
+.textarea:focus,
+.textareaGrande:focus {
+  outline: none;
+  border-color: var(--color-cold-primary);
+  box-shadow: 0 0 0 3px rgba(78, 174, 217, 0.18);
+}
+
+.erro {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-hot-dark);
+  background-color: rgba(255, 115, 69, 0.1);
+  border-radius: 0.45rem;
+  padding: 0.7rem 0.9rem;
+  margin: 0;
+}
+
+.acoesForm {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* --------------------------------------------------------------- lista */
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vazio {
+  font-family: var(--font-body);
+  color: var(--color-neutral-dark);
+  opacity: 0.6;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.12);
+  border-radius: 0.7rem;
+  padding: 1rem 1.15rem;
+}
+
+.itemTexto {
+  min-width: 0;
+}
+
+.itemTopo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.selo {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.22rem 0.5rem;
+  border-radius: 0.35rem;
+}
+
+.seloAtivo {
+  background-color: var(--color-green-light);
+  color: var(--color-green-dark);
+}
+
+.seloRascunho {
+  background-color: rgba(38, 52, 79, 0.1);
+  color: var(--color-cold-dark);
+}
+
+.itemData,
+.itemFonte {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  color: var(--color-neutral-dark);
+  opacity: 0.55;
+}
+
+.itemTitulo {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-neutral-dark);
+  margin: 0 0 0.3rem;
+  line-height: 1.2;
+}
+
+.itemResumo {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--color-neutral-dark);
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* notícia sem texto não vai para o site; melhor dizer na lista */
+.aviso {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-hot-dark);
+  margin: 0.5rem 0 0;
+}
+
+.itemAcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.btnLinha {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-cold-dark);
+  background-color: transparent;
+  border: 1px solid rgba(38, 52, 79, 0.2);
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.btnLinha:hover:not(:disabled) {
+  background-color: rgba(187, 227, 240, 0.35);
+}
+
+.btnPerigo {
+  color: var(--color-hot-dark);
+  border-color: rgba(149, 50, 31, 0.3);
+}
+
+.btnPerigo:hover:not(:disabled) {
+  background-color: rgba(255, 115, 69, 0.1);
+}
+
+@media (max-width: 720px) {
+  .linha {
+    grid-template-columns: 1fr;
+  }
+  .item {
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .itemAcoes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

@@ -11,6 +11,7 @@ import FaqProduto from '@/components/FaqProduto';
 import AutoridadeCientifica from '@/components/AutoridadeCientifica';
 import GaleriaMaterial from '@/components/GaleriaMaterial';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
+import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
 import { SITE_URL } from '@/config';
 import styles from './styles.module.css';
@@ -52,12 +53,12 @@ export default async function ProdutoPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const produto = produtoPor(id);
-  const oferta = produto ? ofertaAtual(produto) : null;
+  // passa pela camada de ajustes: preço editado no painel vale mais que o da
+  // planilha, e produto marcado como oculto responde 404 como se não existisse
+  const ajustado = await produtoAjustado(id);
+  if (!ajustado) notFound();
 
-  if (!produto || !oferta || produto.status === 'inativo' || produto.categoria === 'oferta-personalizada') {
-    notFound();
-  }
+  const { produto, oferta } = ajustado;
 
   const areaSlug = produto.area ? SLUG_DA_AREA[produto.area] : null;
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';

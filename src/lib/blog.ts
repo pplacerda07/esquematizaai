@@ -110,6 +110,8 @@ export interface Noticia {
 
 export interface NoticiaCompleta extends Noticia {
   conteudo: string | null;
+  /** o painel lista rascunhos junto; o site público já filtra por publicado */
+  status: 'rascunho' | 'publicado';
 }
 
 const CAMPOS_NOTICIA =
