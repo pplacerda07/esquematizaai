@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { timingSafeEqual } from 'node:crypto';
 
 /**
  * Publicação de notícia por automação.
@@ -34,6 +35,58 @@ function erro(mensagem: string, status: number, ajuda?: string) {
   return NextResponse.json({ ok: false, erro: mensagem, ajuda }, { status });
 }
 
+/**
+ * Compara o token em tempo constante.
+ *
+ * `a !== b` para de comparar no primeiro caractere diferente, e o tempo de
+ * resposta muda conforme quantos caracteres iniciais estavam certos. Com
+ * medições suficientes dá para descobrir o token caractere por caractere.
+ * O hash antes da comparação garante o mesmo comprimento nos dois lados.
+ */
+function tokenConfere(enviado: string, esperado: string): boolean {
+  if (!enviado || !esperado) return false;
+  const a = Buffer.from(enviado.padEnd(128).slice(0, 128));
+  const b = Buffer.from(esperado.padEnd(128).slice(0, 128));
+  return timingSafeEqual(a, b) && enviado.length === esperado.length;
+}
+
+/**
+ * Limite de chamadas por janela de tempo, em memória.
+ *
+ * Sem isso, um script pode tentar milhares de tokens por minuto, ou encher o
+ * banco de matérias. Guardar em memória basta aqui: cada instância limita a si
+ * mesma, e o volume esperado é de algumas notícias por dia. Se um dia precisar
+ * ser exato entre instâncias, troca-se por Redis sem mudar o resto.
+ */
+const CHAMADAS = new Map<string, { contagem: number; ate: number }>();
+const JANELA_MS = 60_000;
+const MAXIMO_POR_JANELA = 20;
+
+function excedeuLimite(chave: string): boolean {
+  const agora = Date.now();
+  const atual = CHAMADAS.get(chave);
+
+  if (!atual || agora > atual.ate) {
+    CHAMADAS.set(chave, { contagem: 1, ate: agora + JANELA_MS });
+    // limpeza preguiçosa: sem isso o Map cresce para sempre
+    if (CHAMADAS.size > 500) {
+      for (const [k, v] of CHAMADAS) if (agora > v.ate) CHAMADAS.delete(k);
+    }
+    return false;
+  }
+
+  atual.contagem += 1;
+  return atual.contagem > MAXIMO_POR_JANELA;
+}
+
+function identificar(req: Request): string {
+  return (
+    req.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+    req.headers.get('x-real-ip') ||
+    'desconhecido'
+  );
+}
+
 export async function POST(req: Request) {
   if (!TOKEN || !SUPABASE_URL || !SERVICE_KEY) {
     return erro(
@@ -43,9 +96,17 @@ export async function POST(req: Request) {
     );
   }
 
+  if (excedeuLimite(identificar(req))) {
+    return erro(
+      'Muitas requisições. Espere um minuto e tente de novo.',
+      429,
+      `O limite é de ${MAXIMO_POR_JANELA} chamadas por minuto.`,
+    );
+  }
+
   const autorizacao = req.headers.get('authorization') ?? '';
   const enviado = autorizacao.replace(/^Bearer\s+/i, '').trim();
-  if (!enviado || enviado !== TOKEN) {
+  if (!tokenConfere(enviado, TOKEN)) {
     return erro('Token inválido ou ausente.', 401, 'Envie o cabeçalho: Authorization: Bearer SEU_TOKEN');
   }
 
@@ -140,9 +201,13 @@ export async function POST(req: Request) {
 
 /** GET serve de teste de vida: a automação confere se o token funciona. */
 export async function GET(req: Request) {
+  if (excedeuLimite(identificar(req))) {
+    return NextResponse.json({ ok: false, erro: 'Muitas requisições.' }, { status: 429 });
+  }
+
   const autorizacao = req.headers.get('authorization') ?? '';
   const enviado = autorizacao.replace(/^Bearer\s+/i, '').trim();
-  const autorizado = Boolean(TOKEN) && enviado === TOKEN;
+  const autorizado = Boolean(TOKEN) && tokenConfere(enviado, TOKEN!);
 
   return NextResponse.json(
     {

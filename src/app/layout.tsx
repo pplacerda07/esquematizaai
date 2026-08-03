@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Analytics from "@/components/Analytics";
 import { SITE_URL } from "@/config";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body>
         {children}
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   );

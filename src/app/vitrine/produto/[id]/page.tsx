@@ -14,6 +14,7 @@ import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, co
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
 import { SITE_URL } from '@/config';
+import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from './styles.module.css';
 
 // Uma página por produto vendável (mesmo critério da vitrine da home):
@@ -164,7 +165,7 @@ export default async function ProdutoPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSeguro(jsonLd) }}
       />
 
       <div className={styles.page}>

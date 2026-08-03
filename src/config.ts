@@ -18,6 +18,9 @@ export const WHATSAPP_NUMERO = '551152865954';
 export const whatsappUrl = (mensagem: string) =>
   `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
 
+// Google Analytics 4. Vazio desliga a medição em todo o site.
+export const GA_MEDICAO_ID = 'G-ZLPK9R4PZ6';
+
 // VSL padrão (usada em /mentoria pelo componente YouTubeEmbed).
 export const YOUTUBE_ID = 'cr-ZiaBDSf8';
 export const YOUTUBE_START = 0;

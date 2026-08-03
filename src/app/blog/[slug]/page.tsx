@@ -10,6 +10,7 @@ import Compartilhar from '@/components/Artigo/Compartilhar';
 import { getPostPorSlug, getSlugsPublicados, getPostsPublicados } from '@/lib/blog';
 import { extrairSumario, tempoDeLeitura, dataPorExtenso } from '@/lib/artigo';
 import { SITE_URL } from '@/config';
+import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from '@/components/Artigo/artigo.module.css';
 
 export const revalidate = 60;
@@ -88,7 +89,7 @@ export default async function ArtigoPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSeguro(jsonLd) }}
       />
 
       <div className={styles.faixa}>

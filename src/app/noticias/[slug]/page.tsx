@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { getNoticiaPorSlug, getSlugsNoticias, formatarData } from '@/lib/blog';
 import { SITE_URL } from '@/config';
+import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from './styles.module.css';
 
 export const revalidate = 60;
@@ -75,7 +76,7 @@ export default async function NoticiaPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdSeguro(jsonLd) }}
       />
 
       <article className={styles.article}>
