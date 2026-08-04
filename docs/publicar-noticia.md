@@ -17,14 +17,25 @@ que vai publicar as notícias e ele vai saber o que fazer.
 > a rota por lá dá erro de conexão. Quando o domínio for apontado para o site
 > novo, troque o endereço aqui e nos comandos abaixo.
 
-## Antes de publicar pela primeira vez, teste o token
+## Passo 1: teste antes de escrever qualquer matéria
+
+Este teste responde duas perguntas de uma vez: se você consegue acessar a
+internet e se o token está certo. Faça uma requisição GET para
+`https://esquematizaai.vercel.app/api/noticias`, com o cabeçalho
+`Authorization: Bearer SEU_TOKEN`, e diga ao Sérgio o que voltou.
 
 ```bash
 curl https://esquematizaai.vercel.app/api/noticias \
   -H "Authorization: Bearer SEU_TOKEN"
 ```
 
-Se responder `"ok": true`, está tudo certo. Se responder 401, o token está errado.
+| Resposta | O que significa |
+|---|---|
+| `"ok": true` | Está tudo pronto. Pode publicar. |
+| `401` | Chegou no servidor, mas o token está errado. Peça o token de novo ao Pedro. |
+| Não consegue acessar a internet | Você não tem permissão de saída de rede. Neste caso escreva a matéria normalmente e entregue o texto pronto ao Sérgio: ele publica pelo painel. |
+
+Só siga para o resto do documento depois deste teste.
 
 ---
 

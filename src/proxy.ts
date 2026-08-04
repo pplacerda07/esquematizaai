@@ -37,17 +37,43 @@ export async function proxy(request: NextRequest) {
   const ehAreaAdmin = pathname.startsWith('/admin');
   const ehLogin = pathname === '/admin/login';
 
-  // Sem login tentando entrar no admin (menos a própria tela de login) -> manda pro login.
-  if (ehAreaAdmin && !ehLogin && !user) {
-    const url = request.nextUrl.clone();
-    url.pathname = '/admin/login';
-    return NextResponse.redirect(url);
+  if (!ehAreaAdmin) return response;
+
+  /**
+   * Ter sessão NÃO é o mesmo que ser administrador.
+   *
+   * O cadastro do Supabase aceita qualquer pessoa, e a chave anônima vai no
+   * HTML de todas as páginas. Ou seja: conseguir uma sessão é coisa de dois
+   * minutos para qualquer um na internet. Quem manda é a tabela
+   * `administradores`, consultada pela função eh_admin() do banco.
+   *
+   * A barreira que realmente protege está nas políticas do banco: mesmo
+   * chamando a API do Supabase por fora, sem passar por aqui, quem não é
+   * administrador não escreve nada. Esta checagem evita abrir um painel que a
+   * pessoa não conseguiria usar, e impede que ela veja os rascunhos.
+   *
+   * A permissão é resolvida uma vez só, porque dela dependem os dois desvios
+   * abaixo. Sem isso, um usuário logado e sem permissão ficaria preso num
+   * laço: o painel o mandaria para o login, e o login o mandaria de volta.
+   */
+  const ehAdmin = user ? Boolean((await supabase.rpc('eh_admin')).data) : false;
+
+  // Tela de login: só quem já é administrador é levado direto ao painel.
+  if (ehLogin) {
+    if (ehAdmin) {
+      const url = request.nextUrl.clone();
+      url.pathname = '/admin';
+      url.search = '';
+      return NextResponse.redirect(url);
+    }
+    return response;
   }
 
-  // Já logado tentando abrir o login -> manda pro painel.
-  if (ehLogin && user) {
+  // Resto do painel: sem sessão ou sem permissão, volta para o login.
+  if (!ehAdmin) {
     const url = request.nextUrl.clone();
-    url.pathname = '/admin';
+    url.pathname = '/admin/login';
+    url.search = user ? '?erro=sem-permissao' : '';
     return NextResponse.redirect(url);
   }
 

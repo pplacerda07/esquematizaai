@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { criarSupabaseServer } from '@/lib/supabase/server';
+import { exigirAdmin } from '@/lib/supabase/admin-guard';
 
 export type ResultadoAjuste = { ok: boolean; erro?: string };
 
@@ -20,12 +21,10 @@ function revalidarLoja() {
 }
 
 export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste> {
-  const supabase = await criarSupabaseServer();
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return { ok: false, erro: 'Sessão expirada. Faça login de novo.' };
+  const supabase = await criarSupabaseServer();
 
   const produto_id = String(formData.get('produto_id') ?? '').trim();
   if (!produto_id) return { ok: false, erro: 'Produto não identificado.' };
@@ -49,7 +48,7 @@ export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste>
       observacao,
       oculto,
       destaque,
-      atualizado_por: user.email ?? null,
+      atualizado_por: permissao.email,
     },
     { onConflict: 'produto_id' },
   );
@@ -62,6 +61,9 @@ export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste>
 
 /** Devolve o produto ao que a planilha diz, apagando o ajuste inteiro. */
 export async function limparAjuste(produto_id: string): Promise<ResultadoAjuste> {
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
   const supabase = await criarSupabaseServer();
   const { error } = await supabase.from('produtos_ajustes').delete().eq('produto_id', produto_id);
   if (error) return { ok: false, erro: error.message };

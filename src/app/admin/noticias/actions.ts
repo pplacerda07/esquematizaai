@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { criarSupabaseServer } from '@/lib/supabase/server';
+import { exigirAdmin } from '@/lib/supabase/admin-guard';
 
 export type ResultadoNoticia = { ok: boolean; erro?: string; slug?: string };
 
@@ -30,12 +31,10 @@ function revalidarNoticias() {
  * matéria nossa, não aparece em lugar nenhum.
  */
 export async function salvarNoticia(formData: FormData): Promise<ResultadoNoticia> {
-  const supabase = await criarSupabaseServer();
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return { ok: false, erro: 'Sessão expirada. Faça login de novo.' };
+  const supabase = await criarSupabaseServer();
 
   const id = String(formData.get('id') ?? '').trim();
   const titulo = String(formData.get('titulo') ?? '').trim();
@@ -76,6 +75,9 @@ export async function salvarNoticia(formData: FormData): Promise<ResultadoNotici
 }
 
 export async function excluirNoticia(id: string): Promise<ResultadoNoticia> {
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
   const supabase = await criarSupabaseServer();
   const { error } = await supabase.from('noticias').delete().eq('id', id);
   if (error) return { ok: false, erro: error.message };
@@ -87,6 +89,9 @@ export async function alternarPublicacaoNoticia(
   id: string,
   novoStatus: 'publicado' | 'rascunho',
 ): Promise<ResultadoNoticia> {
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
   const supabase = await criarSupabaseServer();
   const { error } = await supabase.from('noticias').update({ status: novoStatus }).eq('id', id);
   if (error) return { ok: false, erro: error.message };

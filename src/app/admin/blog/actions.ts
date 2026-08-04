@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { criarSupabaseServer } from '@/lib/supabase/server';
+import { exigirAdmin } from '@/lib/supabase/admin-guard';
 
 export type ResultadoPost = { ok: boolean; erro?: string; slug?: string };
 
@@ -28,12 +29,10 @@ function revalidarBlog() {
  * publicado_em é preenchido na primeira vez que vira "publicado".
  */
 export async function salvarPost(formData: FormData): Promise<ResultadoPost> {
-  const supabase = await criarSupabaseServer();
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return { ok: false, erro: 'Sessão expirada. Faça login de novo.' };
+  const supabase = await criarSupabaseServer();
 
   const id = String(formData.get('id') ?? '').trim();
   const titulo = String(formData.get('titulo') ?? '').trim();
@@ -74,6 +73,9 @@ export async function salvarPost(formData: FormData): Promise<ResultadoPost> {
 }
 
 export async function excluirPost(id: string): Promise<ResultadoPost> {
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
   const supabase = await criarSupabaseServer();
   const { error } = await supabase.from('posts').delete().eq('id', id);
   if (error) return { ok: false, erro: error.message };
@@ -83,6 +85,9 @@ export async function excluirPost(id: string): Promise<ResultadoPost> {
 
 /** Alterna publicado <-> rascunho direto da lista. */
 export async function alternarPublicacao(id: string, novoStatus: 'publicado' | 'rascunho'): Promise<ResultadoPost> {
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
   const supabase = await criarSupabaseServer();
 
   const patch: Record<string, unknown> = { status: novoStatus };
