@@ -8,7 +8,6 @@ import ofertasDb from './ofertas-personalizadas.json';
 import linksDescontoDb from './links-desconto.json';
 import sumariosDb from './sumarios.json';
 import capasDb from './capas.json';
-import amostrasDb from './amostras.json';
 import conteudoDb from './conteudo-produto.json';
 
 export interface Produto {
@@ -244,24 +243,12 @@ export function capaDe(produtoOuId: Produto | string): Capa | null {
   return capas[id] ?? null;
 }
 
-/**
- * Amostra grátis do produto (PDF em /public/amostras, gerado por
- * scripts/build-amostras.js). null = produto sem amostra, e nesse caso a página
- * não mostra o botão. O mapa é escrito à mão porque as amostras vêm por
- * disciplina e o catálogo é por produto; ver o comentário do script.
- */
-export interface Amostra {
-  src: string;
-  /** tamanho do arquivo, para avisar o peso antes de a pessoa baixar */
-  kb: number;
-}
-
-const amostras = amostrasDb.amostras as Record<string, Amostra>;
-
-export function amostraDe(produtoOuId: Produto | string): Amostra | null {
-  const id = typeof produtoOuId === 'string' ? produtoOuId : produtoOuId.id;
-  return amostras[id] ?? null;
-}
+/* As amostras deixaram de ser PDF servido por produto: o botão da página do
+   produto manda todo mundo para a pasta compartilhada no Google Drive, definida
+   em AMOSTRAS_DRIVE_URL (src/config.ts). Saíram daqui o mapa amostras.json, a
+   função amostraDe() e os 70 MB de PDFs que ficavam em /public/amostras.
+   Nada disso tem a ver com /public/amostras-produto, que são as imagens dos
+   resumos usadas no Arsenal e na galeria, e continuam em uso. */
 
 /**
  * Descrição longa de vendas, em Markdown, capturada da página do produto no
