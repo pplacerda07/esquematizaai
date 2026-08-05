@@ -92,17 +92,20 @@ export default async function ArtigoPage({
         dangerouslySetInnerHTML={{ __html: jsonLdSeguro(jsonLd) }}
       />
 
+      {/* A logo horizontal, do mesmo jeito que aparece no topo do site, em tamanho
+          cheio. Versão branca porque a faixa é Azul Marinho: a versão azul do
+          header sumiria no fundo. Fica decorativa para o leitor de tela, já que a
+          logo da navegação, logo acima, já anuncia a marca. */}
       <div className={styles.faixa}>
-        <span className={styles.faixaMarca} aria-hidden="true">
-          <Image
-            src="/logos/logo-simbolo-3cores.png"
-            alt=""
-            width={90}
-            height={108}
-            className={styles.faixaSimbolo}
-          />
-          esquematiza aí
-        </span>
+        <Image
+          src="/logos/logo-horizontal-branco.png"
+          alt=""
+          width={1452}
+          height={311}
+          className={styles.faixaLogo}
+          aria-hidden="true"
+          priority
+        />
       </div>
 
       <article className={styles.artigo}>

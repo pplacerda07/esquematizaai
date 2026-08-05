@@ -13,26 +13,12 @@
   min-height: 200px;
 }
 
-/* marca d'água gigante ao fundo, como no modelo atual do blog */
-.faixaMarca {
-  font-family: var(--font-heading);
-  font-size: clamp(3rem, 11vw, 8rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  color: var(--color-neutral-light);
-  opacity: 0.07;
-  white-space: nowrap;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  gap: 0.4em;
-}
-
-.faixaSimbolo {
-  height: 0.95em;
-  width: auto;
-  opacity: 0.9;
+/* A logo em tamanho cheio, sem rebaixar opacidade: é ela que assina a faixa.
+   A faixa tem 304px de altura; abaixo de ~460px de largura a logo fica solta no
+   meio de tanto azul. O limite em vw evita que ela encoste nas bordas no celular. */
+.faixaLogo {
+  width: min(460px, 68vw);
+  height: auto;
 }
 
 /* ------------------------------------------------------------- cabeçalho */
