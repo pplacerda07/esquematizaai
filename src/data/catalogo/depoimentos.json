@@ -1,0 +1,67 @@
+{
+  "depoimentos": [
+    {
+      "citacao": "Só errei uma questão de Legislação Tributária e isso me ajudou a conquistar o 1° lugar para Analista da Fazenda.",
+      "nome": "Roberto Coimbra",
+      "genero": "m",
+      "colocacao": 1,
+      "cargo": "Analista da Fazenda SEFAZ-AM"
+    },
+    {
+      "citacao": "Acertei 13/14 questões, tudo que caiu estava evidenciado nos esquemas, na “profundidade” necessária pra acertar as questões. Recomendo de olhos fechados!",
+      "nome": "Cláudia Domínoní",
+      "genero": "f",
+      "colocacao": 2,
+      "cargo": "CARE SEFAZ-AM"
+    },
+    {
+      "citacao": "Único material em que me apoiei para o Amazonas. A assertividade e concisão o tornam uma grande ferramenta para gabaritar LTE.",
+      "nome": "Felipe Niero",
+      "genero": "m",
+      "colocacao": 8,
+      "cargo": "Auditor SEFAZ-AM 50º e Fiscal da SEFA-PA"
+    },
+    {
+      "citacao": "Consegui revisar o material diversas vezes e assimilar o conteúdo como nunca antes havia feito. Desde então, recomendo o material sem pensar duas vezes.",
+      "nome": "Álvaro de Tolledo",
+      "genero": "m",
+      "colocacao": 11,
+      "cargo": "Analista da Fazenda SEFAZ-AM"
+    },
+    {
+      "citacao": "Fiquei muito impressionado com a assertividade e o cuidado, pois facilitou minha vida em LTE, sobrando mais tempo para alocar em outras matérias. Deu certo, aprovado nas vagas SEFAZ-AM CARE.",
+      "nome": "Juliano Klipan",
+      "genero": "m",
+      "colocacao": 17,
+      "cargo": "CARE SEFAZ-AM"
+    },
+    {
+      "citacao": "Foi essencial na minha aprovação no Estado do Pará. Li uma vez a Legislação e depois fui focando naquilo que o material trazia de mais importante. Foi algo que me poupou muito tempo e trouxe muita eficiência e eficácia no meu estudo.",
+      "nome": "Daniel Kiko",
+      "genero": "m",
+      "colocacao": 22,
+      "cargo": "Auditor da SEFA-PA"
+    },
+    {
+      "citacao": "Na véspera da prova, desconfiado se estava esquecendo de algo, zerei todos os cards. Quando percebi que lembrava de todos os cards, fui dormir tranquilo. No dia seguinte, isso se confirmou e acertei 24 de 25 questões de LTE.",
+      "nome": "João Paulo",
+      "genero": "m",
+      "colocacao": 24,
+      "cargo": "Agente de Tributos SEFAZ-BA"
+    },
+    {
+      "citacao": "Os principais pontos que destaco no material do Esquematiza Aí são a objetividade e o poder de concisão. Somando isso com os flashcards, a memorização fica bem mais tranquila e os conceitos são internalizados naturalmente.",
+      "nome": "Vinícius Soares",
+      "genero": "m",
+      "colocacao": 27,
+      "cargo": "Auditor da SEFA-PA"
+    },
+    {
+      "citacao": "O material do Esquematiza Aí foi essencial no meu estudo para a SEFAZ-AM. Com o material resumido, consegui passar pela legislação várias vezes em um curto período de tempo (basicamente 1 mês).",
+      "nome": "Gabriela Marques",
+      "genero": "f",
+      "colocacao": 39,
+      "cargo": "Auditora Fiscal da SEFAZ-AM"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+.wrap {
+  margin-top: 0.25rem;
+}
+
+/* Rolagem horizontal nativa. O padding lateral negativo deixa o primeiro e o
+   último cartão encostarem na borda da leitura, e o scroll-padding evita que o
+   snap corte o cartão no começo. */
+.trilho {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(38, 52, 79, 0.28) transparent;
+}
+
+.trilho:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 4px;
+  border-radius: 0.75rem;
+}
+
+.trilho::-webkit-scrollbar {
+  height: 6px;
+}
+
+.trilho::-webkit-scrollbar-thumb {
+  background-color: rgba(38, 52, 79, 0.28);
+  border-radius: 999px;
+}
+
+.cartao {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(330px, 78vw);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 2.4rem 1.35rem 1.35rem;
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.14);
+  border-radius: 0.85rem;
+  scroll-snap-align: start;
+}
+
+/* A colocação é o argumento mais forte do cartão, então sai do texto e vira
+   selo. Verde da marca: o laranja já é a cor dos botões de compra na mesma
+   tela, e repetir tira a força dos dois. */
+.colocacao {
+  position: absolute;
+  top: -0.72rem;
+  left: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6rem;
+  height: 1.65rem;
+  padding: 0 0.5rem;
+  background-color: var(--color-green-primary);
+  color: var(--color-cold-dark);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+}
+
+.citacao {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(35, 33, 44, 0.86);
+}
+
+.citacao::before {
+  content: '“';
+}
+
+.citacao::after {
+  content: '”';
+}
+
+.autor {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(38, 52, 79, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.nome {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-style: normal;
+  color: var(--color-cold-dark);
+}
+
+.cargo {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(35, 33, 44, 0.62);
+}
+
+.separador {
+  margin: 0 0.4rem;
+}
+
+.dica {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(35, 33, 44, 0.5);
+}
+
+/* No desktop cabem quase três cartões, então o aviso de rolar só atrapalha. */
+@media (min-width: 1024px) {
+  .dica {
+    display: none;
+  }
+}

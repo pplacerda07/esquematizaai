@@ -10,6 +10,7 @@ import BarraCompra from '@/components/BarraCompra';
 import FaqProduto from '@/components/FaqProduto';
 import AutoridadeCientifica from '@/components/AutoridadeCientifica';
 import GaleriaMaterial from '@/components/GaleriaMaterial';
+import Depoimentos from '@/components/Depoimentos';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
@@ -249,6 +250,16 @@ export default async function ProdutoPage({
             )}
 
             <GaleriaMaterial ehFlashcards={ehFlashcards} />
+
+            {/* Depois da galeria e antes do argumento científico: a pessoa acabou
+                de ver o material por dentro, e a pergunta que vem é "isso
+                funcionou para alguém?". */}
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>
+                Alunos <span className={styles.sectionAccent}>aprovados</span>
+              </h2>
+              <Depoimentos />
+            </section>
 
             {/* o argumento muda por material: para flashcard a evidência de
                 recuperação e espaçamento é direta; para resumo ela é de outra
