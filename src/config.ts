@@ -18,6 +18,12 @@ export const WHATSAPP_NUMERO = '551152865954';
 export const whatsappUrl = (mensagem: string) =>
   `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
 
+// Pasta de amostras no Google Drive. É para cá que vai o botão "Ver amostras
+// grátis" de TODOS os produtos: em vez de servir PDF por produto, manda a pessoa
+// para a pasta compartilhada. Trocar este link muda o botão do site inteiro.
+export const AMOSTRAS_DRIVE_URL =
+  'https://drive.google.com/drive/folders/1zHPjcFj8e86R4681MfL9LbkS-2a34f_O?usp=sharing';
+
 // Google Analytics 4. Vazio desliga a medição em todo o site.
 export const GA_MEDICAO_ID = 'G-ZLPK9R4PZ6';
 

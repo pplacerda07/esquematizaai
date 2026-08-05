@@ -10,10 +10,10 @@ import BarraCompra from '@/components/BarraCompra';
 import FaqProduto from '@/components/FaqProduto';
 import AutoridadeCientifica from '@/components/AutoridadeCientifica';
 import GaleriaMaterial from '@/components/GaleriaMaterial';
-import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, amostraDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
+import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
-import { SITE_URL } from '@/config';
+import { SITE_URL, AMOSTRAS_DRIVE_URL } from '@/config';
 import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from './styles.module.css';
 
@@ -64,7 +64,6 @@ export default async function ProdutoPage({
   const areaSlug = produto.area ? SLUG_DA_AREA[produto.area] : null;
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';
   const capa = capaDe(produto);
-  const amostra = amostraDe(produto);
   const ehFlashcards = produto.ferramenta === 'Flashcards' || /^Flashcards/i.test(produto.nome);
   const conteudo = conteudoDe(produto);
   const sobre = conteudo.sobre ?? null;
@@ -101,15 +100,19 @@ export default async function ProdutoPage({
         {oferta.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
       </a>
 
-      {/* Amostra grátis: só aparece em quem tem arquivo mapeado. Sem `target`,
-          com `download`: o PDF baixa direto em vez de abrir num leitor do
-          navegador, que no celular costuma ser ruim. */}
-      {amostra && (
-        <a className={styles.btnAmostra} href={amostra.src} download>
-          Ver amostra grátis
-          <span className={styles.amostraPeso}>PDF · {amostra.kb > 1024 ? `${(amostra.kb / 1024).toFixed(1)} MB` : `${amostra.kb} KB`}</span>
-        </a>
-      )}
+      {/* Amostras: aparece em TODO produto e leva à pasta compartilhada no Drive,
+          em vez de servir um PDF por produto. A segunda linha avisa que abre no
+          Drive e que a pasta é geral, senão a pessoa clica esperando a amostra
+          deste produto específico e se perde no meio dos arquivos. */}
+      <a
+        className={styles.btnAmostra}
+        href={AMOSTRAS_DRIVE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ver amostras grátis
+        <span className={styles.amostraPeso}>abre a pasta no Google Drive</span>
+      </a>
 
       <p className={styles.buyNote}>
         {oferta.viaPaginaDeVendas

@@ -271,7 +271,7 @@
   outline-offset: 2px;
 }
 
-/* o peso do arquivo evita a surpresa de puxar 4 MB no 4G */
+/* linha de apoio do botão: avisa que sai do site e vai para a pasta do Drive */
 .amostraPeso {
   font-size: 0.76rem;
   font-weight: 500;
