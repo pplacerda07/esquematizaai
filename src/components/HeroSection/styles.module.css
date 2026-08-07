@@ -17,15 +17,19 @@
   100% { background-position: 200% 50%; }
 }
 
+/* A copy do cupom é bem mais longa que a anterior. Em 0.92rem com 0.85rem de
+   respiro, o conjunto pedia 1.144px numa faixa de 1.139px e o botão descia
+   sozinho para uma segunda linha por causa de 5px. Fonte e respiro um pouco
+   menores resolvem sem encolher nada visivelmente. */
 .urgencyBarInner {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.85rem;
+  gap: 0.7rem;
   max-width: 1280px;
   margin: 0 auto;
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   flex-wrap: wrap;
 }
 
@@ -45,8 +49,32 @@
 
 .urgencyText strong {
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+/* O código é a única coisa da barra que a pessoa precisa copiar, então ganha
+   cara de etiqueta em vez de virar mais uma palavra em negrito no meio da frase.
+   Fundo azul-claro da marca com texto Azul Marinho: não entra laranja aqui, que
+   já é a cor de outros elementos pequenos por perto. */
+.urgencyCupom {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  background-color: #fff;
+  color: var(--color-cold-dark);
+  border: 1.5px dashed rgba(38, 52, 79, 0.45);
+  padding: 0.05rem 0.45rem;
+  border-radius: 0.3rem;
+  white-space: nowrap;
+}
+
+/* prazo e botão como um bloco só, para quebrarem de linha juntos */
+.urgencyAcao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
 }
 
 .urgencyClock {
@@ -710,6 +738,29 @@
 }
 
 @media (max-width: 640px) {
+  /* No celular a barra ocupava 137px, 16% da primeira tela, antes de o hero
+     começar. A copy do cupom é longa e não vai encolher, então quem cede é o
+     corpo do texto. O código e o botão continuam do mesmo tamanho: são as duas
+     coisas que a pessoa precisa enxergar e tocar. */
+  .urgencyBarInner {
+    font-size: 0.8rem;
+    gap: 0.5rem;
+    line-height: 1.4;
+  }
+  .urgencyBar {
+    padding: 0.5rem 4%;
+  }
+  .urgencyFlash {
+    display: none;
+  }
+  /* O botão vinha com 29px de altura, pequeno demais para o dedo. */
+  .urgencyCta {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
   .hero {
     padding: 2.5rem 5% 3.5rem;
   }
