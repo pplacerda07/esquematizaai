@@ -19,9 +19,11 @@ export const metadata: Metadata = {
 
 const delay = (ms: number) => ({ ['--reveal-delay']: `${ms}ms` } as React.CSSProperties);
 
+// Uma foto só: alternando com a do evento, em que o Sérgio aparece bem
+// diferente, quem chegava no meio da troca achava que eram duas pessoas.
+// MentorPhoto já entende lista de um item e não liga o rodízio nem as bolinhas.
 const SERGIO_SHOTS = [
   { src: '/mentores/sergio.jpg', caption: 'Time Esquematiza' },
-  { src: '/mentores/sergio-evento.jpg', caption: 'Evento do Estratégia Concursos' },
 ];
 
 const GROUP_PERKS: [string, string][] = [

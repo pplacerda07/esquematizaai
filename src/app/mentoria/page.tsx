@@ -476,9 +476,9 @@ export default function MentoriaPage() {
             <div className={styles.proofGallery}>
               <figure className={styles.proofItem} data-reveal="fade" style={delay(0)}>
                 <div className={styles.proofImgWrap}>
-                  <Image src="/mentores/sergio-evento.jpg" alt="Sérgio em evento do Estratégia Concursos" fill sizes="(max-width: 768px) 100vw, 300px" className={styles.proofImg} />
+                  <Image src="/mentores/sergio.jpg" alt="Sérgio Furtado, auditor-fiscal da SEFIN-RO" fill sizes="(max-width: 768px) 100vw, 300px" className={styles.proofImg} />
                 </div>
-                <figcaption>Sérgio em evento do Estratégia Concursos, nosso parceiro.</figcaption>
+                <figcaption>Sérgio Furtado, auditor-fiscal da SEFIN-RO e criador do método.</figcaption>
               </figure>
             </div>
           </div>

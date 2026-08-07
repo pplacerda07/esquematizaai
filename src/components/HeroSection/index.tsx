@@ -70,15 +70,15 @@ export default function HeroSection() {
             <div className={styles.benefitList}>
               <div className={styles.benefitItem}>
                 <CamadaDaMarca className={`${styles.benefitMark} ${styles.markAzul}`} />
-                Material atualizado conforme cada edital
+                Material elaborado a partir de questões de concursos
               </div>
               <div className={styles.benefitItem}>
                 <CamadaDaMarca className={`${styles.benefitMark} ${styles.markLaranja}`} />
-                Professores aprovados em concursos fiscais
+                Utilizado por mais de 30 mil alunos
               </div>
               <div className={styles.benefitItem}>
                 <CamadaDaMarca className={`${styles.benefitMark} ${styles.markVerde}`} />
-                Acesso vitalício + garantia de 7 dias
+                Feito para você revisar de forma leve, fluida e sem pausas
               </div>
             </div>
 

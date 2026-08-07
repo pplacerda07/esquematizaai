@@ -48,58 +48,11 @@
   box-shadow: 0 20px 45px rgba(38, 52, 79, 0.18);
 }
 
-/* carrossel de fotos: imagens empilhadas, só a ativa visível (fade) */
+/* Foto única do mentor. Era um carrossel de duas, com fade e bolinhas de
+   navegação; as regras do carrossel saíram junto com ele. */
 .aboutImage {
   object-fit: cover;
   object-position: center;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.aboutImageActive {
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .aboutImage {
-    transition: none;
-  }
-}
-
-.photoDots {
-  position: absolute;
-  bottom: 0.9rem;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.photoDot {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(247, 247, 247, 0.55);
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.photoDot:hover {
-  background-color: rgba(247, 247, 247, 0.85);
-}
-
-.photoDot:focus-visible {
-  outline: 2px solid var(--color-neutral-light);
-  outline-offset: 2px;
-}
-
-.photoDotActive {
-  background-color: var(--color-hot-primary);
-  transform: scale(1.25);
 }
 
 .floatingBadge {

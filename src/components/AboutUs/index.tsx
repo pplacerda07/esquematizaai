@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './styles.module.css';
-import MentorPhotos from './MentorPhotos';
 
 // Cada tópico é uma alternativa de gabarito marcada (A, B...), como num cartão-resposta.
 const blocks = [
@@ -22,7 +22,20 @@ export default function AboutUs() {
 
       <div className={styles.container}>
         <div className={styles.imageColumn}>
-          <MentorPhotos />
+          {/* Foto única, de propósito. Antes alternava com uma do Sérgio de terno
+              num evento; como ele aparecia bem diferente nas duas, quem chegava
+              no meio da troca achava que eram duas pessoas. Uma foto só resolve,
+              e ainda tira JavaScript da home: isto voltou a ser server component. */}
+          <div className={styles.imageWrapper}>
+            <Image
+              src="/mentores/sergio.jpg"
+              alt="Sérgio Furtado, auditor-fiscal e criador do método de revisão"
+              fill
+              sizes="(max-width: 900px) 100vw, 480px"
+              priority
+              className={styles.aboutImage}
+            />
+          </div>
           <div className={styles.floatingBadge}>
             <span className={styles.badgeNumber}>+29 mil</span>
             <span className={styles.badgeLabel}>alunos já estudaram<br/>com o método</span>
