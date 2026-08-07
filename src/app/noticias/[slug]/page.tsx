@@ -133,7 +133,7 @@ export default async function NoticiaPage({
         <div className={styles.ctaEstudo}>
           <p className={styles.ctaTexto}>
             Quer transformar essa notícia em aprovação? Comece pelos materiais de revisão que
-            já prepararam mais de 29 mil alunos.
+            já prepararam mais de 30 mil alunos.
           </p>
           <Link href="/#vitrine" className={styles.ctaBtn}>Ver materiais →</Link>
         </div>

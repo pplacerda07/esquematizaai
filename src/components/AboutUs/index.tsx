@@ -48,7 +48,7 @@ export default function AboutUs() {
             />
           </div>
           <div className={styles.floatingBadge}>
-            <span className={styles.badgeNumber}>+29 mil</span>
+            <span className={styles.badgeNumber}>+30 mil</span>
             <span className={styles.badgeLabel}>alunos já estudaram<br/>com o método</span>
           </div>
         </div>

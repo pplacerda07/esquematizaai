@@ -430,7 +430,7 @@ export default function MentoriaPage() {
             <p className={styles.lead} data-reveal style={delay(120)}>
               A Esquematiza Mentoria é conduzida por um auditor que vive na pele a rotina
               do cargo que você quer. Por trás dele está a marca que já levou mais
-              de 29 mil alunos a estudar com os seus materiais e que, só em 2026, viu nossos
+              de 30 mil alunos a estudar com os seus materiais e que, só em 2026, viu nossos
               alunos aprovados na SEFAZ-SP, na SEFA-PA, na SEFAZ-MT e na SEFAZ-RN. Quem vai
               ler a sua banca e ajustar o seu plano não aprendeu isso na teoria, aprendeu
               passando.
