@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css';
+import EsquemaMateriais from '@/components/EsquemaMateriais';
 import { produtosVendaveis } from '@/data/catalogo';
 
 // Áreas do catálogo -> rotas da vitrine (Legislativa ainda não tem rota própria)
@@ -48,20 +48,11 @@ export default function Categories() {
           </div>
         </div>
 
+        {/* Saiu a foto de aluna: tinha cara de banco de imagens e não dizia nada
+            sobre o material. No lugar, o esquema dos materiais na linguagem das
+            artes do perfil, que é o que a pessoa quer saber ao chegar aqui. */}
         <div className={styles.rightColumn}>
-          <div className={styles.imageShape}>
-            <Image
-              /* -v2: nome novo de propósito. Sobrescrever o arquivo antigo mantendo
-                 o mesmo nome fazia o otimizador do Next (e o cache do navegador e
-                 da Vercel) continuarem servindo os bytes velhos. */
-              src="/assets/mulher-esquematiza-v2.webp"
-              alt="Aluna do Esquematiza Aí"
-              width={520}
-              height={650}
-              className={styles.heroImage}
-              priority={false}
-            />
-          </div>
+          <EsquemaMateriais />
         </div>
       </div>
     </section>
