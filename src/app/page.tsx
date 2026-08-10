@@ -4,7 +4,6 @@ import BlogPreview from '@/components/BlogPreview';
 import Testimonials from '@/components/Testimonials';
 import SocialTicker from '@/components/SocialTicker';
 import StatsTicker from '@/components/StatsTicker';
-import Newsletter from '@/components/Newsletter';
 import FeaturedCourses from '@/components/FeaturedCourses';
 import ProductVitrine from '@/components/ProductVitrine';
 import Categories from '@/components/Categories';
@@ -25,7 +24,6 @@ export default function Home() {
       <FeaturedCourses />
       <BlogPreview />
       <Testimonials />
-      <Newsletter />
       <ProductVitrine />
       <Arsenal />
       <AboutUs />

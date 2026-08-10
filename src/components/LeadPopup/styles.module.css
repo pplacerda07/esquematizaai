@@ -20,13 +20,12 @@
   position: relative;
   background-color: var(--color-neutral-light);
   border-radius: 1rem;
-  padding: 2.25rem 2rem 1.75rem;
+  overflow: hidden;
   max-width: 440px;
   width: 100%;
   box-shadow: 0 30px 80px rgba(35, 33, 44, 0.35);
   text-align: center;
   animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  border-top: 5px solid var(--color-hot-primary);
 }
 
 @keyframes slideUp {
@@ -34,23 +33,49 @@
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* Faixa Azul Marinho com o símbolo da marca. Substitui o fio laranja que havia
+   no topo: dá presença de Esquematiza sem gritar. */
+.topo {
+  position: relative;
+  background-color: var(--color-cold-dark);
+  padding: 1.35rem 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simbolo {
+  height: 46px;
+  width: auto;
+}
+
 .closeBtn {
   position: absolute;
-  top: 0.75rem;
-  right: 0.85rem;
+  top: 0.5rem;
+  right: 0.7rem;
   background: transparent;
   border: none;
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   line-height: 1;
-  color: var(--color-neutral-dark);
-  opacity: 0.5;
+  color: var(--color-neutral-light);
+  opacity: 0.65;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: 0.15rem 0.45rem;
   transition: opacity 0.2s ease;
 }
 
 .closeBtn:hover {
   opacity: 1;
+}
+
+.closeBtn:focus-visible {
+  outline: 2px solid var(--color-cold-light);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+.corpo {
+  padding: 1.9rem 2rem 1.75rem;
 }
 
 .title {
@@ -62,9 +87,81 @@
   font-weight: 700;
 }
 
-.highlight {
-  color: var(--color-hot-primary);
+/* ---------------------------------------------- a palavra e o avião de papel */
+
+/* A palavra sai da fonte de título e vai para a Moonlight, que é a assinatura
+   da marca. Sempre em minúsculas, regra do Brand Guide.
+   O padding-top abre o corredor onde o avião voa; sem ele o avião passaria por
+   cima das letras. */
+.palavraNewsletter {
+  position: relative;
+  display: inline-block;
+  padding-top: 1.5rem;
+  font-family: var(--font-accent);
+  font-size: 1.35em;
+  line-height: 1;
+  /* Laranja escurecido. O #FF7345 puro dá 2.52:1 sobre o cinza claro do modal,
+     abaixo do mínimo de 3:1 até para texto grande; a palavra ficava lavada.
+     Este dá 4.16:1 e ainda lê como laranja da marca. */
+  color: #d14a22;
+  text-transform: lowercase;
+  white-space: nowrap;
 }
+
+/* rastro pontilhado, como marcação de rota em mapa */
+.rastro {
+  position: absolute;
+  top: 0.1rem;
+  left: -6%;
+  width: 112%;
+  height: 1.45rem;
+  color: rgba(38, 52, 79, 0.35);
+  overflow: visible;
+}
+
+.rastro path {
+  stroke-dasharray: 5 7;
+  animation: rastroAndando 4.5s linear infinite;
+}
+
+@keyframes rastroAndando {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -48; }
+}
+
+/* O avião percorre o mesmo corredor do rastro: sobe, cruza a palavra e some do
+   outro lado. translate em %, para acompanhar a largura da palavra em qualquer
+   tamanho de tela. */
+.aviao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--color-cold-primary);
+  animation: aviaoVoando 4.5s ease-in-out infinite;
+}
+
+@keyframes aviaoVoando {
+  0%   { transform: translate(-30%, 16px) rotate(-16deg); opacity: 0; }
+  12%  { opacity: 1; }
+  50%  { transform: translate(320%, -2px) rotate(-4deg); }
+  85%  { opacity: 1; }
+  100% { transform: translate(700%, 10px) rotate(8deg); opacity: 0; }
+}
+
+/* Movimento é enfeite: quem pediu para reduzir, não vê. */
+@media (prefers-reduced-motion: reduce) {
+  .aviao,
+  .rastro path {
+    animation: none;
+  }
+  .aviao {
+    transform: translate(320%, -2px) rotate(-4deg);
+  }
+}
+
+/* ------------------------------------------------------------------ o resto */
 
 .subtitle {
   font-family: var(--font-body);
@@ -101,11 +198,15 @@
   box-shadow: 0 0 0 3px rgba(255, 115, 69, 0.15);
 }
 
+/* Texto em Azul Marinho, não claro.
+   Claro sobre o laranja da marca dá 2.52:1, bem abaixo do mínimo de 4.5:1 para
+   texto deste tamanho: o rótulo do botão principal ficava lavado. Escuro dá
+   4.62:1 e o laranja continua sendo exatamente o do Brand Guide. */
 .submit {
   background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
+  color: var(--color-cold-dark);
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   padding: 0.95rem 1.25rem;
   border-radius: 0.55rem;
@@ -115,8 +216,13 @@
 }
 
 .submit:hover {
-  background-color: var(--color-hot-dark);
+  background-color: var(--color-hot-light);
   transform: translateY(-1px);
+}
+
+.submit:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
 }
 
 .disclaimer {
@@ -128,26 +234,42 @@
 }
 
 .success {
-  padding: 1rem 0 0.5rem;
+  padding: 0.5rem 0;
 }
 
+/* o mesmo avião do título, agora pousado: fecha a ideia */
 .successIcon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   background-color: var(--color-green-light);
   color: var(--color-green-dark);
-  font-size: 2rem;
-  font-weight: 700;
   margin: 0 auto 1rem;
+  animation: pousou 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.successIcon svg {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes pousou {
+  from { transform: translate(-14px, -10px) rotate(-18deg); opacity: 0; }
+  to   { transform: translate(0, 0) rotate(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .successIcon {
+    animation: none;
+  }
 }
 
 @media (max-width: 480px) {
-  .modal {
-    padding: 1.85rem 1.5rem 1.5rem;
+  .corpo {
+    padding: 1.6rem 1.5rem 1.5rem;
   }
   .title {
     font-size: 1.65rem;
