@@ -108,56 +108,52 @@
   white-space: nowrap;
 }
 
-/* rastro pontilhado, como marcação de rota em mapa */
-.rastro {
+/* A rota e o avião vivem no mesmo svg: o avião segue a curva do rastro por
+   animateMotion, então os dois nunca saem de sincronia e o voo é uma curva de
+   verdade, não uma sequência de saltos entre pontos. */
+.rota {
   position: absolute;
-  top: 0.1rem;
-  left: -6%;
-  width: 112%;
-  height: 1.45rem;
-  color: rgba(38, 52, 79, 0.35);
+  top: 0.05rem;
+  left: -5%;
+  width: 110%;
+  height: 1.5rem;
   overflow: visible;
 }
 
-.rastro path {
-  stroke-dasharray: 5 7;
-  animation: rastroAndando 4.5s linear infinite;
+/* rastro pontilhado, como marcação de rota em mapa */
+.rastro {
+  color: rgba(38, 52, 79, 0.32);
+  stroke-dasharray: 5 8;
+  animation: rastroAndando 5s linear infinite;
 }
 
 @keyframes rastroAndando {
   from { stroke-dashoffset: 0; }
-  to   { stroke-dashoffset: -48; }
+  to   { stroke-dashoffset: -52; }
 }
 
-/* O avião percorre o mesmo corredor do rastro: sobe, cruza a palavra e some do
-   outro lado. translate em %, para acompanhar a largura da palavra em qualquer
-   tamanho de tela. */
 .aviao {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1.15rem;
-  height: 1.15rem;
   color: var(--color-cold-primary);
-  animation: aviaoVoando 4.5s ease-in-out infinite;
+  animation: aviaoAparecendo 5s linear infinite;
 }
 
-@keyframes aviaoVoando {
-  0%   { transform: translate(-30%, 16px) rotate(-16deg); opacity: 0; }
+/* Só a opacidade fica no CSS. A posição e a inclinação são do animateMotion,
+   com a mesma duração: o avião surge ao decolar e some ao sair, então o salto
+   de volta ao início do ciclo acontece com ele invisível. */
+@keyframes aviaoAparecendo {
+  0%   { opacity: 0; }
   12%  { opacity: 1; }
-  50%  { transform: translate(320%, -2px) rotate(-4deg); }
-  85%  { opacity: 1; }
-  100% { transform: translate(700%, 10px) rotate(8deg); opacity: 0; }
+  84%  { opacity: 1; }
+  100% { opacity: 0; }
 }
 
-/* Movimento é enfeite: quem pediu para reduzir, não vê. */
+/* Movimento é enfeite. O animateMotion é SMIL e não obedece a esta regra, por
+   isso o componente também deixa de renderizá-lo quando a preferência está
+   ligada; aqui ficam só as partes em CSS. */
 @media (prefers-reduced-motion: reduce) {
   .aviao,
-  .rastro path {
+  .rastro {
     animation: none;
-  }
-  .aviao {
-    transform: translate(320%, -2px) rotate(-4deg);
   }
 }
 

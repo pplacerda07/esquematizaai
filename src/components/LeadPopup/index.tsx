@@ -20,6 +20,20 @@ export default function LeadPopup() {
   const [submitted, setSubmitted] = useState(false);
   const campoEmail = useRef<HTMLInputElement>(null);
 
+  // animateMotion é SMIL, não CSS: a regra prefers-reduced-motion não o alcança.
+  // Sem esta checagem, quem pediu menos movimento no sistema veria o avião voar
+  // do mesmo jeito. Começa em false para o servidor e o cliente renderizarem
+  // igual, e só depois a preferência é lida.
+  const [semMovimento, setSemMovimento] = useState(false);
+
+  useEffect(() => {
+    const consulta = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setSemMovimento(consulta.matches);
+    const aoMudar = (e: MediaQueryListEvent) => setSemMovimento(e.matches);
+    consulta.addEventListener('change', aoMudar);
+    return () => consulta.removeEventListener('change', aoMudar);
+  }, []);
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (window.localStorage.getItem(STORAGE_KEY)) return;
@@ -94,24 +108,49 @@ export default function LeadPopup() {
               <h3 className={styles.title} id="titulo-newsletter">
                 Assine a nossa{' '}
                 <span className={styles.palavraNewsletter}>
-                  {/* Rastro e avião: decorativos, o texto se lê sem eles. */}
-                  <svg className={styles.rastro} viewBox="0 0 200 44" fill="none" aria-hidden="true">
+                  {/* Rota e avião no MESMO svg, de propósito: o avião percorre
+                      exatamente a curva desenhada pelo rastro, via animateMotion.
+                      Antes eram dois elementos com animações separadas em CSS, e
+                      o avião pulava entre pontos em vez de curvar. Decorativo, o
+                      título se lê sem isto. */}
+                  <svg className={styles.rota} viewBox="0 0 200 46" fill="none" aria-hidden="true">
                     <path
-                      d="M4 34 C 46 6, 108 4, 150 20"
+                      id="rota-do-aviao"
+                      d="M8 38 C 54 6, 128 2, 186 20"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
-                      strokeDasharray="5 7"
+                      strokeDasharray="5 8"
+                      className={styles.rastro}
                     />
-                  </svg>
-                  <svg className={styles.aviao} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="M22 2 L15 22 L11 13 L2 9 Z"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinejoin="round"
-                    />
+
+                    <g className={styles.aviao}>
+                      {/* Velocidade constante, de propósito.
+                          Com aceleração o avião disparava no meio e quase
+                          parava no fim: medido, andava 9, 33, 32, 13 e 3
+                          unidades entre amostras iguais no tempo. Avião não
+                          freia no ar; linear deixa o voo parelho e ainda tira o
+                          solavanco na volta do ciclo. */}
+                      {!semMovimento && (
+                        <animateMotion
+                          dur="5s"
+                          repeatCount="indefinite"
+                          rotate="auto"
+                          calcMode="linear"
+                        >
+                          <mpath href="#rota-do-aviao" />
+                        </animateMotion>
+                      )}
+                      {/* desenhado em torno da origem para animateMotion o
+                          posicionar pelo centro, e não pelo canto */}
+                      <g transform="scale(0.8) translate(-12.5, -12)">
+                        {/* asa de cima e asa de baixo: são as duas faces da
+                            dobra do papel. A diferença de opacidade é o que faz
+                            parecer papel dobrado, e não uma seta chapada. */}
+                        <path d="M23 12 L2 3 L7 12 Z" fill="currentColor" />
+                        <path d="M23 12 L7 12 L2 21 Z" fill="currentColor" opacity="0.55" />
+                      </g>
+                    </g>
                   </svg>
                   newsletter
                 </span>
@@ -142,14 +181,10 @@ export default function LeadPopup() {
           ) : (
             <div className={styles.success}>
               <div className={styles.successIcon} aria-hidden="true">
+                {/* o mesmo avião do título, agora pousado */}
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M22 2 L15 22 L11 13 L2 9 Z"
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M23 12 L2 3 L7 12 Z" fill="currentColor" />
+                  <path d="M23 12 L7 12 L2 21 Z" fill="currentColor" opacity="0.55" />
                 </svg>
               </div>
               <h3 className={styles.title}>Voou.</h3>
