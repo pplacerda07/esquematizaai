@@ -1,7 +1,9 @@
-.testimonialsSection {
-  background-color: var(--color-neutral-light);
-  padding: 5rem 0 5.5rem;
-  overflow: hidden;
+/* Branco puro, igual às seções vizinhas. Antes era o cinza claro
+   (--color-neutral-light), e ao lado do catálogo, que é branco, a seção parecia
+   uma faixa acinzentada solta no meio da página. */
+.secao {
+  background-color: #ffffff;
+  padding: 5rem 5% 5.5rem;
 }
 
 .title {
@@ -9,7 +11,7 @@
   font-size: 3.5rem;
   color: var(--color-neutral-dark);
   line-height: 1.1;
-  margin: 0 5% 3rem;
+  margin: 0 0 0.6rem;
   text-align: center;
 }
 
@@ -19,66 +21,176 @@
   text-transform: lowercase; /* Moonlight sempre em minúsculas */
 }
 
-/* ---------- esteira infinita ---------- */
-
-.marquee {
-  overflow: hidden;
+.linhaDeApoio {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-cold-dark);
+  opacity: 0.8;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 3rem;
 }
 
-.track {
+/* Mosaico: dois por linha no desktop, um no celular. O minmax garante que um
+   cartão nunca fique estreito demais para caber print e texto lado a lado. */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  gap: 1.5rem;
+  /* 1180 e não 1120: com a janela do print ocupando parte do cartão, a coluna
+     de texto ficava com 36 caracteres por linha, estreita demais para ler. */
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.cartao {
   display: flex;
-  width: max-content;
-  animation: rolarReviews 55s linear infinite;
-  will-change: transform;
-}
-
-/* pausa quando o mouse está em cima, para dar tempo de ler */
-.marquee:hover .track {
-  animation-play-state: paused;
-}
-
-@keyframes rolarReviews {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); } /* -50% = uma metade exata (conteúdo duplicado) */
-}
-
-.card {
-  flex: 0 0 340px;
-  /* espaçamento no próprio item (não flex-gap) para o loop de -50% alinhar exato */
-  margin-right: 1.75rem;
+  gap: 1rem;
+  margin: 0;
+  padding: 1.15rem;
   background-color: #fff;
-  border: 2px solid var(--color-cold-light);
+  border: 1.5px solid rgba(38, 52, 79, 0.14);
   border-radius: 1rem;
-  overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.card:hover {
-  border-color: var(--color-hot-primary);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
+.cartao:hover {
+  border-color: var(--color-cold-primary);
+  box-shadow: 0 16px 34px rgba(38, 52, 79, 0.12);
+  transform: translateY(-2px);
+}
+
+/* O depoimento da aprovada ocupa a linha inteira: é o mais forte e o mais
+   longo, e espremido em meia largura viraria uma coluna de texto estreita. */
+.cartaoDestaque {
+  grid-column: 1 / -1;
+  border-color: rgba(139, 224, 149, 0.85);
+  background-color: rgba(209, 240, 213, 0.28);
+}
+
+.cartaoDestaque:hover {
+  border-color: var(--color-green-primary);
+}
+
+/* ------------------------------------------------------- a janela do print */
+
+/* A janela tem a MESMA proporção dos prints (720x560, ou seja 1,29:1).
+   Antes era em retrato e o cover cortava as laterais: sobrava um pedaço do
+   meio das frases, sem começo nem fim, que não parecia print de conversa.
+   Com a proporção casada, o print aparece inteiro e se reconhece o WhatsApp. */
+.janela {
+  flex: 0 0 148px;
+  align-self: flex-start;
+  aspect-ratio: 720 / 560;
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background-color: #ece5dd; /* fundo de conversa do WhatsApp, para não piscar branco */
+  border: 1.5px solid rgba(38, 52, 79, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.cartaoDestaque .janela {
+  flex-basis: 264px;
 }
 
 .print {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee {
-    overflow-x: auto; /* sem animação, mas ainda dá para rolar à mão */
+/* ------------------------------------------------------------ a transcrição */
+
+/* padding-left abre o corredor da aspa, que está posicionada para fora */
+.conteudo {
+  flex: 1;
+  min-width: 0; /* deixa o texto quebrar em vez de esticar o cartão */
+  padding-left: 0.9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.contexto {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-green-dark);
+  margin: 0 0 0.5rem;
+}
+
+/* O teto de 68ch existe pelo cartão em destaque, que ocupa a linha inteira: sem
+   ele a linha ia a 108 caracteres e o olho se perdia na volta. Os cartões
+   comuns são mais estreitos que isso e não são afetados. */
+/* A aspa fica FORA do fluxo, à esquerda da coluna, em vez de empurrar o texto
+   com padding: numa coluna de ~360px, aqueles 18px custavam duas palavras por
+   linha. */
+.texto {
+  position: relative;
+  max-width: 68ch;
+  margin: 0 0 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-neutral-dark);
+}
+
+.texto::before {
+  content: '“';
+  position: absolute;
+  left: -0.85rem;
+  top: -0.7rem;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--color-hot-primary);
+  opacity: 0.5;
+}
+
+.rodape {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(38, 52, 79, 0.1);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(35, 33, 44, 0.6);
+}
+
+.marca {
+  fill: var(--color-cold-primary);
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------- respostas */
+
+@media (max-width: 900px) {
+  .grade {
+    grid-template-columns: 1fr;
   }
-  .track {
-    animation: none;
+  .cartaoDestaque .janela {
+    flex-basis: 172px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 560px) {
   .title {
     font-size: 2.5rem;
   }
-  .card {
-    flex-basis: 290px;
-    margin-right: 1.25rem;
+  /* Empilha: lado a lado, a janela do print deixaria a coluna de texto com
+     menos de 20 caracteres por linha, que é ilegível. */
+  .cartao {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .janela,
+  .cartaoDestaque .janela {
+    flex-basis: auto;
+    width: 100%;
   }
 }

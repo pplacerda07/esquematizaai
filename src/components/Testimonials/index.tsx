@@ -1,46 +1,116 @@
 import Image from 'next/image';
 import styles from './styles.module.css';
 
-// Prints reais de alunos (WhatsApp), uniformizados por scripts/build-reviews.js
-const reviews = [
-  { src: '/reviews/review-1.webp', alt: 'Aluno elogiando a rapidez na entrega dos resumos do combo fiscal: superou minhas expectativas' },
-  { src: '/reviews/review-2.webp', alt: 'Aluno elogiando a qualidade dos resumos e a jurisprudência relacionada ao assunto' },
-  { src: '/reviews/review-3.webp', alt: 'Aluna aprovada em 19º lugar para procuradora contando que o material do Esquematiza Aí é o melhor entre os flashcards que testou' },
-  { src: '/reviews/review-4.webp', alt: 'Aluno elogiando a organização e os layouts impecáveis: não tem nada igual no mercado' },
-  { src: '/reviews/review-5.webp', alt: 'Aluno dizendo que confia no trabalho do Esquematiza Aí' },
+/**
+ * Depoimentos de alunos, em prints reais do WhatsApp.
+ *
+ * POR QUE PRINT E TRANSCRIÇÃO JUNTOS:
+ * antes a seção era uma esteira de prints passando. Print prova que a mensagem
+ * é real, mas ninguém lê texto pequeno dentro de uma imagem que anda. Agora
+ * cada cartão traz a janelinha com o print de um lado, como evidência, e a
+ * transcrição do outro, para a pessoa ler com calma.
+ *
+ * As transcrições são fiéis ao que está escrito na imagem, com a pontuação e
+ * as abreviações do aluno. Corrigir o português deles seria reescrever
+ * depoimento, e aí deixa de ser depoimento.
+ */
+
+type Depoimento = {
+  src: string;
+  alt: string;
+  /** o que está escrito no print, palavra por palavra */
+  texto: string;
+  /** contexto curto, quando a mensagem sozinha não se explica */
+  contexto?: string;
+  destaque?: boolean;
+};
+
+const DEPOIMENTOS: Depoimento[] = [
+  {
+    src: '/reviews/review-3.webp',
+    alt: 'Print de conversa em que uma aluna conta que foi aprovada em 19º lugar para procuradora no ES e diz que o material do Esquematiza Aí é o melhor entre os flashcards que testou',
+    contexto: 'Aprovada em 19º lugar para procuradora, ES',
+    texto:
+      'Boa tarde. Passando para dar minha contribuição. Anki na minha vida foi coisa de Deus, pois de aprovada nos concursos nas posições bem afastadas, baixei para a posição 19 para procuradora aqui do ES (dentro da faixa de corte que é 20 primeiros colocados). Eu descobri o Anki por acaso no YouTube. Só futucando o aplicativo pra você aprender a mexer nele, mas é fácil de aprender. Eu uso no meu notebook. Só baixar o aplicativo na internet, é de graça. Vou deixar aqui o canal do YouTube da pessoa que descobri, que da várias dicas de como baixar, usar, criar os flashcards etc. Mas o ideal é você criar seus flashcards de acordo com seu aprendizado. Comprei também o material do esquematiza aí que é o melhor de todos os flashcards que já baixei pra testar.',
+    destaque: true,
+  },
+  {
+    src: '/reviews/review-2.webp',
+    alt: 'Print de conversa em que um aluno elogia a qualidade dos resumos e a jurisprudência relacionada ao assunto',
+    texto:
+      'Cara, a qualidade dos resumos está muito foda!! Ter a jurisprudência relacionada no assunto tb ajuda mt. Confesso que estou ansioso pela liberação do resumo de constitucional. Rsrsrs',
+  },
+  {
+    src: '/reviews/review-4.webp',
+    alt: 'Print de conversa em que um aluno diz que a seção saiba mais é o diferencial e que os layouts são impecáveis',
+    texto:
+      'Esse saiba mais é o pulo do gato! É o diferencial do diferencial se vocês! Além da organização, layouts impecáveis claro. Uma leitura muito agradável. Até agora, já teste vários fornecedores. Não tem nada igual no mercado...',
+  },
+  {
+    src: '/reviews/review-1.webp',
+    alt: 'Print de conversa em que um aluno parabeniza pela rapidez na entrega dos resumos do combo fiscal',
+    texto:
+      'Boa tarde mestre. Pow, parabéns pela celeridade na entrega dos resumos do combo fiscal. Superou minhas expectativas',
+  },
+  {
+    src: '/reviews/review-5.webp',
+    alt: 'Print de conversa em que um aluno diz que confia no trabalho do Esquematiza Aí e pede material de Direito do Trabalho',
+    contexto: 'Respondendo se já achou material parecido em outro lugar',
+    texto:
+      'Nada! Faz para Trabalho e Processo do Trabalho... Ainda não achei nenhum... Confio super no trabalho de vocês,. Mas a galera tá bem aí pra DT.. rsss',
+  },
 ];
 
-// Marquee infinito: cada metade (2 conjuntos) fica mais larga que a tela,
-// e a animação de -50% fecha o loop sem emenda. Pausa no hover para leitura.
-const SETS = 4;
+/** Uma camada do símbolo do Esquematiza, o mesmo marcador usado no hero. */
+const CamadaDaMarca = ({ className }: { className: string }) => (
+  <svg className={className} width="18" height="14" viewBox="0 0 24 18" aria-hidden="true">
+    <path d="M4.6 3.2 L22 2.2 L21.1 7.6 L11.6 8.2 L9.6 14.4 L2 15.4 Z" />
+  </svg>
+);
 
 export default function Testimonials() {
-  const trilha = Array.from({ length: SETS }).flatMap(() => reviews);
-
   return (
-    <section className={styles.testimonialsSection}>
+    <section className={styles.secao}>
       <h2 className={styles.title}>
-        O Que Dizem Nossos <span className={styles.titleAccent}>Alunos</span>
+        O Que Dizem Nossos <span className={styles.titleAccent}>alunos</span>
       </h2>
 
-      <div className={styles.marquee}>
-        <div className={styles.track}>
-          {trilha.map((review, i) => (
-            <figure
-              key={`${review.src}-${i}`}
-              className={styles.card}
-              aria-hidden={i >= reviews.length ? 'true' : undefined}
-            >
+      <p className={styles.linhaDeApoio}>
+        Mensagens recebidas no WhatsApp. O print está do lado do texto para você conferir
+        que é real e ler sem apertar os olhos.
+      </p>
+
+      <div className={styles.grade}>
+        {DEPOIMENTOS.map((d) => (
+          <figure
+            key={d.src}
+            className={`${styles.cartao} ${d.destaque ? styles.cartaoDestaque : ''}`}
+          >
+            {/* Janela do print: recorte fixo, como uma telinha. Mostra o
+                suficiente para provar que a mensagem existe sem tomar o cartão. */}
+            <div className={styles.janela}>
               <Image
-                src={review.src}
-                alt={i < reviews.length ? review.alt : ''}
+                src={d.src}
+                alt={d.alt}
                 width={720}
                 height={560}
+                sizes="(max-width: 640px) 90vw, 150px"
                 className={styles.print}
               />
-            </figure>
-          ))}
-        </div>
+            </div>
+
+            <div className={styles.conteudo}>
+              {d.contexto && <p className={styles.contexto}>{d.contexto}</p>}
+
+              <blockquote className={styles.texto}>{d.texto}</blockquote>
+
+              <figcaption className={styles.rodape}>
+                <CamadaDaMarca className={styles.marca} />
+                print real, recebido no WhatsApp
+              </figcaption>
+            </div>
+          </figure>
+        ))}
       </div>
     </section>
   );
