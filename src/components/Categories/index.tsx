@@ -52,16 +52,23 @@ export default function Categories() {
           {/* A mancha branca é a mesma que ficava atrás da foto da aluna, só que
               clara: o desenho tem áreas vazadas que sobre o azul da seção
               enchiam com a cor do fundo e desapareciam.
-              unoptimized porque o otimizador do Next não mexe em SVG; deixá-lo
-              tentar só adiciona um salto pelo /_next/image sem ganho nenhum. */}
+
+              A ilustração é o WebP gerado a partir do SVG que o cliente enviou.
+              O SVG era um PNG embrulhado, 768 KB, e o otimizador do Next não
+              mexe em SVG: ia inteiro para todo visitante. Em WebP são 54 KB, e
+              agora o Next ainda corta por tamanho de tela. O `sizes` descreve o
+              espaço real: 112% de uma mancha que é 88% da coluna, no máximo
+              560px. Sem ele o Next assume 100vw e manda arquivo grande demais.
+
+              Regerar:  node -e "require('sharp')('public/assets/imagem_do_rapaz_estudando.svg',{density:300}).resize(1120).webp({quality:90,alphaQuality:100,effort:6}).toFile('public/assets/rapaz-estudando.webp')" */}
           <div className={styles.imageShape}>
             <Image
-              src="/assets/imagem_do_rapaz_estudando.svg"
+              src="/assets/rapaz-estudando.webp"
               alt="Aluno do Esquematiza Aí estudando com tablet, resumos e anotações"
-              width={1440}
-              height={810}
+              width={1120}
+              height={630}
+              sizes="(max-width: 768px) 92vw, 560px"
               className={styles.ilustracao}
-              unoptimized
             />
           </div>
         </div>
