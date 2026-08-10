@@ -12,14 +12,11 @@
   flex: 1;
 }
 
-/* align-items: stretch para o painel quadriculado acompanhar a altura da lista
-   de áreas ao lado. Centralizado, ele ficava 273px mais baixo que a coluna de
-   texto e sobrava um buraco no meio da seção. */
 .rightColumn {
   flex: 1.15;
   position: relative;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
 }
 
@@ -98,15 +95,59 @@
   transform: translateX(10px);
 }
 
-/* A mancha verde que morfava e a foto dentro dela saíram junto com a aluna de
-   banco de imagens. O esquema dos materiais traz a própria moldura. */
+/* A mesma mancha irregular que ficava atrás da foto da aluna, agora branca.
+   Ela não é decoração à toa: o desenho tem partes vazadas, como as folhas de
+   papel sobre a mesa, que sobre o Azul Marinho enchiam com a cor do fundo e
+   sumiam. Sobre branco o desenho volta a ser o que foi desenhado.
+
+   Sem borda e sem cantos definidos: os quatro raios diferentes em cada eixo
+   fazem a forma orgânica, e a animação troca esses raios devagar. */
+.imageShape {
+  position: relative;
+  /* 88% e não 100%: a ilustração é renderizada maior que a mancha (ver abaixo),
+     e este respiro garante que ela nunca ultrapasse a coluna, nem no celular. */
+  width: 88%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  border-radius: 48% 52% 55% 45% / 55% 50% 50% 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+  animation: blobMorph 10s ease-in-out infinite alternate;
+}
+
+@keyframes blobMorph {
+  0%   { border-radius: 48% 52% 55% 45% / 55% 50% 50% 45%; }
+  50%  { border-radius: 52% 48% 48% 52% / 48% 55% 45% 52%; }
+  100% { border-radius: 55% 45% 50% 50% / 50% 48% 52% 48%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageShape {
+    animation: none;
+  }
+}
+
+/* Maior que a mancha, de propósito.
+   O arquivo tem 36% de margem transparente na largura: o desenho de verdade
+   ocupa só 64% dele. Renderizado a 100% da mancha, o rapaz aparecia com pouco
+   mais da metade da largura e ficava perdido no meio do branco. A 112%, a
+   margem vazia é que passa da borda e o desenho fica com ~72% da mancha. */
+.ilustracao {
+  width: 112%;
+  max-width: none;
+  /* a mancha é flex: sem isto o item encolhe de volta para caber nela e os 112%
+     não valem de nada */
+  flex-shrink: 0;
+  height: auto;
+  display: block;
+}
 
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-  }
-  /* sem a foto, a coluna não precisa mais reservar 680px de altura */
-  .rightColumn {
-    min-height: 0;
+    gap: 2.5rem;
   }
 }

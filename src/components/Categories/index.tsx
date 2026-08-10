@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css';
-import EsquemaMateriais from '@/components/EsquemaMateriais';
 import { produtosVendaveis } from '@/data/catalogo';
 
 // Áreas do catálogo -> rotas da vitrine (Legislativa ainda não tem rota própria)
@@ -48,11 +48,22 @@ export default function Categories() {
           </div>
         </div>
 
-        {/* Saiu a foto de aluna: tinha cara de banco de imagens e não dizia nada
-            sobre o material. No lugar, o esquema dos materiais na linguagem das
-            artes do perfil, que é o que a pessoa quer saber ao chegar aqui. */}
         <div className={styles.rightColumn}>
-          <EsquemaMateriais />
+          {/* A mancha branca é a mesma que ficava atrás da foto da aluna, só que
+              clara: o desenho tem áreas vazadas que sobre o azul da seção
+              enchiam com a cor do fundo e desapareciam.
+              unoptimized porque o otimizador do Next não mexe em SVG; deixá-lo
+              tentar só adiciona um salto pelo /_next/image sem ganho nenhum. */}
+          <div className={styles.imageShape}>
+            <Image
+              src="/assets/imagem_do_rapaz_estudando.svg"
+              alt="Aluno do Esquematiza Aí estudando com tablet, resumos e anotações"
+              width={1440}
+              height={810}
+              className={styles.ilustracao}
+              unoptimized
+            />
+          </div>
         </div>
       </div>
     </section>
