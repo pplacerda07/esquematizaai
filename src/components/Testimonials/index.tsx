@@ -35,8 +35,11 @@ const DEPOIMENTOS: Depoimento[] = [
     src: '/reviews/review-3.webp',
     alt: 'Print de conversa em que uma aluna conta que foi aprovada em 19º lugar para procuradora no ES e diz que o material do Esquematiza Aí é o melhor entre os flashcards que testou',
     contexto: 'Aprovada em 19º lugar para procuradora, ES',
+    // Cortado o miolo, que era tutorial de Anki: como baixar, que é de graça, o
+    // canal do YouTube. O [...] marca o corte, e a frase final fica porque é o
+    // único ponto da mensagem em que ela fala do nosso material.
     texto:
-      'Boa tarde. Passando para dar minha contribuição. Anki na minha vida foi coisa de Deus, pois de aprovada nos concursos nas posições bem afastadas, baixei para a posição 19 para procuradora aqui do ES (dentro da faixa de corte que é 20 primeiros colocados). Eu descobri o Anki por acaso no YouTube. Só futucando o aplicativo pra você aprender a mexer nele, mas é fácil de aprender. Eu uso no meu notebook. Só baixar o aplicativo na internet, é de graça. Vou deixar aqui o canal do YouTube da pessoa que descobri, que da várias dicas de como baixar, usar, criar os flashcards etc. Mas o ideal é você criar seus flashcards de acordo com seu aprendizado. Comprei também o material do esquematiza aí que é o melhor de todos os flashcards que já baixei pra testar.',
+      'Boa tarde. Passando para dar minha contribuição. Anki na minha vida foi coisa de Deus, pois de aprovada nos concursos nas posições bem afastadas, baixei para a posição 19 para procuradora aqui do ES (dentro da faixa de corte que é 20 primeiros colocados). Eu descobri o Anki por acaso no YouTube. [...] Comprei também o material do esquematiza aí que é o melhor de todos os flashcards que já baixei pra testar.',
     destaque: true,
   },
   {
