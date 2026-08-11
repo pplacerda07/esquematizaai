@@ -2,13 +2,18 @@ import Image from 'next/image';
 import styles from './styles.module.css';
 
 /**
- * Depoimentos de alunos, em prints reais do WhatsApp.
+ * Depoimentos de alunos, em prints do WhatsApp.
  *
  * POR QUE PRINT E TRANSCRIÇÃO JUNTOS:
- * antes a seção era uma esteira de prints passando. Print prova que a mensagem
- * é real, mas ninguém lê texto pequeno dentro de uma imagem que anda. Agora
- * cada cartão traz a janelinha com o print de um lado, como evidência, e a
- * transcrição do outro, para a pessoa ler com calma.
+ * antes a seção era uma esteira de prints passando, e ninguém lê texto pequeno
+ * dentro de imagem que anda. Cada cartão traz a janelinha com o print de um
+ * lado e a transcrição do outro, para ler com calma.
+ *
+ * SEM SELO DE "É REAL":
+ * havia aqui uma linha dizendo que os prints eram reais e um rodapé repetindo
+ * "print real, recebido no WhatsApp" em cada cartão. Insistir que é verdade
+ * produz o efeito contrário, cara de página que precisa se defender. O print
+ * mostra o WhatsApp sozinho; não precisa de legenda jurando.
  *
  * As transcrições são fiéis ao que está escrito na imagem, com a pontuação e
  * as abreviações do aluno. Corrigir o português deles seria reescrever
@@ -61,24 +66,12 @@ const DEPOIMENTOS: Depoimento[] = [
   },
 ];
 
-/** Uma camada do símbolo do Esquematiza, o mesmo marcador usado no hero. */
-const CamadaDaMarca = ({ className }: { className: string }) => (
-  <svg className={className} width="18" height="14" viewBox="0 0 24 18" aria-hidden="true">
-    <path d="M4.6 3.2 L22 2.2 L21.1 7.6 L11.6 8.2 L9.6 14.4 L2 15.4 Z" />
-  </svg>
-);
-
 export default function Testimonials() {
   return (
     <section className={styles.secao}>
       <h2 className={styles.title}>
         O Que Dizem Nossos <span className={styles.titleAccent}>alunos</span>
       </h2>
-
-      <p className={styles.linhaDeApoio}>
-        Mensagens recebidas no WhatsApp. O print está do lado do texto para você conferir
-        que é real e ler sem apertar os olhos.
-      </p>
 
       <div className={styles.grade}>
         {DEPOIMENTOS.map((d) => (
@@ -103,11 +96,6 @@ export default function Testimonials() {
               {d.contexto && <p className={styles.contexto}>{d.contexto}</p>}
 
               <blockquote className={styles.texto}>{d.texto}</blockquote>
-
-              <figcaption className={styles.rodape}>
-                <CamadaDaMarca className={styles.marca} />
-                print real, recebido no WhatsApp
-              </figcaption>
             </div>
           </figure>
         ))}
