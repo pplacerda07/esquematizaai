@@ -46,6 +46,41 @@ const WHATSAPP_ANTIGO = /\(?12\)?\s*9?\s*9615[-\s]?2509/g;
 // mesmo número de WHATSAPP_NUMERO em src/config.ts, escrito para leitura humana
 const WHATSAPP_ATUAL = '(11) 5286-5954';
 
+/**
+ * Trechos do "sobre" que o Sérgio pediu para sair.
+ *
+ * CONTEÚDO ABORDADO repetia, palavra por palavra, a lista de disciplinas que já
+ * aparece em "Detalhes do produto" logo abaixo. "Em dúvida entre assinar" e
+ * "Produtos relacionados" eram links de navegação do WordPress: na página nova
+ * a pessoa já veio da vitrine e tem a barra de compra fixa do lado.
+ */
+const FIM_DO_SOBRE = /(\*\*CONTEÚDO ABORDADO|CONTEÚDO ABORDADO:|Em dúvida entre|Produtos relacionados)/i;
+
+/**
+ * Cronograma que só anuncia que o material está pronto não é cronograma: é uma
+ * seção inteira, com título, para dizer "já pode baixar". A página de produto
+ * deixa de mostrá-la nesses casos.
+ *
+ * Fica quem tem informação de verdade: data de entrega, material em elaboração,
+ * lista do que está incluso, avisos.
+ */
+function cronogramaSoDizQueEstaPronto(texto) {
+  const limpo = texto
+    .replace(/[✅⏳🗓️*_\-]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (limpo.length > 90) return false;
+  if (/\d{2}\/\d{2}\/\d{4}|previsão|elaboração dos|atenção|após|edital/i.test(limpo)) return false;
+
+  return /(finalizad|conclu[ií]|dispon[ií]vel para download|100%)/i.test(limpo);
+}
+
+/** Em Markdown, uma quebra só junta as linhas num parágrafo. Duas separam. */
+function separarLinhasDeCheck(texto) {
+  return texto.replace(/([^\n])\n(?=✅)/g, '$1\n\n');
+}
+
 function limparResposta(texto) {
   if (!texto) return texto;
   let saida = texto;
@@ -72,11 +107,35 @@ function main() {
   let telefonesTrocados = 0;
   let caracteresRemovidos = 0;
   let camposDeTextoLimpos = 0;
+  let sobreCortado = 0;
+  let checksSeparados = 0;
+  let cronogramasVazios = 0;
 
   // os campos de texto sofrem do mesmo mal do FAQ, então passam pela mesma regra
   const CAMPOS_DE_TEXTO = ['sobre', 'detalhes', 'sumario', 'cronograma', 'detalhesTitulo'];
 
   for (const dados of Object.values(mapa)) {
+    // --- pedidos do Sérgio, antes da limpeza geral ---
+
+    if (dados.sobre) {
+      const corte = dados.sobre.search(FIM_DO_SOBRE);
+      if (corte > 0) {
+        dados.sobre = dados.sobre.slice(0, corte).trim();
+        sobreCortado++;
+      }
+
+      const separado = separarLinhasDeCheck(dados.sobre);
+      if (separado !== dados.sobre) {
+        dados.sobre = separado;
+        checksSeparados++;
+      }
+    }
+
+    if (dados.cronograma && cronogramaSoDizQueEstaPronto(dados.cronograma)) {
+      delete dados.cronograma;
+      cronogramasVazios++;
+    }
+
     for (const campo of CAMPOS_DE_TEXTO) {
       if (typeof dados[campo] !== 'string' || !dados[campo]) continue;
       const antes = dados[campo];
@@ -122,6 +181,9 @@ function main() {
 
   fs.writeFileSync(ARQUIVO, JSON.stringify(bruto, null, 2) + '\n', 'utf8');
 
+  console.log('"sobre" cortados           :', sobreCortado, '(conteúdo abordado, em dúvida entre, relacionados)');
+  console.log('listas de ✅ separadas      :', checksSeparados);
+  console.log('cronogramas removidos      :', cronogramasVazios, '(só diziam que o material está pronto)');
   console.log('campos de texto limpos     :', camposDeTextoLimpos);
   console.log('perguntas analisadas       :', perguntas);
   console.log('respostas alteradas        :', alteradas);

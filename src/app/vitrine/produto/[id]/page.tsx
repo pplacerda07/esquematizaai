@@ -65,7 +65,25 @@ export default async function ProdutoPage({
   const areaSlug = produto.area ? SLUG_DA_AREA[produto.area] : null;
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';
   const capa = capaDe(produto);
-  const ehFlashcards = produto.ferramenta === 'Flashcards' || /^Flashcards/i.test(produto.nome);
+  /**
+   * O que este produto entrega, para a galeria mostrar o formato certo.
+   *
+   * A regra antiga era `ferramenta === 'Flashcards' || nome começa com
+   * "Flashcards"`, e errava em 6 produtos: a "Assinatura Flashcards Regular"
+   * tem ferramenta "Assinatura" e o nome não COMEÇA com Flashcards, então caía
+   * no conjunto de resumos. Foi o erro que o Sérgio viu.
+   *
+   * Os combos ("R + F + Q + V") entregam os dois formatos e agora mostram os
+   * dois: antes escolhiam um só.
+   */
+  const descricaoDoProduto = `${produto.ferramenta ?? ''} ${produto.nome}`;
+  const ehCombo = /R \+ F/i.test(produto.ferramenta ?? '');
+  const temFlashcards = ehCombo || /flashcard/i.test(descricaoDoProduto);
+  const temResumos = ehCombo || /resumo|vade\s*mecum/i.test(descricaoDoProduto);
+
+  // AutoridadeCientifica argumenta por recuperação e espaçamento, que é o
+  // mecanismo do flashcard; num combo isso continua valendo.
+  const ehFlashcards = temFlashcards;
   const conteudo = conteudoDe(produto);
   const sobre = conteudo.sobre ?? null;
   const selos = selosDe(produto);
@@ -249,7 +267,10 @@ export default async function ProdutoPage({
               </section>
             )}
 
-            <GaleriaMaterial ehFlashcards={ehFlashcards} />
+            <GaleriaMaterial
+              temResumos={temResumos || (!temResumos && !temFlashcards)}
+              temFlashcards={temFlashcards}
+            />
 
             {/* Depois da galeria e antes do argumento científico: a pessoa acabou
                 de ver o material por dentro, e a pergunta que vem é "isso
