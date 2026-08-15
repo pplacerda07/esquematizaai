@@ -208,14 +208,34 @@
   line-height: 1;
 }
 
+/* Parcelamento logo abaixo do preço, com a parcela em destaque: é o número que
+   a pessoa usa para decidir se cabe no mês. */
+.parcelamento {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: var(--color-cold-dark);
+  opacity: 0.85;
+  margin-top: 0.35rem;
+}
+
+.parcelamento strong {
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* Botão de compra em VERDE, pedido do Sérgio, só nesta página.
+   Texto em Azul Marinho e não branco: o verde vivo com texto branco da
+   referência dá 3:1, abaixo do mínimo, e o rótulo fica lavado. Este par usa o
+   verde do Brand Guide e dá 7,82:1. */
 .btnBuy {
   box-sizing: border-box; /* âncora não herda o border-box nativo de <button> */
   width: 100%;
   min-height: 48px;
-  background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
+  background-color: var(--color-green-primary);
+  color: var(--color-cold-dark);
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
   padding: 0.95rem 1rem;
   border-radius: 0.55rem;
@@ -230,7 +250,7 @@
 }
 
 .btnBuy:hover {
-  background-color: var(--color-hot-dark);
+  background-color: var(--color-green-light);
 }
 
 .btnBuy:focus-visible {

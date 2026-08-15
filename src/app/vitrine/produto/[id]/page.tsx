@@ -103,11 +103,20 @@ export default async function ProdutoPage({
       {oferta.percentualOff !== null && (
         <span className={styles.offPill}>-{oferta.percentualOff}% de desconto</span>
       )}
+      {/* A linha de parcelamento acompanha o preço riscado, e os dois só
+          aparecem em produto com preço de referência confirmado pelo Sérgio.
+          Sem referência, fica o preço sozinho, como sempre foi. */}
       <div className={styles.priceBlock}>
         {oferta.precoAntigo !== null && (
-          <span className={styles.oldPrice}>de {formatarPreco(oferta.precoAntigo)}</span>
+          <span className={styles.oldPrice}>{formatarPreco(oferta.precoAntigo)}</span>
         )}
         <span className={styles.currentPrice}>{formatarPreco(oferta.preco)}</span>
+        {oferta.precoAntigo !== null && (
+          <span className={styles.parcelamento}>
+            <strong>12x de {formatarPreco(oferta.parcela12x)}</strong> ou{' '}
+            {formatarPreco(oferta.preco)} à vista
+          </span>
+        )}
       </div>
       <a
         className={styles.btnBuy}

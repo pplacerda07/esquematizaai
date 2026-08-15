@@ -63,13 +63,16 @@
   color: var(--color-neutral-light);
 }
 
+/* Verde, igual ao botão de compra da página: os dois compram a mesma coisa e
+   ficam visíveis ao mesmo tempo, então cor diferente confundiria. Texto em Azul
+   Marinho pelo contraste, ver a nota em vitrine/produto/[id]/styles.module.css */
 .botao {
   box-sizing: border-box; /* âncora não herda o border-box nativo de <button> */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
+  background-color: var(--color-green-primary);
+  color: var(--color-cold-dark);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 1rem;
@@ -82,7 +85,7 @@
 }
 
 .botao:hover {
-  background-color: var(--color-hot-dark);
+  background-color: var(--color-green-light);
 }
 
 .botao:focus-visible {

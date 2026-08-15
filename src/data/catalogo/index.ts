@@ -167,6 +167,37 @@ export function escadaDeDesconto(p: Produto): ProdutoComDesconto | undefined {
  * Regra: se existe preço + checkout da Black (desconto vigente segundo a planilha),
  * usa esse par com o preço cheio riscado; senão cai no par normal, sem risco.
  */
+/**
+ * Preço "de" informado pelo Sérgio, para riscar ao lado do preço cobrado.
+ *
+ * SÓ ENTRA AQUI O QUE ELE CONFIRMAR. A planilha não tem preço âncora em nenhum
+ * dos 107 produtos, e riscar um valor pelo qual o material nunca foi vendido é
+ * publicidade enganosa (CDC art. 37). Produto fora desta lista mostra só o
+ * preço cobrado, como sempre mostrou.
+ *
+ * Para acrescentar: uma linha por produto, com o id do catálogo.
+ */
+const PRECOS_DE_REFERENCIA: Record<string, number> = {
+  'assinatura-flashcards-regular': 1997,
+};
+
+/**
+ * Fator do parcelamento em 12x da Eduzz, com juros.
+ *
+ * Derivado dos dois exemplos que o Sérgio mandou, e os dois batem ao centavo:
+ *   R$ 897 -> 12x de R$ 92,77   (897  x 1,2411 / 12 = 92,77)
+ *   R$ 157 -> 12x de R$ 16,24   (157  x 1,2411 / 12 = 16,24)
+ *
+ * Se a Eduzz mudar a tabela, é esta constante que muda. Vale conferir num
+ * checkout de verdade antes de anunciar: o valor da parcela é promessa, e
+ * promessa que o checkout não cumpre vira reclamação.
+ */
+const FATOR_12X = 1.2411;
+
+export function parcelaEmDozeVezes(preco: number): number {
+  return Math.round((preco * FATOR_12X) / 12 * 100) / 100;
+}
+
 export interface Oferta {
   /** preço cobrado no destino */
   preco: number;
@@ -174,6 +205,8 @@ export interface Oferta {
   precoAntigo: number | null;
   /** percentual de desconto inteiro (ex.: 45), null quando não há */
   percentualOff: number | null;
+  /** valor de cada uma das 12 parcelas, com os juros da Eduzz */
+  parcela12x: number;
   /** para onde o botão de compra leva */
   checkout: string;
   /**
@@ -186,22 +219,31 @@ export interface Oferta {
 
 export function ofertaAtual(p: Produto): Oferta | null {
   const { cheio, black } = p.precos;
+
+  // referência só vale se for MAIOR que o preço cobrado, senão o risco vira piada
+  const referencia = PRECOS_DE_REFERENCIA[p.id] ?? null;
+
   if (p.checkouts.black && black !== null) {
     const temRisco = cheio !== null && cheio > black;
     return {
       preco: black,
       precoAntigo: temRisco ? cheio : null,
       percentualOff: temRisco ? Math.round((1 - black / cheio) * 100) : null,
+      parcela12x: parcelaEmDozeVezes(black),
       checkout: p.checkouts.black,
       viaPaginaDeVendas: false,
     };
   }
   if (cheio === null) return null;
+
+  const temReferencia = referencia !== null && referencia > cheio;
+
   if (p.checkouts.normal) {
     return {
       preco: cheio,
-      precoAntigo: null,
-      percentualOff: null,
+      precoAntigo: temReferencia ? referencia : null,
+      percentualOff: temReferencia ? Math.round((1 - cheio / referencia) * 100) : null,
+      parcela12x: parcelaEmDozeVezes(cheio),
       checkout: p.checkouts.normal,
       viaPaginaDeVendas: false,
     };
@@ -210,8 +252,9 @@ export function ofertaAtual(p: Produto): Oferta | null {
   if (p.urlSite) {
     return {
       preco: cheio,
-      precoAntigo: null,
-      percentualOff: null,
+      precoAntigo: temReferencia ? referencia : null,
+      percentualOff: temReferencia ? Math.round((1 - cheio / referencia) * 100) : null,
+      parcela12x: parcelaEmDozeVezes(cheio),
       checkout: p.urlSite,
       viaPaginaDeVendas: true,
     };
