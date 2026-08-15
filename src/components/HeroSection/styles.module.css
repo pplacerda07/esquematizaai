@@ -215,6 +215,15 @@
   font-weight: 600;
 }
 
+/* O parágrafo inteiro está a 85% de opacidade; estas duas expressões voltam a
+   100% e ganham peso. É o suficiente para saltarem sem precisar de outra cor
+   nem de marca-texto, que o título logo acima já usa. */
+.subtitleDestaque {
+  font-weight: 700;
+  opacity: 1;
+  color: var(--color-cold-dark);
+}
+
 
 /* Benefits */
 .benefitList {

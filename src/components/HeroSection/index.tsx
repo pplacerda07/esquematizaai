@@ -61,10 +61,15 @@ export default function HeroSection() {
               <span className={styles.titleHighlight}>desnecessários</span>?
             </h1>
 
+            {/* Destaque em "metodologia" e "histórico de cobrança", que é o que
+                diferencia a casa. Peso e opacidade cheia, não Moonlight: ela é
+                fonte de display, e duas frases em script dentro de um parágrafo
+                de 18px atrapalham a leitura. No site ela é acento de título. */}
             <p className={styles.subtitle}>
-              Aqui no Esquematiza Aí utilizamos uma metodologia baseada no histórico de
-              cobrança em provas para direcionar seus estudos e encurtar o tempo até a
-              aprovação!
+              Aqui no Esquematiza Aí utilizamos uma{' '}
+              <strong className={styles.subtitleDestaque}>metodologia</strong> baseada no{' '}
+              <strong className={styles.subtitleDestaque}>histórico de cobrança</strong> em
+              provas para direcionar seus estudos e encurtar o tempo até a aprovação!
             </p>
 
             <div className={styles.benefitList}>
@@ -102,7 +107,10 @@ export default function HeroSection() {
               </span>
               <div className={styles.proofText}>
                 <div className={styles.stars}>★★★★★</div>
-                <span><strong>+2.500 auditores</strong> já passaram com o Esquematiza</span>
+                <span>
+                  Materiais elaborados de forma <strong>artesanal</strong> e avaliados com
+                  excelência pelos alunos
+                </span>
               </div>
             </div>
           </div>
