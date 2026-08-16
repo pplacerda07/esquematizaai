@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import Countdown from './Countdown';
 import UrgencyBar from './UrgencyBar';
+import BuscaEAtalhos from '@/components/BuscaEAtalhos';
 import LiveTicker from './LiveTicker';
 import OfferCarousel, { type OfertaHero } from './OfferCarousel';
 import { produtoPor, ofertaAtual } from '@/data/catalogo';
@@ -11,6 +12,15 @@ import { produtoPor, ofertaAtual } from '@/data/catalogo';
 // catálogo, sai do carrossel sozinho.
 // Por slug e não por ID da Eduzz: depois da planilha de jul/2026 só 31 dos 107
 // produtos têm ID Eduzz, então o slug é a chave estável.
+/**
+ * Liga e desliga o bloco de oferta do hero (cronômetro + carrossel de produtos).
+ *
+ * Desligado hoje: com a barra do cupom ESQ10 no topo, seriam dois cronômetros
+ * correndo na mesma tela, e isso dá cara de página cheia de gatilho. O código
+ * fica de pé para voltar num lançamento ou masterclass.
+ */
+const MOSTRAR_OFERTA_NO_HERO = false;
+
 const HERO_OFERTA_IDS = [
   'combo-resumos-flashcards-fiscal-regular',
   'combo-resumos-flashcards-controle-regular',
@@ -49,6 +59,11 @@ export default function HeroSection() {
   return (
     <>
       <UrgencyBar />
+
+      {/* Ordem pedida pelo Sérgio: cupom, busca, atalhos por tipo, e só então a
+          chamada. Quem chega sabendo o que quer resolve nas duas primeiras
+          linhas, sem ter de ler o hero inteiro para achar o caminho. */}
+      <BuscaEAtalhos />
 
       <section className={styles.hero}>
         <div className={`${styles.decoration} ${styles.decorationTopLeft}`}></div>
@@ -89,7 +104,7 @@ export default function HeroSection() {
 
             <div className={styles.actionButtons}>
               <a href="/vitrine" className={styles.btnMain}>
-                QUERO MINHA VAGA AGORA
+                CONHEÇA NOSSOS MATERIAIS
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -115,14 +130,20 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className={styles.columnRight}>
-            <div className={styles.blobBackground}></div>
+          {/* Carrossel de oferta com cronômetro: DESLIGADO, não removido.
+              Dois cronômetros na mesma tela, o do cupom lá em cima e o daqui,
+              dão cara de página de gatilho. Ligar de volta num lançamento ou
+              masterclass é trocar MOSTRAR_OFERTA_NO_HERO para true. */}
+          {MOSTRAR_OFERTA_NO_HERO && (
+            <div className={styles.columnRight}>
+              <div className={styles.blobBackground}></div>
 
-            <div className={styles.offerStack}>
-              <Countdown />
-              <OfferCarousel ofertas={ofertas} />
+              <div className={styles.offerStack}>
+                <Countdown />
+                <OfferCarousel ofertas={ofertas} />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
     </>

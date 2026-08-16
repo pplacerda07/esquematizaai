@@ -1,0 +1,136 @@
+/* Fica entre a barra do cupom e o hero, então usa o mesmo cinza claro do hero
+   para os três blocos lerem como um só, sem faixa de cor nova no meio. */
+.faixa {
+  background-color: var(--color-neutral-light);
+  padding: 1.5rem 5% 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------------------ busca */
+
+.form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 340px;
+  min-width: 0;
+}
+
+.rotuloOculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.campo {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-neutral-dark);
+  background-color: #fff;
+  border: 1.5px solid rgba(38, 52, 79, 0.16);
+  border-radius: 0.6rem;
+  padding: 0.85rem 3rem 0.85rem 1.1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo::placeholder {
+  color: rgba(35, 33, 44, 0.5);
+}
+
+.campo:focus {
+  border-color: var(--color-cold-primary);
+  box-shadow: 0 0 0 3px rgba(78, 174, 217, 0.18);
+}
+
+.lupa {
+  position: absolute;
+  right: 0.35rem;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--color-cold-dark);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lupa:hover {
+  background-color: var(--color-cold-light);
+}
+
+.lupa:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 1px;
+}
+
+/* --------------------------------------------------------------- atalhos */
+
+.atalhos {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Contorno e não preenchido: o botão de ação do hero está logo abaixo, e três
+   botões cheios aqui em cima disputariam o clique com ele. */
+.atalho {
+  box-sizing: border-box;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.15rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-cold-dark);
+  background-color: #fff;
+  border: 1.5px solid rgba(38, 52, 79, 0.16);
+  border-radius: 0.6rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.atalho:hover {
+  background-color: var(--color-cold-light);
+  border-color: var(--color-cold-primary);
+}
+
+.atalho:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .atalhos {
+    /* rola de lado em vez de quebrar em duas linhas e empurrar o hero */
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .atalhos::-webkit-scrollbar {
+    display: none;
+  }
+}

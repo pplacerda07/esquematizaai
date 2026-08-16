@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useRef, useState, type ReactNode } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { rotuloDeFerramenta } from '@/data/catalogo/rotulos';
@@ -77,11 +78,27 @@ function normalizar(texto: string) {
 }
 
 export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
-  const [segmento, setSegmento] = useState<string>('todos');
+  /**
+   * A busca e o tipo podem vir pela URL: /vitrine?busca=tributaria&tipo=combo
+   *
+   * É o que permite a caixa de busca e os botões da home levarem a pessoa
+   * direto ao resultado. Sem isso, os dois só rolariam a página até aqui e ela
+   * teria de repetir o filtro na mão, o que faria a busca da home ser enfeite.
+   *
+   * Vale só na primeira renderização: depois quem manda são os controles daqui,
+   * senão mexer no filtro brigaria com o endereço.
+   */
+  const parametros = useSearchParams();
+  const buscaInicial = parametros.get('busca') ?? '';
+  const tipoInicial = parametros.get('tipo') ?? 'todos';
+
+  const [segmento, setSegmento] = useState<string>(
+    ['combo', 'isolado', 'assinatura'].includes(tipoInicial) ? tipoInicial : 'todos',
+  );
   const [area, setArea] = useState<string>('todas');
   const [visiveis, setVisiveis] = useState(POR_PAGINA);
-  const [buscaAberta, setBuscaAberta] = useState(false);
-  const [busca, setBusca] = useState('');
+  const [buscaAberta, setBuscaAberta] = useState(buscaInicial !== '');
+  const [busca, setBusca] = useState(buscaInicial);
   const inputBusca = useRef<HTMLInputElement>(null);
 
   const filtrados = useMemo(() => {

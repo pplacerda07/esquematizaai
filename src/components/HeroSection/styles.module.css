@@ -272,15 +272,18 @@
   flex-wrap: wrap;
 }
 
+/* Verde, igual ao botão de compra da página de produto: os dois levam à mesma
+   ação. Texto em Azul Marinho pelo contraste (7,82:1); com texto branco o verde
+   da marca dá 1,59:1 e o rótulo some. */
 .btnMain {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
+  background-color: var(--color-green-primary);
+  color: var(--color-cold-dark);
   font-family: var(--font-body);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
   padding: 1.05rem 2rem;
   border-radius: 0.6rem;
@@ -288,13 +291,13 @@
   cursor: pointer;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-  box-shadow: 0 10px 26px rgba(255, 115, 69, 0.3);
+  box-shadow: 0 10px 26px rgba(139, 224, 149, 0.45);
 }
 
 .btnMain:hover {
-  background-color: var(--color-hot-dark);
+  background-color: var(--color-green-light);
   transform: translateY(-2px);
-  box-shadow: 0 14px 32px rgba(149, 50, 31, 0.32);
+  box-shadow: 0 14px 32px rgba(139, 224, 149, 0.5);
 }
 
 .btnSec {

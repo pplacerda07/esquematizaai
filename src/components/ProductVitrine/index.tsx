@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { capaDe } from '@/data/catalogo';
 import { catalogoParaVitrine } from '@/lib/catalogo-ajustes';
 import Catalogo, { type ItemVitrine } from './Catalogo';
@@ -44,5 +45,15 @@ export default async function ProductVitrine() {
     itens.push(item);
   }
 
-  return <Catalogo itens={itens} />;
+  /**
+   * Suspense obrigatório: o Catalogo lê a busca e o tipo da URL com
+   * useSearchParams, e sem esta fronteira o Next não consegue pré-renderizar
+   * /vitrine, derrubando o build. Com ela, a página continua estática e só a
+   * leitura dos parâmetros acontece no cliente.
+   */
+  return (
+    <Suspense fallback={null}>
+      <Catalogo itens={itens} />
+    </Suspense>
+  );
 }
