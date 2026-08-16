@@ -1,0 +1,157 @@
+.secao {
+  margin-top: 3rem;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.15;
+  color: var(--color-neutral-dark);
+  margin: 0 0 0.5rem;
+}
+
+.acento {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+  text-transform: lowercase; /* Moonlight sempre em minúsculas */
+}
+
+.nota {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(35, 33, 44, 0.6);
+  margin: 0 0 1.25rem;
+}
+
+.bloco + .bloco {
+  margin-top: 2rem;
+}
+
+.subtitulo {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-cold-dark);
+  opacity: 0.7;
+  margin: 0 0 0.7rem;
+}
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* --------------------------------------------------------------- sanfona */
+
+.sanfona {
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+/* A barra usa o azul-claro da marca, não o azul médio: são muitas barras
+   empilhadas, e um bloco forte repetido 80 vezes vira parede de cor. */
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  background-color: var(--color-cold-light);
+  color: var(--color-cold-dark);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.35;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  list-style: none; /* tira o triângulo padrão do <summary> */
+  transition: background-color 0.2s ease;
+}
+
+.barra::-webkit-details-marker {
+  display: none;
+}
+
+.barra:hover {
+  background-color: #a8d9ea;
+}
+
+.sanfona summary:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}
+
+.nomeDisciplina {
+  flex: 1;
+  min-width: 0;
+}
+
+.medida {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.seta {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.sanfona[open] .seta {
+  transform: rotate(180deg);
+}
+
+.sanfona[open] .barra {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* ---------------------------------------------------------------- tópicos */
+
+/* A numeração vem do <ol>, e não do texto: as linhas da planilha já trazem
+   códigos como "02.01." em alguns casos e nada em outros. Deixar o navegador
+   numerar dá uma lista uniforme, e o código original continua visível na linha. */
+.topicos {
+  margin: 0;
+  padding: 0.9rem 1.1rem 1.1rem 2.6rem;
+  background-color: #fff;
+  border: 1.5px solid var(--color-cold-light);
+  border-top: none;
+  border-radius: 0 0 0.6rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-neutral-dark);
+}
+
+.topicos li {
+  padding-left: 0.25rem;
+}
+
+.topicos li + li {
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 560px) {
+  .titulo {
+    font-size: 1.7rem;
+  }
+  .barra {
+    font-size: 0.95rem;
+    padding: 0.85rem 0.9rem;
+  }
+  /* o número do item já ocupa espaço; menos recuo deixa mais linha para o texto */
+  .topicos {
+    padding-left: 2.1rem;
+    font-size: 0.88rem;
+  }
+}

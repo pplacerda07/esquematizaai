@@ -10,6 +10,8 @@ import BarraCompra from '@/components/BarraCompra';
 import FaqProduto from '@/components/FaqProduto';
 import AutoridadeCientifica from '@/components/AutoridadeCientifica';
 import GaleriaMaterial from '@/components/GaleriaMaterial';
+import SumarioDisciplinas from '@/components/SumarioDisciplinas';
+import { sumarioDoProduto } from '@/lib/sumario-produto';
 import Depoimentos from '@/components/Depoimentos';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
@@ -84,6 +86,8 @@ export default async function ProdutoPage({
   // AutoridadeCientifica argumenta por recuperação e espaçamento, que é o
   // mecanismo do flashcard; num combo isso continua valendo.
   const ehFlashcards = temFlashcards;
+
+  const disciplinasDoSumario = sumarioDoProduto(produto, temResumos, temFlashcards);
   const conteudo = conteudoDe(produto);
   const sobre = conteudo.sobre ?? null;
   const selos = selosDe(produto);
@@ -256,7 +260,15 @@ export default async function ProdutoPage({
               </section>
             )}
 
-            {conteudo.sumario && (
+            {/* Sanfona por disciplina. Vem da aba de sumários da planilha, não
+                do texto raspado, e por isso funciona em assinatura e combo, onde
+                o campo `disciplinas` do produto vem vazio. Era justamente essa
+                falta que o Sérgio apontou. */}
+            <SumarioDisciplinas disciplinas={disciplinasDoSumario} />
+
+            {/* o sumário em texto corrido só entra quando a sanfona não achou
+                a disciplina na planilha, para o produto não ficar sem nenhum */}
+            {disciplinasDoSumario.length === 0 && conteudo.sumario && (
               <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
                   Sumário <span className={styles.sectionAccent}>completo</span>
