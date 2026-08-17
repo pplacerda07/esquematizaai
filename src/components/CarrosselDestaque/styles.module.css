@@ -16,29 +16,37 @@
   display: none;
 }
 
+/* Azul Marinho, e não branco.
+   Branco (#fff) sobre o cinza do hero (#f7f7f7) é quase a mesma cor: o cartão
+   sumia, parecia um retângulo solto no meio da coluna em vez de um bloco da
+   página. No escuro ele vira o ponto de peso da direita, a capa salta e o botão
+   verde salta junto. */
 .slide {
   flex: 0 0 100%;
   box-sizing: border-box;
   scroll-snap-align: start;
   display: flex;
-  align-items: stretch;
-  gap: 1.25rem;
-  padding: 1.15rem;
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 20px 44px rgba(38, 52, 79, 0.16);
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.6rem;
+  background-color: var(--color-cold-dark);
+  border-radius: 1.1rem;
+  box-shadow: 0 24px 50px rgba(38, 52, 79, 0.3);
 }
 
 /* 452x640 é a proporção das capas do catálogo. Como a capa manda na altura do
    cartão, ela aparece inteira e sem sobra ao lado: o cover só corta se a arte
    vier em outra proporção, e aí cortar é melhor do que deixar barra vazia. */
+/* 200px e não 170: a coluna da direita tinha 301px de altura contra 635px da
+   esquerda, e o cartão ficava miúdo ao lado da chamada. */
 .arte {
   position: relative;
-  flex: 0 0 170px;
+  flex: 0 0 200px;
   aspect-ratio: 452 / 640;
-  border-radius: 0.6rem;
+  border-radius: 0.7rem;
   overflow: hidden;
   background-color: var(--color-cold-light);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
 }
 
 .arte img {
@@ -56,19 +64,20 @@
 
 .titulo {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   line-height: 1.15;
-  color: var(--color-neutral-dark);
-  margin: 0 0 0.4rem;
+  color: var(--color-neutral-light);
+  margin: 0 0 0.5rem;
 }
 
+/* azul-claro da marca: sobre o Azul Marinho fica legível e não compete com o
+   branco do título */
 .linha {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   line-height: 1.5;
-  color: var(--color-cold-dark);
-  opacity: 0.85;
-  margin: 0 0 1rem;
+  color: var(--color-cold-light);
+  margin: 0 0 1.15rem;
 }
 
 .botao {
@@ -112,14 +121,14 @@
   top: 0;
   bottom: 23px; /* altura das bolinhas mais o respiro acima delas */
   margin-block: auto;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: #fff;
   color: var(--color-cold-dark);
   font-size: 1.5rem;
   line-height: 1;
