@@ -1,8 +1,11 @@
-/* Fica entre a barra do cupom e o hero, então usa o mesmo cinza claro do hero
-   para os três blocos lerem como um só, sem faixa de cor nova no meio. */
+/* Sem fundo próprio: o bloco mora dentro do hero e herda o dele. Ter um fundo
+   aqui criava uma emenda logo abaixo da busca, porque a mancha desfocada do
+   hero era cortada nessa altura.
+   Sem padding lateral pelo mesmo motivo: quem afasta das bordas é o hero. */
 .faixa {
-  background-color: var(--color-neutral-light);
-  padding: 1.5rem 5% 0;
+  position: relative;
+  z-index: 1; /* acima da mancha desfocada */
+  padding-bottom: 2rem;
 }
 
 .container {

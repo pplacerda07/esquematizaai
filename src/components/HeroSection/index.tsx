@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import Countdown from './Countdown';
 import UrgencyBar from './UrgencyBar';
 import BuscaEAtalhos from '@/components/BuscaEAtalhos';
+import CarrosselDestaque, { MOSTRAR_CARROSSEL_DESTAQUE } from '@/components/CarrosselDestaque';
 import LiveTicker from './LiveTicker';
 import OfferCarousel, { type OfertaHero } from './OfferCarousel';
 import { produtoPor, ofertaAtual } from '@/data/catalogo';
@@ -60,14 +61,19 @@ export default function HeroSection() {
     <>
       <UrgencyBar />
 
-      {/* Ordem pedida pelo Sérgio: cupom, busca, atalhos por tipo, e só então a
-          chamada. Quem chega sabendo o que quer resolve nas duas primeiras
-          linhas, sem ter de ler o hero inteiro para achar o caminho. */}
-      <BuscaEAtalhos />
-
       <section className={styles.hero}>
         <div className={`${styles.decoration} ${styles.decorationTopLeft}`}></div>
         <div className={`${styles.decoration} ${styles.decorationBottomRight}`}></div>
+
+        {/* Ordem pedida pelo Sérgio: cupom, busca, atalhos por tipo, e só então
+            a chamada. Quem chega sabendo o que quer resolve nas duas primeiras
+            linhas, sem ler o hero inteiro para achar o caminho.
+
+            Fica DENTRO do hero de propósito. Como seção separada, a mancha
+            desfocada do canto superior esquerdo era cortada a seco na borda do
+            hero e criava um risco visível bem embaixo da busca. Sem fronteira
+            entre os dois, o desfoque passa por trás e some sozinho. */}
+        <BuscaEAtalhos />
 
         <div className={styles.container}>
           <div className={styles.columnLeft}>
@@ -130,18 +136,28 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Carrossel de oferta com cronômetro: DESLIGADO, não removido.
-              Dois cronômetros na mesma tela, o do cupom lá em cima e o daqui,
-              dão cara de página de gatilho. Ligar de volta num lançamento ou
-              masterclass é trocar MOSTRAR_OFERTA_NO_HERO para true. */}
-          {MOSTRAR_OFERTA_NO_HERO && (
+          {/* A coluna da direita tem dois moradores possíveis, os dois
+              desligados hoje:
+
+              1. Oferta com cronômetro. Sai porque o cupom no topo já tem um, e
+                 dois cronômetros na mesma tela dão cara de página de gatilho.
+              2. Carrossel de destaque, para lançamento e masterclass. Sai
+                 porque ainda não existe banner: ligar com a lista vazia
+                 deixaria um retângulo cinza ocupando meia tela.
+
+              Ligar qualquer um é trocar a constante correspondente. */}
+          {(MOSTRAR_OFERTA_NO_HERO || MOSTRAR_CARROSSEL_DESTAQUE) && (
             <div className={styles.columnRight}>
               <div className={styles.blobBackground}></div>
 
-              <div className={styles.offerStack}>
-                <Countdown />
-                <OfferCarousel ofertas={ofertas} />
-              </div>
+              {MOSTRAR_CARROSSEL_DESTAQUE && <CarrosselDestaque />}
+
+              {MOSTRAR_OFERTA_NO_HERO && (
+                <div className={styles.offerStack}>
+                  <Countdown />
+                  <OfferCarousel ofertas={ofertas} />
+                </div>
+              )}
             </div>
           )}
         </div>

@@ -129,8 +129,15 @@
   z-index: 0;
 }
 
+/* top positivo, e não -120px.
+   O hero tem overflow: hidden, então qualquer parte da mancha acima da borda
+   era cortada a seco, e o corte aparecia como um risco reto logo abaixo da
+   barra do cupom, encostando na busca. Com o círculo inteiro dentro, o desfoque
+   termina sozinho e não sobra aresta.
+   Na esquerda o corte continua, mas ali a borda é a da tela: não faz emenda
+   com nada. */
 .decorationTopLeft {
-  top: -120px;
+  top: 140px;
   left: -120px;
   width: 340px;
   height: 340px;

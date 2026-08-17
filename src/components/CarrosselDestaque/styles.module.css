@@ -1,0 +1,158 @@
+.palco {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
+
+.trilho {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-radius: 1rem;
+  scrollbar-width: none;
+}
+
+.trilho::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 44px rgba(38, 52, 79, 0.16);
+}
+
+.arte {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-cold-light);
+}
+
+.arte img {
+  object-fit: cover;
+}
+
+.texto {
+  padding: 1.15rem 1.35rem 1.4rem;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--color-neutral-dark);
+  margin: 0 0 0.35rem;
+}
+
+.linha {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--color-cold-dark);
+  opacity: 0.85;
+  margin: 0 0 1rem;
+}
+
+/* Verde, igual aos outros botões de ação do site. Texto em Azul Marinho pelo
+   contraste: com branco o verde da marca dá 1,59:1. */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+  background-color: var(--color-green-primary);
+  color: var(--color-cold-dark);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 0.55rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.botao:hover {
+  background-color: var(--color-green-light);
+}
+
+.botao:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------- navegação */
+
+/* Setas por cima da arte, como na referência do Sérgio. */
+.seta {
+  position: absolute;
+  top: 28%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: var(--color-cold-dark);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(38, 52, 79, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.seta:hover {
+  background-color: #fff;
+}
+
+.seta:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}
+
+.setaEsquerda {
+  left: 0.7rem;
+}
+
+.setaDireita {
+  right: 0.7rem;
+}
+
+.bolinhas {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.bolinha {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(38, 52, 79, 0.25);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bolinha:focus-visible {
+  outline: 2px solid var(--color-cold-primary);
+  outline-offset: 3px;
+}
+
+.bolinhaAtiva {
+  background-color: var(--color-hot-primary);
+  transform: scale(1.3);
+}
+
+@media (max-width: 900px) {
+  .palco {
+    max-width: none;
+  }
+}
