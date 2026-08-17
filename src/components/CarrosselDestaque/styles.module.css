@@ -26,15 +26,18 @@
   box-shadow: 0 20px 44px rgba(38, 52, 79, 0.16);
 }
 
+/* 452x640 é a proporção das capas do catálogo. Banner de campanha costuma vir
+   deitado, e nesse caso o contain mostra a arte inteira em vez de cortar. */
 .arte {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 452 / 640;
+  max-height: 330px;
   background-color: var(--color-cold-light);
 }
 
 .arte img {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .texto {

@@ -3,10 +3,10 @@ import styles from './styles.module.css';
 import Countdown from './Countdown';
 import UrgencyBar from './UrgencyBar';
 import BuscaEAtalhos from '@/components/BuscaEAtalhos';
-import CarrosselDestaque, { MOSTRAR_CARROSSEL_DESTAQUE } from '@/components/CarrosselDestaque';
+import CarrosselDestaque, { DESTAQUES, type Destaque } from '@/components/CarrosselDestaque';
 import LiveTicker from './LiveTicker';
 import OfferCarousel, { type OfertaHero } from './OfferCarousel';
-import { produtoPor, ofertaAtual } from '@/data/catalogo';
+import { produtoPor, ofertaAtual, capaDe, formatarPreco } from '@/data/catalogo';
 
 // Ofertas reais que giram no card do hero: o combo completo de cada área + a
 // assinatura mais completa. Se um produto perder preço ou destino de compra no
@@ -55,6 +55,27 @@ export default function HeroSection() {
           checkout: o.checkout,
         }]
       : [];
+  });
+
+  /**
+   * Destaques do carrossel enquanto não há campanha: os mesmos materiais da
+   * lista acima, com capa, preço e link tirados do catálogo. Nada inventado.
+   * Produto sem capa fica de fora, senão o slide abriria um retângulo vazio.
+   */
+  const destaquesDosProdutos: Destaque[] = HERO_OFERTA_IDS.flatMap((id) => {
+    const p = produtoPor(id);
+    const o = p ? ofertaAtual(p) : null;
+    const capa = p ? capaDe(p) : null;
+    if (!p || !o || !capa) return [];
+
+    return [{
+      src: capa.src,
+      alt: `Capa do material ${p.nome}`,
+      titulo: p.nome,
+      linha: `${formatarPreco(o.preco)} à vista ou 12x de ${formatarPreco(o.parcela12x)}`,
+      href: `/vitrine/produto/${p.id}`,
+      rotuloDoBotao: 'Ver material',
+    }];
   });
 
   return (
@@ -136,30 +157,30 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* A coluna da direita tem dois moradores possíveis, os dois
-              desligados hoje:
+          {/* Coluna da direita.
 
-              1. Oferta com cronômetro. Sai porque o cupom no topo já tem um, e
-                 dois cronômetros na mesma tela dão cara de página de gatilho.
-              2. Carrossel de destaque, para lançamento e masterclass. Sai
-                 porque ainda não existe banner: ligar com a lista vazia
-                 deixaria um retângulo cinza ocupando meia tela.
+              O bloco de oferta com cronômetro segue desligado: o cupom no topo
+              já tem um, e dois cronômetros na mesma tela dão cara de página de
+              gatilho, como o próprio Sérgio apontou.
 
-              Ligar qualquer um é trocar a constante correspondente. */}
-          {(MOSTRAR_OFERTA_NO_HERO || MOSTRAR_CARROSSEL_DESTAQUE) && (
-            <div className={styles.columnRight}>
-              <div className={styles.blobBackground}></div>
+              No lugar dele, o carrossel de destaque. Sem campanha cadastrada
+              ele mostra os materiais em destaque, com capa, preço e link de
+              verdade. Quando vier a arte de um lançamento, basta preencher
+              DESTAQUES no componente e a campanha entra no lugar. */}
+          <div className={styles.columnRight}>
+            <div className={styles.blobBackground}></div>
 
-              {MOSTRAR_CARROSSEL_DESTAQUE && <CarrosselDestaque />}
-
-              {MOSTRAR_OFERTA_NO_HERO && (
-                <div className={styles.offerStack}>
-                  <Countdown />
-                  <OfferCarousel ofertas={ofertas} />
-                </div>
-              )}
-            </div>
-          )}
+            {MOSTRAR_OFERTA_NO_HERO ? (
+              <div className={styles.offerStack}>
+                <Countdown />
+                <OfferCarousel ofertas={ofertas} />
+              </div>
+            ) : (
+              <CarrosselDestaque
+                destaques={DESTAQUES.length > 0 ? DESTAQUES : destaquesDosProdutos}
+              />
+            )}
+          </div>
         </div>
       </section>
     </>

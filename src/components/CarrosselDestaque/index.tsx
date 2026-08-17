@@ -11,9 +11,11 @@ import styles from './styles.module.css';
  * passa sozinho e a pessoa também passa, no formato que o Sérgio mandou de
  * referência.
  *
- * ESTÁ DESLIGADO. Não porque falte código, e sim porque não há banner: ligar com
- * a lista vazia deixaria um retângulo cinza ocupando meia tela. Quando houver
- * uma arte, é preencher DESTAQUES abaixo e trocar MOSTRAR para true.
+ * ENQUANTO NÃO HÁ CAMPANHA, ele mostra os materiais em destaque, com capa,
+ * preço e link reais do catálogo. Deixar a coluna vazia abria metade da tela
+ * de buraco ao lado da chamada, e encher com arte inventada seria pior. Quando
+ * vier a arte de um lançamento, preencher DESTAQUES faz a campanha entrar no
+ * lugar dos produtos, sem mexer em mais nada.
  *
  * A rolagem é nativa com scroll-snap, então arrastar no celular funciona sem
  * código; as setas e as bolinhas só empurram a mesma rolagem.
@@ -31,15 +33,15 @@ export type Destaque = {
   rotuloDoBotao: string;
 };
 
-/** Nenhum banner hoje. Preencher aqui quando houver lançamento. */
+/**
+ * Banners de campanha. Vazio hoje: quando houver lançamento ou masterclass,
+ * é preencher aqui e o carrossel passa a mostrar a arte em vez dos produtos.
+ */
 export const DESTAQUES: Destaque[] = [];
-
-/** Liga o bloco. Só faz sentido com DESTAQUES preenchido. */
-export const MOSTRAR_CARROSSEL_DESTAQUE = false;
 
 const INTERVALO_MS = 5000;
 
-export default function CarrosselDestaque({ destaques = DESTAQUES }: { destaques?: Destaque[] }) {
+export default function CarrosselDestaque({ destaques }: { destaques: Destaque[] }) {
   const trilho = useRef<HTMLDivElement>(null);
   const [indice, setIndice] = useState(0);
   const [pausado, setPausado] = useState(false);
