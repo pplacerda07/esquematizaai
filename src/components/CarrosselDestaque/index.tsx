@@ -87,8 +87,13 @@ export default function CarrosselDestaque({ destaques }: { destaques: Destaque[]
       <div className={styles.trilho} ref={trilho} role="group" aria-label="Destaques">
         {destaques.map((d) => (
           <article key={d.src} className={styles.slide}>
+            {/* Capa à esquerda e texto à direita.
+                Empilhado, a caixa da arte ficava deitada e a capa, que é em pé,
+                encolhia para caber na altura: sobravam 163px de fundo vazio de
+                cada lado dela. Lado a lado, a capa ocupa a altura toda do cartão
+                e nada fica sobrando. */}
             <div className={styles.arte}>
-              <Image src={d.src} alt={d.alt} fill sizes="(max-width: 900px) 92vw, 520px" />
+              <Image src={d.src} alt={d.alt} fill sizes="(max-width: 900px) 40vw, 170px" />
             </div>
 
             <div className={styles.texto}>

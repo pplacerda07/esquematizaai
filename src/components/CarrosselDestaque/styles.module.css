@@ -20,45 +20,59 @@
   flex: 0 0 100%;
   box-sizing: border-box;
   scroll-snap-align: start;
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  padding: 1.15rem;
   background-color: #fff;
   border-radius: 1rem;
-  overflow: hidden;
   box-shadow: 0 20px 44px rgba(38, 52, 79, 0.16);
 }
 
-/* 452x640 é a proporção das capas do catálogo. Banner de campanha costuma vir
-   deitado, e nesse caso o contain mostra a arte inteira em vez de cortar. */
+/* 452x640 é a proporção das capas do catálogo. Como a capa manda na altura do
+   cartão, ela aparece inteira e sem sobra ao lado: o cover só corta se a arte
+   vier em outra proporção, e aí cortar é melhor do que deixar barra vazia. */
 .arte {
   position: relative;
-  width: 100%;
+  flex: 0 0 170px;
   aspect-ratio: 452 / 640;
-  max-height: 330px;
+  border-radius: 0.6rem;
+  overflow: hidden;
   background-color: var(--color-cold-light);
 }
 
 .arte img {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .texto {
-  padding: 1.15rem 1.35rem 1.4rem;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 0.25rem;
 }
 
 .titulo {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   line-height: 1.15;
   color: var(--color-neutral-dark);
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.4rem;
 }
 
 .linha {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   line-height: 1.5;
   color: var(--color-cold-dark);
   opacity: 0.85;
   margin: 0 0 1rem;
+}
+
+.botao {
+  align-self: flex-start;
 }
 
 /* Verde, igual aos outros botões de ação do site. Texto em Azul Marinho pelo
@@ -89,10 +103,15 @@
 
 /* ------------------------------------------------------------- navegação */
 
-/* Setas por cima da arte, como na referência do Sérgio. */
+/* Centradas na altura do CARTÃO, não do palco.
+   Com top: 50% elas caíam abaixo do centro, porque os 50% contavam também a
+   faixa das bolinhas. Ancorando em cima e embaixo, com o recuo da altura das
+   bolinhas, a margem automática centra na área que interessa. */
 .seta {
   position: absolute;
-  top: 28%;
+  top: 0;
+  bottom: 23px; /* altura das bolinhas mais o respiro acima delas */
+  margin-block: auto;
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -118,12 +137,30 @@
   outline-offset: 2px;
 }
 
+/* meio para fora do cartão: dentro, cobririam a capa ou o texto */
 .setaEsquerda {
-  left: 0.7rem;
+  left: -18px;
 }
 
 .setaDireita {
-  right: 0.7rem;
+  right: -18px;
+}
+
+@media (max-width: 900px) {
+  .setaEsquerda {
+    left: 0.4rem;
+  }
+  .setaDireita {
+    right: 0.4rem;
+  }
+}
+
+/* No celular as setas saem: com o cartão estreito elas cobriam a capa, e ali o
+   dedo arrasta direto. Ficam as bolinhas, que também navegam. */
+@media (max-width: 640px) {
+  .seta {
+    display: none;
+  }
 }
 
 .bolinhas {
@@ -157,5 +194,20 @@
 @media (max-width: 900px) {
   .palco {
     max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  /* capa menor: em telas estreitas, 170px de capa deixavam menos de 25
+     caracteres por linha no texto ao lado */
+  .arte {
+    flex-basis: 120px;
+  }
+  .titulo {
+    font-size: 1.15rem;
+  }
+  .slide {
+    gap: 0.9rem;
+    padding: 0.9rem;
   }
 }
