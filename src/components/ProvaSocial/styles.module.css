@@ -1,0 +1,44 @@
+.secao {
+  background-color: #ffffff;
+  padding: 5rem 5% 5.5rem;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--color-neutral-dark);
+  margin: 0 0 3rem;
+  text-align: center;
+}
+
+.acento {
+  font-family: var(--font-accent);
+  color: var(--color-hot-primary);
+  text-transform: lowercase; /* Moonlight sempre em minúsculas */
+}
+
+.bloco + .bloco {
+  margin-top: 3.5rem;
+}
+
+/* Rótulo discreto, não segundo título.
+   O ponto da mudança era tirar a repetição: repetir um título grande aqui
+   traria o problema de volta. Isto só diz de que tipo é o carrossel abaixo. */
+.rotulo {
+  max-width: 1180px;
+  margin: 0 auto 1rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cold-dark);
+  opacity: 0.55;
+}
+
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 2.5rem;
+  }
+}

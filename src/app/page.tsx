@@ -1,8 +1,7 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import BlogPreview from '@/components/BlogPreview';
-import Testimonials from '@/components/Testimonials';
-import VideosDepoimentos from '@/components/VideosDepoimentos';
+import ProvaSocial from '@/components/ProvaSocial';
 import SocialTicker from '@/components/SocialTicker';
 import StatsTicker from '@/components/StatsTicker';
 import FeaturedCourses from '@/components/FeaturedCourses';
@@ -24,10 +23,8 @@ export default function Home() {
       <SocialTicker />
       <FeaturedCourses />
       <BlogPreview />
-      {/* vídeo antes do texto: o rosto da pessoa falando convence mais rápido
-          que a transcrição, e quem quiser ler tem os prints logo abaixo */}
-      <VideosDepoimentos />
-      <Testimonials />
+      {/* um título, dois carrosséis: vídeo em cima, prints embaixo */}
+      <ProvaSocial />
       <ProductVitrine />
       <Arsenal />
       <AboutUs />

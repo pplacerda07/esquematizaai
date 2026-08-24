@@ -133,11 +133,6 @@ export default function Testimonials() {
   };
 
   return (
-    <section className={styles.secao}>
-      <h2 className={styles.title}>
-        O Que Dizem Nossos <span className={styles.titleAccent}>alunos</span>
-      </h2>
-
       <div
         className={styles.palco}
         onMouseEnter={() => setPausado(true)}
@@ -214,6 +209,5 @@ export default function Testimonials() {
           </button>
         </div>
       </div>
-    </section>
   );
 }

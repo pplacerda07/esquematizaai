@@ -1,28 +1,3 @@
-/* Branco puro, igual às seções vizinhas. Antes era o cinza claro
-   (--color-neutral-light), e ao lado do catálogo, que é branco, a seção parecia
-   uma faixa acinzentada solta no meio da página. */
-.secao {
-  background-color: #ffffff;
-  padding: 5rem 5% 5.5rem;
-}
-
-.title {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
-  color: var(--color-neutral-dark);
-  line-height: 1.1;
-  /* 3rem porque a linha de apoio que ficava aqui embaixo saiu: ela explicava
-     que os prints eram reais, e explicar isso é o que faz parecer que não são. */
-  margin: 0 0 3rem;
-  text-align: center;
-}
-
-.titleAccent {
-  font-family: var(--font-accent);
-  color: var(--color-hot-primary);
-  text-transform: lowercase; /* Moonlight sempre em minúsculas */
-}
-
 /* Carrossel: passa sozinho a cada 3s e a pessoa também pode passar.
    A rolagem é nativa com scroll-snap, então arrastar com o dedo no celular já
    funciona sem código nenhum, e as setas e bolinhas apenas empurram a mesma
@@ -234,9 +209,6 @@
 
 
 @media (max-width: 560px) {
-  .title {
-    font-size: 2.5rem;
-  }
   /* Empilha: lado a lado, a janela do print deixaria a coluna de texto com
      menos de 20 caracteres por linha, que é ilegível. */
   .cartao {

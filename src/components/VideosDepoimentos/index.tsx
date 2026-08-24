@@ -19,6 +19,10 @@ import styles from './styles.module.css';
  * Os quatro vídeos são 16:9. Os dois gravados na vertical já vieram montados
  * dentro desse formato por quem editou, com fundo desfocado nas laterais, então
  * não há mistura de proporção para resolver aqui.
+ *
+ * NÃO TEM SEÇÃO NEM TÍTULO PRÓPRIOS: quem monta isso é o ProvaSocial, que
+ * reúne este carrossel e o dos prints sob um título só. Separados, a página
+ * trazia dois títulos grandes seguidos dizendo a mesma coisa.
  */
 
 type Depoimento = {
@@ -72,11 +76,6 @@ export default function VideosDepoimentos() {
   }, [pausado, tocando]);
 
   return (
-    <section className={styles.secao}>
-      <h2 className={styles.titulo}>
-        Alunos falando <span className={styles.acento}>da gente</span>
-      </h2>
-
       <div
         className={styles.palco}
         onMouseEnter={() => setPausado(true)}
@@ -176,6 +175,5 @@ export default function VideosDepoimentos() {
           </button>
         </div>
       </div>
-    </section>
   );
 }
