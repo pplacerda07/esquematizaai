@@ -28,6 +28,29 @@ const nextConfig: NextConfig = {
   // ao atacante qual falha conhecida tentar
   poweredByHeader: false,
 
+  /**
+   * Única origem externa liberada para o otimizador de imagens: a pasta pública
+   * do NOSSO Supabase, de onde vêm as capas dos vídeos de depoimento.
+   *
+   * O padrão do Next é recusar qualquer endereço de fora, e é por isso que ele
+   * não pode ser usado como conversor de imagem de terceiros: alguém pediria
+   * /_next/image?url=site-de-outra-pessoa e gastaria a nossa banda processando
+   * arquivo alheio, além de expor o processador de imagem a arquivos preparados
+   * para atacar.
+   *
+   * Por isso a liberação é estreita: só este host, só https, e só o caminho de
+   * arquivo público. Nem o resto da API do Supabase entra.
+   */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "xjcasijvuzjtnaxxvunm.supabase.co",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
+  },
+
   async headers() {
     return [
       { source: "/:path*", headers: cabecalhosDeSeguranca },

@@ -24,6 +24,11 @@ export const whatsappUrl = (mensagem: string) =>
 export const AMOSTRAS_DRIVE_URL =
   'https://drive.google.com/drive/folders/1zHPjcFj8e86R4681MfL9LbkS-2a34f_O?usp=sharing';
 
+// Pasta pública dos vídeos de depoimento, no Supabase Storage.
+// Cada aluno tem dois arquivos com o mesmo nome: <slug>.mp4 e <slug>.jpg.
+export const DEPOIMENTOS_VIDEO_BASE =
+  'https://xjcasijvuzjtnaxxvunm.supabase.co/storage/v1/object/public/depoimentos';
+
 // Google Analytics 4. Vazio desliga a medição em todo o site.
 export const GA_MEDICAO_ID = 'G-ZLPK9R4PZ6';
 
