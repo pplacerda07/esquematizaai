@@ -65,11 +65,15 @@ export default function SumarioDisciplinas({ disciplinas }: Props) {
                     </span>
                   </summary>
 
-                  <ol className={styles.topicos}>
+                  {/* Sem numeração do navegador: as linhas da planilha já vêm
+                      numeradas ("01.", "02.01."), e a lista ordenada punha um
+                      segundo número ao lado, criando duas colunas de contagem
+                      que não batiam entre si. */}
+                  <ul className={styles.topicos}>
                     {d.topicos.map((t, i) => (
                       <li key={`${t}-${i}`}>{t}</li>
                     ))}
-                  </ol>
+                  </ul>
                 </details>
               </li>
             ))}

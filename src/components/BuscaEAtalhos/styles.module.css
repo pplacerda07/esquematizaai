@@ -87,10 +87,12 @@
 
 /* --------------------------------------------------------------- atalhos */
 
+/* nowrap: "Cursos isolados" é o mais largo dos três e caía sozinho para a
+   linha de baixo, o que fazia os atalhos parecerem dois grupos */
 .atalhos {
   display: flex;
   gap: 0.6rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 /* Contorno e não preenchido: o botão de ação do hero está logo abaixo, e três
@@ -124,9 +126,25 @@
 }
 
 @media (max-width: 720px) {
+  /* No celular a busca e os atalhos empilham, e o respiro entre eles somado ao
+     do container abria dois vãos grandes: um entre a barra do cupom e a busca,
+     outro entre a busca e a chamada. Aqui os espaços encolhem para o bloco
+     ficar junto, como uma barra só. */
+  .faixa {
+    padding-bottom: 1.25rem;
+  }
   .container {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.6rem;
+  }
+  /* O flex-basis de 340px do formulário existe para reservar LARGURA quando os
+     dois ficam lado a lado. Em coluna, o eixo principal vira o vertical e esse
+     mesmo valor passa a reservar ALTURA: o campo de 44px ganhava uma caixa de
+     340px, e era daí que vinham os dois vãos enormes do print. */
+  .form {
+    flex: 0 0 auto;
+    width: 100%;
   }
   .atalhos {
     /* rola de lado em vez de quebrar em duas linhas e empurrar o hero */
@@ -135,5 +153,14 @@
   }
   .atalhos::-webkit-scrollbar {
     display: none;
+  }
+  .campo {
+    min-height: 44px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  .atalho {
+    min-height: 42px;
+    padding: 0.55rem 1rem;
   }
 }

@@ -117,12 +117,12 @@
 
 /* ---------------------------------------------------------------- tópicos */
 
-/* A numeração vem do <ol>, e não do texto: as linhas da planilha já trazem
-   códigos como "02.01." em alguns casos e nada em outros. Deixar o navegador
-   numerar dá uma lista uniforme, e o código original continua visível na linha. */
+/* Sem marcador nem numeração: a numeração já vem escrita em cada linha da
+   planilha, e somar a do navegador dava duas contagens lado a lado. */
 .topicos {
+  list-style: none;
   margin: 0;
-  padding: 0.9rem 1.1rem 1.1rem 2.6rem;
+  padding: 0.9rem 1.1rem 1.1rem;
   background-color: #fff;
   border: 1.5px solid var(--color-cold-light);
   border-top: none;
@@ -149,9 +149,8 @@
     font-size: 0.95rem;
     padding: 0.85rem 0.9rem;
   }
-  /* o número do item já ocupa espaço; menos recuo deixa mais linha para o texto */
   .topicos {
-    padding-left: 2.1rem;
+    padding: 0.8rem 0.9rem 0.9rem;
     font-size: 0.88rem;
   }
 }

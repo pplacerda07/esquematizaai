@@ -789,8 +789,11 @@
     padding: 0.5rem 1rem;
   }
 
+  /* Respiro de cima menor: quem abre a seção agora é a busca, colada na barra
+     do cupom. Com 2.5rem sobrava um vão entre as duas, e outro entre a busca e
+     a chamada, que era o que o Sérgio marcou no print do celular. */
   .hero {
-    padding: 2.5rem 5% 3.5rem;
+    padding: 1.1rem 5% 3.5rem;
   }
   .container {
     gap: 2rem;

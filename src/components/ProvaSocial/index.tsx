@@ -1,3 +1,4 @@
+import Depoimentos from '@/components/Depoimentos';
 import VideosDepoimentos from '@/components/VideosDepoimentos';
 import Testimonials from '@/components/Testimonials';
 import styles from './styles.module.css';
@@ -20,6 +21,14 @@ export default function ProvaSocial() {
       <h2 className={styles.titulo}>
         O que dizem nossos <span className={styles.acento}>alunos</span>
       </h2>
+
+      {/* Três tipos de prova, os mesmos da página de produto: quem foi
+          aprovado, quem falou em vídeo e quem escreveu no WhatsApp. Aprovação
+          primeiro porque é o resultado que a pessoa quer para si. */}
+      <div className={styles.bloco}>
+        <p className={styles.rotulo}>Alunos aprovados</p>
+        <Depoimentos />
+      </div>
 
       <div className={styles.bloco}>
         <p className={styles.rotulo}>Em vídeo</p>

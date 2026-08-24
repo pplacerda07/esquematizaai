@@ -126,6 +126,20 @@
   line-height: 1.1;
 }
 
+/* Divide os três tipos de prova social dentro da mesma seção, sem virar outro
+   título: repetir título grande aqui deixaria a página com cara de repetição,
+   que foi o problema corrigido na home. */
+.rotuloProva {
+  margin: 2.5rem 0 1rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cold-dark);
+  opacity: 0.55;
+}
+
 .sectionAccent {
   font-family: var(--font-accent);
   color: var(--color-hot-primary);

@@ -13,6 +13,8 @@ import GaleriaMaterial from '@/components/GaleriaMaterial';
 import SumarioDisciplinas from '@/components/SumarioDisciplinas';
 import { sumarioDoProduto } from '@/lib/sumario-produto';
 import Depoimentos from '@/components/Depoimentos';
+import VideosDepoimentos from '@/components/VideosDepoimentos';
+import Testimonials from '@/components/Testimonials';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
@@ -295,12 +297,23 @@ export default async function ProdutoPage({
 
             {/* Depois da galeria e antes do argumento científico: a pessoa acabou
                 de ver o material por dentro, e a pergunta que vem é "isso
-                funcionou para alguém?". */}
+                funcionou para alguém?".
+
+                Os três tipos de prova ficam juntos, como o Sérgio pediu: quem
+                foi aprovado, quem falou em vídeo e quem escreveu no WhatsApp.
+                Cada um convence um tipo de pessoa, e é a mesma dupla que a home
+                mostra, montada aqui pelos mesmos componentes. */}
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>
                 Alunos <span className={styles.sectionAccent}>aprovados</span>
               </h2>
               <Depoimentos />
+
+              <p className={styles.rotuloProva}>Em vídeo</p>
+              <VideosDepoimentos />
+
+              <p className={styles.rotuloProva}>Mensagens que recebemos</p>
+              <Testimonials />
             </section>
 
             {/* o argumento muda por material: para flashcard a evidência de
