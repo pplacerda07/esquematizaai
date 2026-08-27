@@ -56,9 +56,10 @@ const SEGMENTOS = [
 
 const PREFIXO_LINHA = 'linha:';
 
-// O Exame OAB não é concurso fiscal, e estava caindo no filtro Fiscal por falta
-// de área própria: quem filtrava por Fiscal via um combo de OAB no meio.
-const AREAS = ['Fiscal', 'Controle', 'Policial', 'Tribunais', 'Bancária', 'Legislativo', 'OAB'] as const;
+// OAB saiu daqui junto com o produto: o Combo Flashcards Exame OAB, único da
+// área, não veio na planilha de 27/08. O rótulo continua mapeado em rotulos.ts,
+// então basta o produto voltar para a área funcionar de novo.
+const AREAS = ['Fiscal', 'Controle', 'Policial', 'Tribunais', 'Bancária', 'Legislativo'] as const;
 
 // 6 = duas fileiras de 3 no desktop. Com 8, a última fileira ficava pela metade.
 const POR_PAGINA = 6;
