@@ -12,9 +12,9 @@ import AutoridadeCientifica from '@/components/AutoridadeCientifica';
 import GaleriaMaterial from '@/components/GaleriaMaterial';
 import SumarioDisciplinas from '@/components/SumarioDisciplinas';
 import { sumarioDoProduto } from '@/lib/sumario-produto';
-import Depoimentos from '@/components/Depoimentos';
+import { lerSobreposicaoSumario } from '@/lib/sumarios-painel';
 import VideosDepoimentos from '@/components/VideosDepoimentos';
-import Testimonials from '@/components/Testimonials';
+import CarrosselProva from '@/components/CarrosselProva';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
@@ -35,6 +35,13 @@ function publicaveis(): Produto[] {
 export function generateStaticParams() {
   return publicaveis().map((p) => ({ id: p.id }));
 }
+
+/**
+ * As páginas continuam sendo geradas na build, mas se refazem sozinhas a cada
+ * minuto. É o que faz o sumário editado no painel aparecer sem deploy, do mesmo
+ * jeito que já acontece com preço e destaque na vitrine.
+ */
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -89,7 +96,9 @@ export default async function ProdutoPage({
   // mecanismo do flashcard; num combo isso continua valendo.
   const ehFlashcards = temFlashcards;
 
-  const disciplinasDoSumario = sumarioDoProduto(produto, temResumos, temFlashcards);
+  // o que o Sérgio editou no painel entra por cima do que veio da planilha
+  const sobreposicao = await lerSobreposicaoSumario();
+  const disciplinasDoSumario = sumarioDoProduto(produto, temResumos, temFlashcards, sobreposicao);
   const conteudo = conteudoDe(produto);
   const sobre = conteudo.sobre ?? null;
   const selos = selosDe(produto);
@@ -300,20 +309,19 @@ export default async function ProdutoPage({
                 funcionou para alguém?".
 
                 Os três tipos de prova ficam juntos, como o Sérgio pediu: quem
-                foi aprovado, quem falou em vídeo e quem escreveu no WhatsApp.
-                Cada um convence um tipo de pessoa, e é a mesma dupla que a home
-                mostra, montada aqui pelos mesmos componentes. */}
+                falou em vídeo, quem foi aprovado e quem escreveu no WhatsApp.
+                O vídeo abre porque é a prova mais difícil de forjar, e é a
+                mesma ordem da home, montada pelos mesmos componentes. */}
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>
-                Alunos <span className={styles.sectionAccent}>aprovados</span>
+                O que dizem nossos <span className={styles.sectionAccent}>alunos</span>
               </h2>
-              <Depoimentos />
 
               <p className={styles.rotuloProva}>Em vídeo</p>
               <VideosDepoimentos />
 
-              <p className={styles.rotuloProva}>Mensagens que recebemos</p>
-              <Testimonials />
+              <p className={styles.rotuloProva}>Aprovados e mensagens que recebemos</p>
+              <CarrosselProva />
             </section>
 
             {/* o argumento muda por material: para flashcard a evidência de

@@ -25,6 +25,8 @@ const IconArrowLeft = () => (
 
 const navItems = [
   { href: '/admin/materiais', label: 'Materiais', icon: <IconPackage /> },
+  { href: '/admin/sumarios', label: 'Sumários', icon: <IconFile /> },
+  { href: '/admin/cursos', label: 'Cursos', icon: <IconPackage /> },
   { href: '/admin/noticias', label: 'Notícias', icon: <IconFile /> },
   { href: '/admin/blog', label: 'Blog', icon: <IconFile /> },
 ];
