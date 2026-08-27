@@ -1,7 +1,8 @@
 'use client';
 
 import { useMemo, useState, useTransition } from 'react';
-import { salvarSumario, devolverParaPlanilha, salvarArea } from './actions';
+import { useRouter } from 'next/navigation';
+import { salvarSumario, devolverParaPlanilha, salvarArea, criarDisciplina } from './actions';
 import styles from './page.module.css';
 
 export interface DisciplinaAdmin {
@@ -24,9 +25,11 @@ export interface DisciplinaAdmin {
 const AREAS = ['Fiscal', 'Gestão e Controle', 'Policial', 'Tribunal', 'Bancária', 'Legislativo'];
 
 export default function Gerenciador({ itens }: { itens: DisciplinaAdmin[] }) {
+  const router = useRouter();
   const [busca, setBusca] = useState('');
   const [filtro, setFiltro] = useState<'todas' | 'planilha' | 'painel' | 'sem-area'>('todas');
   const [abertaId, setAbertaId] = useState<string | null>(null);
+  const [criando, setCriando] = useState(false);
   const [aviso, setAviso] = useState<{ id: string; texto: string; erro: boolean } | null>(null);
   const [salvando, iniciar] = useTransition();
 
@@ -77,7 +80,109 @@ export default function Gerenciador({ itens }: { itens: DisciplinaAdmin[] }) {
             ainda vindo da planilha.
           </p>
         </div>
+
+        <button
+          type="button"
+          className={styles.salvar}
+          onClick={() => {
+            setCriando((v) => !v);
+            setAbertaId(null);
+            setAviso(null);
+          }}
+          aria-expanded={criando}
+        >
+          {criando ? 'Cancelar' : 'Nova disciplina'}
+        </button>
       </header>
+
+      {aviso?.id === 'nova' && (
+        <p className={aviso.erro ? styles.erro : styles.sucesso}>{aviso.texto}</p>
+      )}
+
+      {/* Cadastrar disciplina que não existe na planilha. Nasce já mantida
+          aqui, porque não tem de onde herdar. */}
+      {criando && (
+        <div className={styles.item}>
+          <div className={styles.editor}>
+            <form
+              action={(fd) => {
+                setAviso(null);
+                iniciar(async () => {
+                  const r = await criarDisciplina(fd);
+                  setAviso({
+                    id: 'nova',
+                    texto: r.ok ? 'Disciplina cadastrada.' : (r.erro ?? 'Falhou.'),
+                    erro: !r.ok,
+                  });
+                  if (r.ok) {
+                    setCriando(false);
+                    // a lista vem do servidor: sem isso a disciplina recém
+                    // cadastrada só apareceria no próximo carregamento
+                    router.refresh();
+                  }
+                });
+              }}
+            >
+              <label className={styles.rotulo} htmlFor="nova-nome">
+                Nome da disciplina
+              </label>
+              <input
+                id="nova-nome"
+                name="nome"
+                className={styles.input}
+                style={{ width: '100%', minWidth: 0 }}
+                placeholder="Direito Ambiental"
+                required
+              />
+
+              <div className={styles.camposLado}>
+                <label className={styles.campo}>
+                  <span className={styles.rotulo}>Formato</span>
+                  <select name="formato" className={styles.select} defaultValue="Flashcards">
+                    <option value="Flashcards">Flashcards</option>
+                    <option value="Resumo">Resumo</option>
+                  </select>
+                </label>
+
+                <label className={styles.campo}>
+                  <span className={styles.rotulo}>Área</span>
+                  <select name="area" className={styles.select} defaultValue="">
+                    <option value="">sem área</option>
+                    {AREAS.map((a) => (
+                      <option key={a} value={a}>
+                        {a}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                <label className={styles.campo}>
+                  <span className={styles.rotulo}>Páginas ou cards</span>
+                  <input type="number" name="medida" min={0} className={styles.input} />
+                </label>
+              </div>
+
+              <label className={styles.rotulo} htmlFor="nova-topicos">
+                Tópicos, um por linha
+              </label>
+              <textarea
+                id="nova-topicos"
+                name="topicos"
+                className={styles.textarea}
+                rows={10}
+                placeholder={'01. Princípios\n02. Licenciamento ambiental'}
+                required
+              />
+
+              <div className={styles.acoes}>
+                <button type="submit" className={styles.salvar} disabled={salvando}>
+                  {salvando ? 'Cadastrando...' : 'Cadastrar disciplina'}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Explicação curta e no lugar certo: sem ela, alguém edita achando que
           está mudando a planilha, e depois não entende por que a reimportação

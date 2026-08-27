@@ -132,6 +132,14 @@ export default function Gerenciador({
         </div>
       </header>
 
+      {/* Não há "novo curso" aqui de propósito: curso é produto, e produto
+          nasce na planilha do Sérgio. Sem dizer isso, a tela parece ter perdido
+          um botão. */}
+      <p className={styles.explicacao}>
+        Os cursos vêm da planilha de produtos, então não se cadastra curso por aqui, só se escolhe
+        as disciplinas de cada um. Para criar uma disciplina que não existe, use a tela de Sumários.
+      </p>
+
       <p className={styles.explicacao}>
         Enquanto um curso não for salvo aqui, ele segue a regra automática: assinatura leva a linha
         inteira do formato, combo por área leva as disciplinas daquela área, e material isolado leva

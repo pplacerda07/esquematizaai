@@ -128,6 +128,76 @@ export async function devolverParaPlanilha(formData: FormData): Promise<Resultad
 }
 
 /**
+ * Cria uma disciplina que não existe na planilha.
+ *
+ * O Sérgio pediu "CADASTRAR/ATUALIZAR", e só o atualizar tinha sido feito: a
+ * tela nascia com as 109 da planilha e não havia como acrescentar. Disciplina
+ * nova nasce já adotada, porque ela não tem de onde herdar nada.
+ */
+export async function criarDisciplina(formData: FormData): Promise<Resultado> {
+  const permissao = await exigirAdmin();
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
+  const nome = String(formData.get('nome') ?? '').trim();
+  if (!nome) return { ok: false, erro: 'Escreva o nome da disciplina.' };
+
+  const formato = String(formData.get('formato') ?? '').trim();
+  if (formato !== 'Resumo' && formato !== 'Flashcards') {
+    return { ok: false, erro: 'Escolha se é Resumo ou Flashcards.' };
+  }
+
+  const topicos = emLinhas(String(formData.get('topicos') ?? ''));
+  if (topicos.length === 0) {
+    return { ok: false, erro: 'Escreva pelo menos um tópico, um por linha.' };
+  }
+
+  const area = String(formData.get('area') ?? '').trim() || null;
+  const medidaTexto = String(formData.get('medida') ?? '').trim();
+  const medida = medidaTexto ? Number(medidaTexto) : null;
+  if (medidaTexto && (Number.isNaN(medida) || medida! < 0)) {
+    return { ok: false, erro: 'Páginas ou cards deve ser um número.' };
+  }
+
+  const supabase = await criarSupabaseServer();
+
+  const { data, error } = await supabase
+    .from('disciplinas')
+    .insert({
+      nome,
+      formato,
+      area,
+      paginas: formato === 'Resumo' ? medida : null,
+      cards: formato === 'Flashcards' ? medida : null,
+      adotada_em: new Date().toISOString(),
+      atualizado_por: permissao.email,
+    })
+    .select('id')
+    .single();
+
+  if (error) {
+    // a mesma disciplina pode existir nos dois formatos, mas não duas vezes no
+    // mesmo; o banco garante isso e aqui a mensagem explica o que houve
+    if (error.code === '23505') {
+      return { ok: false, erro: `Já existe uma disciplina "${nome}" em ${formato}.` };
+    }
+    return { ok: false, erro: 'Não foi possível cadastrar: ' + error.message };
+  }
+
+  const { error: erroTopicos } = await supabase
+    .from('disciplina_topicos')
+    .insert(topicos.map((texto, i) => ({ disciplina_id: data.id, ordem: i + 1, texto })));
+
+  if (erroTopicos) {
+    // sem os tópicos a disciplina não serve para nada, então ela não fica
+    await supabase.from('disciplinas').delete().eq('id', data.id);
+    return { ok: false, erro: 'Não foi possível salvar os tópicos: ' + erroTopicos.message };
+  }
+
+  revalidarTudo();
+  return { ok: true };
+}
+
+/**
  * Taguear a disciplina por área, sem adotar o sumário dela.
  *
  * O Sérgio pediu as duas coisas separadas, e são mesmo: dá para querer
