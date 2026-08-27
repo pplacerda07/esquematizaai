@@ -7,91 +7,31 @@
   margin: 0 auto;
 }
 
-.trilho {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 0.5rem;
-  /* a barra de rolagem some: quem navega tem setas, bolinhas e o próprio dedo */
-  scrollbar-width: none;
-}
 
-.trilho::-webkit-scrollbar {
-  display: none;
-}
 
-.trilho:focus-visible {
-  outline: 3px solid var(--color-cold-primary);
-  outline-offset: 4px;
-  border-radius: 1rem;
-}
+
+
+
 
 /* ------------------------------------------------------------- controles */
 
-.controles {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
 
-.seta {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border: 1.5px solid rgba(38, 52, 79, 0.2);
-  border-radius: 50%;
-  background-color: #fff;
-  color: var(--color-cold-dark);
-  font-family: var(--font-body);
-  font-size: 1.4rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
 
-.seta:hover {
-  background-color: var(--color-cold-light);
-  border-color: var(--color-cold-primary);
-}
 
-.seta:focus-visible {
-  outline: 3px solid var(--color-cold-primary);
-  outline-offset: 2px;
-}
 
-.bolinhas {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
 
-.bolinha {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background-color: rgba(38, 52, 79, 0.25);
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
 
-.bolinha:hover {
-  background-color: rgba(38, 52, 79, 0.5);
-}
 
-.bolinha:focus-visible {
-  outline: 2px solid var(--color-cold-primary);
-  outline-offset: 3px;
-}
 
-.bolinhaAtiva {
-  background-color: var(--color-hot-primary);
-  transform: scale(1.3);
-}
+
+
+
+
+
+
+
+
+
 
 /* Largura fixa e sem encolher: no carrossel os cartões viram slides, e cada um
    precisa parar no mesmo lugar. A altura é a mesma para todos, senão o bloco
@@ -99,7 +39,7 @@
 .cartao {
   display: flex;
   gap: 1rem;
-  flex: 0 0 min(560px, 88vw);
+  width: min(560px, 88vw);
   /* o projeto não tem reset global: sem isto o padding e a borda somam por fora
      e o slide fica 40px mais largo do que o pedido */
   box-sizing: border-box;

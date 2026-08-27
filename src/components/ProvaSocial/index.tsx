@@ -1,6 +1,5 @@
-import Depoimentos from '@/components/Depoimentos';
 import VideosDepoimentos from '@/components/VideosDepoimentos';
-import Testimonials from '@/components/Testimonials';
+import CarrosselProva from '@/components/CarrosselProva';
 import styles from './styles.module.css';
 
 /**
@@ -22,22 +21,24 @@ export default function ProvaSocial() {
         O que dizem nossos <span className={styles.acento}>alunos</span>
       </h2>
 
-      {/* Três tipos de prova, os mesmos da página de produto: quem foi
-          aprovado, quem falou em vídeo e quem escreveu no WhatsApp. Aprovação
-          primeiro porque é o resultado que a pessoa quer para si. */}
-      <div className={styles.bloco}>
-        <p className={styles.rotulo}>Alunos aprovados</p>
-        <Depoimentos />
-      </div>
+      {/* DUAS FAIXAS, NÃO TRÊS.
 
+          Eram três blocos empilhados: vídeo, aprovados e mensagens. Cada um
+          com seu rótulo e seu carrossel, dizendo a mesma coisa de três jeitos.
+          As duas de texto viraram uma só, e os 14 depoimentos passaram a
+          dividir o mesmo carrossel.
+
+          O vídeo continua separado de propósito: ele tem rosto e voz, é a
+          prova mais difícil de forjar, e abre a seção porque texto convence
+          mais depois de a pessoa já ter visto alguém falando. */}
       <div className={styles.bloco}>
         <p className={styles.rotulo}>Em vídeo</p>
         <VideosDepoimentos />
       </div>
 
       <div className={styles.bloco}>
-        <p className={styles.rotulo}>Mensagens que recebemos</p>
-        <Testimonials />
+        <p className={styles.rotulo}>Aprovados e mensagens que recebemos</p>
+        <CarrosselProva />
       </div>
     </section>
   );

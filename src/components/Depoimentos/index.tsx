@@ -1,4 +1,5 @@
 import dados from '@/data/catalogo/depoimentos.json';
+import Faixa from '@/components/Faixa';
 import styles from './styles.module.css';
 
 /**
@@ -16,47 +17,39 @@ import styles from './styles.module.css';
  * A colocação vem em destaque porque é o dado mais forte da peça: "1º lugar"
  * convence mais do que qualquer adjetivo na citação.
  *
- * A rolagem é horizontal e nativa, com scroll-snap. Sem JavaScript, sem
- * autoplay: carrossel que anda sozinho embaixo de texto para ler é o tipo de
- * coisa que faz a pessoa perder a linha no meio da frase.
+ * A faixa desliza sozinha, sem parar, no efeito que o Pedro pediu do Mapas da
+ * Lulu. O risco de carrossel automático embaixo de texto sempre foi a pessoa
+ * perder a linha no meio da frase, e é por isso que a Faixa congela quando
+ * alguém encosta: o movimento serve para chamar, não para atrapalhar a leitura.
  */
 export default function Depoimentos() {
   const depoimentos = dados.depoimentos;
   if (!depoimentos.length) return null;
 
+  const cartoes = depoimentos.map((d) => (
+    <article key={`${d.nome}-${d.colocacao}`} className={styles.cartao}>
+      <span className={styles.colocacao} aria-hidden="true">
+        {d.colocacao}º
+      </span>
+
+      <blockquote className={styles.citacao}>{d.citacao}</blockquote>
+
+      <footer className={styles.autor}>
+        <cite className={styles.nome}>{d.nome}</cite>
+        <span className={styles.cargo}>
+          {d.genero === 'f' ? 'Aprovada' : 'Aprovado'} em {d.colocacao}º lugar
+          <span className={styles.separador} aria-hidden="true">
+            ·
+          </span>
+          {d.cargo}
+        </span>
+      </footer>
+    </article>
+  ));
+
   return (
     <div className={styles.wrap}>
-      <ul
-        className={styles.trilho}
-        tabIndex={0}
-        role="group"
-        aria-label="Depoimentos de alunos aprovados, role para o lado para ver todos"
-      >
-        {depoimentos.map((d) => (
-          <li key={`${d.nome}-${d.colocacao}`} className={styles.cartao}>
-            <span className={styles.colocacao} aria-hidden="true">
-              {d.colocacao}º
-            </span>
-
-            <blockquote className={styles.citacao}>{d.citacao}</blockquote>
-
-            <footer className={styles.autor}>
-              <cite className={styles.nome}>{d.nome}</cite>
-              <span className={styles.cargo}>
-                {d.genero === 'f' ? 'Aprovada' : 'Aprovado'} em {d.colocacao}º lugar
-                <span className={styles.separador} aria-hidden="true">
-                  ·
-                </span>
-                {d.cargo}
-              </span>
-            </footer>
-          </li>
-        ))}
-      </ul>
-
-      <p className={styles.dica} aria-hidden="true">
-        role para o lado para ver os {depoimentos.length} depoimentos
-      </p>
+      <Faixa itens={cartoes} ariaLabel={`${depoimentos.length} depoimentos de alunos aprovados`} />
     </div>
   );
 }

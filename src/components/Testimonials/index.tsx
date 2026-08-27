@@ -1,16 +1,19 @@
-'use client';
-
-import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Faixa from '@/components/Faixa';
 import styles from './styles.module.css';
 
 /**
  * Depoimentos de alunos, em prints do WhatsApp.
  *
  * POR QUE PRINT E TRANSCRIÇÃO JUNTOS:
- * antes a seção era uma esteira de prints passando, e ninguém lê texto pequeno
- * dentro de imagem que anda. Cada cartão traz a janelinha com o print de um
- * lado e a transcrição do outro, para ler com calma.
+ * a primeira versão era uma esteira de prints passando, e ninguém lê texto
+ * pequeno dentro de imagem que anda. Cada cartão traz a janelinha com o print
+ * de um lado e a transcrição do outro, em corpo de leitura.
+ *
+ * A esteira voltou, agora como Faixa, no efeito que o Pedro pediu do Mapas da
+ * Lulu. O que a torna legível desta vez é a transcrição ao lado do print e o
+ * fato de a faixa congelar quando alguém encosta. Saíram as setas e as
+ * bolinhas: faixa contínua não tem posição atual para uma bolinha marcar.
  *
  * SEM SELO DE "É REAL":
  * havia aqui uma linha dizendo que os prints eram reais e um rodapé repetindo
@@ -72,142 +75,40 @@ const DEPOIMENTOS: Depoimento[] = [
   },
 ];
 
-const INTERVALO_MS = 3000;
-
 export default function Testimonials() {
-  const trilho = useRef<HTMLDivElement>(null);
-  const [indice, setIndice] = useState(0);
-  const [pausado, setPausado] = useState(false);
+  const cartoes = DEPOIMENTOS.map((d) => (
+    <figure
+      key={d.src}
+      className={d.destaque ? `${styles.cartao} ${styles.cartaoDestaque}` : styles.cartao}
+    >
+      {/* Janela do print: recorte fixo, como uma telinha. Mostra o suficiente
+          para provar que a mensagem existe sem tomar o cartão. */}
+      <div className={styles.janela}>
+        <Image
+          src={d.src}
+          alt={d.alt}
+          width={720}
+          height={560}
+          sizes="(max-width: 640px) 90vw, 150px"
+          className={styles.print}
+        />
+      </div>
 
-  const irPara = useCallback((i: number) => {
-    const el = trilho.current;
-    if (!el) return;
-    const cartao = el.children[i] as HTMLElement | undefined;
-    if (!cartao) return;
-    el.scrollTo({ left: cartao.offsetLeft - el.offsetLeft, behavior: 'smooth' });
-    setIndice(i);
-  }, []);
+      <div className={styles.conteudo}>
+        {d.contexto && <p className={styles.contexto}>{d.contexto}</p>}
 
-  /**
-   * Avanço automático a cada 3s, como o Sérgio pediu.
-   *
-   * Pausa quando o mouse está em cima, quando algo do bloco tem foco e enquanto
-   * a pessoa arrasta: depoimento é para ler, e texto que foge no meio da frase
-   * irrita mais do que ajuda. Quem pede menos movimento no sistema não recebe
-   * avanço nenhum e navega só pelos botões.
-   */
-  useEffect(() => {
-    if (pausado) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const t = window.setInterval(() => {
-      setIndice((atual) => {
-        const proximo = (atual + 1) % DEPOIMENTOS.length;
-        const el = trilho.current;
-        const cartao = el?.children[proximo] as HTMLElement | undefined;
-        if (el && cartao) {
-          el.scrollTo({ left: cartao.offsetLeft - el.offsetLeft, behavior: 'smooth' });
-        }
-        return proximo;
-      });
-    }, INTERVALO_MS);
-
-    return () => window.clearInterval(t);
-  }, [pausado]);
-
-  // mantém as bolinhas em dia quando a pessoa arrasta com o dedo ou o trackpad
-  const aoRolar = () => {
-    const el = trilho.current;
-    if (!el) return;
-    const filhos = [...el.children] as HTMLElement[];
-    const meio = el.scrollLeft + el.clientWidth / 2;
-    const maisProximo = filhos.reduce(
-      (melhor, c, i) =>
-        Math.abs(c.offsetLeft - el.offsetLeft + c.offsetWidth / 2 - meio) <
-        Math.abs(filhos[melhor].offsetLeft - el.offsetLeft + filhos[melhor].offsetWidth / 2 - meio)
-          ? i
-          : melhor,
-      0,
-    );
-    setIndice(maisProximo);
-  };
+        <blockquote className={styles.texto}>{d.texto}</blockquote>
+      </div>
+    </figure>
+  ));
 
   return (
-      <div
-        className={styles.palco}
-        onMouseEnter={() => setPausado(true)}
-        onMouseLeave={() => setPausado(false)}
-        onFocusCapture={() => setPausado(true)}
-        onBlurCapture={() => setPausado(false)}
-        onTouchStart={() => setPausado(true)}
-      >
-        <div
-          className={styles.trilho}
-          ref={trilho}
-          onScroll={aoRolar}
-          tabIndex={0}
-          role="group"
-          aria-label="Depoimentos de alunos"
-        >
-          {DEPOIMENTOS.map((d) => (
-            <figure
-              key={d.src}
-              className={`${styles.cartao} ${d.destaque ? styles.cartaoDestaque : ''}`}
-            >
-              {/* Janela do print: recorte fixo, como uma telinha. Mostra o
-                  suficiente para provar que a mensagem existe sem tomar o cartão. */}
-              <div className={styles.janela}>
-                <Image
-                  src={d.src}
-                  alt={d.alt}
-                  width={720}
-                  height={560}
-                  sizes="(max-width: 640px) 90vw, 150px"
-                  className={styles.print}
-                />
-              </div>
-
-              <div className={styles.conteudo}>
-                {d.contexto && <p className={styles.contexto}>{d.contexto}</p>}
-
-                <blockquote className={styles.texto}>{d.texto}</blockquote>
-              </div>
-            </figure>
-          ))}
-        </div>
-
-        <div className={styles.controles}>
-          <button
-            type="button"
-            className={styles.seta}
-            onClick={() => irPara((indice - 1 + DEPOIMENTOS.length) % DEPOIMENTOS.length)}
-            aria-label="Depoimento anterior"
-          >
-            ‹
-          </button>
-
-          <div className={styles.bolinhas}>
-            {DEPOIMENTOS.map((d, i) => (
-              <button
-                key={d.src}
-                type="button"
-                className={`${styles.bolinha} ${i === indice ? styles.bolinhaAtiva : ''}`}
-                onClick={() => irPara(i)}
-                aria-label={`Ver depoimento ${i + 1} de ${DEPOIMENTOS.length}`}
-                aria-current={i === indice ? 'true' : undefined}
-              />
-            ))}
-          </div>
-
-          <button
-            type="button"
-            className={styles.seta}
-            onClick={() => irPara((indice + 1) % DEPOIMENTOS.length)}
-            aria-label="Próximo depoimento"
-          >
-            ›
-          </button>
-        </div>
-      </div>
+    <div className={styles.palco}>
+      <Faixa
+        itens={cartoes}
+        segundosPorItem={9}
+        ariaLabel={`${DEPOIMENTOS.length} mensagens de alunos recebidas no WhatsApp`}
+      />
+    </div>
   );
 }

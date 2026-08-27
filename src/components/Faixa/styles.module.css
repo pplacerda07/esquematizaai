@@ -1,0 +1,91 @@
+/* O gap tem que ser o mesmo valor nos dois lugares: a animação anda metade da
+   trilha MAIS meio gap, senão a emenda fica deslocada por essa sobra e a faixa
+   dá um tranco a cada volta. */
+.janela {
+  --gap: 1rem;
+  --fade: 3rem;
+
+  overflow: hidden;
+  /* pontas em degradê, para o cartão entrar e sair suave em vez de ser cortado */
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--fade),
+    #000 calc(100% - var(--fade)),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 var(--fade),
+    #000 calc(100% - var(--fade)),
+    transparent 100%
+  );
+}
+
+.trilho {
+  display: flex;
+  align-items: stretch;
+  gap: var(--gap);
+  /* max-content para a trilha ter a largura real dos dois conjuntos somados;
+     sem isso o flex encolhe os cartões e a conta do -50% não fecha */
+  width: max-content;
+  margin: 0;
+  padding: 0.4rem 0;
+  list-style: none;
+  animation: deslizar var(--duracao, 60s) linear infinite;
+  will-change: transform;
+}
+
+.item {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+/* Segurar o dedo, passar o mouse ou chegar de teclado congela a faixa: são
+   textos para ler, e ninguém termina uma frase que está andando. */
+.janela:hover .trilho,
+.janela:active .trilho,
+.janela:focus-within .trilho {
+  animation-play-state: paused;
+}
+
+@keyframes deslizar {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - var(--gap) / 2));
+  }
+}
+
+/* Quem pediu menos movimento no sistema recebe a lista parada, que ainda dá
+   para arrastar com o dedo. */
+@media (prefers-reduced-motion: reduce) {
+  .trilho {
+    animation: none;
+    width: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .item {
+    scroll-snap-align: start;
+  }
+  /* parada, a cópia não fecha laço nenhum: só duplicaria cada depoimento */
+  .item[aria-hidden='true'] {
+    display: none;
+  }
+  .janela {
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .janela {
+    --fade: 1.25rem;
+    --gap: 0.75rem;
+  }
+}
