@@ -13,6 +13,8 @@ export interface ItemVitrine {
   categoria: string;
   area: string | null;
   ferramenta: string | null;
+  /** linha do produto: "Regular", "Legislação Tributária", ... */
+  formato: string | null;
   preco: number;
   precoAntigo: number | null;
   percentualOff: number | null;
@@ -32,16 +34,31 @@ const AREA_CAPA_CLASSE: Record<string, string> = {
   'Tribunais': 'capaFallbackTribunais',
   'Bancária': 'capaFallbackBancaria',
   'Legislativo': 'capaFallbackLegislativo',
+  'OAB': 'capaFallbackOab',
 };
 
+/**
+ * Primeira faixa de filtro.
+ *
+ * "Legislação Tributária" é a exceção da lista: as outras opções são categorias
+ * (combo, isolado, assinatura) e essa é uma LINHA de produto, que atravessa as
+ * três. São 27 materiais presos a um concurso específico, e quem procura a
+ * legislação do seu estado não procura por "combo", procura pelo assunto.
+ * Por isso o filtro olha `formato` quando o valor começa com "linha:".
+ */
 const SEGMENTOS = [
   { valor: 'todos', rotulo: 'Tudo' },
-  { valor: 'combo', rotulo: 'Combos' },
-  { valor: 'isolado', rotulo: 'Isolados' },
   { valor: 'assinatura', rotulo: 'Assinaturas' },
+  { valor: 'combo', rotulo: 'Combos' },
+  { valor: 'linha:Legislação Tributária', rotulo: 'Legislação Tributária' },
+  { valor: 'isolado', rotulo: 'Isolados' },
 ] as const;
 
-const AREAS = ['Fiscal', 'Controle', 'Policial', 'Tribunais', 'Bancária', 'Legislativo'] as const;
+const PREFIXO_LINHA = 'linha:';
+
+// O Exame OAB não é concurso fiscal, e estava caindo no filtro Fiscal por falta
+// de área própria: quem filtrava por Fiscal via um combo de OAB no meio.
+const AREAS = ['Fiscal', 'Controle', 'Policial', 'Tribunais', 'Bancária', 'Legislativo', 'OAB'] as const;
 
 // 6 = duas fileiras de 3 no desktop. Com 8, a última fileira ficava pela metade.
 const POR_PAGINA = 6;
@@ -92,8 +109,10 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
   const buscaInicial = parametros.get('busca') ?? '';
   const tipoInicial = parametros.get('tipo') ?? 'todos';
 
+  // aceita qualquer filtro da faixa, para os atalhos da home poderem apontar
+  // direto para um deles pela URL (?tipo=combo, ?tipo=assinatura...)
   const [segmento, setSegmento] = useState<string>(
-    ['combo', 'isolado', 'assinatura'].includes(tipoInicial) ? tipoInicial : 'todos',
+    SEGMENTOS.some((s) => s.valor === tipoInicial) ? tipoInicial : 'todos',
   );
   const [area, setArea] = useState<string>('todas');
   const [visiveis, setVisiveis] = useState(POR_PAGINA);
@@ -104,7 +123,11 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
   const filtrados = useMemo(() => {
     const termo = normalizar(busca);
     const lista = itens.filter((item) => {
-      if (segmento !== 'todos' && item.categoria !== segmento) return false;
+      if (segmento.startsWith(PREFIXO_LINHA)) {
+        if (item.formato !== segmento.slice(PREFIXO_LINHA.length)) return false;
+      } else if (segmento !== 'todos' && item.categoria !== segmento) {
+        return false;
+      }
       if (area !== 'todas' && item.area !== area) return false;
       if (termo && !normalizar(item.nome).includes(termo)) return false;
       return true;
@@ -134,6 +157,12 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
     for (const item of itens) {
       mapa.todos += 1;
       mapa[item.categoria] = (mapa[item.categoria] ?? 0) + 1;
+      // a linha de produto conta em paralelo à categoria: o mesmo material
+      // aparece em "Combos" e em "Legislação Tributária"
+      if (item.formato) {
+        const chave = PREFIXO_LINHA + item.formato;
+        mapa[chave] = (mapa[chave] ?? 0) + 1;
+      }
     }
     return mapa;
   }, [itens]);

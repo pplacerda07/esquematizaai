@@ -18,6 +18,7 @@ export default async function ProductVitrine() {
     categoria: produto.categoria,
     area: produto.area,
     ferramenta: produto.ferramenta,
+    formato: produto.formato,
     preco: oferta.preco,
     precoAntigo: oferta.precoAntigo,
     percentualOff: oferta.percentualOff,

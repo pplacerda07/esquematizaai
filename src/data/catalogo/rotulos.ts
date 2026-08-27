@@ -32,4 +32,5 @@ export const SLUG_DA_AREA: Record<string, string | null> = {
   'Tribunais': 'tribunais',
   'Bancária': 'bancaria',
   'Legislativo': null,
+  'OAB': 'oab',
 };

@@ -424,6 +424,10 @@
   background: linear-gradient(150deg, #3a4a6b, var(--color-cold-dark, #26344f));
 }
 
+.capaFallbackOab {
+  background: linear-gradient(150deg, var(--color-hot-primary, #ff7345), #a8371a);
+}
+
 .cardHeader {
   display: flex;
   align-items: center;

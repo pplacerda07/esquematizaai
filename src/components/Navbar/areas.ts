@@ -11,6 +11,7 @@ export const AREAS: Area[] = [
   { slug: 'policial', name: 'Policial', catalogoArea: 'Policial' },
   { slug: 'tribunais', name: 'Tribunais', catalogoArea: 'Tribunais' },
   { slug: 'bancaria', name: 'Bancária', catalogoArea: 'Bancária' },
+  { slug: 'oab', name: 'OAB', catalogoArea: 'OAB' },
   { slug: 'inss', name: 'INSS', catalogoArea: null },
 ];
 
