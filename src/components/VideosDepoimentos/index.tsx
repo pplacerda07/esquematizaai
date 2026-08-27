@@ -16,9 +16,16 @@ import styles from './styles.module.css';
  * O avanço automático PARA quando alguém dá play. Carrossel que troca de slide
  * no meio de um depoimento é o oposto do que a seção quer.
  *
- * Os quatro vídeos são 16:9. Os dois gravados na vertical já vieram montados
- * dentro desse formato por quem editou, com fundo desfocado nas laterais, então
- * não há mistura de proporção para resolver aqui.
+ * TODOS SÃO 720x1280, vertical. O Sérgio entrega cada depoimento em duas
+ * versões, Reels e YouTube, e aqui usamos a Reels: a maior parte de quem acessa
+ * está no celular, e é o formato em que a edição foi pensada, com a tarja do
+ * nome, a legenda e o logo posicionados para essa proporção.
+ *
+ * NÃO CONVERTA A VERSÃO YOUTUBE PARA VERTICAL. Ela já é o mesmo vídeo vertical
+ * encaixado em 16:9 com fundo desfocado; encaixar de novo cria moldura dentro
+ * de moldura e o rosto vira um selo no meio da tela. Testei com o Lucas e o
+ * resultado foi descartado. Faltando a Reels de alguém, é melhor o cartão não
+ * aparecer do que aparecer assim.
  *
  * NÃO TEM SEÇÃO NEM TÍTULO PRÓPRIOS: quem monta isso é o ProvaSocial, que
  * reúne este carrossel e o dos prints sob um título só. Separados, a página
@@ -32,11 +39,52 @@ type Depoimento = {
   aprovacao?: string;
 };
 
+/**
+ * Nome e aprovação saíram da TARJA GRAVADA em cada vídeo, não de suposição:
+ * é exatamente o que a pessoa vê escrito enquanto assiste. Foi assim que as
+ * aprovações do Wagner, do Yan e do Lucas apareceram, depois de meses sem
+ * ninguém saber quais eram.
+ *
+ * A legenda aqui embaixo é uma versão curta da tarja, com os melhores números
+ * na frente. A tarja completa está no vídeo, e repetir tudo faria o cartão
+ * dizer duas vezes a mesma coisa.
+ *
+ * "Cadu" é o mesmo aluno que aparecia como "Walyson Kadu". Conferi quadro a
+ * quadro contra o vídeo antigo: mesmo carro, mesma camiseta, mesmo óculos. A
+ * edição nova assina "Cadu", então o site passa a chamá-lo assim.
+ *
+ * A ordem é por força do resultado: primeiro lugar convence mais que aprovado.
+ *
+ * O Lucas continua na lista de propósito, embora ainda não tenha a versão
+ * Reels no bucket. Sem os arquivos ele some sozinho, e volta a aparecer no dia
+ * em que forem enviados, sem precisar mexer aqui.
+ */
 const DEPOIMENTOS: Depoimento[] = [
-  { slug: 'lucas-magalhaes', nome: 'Lucas Magalhães' },
-  { slug: 'walyson-kadu', nome: 'Walyson Kadu', aprovacao: 'Aprovado na SEFAZ-AC' },
-  { slug: 'wagner-borges', nome: 'Wagner Borges' },
-  { slug: 'yan-almeida', nome: 'Yan Almeida' },
+  {
+    slug: 'wagner-borges',
+    nome: 'Wagner Borges',
+    aprovacao: 'Multi aprovado: 1º lugar na SEFAZ-PI (Analista) e 5º (Auditor)',
+  },
+  {
+    slug: 'yan-almeida',
+    nome: 'Yan Almeida',
+    aprovacao: 'Multi aprovado: 2º na SEFA-PA, 5º na SEFAZ-SE e 18º na SEFAZ-SP',
+  },
+  {
+    slug: 'iury-neiva',
+    nome: 'Iury Neiva',
+    aprovacao: 'Aprovado em 5º lugar, Fiscal de Rendas na SEFA-PA',
+  },
+  {
+    slug: 'cadu',
+    nome: 'Cadu',
+    aprovacao: 'Aprovado como Auditor Fiscal da Receita Estadual, SEFAZ-AC',
+  },
+  {
+    slug: 'lucas-magalhaes',
+    nome: 'Lucas Magalhães',
+    aprovacao: 'Aprovado como Auditor Fiscal de Receitas Estaduais, SEFA-PA',
+  },
 ];
 
 const INTERVALO_MS = 6000;
@@ -46,6 +94,17 @@ export default function VideosDepoimentos() {
   const [indice, setIndice] = useState(0);
   const [tocando, setTocando] = useState<string | null>(null);
   const [pausado, setPausado] = useState(false);
+  /**
+   * Slugs cuja capa não existe no Supabase.
+   *
+   * O vídeo é cadastrado aqui no código e o arquivo é enviado à mão para o
+   * bucket, então existe uma janela entre uma coisa e outra. Se a capa não
+   * carrega, o slide some em vez de virar um retângulo quebrado no meio da
+   * prova social, que é onde a página menos pode parecer malfeita.
+   */
+  const [semArquivo, setSemArquivo] = useState<string[]>([]);
+
+  const lista = DEPOIMENTOS.filter((d) => !semArquivo.includes(d.slug));
 
   const irPara = useCallback((i: number) => {
     const el = trilho.current;
@@ -62,7 +121,7 @@ export default function VideosDepoimentos() {
 
     const t = window.setInterval(() => {
       setIndice((atual) => {
-        const proximo = (atual + 1) % DEPOIMENTOS.length;
+        const proximo = (atual + 1) % lista.length;
         const el = trilho.current;
         const slide = el?.children[proximo] as HTMLElement | undefined;
         if (el && slide) {
@@ -73,7 +132,11 @@ export default function VideosDepoimentos() {
     }, INTERVALO_MS);
 
     return () => window.clearInterval(t);
-  }, [pausado, tocando]);
+  }, [pausado, tocando, lista.length]);
+
+  // sumiu todo mundo (bucket fora do ar, por exemplo): melhor não deixar um
+  // título "Em vídeo" em cima de um vazio
+  if (lista.length === 0) return null;
 
   return (
       <div
@@ -90,7 +153,7 @@ export default function VideosDepoimentos() {
           role="group"
           aria-label="Depoimentos em vídeo"
         >
-          {DEPOIMENTOS.map((d) => {
+          {lista.map((d) => {
             const capa = `${DEPOIMENTOS_VIDEO_BASE}/${d.slug}.jpg`;
             const video = `${DEPOIMENTOS_VIDEO_BASE}/${d.slug}.mp4`;
             const ativo = tocando === d.slug;
@@ -121,8 +184,13 @@ export default function VideosDepoimentos() {
                         src={capa}
                         alt=""
                         fill
-                        sizes="(max-width: 900px) 92vw, 520px"
+                        sizes="(max-width: 900px) 78vw, 300px"
                         className={styles.imagem}
+                        onError={() =>
+                          setSemArquivo((atuais) =>
+                            atuais.includes(d.slug) ? atuais : [...atuais, d.slug],
+                          )
+                        }
                       />
                       <span className={styles.play} aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="currentColor">
@@ -146,20 +214,20 @@ export default function VideosDepoimentos() {
           <button
             type="button"
             className={styles.seta}
-            onClick={() => irPara((indice - 1 + DEPOIMENTOS.length) % DEPOIMENTOS.length)}
+            onClick={() => irPara((indice - 1 + lista.length) % lista.length)}
             aria-label="Depoimento anterior"
           >
             ‹
           </button>
 
           <div className={styles.bolinhas}>
-            {DEPOIMENTOS.map((d, i) => (
+            {lista.map((d, i) => (
               <button
                 key={d.slug}
                 type="button"
                 className={`${styles.bolinha} ${i === indice ? styles.bolinhaAtiva : ''}`}
                 onClick={() => irPara(i)}
-                aria-label={`Ver depoimento ${i + 1} de ${DEPOIMENTOS.length}`}
+                aria-label={`Ver depoimento ${i + 1} de ${lista.length}`}
                 aria-current={i === indice ? 'true' : undefined}
               />
             ))}
@@ -168,7 +236,7 @@ export default function VideosDepoimentos() {
           <button
             type="button"
             className={styles.seta}
-            onClick={() => irPara((indice + 1) % DEPOIMENTOS.length)}
+            onClick={() => irPara((indice + 1) % lista.length)}
             aria-label="Próximo depoimento"
           >
             ›

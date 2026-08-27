@@ -16,8 +16,11 @@
   display: none;
 }
 
+/* Vertical, então o cartão é estreito e alto. No celular ocupa quase a largura
+   toda; no desktop cabem três lado a lado, que é melhor do que um único
+   retângulo alto e solitário no meio da página. */
 .slide {
-  flex: 0 0 min(520px, 88vw);
+  flex: 0 0 min(300px, 78vw);
   box-sizing: border-box;
   scroll-snap-align: start;
   margin: 0;
@@ -30,7 +33,11 @@
 .moldura {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* 9:16 porque os depoimentos passaram a ser os Reels, e a maior parte de quem
+     acessa está no celular. Vertical é o formato em que essas pessoas já
+     assistem tudo, e é como a edição foi feita: tarja com o nome, legenda e
+     logo posicionados para essa proporção. */
+  aspect-ratio: 9 / 16;
   border-radius: 0.9rem;
   overflow: hidden;
   background-color: var(--color-cold-dark);
