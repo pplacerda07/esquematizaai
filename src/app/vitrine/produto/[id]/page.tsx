@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
+import UrgencyBar from '@/components/HeroSection/UrgencyBar';
 import Footer from '@/components/Footer';
 import Conteudo from '@/components/Artigo/Conteudo';
 import SelosTicker from '@/components/SelosTicker';
@@ -230,6 +231,8 @@ export default async function ProdutoPage({
   return (
     <main className={styles.main}>
       <Navbar />
+      {/* o cupom acompanha a pessoa ate onde ela decide a compra */}
+      <UrgencyBar />
 
       <script
         type="application/ld+json"

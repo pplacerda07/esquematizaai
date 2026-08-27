@@ -24,6 +24,35 @@ export function rotuloDeFerramenta(ferramenta: string | null, categoria: string)
   return ROTULO_CATEGORIA[categoria] ?? 'Material';
 }
 
+/**
+ * O produto é da linha de Legislação Tributária?
+ *
+ * PELO NOME, E NÃO PELA COLUNA DA PLANILHA. O campo `formato` já chamou essa
+ * linha de "Legislação Tributária" e na planilha de 27/08 passou a chamar de
+ * "Específico", o que zerou o filtro da vitrine da noite para o dia, e foi o
+ * Sérgio quem viu. Pior: "Específico" também marca os produtos da Câmara dos
+ * Deputados, que não são legislação tributária, e 32 produtos da linha ficaram
+ * sem formato nenhum.
+ *
+ * O nome do produto é escrito para o aluno ler e não muda de vocabulário entre
+ * versões da planilha, então é o sinal mais estável que existe aqui.
+ *
+ * LTF é Legislação Tributária Federal e LTE é Legislação Tributária Estadual,
+ * abreviações que o Sérgio usa em alguns nomes. Aduaneira e Comércio
+ * Internacional entram porque são as disciplinas de legislação da Receita
+ * Federal, vendidas como parte da mesma linha.
+ */
+export function ehLegislacaoTributaria(nome: string): boolean {
+  const limpo = nome
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase();
+
+  return /legislacao tribut|reforma tribut|legislacao aduaneira|leg\.? aduaneira|comercio internacional|\blt[fe]\b/.test(
+    limpo,
+  );
+}
+
 /** Área do catálogo -> slug da rota /vitrine/[area] (null = sem rota própria). */
 export const SLUG_DA_AREA: Record<string, string | null> = {
   'Fiscal': 'fiscal',

@@ -80,11 +80,10 @@ const DEPOIMENTOS: Depoimento[] = [
     nome: 'Cadu',
     aprovacao: 'Aprovado como Auditor Fiscal da Receita Estadual, SEFAZ-AC',
   },
-  {
-    slug: 'lucas-magalhaes',
-    nome: 'Lucas Magalhães',
-    aprovacao: 'Aprovado como Auditor Fiscal de Receitas Estaduais, SEFA-PA',
-  },
+  // O Lucas saiu daqui até a Reels dele chegar ao bucket. Ele estava cadastrado
+  // confiando no `onError` abaixo para sumir sozinho, e não sumiu a tempo: o
+  // Sérgio viu o cartão preto com o botão de play em produção. Guarda que age
+  // depois que a imagem falha é rede de segurança, não lugar de apostar.
 ];
 
 const INTERVALO_MS = 6000;

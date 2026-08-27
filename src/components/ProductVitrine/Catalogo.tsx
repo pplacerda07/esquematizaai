@@ -4,7 +4,7 @@ import { useMemo, useRef, useState, type ReactNode } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { rotuloDeFerramenta } from '@/data/catalogo/rotulos';
+import { rotuloDeFerramenta, ehLegislacaoTributaria } from '@/data/catalogo/rotulos';
 import styles from './styles.module.css';
 
 export interface ItemVitrine {
@@ -13,8 +13,6 @@ export interface ItemVitrine {
   categoria: string;
   area: string | null;
   ferramenta: string | null;
-  /** linha do produto: "Regular", "Legislação Tributária", ... */
-  formato: string | null;
   preco: number;
   precoAntigo: number | null;
   percentualOff: number | null;
@@ -42,19 +40,21 @@ const AREA_CAPA_CLASSE: Record<string, string> = {
  *
  * "Legislação Tributária" é a exceção da lista: as outras opções são categorias
  * (combo, isolado, assinatura) e essa é uma LINHA de produto, que atravessa as
- * três. São 27 materiais presos a um concurso específico, e quem procura a
+ * três. São 73 materiais presos a um concurso específico, e quem procura a
  * legislação do seu estado não procura por "combo", procura pelo assunto.
- * Por isso o filtro olha `formato` quando o valor começa com "linha:".
+ *
+ * Quem decide se o produto é dessa linha é ehLegislacaoTributaria, pelo nome.
+ * A coluna da planilha já mudou de vocabulário uma vez e zerou este botão.
  */
+const LEGISLACAO = 'legislacao-tributaria';
+
 const SEGMENTOS = [
   { valor: 'todos', rotulo: 'Tudo' },
   { valor: 'assinatura', rotulo: 'Assinaturas' },
   { valor: 'combo', rotulo: 'Combos' },
-  { valor: 'linha:Legislação Tributária', rotulo: 'Legislação Tributária' },
+  { valor: LEGISLACAO, rotulo: 'Legislação Tributária' },
   { valor: 'isolado', rotulo: 'Isolados' },
 ] as const;
-
-const PREFIXO_LINHA = 'linha:';
 
 // OAB saiu daqui junto com o produto: o Combo Flashcards Exame OAB, único da
 // área, não veio na planilha de 27/08. O rótulo continua mapeado em rotulos.ts,
@@ -124,8 +124,8 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
   const filtrados = useMemo(() => {
     const termo = normalizar(busca);
     const lista = itens.filter((item) => {
-      if (segmento.startsWith(PREFIXO_LINHA)) {
-        if (item.formato !== segmento.slice(PREFIXO_LINHA.length)) return false;
+      if (segmento === LEGISLACAO) {
+        if (!ehLegislacaoTributaria(item.nome)) return false;
       } else if (segmento !== 'todos' && item.categoria !== segmento) {
         return false;
       }
@@ -158,11 +158,10 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
     for (const item of itens) {
       mapa.todos += 1;
       mapa[item.categoria] = (mapa[item.categoria] ?? 0) + 1;
-      // a linha de produto conta em paralelo à categoria: o mesmo material
-      // aparece em "Combos" e em "Legislação Tributária"
-      if (item.formato) {
-        const chave = PREFIXO_LINHA + item.formato;
-        mapa[chave] = (mapa[chave] ?? 0) + 1;
+      // a linha conta em paralelo à categoria: o mesmo material aparece em
+      // "Combos" e em "Legislação Tributária"
+      if (ehLegislacaoTributaria(item.nome)) {
+        mapa[LEGISLACAO] = (mapa[LEGISLACAO] ?? 0) + 1;
       }
     }
     return mapa;

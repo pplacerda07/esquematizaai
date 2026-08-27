@@ -1,7 +1,9 @@
 // ===== Links de conversão das páginas de venda =====
 
-// Mentoria: compra pelo WhatsApp/Typebot (todos os CTAs de /mentoria apontam aqui).
-export const CHECKOUT_URL = 'https://typebot.co/esquematizaapp';
+// Mentoria: aplicação pelo Typeform (todos os CTAs de /mentoria apontam aqui).
+// Substituiu o Typebot no WhatsApp em 27/08, a pedido do Sérgio, junto com o
+// lançamento da mentoria para SEFAZ-AL.
+export const CHECKOUT_URL = 'https://esquematizaai.typeform.com/mentoria';
 
 // CGU (LP de captura): grupo VIP no WhatsApp (todos os CTAs de /cgu apontam aqui).
 export const GRUPO_VIP_URL = 'https://chat.whatsapp.com/DfqbvIRKC1UBQKdZL7qrar';

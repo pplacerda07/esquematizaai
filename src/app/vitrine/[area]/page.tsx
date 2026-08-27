@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
+import UrgencyBar from '@/components/HeroSection/UrgencyBar';
 import Footer from '@/components/Footer';
 import AreaCarousel, { type AreaSection, type VitrineItem } from '@/components/AreaCarousel';
 import { AREAS, findArea } from '@/components/Navbar/areas';
@@ -98,6 +99,8 @@ export default async function AreaVitrinePage({
   return (
     <main className={styles.main}>
       <Navbar />
+      {/* o cupom acompanha a pessoa ate onde ela decide a compra */}
+      <UrgencyBar />
 
       <header className={styles.hero}>
         <div className={styles.heroInner}>

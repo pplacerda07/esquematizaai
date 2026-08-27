@@ -13,13 +13,23 @@ import styles from './styles.module.css';
  * primeira renderização. Sem isso, a caixa seria enfeite: rolaria a página e a
  * pessoa teria de repetir a busca na mão lá embaixo.
  *
- * Os três atalhos usam as categorias que já existem no catálogo, com os números
- * de hoje: 4 assinaturas, 23 combos e 80 isolados.
+ * SÃO CINCO, e não três, a pedido do Sérgio. Os quatro primeiros levam à
+ * vitrine já filtrada; a Mentoria é o único que sai do catálogo, porque não é
+ * material, é serviço, e tem página própria.
+ *
+ * "Legislação Tributária" entra aqui apesar de não ser categoria: é uma linha
+ * que atravessa assinatura, combo e isolado, e quem procura a legislação do seu
+ * estado procura pelo assunto, não pelo tipo de embalagem.
+ *
+ * Os números de hoje: 10 assinaturas, 41 combos, 91 isolados e 73 materiais de
+ * legislação tributária.
  */
 const ATALHOS = [
-  { rotulo: 'Assinaturas', tipo: 'assinatura' },
-  { rotulo: 'Combos', tipo: 'combo' },
-  { rotulo: 'Cursos isolados', tipo: 'isolado' },
+  { rotulo: 'Assinaturas', href: '/vitrine?tipo=assinatura' },
+  { rotulo: 'Combos', href: '/vitrine?tipo=combo' },
+  { rotulo: 'Cursos isolados', href: '/vitrine?tipo=isolado' },
+  { rotulo: 'Legislação Tributária', href: '/vitrine?tipo=legislacao-tributaria' },
+  { rotulo: 'Mentoria', href: '/mentoria' },
 ];
 
 export default function BuscaEAtalhos() {
@@ -57,7 +67,7 @@ export default function BuscaEAtalhos() {
 
         <nav className={styles.atalhos} aria-label="Tipos de material">
           {ATALHOS.map((a) => (
-            <Link key={a.tipo} href={`/vitrine?tipo=${a.tipo}`} className={styles.atalho}>
+            <Link key={a.href} href={a.href} className={styles.atalho}>
               {a.rotulo}
             </Link>
           ))}

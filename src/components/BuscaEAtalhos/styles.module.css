@@ -87,12 +87,14 @@
 
 /* --------------------------------------------------------------- atalhos */
 
-/* nowrap: "Cursos isolados" é o mais largo dos três e caía sozinho para a
-   linha de baixo, o que fazia os atalhos parecerem dois grupos */
+/* Passaram de três para cinco, e "Legislação Tributária" é largo: em nowrap
+   eles estouravam a linha no desktop. Quebrar é melhor que transbordar, e com
+   a busca ao lado os cinco ainda cabem em uma linha na maioria das telas.
+   No celular volta a ser nowrap, mas rolando de lado (ver o media query). */
 .atalhos {
   display: flex;
   gap: 0.6rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 /* Contorno e não preenchido: o botão de ação do hero está logo abaixo, e três
@@ -147,7 +149,8 @@
     width: 100%;
   }
   .atalhos {
-    /* rola de lado em vez de quebrar em duas linhas e empurrar o hero */
+    /* rola de lado em vez de quebrar em três linhas e empurrar o hero */
+    flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
   }
