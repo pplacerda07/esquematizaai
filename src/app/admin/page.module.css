@@ -1,7 +1,21 @@
 /* ── Page Shell ──────────────────────────────────────── */
+
+/* Esta tela usa uma faixa branca de topo que precisa ir de ponta a ponta, e o
+   layout do painel passou a dar padding a todas as telas. Aqui ela desfaz esse
+   padding e cuida do proprio respiro; as outras telas ficam com o do layout. */
 .page {
   min-height: 100vh;
   background-color: var(--color-neutral-light);
+  margin: -2.25rem -2.25rem -4rem;
+}
+
+@media (max-width: 900px) {
+  .page {
+    margin: -1.25rem -1.1rem -3rem;
+  }
+  .pageHeader {
+    padding: 1.25rem 1.1rem;
+  }
 }
 
 .pageHeader {

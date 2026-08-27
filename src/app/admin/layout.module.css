@@ -171,9 +171,54 @@
 }
 
 /* ── Main Content ─────────────────────────────────────── */
+
+/* O padding mora AQUI e não em cada página. Ele não existia, e por isso toda
+   tela do painel encostava na barra lateral e no topo da janela: o título
+   nascia colado na borda e os cartões terminavam rente ao lado direito. Era o
+   que o Pedro via como "layout meio junto", e não era de uma tela só, era de
+   todas. */
 .main {
   margin-left: 256px;
   flex: 1;
   min-height: 100vh;
   background-color: var(--color-neutral-light);
+  padding: 2.25rem 2.25rem 4rem;
+  box-sizing: border-box;
+}
+
+/* Não havia media query nenhuma neste arquivo: no celular a barra lateral fixa
+   de 256px cobria quase tudo e sobravam uns 120px de conteúdo. O Sérgio vai
+   abrir isso pelo telefone, então a barra vira faixa no topo e a navegação
+   rola de lado. */
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  .logoArea {
+    padding: 1rem 1.25rem 0.85rem;
+  }
+  .nav {
+    flex: 0 0 auto;
+    flex-direction: row;
+    padding: 0.5rem 0.75rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+  }
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+  .navItem {
+    white-space: nowrap;
+    padding: 0.6rem 0.9rem;
+  }
+  .main {
+    margin-left: 0;
+    padding: 1.25rem 1.1rem 3rem;
+  }
 }
