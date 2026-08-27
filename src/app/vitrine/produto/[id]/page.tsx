@@ -87,10 +87,32 @@ export default async function ProdutoPage({
    * Os combos ("R + F + Q + V") entregam os dois formatos e agora mostram os
    * dois: antes escolhiam um só.
    */
-  const descricaoDoProduto = `${produto.ferramenta ?? ''} ${produto.nome}`;
-  const ehCombo = /R \+ F/i.test(produto.ferramenta ?? '');
-  const temFlashcards = ehCombo || /flashcard/i.test(descricaoDoProduto);
-  const temResumos = ehCombo || /resumo|vade\s*mecum/i.test(descricaoDoProduto);
+  /**
+   * O NOME VENCE A FERRAMENTA quando ele nomeia o formato.
+   *
+   * Na planilha de 27/08 a "Assinatura Resumos Regular" veio com ferramenta
+   * "R + F + Q + V", um rótulo genérico que a marca como combo dos dois
+   * formatos. A página passou a anunciar 109 disciplinas, resumos e flashcards
+   * juntos, numa assinatura que só dá resumos. Anunciar o que o produto não
+   * entrega é o pior erro que uma página de venda pode ter.
+   *
+   * Quando o nome não diz nada sobre formato, aí sim vale a ferramenta.
+   */
+  const nomeDizFlashcards = /flashcard/i.test(produto.nome);
+  const nomeDizResumos = /resumo|vade\s*mecum/i.test(produto.nome);
+
+  let temFlashcards: boolean;
+  let temResumos: boolean;
+
+  if (nomeDizFlashcards || nomeDizResumos) {
+    temFlashcards = nomeDizFlashcards;
+    temResumos = nomeDizResumos;
+  } else {
+    const ferramenta = produto.ferramenta ?? '';
+    const ehCombo = /R \+ F/i.test(ferramenta);
+    temFlashcards = ehCombo || /flashcard/i.test(ferramenta);
+    temResumos = ehCombo || /resumo|vade\s*mecum/i.test(ferramenta);
+  }
 
   // AutoridadeCientifica argumenta por recuperação e espaçamento, que é o
   // mecanismo do flashcard; num combo isso continua valendo.
