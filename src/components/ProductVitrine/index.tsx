@@ -12,18 +12,19 @@ export const revalidate = 60;
 export default async function ProductVitrine() {
   const catalogo = await catalogoParaVitrine();
 
-  const candidatos: ItemVitrine[] = catalogo.map(({ produto, oferta, destaque }) => ({
+  const candidatos: ItemVitrine[] = catalogo.map(({ produto, oferta, destaque, capaDoPainel }) => ({
     id: produto.id,
     nome: produto.nome,
     categoria: produto.categoria,
     area: produto.area,
-    ferramenta: produto.ferramenta,
+    ferramenta: produto.ferramenta,
     preco: oferta.preco,
     precoAntigo: oferta.precoAntigo,
     percentualOff: oferta.percentualOff,
     checkout: oferta.checkout,
     viaPaginaDeVendas: oferta.viaPaginaDeVendas,
-    capa: capaDe(produto),
+    // a do painel vem do Supabase; as 92 da planilha continuam no capas.json
+    capa: capaDoPainel ?? capaDe(produto),
     destaque,
   }));
 

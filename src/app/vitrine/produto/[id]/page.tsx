@@ -72,11 +72,12 @@ export default async function ProdutoPage({
   const ajustado = await produtoAjustado(id);
   if (!ajustado) notFound();
 
-  const { produto, oferta } = ajustado;
+  const { produto, oferta, capaDoPainel } = ajustado;
 
   const areaSlug = produto.area ? SLUG_DA_AREA[produto.area] : null;
   const linkArea = areaSlug ? `/vitrine/${areaSlug}` : '/vitrine';
-  const capa = capaDe(produto);
+  // a do painel vem do Supabase; as da planilha continuam no capas.json
+  const capa = capaDoPainel ?? capaDe(produto);
   /**
    * O que este produto entrega, para a galeria mostrar o formato certo.
    *

@@ -2,7 +2,8 @@
 
 import { useMemo, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { salvarAjuste, limparAjuste } from './actions';
+import { salvarAjuste, limparAjuste, criarMaterial } from './actions';
+import CapaUpload from './CapaUpload';
 import styles from './page.module.css';
 
 export type ItemAdmin = {
@@ -42,6 +43,8 @@ export default function Gerenciador({ itens }: { itens: ItemAdmin[] }) {
   const [soAjustados, setSoAjustados] = useState(false);
   const [editando, setEditando] = useState<ItemAdmin | null>(null);
   const [erro, setErro] = useState('');
+  const [criando, setCriando] = useState(false);
+  const [avisoNovo, setAvisoNovo] = useState('');
   const [salvando, iniciar] = useTransition();
 
   const foiAjustado = (i: ItemAdmin) =>
@@ -88,7 +91,141 @@ export default function Gerenciador({ itens }: { itens: ItemAdmin[] }) {
             {itens.length} produtos do catálogo. {totalAjustados} com ajuste, {totalOcultos} ocultos.
           </p>
         </div>
+
+        <button
+          type="button"
+          className={styles.btnPrimario}
+          onClick={() => {
+            setCriando((v) => !v);
+            setEditando(null);
+            setErro('');
+            setAvisoNovo('');
+          }}
+          aria-expanded={criando}
+        >
+          {criando ? 'Cancelar' : 'Novo material'}
+        </button>
       </header>
+
+      {avisoNovo && <p className={styles.sucessoNovo}>{avisoNovo}</p>}
+
+      {/* Cadastro de material que ainda não existe na planilha. Até agora isso
+          dependia de mandar a planilha e alguém rodar a importação, e nesta
+          semana deixou produto lançado dias fora do ar. */}
+      {criando && (
+        <form
+          className={styles.formNovo}
+          action={(fd) => {
+            setErro('');
+            iniciar(async () => {
+              const r = await criarMaterial(fd);
+              if (r.ok) {
+                setCriando(false);
+                setAvisoNovo('Material cadastrado. A vitrine mostra em até 1 minuto.');
+                router.refresh();
+              } else {
+                setErro(r.erro ?? 'Falhou.');
+              }
+            });
+          }}
+        >
+          <p className={styles.dicaForm}>
+            A planilha continua mandando: quando esse material aparecer nela, o cadastro daqui sai
+            de cena sozinho e ninguém precisa apagar nada.
+          </p>
+
+          <label className={styles.campoLargo}>
+            <span className={styles.rotulo}>Nome do material</span>
+            <input name="nome" className={styles.input} required placeholder="Resumo Direito Ambiental" />
+          </label>
+
+          <div className={styles.linhaCampos}>
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Tipo</span>
+              <select name="categoria" className={styles.input} defaultValue="isolado">
+                <option value="isolado">Material isolado</option>
+                <option value="combo">Combo</option>
+                <option value="assinatura">Assinatura</option>
+              </select>
+            </label>
+
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Área</span>
+              <select name="area" className={styles.input} defaultValue="">
+                <option value="">sem área</option>
+                {['Fiscal', 'Controle', 'Policial', 'Tribunais', 'Bancária', 'Legislativo'].map((a) => (
+                  <option key={a} value={a}>
+                    {a}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Ferramenta</span>
+              <select name="ferramenta" className={styles.input} defaultValue="">
+                <option value="">não informar</option>
+                {['Resumo', 'Flashcards', 'Vade Mecum', 'Questões Inéditas', 'R + F + Q + V'].map((f) => (
+                  <option key={f} value={f}>
+                    {f}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div className={styles.linhaCampos}>
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Preço de venda</span>
+              <input name="preco" className={styles.input} required placeholder="597" inputMode="decimal" />
+            </label>
+
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Preço &quot;de&quot;, opcional</span>
+              <input name="preco_de" className={styles.input} placeholder="997" inputMode="decimal" />
+            </label>
+          </div>
+
+          <p className={styles.dicaForm}>
+            <strong>O caminho de compra é obrigatório</strong>, e serve qualquer um dos dois. Sem
+            um deles o botão de comprar não teria para onde ir.
+          </p>
+
+          <div className={styles.linhaCampos}>
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Link do checkout na Eduzz</span>
+              <input name="checkout" className={styles.input} placeholder="chk.eduzz.com/xxxxx" />
+            </label>
+
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Link da página de vendas</span>
+              <input
+                name="url_site"
+                className={styles.input}
+                placeholder="esquematizaai.com/produto/..."
+              />
+            </label>
+          </div>
+
+          <CapaUpload />
+
+          <label className={styles.campoLargo}>
+            <span className={styles.rotulo}>Descrição, opcional</span>
+            <textarea name="descricao" className={styles.input} rows={4} />
+            <span className={styles.dicaForm}>
+              Com o link da página de vendas preenchido, a descrição, o cronograma e o FAQ entram
+              sozinhos na próxima raspagem. Sem ele, o que estiver escrito aqui é tudo que a página
+              vai ter.
+            </span>
+          </label>
+
+          <div className={styles.acoesForm}>
+            <button type="submit" className={styles.btnPrimario} disabled={salvando}>
+              {salvando ? 'Cadastrando...' : 'Cadastrar material'}
+            </button>
+          </div>
+        </form>
+      )}
 
       {/* Recado que evita o mal-entendido mais caro desta tela: achar que
           editar aqui muda a planilha, ou que a planilha vai apagar o ajuste. */}

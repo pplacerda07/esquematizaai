@@ -1,5 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 import { produtos, ofertaAtual, type Produto, type Oferta } from '@/data/catalogo';
+import {
+  lerProdutosDoPainel,
+  somenteOsQueFaltam,
+  capasDoPainel,
+  referenciasDoPainel,
+} from '@/lib/produtos-do-painel';
 
 /**
  * Aplica no catálogo os ajustes feitos no painel.
@@ -61,6 +67,12 @@ export interface ProdutoAjustado {
   produto: Produto;
   oferta: Oferta;
   destaque: boolean;
+  /**
+   * Capa do produto criado no painel. Os da planilha continuam com a do
+   * capas.json, resolvida por capaDe(); só os do painel guardam a imagem no
+   * Supabase, porque o painel não escreve no repositório.
+   */
+  capaDoPainel?: { src: string; width: number; height: number } | null;
 }
 
 /**
@@ -68,19 +80,32 @@ export interface ProdutoAjustado {
  * ajustados, e sinalizando quais foram marcados como destaque no painel.
  */
 export async function catalogoParaVitrine(): Promise<ProdutoAjustado[]> {
-  const ajustes = await buscarAjustes();
+  const [ajustes, doPainel] = await Promise.all([buscarAjustes(), lerProdutosDoPainel()]);
   const saida: ProdutoAjustado[] = [];
 
-  for (const p of produtos) {
+  // os criados no painel entram no fim: a planilha continua sendo a base, e
+  // quando ela alcançar um deles, ele sai daqui sozinho
+  const todos = [...produtos, ...somenteOsQueFaltam(doPainel, produtos)];
+  const capas = capasDoPainel(doPainel);
+  const referencias = referenciasDoPainel(doPainel);
+
+  for (const p of todos) {
     const a = ajustes.get(p.id);
     if (a?.oculto) continue;
     if (p.categoria === 'oferta-personalizada' || p.status === 'inativo') continue;
 
     const ajustado = aplicar(p, a);
-    const oferta = ofertaAtual(ajustado);
+    // o preço "de" do painel é digitado pelo Sérgio e não passa pelo mapa de
+    // referências da planilha, então entra por aqui
+    const oferta = ofertaAtual(ajustado, referencias.get(p.id) ?? null);
     if (!oferta) continue;
 
-    saida.push({ produto: ajustado, oferta, destaque: Boolean(a?.destaque) });
+    saida.push({
+      produto: ajustado,
+      oferta,
+      destaque: Boolean(a?.destaque),
+      capaDoPainel: capas.get(p.id) ?? null,
+    });
   }
 
   return saida;
@@ -88,7 +113,13 @@ export async function catalogoParaVitrine(): Promise<ProdutoAjustado[]> {
 
 /** Um produto com ajuste, para a página dele. null = oculto ou inexistente. */
 export async function produtoAjustado(id: string): Promise<ProdutoAjustado | null> {
-  const base = produtos.find((p) => p.id === id || p.idEduzz === id);
+  let base = produtos.find((p) => p.id === id || p.idEduzz === id);
+
+  // uma leitura só, usada tanto para achar o produto quanto para a capa dele
+  const doPainel = await lerProdutosDoPainel();
+
+  // não está na planilha: pode ser um cadastrado no painel
+  if (!base) base = somenteOsQueFaltam(doPainel, produtos).find((p) => p.id === id);
   if (!base) return null;
 
   const ajustes = await buscarAjustes();
@@ -96,8 +127,13 @@ export async function produtoAjustado(id: string): Promise<ProdutoAjustado | nul
   if (a?.oculto) return null;
 
   const ajustado = aplicar(base, a);
-  const oferta = ofertaAtual(ajustado);
+  const oferta = ofertaAtual(ajustado, referenciasDoPainel(doPainel).get(base.id) ?? null);
   if (!oferta) return null;
 
-  return { produto: ajustado, oferta, destaque: Boolean(a?.destaque) };
+  return {
+    produto: ajustado,
+    oferta,
+    destaque: Boolean(a?.destaque),
+    capaDoPainel: capasDoPainel(doPainel).get(base.id) ?? null,
+  };
 }

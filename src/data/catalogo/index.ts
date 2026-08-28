@@ -217,11 +217,16 @@ export interface Oferta {
   viaPaginaDeVendas: boolean;
 }
 
-export function ofertaAtual(p: Produto): Oferta | null {
+/**
+ * @param referenciaExterna preço "de" vindo de fora da planilha, para os
+ * materiais cadastrados no painel: lá quem digita o valor riscado é o Sérgio,
+ * e ele não passa por este mapa.
+ */
+export function ofertaAtual(p: Produto, referenciaExterna?: number | null): Oferta | null {
   const { cheio, black } = p.precos;
 
   // referência só vale se for MAIOR que o preço cobrado, senão o risco vira piada
-  const referencia = PRECOS_DE_REFERENCIA[p.id] ?? null;
+  const referencia = referenciaExterna ?? PRECOS_DE_REFERENCIA[p.id] ?? null;
 
   if (p.checkouts.black && black !== null) {
     const temRisco = cheio !== null && cheio > black;

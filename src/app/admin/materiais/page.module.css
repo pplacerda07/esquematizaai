@@ -379,3 +379,51 @@
     margin-left: 0;
   }
 }
+
+/* ── Cadastro de material novo ───────────────────────── */
+
+/* O formulário é longo, então ganha o mesmo cartão branco das outras caixas da
+   tela em vez de flutuar solto entre o cabeçalho e a lista. */
+.formNovo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.25rem 1.35rem;
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.12);
+  border-radius: 0.7rem;
+}
+
+.campoLargo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+/* Campos lado a lado que viram coluna quando não cabem. O minmax evita o
+   clássico do grid: coluna que não encolhe abaixo do conteúdo e estoura a
+   largura do cartão. */
+.linhaCampos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.9rem;
+}
+
+.dicaForm {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(35, 33, 44, 0.62);
+}
+
+.sucessoNovo {
+  margin: 0;
+  padding: 0.7rem 0.95rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-green-light);
+  color: var(--color-green-dark);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+}
