@@ -148,22 +148,29 @@
     flex: 0 0 auto;
     width: 100%;
   }
+  /* QUEBRA DE LINHA, E NÃO ROLAGEM. Eles rolavam de lado, e o Sérgio abriu no
+     celular e viu os dois últimos cortados na borda: ninguém adivinha que uma
+     faixa parada rola.
+
+     O tipo e o recheio encolhem aqui para os cinco caberem em DUAS linhas. Com
+     as medidas do desktop dava três, e cada linha a mais empurra a chamada do
+     hero para baixo numa tela onde ela já começa longe. */
   .atalhos {
-    /* rola de lado em vez de quebrar em três linhas e empurrar o hero */
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .atalhos::-webkit-scrollbar {
-    display: none;
+    flex-wrap: wrap;
+    overflow-x: visible;
   }
   .campo {
     min-height: 44px;
     padding-top: 0.7rem;
     padding-bottom: 0.7rem;
   }
+  /* O tipo e o recheio encolhem aqui para os cinco caberem em DUAS linhas. Com
+     as medidas do desktop dava três, e cada linha a mais empurra a chamada do
+     hero para baixo numa tela onde ela já começa longe.
+     42px de altura mínima é o alvo de toque confortável, e ele se mantém. */
   .atalho {
     min-height: 42px;
-    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
   }
 }
