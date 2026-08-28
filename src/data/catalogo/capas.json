@@ -1,6 +1,6 @@
 {
- "geradoEm": "2026-07-27",
- "fonte": "Catalogo_Completo_Esquematiza.xlsx (coluna URL da capa)",
+ "geradoEm": "2026-08-28",
+ "fonte": "og:image das páginas de venda, somado ao índice anterior",
  "capas": {
   "flashcards-adm-financeira-e-orcamentaria-afo": {
    "src": "/capas/flashcards-adm-financeira-e-orcamentaria-afo.webp",
@@ -534,6 +534,96 @@
   },
   "assinatura-resumos-regular": {
    "src": "/capas/assinatura-resumos-regular.webp",
+   "width": 452,
+   "height": 640
+  },
+  "combo-flashcards-area-bancaria-regular": {
+   "src": "/capas/combo-flashcards-area-bancaria-regular.webp",
+   "width": 452,
+   "height": 640
+  },
+  "combo-flashcards-receita-federal": {
+   "src": "/capas/combo-flashcards-receita-federal.webp",
+   "width": 452,
+   "height": 640
+  },
+  "combo-flashcards-reta-final-camara-dos-deputados": {
+   "src": "/capas/combo-flashcards-reta-final-camara-dos-deputados.webp",
+   "width": 452,
+   "height": 640
+  },
+  "combo-legislacao-tributaria-estadual-sefaz-go-pos-edital": {
+   "src": "/capas/combo-legislacao-tributaria-estadual-sefaz-go-pos-edital.webp",
+   "width": 452,
+   "height": 640
+  },
+  "combo-regimento-interno-regimento-comum-e-codigo-de-etica-camara-dos-deputados": {
+   "src": "/capas/combo-regimento-interno-regimento-comum-e-codigo-de-etica-camara-dos-deputados.webp",
+   "width": 452,
+   "height": 640
+  },
+  "combo-resumos-area-bancaria-regular": {
+   "src": "/capas/combo-resumos-area-bancaria-regular.webp",
+   "width": 452,
+   "height": 640
+  },
+  "pacote-resumos-e-flashcards-legislacao-tributaria": {
+   "src": "/capas/pacote-resumos-e-flashcards-legislacao-tributaria.webp",
+   "width": 452,
+   "height": 640
+  },
+  "flashcards-comercio-internacional-receita-federal": {
+   "src": "/capas/flashcards-comercio-internacional-receita-federal.webp",
+   "width": 452,
+   "height": 640
+  },
+  "flashcards-economia-micro-macro-e-financas-publicas": {
+   "src": "/capas/flashcards-economia-micro-macro-e-financas-publicas.webp",
+   "width": 452,
+   "height": 640
+  },
+  "flashcards-isoladas-estatistica": {
+   "src": "/capas/flashcards-isoladas-estatistica.webp",
+   "width": 452,
+   "height": 640
+  },
+  "flashcards-isoladas-informatica": {
+   "src": "/capas/flashcards-isoladas-informatica.webp",
+   "width": 452,
+   "height": 640
+  },
+  "flashcards-isoladas-portugues": {
+   "src": "/capas/flashcards-isoladas-portugues.webp",
+   "width": 452,
+   "height": 640
+  },
+  "flashcards-legislacao-aduaneira-receita-federal": {
+   "src": "/capas/flashcards-legislacao-aduaneira-receita-federal.webp",
+   "width": 452,
+   "height": 640
+  },
+  "flashcards-legislacao-tributaria-federal-receita-federal": {
+   "src": "/capas/flashcards-legislacao-tributaria-federal-receita-federal.webp",
+   "width": 452,
+   "height": 640
+  },
+  "questoes-ineditas-lte-sefaz-mt": {
+   "src": "/capas/questoes-ineditas-lte-sefaz-mt.webp",
+   "width": 452,
+   "height": 640
+  },
+  "resumo-comercio-internacional-receita-federal": {
+   "src": "/capas/resumo-comercio-internacional-receita-federal.webp",
+   "width": 452,
+   "height": 640
+  },
+  "resumo-isolada-estatistica": {
+   "src": "/capas/resumo-isolada-estatistica.webp",
+   "width": 452,
+   "height": 640
+  },
+  "resumo-legislacao-tributaria-sefaz-df": {
+   "src": "/capas/resumo-legislacao-tributaria-sefaz-df.webp",
    "width": 452,
    "height": 640
   }
