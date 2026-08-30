@@ -1978,3 +1978,53 @@
     animation: none;
   }
 }
+/* Depoimentos em vídeo dentro da seção de resultados da mentoria.
+   A copy de 29/08 pediu eles aqui, no lugar dos contadores animados: vídeo de
+   aluno nomeado prova mais que número subindo na tela. */
+.depoimentosMentoria {
+  margin-top: 2.5rem;
+}
+
+.depoimentosRotulo {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cold-dark);
+  opacity: 0.7;
+}
+
+/* Bloco de revisão: Resumos, Flashcards e Caderno de Erros.
+   Substituiu os quatro pilares TQRS na copy de 29/08. Mesma linguagem visual
+   dos cartões de fase, para as duas listas da seção lerem como um par. */
+.revisaoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.revisaoCard {
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem 1.35rem;
+}
+
+.revisaoCard p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(35, 33, 44, 0.78);
+}
+
+.revisaoTitle {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: var(--color-cold-dark);
+}

@@ -16,26 +16,37 @@ import StackedCards from '@/components/StackedCards';
 import FitToggle from '@/components/FitToggle';
 import BonusFlip from '@/components/BonusFlip';
 import Pilares from '@/components/Pilares';
+import VideosDepoimentos from '@/components/VideosDepoimentos';
+import PlanosMentoria from '@/components/PlanosMentoria';
 
 export const metadata: Metadata = {
-  title: 'Esquematiza Mentoria | Aprovação em concursos fiscais e de controle',
+  title: 'Esquematiza Mentoria | Aprovação em concursos públicos com método e revisão',
   description:
-    'A mentoria que prioriza o que cada banca cobra, com plano individual e mentor aprovado. Nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e SEFAZ-RN em 2026.',
+    'A mentoria que prioriza o que cada banca cobra, com plano individual e acompanhamento de quem já foi aprovado. Nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e SEFAZ-RN em 2026.',
 };
 
 // stagger: define o atraso da animação de entrada de cada elemento
 const delay = (ms: number) => ({ ['--reveal-delay']: `${ms}ms` } as React.CSSProperties);
 
+/**
+ * Os oito entregáveis, na copy de 29/08.
+ *
+ * Eram dez, e três saíram porque a mentoria mudou: relatórios semanais,
+ * encontros quinzenais ao vivo e o módulo de discursiva não estão mais na
+ * oferta. Prometer entrega que não existe é o caminho mais curto para o pedido
+ * de reembolso.
+ *
+ * As duas assinaturas deixaram de ser "inclusas" para todo mundo: agora
+ * dependem do plano, e o texto diz isso.
+ */
 const DELIVERABLES: [string, string][] = [
-  ['Planejamento estratégico de estudos, pré e pós-edital', 'Reuniões de organização no começo pra montar o seu plano completo, seja do zero ou aproveitando o que você já estudou.'],
+  ['Planejamento estratégico de estudos, pré e pós-edital', 'Reunião individual inicial com o mentor pra montar o seu plano completo e apresentar a estratégia, seja do zero ou aproveitando o que você já estudou.'],
   ['Plataforma com metas diárias', 'Você abre o app e já sabe o que estudar no dia, entre teoria, questões e revisão, no tempo que você tem.'],
-  ['Relatórios semanais de desempenho', 'Toda segunda você recebe o painel da sua evolução, com comparativo entre os mentorados pra saber exatamente onde está.'],
-  ['Encontros quinzenais de mentoria ao vivo', 'Ora com tema específico da sua área pra aprofundar, ora como plantão de dúvidas com o Sérgio.'],
-  ['Assinatura Total Esquematiza Aí', 'Resumos e flashcards de todas as matérias, pré-edital e os combos de pós-edital, atualizados pelo tempo que você ficar na mentoria. Vendida à parte por R$ 1.997,00.'],
-  ['Assinatura Premium do Estratégia Concursos', 'O material teórico mais completo do mercado, incluído no plano pra você estudar a teoria de qualquer matéria. Vendida à parte por R$ 2.628,00.'],
-  ['Módulo de Discursiva', 'O passo a passo da redação técnica que a banca espera, pra você não ser eliminado na segunda fase.'],
-  ['Simulados exclusivos dos mentorados', 'Provas no ritmo e no ambiente oficiais pra medir desempenho e acostumar com a prova.'],
-  ['Acesso direto ao Sérgio todos os dias', 'Dúvida por texto, áudio ou vídeo no WhatsApp, mais a comunidade exclusiva de mentorados.'],
+  ['Assessoria pedagógica contínua', 'Aplicação de diferentes métodos de estudo e revisão, ajustada ao seu momento, à sua rotina e à banca do seu concurso.'],
+  ['Orientação na escolha de concursos', 'Análise estratégica dos editais publicados e dos concursos previstos ou no radar da sua área, pra você mirar a prova certa na hora certa.'],
+  ['Materiais Esquematiza Aí em condição de mentorado', 'Resumos e flashcards de todas as matérias, pré-edital e combos de pós-edital, com desconto exclusivo de 30% a 70% conforme o plano, ou já inclusos nos planos anuais VIP e Premium.'],
+  ['Assinatura Premium do Estratégia Concursos', 'O material teórico mais completo do mercado, já incluso nos planos que a contemplam, pra você estudar a teoria de qualquer matéria.'],
+  ['Canal direto no WhatsApp', 'Dúvida por texto, áudio ou vídeo, respondida pela equipe de mentoria supervisionada pelo Prof. Sérgio, mais a comunidade exclusiva de mentorados.'],
   ['Descontos na rede de parceiros', 'Condições de aluno na TEC Concursos, na DP e em outros parceiros.'],
 ];
 
@@ -57,10 +68,14 @@ export default function MentoriaPage() {
               <span className={styles.titleHighlight}>reprova</span>.
             </h1>
 
+            {/* A copy de 29/08 abriu o alvo: era "concursos fiscais e de
+                controle", virou concurso público em geral. A mentoria passou a
+                atender policial, tribunais e outras áreas, e a headline não
+                podia continuar excluindo quem ela agora atende. */}
             <p className={`${styles.heroSubtitle} ${styles.heroIn}`} style={delay(200)}>
-              Em concursos fiscais e de controle, o que aprova é uma estratégia que
-              prioriza o que cada banca cobra, com plano individual e mentor aprovado
-              te acompanhando de perto.
+              Em concurso público, o que aprova é uma estratégia que prioriza o que cada
+              banca cobra, com plano individual e acompanhamento de perto por quem já foi
+              aprovado.
             </p>
 
             {/* VSL no topo: o visitante já se depara com o vídeo pra qualificar */}
@@ -73,11 +88,12 @@ export default function MentoriaPage() {
                 Enquanto você revisa <em>aleatoriamente</em>, a banca cobra justamente o que
                 o seu cronograma <strong>deixou pra trás</strong>. Aqui você revisa{' '}
                 <strong>pelo peso que cada matéria tem na prova</strong> que você quer
-                passar, seja ela fiscal ou de controle.
+                passar, seja qual for a sua área.
               </p>
               <p className={styles.heroIn} style={delay(520)}>
-                Cada mês adiado sem direção é <strong>um contracheque de R$ 20 mil</strong>{' '}
-                que não entra na sua conta. Tendo <em>duas horas por dia</em> ou o dia
+                Cada mês de estudo <strong>sem critério</strong> é um contracheque inteiro
+                que não entra na sua conta, e nas carreiras mais altas isso passa de{' '}
+                <strong>R$ 20 mil</strong>. Tendo <em>duas horas por dia</em> ou o dia
                 inteiro livre, o plano se ajusta à sua rotina e mira a prova mais próxima.
               </p>
               <p className={styles.heroIn} style={delay(600)}>
@@ -110,8 +126,8 @@ export default function MentoriaPage() {
           <span className={`${styles.bgIcon} ${styles.bgIconRight}`} aria-hidden="true" />
           <div className={styles.containerNarrow}>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
-              Existe um motivo técnico pra você estudar muito e render pouco em concursos
-              fiscais e de controle.
+              Existe um motivo técnico pra você estudar muito e render pouco, seja qual for
+              o concurso que você mira.
             </h2>
             <div className={styles.prose}>
               <p data-reveal style={delay(120)}>
@@ -132,7 +148,7 @@ export default function MentoriaPage() {
                 que perto de 40% dessas aulas têm incidência baixa na banca que você quer,
                 e por isso você revisa por data, esquece o que não entrou no ciclo e
                 descobre, na prova, que ela cobrou justamente o que ficou pra trás. O
-                esforço existe, mas a direção não.
+                esforço existe. O que falta é critério.
               </p>
               <p data-reveal style={delay(240)}>
                 Enquanto isso, o aprovado que você acompanha no Instagram posta a posse, a
@@ -161,32 +177,44 @@ export default function MentoriaPage() {
               qualquer pessoa pode conferir.
             </p>
 
+          {/* OS CONTADORES ANIMADOS SAÍRAM, com a copy de 29/08. Eram 102, 75,
+              156 e 28%, e a copy nova não traz nenhum desses totais: onde havia
+              "28% das vagas da SEFAZ-RN" agora se lê "parcela expressiva".
+              Número que encolhe assim entre uma versão e outra é número que não
+              se sustenta, e afirmação sobre aprovação é justamente o que a
+              concorrência confere. Ficaram os fatos que as listas mostram. */}
             <div className={styles.statsGrid}>
               <div className={styles.statCard} data-reveal="fade" style={delay(0)}>
-                <span className={styles.statNumber}><CountUp end={102} /></span>
-                <span className={styles.statLabel}>aprovados na SEFAZ-SP</span>
+                <span className={styles.statLabel}>Aprovados na SEFAZ-SP</span>
                 <span className={styles.statDetail}>46 nas vagas imediatas · 6 no Top 5 · 10 no Top 10</span>
               </div>
               <div className={styles.statCard} data-reveal="fade" style={delay(100)}>
-                <span className={styles.statNumber}><CountUp end={75} /></span>
-                <span className={styles.statLabel}>aprovados na SEFA-PA</span>
+                <span className={styles.statLabel}>Aprovados na SEFA-PA</span>
                 <span className={styles.statDetail}>entre os novos auditores e fiscais</span>
               </div>
               <div className={styles.statCard} data-reveal="fade" style={delay(200)}>
-                <span className={styles.statNumber}><CountUp end={156} /></span>
-                <span className={styles.statLabel}>aprovados na SEFAZ-MT</span>
+                <span className={styles.statLabel}>Aprovados na SEFAZ-MT</span>
                 <span className={styles.statDetail}>nossos alunos nas listas oficiais</span>
               </div>
               <div className={styles.statCard} data-reveal="fade" style={delay(300)}>
-                <span className={styles.statNumber}><CountUp end={28} suffix="%" /></span>
-                <span className={styles.statLabel}>das vagas imediatas na SEFAZ-RN</span>
-                <span className={styles.statDetail}>e 40% das vagas reservadas a PcD</span>
+                <span className={styles.statLabel}>SEFAZ-RN</span>
+                <span className={styles.statDetail}>
+                  parcela expressiva das vagas imediatas e 40% das vagas reservadas a PcD
+                </span>
               </div>
             </div>
 
             <div className={styles.bigStat} data-reveal="scale" style={delay(120)}>
-              <span className={styles.bigStatNumber}><CountUp end={29} prefix="+" suffix=" mil" /></span>
+              <span className={styles.bigStatNumber}><CountUp end={30} prefix="+" suffix=" mil" /></span>
               <span className={styles.bigStatLabel}>alunos já estudaram com os nossos materiais</span>
+            </div>
+
+            {/* Aluno com nome e rosto contando o resultado prova mais que
+                qualquer número subindo na tela, e é o que a concorrência não
+                consegue copiar. São os mesmos depoimentos da página de vendas. */}
+            <div className={styles.depoimentosMentoria} data-reveal style={delay(160)}>
+              <p className={styles.depoimentosRotulo}>Aprovados falando</p>
+              <VideosDepoimentos />
             </div>
           </div>
         </section>
@@ -215,9 +243,9 @@ export default function MentoriaPage() {
             <p className={styles.lead} data-reveal style={delay(120)}>
               A Esquematiza Mentoria organiza a sua preparação no Método Esquematizado, o
               mesmo que colocou nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e
-              SEFAZ-RN em 2026. Ele se apoia em três fases de preparação e em quatro
-              pilares de estudo que se repetem todos os dias, do primeiro PDF até a véspera
-              da prova.
+              SEFAZ-RN em 2026. Ele se apoia em três fases de preparação e num sistema de
+              revisão contínua com Resumos Esquematizados e Flashcards, do primeiro PDF até
+              a véspera da prova.
             </p>
 
             <h3 className={styles.subheading} data-reveal>As três fases organizam a sua jornada</h3>
@@ -251,32 +279,54 @@ export default function MentoriaPage() {
               </div>
             </div>
 
-            <h3 className={styles.subheading} data-reveal>Quatro pilares todos os dias: o TQRS</h3>
-            <div data-reveal style={delay(120)}>
-              <Pilares />
+            {/* Os quatro pilares TQRS saíram com a copy de 29/08. No lugar
+                entrou o que a marca de fato vende e o aluno reconhece: resumo,
+                flashcard e caderno de erros. */}
+            <h3 className={styles.subheading} data-reveal>
+              A revisão do jeito Esquematiza Aí: Resumos + Flashcards
+            </h3>
+            <div className={styles.revisaoGrid}>
+              <div className={styles.revisaoCard} data-reveal="fade" style={delay(0)}>
+                <h4 className={styles.revisaoTitle}>Resumos Esquematizados</h4>
+                <p>
+                  O conteúdo inteiro condensado no formato em que a banca cobra, pra você
+                  revisar em minutos o que levou horas pra aprender.
+                </p>
+              </div>
+              <div className={styles.revisaoCard} data-reveal="fade" style={delay(120)}>
+                <h4 className={styles.revisaoTitle}>Flashcards</h4>
+                <p>
+                  Revisão ativa e espaçada, que te obriga a lembrar da resposta antes de
+                  virar o cartão, no intervalo exato pra fixar antes de esquecer.
+                </p>
+              </div>
+              <div className={styles.revisaoCard} data-reveal="fade" style={delay(240)}>
+                <h4 className={styles.revisaoTitle}>Caderno de Erros</h4>
+                <p>
+                  Todo erro que você comete vira anotação e volta pra sua fila de revisão
+                  até o dia da prova. É o ativo mais valioso da sua preparação.
+                </p>
+              </div>
             </div>
 
             <div className={styles.prose}>
               <p data-reveal>
-                Antes, sem esse critério, você estudava todas as matérias com o mesmo peso
-                e revisava por data, o que faz esquecer justamente o conteúdo que não
-                voltou no ciclo. Com o Método Esquematizado, cada matéria entra no seu
-                plano na proporção em que ela cai na sua banca, a revisão acontece de forma
-                espaçada para fixar de verdade, e todo erro que você comete vira anotação
-                no Caderno de Erros, que é o ativo mais valioso da preparação e a base das
-                suas revisões até o dia da prova.
+                Antes, sem esse critério, você estudava todas as matérias com o mesmo peso,
+                revisava por data relendo PDF inteiro, e esquecia justamente o conteúdo que
+                não voltou no ciclo. Com o Método Esquematizado, cada matéria entra no seu
+                plano na proporção em que ela cai na sua banca, e a revisão acontece de
+                forma espaçada, com o material que virou referência nacional em resumos e
+                flashcards para concursos.
               </p>
               <p data-reveal>
                 Tudo isso vive na nossa plataforma de estudos, que ajusta suas metas
                 diárias a partir do tempo que você tem e reorganiza o plano sempre que a
                 semana foge do previsto. Você estuda com o melhor material de revisão do
-                mercado, pré e pós-edital, com resumos esquematizados, flashcards e a
-                Legislação Tributária Esquematizada, sem precisar comprar material por
-                fora, e tem reuniões quinzenais com o Sérgio, mentor já aprovado em
-                carreira fiscal ajustando a sua rota. Para a
-                hora da prova, você ainda treina o Método das 5 Camadas, que organiza a
-                ordem de ataque das questões para você não travar na prova e aproveitar
-                cada minuto.
+                mercado, pré e pós-edital, com resumos esquematizados, flashcards e, na
+                área fiscal, a Legislação Tributária Esquematizada, e conta com a
+                assessoria pedagógica do Prof. Sérgio Furtado, auditor fiscal aprovado, e
+                da equipe de mentores que ele treinou no método, ajustando a sua rota do
+                primeiro dia até a prova.
               </p>
             </div>
           </div>
@@ -306,63 +356,37 @@ export default function MentoriaPage() {
           <div className={styles.containerNarrow}>
             <p className={styles.highlightNote} data-reveal>
               Repare numa coisa: na maioria das mentorias do mercado, o preço cobre apenas
-              o acompanhamento, e o material teórico e o de revisão você compra por fora.
-              Aqui, as duas assinaturas, que somam <strong>R$ 4.625,00</strong>, já estão
-              dentro do mesmo valor.
+              o acompanhamento, e o material teórico e o de revisão você compra por fora, a
+              preço cheio. Aqui, conforme o plano que você escolher, o material de revisão{' '}
+              <strong>entra incluso ou com desconto exclusivo de mentorado</strong>, e a
+              Assinatura Premium do Estratégia já vem inclusa nos planos que a contemplam.
             </p>
           </div>
         </section>
 
-        {/* Bloco 08 — Bônus (flashcards que giram) */}
-        <section className={`${styles.section} ${styles.sectionDots}`}>
-          <div className={styles.containerNarrow}>
-            <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>
-              O que você ainda leva além de toda a estrutura da mentoria.
-            </h2>
+        {/* Bloco 08 — Bônus REMOVIDO: a copy de 29/08 não tem essa seção. Os
+            bônus que ela listava (Estudo Esquematizado, Sala de Estudos Virtual
+            e o treinamento Revisão Esquematizada) saíram da oferta. */}
 
-            <div data-reveal style={delay(140)}>
-              <BonusFlip />
-            </div>
-          </div>
-        </section>
-
-        {/* Bloco 09 — Stack de valor */}
+        {/* Bloco 09 — Planos.
+            Substituiu a pilha de valor, aquela conta de quanto custaria comprar
+            tudo separado até chegar num preço único de 12x R$ 413,38. A oferta
+            deixou de ser uma só: agora são cinco planos, e o que muda entre eles
+            é o prazo e o que entra de material. */}
         <section className={`${styles.section} ${styles.sectionDark}`}>
           <span className={`${styles.bgLogo} ${styles.bgLogoA}`} aria-hidden="true" />
           <span className={`${styles.bgLogo} ${styles.bgLogoB}`} aria-hidden="true" />
           <span className={`${styles.bgLogo} ${styles.bgLogoC}`} aria-hidden="true" />
           <div className={styles.containerNarrow}>
-            <h2 className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`} data-reveal style={delay(80)}>O que custaria montar tudo isso separado.</h2>
+            <h2
+              className={`${styles.sectionTitle} ${styles.sectionTitleCenter}`}
+              data-reveal
+              style={delay(80)}
+            >
+              Escolha o plano que cabe na sua rotina e no seu bolso.
+            </h2>
 
-            <div className={styles.stackCard} data-reveal="scale" style={delay(120)}>
-              <div className={styles.stackRow}><span>Mentoria de 12 meses</span><span>R$ 4.764,00</span></div>
-              <div className={styles.stackRow}><span>Assinatura Premium do Estratégia Concursos</span><span>R$ 2.628,00</span></div>
-              <div className={styles.stackRow}><span>Assinatura Total Esquematiza Aí</span><span>R$ 1.997,00</span></div>
-              <div className={`${styles.stackRow} ${styles.stackTotal}`}>
-                <span>Total se você contratasse tudo separado</span><span>R$ 9.389,00</span>
-              </div>
-
-              <div className={styles.priceBox}>
-                <span className={styles.priceLabel}>Na mentoria, tudo num lugar só, por apenas</span>
-                <div className={styles.priceMain}>
-                  <span className={styles.priceValue}>12x R$ 413,38</span>
-                  <span className={styles.priceSuffix}>/mês</span>
-                </div>
-                <span className={styles.priceSub}>ou R$ 3.997,00 à vista · economia de mais de R$ 5 mil</span>
-                <span className={styles.priceSave}>A condição exata, com as formas de pagamento, a equipe fecha com você no WhatsApp</span>
-              </div>
-            </div>
-
-            <p className={styles.stackNote} data-reveal>
-              E tem um detalhe que muda a conta: nas outras mentorias, o ticket que você vê
-              na frente cobre só o acompanhamento. O material teórico e o de revisão vêm
-              separados, somando facilmente mais de R$ 4 mil por fora. Aqui, esses R$ 4.625,00
-              de material já estão dentro do preço, e você não precisa juntar mais nada.
-            </p>
-
-            <div className={styles.centerCta} data-reveal style={delay(80)}>
-              <CtaButton variant="gradient">Quero fazer minha aplicação pra mentoria</CtaButton>
-            </div>
+            <PlanosMentoria />
           </div>
         </section>
 
@@ -374,18 +398,20 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionDots}`}>
           <div className={styles.containerNarrow}>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
-              Na hora em que a dúvida trava o seu estudo, você não fica esperando resposta
-              por dias.
+              Na hora em que a dúvida aparece, você não fica esperando resposta por dias.
             </h2>
+            {/* Saíram daqui o encontro quinzenal ao vivo e o relatório semanal:
+                não estão mais na oferta, e prometer entrega que não existe é o
+                caminho mais curto para o pedido de reembolso. */}
             <p className={styles.lead} data-reveal style={delay(120)}>
               O suporte da mentoria não é um formulário que responde em três dias úteis.
-              Você fala direto com o Sérgio pelo WhatsApp, por texto, áudio ou
-              vídeo quando a situação pede, e a resposta vem no ritmo do seu estudo, no
-              mesmo dia. A cada quinze dias acontece o encontro de mentoria ao vivo, ora
-              pra aprofundar um tema da sua área, ora como plantão de dúvidas. Toda segunda
-              chega o seu relatório de desempenho, pra você e o mentor enxergarem juntos o
-              que ajustar na semana. E a comunidade exclusiva de mentorados mantém você
-              perto de quem mira o mesmo cargo, todos os dias.
+              Você fala com a equipe de mentoria pelo WhatsApp, por texto, áudio ou vídeo
+              quando a situação pede, e a resposta vem no ritmo do seu estudo. Na reunião
+              individual inicial, o mentor apresenta o seu planejamento e a estratégia
+              montada pro seu caso, e a partir daí a assessoria pedagógica acompanha a
+              aplicação do método e ajusta a rota sempre que a sua semana foge do previsto.
+              E a comunidade exclusiva de mentorados mantém você perto de quem mira o mesmo
+              cargo, todos os dias.
             </p>
           </div>
         </section>
@@ -403,17 +429,26 @@ export default function MentoriaPage() {
                   Você tem sete dias pra entrar, testar tudo por dentro e decidir sem risco.
                 </h2>
                 <p className={styles.guaranteePara} data-reveal style={delay(230)}>
-                  Você assina, recebe o seu plano de estudos individual, participa da sessão
-                  de organização, abre a plataforma e acessa tanto o material de revisão da
-                  casa quanto a Assinatura Premium do Estratégia.
+                  Você assina, recebe o seu plano de estudos individual, participa da
+                  reunião inicial com o mentor, abre a plataforma e acessa os materiais e
+                  assinaturas do seu plano.
                 </p>
                 <p className={styles.guaranteePara} data-reveal style={delay(380)}>
-                  Tem sete dias pra sentir, na prática, se a mentoria é pra você. Se em
-                  qualquer momento dentro desse prazo decidir que não faz sentido, devolvemos
-                  cem por cento do valor pago, sem pergunta e sem burocracia.
+                  Tem sete dias, contados da confirmação do pagamento, pra sentir na prática
+                  se a mentoria é pra você. Se dentro desse prazo decidir que não faz
+                  sentido, basta enviar um e-mail pra{' '}
+                  <a href="mailto:contato@esquematizaai.com">contato@esquematizaai.com</a> e
+                  devolvemos cem por cento do valor pago.
+                </p>
+                {/* O "sem pergunta e sem burocracia" saiu: os termos preveem
+                    analise do pedido, e prometer o contrario na pagina de venda
+                    cria uma expectativa que o contrato nao sustenta. */}
+                <p className={styles.guaranteePara} data-reveal style={delay(460)}>
+                  Após esse prazo, valem as condições de cancelamento previstas nos Termos
+                  de Uso.
                 </p>
                 <p className={styles.guaranteeClose} data-reveal style={delay(530)}>
-                  O risco de experimentar fica todo com a gente.
+                  <a href="/termos-de-uso-mentoria">Consulte os Termos de Uso da mentoria.</a>
                 </p>
               </div>
             </div>
@@ -425,15 +460,23 @@ export default function MentoriaPage() {
           <div className={`${styles.orb} ${styles.orbDarkLeft}`} />
           <div className={styles.containerNarrow}>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
-              Quem vai montar o seu plano já sentou nas cadeiras que você quer ocupar.
+              Quem criou o seu método já sentou na cadeira que você quer ocupar.
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>
-              A Esquematiza Mentoria é conduzida por um auditor que vive na pele a rotina
-              do cargo que você quer. Por trás dele está a marca que já levou mais
-              de 30 mil alunos a estudar com os seus materiais e que, só em 2026, viu nossos
-              alunos aprovados na SEFAZ-SP, na SEFA-PA, na SEFAZ-MT e na SEFAZ-RN. Quem vai
-              ler a sua banca e ajustar o seu plano não aprendeu isso na teoria, aprendeu
-              passando.
+              A Esquematiza Mentoria foi criada e é liderada pelo Prof. Sérgio Furtado,
+              autor do Esquematiza Aí, especialista em métodos de estudo e revisão, com mais
+              de 10 anos de experiência em concursos públicos. Auditor Fiscal do Estado,
+              Coordenador no Estratégia Concursos (Rodadas Avançadas de Simulados) e
+              ex-coordenador e professor no TEC Concursos. O acompanhamento é realizado por
+              ele e/ou por mentores da equipe do Esquematiza Aí, todos capacitados e
+              supervisionados por ele na aplicação do método.
+            </p>
+            <p className={styles.lead} data-reveal style={delay(160)}>
+              O Esquematiza Aí surgiu em 2019 e hoje conta com mais de 30.000 alunos e
+              milhares de aprovados nos mais diversos cargos em todo o país. É uma das
+              marcas pioneiras na utilização e popularização de Flashcards no estudo para
+              concursos públicos e referência nacional em Resumos Esquematizados e
+              Flashcards para provas e exames.
             </p>
 
             <div className={styles.mentorGrid}>
@@ -448,29 +491,30 @@ export default function MentoriaPage() {
                   />
                 </div>
                 <div className={styles.mentorBody}>
-                  <span className={styles.mentorRole}>Auditor-Fiscal · criador do método de revisão</span>
+                  <span className={styles.mentorRole}>Auditor-Fiscal · autor do Esquematiza Aí</span>
                   <h3 className={styles.mentorName}>Sérgio Furtado</h3>
                   <p className={styles.mentorBio}>
-                    Foi professor e coordenador no Tec Concursos, coordena as Rodadas
-                    Avançadas de Simulados no Estratégia e ajudou a abrir o mercado de
-                    flashcards para concursos no Brasil. O método de revisão da Esquematiza
-                    nasceu da cabeça dele.
+                    Auditor Fiscal do Estado, autor do Esquematiza Aí e especialista em
+                    métodos de estudo e revisão. Coordena as Rodadas Avançadas de Simulados
+                    no Estratégia Concursos, foi coordenador e professor no TEC Concursos e
+                    ajudou a abrir o mercado de flashcards para concursos no Brasil. O
+                    método de revisão da Esquematiza nasceu da cabeça dele.
                   </p>
                   <blockquote className={styles.mentorQuote}>
-                    Eu demorei onze anos pra tomar posse como auditor. No caminho, fui
-                    aprovado como analista e depois como auditor na SEFIN-RO, e também como
-                    Auditor do ISS de Guarulhos. Aprendi na pele que o que separa quem passa
-                    de quem desiste é método e constância, mais do que talento. Foi esse
-                    método que eu organizei aqui dentro pra você não precisar levar onze anos
-                    como eu levei. Estude, trabalhe e desfrute.
+                    Fui aprovado como analista e como auditor na SEFIN-RO, e também como
+                    Auditor do ISS de Guarulhos. Em todas essas provas, o que decidiu foi o
+                    mesmo: método, leitura de banca e revisão feita no dia certo. Foi esse
+                    método que eu transformei no Esquematiza Aí, que já colocou milhares de
+                    alunos nas listas, e é ele que a mentoria aplica no seu plano, ajustado
+                    ao seu tempo e à sua banca. Estude, trabalhe e desfrute.
                   </blockquote>
                 </div>
               </article>
             </div>
 
             <p className={styles.proofIntro} data-reveal>
-              Não é teoria de quem nunca passou. É a rotina de quem senta na cadeira, vive
-              o cargo e constrói o método que você vai estudar.
+              Método testado em prova pelo próprio autor e confirmado, ano após ano, nas
+              listas de aprovação dos alunos.
             </p>
 
             <div className={styles.proofGallery}>
@@ -500,7 +544,7 @@ export default function MentoriaPage() {
           <div className={`${styles.orb} ${styles.orbFinalRight}`} />
           <div className={styles.containerNarrow}>
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
-              Tudo que você precisa pra passar, num lugar só, sem comprar mais nada por fora.
+              Tudo que você precisa pra passar, num lugar só.
             </h2>
             <p className={styles.lead} data-reveal style={delay(120)}>Quando você entra na Esquematiza Mentoria, leva:</p>
 
@@ -508,20 +552,19 @@ export default function MentoriaPage() {
               {
                 marked: 2,
                 items: [
-                  ['Planejamento estratégico de estudos', ', pré e pós-edital'],
-                  ['Plataforma com metas diárias', ' de teoria, questões e revisão'],
-                  ['Relatórios semanais de desempenho', ' com comparativo entre os mentorados'],
-                  ['Encontros quinzenais ao vivo', ' com o Sérgio'],
-                  ['Assinatura Total Esquematiza Aí', ', com resumos e flashcards de todas as matérias, pré e pós-edital'],
+                  ['Planejamento estratégico de estudos', ', pré e pós-edital, com metas diárias'],
+                  ['Reunião individual inicial com o mentor', ' pra apresentar plano e estratégia'],
+                  ['Plataforma de estudos', ' pra organizar teoria, questões e revisão'],
+                  ['Assessoria pedagógica', ' na aplicação dos métodos de estudo e revisão'],
                 ],
               },
               {
                 marked: 1,
                 items: [
-                  ['Assinatura Premium do Estratégia Concursos', ''],
-                  ['Módulo de Discursiva e simulados exclusivos', ' dos mentorados'],
-                  ['Acesso diário ao mentor', ' no WhatsApp e à comunidade de mentorados'],
-                  ['E os bônus', ': Estudo Esquematizado, Sala de Estudos Virtual e o treinamento Revisão Esquematizada'],
+                  ['Orientação estratégica na escolha de concursos', ' e análise de editais'],
+                  ['Materiais Esquematiza Aí', ' (resumos e flashcards) inclusos ou com desconto exclusivo, conforme o plano'],
+                  ['Assinatura Premium do Estratégia Concursos', ' nos planos que a incluem'],
+                  ['Canal no WhatsApp', ' com a equipe de mentoria e comunidade de mentorados'],
                 ],
               },
             ] as { marked: number; items: [string, string][] }[]).map((group, g) => (
@@ -541,12 +584,11 @@ export default function MentoriaPage() {
             ))}
 
             <p className={styles.prose} data-reveal>
-              De mais de <strong>R$ 9.389,00</strong> se contratado separado, na mentoria
-              tudo fica num lugar só por <strong>cerca de R$ 333/mês</strong>. Você ainda tem
-              sete dias de garantia incondicional pra testar tudo por dentro e pedir o
-              dinheiro de volta se não fizer sentido. A sua condição exata, as formas de
-              pagamento e o desconto pra quem já é aluno do Estratégia, a equipe acerta com
-              você no WhatsApp.
+              Planos a partir de <strong>R$ 497/mês</strong>, com opções anuais que já
+              incluem todo o material de revisão e a teoria. Você ainda tem sete dias de
+              garantia incondicional pra testar tudo por dentro e pedir o dinheiro de volta
+              se não fizer sentido. A sua condição exata e as formas de pagamento a equipe
+              acerta com você no WhatsApp.
             </p>
 
             <div className={styles.centerCta} data-reveal style={delay(80)}>
