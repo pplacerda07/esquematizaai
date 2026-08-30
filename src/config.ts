@@ -37,3 +37,21 @@ export const GA_MEDICAO_ID = 'G-ZLPK9R4PZ6';
 // VSL padrão (usada em /mentoria pelo componente YouTubeEmbed).
 export const YOUTUBE_ID = 'cr-ZiaBDSf8';
 export const YOUTUBE_START = 0;
+
+/**
+ * Redes sociais do rodapé.
+ *
+ * SÓ APARECE O QUE TEM ENDEREÇO. O Sérgio pediu os quatro ícones, mas o único
+ * link que existe hoje é o do Instagram: no site atual o Facebook aponta para
+ * um "profile.php" sem identificador, e YouTube e TikTok não aparecem em lugar
+ * nenhum. Ícone bonito levando a lugar nenhum é pior que ícone ausente, então
+ * quem estiver em branco simplesmente não é desenhado.
+ *
+ * Para ligar os outros três, basta preencher a string aqui.
+ */
+export const REDES_SOCIAIS = {
+  instagram: 'https://www.instagram.com/esquematizaai/',
+  youtube: '',
+  tiktok: '',
+  facebook: '',
+} as const;

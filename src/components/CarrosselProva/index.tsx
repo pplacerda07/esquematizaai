@@ -1,7 +1,6 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { ITENS_PROVA } from '@/data/prova-social';
 import styles from './styles.module.css';
 
@@ -39,10 +38,6 @@ const VIZINHOS = 3;
 
 /** o quanto o dedo precisa andar para trocar de cartão */
 const ARRASTO_MINIMO = 60;
-
-function doisDigitos(n: number) {
-  return String(n).padStart(2, '0');
-}
 
 /**
  * Distância de um cartão até o centro, pelo caminho mais curto.
@@ -158,20 +153,11 @@ export default function CarrosselProva() {
                   </>
                 ) : (
                   <>
-                    <div className={styles.cabecalhoMensagem}>
-                      <span className={`${styles.selo} ${styles.seloMensagem}`}>WhatsApp</span>
-                      <div className={styles.print}>
-                        <Image
-                          src={it.src}
-                          alt={it.alt}
-                          width={720}
-                          height={560}
-                          sizes="96px"
-                          className={styles.printImagem}
-                          draggable={false}
-                        />
-                      </div>
-                    </div>
+                    {/* A miniatura do print saiu a pedido do Sérgio. Em 62px
+                        ela não se lia, então não provava nada, e ainda competia
+                        com a mensagem transcrita, que é o que a pessoa lê de
+                        verdade. O selo azul já diz de onde veio. */}
+                    <span className={`${styles.selo} ${styles.seloMensagem}`}>WhatsApp</span>
                     <blockquote className={styles.citacao}>{it.texto}</blockquote>
                     {it.contexto && (
                       <footer className={styles.autor}>
@@ -186,12 +172,11 @@ export default function CarrosselProva() {
         })}
       </div>
 
+      {/* O contador "14 / 14" saiu a pedido do Sérgio: número pequeno ao lado
+          de prova social vira objeção, porque quatorze depoimentos podem soar
+          como poucos para quem não sabe que são só os que temos por escrito.
+          As bolinhas e as setas continuam dando a noção de onde a pessoa está. */}
       <div className={styles.controles}>
-        <span className={styles.contador}>
-          <b>{doisDigitos(centro + 1)}</b>
-          <i>/ {doisDigitos(ITENS.length)}</i>
-        </span>
-
         <div className={styles.bolinhas} role="tablist" aria-label="Ir para um depoimento">
           {ITENS.map((it, i) => (
             <button

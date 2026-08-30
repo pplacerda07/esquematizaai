@@ -1,0 +1,673 @@
+{
+ "titulo": "TERMOS E CONDIÇÕES DE USO",
+ "subtitulo": "ESQUEMATIZA AÍ MENTORIA | XAVIER FURTADO CURSOS PARA CONCURSOS LTDA. | CNPJ 48.847.300/0001-37",
+ "secoes": [
+  {
+   "titulo": "QUADRO-RESUMO",
+   "itens": [],
+   "blocos": [
+    {
+     "titulo": "OBJETO",
+     "itens": [
+      {
+       "numero": null,
+       "texto": "Serviço de orientação, planejamento e acompanhamento individualizado de estudos para concursos públicos (Esquematiza Aí Mentoria), com planejamento personalizado, metas de estudo, plataforma de gerenciamento e 01 (uma) reunião individual inicial com o mentor."
+      }
+     ]
+    },
+    {
+     "titulo": "VALIDADE E ENCERRAMENTO",
+     "itens": [
+      {
+       "numero": null,
+       "texto": "O acesso é liberado após a confirmação do pagamento. O plano recorrente mensal é renovado automaticamente até o pedido de cancelamento. O plano anual tem prazo determinado de 12 (doze) meses e se encerra automaticamente, sem renovação automática."
+      }
+     ]
+    },
+    {
+     "titulo": "CANCELAMENTO E REEMBOLSO",
+     "itens": [
+      {
+       "numero": null,
+       "texto": "Não há multa por cancelamento. O reembolso integral pode ser solicitado em até 07 (sete) dias contados da confirmação do pagamento, pelo e-mail contato@esquematizaai.com. Após esse prazo, não haverá reembolso, integral ou parcial. No plano anual, a desistência após o prazo não interrompe a cobrança das parcelas restantes, e o acesso permanece disponível até o fim dos 12 (doze) meses."
+      }
+     ]
+    },
+    {
+     "titulo": "PAGAMENTO E ATRASO",
+     "itens": [
+      {
+       "numero": null,
+       "texto": "Em caso de atraso, incidem multa de 2% e juros de 1% ao mês sobre o valor devido, podendo os acessos ser suspensos até a regularização. A CONTRATADA poderá adotar medidas de cobrança, incluindo a inclusão em órgãos de proteção ao crédito."
+      }
+     ]
+    },
+    {
+     "titulo": "PROPRIEDADE INTELECTUAL",
+     "itens": [
+      {
+       "numero": null,
+       "texto": "A CONTRATADA e os respectivos titulares detêm os direitos de propriedade intelectual sobre a metodologia, os materiais e a plataforma. O ALUNO recebe licença de uso pessoal, temporária e intransferível. É proibida a distribuição, venda, rateio ou compartilhamento do conteúdo."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "titulo": "APRESENTAÇÃO",
+   "itens": [
+    {
+     "numero": null,
+     "texto": "O Quadro-Resumo acima é meramente informativo e não substitui a leitura integral destes Termos, que prevalecem em caso de divergência."
+    },
+    {
+     "numero": null,
+     "texto": "Olá! Seja bem-vindo(a),"
+    },
+    {
+     "numero": null,
+     "texto": "Se você está buscando informações sobre a mentoria do Esquematiza Aí para a sua preparação para concursos públicos, chegou ao lugar certo."
+    },
+    {
+     "numero": null,
+     "texto": "A empresa XAVIER FURTADO CURSOS PARA CONCURSOS LTDA., de nome comercial ESQUEMATIZA AÍ, inscrita no CNPJ sob o nº 48.847.300/0001-37 (“CONTRATADA”), presta o serviço de orientação, planejamento e acompanhamento individualizado de estudos para concursos públicos denominado ESQUEMATIZA AÍ MENTORIA (“MENTORIA” ou “SERVIÇO”), destinado exclusivamente aos alunos devidamente cadastrados (“ALUNO” ou “CONTRATANTE”), conforme as condições estabelecidas neste documento (“TERMOS”)."
+    },
+    {
+     "numero": null,
+     "texto": "Ao contratar a MENTORIA, realizar o pagamento e/ou utilizar a plataforma indicada pela CONTRATADA, o ALUNO declara ter lido estes TERMOS e concorda em se vincular a todas as suas cláusulas. Caso não concorde com estes TERMOS, você não deve concluir a contratação nem utilizar o SERVIÇO."
+    },
+    {
+     "numero": null,
+     "texto": "Integram a contratação, além destes TERMOS: I) a descrição do plano adquirido pelo ALUNO; II) as condições apresentadas no checkout; III) o documento de Dúvidas Frequentes disponibilizado juntamente com a oferta; e IV) eventuais condições promocionais expressamente oferecidas no momento da compra. Em caso de divergência, prevalecerá a condição específica expressamente oferecida ao ALUNO no momento da contratação, observada a legislação aplicável."
+    },
+    {
+     "numero": null,
+     "texto": "Este documento foi atualizado pela última vez em [DATA DA PUBLICAÇÃO]."
+    }
+   ]
+  },
+  {
+   "titulo": "1. O NOSSO SERVIÇO",
+   "itens": [
+    {
+     "numero": "1.1.",
+     "texto": "A MENTORIA tem por objeto a prestação de serviço de orientação, planejamento e acompanhamento individualizado de estudos para concursos públicos, conforme o plano contratado pelo ALUNO."
+    },
+    {
+     "numero": "1.2.",
+     "texto": "A metodologia da MENTORIA foi criada e é liderada pelo Prof. Sérgio Furtado, autor do Esquematiza Aí. O acompanhamento pedagógico é prestado exclusivamente pela CONTRATADA, por meio de mentores integrantes de sua equipe, capacitados na aplicação do método (“MENTOR”), não se estabelecendo qualquer vínculo contratual direto entre o ALUNO e o MENTOR designado para o atendimento."
+    },
+    {
+     "numero": "1.2.1.",
+     "texto": "O MENTOR atua aplicando o método, os processos e as diretrizes pedagógicas definidos pela CONTRATADA, sob supervisão de sua coordenação."
+    },
+    {
+     "numero": "1.2.2.",
+     "texto": "Eventuais diferenças de estilo ou abordagem entre profissionais não descaracterizam o serviço contratado, que consiste na aplicação do método pedagógico da CONTRATADA."
+    },
+    {
+     "numero": "1.3.",
+     "texto": "Todos os planos incluem: I) planejamento personalizado de estudos; II) elaboração e disponibilização de metas e tarefas de estudo; III) acesso à plataforma utilizada para organização e gerenciamento das atividades da MENTORIA; IV) 01 (uma) reunião individual inicial com o MENTOR, na qual serão apresentados o planejamento e a estratégia de estudos; V) assessoria pedagógica relacionada a métodos e estratégias de estudo e revisão; VI) orientação estratégica na escolha de concursos, inclusive mediante análise de editais publicados e concursos previstos ou considerados relevantes para o perfil do ALUNO; VII) acompanhamento da evolução do planejamento durante a vigência da contratação; VIII) benefícios e descontos com parceiros, quando existentes e conforme as respectivas condições."
+    },
+    {
+     "numero": "1.4.",
+     "texto": "Salvo previsão expressa em sentido contrário, a MENTORIA não constitui curso particular das disciplinas do concurso e o acompanhamento pelo MENTOR não inclui a obrigação de responder individualmente dúvidas relativas ao conteúdo jurídico, contábil, matemático ou de qualquer outra disciplina estudada."
+    },
+    {
+     "numero": "1.5.",
+     "texto": "A comunicação entre o ALUNO e a CONTRATADA poderá ocorrer pela plataforma, por correio eletrônico (e-mail) e/ou por aplicativos de mensagens (WhatsApp, Telegram ou equivalentes), conforme os canais oficiais indicados pela CONTRATADA."
+    },
+    {
+     "numero": "1.6.",
+     "texto": "O MENTOR poderá, por razões pessoais, profissionais ou de força maior, afastar-se temporária ou definitivamente das atividades. Nessa hipótese, o ALUNO será realocado para outro MENTOR da equipe, capacitado na aplicação do método, não configurando tal substituição descumprimento contratual."
+    },
+    {
+     "numero": "1.7.",
+     "texto": "O SERVIÇO não inclui: I) o fornecimento, a garantia ou o suporte de materiais, cursos, plataformas ou ferramentas de terceiros não expressamente incluídos no plano contratado; II) chamadas, videochamadas ou reuniões além das expressamente previstas nestes TERMOS ou na oferta do plano; III) qualquer outro serviço, funcionalidade ou recurso não especificado expressamente nestes TERMOS ou na oferta."
+    }
+   ]
+  },
+  {
+   "titulo": "2. DO PLANEJAMENTO E DAS METAS DE ESTUDO",
+   "itens": [
+    {
+     "numero": "2.1.",
+     "texto": "O planejamento será elaborado com base nas informações fornecidas pelo ALUNO, especialmente disponibilidade de tempo, histórico de estudos, disciplinas já estudadas, desempenho, concursos pretendidos e demais circunstâncias relevantes."
+    },
+    {
+     "numero": "2.2.",
+     "texto": "O planejamento possui natureza dinâmica e personalizada, podendo ser mantido, reorganizado, ampliado, reduzido ou ajustado conforme a evolução do ALUNO e a estratégia pedagógica adotada."
+    },
+    {
+     "numero": "2.3.",
+     "texto": "As metas e atividades serão disponibilizadas progressivamente, levando em consideração, entre outros fatores: I) a execução das metas anteriormente disponibilizadas; II) o desempenho demonstrado pelo ALUNO; III) alterações de disponibilidade; IV) mudanças de concurso ou edital; V) evolução pedagógica; VI) necessidade de revisão, reforço ou priorização de determinados conteúdos."
+    },
+    {
+     "numero": "2.4.",
+     "texto": "A contratação por determinado período não implica obrigação de disponibilização antecipada, no início da MENTORIA, de todas as metas correspondentes à integralidade do período contratado, tampouco de disponibilização retroativa de metas."
+    },
+    {
+     "numero": "2.5.",
+     "texto": "O ALUNO reconhece que a personalização da MENTORIA depende da prestação de informações verdadeiras e de sua interação com o planejamento."
+    },
+    {
+     "numero": "2.6.",
+     "texto": "Alterações relevantes informadas pelo ALUNO poderão demandar prazo razoável para adaptação do planejamento."
+    }
+   ]
+  },
+  {
+   "titulo": "3. DA ASSINATURA DO ESTRATÉGIA CONCURSOS",
+   "itens": [
+    {
+     "numero": "3.1.",
+     "texto": "O ALUNO declara estar expressamente ciente de que a metodologia da MENTORIA utiliza como base os materiais disponibilizados pelo Estratégia Concursos."
+    },
+    {
+     "numero": "3.2.",
+     "texto": "Por essa razão, a existência de assinatura ativa e compatível do Estratégia Concursos constitui requisito essencial para a adequada execução da metodologia da MENTORIA."
+    },
+    {
+     "numero": "3.3.",
+     "texto": "Quando a Assinatura Premium do Estratégia Concursos não estiver incluída no plano, caberá exclusivamente ao ALUNO adquirir e manter assinatura ativa durante todo o período da MENTORIA."
+    },
+    {
+     "numero": "3.4.",
+     "texto": "A expiração, suspensão ou cancelamento da assinatura própria do ALUNO não interrompe automaticamente a vigência da MENTORIA e não caracteriza falha na prestação do serviço pela CONTRATADA."
+    },
+    {
+     "numero": "3.5.",
+     "texto": "Nos planos em que a Assinatura Premium estiver incluída, seu acesso permanecerá disponível enquanto estiver vigente a MENTORIA correspondente."
+    },
+    {
+     "numero": "3.6.",
+     "texto": "A assinatura fornecida como benefício da MENTORIA possui natureza temporária e vinculada ao plano contratado, não constituindo aquisição autônoma ou definitiva da assinatura pelo ALUNO."
+    },
+    {
+     "numero": "3.7.",
+     "texto": "Encerrada a MENTORIA, será igualmente encerrado o acesso à Assinatura Premium fornecida em razão do plano."
+    },
+    {
+     "numero": "3.8.",
+     "texto": "O ALUNO está ciente de que a plataforma do Estratégia Concursos é operada por terceiro. A CONTRATADA responderá pela disponibilização do benefício expressamente incluído em sua oferta, cabendo-lhe prestar suporte razoável para regularização do acesso concedido por intermédio da MENTORIA."
+    }
+   ]
+  },
+  {
+   "titulo": "4. DOS MATERIAIS DO ESQUEMATIZA AÍ",
+   "itens": [
+    {
+     "numero": "4.1.",
+     "texto": "Nos planos que incluem materiais do Esquematiza Aí, o ALUNO receberá acesso aos Combos e Assinaturas abrangidos pela oferta correspondente ao plano contratado, enquanto estiver vigente a MENTORIA."
+    },
+    {
+     "numero": "4.2.",
+     "texto": "O acesso concedido em razão da MENTORIA possui natureza pessoal, temporária e intransferível."
+    },
+    {
+     "numero": "4.3.",
+     "texto": "O encerramento da MENTORIA implica o encerramento dos acessos aos materiais concedidos em razão do respectivo plano."
+    },
+    {
+     "numero": "4.4.",
+     "texto": "Nos planos que não incluem os materiais, poderão ser concedidos descontos específicos para aquisição de produtos do Esquematiza Aí, nos percentuais informados na oferta."
+    },
+    {
+     "numero": "4.5.",
+     "texto": "Salvo disposição expressa em contrário, descontos, cupons e promoções não são cumulativos, devendo o ALUNO escolher a opção que lhe for mais conveniente."
+    }
+   ]
+  },
+  {
+   "titulo": "5. DO USO DE SERVIÇOS E RECURSOS DE TERCEIROS",
+   "itens": [
+    {
+     "numero": "5.1.",
+     "texto": "A MENTORIA poderá recomendar ou utilizar pedagogicamente cursos, bancos de questões, aplicativos, ferramentas, plataformas ou materiais produzidos por terceiros."
+    },
+    {
+     "numero": "5.2.",
+     "texto": "A mera indicação, recomendação ou utilização pedagógica de serviço externo não implica sua inclusão no plano, salvo quando a oferta correspondente indicar expressamente o contrário."
+    },
+    {
+     "numero": "5.3.",
+     "texto": "Quando a contratação do serviço externo for realizada diretamente pelo ALUNO, a relação comercial será estabelecida entre ele e o respectivo fornecedor."
+    },
+    {
+     "numero": "5.4.",
+     "texto": "Nessas situações, questões relacionadas a preço, cobrança, renovação, cancelamento, disponibilidade e funcionamento do serviço contratado diretamente deverão ser tratadas pelo ALUNO com o respectivo fornecedor."
+    },
+    {
+     "numero": "5.5.",
+     "texto": "O encerramento, a suspensão ou o cancelamento da MENTORIA não implica o cancelamento automático dos contratos celebrados pelo ALUNO com terceiros e não gera, por si só, obrigação de reembolso, ressarcimento ou compensação, pela CONTRATADA, dos valores pagos ou devidos a fornecedores externos."
+    },
+    {
+     "numero": "5.6.",
+     "texto": "Esta cláusula não se aplica para excluir obrigações assumidas expressamente pela CONTRATADA na própria oferta, especialmente benefícios e acessos expressamente indicados como incluídos no plano contratado, nem afasta eventual responsabilidade da CONTRATADA por ato próprio ou publicidade vinculante por ela diretamente veiculada."
+    }
+   ]
+  },
+  {
+   "titulo": "6. DO CADASTRO, DO ACESSO E DA SEGURANÇA",
+   "itens": [
+    {
+     "numero": "6.1.",
+     "texto": "Ao contratar a MENTORIA, o ALUNO garante que possui plena capacidade legal, isto é, ter atingido a maioridade (18 anos ou mais), e não estar inabilitado temporária ou definitivamente."
+    },
+    {
+     "numero": "6.2.",
+     "texto": "O acesso à MENTORIA, à plataforma e aos benefícios vinculados ao plano é pessoal, oneroso, exclusivo e intransferível."
+    },
+    {
+     "numero": "6.3.",
+     "texto": "O ALUNO deverá fornecer dados verdadeiros, completos e atualizados, realizando seu cadastro com exatamente o mesmo nome e CPF constantes no cadastro da Receita Federal do Brasil, sob pena de suspensão do acesso até a devida regularização."
+    },
+    {
+     "numero": "6.3.1.",
+     "texto": "O fornecimento de dados divergentes, incompletos ou inconsistentes poderá acarretar restrições cadastrais, impossibilidade de emissão de notas fiscais, cancelamento da matrícula ou rescisão contratual, sem prejuízo de eventuais medidas administrativas e legais cabíveis."
+    },
+    {
+     "numero": "6.4.",
+     "texto": "A CONTRATADA poderá solicitar confirmação de identidade ou documentos quando razoavelmente necessário à prevenção de fraude, à regularização cadastral ou à proteção dos acessos, podendo o acesso ser temporariamente suspenso até a conclusão da verificação."
+    },
+    {
+     "numero": "6.5.",
+     "texto": "O ALUNO é responsável pela guarda e confidencialidade de seus logins, senhas e credenciais, respondendo pelas atividades realizadas com suas credenciais de acesso."
+    },
+    {
+     "numero": "6.6.",
+     "texto": "É expressamente proibido: I) compartilhar contas, logins ou senhas; II) ceder ou transferir o plano contratado a outra pessoa; III) vender, emprestar, ratear ou redistribuir materiais; IV) disponibilizar conteúdo da MENTORIA em grupos, sites, redes sociais, pastas compartilhadas ou serviços semelhantes; V) gravar, copiar ou redistribuir conteúdos para disponibilização a terceiros; VI) utilizar os acessos concedidos para finalidade comercial ou diversa do estudo pessoal."
+    },
+    {
+     "numero": "6.7.",
+     "texto": "O uso indevido poderá ensejar suspensão ou encerramento do acesso, sem reembolso de valores pagos e sem prejuízo da adoção das medidas cabíveis para proteção dos direitos da CONTRATADA."
+    },
+    {
+     "numero": "6.8.",
+     "texto": "A confirmação do pagamento pelo agente financeiro segue prazos específicos, conforme a legislação vigente. A CONTRATADA não se responsabiliza pela não efetivação do pagamento, tampouco pelos prazos de processamento praticados pelas instituições financeiras ou operadoras de cartão de crédito."
+    }
+   ]
+  },
+  {
+   "titulo": "7. DA PROPRIEDADE INTELECTUAL",
+   "itens": [
+    {
+     "numero": "7.1.",
+     "texto": "Permanecem de titularidade de seus respectivos proprietários todos os direitos relacionados ao planejamento e à metodologia, conteúdos, resumos, flashcards, documentos, vídeos, apresentações, estrutura da plataforma, marcas, logotipos, identidade visual e demais materiais protegidos disponibilizados ao ALUNO."
+    },
+    {
+     "numero": "7.2.",
+     "texto": "A contratação concede exclusivamente licença pessoal, limitada, temporária, revogável, não exclusiva e intransferível para utilização dos conteúdos durante a vigência correspondente, não incluindo direitos de reprodução, alteração, comunicação ao público ou qualquer forma de distribuição."
+    },
+    {
+     "numero": "7.3.",
+     "texto": "A contratação não transfere ao ALUNO qualquer direito de propriedade intelectual, seja para fins comerciais ou não comerciais."
+    },
+    {
+     "numero": "7.4.",
+     "texto": "É proibida a reprodução, distribuição, comercialização, disponibilização pública ou compartilhamento dos materiais, salvo autorização expressa do titular. A proibição inclui tanto a redistribuição física (cópias reprográficas) quanto virtual (disponibilização a terceiros por meio de sites de rateio, e-mail, grupos de WhatsApp, bibliotecas virtuais, pastas compartilhadas ou equivalentes)."
+    },
+    {
+     "numero": "7.5.",
+     "texto": "Em caso de violação das disposições acima, a CONTRATADA poderá adotar as medidas legais cabíveis para a defesa de seus direitos, desde a suspensão ou o cancelamento unilateral do acesso, sem reembolso de valores pagos, até a representação judicial, incluindo ações criminais, além da aplicação de multa de até 10 (dez) vezes o valor da mensalidade do plano recorrente mensal vigente na data da violação, sem prejuízo de eventual indenização por perdas e danos."
+    }
+   ]
+  },
+  {
+   "titulo": "8. DAS RESPONSABILIDADES, DAS PROIBIÇÕES E DA CONDUTA DO ALUNO",
+   "itens": [
+    {
+     "numero": "8.1.",
+     "texto": "O ALUNO compromete-se a: I) fornecer informações verdadeiras e atualizadas; II) informar sua disponibilidade real para estudo; III) acompanhar os canais oficiais utilizados pela MENTORIA; IV) comunicar mudanças relevantes que possam impactar seu planejamento; V) manter os acessos exigidos pela metodologia; VI) utilizar pessoalmente os benefícios concedidos; VII) preservar suas credenciais; VIII) respeitar a propriedade intelectual da CONTRATADA e de terceiros; IX) utilizar linguagem respeitosa nos canais de atendimento e relacionamento; X) comunicar eventuais problemas relacionados ao planejamento ou à plataforma para que possam ser analisados; XI) responsabilizar-se pela execução das atividades propostas e por sua preparação individual."
+    },
+    {
+     "numero": "8.2.",
+     "texto": "É expressamente vedado ao ALUNO: I) induzir a erro a CONTRATADA ou qualquer outro aluno; II) enviar ou transmitir arquivos que contenham vírus, malware ou outros programas que possam causar danos à CONTRATADA; III) utilizar dispositivos, softwares ou outros recursos que possam interferir no bom funcionamento da plataforma; IV) realizar, tentar realizar ou auxiliar terceiros a realizar engenharia reversa ou tentativa de acesso ao código-fonte e à estrutura de sistemas utilizados na MENTORIA; V) enviar mensagens agressivas ou ofensivas, bem como praticar assédio de qualquer natureza contra colaboradores da CONTRATADA; VI) utilizar o SERVIÇO para qualquer propósito ilegal ou diverso do estabelecido nestes TERMOS."
+    },
+    {
+     "numero": "8.3.",
+     "texto": "A relação entre as partes deverá observar boa-fé, respeito e urbanidade. A CONTRATADA poderá suspender ou encerrar o acesso do ALUNO, mediante avaliação fundamentada, quando houver: I) compartilhamento ou comercialização indevida de acessos ou materiais; II) fraude ou utilização de dados falsos; III) tentativa de burlar sistemas de acesso ou pagamento; IV) prática de ato ilícito relacionado à utilização do serviço; V) comportamento abusivo, ameaçador, discriminatório ou gravemente desrespeitoso contra integrantes da equipe ou demais usuários; VI) descumprimento contratual relevante não regularizado após comunicação, quando cabível."
+    },
+    {
+     "numero": "8.4.",
+     "texto": "O encerramento motivado por comportamento imputável ao ALUNO não invalida retroativamente serviços regularmente prestados ou disponibilizados, não sendo devida a restituição dos valores correspondentes aos períodos já iniciados ou aos serviços regularmente prestados, ressalvadas as hipóteses legais expressamente aplicáveis."
+    }
+   ]
+  },
+  {
+   "titulo": "9. DOS CANAIS DE COMUNICAÇÃO E DO DEVER DE COOPERAÇÃO EM APURAÇÕES",
+   "itens": [
+    {
+     "numero": "9.1.",
+     "texto": "As comunicações relacionadas à MENTORIA poderão ocorrer pela plataforma, por e-mail, WhatsApp ou outros canais oficiais informados pela CONTRATADA, devendo o ALUNO manter atualizados seus dados de contato."
+    },
+    {
+     "numero": "9.2.",
+     "texto": "A CONTRATADA poderá manter canais coletivos oficiais de comunicação com os alunos, tais como grupos em WhatsApp, Telegram ou ferramentas equivalentes, cuja participação será facultativa e sujeita às regras divulgadas no respectivo canal."
+    },
+    {
+     "numero": "9.3.",
+     "texto": "Os canais coletivos têm finalidade informativa, operacional e de interação institucional, não substituindo os canais formais de atendimento, suporte, solicitação de cancelamento, pedidos de reembolso ou demais comunicações contratuais, que deverão ser realizadas pelos meios oficialmente indicados pela CONTRATADA."
+    },
+    {
+     "numero": "9.4.",
+     "texto": "Eventuais relatos, reclamações ou manifestações realizadas pelo ALUNO em canais coletivos ou individuais, envolvendo a plataforma, o planejamento, a atuação do MENTOR, o atendimento ou quaisquer aspectos do SERVIÇO, poderão ensejar contato reservado da CONTRATADA com o ALUNO para apuração dos fatos, comprometendo-se o ALUNO a cooperar de boa-fé com a apuração, prestando as informações razoavelmente necessárias à verificação do relato."
+    },
+    {
+     "numero": "9.5.",
+     "texto": "A CONTRATADA poderá moderar os canais coletivos oficiais e, quando necessário, remover mensagens, restringir interações ou excluir participantes que descumpram as regras do canal, adotem condutas desrespeitosas, causem tumulto à finalidade do ambiente ou divulguem informações inverídicas ou descontextualizadas."
+    },
+    {
+     "numero": "9.6.",
+     "texto": "A participação nos canais coletivos não constitui condição para a prestação do SERVIÇO, podendo o ALUNO retirar-se desses canais a qualquer tempo, sem prejuízo ao seu vínculo contratual."
+    },
+    {
+     "numero": "9.7.",
+     "texto": "Pedidos de cancelamento e de reembolso deverão ser enviados para o e-mail contato@esquematizaai.com."
+    }
+   ]
+  },
+  {
+   "titulo": "10. DOS PLANOS, DO PREÇO E DO PAGAMENTO",
+   "itens": [
+    {
+     "numero": "10.1.",
+     "texto": "O preço, a forma de pagamento e as condições do plano são aqueles apresentados na oferta e no checkout no momento da contratação."
+    },
+    {
+     "numero": "10.2.",
+     "texto": "Plano Recorrente Mensal. Possui períodos sucessivos de 01 (um) mês e será renovado automaticamente, com a respectiva cobrança, enquanto não houver solicitação de cancelamento. Cada cobrança corresponde a um novo ciclo mensal da MENTORIA."
+    },
+    {
+     "numero": "10.3.",
+     "texto": "Plano Anual. Constitui contratação única pelo prazo determinado de 12 (doze) meses, pelo preço total indicado no momento da compra, encerrando-se automaticamente ao final do período, sem renovação automática, salvo nova contratação pelo ALUNO."
+    },
+    {
+     "numero": "10.3.1.",
+     "texto": "Quando o preço anual for dividido em parcelas, cada cobrança representa apenas parte do pagamento do preço total da contratação anual. O parcelamento constitui exclusivamente forma de pagamento e não transforma o contrato anual em 12 (doze) contratações mensais independentes, tampouco caracteriza renovação automática."
+    },
+    {
+     "numero": "10.4.",
+     "texto": "O período contratado corre de maneira contínua e ininterrupta, independentemente de o ALUNO utilizar ou não o serviço colocado à sua disposição. Não existe direito automático de interromper, pausar, congelar ou suspender a contagem do prazo em razão de férias, viagens, períodos sem estudo, indisponibilidade pessoal ou decisão do ALUNO de interromper temporariamente sua preparação."
+    },
+    {
+     "numero": "10.4.1.",
+     "texto": "Eventual suspensão excepcional somente produzirá efeitos quando expressamente autorizada pela CONTRATADA e registrada por escrito."
+    },
+    {
+     "numero": "10.5.",
+     "texto": "O pagamento será realizado pelos métodos disponibilizados pela CONTRATADA no checkout (tais como PIX, cartão de crédito ou boleto). No caso do cartão de crédito, os dados informados não são armazenados pela CONTRATADA, mas pela provedora de pagamentos."
+    },
+    {
+     "numero": "10.6.",
+     "texto": "O valor do Plano Recorrente Mensal poderá ser reajustado periodicamente, mediante comunicação prévia ao ALUNO com antecedência mínima de 30 (trinta) dias, aplicando-se o reajuste apenas aos ciclos de cobrança subsequentes à comunicação. Na hipótese de discordância quanto ao novo valor, o ALUNO poderá cancelar o Plano Recorrente Mensal antes da efetivação do reajuste, sem quaisquer encargos ou penalidades."
+    }
+   ]
+  },
+  {
+   "titulo": "11. DA INADIMPLÊNCIA",
+   "itens": [
+    {
+     "numero": "11.1.",
+     "texto": "A continuidade dos acessos e serviços está condicionada à regularidade dos pagamentos devidos."
+    },
+    {
+     "numero": "11.2.",
+     "texto": "Havendo atraso ou impossibilidade de processamento de pagamento devido, a CONTRATADA poderá suspender temporariamente o acesso à plataforma, a elaboração ou disponibilização de novas metas, as reuniões, os materiais e a Assinatura Premium do Estratégia Concursos, quando incluída."
+    },
+    {
+     "numero": "11.3.",
+     "texto": "A suspensão decorrente de inadimplência não implica perdão, cancelamento ou novação do valor devido."
+    },
+    {
+     "numero": "11.4.",
+     "texto": "Sobre valores vencidos incidirão multa moratória de 2% (dois por cento) e juros de 1% (um por cento) ao mês, calculados proporcionalmente ao período de atraso."
+    },
+    {
+     "numero": "11.5.",
+     "texto": "Regularizado o débito, os acessos poderão ser restabelecidos, desde que o contrato ainda esteja vigente."
+    },
+    {
+     "numero": "11.6.",
+     "texto": "O ALUNO está ciente de que a CONTRATADA poderá adotar medidas de cobrança dos valores devidos, incluindo a inclusão de seus dados nos órgãos de proteção ao crédito, o repasse de informações para agências de cobrança e/ou o ingresso com ação cível, independentemente da existência de vínculo contratual ativo."
+    }
+   ]
+  },
+  {
+   "titulo": "12. DO DIREITO DE ARREPENDIMENTO, DO CANCELAMENTO E DO REEMBOLSO",
+   "itens": [
+    {
+     "numero": "12.1.",
+     "texto": "O ALUNO poderá exercer o direito de arrependimento, com reembolso integral, dentro do prazo de 07 (sete) dias contado da confirmação do pagamento, conforme o art. 49 da Lei nº 8.078/90 (Código de Defesa do Consumidor), mediante solicitação enviada para o e-mail contato@esquematizaai.com."
+    },
+    {
+     "numero": "12.2.",
+     "texto": "Exercido o direito dentro desse prazo, serão adotados os procedimentos para encerramento dos acessos e devolução dos valores correspondentes. Nos pagamentos por cartão de crédito, o estorno será conduzido pela operadora do cartão, podendo os prazos variar conforme a instituição financeira, alheios à vontade da CONTRATADA."
+    },
+    {
+     "numero": "12.3.",
+     "texto": "Após o prazo de 07 (sete) dias contado da confirmação do pagamento, não haverá reembolso, integral ou parcial, por desistência do ALUNO, em qualquer modalidade de plano."
+    },
+    {
+     "numero": "12.4.",
+     "texto": "Não há multa por cancelamento em nenhuma modalidade de plano."
+    },
+    {
+     "numero": "12.5.",
+     "texto": "O direito de arrependimento não poderá ser exercido de forma reiterada ou abusiva mediante a criação de múltiplos cadastros, utilização de diferentes endereços de e-mail ou fornecimento de dados cadastrais distintos com o objetivo de contornar as regras contratuais ou obter vantagem indevida."
+    },
+    {
+     "numero": "12.5.1.",
+     "texto": "Para fins de análise do exercício do direito de arrependimento, considera-se que o ALUNO possui conhecimento prévio do SERVIÇO quando já tiver recebido, em contratação anterior, ao menos uma meta de estudos, especialmente quando a nova contratação se referir a serviço substancialmente equivalente. Essa circunstância poderá afastar a concessão de novo reembolso por arrependimento, observado o caso concreto, a boa-fé objetiva e as disposições legais aplicáveis."
+    },
+    {
+     "numero": "12.5.2.",
+     "texto": "A identificação de condutas dessa natureza será considerada uso indevido e descumprimento destes TERMOS, podendo ensejar, mediante avaliação da CONTRATADA: I) a recusa de novos pedidos de reembolso; II) a suspensão ou o cancelamento da conta; III) o bloqueio de novas contratações vinculadas ao mesmo usuário."
+    },
+    {
+     "numero": "12.6.",
+     "texto": "Cancelamento do Plano Recorrente Mensal. O ALUNO poderá cancelar o plano recorrente mensal a qualquer momento, pelos canais oficiais. O pedido de cancelamento interromperá a próxima renovação automática, permanecendo o serviço disponível até o encerramento do período já pago, sem devolução proporcional do valor correspondente a período mensal já iniciado."
+    },
+    {
+     "numero": "12.7.",
+     "texto": "Desistência no Plano Anual. O plano anual constitui contratação única e indivisível da MENTORIA pelo prazo determinado de 12 (doze) meses, pelo preço total estabelecido no momento da compra. Após o prazo de 07 (sete) dias contado da confirmação do pagamento, a desistência do ALUNO não implicará cancelamento das parcelas restantes do plano anual, que permanecerão devidas nos respectivos vencimentos."
+    },
+    {
+     "numero": "12.7.1.",
+     "texto": "A opção do ALUNO por deixar de estudar, utilizar a plataforma, executar as metas, participar da reunião ou usufruir dos demais benefícios disponibilizados não suspende nem extingue suas obrigações financeiras decorrentes da contratação anual."
+    },
+    {
+     "numero": "12.7.2.",
+     "texto": "Ainda que o ALUNO comunique que não pretende mais utilizar a MENTORIA, os serviços e benefícios correspondentes ao plano permanecerão disponíveis até o término dos 12 (doze) meses contratados, desde que os pagamentos estejam regulares."
+    },
+    {
+     "numero": "12.8.",
+     "texto": "Ao término do período contratado, os acessos e benefícios vinculados ao plano serão automaticamente encerrados, salvo em caso de nova contratação."
+    },
+    {
+     "numero": "12.9.",
+     "texto": "O cancelamento unilateral pela CONTRATADA, nas hipóteses da cláusula 8.3, observará o disposto na cláusula 8.4."
+    }
+   ]
+  },
+  {
+   "titulo": "13. DA REUNIÃO INDIVIDUAL",
+   "itens": [
+    {
+     "numero": "13.1.",
+     "texto": "Todos os planos incluem 01 (uma) reunião individual com o MENTOR, de caráter inicial, destinada à apresentação do planejamento e da estratégia de estudos."
+    },
+    {
+     "numero": "13.2.",
+     "texto": "A reunião será realizada remotamente, por meio de plataforma de videoconferência ou ferramenta indicada pela CONTRATADA, e dependerá de agendamento prévio."
+    },
+    {
+     "numero": "13.3.",
+     "texto": "Caso o ALUNO não possa comparecer à reunião marcada, deverá solicitar reagendamento com antecedência razoável."
+    },
+    {
+     "numero": "13.4.",
+     "texto": "Reunião não utilizada durante a vigência do plano não gera crédito financeiro, restituição ou prorrogação automática da MENTORIA."
+    },
+    {
+     "numero": "13.5.",
+     "texto": "Caso o MENTOR fique temporariamente impossibilitado de realizar reunião já agendada, será realizado novo agendamento."
+    }
+   ]
+  },
+  {
+   "titulo": "14. DA AUSÊNCIA DE GARANTIA DE RESULTADO",
+   "itens": [
+    {
+     "numero": "14.1.",
+     "texto": "A CONTRATADA presta serviço de planejamento, orientação e acompanhamento educacional."
+    },
+    {
+     "numero": "14.2.",
+     "texto": "Não há garantia de aprovação, classificação, nomeação, pontuação mínima ou obtenção de qualquer resultado específico em concurso público."
+    },
+    {
+     "numero": "14.3.",
+     "texto": "O desempenho do ALUNO depende de fatores individuais e externos, incluindo dedicação, disponibilidade, histórico acadêmico, execução do planejamento, desempenho em prova, concorrência, características da banca, quantidade de vagas, alterações legislativas e editalícias e demais circunstâncias independentes da atuação da CONTRATADA."
+    },
+    {
+     "numero": "14.4.",
+     "texto": "A ausência de aprovação, isoladamente, não caracteriza falha na prestação do serviço."
+    }
+   ]
+  },
+  {
+   "titulo": "15. DA DISPONIBILIDADE TECNOLÓGICA",
+   "itens": [
+    {
+     "numero": "15.1.",
+     "texto": "A CONTRATADA empregará esforços razoáveis para manter disponíveis a plataforma e os recursos sob sua responsabilidade."
+    },
+    {
+     "numero": "15.2.",
+     "texto": "Poderão ocorrer interrupções temporárias decorrentes de manutenção, atualização, falhas de infraestrutura ou serviços prestados por terceiros."
+    },
+    {
+     "numero": "15.3.",
+     "texto": "A ocorrência de indisponibilidade pontual não caracteriza automaticamente descumprimento contratual, devendo a CONTRATADA adotar providências razoáveis para o restabelecimento dos recursos sob sua responsabilidade."
+    }
+   ]
+  },
+  {
+   "titulo": "16. DA PROTEÇÃO DE DADOS PESSOAIS",
+   "itens": [
+    {
+     "numero": "16.1.",
+     "texto": "A CONTRATADA realizará o tratamento dos dados pessoais do ALUNO em conformidade com a legislação aplicável, especialmente a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), na medida necessária à execução da MENTORIA, incluindo cadastro e identificação, planejamento de estudos, acompanhamento de desempenho, atendimento, cobrança e faturamento, liberação de acessos e benefícios, prevenção de fraude, cumprimento de obrigações legais e exercício regular de direitos."
+    },
+    {
+     "numero": "16.2.",
+     "texto": "Poderá ser necessário compartilhar ou consultar dados junto a prestadores e plataformas integradas utilizados na execução da MENTORIA."
+    },
+    {
+     "numero": "16.3.",
+     "texto": "Quando necessário para disponibilização da Assinatura Premium do Estratégia Concursos, de materiais, benefícios ou integrações, poderão ser compartilhados os dados estritamente necessários à identificação do ALUNO e à ativação do respectivo benefício."
+    },
+    {
+     "numero": "16.4.",
+     "texto": "Quando houver integração tecnológica destinada a aprimorar o planejamento, poderão ser utilizados dados de estudo, desempenho ou utilização disponibilizados pela respectiva plataforma, quando tecnicamente disponível e juridicamente permitido."
+    },
+    {
+     "numero": "16.5.",
+     "texto": "Dados poderão permanecer armazenados após o encerramento quando sua conservação for necessária para cumprimento de obrigações legais, defesa de direitos, registros financeiros, prevenção de fraude ou outras finalidades legítimas aplicáveis, sendo posteriormente eliminados ou anonimizados quando cabível."
+    }
+   ]
+  },
+  {
+   "titulo": "17. DA DIVULGAÇÃO DE APROVAÇÕES E DA AUTORIZAÇÃO DE USO DE IMAGEM",
+   "itens": [
+    {
+     "numero": "17.1.",
+     "texto": "Em caso de aprovação, classificação ou nomeação do ALUNO em concurso público durante a vigência da MENTORIA ou em concurso para o qual tenha sido acompanhado pela CONTRATADA, o ALUNO autoriza, desde já, de forma gratuita, o uso e a divulgação de sua aprovação pela CONTRATADA para fins institucionais, educacionais, comerciais e publicitários."
+    },
+    {
+     "numero": "17.2.",
+     "texto": "A autorização compreende a utilização do nome, pseudônimo, nome artístico, imagem, fotografia, semelhança, assinatura, voz, áudio, vídeo, depoimento, declarações, citações, dados biográficos, cargo, concurso, colocação, órgão, banca organizadora e demais informações relacionadas à aprovação ou à trajetória do ALUNO."
+    },
+    {
+     "numero": "17.3.",
+     "texto": "Os elementos mencionados poderão ser utilizados, reproduzidos e divulgados pela CONTRATADA, de forma isolada ou em conjunto, em site e páginas institucionais do Esquematiza Aí, redes sociais, anúncios e campanhas publicitárias, páginas de vendas, materiais gráficos e digitais, apresentações, vídeos, e-mails, mensagens promocionais, listas e publicações de aprovados e demais canais próprios de comunicação e divulgação da CONTRATADA."
+    },
+    {
+     "numero": "17.4.",
+     "texto": "A autorização é concedida sem necessidade de pagamento, remuneração, participação financeira, royalties ou qualquer outra contraprestação ao ALUNO."
+    },
+    {
+     "numero": "17.5.",
+     "texto": "A autorização permanecerá válida mesmo após o término da MENTORIA, exclusivamente em relação à divulgação da aprovação, trajetória, depoimentos ou conteúdos produzidos durante ou em decorrência da relação mantida com a CONTRATADA."
+    },
+    {
+     "numero": "17.6.",
+     "texto": "A CONTRATADA poderá vincular a aprovação do ALUNO ao fato de ele ter sido mentorado pelo Esquematiza Aí, desde que essa informação corresponda efetivamente à relação existente durante sua preparação."
+    },
+    {
+     "numero": "17.7.",
+     "texto": "A autorização não permite a utilização da imagem do ALUNO em contexto ilícito, ofensivo ou difamatório."
+    },
+    {
+     "numero": "17.8.",
+     "texto": "A aprovação do ALUNO em concurso público não gera qualquer taxa de sucesso, comissão, participação ou honorário adicional em favor da CONTRATADA."
+    }
+   ]
+  },
+  {
+   "titulo": "18. DAS DISPOSIÇÕES GERAIS",
+   "itens": [
+    {
+     "numero": "18.1.",
+     "texto": "O aceite destes TERMOS é manifestado eletronicamente no momento da contratação, dispensando assinatura física. A autoria e a manifestação de vontade poderão ser comprovadas pelos registros eletrônicos da contratação, incluindo dados de identificação, endereço eletrônico, autenticação, registros de pagamento, data e hora e demais evidências produzidas pelos sistemas utilizados, produzindo o aceite eletrônico efeitos entre as partes nos termos da legislação aplicável."
+    },
+    {
+     "numero": "18.2.",
+     "texto": "A eventual tolerância de uma das partes quanto ao descumprimento pontual de determinada obrigação não implicará renúncia ou alteração permanente destes TERMOS."
+    },
+    {
+     "numero": "18.3.",
+     "texto": "Se determinada disposição for considerada inválida ou inexigível, as demais permanecerão vigentes naquilo que puderem produzir efeitos de forma independente."
+    },
+    {
+     "numero": "18.4.",
+     "texto": "O ALUNO não poderá transferir a terceiro sua posição contratual ou seus acessos sem autorização expressa da CONTRATADA."
+    },
+    {
+     "numero": "18.5.",
+     "texto": "Caso fortuito ou força maior que impeça temporariamente determinada obrigação será tratado conforme sua natureza e duração, buscando-se preservar a continuidade da prestação sempre que possível, não respondendo a CONTRATADA por falhas ou atrasos deles decorrentes."
+    },
+    {
+     "numero": "18.6.",
+     "texto": "A CONTRATADA poderá modificar ferramentas, interfaces, sistemas, fluxos internos e procedimentos operacionais utilizados na execução da MENTORIA, inclusive a plataforma utilizada, sem que tais alterações possam eliminar benefício essencial expressamente incluído no plano durante sua vigência."
+    },
+    {
+     "numero": "18.7.",
+     "texto": "Estes TERMOS podem ser eventualmente alterados. A data da última atualização ficará sempre disponível e o ALUNO será comunicado sobre mudanças relevantes pelos canais oficiais."
+    },
+    {
+     "numero": "18.8.",
+     "texto": "O ALUNO declara ter tido oportunidade de conhecer previamente as condições essenciais da contratação, inclusive objeto, preço, duração, forma de pagamento, requisitos da metodologia e regras aplicáveis ao plano escolhido."
+    },
+    {
+     "numero": "18.9.",
+     "texto": "Dúvidas e casos omissos devem ser encaminhados à CONTRATADA pelo e-mail contato@esquematizaai.com ou por outros meios de contato disponibilizados pela CONTRATADA."
+    }
+   ]
+  },
+  {
+   "titulo": "19. DO FORO",
+   "itens": [
+    {
+     "numero": "19.1.",
+     "texto": "Eventuais divergências serão preferencialmente solucionadas de maneira consensual."
+    },
+    {
+     "numero": "19.2.",
+     "texto": "Não sendo possível a composição, fica eleito o foro da comarca de Belém/PA para dirimir questões oriundas destes TERMOS, ressalvadas as hipóteses em que a legislação aplicável assegure ao consumidor a possibilidade de ajuizamento da demanda em foro diverso."
+    }
+   ]
+  }
+ ]
+}

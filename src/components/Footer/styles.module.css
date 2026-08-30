@@ -112,3 +112,31 @@
     text-align: center;
   }
 }
+
+/* Ícones no lugar das siglas IG/FB/YT, que o Sérgio pediu. Alvo de 40px porque
+   no celular eles ficam lado a lado e dedo não acerta ícone de 16px. */
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.socialIcon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.socialIcon:hover {
+  border-color: var(--color-hot-primary);
+  background-color: rgba(255, 115, 69, 0.12);
+}
+
+.socialIcon:focus-visible {
+  outline: 3px solid var(--color-cold-primary);
+  outline-offset: 2px;
+}

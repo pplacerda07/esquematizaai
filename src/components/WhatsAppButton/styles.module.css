@@ -1,7 +1,13 @@
+/* Sobe quando a barra de compra entra no rodapé.
+   Os dois moram no mesmo canto, e o botão ficava POR CIMA do "Comprar agora":
+   no celular o dedo caía no WhatsApp em vez do checkout. A altura vem da
+   própria barra, que a publica ao aparecer, então o botão sobe exatamente o
+   necessário em vez de um valor chutado. */
 .fab {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
+  transition: bottom 0.28s ease;
   z-index: 9998;
   width: 56px;
   height: 56px;
@@ -45,5 +51,18 @@
   .fab svg {
     width: 28px;
     height: 28px;
+  }
+}
+
+/* A barra de compra publica no body que está no ar e o quanto mede. Fora da
+   página de produto o atributo não existe e o botão fica onde sempre esteve.
+   O respiro base muda com a tela, então cada faixa tem a sua conta. */
+:global(body[data-barra-compra='visivel']) .fab {
+  bottom: calc(1.5rem + var(--altura-barra-compra, 72px));
+}
+
+@media (max-width: 600px) {
+  :global(body[data-barra-compra='visivel']) .fab {
+    bottom: calc(1rem + var(--altura-barra-compra, 72px));
   }
 }

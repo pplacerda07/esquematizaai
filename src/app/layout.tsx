@@ -7,7 +7,11 @@ import { SITE_URL } from "@/config";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Esquematiza Aí | Plataforma de Educação Online",
-  description: "Plataforma de Educação Online - Esquematiza Aí / Jornal do Marco",
+  // "Jornal do Marco" saiu daqui junto com o do rodapé, a pedido do Sérgio.
+  // Esta descrição é a que aparece no Google e ao compartilhar o link, então
+  // ganhou uma frase que diz o que o site vende.
+  description:
+    'Resumos e flashcards para concursos públicos, feitos a partir do histórico de cobrança das bancas. Áreas fiscal, controle, policial, tribunais e legislativa.',
 };
 
 export default function RootLayout({
