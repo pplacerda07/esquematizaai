@@ -4,16 +4,19 @@ import { CHECKOUT_URL } from '@/config';
 
 type Props = {
   children: React.ReactNode;
-  variant?: 'solid' | 'gradient';
+  /** "azul" é o do topo da página, logo abaixo do vídeo, a pedido do Sérgio */
+  variant?: 'solid' | 'gradient' | 'azul';
 };
 
 export default function CtaButton({ children, variant = 'solid' }: Props) {
+  const cor = variant === 'gradient' ? styles.gradient : variant === 'azul' ? styles.azul : '';
+
   return (
     <a
       href={CHECKOUT_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${styles.btn} ${variant === 'gradient' ? styles.gradient : ''}`}
+      className={`${styles.btn} ${cor}`}
     >
       {children}
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

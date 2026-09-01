@@ -57,3 +57,18 @@
     padding: 1rem 1.5rem;
   }
 }
+
+/* Azul, para o botão logo abaixo do vídeo de vendas. O Sérgio pediu essa cor
+   ali para o primeiro CTA não competir com o laranja que se repete no resto da
+   página: no topo o objetivo é só tirar quem já se convenceu, e os demais
+   continuam laranja.
+   Texto branco sobre o azul-marinho da marca dá 11,6:1 de contraste. */
+.azul {
+  background: var(--color-cold-dark);
+  color: #fff;
+  box-shadow: 0 10px 28px -8px rgba(38, 52, 79, 0.5);
+}
+
+.azul:hover {
+  background: #1b2740;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
-import { SITE_URL } from '@/config';
 
 /**
  * Barra de topo das páginas de venda.
@@ -16,7 +16,9 @@ import { SITE_URL } from '@/config';
 export default function SalesNav() {
   return (
     <nav className={styles.navbar}>
-      <a href={SITE_URL} className={styles.logoLink} aria-label="Esquematiza Aí">
+      {/* A logo levava para o WordPress antigo, e o Sérgio viu: quem clicava
+          saía do site novo no meio da leitura. Agora vai para a home daqui. */}
+      <Link href="/" className={styles.logoLink} aria-label="Esquematiza Aí, ir para o início">
         <Image
           src="/logos/logo-horizontal-azul.png"
           alt="Esquematiza Aí"
@@ -25,7 +27,7 @@ export default function SalesNav() {
           style={{ objectFit: 'contain' }}
           priority
         />
-      </a>
+      </Link>
 
       <a href="#planos" className={styles.cta}>
         Ver planos

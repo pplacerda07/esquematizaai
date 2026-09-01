@@ -73,7 +73,9 @@
   letter-spacing: 0.02em;
 }
 
-.cur { color: var(--color-hot-primary); }
+/* Uma cor so na numeracao e nas barras, a pedido do Sergio. Eram laranja, um
+   degrade laranja-azul e o azul-claro, tres cores para dizer a mesma coisa. */
+.cur { color: var(--color-cold-primary); }
 .sep { opacity: 0.4; }
 
 .progress {
@@ -88,7 +90,7 @@
   display: block;
   height: 100%;
   border-radius: 4px;
-  background: linear-gradient(90deg, var(--color-hot-primary), var(--color-cold-primary));
+  background-color: var(--color-cold-primary);
 }
 
 /* palco onde os cards se empilham */
@@ -127,7 +129,7 @@
   right: 2rem;
   height: 4px;
   border-radius: 0 0 4px 4px;
-  background: linear-gradient(90deg, var(--color-hot-primary), var(--color-cold-primary));
+  background-color: var(--color-cold-primary);
 }
 
 .num {
@@ -136,7 +138,10 @@
   font-size: 2.6rem;
   font-weight: 700;
   line-height: 1;
-  color: var(--color-cold-light);
+  /* mesmo azul do contador e das barras, só mais leve: é numeração de apoio,
+     não pode competir com o título do card */
+  color: var(--color-cold-primary);
+  opacity: 0.5;
 }
 
 .check {

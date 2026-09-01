@@ -1,14 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
-import { CHECKOUT_URL, SITE_URL } from '@/config';
+import { CHECKOUT_URL } from '@/config';
 
 export default function SalesFooter() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logoCol}>
-          <a href={SITE_URL} className={styles.logoLink} aria-label="Esquematiza Aí">
+          {/* Mesma correção do topo: a logo ia para o WordPress antigo. */}
+          <Link href="/" className={styles.logoLink} aria-label="Esquematiza Aí, ir para o início">
             <Image
               src="/logos/logo-horizontal-branco.png"
               alt="Esquematiza Aí"
@@ -16,7 +18,7 @@ export default function SalesFooter() {
               height={50}
               style={{ objectFit: 'contain' }}
             />
-          </a>
+          </Link>
           <p className={styles.description}>
             Mentoria para concursos fiscais e de controle, conduzida por auditores
             aprovados. Plano individual, material de revisão da casa e acompanhamento

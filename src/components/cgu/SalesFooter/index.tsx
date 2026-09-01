@@ -1,14 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
-import { GRUPO_VIP_URL, SITE_URL } from '@/config';
+import { GRUPO_VIP_URL } from '@/config';
 
 export default function SalesFooter() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.logoCol}>
-          <a href={SITE_URL} className={styles.logoLink} aria-label="Esquematiza Aí">
+          {/* Mesma correção do topo: a logo ia para o WordPress antigo. */}
+          <Link href="/" className={styles.logoLink} aria-label="Esquematiza Aí, ir para o início">
             <Image
               src="/logos/logo-horizontal-branco.png"
               alt="Esquematiza Aí"
@@ -16,7 +18,7 @@ export default function SalesFooter() {
               height={50}
               style={{ objectFit: 'contain' }}
             />
-          </a>
+          </Link>
           <p className={styles.description}>
             Pré-edital da CGU conduzido por auditores aprovados. Aula gratuita, ciclo de
             estudos e acompanhamento de perto para você largar na frente antes do edital sair.

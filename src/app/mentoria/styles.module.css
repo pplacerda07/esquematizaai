@@ -1618,100 +1618,93 @@
 }
 
 /* ============================================================
-   Bloco 13 — Autoridade (mentores com foto)
+   Bloco 13 — Autoridade
    ============================================================ */
-.mentorGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 720px);
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-}
 
-.mentorCard {
+/* A foto do Sérgio, uma vez só e no início da seção. Era um retrato 4/5 de
+   420px no meio do texto MAIS um quadrado dentro do cartão do mentor: o mesmo
+   rosto duas vezes na mesma rolagem. Agora é um retrato pequeno que apresenta
+   quem fala e sai da frente do título. */
+.autorFoto {
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 1.2rem;
-  overflow: hidden;
-  margin: 0;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.28);
+  align-items: center;
+  gap: 0.9rem;
+  margin: 0 0 2.25rem;
 }
 
-.mentorGrid .mentorCard {
-  transition: opacity 0.7s ease, transform 0.7s ease, translate 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mentorGrid .mentorCard:hover {
-  translate: 0 -6px;
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.38);
-}
-
-.mentorPhoto {
+.autorFotoWrap {
   position: relative;
-  aspect-ratio: 1 / 1;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
   overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
 }
 
-.mentorImg {
+.autorImg {
   object-fit: cover;
-  object-position: center 22%;
-  transition: scale 0.4s ease;
+  /* o enquadramento original corta a testa se centralizado */
+  object-position: center 20%;
 }
 
-.mentorGrid .mentorCard:hover .mentorImg {
-  scale: 1.04;
-}
-
-.mentorBody {
-  padding: 1.6rem 1.6rem 1.75rem;
-}
-
-.mentorRole {
-  display: block;
+.autorFoto figcaption {
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-hot-light);
-  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-cold-light);
+  opacity: 0.82;
+  text-align: center;
+  max-width: 320px;
 }
 
-.mentorName {
+.autorFoto figcaption strong {
+  display: block;
   font-family: var(--font-heading);
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: #fff;
-  margin: 0 0 0.75rem;
+  opacity: 1;
+  letter-spacing: 0.01em;
 }
 
-.mentorBio {
-  font-family: var(--font-body);
-  font-size: 0.98rem;
-  line-height: 1.6;
-  color: var(--color-cold-light);
-  opacity: 0.85;
-  margin: 0 0 1.1rem;
-}
-
+/* A citação ficou sozinha, sem o cartão em volta: o cargo, o nome e a minibio
+   saíram a pedido do Sérgio, e manter a moldura em torno de um único parágrafo
+   deixava caixa dentro de caixa. Como agora ela carrega a seção inteira, ganhou
+   corpo e as aspas de abertura. */
 .mentorQuote {
   position: relative;
-  margin: 0;
-  padding: 1.1rem 1.25rem;
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  padding: 2rem 2rem 2rem 3.25rem;
   border-left: 3px solid var(--color-hot-primary);
-  border-radius: 0 0.6rem 0.6rem 0;
+  border-radius: 0 1rem 1rem 0;
   background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.24);
   font-family: var(--font-body);
   font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: 1.08rem;
+  line-height: 1.7;
   color: var(--color-cold-light);
 }
 
-/* Bloco 13 — Bastidores / prova de proximidade */
+.mentorQuote::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.45rem;
+  left: 1.1rem;
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-hot-primary);
+  opacity: 0.5;
+}
+
+/* Fecho da seção. A galeria de bastidores que vinha aqui embaixo tinha uma
+   única figura, e era a segunda foto repetida. */
 .proofIntro {
   text-align: center;
   font-family: var(--font-heading);
@@ -1720,49 +1713,7 @@
   font-weight: 600;
   color: var(--color-cold-light);
   max-width: 720px;
-  margin: 3rem auto 1.75rem;
-}
-
-.proofGallery {
-  display: grid;
-  grid-template-columns: minmax(0, 420px);
-  justify-content: center;
-  gap: 1.25rem;
-}
-
-.proofItem {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.proofImgWrap {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
-}
-
-.proofImg {
-  object-fit: cover;
-  object-position: center;
-  transition: scale 0.4s ease;
-}
-
-.proofItem:hover .proofImg {
-  scale: 1.05;
-}
-
-.proofItem figcaption {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: var(--color-cold-light);
-  opacity: 0.8;
-  text-align: center;
+  margin: 3rem auto 0;
 }
 
 /* ============================================================
@@ -1921,7 +1872,6 @@
   .deliverGrid,
   .bonusGrid,
   .testimonialGrid,
-  .mentorGrid,
   .finalList {
     grid-template-columns: 1fr;
   }
@@ -1930,10 +1880,14 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .proofGallery {
-    grid-template-columns: 1fr;
-    max-width: 360px;
-    margin: 0 auto;
+  .autorFotoWrap {
+    width: 136px;
+    height: 136px;
+  }
+
+  .mentorQuote {
+    padding: 1.6rem 1.4rem 1.6rem 2.6rem;
+    font-size: 1rem;
   }
 
   .proofIntro {

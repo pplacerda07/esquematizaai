@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './styles.module.css';
-import { GRUPO_VIP_URL, SITE_URL } from '@/config';
+import { GRUPO_VIP_URL } from '@/config';
 
 export default function SalesNav() {
   return (
     <nav className={styles.navbar}>
-      <a href={SITE_URL} className={styles.logoLink} aria-label="Esquematiza Aí">
+      {/* Mesma correção da página da mentoria: a logo ia para o WordPress
+          antigo e tirava a pessoa do site novo no meio da leitura. */}
+      <Link href="/" className={styles.logoLink} aria-label="Esquematiza Aí, ir para o início">
         <Image
           src="/logos/logo-horizontal-azul.png"
           alt="Esquematiza Aí"
@@ -15,7 +18,7 @@ export default function SalesNav() {
           style={{ objectFit: 'contain' }}
           priority
         />
-      </a>
+      </Link>
 
       <a
         href={GRUPO_VIP_URL}

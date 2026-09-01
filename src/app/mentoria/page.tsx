@@ -104,8 +104,11 @@ export default function MentoriaPage() {
               </p>
             </div>
 
+            {/* Azul e "Preencher formulário", a pedido do Sérgio. Aqui em cima
+                o objetivo é só recolher quem já chegou decidido; os CTAs
+                laranjas do meio e do fim da página seguem como estão. */}
             <div className={`${styles.heroCta} ${styles.heroIn}`} style={delay(700)}>
-              <CtaButton variant="gradient">Quero fazer minha aplicação pra mentoria</CtaButton>
+              <CtaButton variant="azul">Preencher formulário</CtaButton>
             </div>
 
             <div className={`${styles.trustStrip} ${styles.heroIn}`} style={delay(800)}>
@@ -460,6 +463,27 @@ export default function MentoriaPage() {
         <section className={`${styles.section} ${styles.sectionDark}`}>
           <div className={`${styles.orb} ${styles.orbDarkLeft}`} />
           <div className={styles.containerNarrow}>
+            {/* A FOTO APARECIA DUAS VEZES na mesma seção: no cartão do mentor e
+                de novo na galeria de bastidores, logo abaixo. O Sérgio pediu uma
+                só, aqui no começo, e faz sentido: ela apresenta quem fala antes
+                do texto falar dele, em vez de repetir o mesmo rosto no meio da
+                leitura. A legenda carrega o cargo, que saiu do cartão. */}
+            <figure className={styles.autorFoto} data-reveal="fade">
+              <div className={styles.autorFotoWrap}>
+                <Image
+                  src="/mentores/sergio.jpg"
+                  alt="Sérgio Furtado, Auditor-Fiscal e criador do método de revisão da Esquematiza"
+                  fill
+                  sizes="240px"
+                  className={styles.autorImg}
+                />
+              </div>
+              <figcaption>
+                <strong>Sérgio Furtado</strong>
+                Auditor-fiscal da SEFIN-RO e autor do Esquematiza Aí
+              </figcaption>
+            </figure>
+
             <h2 className={styles.sectionTitle} data-reveal style={delay(80)}>
               Quem criou o seu método já sentou na cadeira que você quer ocupar.
             </h2>
@@ -480,52 +504,24 @@ export default function MentoriaPage() {
               Flashcards para provas e exames.
             </p>
 
-            <div className={styles.mentorGrid}>
-              <article className={styles.mentorCard} data-reveal="right">
-                <div className={styles.mentorPhoto}>
-                  <Image
-                    src="/mentores/sergio.jpg"
-                    alt="Sérgio Furtado, Auditor-Fiscal e criador do método de revisão da Esquematiza"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 450px"
-                    className={styles.mentorImg}
-                  />
-                </div>
-                <div className={styles.mentorBody}>
-                  <span className={styles.mentorRole}>Auditor-Fiscal · autor do Esquematiza Aí</span>
-                  <h3 className={styles.mentorName}>Sérgio Furtado</h3>
-                  <p className={styles.mentorBio}>
-                    Auditor Fiscal do Estado, autor do Esquematiza Aí e especialista em
-                    métodos de estudo e revisão. Coordena as Rodadas Avançadas de Simulados
-                    no Estratégia Concursos, foi coordenador e professor no TEC Concursos e
-                    ajudou a abrir o mercado de flashcards para concursos no Brasil. O
-                    método de revisão da Esquematiza nasceu da cabeça dele.
-                  </p>
-                  <blockquote className={styles.mentorQuote}>
-                    Fui aprovado como analista e como auditor na SEFIN-RO, e também como
-                    Auditor do ISS de Guarulhos. Em todas essas provas, o que decidiu foi o
-                    mesmo: método, leitura de banca e revisão feita no dia certo. Foi esse
-                    método que eu transformei no Esquematiza Aí, que já colocou milhares de
-                    alunos nas listas, e é ele que a mentoria aplica no seu plano, ajustado
-                    ao seu tempo e à sua banca. Estude, trabalhe e desfrute.
-                  </blockquote>
-                </div>
-              </article>
-            </div>
+            {/* SÓ A CITAÇÃO, a pedido do Sérgio. Saíram o cargo, o nome e a
+                minibio, que repetiam palavra por palavra o que os dois
+                parágrafos acima já dizem; quem fala está identificado na foto
+                logo no início da seção. A última linha da citação ("Estude,
+                trabalhe e desfrute") também saiu, por pedido dele. */}
+            <blockquote className={styles.mentorQuote} data-reveal="fade">
+              Fui aprovado como analista e como auditor na SEFIN-RO, e também como
+              Auditor do ISS de Guarulhos. Em todas essas provas, o que decidiu foi o
+              mesmo: método, leitura de banca e revisão feita no dia certo. Foi esse
+              método que eu transformei no Esquematiza Aí, que já colocou milhares de
+              alunos nas listas, e é ele que a mentoria aplica no seu plano, ajustado
+              ao seu tempo e à sua banca.
+            </blockquote>
 
             <p className={styles.proofIntro} data-reveal>
               Método testado em prova pelo próprio autor e confirmado, ano após ano, nas
               listas de aprovação dos alunos.
             </p>
-
-            <div className={styles.proofGallery}>
-              <figure className={styles.proofItem} data-reveal="fade" style={delay(0)}>
-                <div className={styles.proofImgWrap}>
-                  <Image src="/mentores/sergio.jpg" alt="Sérgio Furtado, auditor-fiscal da SEFIN-RO" fill sizes="(max-width: 768px) 100vw, 300px" className={styles.proofImg} />
-                </div>
-                <figcaption>Sérgio Furtado, auditor-fiscal da SEFIN-RO e criador do método.</figcaption>
-              </figure>
-            </div>
           </div>
         </section>
 

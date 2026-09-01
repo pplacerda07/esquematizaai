@@ -25,11 +25,13 @@ import styles from './styles.module.css';
  * legislação tributária.
  */
 const ATALHOS = [
+  // Mentoria em primeiro, a pedido do Sérgio: é o produto de maior ticket e o
+  // único que não é material, então some no meio de uma fila de categorias.
+  { rotulo: 'Mentoria', href: '/mentoria' },
   { rotulo: 'Assinaturas', href: '/vitrine?tipo=assinatura' },
   { rotulo: 'Combos', href: '/vitrine?tipo=combo' },
   { rotulo: 'Cursos isolados', href: '/vitrine?tipo=isolado' },
   { rotulo: 'Legislação Tributária', href: '/vitrine?tipo=legislacao-tributaria' },
-  { rotulo: 'Mentoria', href: '/mentoria' },
 ];
 
 export default function BuscaEAtalhos() {
