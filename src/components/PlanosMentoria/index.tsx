@@ -14,9 +14,13 @@ import styles from './styles.module.css';
  * plano de sete mil faz a pessoa fechar antes de ver que existe um de
  * quatrocentos e noventa e sete.
  *
- * O DESTAQUE VAI NO ANUAL, e não no mais caro. É o plano que o Sérgio chama de
- * "caminho de quem já decidiu ir até a posse", e destacar o mais caro de todos
- * soa como empurrar, não como recomendar.
+ * DOIS CARTÕES DESTACADOS, em cores diferentes, como o Sérgio pediu: laranja no
+ * Recorrente Mensal, com "Mais escolhido", e azul no Anual, com "Maior custo
+ * benefício". Os dois selos dizem coisas diferentes, e é por isso que funcionam
+ * juntos: um é o que a maioria escolhe, o outro é o que rende mais. Se os dois
+ * dissessem "mais escolhido", um estaria mentindo.
+ *
+ * Nenhum dos dois é o plano mais caro, e isso também é de propósito.
  */
 
 type Plano = {
@@ -29,7 +33,8 @@ type Plano = {
   inclui: string[];
   naoInclui?: string[];
   exige?: string;
-  destaque?: boolean;
+  /** cor do selo e da moldura; sem isso o cartão fica neutro */
+  destaque?: 'laranja' | 'azul';
   selo?: string;
 };
 
@@ -58,6 +63,8 @@ const PLANOS: Plano[] = [
     inclui: ['Materiais Esquematiza Aí com 30% de desconto exclusivo'],
     naoInclui: ['Materiais Esquematiza Aí', 'Assinatura do Estratégia Concursos'],
     exige: 'É necessário possuir e manter assinatura ativa do Estratégia Concursos durante a mentoria',
+    destaque: 'laranja',
+    selo: 'Mais escolhido',
   },
   {
     nome: 'Recorrente Mensal + Estratégia',
@@ -81,8 +88,8 @@ const PLANOS: Plano[] = [
     inclui: ['Materiais Esquematiza Aí com 70% de desconto exclusivo'],
     naoInclui: ['Materiais Esquematiza Aí', 'Assinatura do Estratégia Concursos'],
     exige: 'É necessário possuir e manter assinatura ativa do Estratégia Concursos durante a mentoria',
-    destaque: true,
-    selo: 'Mais escolhido',
+    destaque: 'azul',
+    selo: 'Maior custo benefício',
   },
   {
     nome: 'Anual VIP',
@@ -124,11 +131,15 @@ export default function PlanosMentoria() {
         {PLANOS.map((p, i) => (
           <article
             key={p.nome}
-            className={`${styles.plano} ${p.destaque ? styles.planoDestaque : ''}`}
+            className={[styles.plano, p.destaque === 'laranja' && styles.planoLaranja, p.destaque === 'azul' && styles.planoAzul].filter(Boolean).join(' ')}
             data-reveal="fade"
             style={{ ['--reveal-delay' as string]: `${i * 90}ms` }}
           >
-            {p.selo && <span className={styles.selo}>{p.selo}</span>}
+            {p.selo && (
+              <span className={p.destaque === 'azul' ? `${styles.selo} ${styles.seloAzul}` : styles.selo}>
+                {p.selo}
+              </span>
+            )}
 
             <h3 className={styles.nome}>{p.nome}</h3>
 

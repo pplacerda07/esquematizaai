@@ -41,12 +41,18 @@
   border: 1.5px solid rgba(255, 255, 255, 0.14);
 }
 
-/* O destaque vai no Anual, e não no mais caro: destacar o de sete mil soa como
-   empurrar, não como recomendar. */
-.planoDestaque {
+/* Dois cartoes destacados, em cores diferentes, a pedido do Sergio. Laranja no
+   Recorrente Mensal e azul no Anual, ambos da paleta da marca. */
+.planoLaranja {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: var(--color-hot-primary);
   box-shadow: 0 18px 50px -20px rgba(255, 115, 69, 0.55);
+}
+
+.planoAzul {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-cold-primary);
+  box-shadow: 0 18px 50px -20px rgba(78, 174, 217, 0.55);
 }
 
 .selo {
@@ -63,6 +69,13 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+/* O selo azul usa o azul medio com texto marinho: 4,9:1, passa em texto
+   pequeno. Branco sobre esse azul daria 2,3:1 e nao passaria. */
+.seloAzul {
+  background-color: var(--color-cold-light);
+  color: var(--color-cold-dark);
 }
 
 .nome {

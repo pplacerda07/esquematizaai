@@ -18,9 +18,12 @@
   flex-shrink: 0;
 }
 
+/* Verde, a pedido do Sérgio. O texto é o azul-marinho da marca e não branco:
+   branco sobre o verde claro da paleta dá 1,59:1 de contraste, que é ilegível.
+   Com o marinho fica 7,82:1. */
 .cta {
-  background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
+  background-color: var(--color-green-primary);
+  color: var(--color-cold-dark);
   border: none;
   padding: 0.6rem 1.4rem;
   border-radius: 0.5rem;
@@ -31,11 +34,11 @@
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 6px 18px rgba(255, 115, 69, 0.25);
+  box-shadow: 0 6px 18px rgba(139, 224, 149, 0.3);
 }
 
 .cta:hover {
-  background-color: var(--color-hot-dark);
+  background-color: #74d47f;
   transform: translateY(-1px);
 }
 

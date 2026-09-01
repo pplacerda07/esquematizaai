@@ -373,7 +373,8 @@ export default function MentoriaPage() {
             tudo separado até chegar num preço único de 12x R$ 413,38. A oferta
             deixou de ser uma só: agora são cinco planos, e o que muda entre eles
             é o prazo e o que entra de material. */}
-        <section className={`${styles.section} ${styles.sectionDark}`}>
+        {/* id="planos": é para cá que o botão "Ver planos" do topo leva */}
+        <section id="planos" className={`${styles.section} ${styles.sectionDark}`}>
           <span className={`${styles.bgLogo} ${styles.bgLogoA}`} aria-hidden="true" />
           <span className={`${styles.bgLogo} ${styles.bgLogoB}`} aria-hidden="true" />
           <span className={`${styles.bgLogo} ${styles.bgLogoC}`} aria-hidden="true" />

@@ -2028,3 +2028,9 @@
   line-height: 1.15;
   color: var(--color-cold-dark);
 }
+
+/* A barra de topo é fixa, então a seção de planos precisa de folga: sem isso o
+   botão "Ver planos" leva a pessoa até lá com o título escondido atrás dela. */
+#planos {
+  scroll-margin-top: 5rem;
+}
