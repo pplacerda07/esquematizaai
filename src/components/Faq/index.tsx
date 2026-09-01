@@ -24,11 +24,11 @@ const ITEMS: QA[] = [
   },
   {
     q: 'Quanto custa e como funciona o pagamento?',
-    a: 'São cinco planos: Recorrente Mensal (R$ 497/mês), Recorrente + Estratégia (R$ 597/mês, com a Assinatura Premium do Estratégia inclusa), Anual (12x R$ 516,80 ou R$ 4.997 à vista), Anual VIP (12x R$ 620,23 ou R$ 5.997 à vista, com todos os materiais Esquematiza Aí inclusos) e Anual Premium (12x R$ 723,65 ou R$ 6.997 à vista, com materiais e Estratégia inclusos). À vista você paga em cartão, boleto ou pix; o parcelamento é no cartão de crédito. Faça sua aplicação e a equipe confirma com você a disponibilidade de vagas do plano escolhido.',
+    a: 'São cinco planos. Dois recorrentes, cobrados no cartão e renovados automaticamente até o cancelamento: o Recorrente Mensal, a R$ 497/mês, e o Recorrente Mensal + Estratégia, a R$ 597/mês com a Assinatura Premium do Estratégia inclusa. E três anuais, de contratação única de 12 meses: o Anual, a R$ 4.997 à vista ou 12x de R$ 516,80 no cartão, total de R$ 6.201,60; o Anual VIP, a R$ 5.997 à vista ou 12x de R$ 620,23, total de R$ 7.442,76, com todos os materiais Esquematiza Aí inclusos; e o Anual Premium, a R$ 6.997 à vista ou 12x de R$ 723,65, total de R$ 8.683,80, com materiais e Estratégia inclusos. À vista você paga em cartão, boleto ou pix. Faça sua aplicação e a equipe confirma com você a disponibilidade de vagas do plano escolhido.',
   },
   {
     q: 'Preciso possuir uma assinatura do Estratégia Concursos?',
-    a: 'Sim. Toda a metodologia da mentoria, incluindo o planejamento e as metas diárias, é estruturada com base nos materiais do Estratégia Concursos. Se você já assina, escolha um dos planos que não incluem a assinatura (Mensal, Anual ou Anual VIP) e aproveite que essa etapa já está pronta. Se ainda não assina, os planos Recorrente + Estratégia e Anual Premium já a incluem durante a vigência da mentoria, sem você precisar contratar por fora.',
+    a: 'Sim. Toda a metodologia da mentoria, incluindo o planejamento e as metas diárias, é estruturada com base nos materiais disponibilizados pelo Estratégia Concursos. Nos planos que não incluem a Assinatura Premium, é obrigatório que você possua e mantenha uma assinatura ativa durante todo o período da mentoria. Se você não tem assinatura ativa, precisa optar por um dos planos que já a incluem: o Recorrente Mensal + Estratégia ou o Anual Premium.',
   },
   {
     q: 'Qual a diferença entre o plano recorrente mensal e o plano anual?',
@@ -51,12 +51,20 @@ const ITEMS: QA[] = [
     a: 'Garantia de aprovação não existe em produto sério nenhum, porque depende da sua execução na prova. O que a gente garante é o que você vai aprender a estudar competitivamente, o método, o acompanhamento e o material que colocaram nossos alunos nos quatro grandes fiscos em 2026. E você ainda tem sete dias pra testar tudo por dentro e pedir reembolso se não fizer sentido.',
   },
   {
-    q: 'Por quanto tempo terei acesso aos materiais e à assinatura do Estratégia?',
-    a: 'Nos planos que incluem os materiais do Esquematiza Aí e/ou a Assinatura Premium do Estratégia Concursos, o acesso permanece ativo durante toda a vigência da mentoria. Encerrado o período contratado, os acessos vinculados ao plano são automaticamente encerrados, salvo em caso de nova contratação.',
+    q: 'O que está incluso nos materiais do Esquematiza Aí?',
+    a: 'Todos os Combos e Assinaturas do Esquematiza Aí abrangidos pelo plano contratado e disponíveis durante o período de vigência da mentoria.',
   },
   {
-    q: 'Como funciona o reembolso? Existe multa se eu cancelar?',
-    a: 'Não existe multa por cancelamento. Dentro de 7 dias da confirmação do pagamento, você pede reembolso integral por e-mail pra contato@esquematizaai.com, sem burocracia. Após esse prazo, não há reembolso por desistência: no plano mensal, o cancelamento impede a próxima renovação e você mantém o acesso até o fim do período já pago; no plano anual, as parcelas restantes seguem devidas e o acesso fica disponível até o fim dos 12 meses contratados. As condições completas estão nos Termos de Uso.',
+    q: 'Por quanto tempo terei acesso aos materiais e à assinatura do Estratégia?',
+    a: 'Nos planos que incluem os materiais do Esquematiza Aí e/ou a Assinatura Premium do Estratégia Concursos, o acesso permanece ativo durante toda a vigência da mentoria. Encerrado o período contratado, os acessos vinculados ao plano são automaticamente interrompidos, salvo em caso de nova contratação.',
+  },
+  {
+    q: 'Como funciona o reembolso?',
+    a: 'O pedido deve ser enviado por e-mail para contato@esquematizaai.com, dentro do prazo de 7 dias contado da confirmação do pagamento. Após esse prazo, não há reembolso por desistência do aluno.',
+  },
+  {
+    q: 'Como funciona o cancelamento? Existe multa?',
+    a: 'Não existe multa por cancelamento. No plano recorrente mensal, o cancelamento impede a próxima renovação automática e você mantém o acesso à mentoria e aos benefícios do plano até o término do período já pago. No plano anual, a contratação é de 12 meses e o parcelamento é apenas uma forma de pagamento do valor total, então a desistência após os 7 dias não interrompe a cobrança das parcelas restantes; o acesso permanece disponível até o fim dos 12 meses contratados. Ao término do período, os acessos vinculados ao plano são encerrados automaticamente. As condições completas estão nos Termos de Uso.',
   },
   {
     q: 'Em quanto tempo vejo resultado?',

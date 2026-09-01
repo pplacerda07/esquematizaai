@@ -177,3 +177,36 @@
     font-size: 1.7rem;
   }
 }
+
+/* Total a prazo. Fica junto do preço porque é o que muda a decisão: no plano
+   anual o parcelado sai R$ 1.204,60 mais caro que o à vista, e esconder isso
+   numa nota de rodapé é o mesmo que não dizer. */
+.precoParcelado {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.72);
+  margin-top: 0.2rem;
+}
+
+/* O que o plano NAO cobre. Marcador de traco no lugar do visto, e nao um
+   visto reestilizado a forca: sao coisas opostas e precisam ler como opostas.
+   Descobrir depois de pagar que precisa manter outra assinatura ativa e o
+   caminho direto para o pedido de reembolso. */
+.naoInclui {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.32);
+}
+
+.inclui .naoInclui::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 0.72rem;
+  height: 0;
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.38);
+  transform: none;
+}

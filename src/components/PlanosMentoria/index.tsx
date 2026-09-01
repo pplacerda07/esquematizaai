@@ -23,61 +23,89 @@ type Plano = {
   nome: string;
   preco: string;
   detalhePreco?: string;
+  /** total do parcelamento, obrigatório quando ele é maior que o valor à vista */
+  totalParcelado?: string;
   descricao: string;
   inclui: string[];
+  naoInclui?: string[];
   exige?: string;
   destaque?: boolean;
   selo?: string;
 };
 
+/**
+ * Preços e condições da tabela que o Sérgio fechou em 01/09.
+ *
+ * O TOTAL DO PARCELAMENTO APARECE, e isso não é detalhe. No plano anual o
+ * parcelado soma R$ 6.201,60 contra R$ 4.997 à vista: são R$ 1.204,60 a mais.
+ * Mostrar "12x R$ 516,80 ou R$ 4.997 à vista" sem o total faz o parcelamento
+ * parecer a mesma compra dividida, e não é. O Código de Defesa do Consumidor
+ * exige o montante dos juros e o preço total a prazo (art. 52), e omitir isso
+ * numa página de venda é o tipo de coisa que vira processo.
+ *
+ * O QUE NÃO ESTÁ INCLUSO TAMBÉM APARECE. A tabela do Sérgio abre cada plano
+ * dizendo o que ele não cobre, e ele tem razão: descobrir depois de pagar que
+ * precisa manter outra assinatura ativa é o caminho direto para o pedido de
+ * reembolso.
+ */
 const PLANOS: Plano[] = [
   {
     nome: 'Recorrente Mensal',
     preco: 'R$ 497',
     detalhePreco: '/mês',
-    descricao: 'Renovação automática mês a mês, sem compromisso de longo prazo.',
+    descricao:
+      'Cobrança recorrente no cartão, renovada automaticamente até o cancelamento. Sem compromisso de longo prazo.',
     inclui: ['Materiais Esquematiza Aí com 30% de desconto exclusivo'],
-    exige: 'Requer assinatura ativa do Estratégia Concursos',
+    naoInclui: ['Materiais Esquematiza Aí', 'Assinatura do Estratégia Concursos'],
+    exige: 'É necessário possuir e manter assinatura ativa do Estratégia Concursos durante a mentoria',
   },
   {
-    nome: 'Recorrente + Estratégia',
+    nome: 'Recorrente Mensal + Estratégia',
     preco: 'R$ 597',
     detalhePreco: '/mês',
-    descricao: 'Tudo do plano mensal, com a teoria já resolvida.',
+    descricao:
+      'Cobrança recorrente no cartão, renovada automaticamente até o cancelamento, com a teoria já resolvida.',
     inclui: [
-      'Assinatura Premium do Estratégia Concursos inclusa durante a mentoria',
+      'Assinatura Premium do Estratégia Concursos durante a vigência da mentoria',
       'Materiais Esquematiza Aí com 50% de desconto exclusivo',
     ],
+    naoInclui: ['Materiais Esquematiza Aí'],
   },
   {
     nome: 'Anual',
-    preco: '12x R$ 516,80',
-    detalhePreco: 'ou R$ 4.997 à vista',
+    preco: 'R$ 4.997',
+    detalhePreco: 'à vista, em cartão, boleto ou pix',
+    totalParcelado: 'ou 12x de R$ 516,80 no cartão, total de R$ 6.201,60',
     descricao:
-      'Doze meses de mentoria com condições garantidas o ano inteiro. O caminho de quem já decidiu ir até a posse.',
+      'Contratação única de 12 meses, com as condições garantidas o ano inteiro. O caminho de quem já decidiu ir até a posse.',
     inclui: ['Materiais Esquematiza Aí com 70% de desconto exclusivo'],
-    exige: 'Requer assinatura ativa do Estratégia Concursos',
+    naoInclui: ['Materiais Esquematiza Aí', 'Assinatura do Estratégia Concursos'],
+    exige: 'É necessário possuir e manter assinatura ativa do Estratégia Concursos durante a mentoria',
     destaque: true,
     selo: 'Mais escolhido',
   },
   {
     nome: 'Anual VIP',
-    preco: '12x R$ 620,23',
-    detalhePreco: 'ou R$ 5.997 à vista',
-    descricao: 'Doze meses de mentoria sem pagar nada por fora pelo material de revisão.',
+    preco: 'R$ 5.997',
+    detalhePreco: 'à vista, em cartão, boleto ou pix',
+    totalParcelado: 'ou 12x de R$ 620,23 no cartão, total de R$ 7.442,76',
+    descricao:
+      'Contratação única de 12 meses, sem pagar nada por fora pelo material de revisão.',
     inclui: [
-      'Todos os materiais Esquematiza Aí inclusos, combos e assinaturas, pré e pós-edital',
+      'Todos os materiais Esquematiza Aí, combos e assinaturas, durante a vigência da mentoria',
     ],
-    exige: 'Requer assinatura ativa do Estratégia Concursos',
+    naoInclui: ['Assinatura do Estratégia Concursos'],
+    exige: 'É necessário possuir e manter assinatura ativa própria do Estratégia Concursos',
   },
   {
     nome: 'Anual Premium',
-    preco: '12x R$ 723,65',
-    detalhePreco: 'ou R$ 6.997 à vista',
-    descricao: 'A experiência completa: nada por fora, nem teoria nem revisão.',
+    preco: 'R$ 6.997',
+    detalhePreco: 'à vista, em cartão, boleto ou pix',
+    totalParcelado: 'ou 12x de R$ 723,65 no cartão, total de R$ 8.683,80',
+    descricao: 'Contratação única de 12 meses. Nada por fora, nem teoria nem revisão.',
     inclui: [
-      'Todos os materiais Esquematiza Aí inclusos',
-      'Assinatura Premium do Estratégia Concursos inclusa',
+      'Todos os materiais Esquematiza Aí, combos e assinaturas',
+      'Assinatura Premium do Estratégia Concursos',
     ],
   },
 ];
@@ -107,6 +135,11 @@ export default function PlanosMentoria() {
             <p className={styles.preco}>
               <span className={styles.precoValor}>{p.preco}</span>
               {p.detalhePreco && <span className={styles.precoDetalhe}>{p.detalhePreco}</span>}
+              {/* o total a prazo fica ao lado do valor, não numa nota lá
+                  embaixo: é a informação que muda a decisão de compra */}
+              {p.totalParcelado && (
+                <span className={styles.precoParcelado}>{p.totalParcelado}</span>
+              )}
             </p>
 
             <p className={styles.descricao}>{p.descricao}</p>
@@ -114,6 +147,11 @@ export default function PlanosMentoria() {
             <ul className={styles.inclui}>
               {p.inclui.map((item) => (
                 <li key={item}>{item}</li>
+              ))}
+              {p.naoInclui?.map((item) => (
+                <li key={item} className={styles.naoInclui}>
+                  {item}
+                </li>
               ))}
             </ul>
 
