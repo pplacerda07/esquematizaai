@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import styles from './styles.module.css';
 import SalesNav from '@/components/SalesNav';
-import SalesFooter from '@/components/SalesFooter';
+import Footer from '@/components/Footer';
 import FloatingCta from '@/components/FloatingCta';
 import CtaButton from '@/components/CtaButton';
 import Faq from '@/components/Faq';
@@ -567,12 +567,19 @@ export default function MentoriaPage() {
                   ['Canal no WhatsApp', ' com a equipe de mentoria e comunidade de mentorados'],
                 ],
               },
-            ] as { marked: number; items: [string, string][] }[]).map((group, g) => (
+            ] as { marked: number; items: [string, string][] }[]).map((group, g, grupos) => (
               <ol className={styles.gabarito} key={g} data-reveal style={delay(160 + g * 100)}>
                 {group.items.map(([lead, rest], i) => (
                   <li key={lead} className={styles.gabItem}>
+                    {/* AS LETRAS CORREM DIRETO ENTRE OS DOIS CARTÕES: A a D no
+                        primeiro, E a H no segundo. Antes cada cartão recomeçava
+                        no A, e o Sérgio viu — num visual de gabarito, repetir a
+                        alternativa faz parecer duas questões, não uma lista de
+                        oito itens. Soma o tamanho dos grupos anteriores. */}
                     <span className={`${styles.gabLetter} ${i === group.marked ? styles.gabMarked : ''}`}>
-                      {String.fromCharCode(65 + i)}
+                      {String.fromCharCode(
+                        65 + grupos.slice(0, g).reduce((soma, ant) => soma + ant.items.length, 0) + i
+                      )}
                     </span>
                     <span className={styles.gabText}>
                       <mark className={styles.gabMark}>{lead}</mark>
@@ -583,25 +590,33 @@ export default function MentoriaPage() {
               </ol>
             ))}
 
-            <p className={styles.prose} data-reveal>
-              São <strong>cinco planos</strong>, do mensal sem compromisso de longo prazo
-              ao anual que já inclui todo o material de revisão e a teoria. Você ainda tem
-              sete dias de garantia incondicional pra testar tudo por dentro e pedir o
-              dinheiro de volta se não fizer sentido. A sua condição exata, o valor e as
-              formas de pagamento a equipe acerta com você no WhatsApp.
-            </p>
+            {/* SAIU o parágrafo que abria com "Planos a partir de R$ 497/mês":
+                com o preço fora da página ele perdeu o motivo de existir, e o
+                Sérgio pediu para eliminar. A garantia de sete dias que ele
+                mencionava não se perde — tem seção própria mais acima, aparece
+                na FAQ e na letra miúda dos planos.
 
+                SAIU TAMBÉM a nota "Ao continuar, você concorda com os termos de
+                uso e a política de privacidade": era texto morto, sem link para
+                lugar nenhum. Os Termos de Uso agora estão no rodapé, na coluna
+                Legal, clicáveis. */}
             <div className={styles.centerCta} data-reveal style={delay(80)}>
-              <CtaButton variant="gradient">Quero fazer minha aplicação pra mentoria</CtaButton>
-              <p className={styles.finalNote}>
-                Ao continuar, você concorda com os termos de uso e a política de privacidade.
-              </p>
+              {/* Verde e "Ver planos", igual ao botão do topo: o fim da página
+                  devolve a pessoa para a tabela, e é lá que fica o convite para
+                  a aplicação. */}
+              <CtaButton variant="verde" href="#planos">
+                Ver planos
+              </CtaButton>
             </div>
           </div>
         </section>
       </main>
 
-      <SalesFooter />
+      {/* O rodape da pagina de vendas tinha descricao propria e um segundo
+          bloco "Pronto pra comecar?" com mais um CTA. O Sergio pediu para
+          eliminar e usar o mesmo rodape do site: e la que estao os produtos,
+          o suporte e os Termos de Uso, e a mentoria deixa de ser uma ilha. */}
+      <Footer />
       <FloatingCta />
       <SocialProofToasts />
       <RevealController />

@@ -4,18 +4,36 @@ import { CHECKOUT_URL } from '@/config';
 
 type Props = {
   children: React.ReactNode;
-  /** "azul" é o do topo da página, logo abaixo do vídeo, a pedido do Sérgio */
-  variant?: 'solid' | 'gradient' | 'azul';
+  /**
+   * "azul" é o do topo da página, logo abaixo do vídeo, e "verde" é o do fim,
+   * que devolve a pessoa para os planos. Os dois a pedido do Sérgio.
+   */
+  variant?: 'solid' | 'gradient' | 'azul' | 'verde';
+  /**
+   * Destino alternativo ao formulário de aplicação. Serve para as âncoras da
+   * própria página, como "#planos": nesse caso o link NÃO abre em aba nova,
+   * porque abrir uma aba para rolar a mesma página é só confusão.
+   */
+  href?: string;
 };
 
-export default function CtaButton({ children, variant = 'solid' }: Props) {
-  const cor = variant === 'gradient' ? styles.gradient : variant === 'azul' ? styles.azul : '';
+const CORES = {
+  solid: '',
+  gradient: 'gradient',
+  azul: 'azul',
+  verde: 'verde',
+} as const;
+
+export default function CtaButton({ children, variant = 'solid', href }: Props) {
+  const cor = styles[CORES[variant]] ?? '';
+  const destino = href ?? CHECKOUT_URL;
+  const mesmaPagina = destino.startsWith('#');
 
   return (
     <a
-      href={CHECKOUT_URL}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={destino}
+      target={mesmaPagina ? undefined : '_blank'}
+      rel={mesmaPagina ? undefined : 'noopener noreferrer'}
       className={`${styles.btn} ${cor}`}
     >
       {children}

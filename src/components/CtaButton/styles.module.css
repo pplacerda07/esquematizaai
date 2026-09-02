@@ -72,3 +72,18 @@
 .azul:hover {
   background: #1b2740;
 }
+
+/* Verde, para o "Ver planos" do fim da página. É o mesmo par de cores do botão
+   verde do topo, e é de propósito: os dois fazem a mesma coisa, levar para a
+   tabela de planos, então precisam parecer o mesmo botão.
+   Azul-marinho sobre o verde da marca dá 7,8:1 de contraste; texto branco daria
+   2,1:1 e seria ilegível. */
+.verde {
+  background: var(--color-green-primary);
+  color: var(--color-cold-dark);
+  box-shadow: 0 10px 28px -8px rgba(139, 224, 149, 0.55);
+}
+
+.verde:hover {
+  background: #79d284;
+}

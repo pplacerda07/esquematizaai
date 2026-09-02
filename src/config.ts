@@ -49,9 +49,18 @@ export const YOUTUBE_START = 0;
  *
  * Para ligar os outros três, basta preencher a string aqui.
  */
+/**
+ * Redes sociais do rodapé. O ícone só aparece se a URL estiver preenchida,
+ * porque ícone que não leva a lugar nenhum é pior que ícone ausente.
+ *
+ * Os três últimos vieram do Sérgio em 02/09. TIREI OS PARÂMETROS DE RASTREIO
+ * que vinham colados nos links (`?si=`, `?_r=1&_t=`, `?mibextid=`): são códigos
+ * de compartilhamento gerados pelo app dele naquele momento, não fazem parte do
+ * endereço e podem envelhecer. Os endereços sem eles abrem os mesmos perfis.
+ */
 export const REDES_SOCIAIS = {
   instagram: 'https://www.instagram.com/esquematizaai/',
-  youtube: '',
-  tiktok: '',
-  facebook: '',
+  youtube: 'https://youtube.com/@esquematizaai',
+  tiktok: 'https://www.tiktok.com/@esquematizaai',
+  facebook: 'https://www.facebook.com/share/1BaG8f3fsq/',
 } as const;
