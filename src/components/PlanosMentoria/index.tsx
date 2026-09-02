@@ -9,10 +9,10 @@ import styles from './styles.module.css';
  * ser uma só: agora são dois recorrentes e três anuais, e o que muda entre eles
  * é o prazo e o que entra de material.
  *
- * A ORDEM É DO MAIS BARATO PARA O MAIS COMPLETO, e não o contrário. Quem chega
- * aqui já leu a página inteira e está decidindo se cabe no bolso; abrir pelo
- * plano de sete mil faz a pessoa fechar antes de ver que existe um de
- * quatrocentos e noventa e sete.
+ * A ORDEM É DO MAIS LEVE PARA O MAIS COMPLETO, e não o contrário. Quem chega
+ * aqui já leu a página inteira e está medindo o tamanho do compromisso; abrir
+ * pelo plano que inclui tudo faz a pessoa fechar antes de ver que existe uma
+ * porta de entrada mensal, sem compromisso de longo prazo.
  *
  * DOIS CARTÕES DESTACADOS, em cores diferentes, como o Sérgio pediu: laranja no
  * Recorrente Mensal, com "Mais escolhido", e azul no Anual, com "Maior custo
@@ -20,15 +20,11 @@ import styles from './styles.module.css';
  * juntos: um é o que a maioria escolhe, o outro é o que rende mais. Se os dois
  * dissessem "mais escolhido", um estaria mentindo.
  *
- * Nenhum dos dois é o plano mais caro, e isso também é de propósito.
+ * Nenhum dos dois é o plano mais completo, e isso também é de propósito.
  */
 
 type Plano = {
   nome: string;
-  preco: string;
-  detalhePreco?: string;
-  /** total do parcelamento, obrigatório quando ele é maior que o valor à vista */
-  totalParcelado?: string;
   descricao: string;
   inclui: string[];
   naoInclui?: string[];
@@ -39,25 +35,29 @@ type Plano = {
 };
 
 /**
- * Preços e condições da tabela que o Sérgio fechou em 01/09.
+ * Condições da tabela que o Sérgio fechou em 01/09, SEM OS VALORES.
  *
- * O TOTAL DO PARCELAMENTO APARECE, e isso não é detalhe. No plano anual o
- * parcelado soma R$ 6.201,60 contra R$ 4.997 à vista: são R$ 1.204,60 a mais.
- * Mostrar "12x R$ 516,80 ou R$ 4.997 à vista" sem o total faz o parcelamento
- * parecer a mesma compra dividida, e não é. O Código de Defesa do Consumidor
- * exige o montante dos juros e o preço total a prazo (art. 52), e omitir isso
- * numa página de venda é o tipo de coisa que vira processo.
+ * O preço saiu da página por decisão do Sérgio e do Pedro em 02/09. O motivo é
+ * de coerência, e o Pedro foi quem viu: a própria copy diz que as vagas são
+ * limitadas e que a pessoa faz a aplicação pra confirmar disponibilidade ou
+ * entrar na lista de espera. Botão de compra direta em cima disso contradizia o
+ * fluxo que a página inteira define. Entre mudar a copy e tirar a oferta, eles
+ * escolheram tirar a oferta: ticket alto e público qualificado passam pela
+ * conversa, não pelo checkout.
  *
- * O QUE NÃO ESTÁ INCLUSO TAMBÉM APARECE. A tabela do Sérgio abre cada plano
- * dizendo o que ele não cobre, e ele tem razão: descobrir depois de pagar que
- * precisa manter outra assinatura ativa é o caminho direto para o pedido de
+ * Por isso não existem aqui `preco`, `detalhePreco` nem `totalParcelado`. E, de
+ * quebra, some a obrigação do art. 52 do CDC de informar o total a prazo: sem
+ * preço anunciado não há parcelamento a detalhar. Se um dia o valor voltar pra
+ * cá, o total do parcelado tem que voltar junto.
+ *
+ * O QUE NÃO ESTÁ INCLUSO CONTINUA APARECENDO. A tabela do Sérgio abre cada
+ * plano dizendo o que ele não cobre, e ele tem razão: descobrir depois de pagar
+ * que precisa manter outra assinatura ativa é o caminho direto para o pedido de
  * reembolso.
  */
 const PLANOS: Plano[] = [
   {
     nome: 'Recorrente Mensal',
-    preco: 'R$ 497',
-    detalhePreco: '/mês',
     descricao:
       'Cobrança recorrente no cartão, renovada automaticamente até o cancelamento. Sem compromisso de longo prazo.',
     inclui: ['Materiais Esquematiza Aí com 30% de desconto exclusivo'],
@@ -68,8 +68,6 @@ const PLANOS: Plano[] = [
   },
   {
     nome: 'Recorrente Mensal + Estratégia',
-    preco: 'R$ 597',
-    detalhePreco: '/mês',
     descricao:
       'Cobrança recorrente no cartão, renovada automaticamente até o cancelamento, com a teoria já resolvida.',
     inclui: [
@@ -80,9 +78,6 @@ const PLANOS: Plano[] = [
   },
   {
     nome: 'Anual',
-    preco: 'R$ 4.997',
-    detalhePreco: 'à vista, em cartão, boleto ou pix',
-    totalParcelado: 'ou 12x de R$ 516,80 no cartão, total de R$ 6.201,60',
     descricao:
       'Contratação única de 12 meses, com as condições garantidas o ano inteiro. O caminho de quem já decidiu ir até a posse.',
     inclui: ['Materiais Esquematiza Aí com 70% de desconto exclusivo'],
@@ -93,9 +88,6 @@ const PLANOS: Plano[] = [
   },
   {
     nome: 'Anual VIP',
-    preco: 'R$ 5.997',
-    detalhePreco: 'à vista, em cartão, boleto ou pix',
-    totalParcelado: 'ou 12x de R$ 620,23 no cartão, total de R$ 7.442,76',
     descricao:
       'Contratação única de 12 meses, sem pagar nada por fora pelo material de revisão.',
     inclui: [
@@ -106,9 +98,6 @@ const PLANOS: Plano[] = [
   },
   {
     nome: 'Anual Premium',
-    preco: 'R$ 6.997',
-    detalhePreco: 'à vista, em cartão, boleto ou pix',
-    totalParcelado: 'ou 12x de R$ 723,65 no cartão, total de R$ 8.683,80',
     descricao: 'Contratação única de 12 meses. Nada por fora, nem teoria nem revisão.',
     inclui: [
       'Todos os materiais Esquematiza Aí, combos e assinaturas',
@@ -143,16 +132,6 @@ export default function PlanosMentoria() {
 
             <h3 className={styles.nome}>{p.nome}</h3>
 
-            <p className={styles.preco}>
-              <span className={styles.precoValor}>{p.preco}</span>
-              {p.detalhePreco && <span className={styles.precoDetalhe}>{p.detalhePreco}</span>}
-              {/* o total a prazo fica ao lado do valor, não numa nota lá
-                  embaixo: é a informação que muda a decisão de compra */}
-              {p.totalParcelado && (
-                <span className={styles.precoParcelado}>{p.totalParcelado}</span>
-              )}
-            </p>
-
             <p className={styles.descricao}>{p.descricao}</p>
 
             <ul className={styles.inclui}>
@@ -175,9 +154,9 @@ export default function PlanosMentoria() {
       </div>
 
       <p className={styles.microcopy} data-reveal>
-        À vista em cartão, boleto ou pix. Parcelamento no cartão de crédito. As vagas de cada
-        plano são limitadas: faça sua aplicação pra confirmar disponibilidade ou entrar na lista
-        de espera. Reembolso integral em até 7 dias da confirmação do pagamento; condições
+        O valor de cada plano e as formas de pagamento a equipe apresenta na aplicação. As
+        vagas são limitadas: faça sua aplicação pra confirmar disponibilidade no plano
+        desejado ou entrar na lista de espera. Reembolso integral em até 7 dias da confirmação do pagamento; condições
         completas nos{' '}
         <a href="/termos-de-uso-mentoria" className={styles.link}>
           Termos de Uso

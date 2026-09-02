@@ -86,27 +86,6 @@
   color: #fff;
 }
 
-.preco {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.precoValor {
-  font-family: var(--font-heading);
-  font-size: 1.9rem;
-  line-height: 1.05;
-  color: var(--color-green-primary);
-  font-variant-numeric: tabular-nums;
-}
-
-.precoDetalhe {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.62);
-}
-
 .descricao {
   margin: 0;
   font-family: var(--font-body);
@@ -186,20 +165,6 @@
   .plano {
     padding: 1.5rem 1.15rem 1.25rem;
   }
-  .precoValor {
-    font-size: 1.7rem;
-  }
-}
-
-/* Total a prazo. Fica junto do preço porque é o que muda a decisão: no plano
-   anual o parcelado sai R$ 1.204,60 mais caro que o à vista, e esconder isso
-   numa nota de rodapé é o mesmo que não dizer. */
-.precoParcelado {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.72);
-  margin-top: 0.2rem;
 }
 
 /* O que o plano NAO cobre. Marcador de traco no lugar do visto, e nao um

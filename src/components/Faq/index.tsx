@@ -24,7 +24,7 @@ const ITEMS: QA[] = [
   },
   {
     q: 'Quanto custa e como funciona o pagamento?',
-    a: 'São cinco planos. Dois recorrentes, cobrados no cartão e renovados automaticamente até o cancelamento: o Recorrente Mensal, a R$ 497/mês, e o Recorrente Mensal + Estratégia, a R$ 597/mês com a Assinatura Premium do Estratégia inclusa. E três anuais, de contratação única de 12 meses: o Anual, a R$ 4.997 à vista ou 12x de R$ 516,80 no cartão, total de R$ 6.201,60; o Anual VIP, a R$ 5.997 à vista ou 12x de R$ 620,23, total de R$ 7.442,76, com todos os materiais Esquematiza Aí inclusos; e o Anual Premium, a R$ 6.997 à vista ou 12x de R$ 723,65, total de R$ 8.683,80, com materiais e Estratégia inclusos. À vista você paga em cartão, boleto ou pix. Faça sua aplicação e a equipe confirma com você a disponibilidade de vagas do plano escolhido.',
+    a: 'São cinco planos. Dois recorrentes, cobrados no cartão e renovados automaticamente até o cancelamento: o Recorrente Mensal e o Recorrente Mensal + Estratégia, este com a Assinatura Premium do Estratégia inclusa. E três anuais, de contratação única de 12 meses: o Anual, o Anual VIP, com todos os materiais Esquematiza Aí inclusos, e o Anual Premium, com materiais e Estratégia inclusos. O valor de cada plano, as formas de pagamento e as condições de parcelamento a equipe apresenta na aplicação, junto com a disponibilidade de vagas do plano que você escolher.',
   },
   {
     q: 'Preciso possuir uma assinatura do Estratégia Concursos?',

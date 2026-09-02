@@ -372,10 +372,13 @@ export default function MentoriaPage() {
             e o treinamento Revisão Esquematizada) saíram da oferta. */}
 
         {/* Bloco 09 — Planos.
-            Substituiu a pilha de valor, aquela conta de quanto custaria comprar
-            tudo separado até chegar num preço único de 12x R$ 413,38. A oferta
-            deixou de ser uma só: agora são cinco planos, e o que muda entre eles
-            é o prazo e o que entra de material. */}
+            São cinco, e o que muda entre eles é o prazo e o que entra de
+            material. SEM VALORES: o preço saiu da página em 02/09, por decisão
+            do Sérgio e do Pedro. A copy inteira diz que a vaga se confirma na
+            aplicação, então anunciar preço e botão de compra aqui contradizia o
+            próprio fluxo. O título também mudou: era "...na sua rotina e no seu
+            bolso", e prometer que cabe no bolso sem dizer quanto custa vira
+            provocação. O que a pessoa escolhe aqui é o formato. */}
         {/* id="planos": é para cá que o botão "Ver planos" do topo leva */}
         <section id="planos" className={`${styles.section} ${styles.sectionDark}`}>
           <span className={`${styles.bgLogo} ${styles.bgLogoA}`} aria-hidden="true" />
@@ -387,7 +390,7 @@ export default function MentoriaPage() {
               data-reveal
               style={delay(80)}
             >
-              Escolha o plano que cabe na sua rotina e no seu bolso.
+              Escolha o plano que cabe na sua rotina.
             </h2>
 
             <PlanosMentoria />
@@ -581,11 +584,11 @@ export default function MentoriaPage() {
             ))}
 
             <p className={styles.prose} data-reveal>
-              Planos a partir de <strong>R$ 497/mês</strong>, com opções anuais que já
-              incluem todo o material de revisão e a teoria. Você ainda tem sete dias de
-              garantia incondicional pra testar tudo por dentro e pedir o dinheiro de volta
-              se não fizer sentido. A sua condição exata e as formas de pagamento a equipe
-              acerta com você no WhatsApp.
+              São <strong>cinco planos</strong>, do mensal sem compromisso de longo prazo
+              ao anual que já inclui todo o material de revisão e a teoria. Você ainda tem
+              sete dias de garantia incondicional pra testar tudo por dentro e pedir o
+              dinheiro de volta se não fizer sentido. A sua condição exata, o valor e as
+              formas de pagamento a equipe acerta com você no WhatsApp.
             </p>
 
             <div className={styles.centerCta} data-reveal style={delay(80)}>
