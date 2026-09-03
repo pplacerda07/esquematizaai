@@ -498,6 +498,13 @@ function converter(post) {
 
   markdown = reescreverLinksInternos(markdown, ctx);
 
+  // Quando a frase ja terminava em dois-pontos, o grifo colava nela e virava
+  // "::marca[". Dois-pontos duplo e a sintaxe de bloco, nao a de grifo, entao o
+  // parser desistia e imprimia ":marca[25 questoes]" literal no meio do artigo.
+  // Aconteceu em concurso-sefaz-ba e concurso-sefaz-to. Um espaco resolve, e ele
+  // reproduz o espaco que existia no HTML original.
+  markdown = markdown.replace(/:(?=:marca\[)/g, ': ');
+
   // Dez artigos (os nove depoimentos e um do ISS Guarulhos) nao tem .lede.
   // Uso o primeiro paragrafo de texto corrido como resumo em vez de deixar o
   // campo vazio: a listagem do blog mostra o resumo embaixo do titulo, e sem

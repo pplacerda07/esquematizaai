@@ -52,8 +52,13 @@ for (const a of artigos) {
     if (no.type === 'heading') total.titulos += 1;
     if (no.type === 'list') total.listas += 1;
 
-    // diretiva que não foi reconhecida sobra como texto literal
-    if (no.type === 'text' && /^:{2,3}[a-z]/.test(no.value ?? '')) {
+    // Diretiva que o parser não reconheceu sobra como texto literal.
+    //
+    // A busca é em QUALQUER posição do texto, e não só no começo. A primeira
+    // versão testava `^`, e por isso deixou passar dois artigos em que o grifo
+    // colava num dois-pontos no meio da frase ("o mesmo número::marca[...]") e
+    // era impresso literal na página publicada.
+    if (no.type === 'text' && /:{1,3}(importante|dica|sintese|aprofunde|fontes|produto|marca)[[{]/.test(no.value ?? '')) {
       temDiretivaSolta = true;
     }
   });
