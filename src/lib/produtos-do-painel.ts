@@ -41,6 +41,21 @@ export interface ProdutoDoPainel {
   destaque: boolean;
 }
 
+/**
+ * O que o site pode ler de `produtos_novos`.
+ *
+ * Fora daqui ficam `atualizado_por`, `criado_em` e `atualizado_em`: o e-mail de
+ * quem editou e o histórico de quando são informação de bastidor, e a tabela é
+ * de leitura pública porque a vitrine precisa dela. O banco também deixou de
+ * conceder essas colunas ao visitante, então esta lista e a permissão de lá
+ * precisam continuar iguais.
+ */
+const COLUNAS_PUBLICAS =
+  'id, nome, categoria, area, ferramenta, formato, ' +
+  'preco, preco_de, checkout, url_site, ' +
+  'capa_url, capa_largura, capa_altura, ' +
+  'descricao, oculto, destaque';
+
 /** molde vazio, para o produto do painel caber no mesmo tipo da planilha */
 function comoProduto(p: ProdutoDoPainel): Produto {
   return {
@@ -85,13 +100,20 @@ export async function lerProdutosDoPainel(): Promise<ProdutoDoPainel[]> {
 
   try {
     const supabase = createClient(URL_SUPABASE, CHAVE, { auth: { persistSession: false } });
-    const { data, error } = await supabase.from('produtos_novos').select('*');
+    // Colunas nomeadas, e não `*`, porque o banco deixou de dar ao visitante
+    // acesso a `atualizado_por` (o e-mail de quem editou) e às datas de
+    // controle. Com `*` a consulta inteira passaria a ser recusada.
+    const { data, error } = await supabase
+      .from('produtos_novos')
+      .select(COLUNAS_PUBLICAS);
 
     if (error) {
       console.error('[catalogo] produtos do painel indisponíveis:', error.message);
       return [];
     }
-    return (data ?? []) as ProdutoDoPainel[];
+    // via `unknown` porque a lista de colunas é uma constante montada, e o
+    // cliente do Supabase só infere o tipo quando ela é escrita direto na chamada
+    return (data ?? []) as unknown as ProdutoDoPainel[];
   } catch (e) {
     console.error('[catalogo] falha ao ler produtos do painel:', (e as Error).message);
     return [];
