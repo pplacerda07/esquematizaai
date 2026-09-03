@@ -35,7 +35,10 @@ export const DEPOIMENTOS_VIDEO_BASE =
 export const GA_MEDICAO_ID = 'G-ZLPK9R4PZ6';
 
 // VSL padrão (usada em /mentoria pelo componente YouTubeEmbed).
-export const YOUTUBE_ID = 'cr-ZiaBDSf8';
+// Reformulada pelo Sérgio em 03/09; a anterior era 'cr-ZiaBDSf8'. Conferi na
+// API do YouTube que o vídeo é do canal Esquematiza Aí e que o título é
+// "Estudar mais horas é o conselho que mais reprova", o mesmo da headline.
+export const YOUTUBE_ID = 'k4MQQSxXX_0';
 export const YOUTUBE_START = 0;
 
 /**
