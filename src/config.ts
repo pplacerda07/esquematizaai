@@ -26,14 +26,20 @@ export const SITE_URL: string = 'https://esquematizaai.com';
  * uma vez, porque todo link de compra passa por `paraLoja()`. Não existe
  * segundo lugar para lembrar.
  *
- * Enquanto o subdomínio não existir, isto TEM que continuar como está: apontar
- * para um endereço que ainda não responde quebraria a compra hoje.
+ * VIRADA FEITA EM 06/09. A loja passou a atender em loja.esquematizaai.com, com
+ * o WordPress reconfigurado, os links internos substituídos e o aviso de
+ * pagamento da Pagar.me reapontado. Compra de teste real, no PIX, passou: o
+ * pedido entrou e o status virou processando.
+ *
+ * Para desfazer, se algum dia a loja voltar para o domínio principal: troque de
+ * volta para 'https://esquematizaai.com'. Os 140 botões e os redirecionamentos
+ * acompanham sozinhos, e as regras se desligam.
  *
  * O `: string` não é enfeite: sem ele o TypeScript trava o valor como literal e
  * passa a dizer que a comparação com SITE_URL nunca é verdadeira, derrubando o
  * build no dia em que alguém trocar a linha.
  */
-export const URL_DA_LOJA: string = 'https://esquematizaai.com';
+export const URL_DA_LOJA: string = 'https://loja.esquematizaai.com';
 
 /** Reaponta um link da loja para o endereço vigente dela. */
 export function paraLoja(link: string): string {
