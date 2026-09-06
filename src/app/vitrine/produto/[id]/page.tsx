@@ -19,7 +19,7 @@ import CarrosselProva from '@/components/CarrosselProva';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
-import { SITE_URL, AMOSTRAS_DRIVE_URL } from '@/config';
+import { SITE_URL, AMOSTRAS_DRIVE_URL, textoParaLoja } from '@/config';
 import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from './styles.module.css';
 
@@ -123,7 +123,15 @@ export default async function ProdutoPage({
   // o que o Sérgio editou no painel entra por cima do que veio da planilha
   const sobreposicao = await lerSobreposicaoSumario();
   const disciplinasDoSumario = sumarioDoProduto(produto, temResumos, temFlashcards, sobreposicao);
-  const conteudo = conteudoDe(produto);
+  // O texto de venda veio do site antigo e cita outros produtos por link. Passa
+  // por textoParaLoja para que, depois da virada do domínio, esses links vão
+  // direto ao novo endereço da loja em vez de passar pelo redirecionamento.
+  const conteudoBruto = conteudoDe(produto);
+  const conteudo = {
+    ...conteudoBruto,
+    sobre: conteudoBruto.sobre ? textoParaLoja(conteudoBruto.sobre) : conteudoBruto.sobre,
+    detalhes: conteudoBruto.detalhes ? textoParaLoja(conteudoBruto.detalhes) : conteudoBruto.detalhes,
+  };
   const sobre = conteudo.sobre ?? null;
   const selos = selosDe(produto);
 

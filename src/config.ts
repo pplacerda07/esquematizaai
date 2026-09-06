@@ -8,8 +8,57 @@ export const CHECKOUT_URL = 'https://esquematizaai.typeform.com/mentoria';
 // CGU (LP de captura): grupo VIP no WhatsApp (todos os CTAs de /cgu apontam aqui).
 export const GRUPO_VIP_URL = 'https://chat.whatsapp.com/DfqbvIRKC1UBQKdZL7qrar';
 
-// Site principal (logo / navegação de volta).
-export const SITE_URL = 'https://esquematizaai.com';
+// Site principal (logo / navegação de volta, e endereço canônico no Google).
+// NÃO muda na virada do domínio: é justamente este endereço que o site novo
+// passa a atender.
+export const SITE_URL: string = 'https://esquematizaai.com';
+
+/**
+ * ENDEREÇO DA LOJA. É ESTA LINHA QUE MUDA NO DIA DA VIRADA.
+ *
+ * Hoje a loja em WooCommerce e o site novo dividem o mesmo domínio: os 140
+ * produtos cujo botão leva para a página de venda apontam para
+ * esquematizaai.com/produto/... Quando o domínio principal passar a ser o site
+ * novo, a loja atende em loja.esquematizaai.com, e esses 140 botões precisam
+ * acompanhar no mesmo instante.
+ *
+ * Trocar o valor abaixo para 'https://loja.esquematizaai.com' reaponta todos de
+ * uma vez, porque todo link de compra passa por `paraLoja()`. Não existe
+ * segundo lugar para lembrar.
+ *
+ * Enquanto o subdomínio não existir, isto TEM que continuar como está: apontar
+ * para um endereço que ainda não responde quebraria a compra hoje.
+ *
+ * O `: string` não é enfeite: sem ele o TypeScript trava o valor como literal e
+ * passa a dizer que a comparação com SITE_URL nunca é verdadeira, derrubando o
+ * build no dia em que alguém trocar a linha.
+ */
+export const URL_DA_LOJA: string = 'https://esquematizaai.com';
+
+/** Reaponta um link da loja para o endereço vigente dela. */
+export function paraLoja(link: string): string {
+  if (URL_DA_LOJA === SITE_URL) return link;
+  return link.replace(/^https?:\/\/(www\.)?esquematizaai\.com/i, URL_DA_LOJA);
+}
+
+/**
+ * O mesmo, para os links soltos DENTRO de um texto de venda.
+ *
+ * O texto dos produtos veio do site antigo e traz links de venda cruzada
+ * ("Prefere revisar com flashcards? Conheça o..."). Depois da virada eles ainda
+ * funcionariam, porque o redirecionamento os pegaria, mas com um pulo a mais e
+ * uma piscada no navegador. Reapontar aqui evita isso.
+ *
+ * SÓ MEXE EM /produto: link para artigo do blog ou para a home continua no site
+ * novo, que é onde esse conteúdo passou a morar.
+ */
+export function textoParaLoja(texto: string): string {
+  if (URL_DA_LOJA === SITE_URL) return texto;
+  return texto.replace(
+    /https?:\/\/(?:www\.)?esquematizaai\.com(\/produto\/[^\s")\]]*)/gi,
+    (_, caminho) => URL_DA_LOJA + caminho,
+  );
+}
 
 // Área do aluno (botão do topo). Substituiu o antigo /minha-conta do WordPress.
 export const AREA_ALUNO_URL = 'https://membros.esquematizaai.com/logar';

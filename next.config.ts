@@ -1,4 +1,37 @@
 import type { NextConfig } from "next";
+import { SITE_URL, URL_DA_LOJA } from "./src/config";
+import regrasDoWordPress from "./src/data/redirects-wordpress.json";
+
+/**
+ * Redirecionamentos da virada do domínio.
+ *
+ * Quando esquematizaai.com passar a ser atendido por este site, os 208
+ * endereços que hoje existem no WordPress deixam de responder: link salvo nos
+ * favoritos, resultado do Google e link em anúncio viram erro. Estas regras
+ * levam cada um deles ao lugar certo, sem a pessoa perceber.
+ *
+ * ELAS SÓ LIGAM QUANDO A LOJA MUDAR DE ENDEREÇO, e isso é proposital. Hoje
+ * URL_DA_LOJA e SITE_URL são o mesmo domínio; emitir agora uma regra de
+ * /produto/x para esquematizaai.com/produto/x criaria um laço infinito no
+ * instante em que o domínio virasse. Com a comparação abaixo, as regras nascem
+ * junto com o subdomínio da loja e nunca antes.
+ *
+ * A lista sai de scripts/, gerada a partir do mapa do site do WordPress. São 68
+ * regras porque quatro delas usam curinga e cobrem sozinhas 140 endereços.
+ */
+type RegraBruta = { origem: string; destino: string };
+
+function redirecionamentosDaVirada() {
+  if (URL_DA_LOJA === SITE_URL) return [];
+
+  return (regrasDoWordPress as RegraBruta[]).map(({ origem, destino }) => ({
+    source: origem,
+    destination: destino.replace(/^LOJA/, URL_DA_LOJA),
+    // 301: diz ao Google que a mudança é definitiva e transfere a reputação da
+    // página antiga. 302 faria o buscador continuar indexando o endereço morto.
+    permanent: true,
+  }));
+}
 
 /**
  * Cabeçalhos de segurança.
@@ -49,6 +82,10 @@ const nextConfig: NextConfig = {
         pathname: "/storage/v1/object/public/**",
       },
     ],
+  },
+
+  async redirects() {
+    return redirecionamentosDaVirada();
   },
 
   async headers() {

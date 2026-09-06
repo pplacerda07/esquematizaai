@@ -1,0 +1,274 @@
+[
+  {
+    "origem": "/produto/:slug*",
+    "destino": "LOJA/produto/:slug*"
+  },
+  {
+    "origem": "/produto-tag/:slug*",
+    "destino": "LOJA/produto-tag/:slug*"
+  },
+  {
+    "origem": "/produtos/:slug*",
+    "destino": "LOJA/produtos/:slug*"
+  },
+  {
+    "origem": "/author/:slug*",
+    "destino": "LOJA/author/:slug*"
+  },
+  {
+    "origem": "/carrinho",
+    "destino": "LOJA/carrinho"
+  },
+  {
+    "origem": "/finalizacao-de-compra",
+    "destino": "LOJA/finalizacao-de-compra"
+  },
+  {
+    "origem": "/minha-conta",
+    "destino": "LOJA/minha-conta"
+  },
+  {
+    "origem": "/no-access",
+    "destino": "LOJA/no-access"
+  },
+  {
+    "origem": "/locations.kml",
+    "destino": "LOJA/locations.kml"
+  },
+  {
+    "origem": "/legislacao-administracao-tributaria-iss-guarulhos-ibam",
+    "destino": "/blog/legislacao-administracao-tributaria-iss-guarulhos-ibam"
+  },
+  {
+    "origem": "/alvaro-de-tolledo",
+    "destino": "/blog/alvaro-de-tolledo"
+  },
+  {
+    "origem": "/joao-paulo",
+    "destino": "/blog/joao-paulo"
+  },
+  {
+    "origem": "/gabriela-marques",
+    "destino": "/blog/gabriela-marques"
+  },
+  {
+    "origem": "/daniel-kiko",
+    "destino": "/blog/daniel-kiko"
+  },
+  {
+    "origem": "/claudia-dominoni",
+    "destino": "/blog/claudia-dominoni"
+  },
+  {
+    "origem": "/felipe-niero",
+    "destino": "/blog/felipe-niero"
+  },
+  {
+    "origem": "/vinicius-soares",
+    "destino": "/blog/vinicius-soares"
+  },
+  {
+    "origem": "/juliano-klipan",
+    "destino": "/blog/juliano-klipan"
+  },
+  {
+    "origem": "/roberto-coimbra",
+    "destino": "/blog/roberto-coimbra"
+  },
+  {
+    "origem": "/concurso-iss-manaus",
+    "destino": "/blog/concurso-iss-manaus"
+  },
+  {
+    "origem": "/concurso-sefaz-df",
+    "destino": "/blog/concurso-sefaz-df"
+  },
+  {
+    "origem": "/concurso-sefaz-rs",
+    "destino": "/blog/concurso-sefaz-rs"
+  },
+  {
+    "origem": "/concurso-sefaz-to-200-vagas-auditor-fiscal",
+    "destino": "/blog/concurso-sefaz-to-200-vagas-auditor-fiscal"
+  },
+  {
+    "origem": "/concurso-receita-federal-2026",
+    "destino": "/blog/concurso-receita-federal-2026"
+  },
+  {
+    "origem": "/concurso-iss-guarulhos",
+    "destino": "/blog/concurso-iss-guarulhos"
+  },
+  {
+    "origem": "/concursos-fiscais-2026-panorama-vagas-estaduais-federais-municipais",
+    "destino": "/blog/concursos-fiscais-2026-panorama-vagas-estaduais-federais-municipais"
+  },
+  {
+    "origem": "/concurso-area-fiscal",
+    "destino": "/blog/concurso-area-fiscal"
+  },
+  {
+    "origem": "/reforma-tributaria-concursos",
+    "destino": "/blog/reforma-tributaria-concursos"
+  },
+  {
+    "origem": "/concurso-area-tribunais",
+    "destino": "/blog/concurso-area-tribunais"
+  },
+  {
+    "origem": "/reforma-tributaria-2026-transicao",
+    "destino": "/blog/reforma-tributaria-2026-transicao"
+  },
+  {
+    "origem": "/concurso-sefaz-ba",
+    "destino": "/blog/concurso-sefaz-ba"
+  },
+  {
+    "origem": "/reforma-tributaria-concursos-ibs-cbs-imposto-seletivo",
+    "destino": "/blog/reforma-tributaria-concursos-ibs-cbs-imposto-seletivo"
+  },
+  {
+    "origem": "/concurso-iss-curitiba",
+    "destino": "/blog/concurso-iss-curitiba"
+  },
+  {
+    "origem": "/concurso-area-policial",
+    "destino": "/blog/concurso-area-policial"
+  },
+  {
+    "origem": "/concurso-area-controle-gestao",
+    "destino": "/blog/concurso-area-controle-gestao"
+  },
+  {
+    "origem": "/concurso-sefaz-ce",
+    "destino": "/blog/concurso-sefaz-ce"
+  },
+  {
+    "origem": "/recordacao-ativa-revisao-espacada",
+    "destino": "/blog/recordacao-ativa-revisao-espacada"
+  },
+  {
+    "origem": "/revisao-espacada-concursos-flashcards",
+    "destino": "/blog/revisao-espacada-concursos-flashcards"
+  },
+  {
+    "origem": "/direito-tributario-iss-guarulhos-banca-ibam",
+    "destino": "/blog/direito-tributario-iss-guarulhos-banca-ibam"
+  },
+  {
+    "origem": "/credito-tributario-iss-guarulhos-ibam",
+    "destino": "/blog/credito-tributario-iss-guarulhos-ibam"
+  },
+  {
+    "origem": "/obrigacao-tributaria-iss-guarulhos-ibam",
+    "destino": "/blog/obrigacao-tributaria-iss-guarulhos-ibam"
+  },
+  {
+    "origem": "/tributo-especies-competencia-iss-guarulhos-ibam",
+    "destino": "/blog/tributo-especies-competencia-iss-guarulhos-ibam"
+  },
+  {
+    "origem": "/assinatura-resumos-flashcards-concursos",
+    "destino": "/blog/assinatura-resumos-flashcards-concursos"
+  },
+  {
+    "origem": "/como-estudar-legislacao-tributaria-estadual",
+    "destino": "/blog/como-estudar-legislacao-tributaria-estadual"
+  },
+  {
+    "origem": "/concurso-sefaz-al",
+    "destino": "/blog/concurso-sefaz-al"
+  },
+  {
+    "origem": "/concurso-iss-aracati",
+    "destino": "/blog/concurso-iss-aracati"
+  },
+  {
+    "origem": "/concurso-sefaz-sc",
+    "destino": "/blog/concurso-sefaz-sc"
+  },
+  {
+    "origem": "/termos-de-uso-materiais",
+    "destino": "/termos-de-uso"
+  },
+  {
+    "origem": "/aft-captura",
+    "destino": "LOJA/aft-captura"
+  },
+  {
+    "origem": "/aft-nova-chance",
+    "destino": "LOJA/aft-nova-chance"
+  },
+  {
+    "origem": "/aft-nova-chance-01",
+    "destino": "LOJA/aft-nova-chance-01"
+  },
+  {
+    "origem": "/aft-74off-01",
+    "destino": "LOJA/aft-74off-01"
+  },
+  {
+    "origem": "/aft-74off-02",
+    "destino": "LOJA/aft-74off-02"
+  },
+  {
+    "origem": "/bf",
+    "destino": "LOJA/bf"
+  },
+  {
+    "origem": "/black-friday-2",
+    "destino": "LOJA/black-friday-2"
+  },
+  {
+    "origem": "/cnu-aft",
+    "destino": "LOJA/cnu-aft"
+  },
+  {
+    "origem": "/depoimentos",
+    "destino": "LOJA/depoimentos"
+  },
+  {
+    "origem": "/esquematiza-ai-bento",
+    "destino": "LOJA/esquematiza-ai-bento"
+  },
+  {
+    "origem": "/black-friday-area-legislativa",
+    "destino": "LOJA/black-friday-area-legislativa"
+  },
+  {
+    "origem": "/black-friday-assinaturas",
+    "destino": "LOJA/black-friday-assinaturas"
+  },
+  {
+    "origem": "/black-friday-area-fiscal",
+    "destino": "LOJA/black-friday-area-fiscal"
+  },
+  {
+    "origem": "/black-friday-area-controle",
+    "destino": "LOJA/black-friday-area-controle"
+  },
+  {
+    "origem": "/black-friday-area-policial",
+    "destino": "LOJA/black-friday-area-policial"
+  },
+  {
+    "origem": "/black-friday-area-tribunal",
+    "destino": "LOJA/black-friday-area-tribunal"
+  },
+  {
+    "origem": "/black-friday-2025",
+    "destino": "LOJA/black-friday-2025"
+  },
+  {
+    "origem": "/materiais",
+    "destino": "LOJA/materiais"
+  },
+  {
+    "origem": "/mentoria-iss-cgm-porto-velho",
+    "destino": "LOJA/mentoria-iss-cgm-porto-velho"
+  },
+  {
+    "origem": "/mentoria-iss-porto-velho",
+    "destino": "LOJA/mentoria-iss-porto-velho"
+  }
+]

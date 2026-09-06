@@ -2,6 +2,7 @@
 // Dados gerados a partir da planilha "Produtos (1).xlsx" (ver README.md desta pasta).
 // Importe SEMPRE deste index; os JSONs são detalhe interno.
 
+import { paraLoja } from '@/config';
 import produtosDb from './produtos.json';
 import cuponsDb from './cupons.json';
 import ofertasDb from './ofertas-personalizadas.json';
@@ -266,14 +267,19 @@ export function ofertaAtual(p: Produto, referenciaExterna?: number | null): Ofer
       viaPaginaDeVendas: false,
     };
   }
-  // sem checkout próprio: a venda acontece na página do produto
+  // Sem checkout próprio: a venda acontece na página do produto, na loja.
+  //
+  // `paraLoja` existe por causa da virada do domínio: quando a loja passar a
+  // atender em loja.esquematizaai.com, este é o único ponto do site que
+  // transforma o endereço guardado na planilha em link de compra, então os 140
+  // botões acompanham sozinhos. Hoje ela devolve o link intacto.
   if (p.urlSite) {
     return {
       preco: cheio,
       precoAntigo: temReferencia ? referencia : null,
       percentualOff: temReferencia ? Math.round((1 - cheio / referencia) * 100) : null,
       parcela12x: parcelaEmDozeVezes(cheio),
-      checkout: p.urlSite,
+      checkout: paraLoja(p.urlSite),
       viaPaginaDeVendas: true,
     };
   }
