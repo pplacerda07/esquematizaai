@@ -24,13 +24,33 @@ type RegraBruta = { origem: string; destino: string };
 function redirecionamentosDaVirada() {
   if (URL_DA_LOJA === SITE_URL) return [];
 
-  return (regrasDoWordPress as RegraBruta[]).map(({ origem, destino }) => ({
-    source: origem,
-    destination: destino.replace(/^LOJA/, URL_DA_LOJA),
-    // 301: diz ao Google que a mudança é definitiva e transfere a reputação da
-    // página antiga. 302 faria o buscador continuar indexando o endereço morto.
-    permanent: true,
-  }));
+  /**
+   * Rede de segurança para os arquivos do WordPress.
+   *
+   * Depois de trocar o endereço da loja, sobraram duas imagens apontando para
+   * esquematizaai.com/wp-content/... Elas não estavam no banco, e sim gravadas
+   * no tema, então a substituição do WordPress não as alcançou. Hoje funcionam;
+   * depois da virada bateriam neste site e dariam erro.
+   *
+   * Em vez de caçar uma a uma, todo caminho de arquivo do WordPress passa a
+   * apontar para a loja. Vale para o que já existe e para o que aparecer depois.
+   */
+  const arquivosDoWordPress = ['/wp-content/:caminho*', '/wp-includes/:caminho*', '/wp-json/:caminho*'];
+
+  return [
+    ...arquivosDoWordPress.map((source) => ({
+      source,
+      destination: `${URL_DA_LOJA}${source}`,
+      permanent: true,
+    })),
+    ...(regrasDoWordPress as RegraBruta[]).map(({ origem, destino }) => ({
+      source: origem,
+      destination: destino.replace(/^LOJA/, URL_DA_LOJA),
+      // 301: diz ao Google que a mudança é definitiva e transfere a reputação da
+      // página antiga. 302 faria o buscador continuar indexando o endereço morto.
+      permanent: true,
+    })),
+  ];
 }
 
 /**
