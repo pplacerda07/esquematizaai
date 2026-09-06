@@ -35,7 +35,18 @@ function redirecionamentosDaVirada() {
    * Em vez de caçar uma a uma, todo caminho de arquivo do WordPress passa a
    * apontar para a loja. Vale para o que já existe e para o que aparecer depois.
    */
-  const arquivosDoWordPress = ['/wp-content/:caminho*', '/wp-includes/:caminho*', '/wp-json/:caminho*'];
+  const arquivosDoWordPress = [
+    '/wp-content/:caminho*',
+    '/wp-includes/:caminho*',
+    '/wp-json/:caminho*',
+    // /wp-admin entra como rede de segurança para quem tem o painel nos
+    // favoritos. NÃO serve para o aviso de pagamento da Pagar.me, que chega por
+    // POST em admin-ajax.php e não segue redirecionamento com o corpo intacto:
+    // esse endereço foi corrigido no painel da Pagar.me em 06/09, e é lá que
+    // ele tem que continuar certo.
+    '/wp-admin/:caminho*',
+    '/wp-login.php',
+  ];
 
   return [
     ...arquivosDoWordPress.map((source) => ({
