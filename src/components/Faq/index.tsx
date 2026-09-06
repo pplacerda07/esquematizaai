@@ -24,11 +24,11 @@ const ITEMS: QA[] = [
   },
   {
     q: 'Quanto custa e como funciona o pagamento?',
-    a: 'São cinco planos. Dois recorrentes, cobrados no cartão e renovados automaticamente até o cancelamento: o Recorrente Mensal e o Recorrente Mensal + Estratégia, este com a Assinatura Premium do Estratégia inclusa. E três anuais, de contratação única de 12 meses: o Anual, o Anual VIP, com todos os materiais Esquematiza Aí inclusos, e o Anual Premium, com materiais e Estratégia inclusos. O valor de cada plano, as formas de pagamento e as condições de parcelamento a equipe apresenta na aplicação, junto com a disponibilidade de vagas do plano que você escolher.',
+    a: 'São três planos. O Recorrente Mensal, cobrado no cartão e renovado automaticamente até o cancelamento, sem compromisso de longo prazo. E dois anuais, de contratação única de 12 meses: o Anual e o Anual VIP, este com todos os materiais Esquematiza Aí inclusos. O valor de cada plano, as formas de pagamento e as condições de parcelamento a equipe apresenta na aplicação, junto com a disponibilidade de vagas do plano que você escolher.',
   },
   {
     q: 'Preciso possuir uma assinatura do Estratégia Concursos?',
-    a: 'Sim. Toda a metodologia da mentoria, incluindo o planejamento e as metas diárias, é estruturada com base nos materiais disponibilizados pelo Estratégia Concursos. Nos planos que não incluem a Assinatura Premium, é obrigatório que você possua e mantenha uma assinatura ativa durante todo o período da mentoria. Se você não tem assinatura ativa, precisa optar por um dos planos que já a incluem: o Recorrente Mensal + Estratégia ou o Anual Premium.',
+    a: 'Sim, e isso vale para os três planos. Toda a metodologia da mentoria, incluindo o planejamento e as metas diárias, é estruturada com base nos materiais disponibilizados pelo Estratégia Concursos, então é obrigatório que você possua e mantenha uma assinatura ativa própria durante todo o período da mentoria. Se ainda não tem, é o primeiro passo antes da aplicação.',
   },
   {
     q: 'Qual a diferença entre o plano recorrente mensal e o plano anual?',

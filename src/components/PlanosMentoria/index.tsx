@@ -2,12 +2,12 @@ import CtaButton from '@/components/CtaButton';
 import styles from './styles.module.css';
 
 /**
- * Os cinco planos da mentoria.
+ * Os três planos da mentoria.
  *
- * Substituiu a "pilha de valor" que existia aqui, aquela conta de quanto
- * custaria comprar tudo separado até chegar num preço único. A oferta deixou de
- * ser uma só: agora são dois recorrentes e três anuais, e o que muda entre eles
- * é o prazo e o que entra de material.
+ * ERAM CINCO ATÉ 04/09. Saíram o "Recorrente Mensal + Estratégia" e o "Anual
+ * Premium", os dois que embutiam a assinatura do Estratégia Concursos: a
+ * parceria que permitia oferecer isso acabou, e continuar anunciando seria
+ * vender o que não dá para entregar.
  *
  * A ORDEM É DO MAIS LEVE PARA O MAIS COMPLETO, e não o contrário. Quem chega
  * aqui já leu a página inteira e está medindo o tamanho do compromisso; abrir
@@ -27,7 +27,6 @@ type Plano = {
   nome: string;
   descricao: string;
   inclui: string[];
-  naoInclui?: string[];
   exige?: string;
   /** cor do selo e da moldura; sem isso o cartão fica neutro */
   destaque?: 'laranja' | 'azul';
@@ -50,10 +49,14 @@ type Plano = {
  * preço anunciado não há parcelamento a detalhar. Se um dia o valor voltar pra
  * cá, o total do parcelado tem que voltar junto.
  *
- * O QUE NÃO ESTÁ INCLUSO CONTINUA APARECENDO. A tabela do Sérgio abre cada
- * plano dizendo o que ele não cobre, e ele tem razão: descobrir depois de pagar
- * que precisa manter outra assinatura ativa é o caminho direto para o pedido de
- * reembolso.
+ * A LISTA DO QUE NÃO ESTÁ INCLUSO SAIU, a pedido do Sérgio em 04/09. Ela
+ * repetia "Materiais Esquematiza Aí" logo abaixo de "Materiais Esquematiza Aí
+ * com 30% de desconto", o que confundia mais do que avisava, e o resto dela
+ * falava da assinatura do Estratégia, que deixou de fazer parte da oferta.
+ *
+ * A EXIGÊNCIA CONTINUA no cartão: quem contrata o Recorrente ou o Anual precisa
+ * ter assinatura própria do Estratégia. Isso não é parceria, é pré-requisito, e
+ * descobrir depois de pagar é o caminho direto para o pedido de reembolso.
  */
 const PLANOS: Plano[] = [
   {
@@ -61,27 +64,15 @@ const PLANOS: Plano[] = [
     descricao:
       'Cobrança recorrente no cartão, renovada automaticamente até o cancelamento. Sem compromisso de longo prazo.',
     inclui: ['Materiais Esquematiza Aí com 30% de desconto exclusivo'],
-    naoInclui: ['Materiais Esquematiza Aí', 'Assinatura do Estratégia Concursos'],
     exige: 'É necessário possuir e manter assinatura ativa do Estratégia Concursos durante a mentoria',
     destaque: 'laranja',
     selo: 'Mais escolhido',
-  },
-  {
-    nome: 'Recorrente Mensal + Estratégia',
-    descricao:
-      'Cobrança recorrente no cartão, renovada automaticamente até o cancelamento, com a teoria já resolvida.',
-    inclui: [
-      'Assinatura Premium do Estratégia Concursos durante a vigência da mentoria',
-      'Materiais Esquematiza Aí com 50% de desconto exclusivo',
-    ],
-    naoInclui: ['Materiais Esquematiza Aí'],
   },
   {
     nome: 'Anual',
     descricao:
       'Contratação única de 12 meses, com as condições garantidas o ano inteiro. O caminho de quem já decidiu ir até a posse.',
     inclui: ['Materiais Esquematiza Aí com 70% de desconto exclusivo'],
-    naoInclui: ['Materiais Esquematiza Aí', 'Assinatura do Estratégia Concursos'],
     exige: 'É necessário possuir e manter assinatura ativa do Estratégia Concursos durante a mentoria',
     destaque: 'azul',
     selo: 'Maior custo benefício',
@@ -93,16 +84,7 @@ const PLANOS: Plano[] = [
     inclui: [
       'Todos os materiais Esquematiza Aí, combos e assinaturas, durante a vigência da mentoria',
     ],
-    naoInclui: ['Assinatura do Estratégia Concursos'],
     exige: 'É necessário possuir e manter assinatura ativa própria do Estratégia Concursos',
-  },
-  {
-    nome: 'Anual Premium',
-    descricao: 'Contratação única de 12 meses. Nada por fora, nem teoria nem revisão.',
-    inclui: [
-      'Todos os materiais Esquematiza Aí, combos e assinaturas',
-      'Assinatura Premium do Estratégia Concursos',
-    ],
   },
 ];
 
@@ -137,11 +119,6 @@ export default function PlanosMentoria() {
             <ul className={styles.inclui}>
               {p.inclui.map((item) => (
                 <li key={item}>{item}</li>
-              ))}
-              {p.naoInclui?.map((item) => (
-                <li key={item} className={styles.naoInclui}>
-                  {item}
-                </li>
               ))}
             </ul>
 

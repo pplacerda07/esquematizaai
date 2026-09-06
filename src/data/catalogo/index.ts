@@ -228,7 +228,20 @@ export function ofertaAtual(p: Produto, referenciaExterna?: number | null): Ofer
   // referência só vale se for MAIOR que o preço cobrado, senão o risco vira piada
   const referencia = referenciaExterna ?? PRECOS_DE_REFERENCIA[p.id] ?? null;
 
-  if (p.checkouts.black && black !== null) {
+  // O PREÇO BLACK SÓ VALE DURANTE A CAMPANHA BLACK FRIDAY.
+  //
+  // Antes bastava existir um checkout black na planilha para o site adotar
+  // aquele valor como preço de hoje, e a planilha guarda esses links o ano
+  // inteiro. O resultado apareceu numa conferência do Sérgio em 05/09: dezesseis
+  // produtos anunciados abaixo do preço real, alguns com R$ 400 de diferença.
+  // O "Combo Flashcards Fiscal Regular" saía por R$ 297 quando a loja cobra
+  // R$ 497, e quem clicasse ia para um checkout de campanha encerrada.
+  //
+  // Guardar o valor da última black é útil, e por isso ele continua na planilha.
+  // O que mudou é que agora precisa estar marcado como campanha ativa.
+  const blackAtiva = p.campanha === 'blackfriday';
+
+  if (blackAtiva && p.checkouts.black && black !== null) {
     const temRisco = cheio !== null && cheio > black;
     return {
       preco: black,
