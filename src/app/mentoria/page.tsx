@@ -8,7 +8,6 @@ import FloatingCta from '@/components/FloatingCta';
 import CtaButton from '@/components/CtaButton';
 import Faq from '@/components/Faq';
 import RevealController from '@/components/RevealController';
-import SocialProofToasts from '@/components/SocialProofToasts';
 import CountUp from '@/components/CountUp';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import ScrollTrail from '@/components/ScrollTrail';
@@ -617,9 +616,7 @@ export default function MentoriaPage() {
           eliminar e usar o mesmo rodape do site: e la que estao os produtos,
           o suporte e os Termos de Uso, e a mentoria deixa de ser uma ilha. */}
       <Footer />
-      <FloatingCta />
-      <SocialProofToasts />
-      <RevealController />
+      <FloatingCta />      <RevealController />
     </div>
   );
 }

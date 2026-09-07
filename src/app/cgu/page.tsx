@@ -5,7 +5,6 @@ import SalesNav from '@/components/cgu/SalesNav';
 import SalesFooter from '@/components/cgu/SalesFooter';
 import FloatingCta from '@/components/cgu/FloatingCta';
 import CtaButton from '@/components/cgu/CtaButton';
-import SocialProofToasts from '@/components/cgu/SocialProofToasts';
 import RevealController from '@/components/RevealController';
 import CountUp from '@/components/CountUp';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
@@ -251,9 +250,7 @@ export default function CguCapturePage() {
       </main>
 
       <SalesFooter />
-      <FloatingCta />
-      <SocialProofToasts />
-      <RevealController />
+      <FloatingCta />      <RevealController />
     </div>
   );
 }
