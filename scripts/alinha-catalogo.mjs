@@ -67,6 +67,30 @@ const OCULTAR = [
   'assinatura-resumos-regular-2-anos',
   'assinatura-resumos-regular-flashcards-regular-2-anos',
   'assinatura-resumos-regular-flashcards-regular-2-anos-2901047',
+
+  /**
+   * Os quatro concursos que o Sérgio mandou tirar em 08/09: SEFAZ-SP, SEFAZ-MT,
+   * SEFAZ-GO e SEFAZ-RN. As provas já aconteceram e não há previsão de novo
+   * edital, então o material não tem para quem ser vendido.
+   *
+   * Vão todos, inclusive os que ainda têm checkout ativo na Eduzz: aqui a
+   * decisão é de negócio, não de caminho de compra.
+   */
+  'combo-legislacao-tributaria-estadual-sefaz-sp-pre-pos-edital',
+  'flashcards-isolado-legislacao-tributaria-sefaz-sp',
+  'resumo-isolado-legislacao-tributaria-sefaz-sp',
+
+  'flashcards-isolado-legislacao-tributaria-sefaz-mt',
+  'resumo-isolado-legislacao-tributaria-sefaz-mt',
+
+  'combo-legislacao-tributaria-estadual-sefaz-go-pos-edital',
+  'flashcards-isolado-legislacao-tributaria-sefaz-go',
+  'resumo-isolado-legislacao-tributaria-sefaz-go',
+  'vade-mecum-legislacao-tributaria-sefaz-go-pos-edital',
+
+  'combo-de-legislacao-tributaria-estadual-sefaz-rn-pre-pos-edital',
+  'flashcards-isolado-legislacao-tributaria-sefaz-rn',
+  'resumo-isolado-legislacao-tributaria-sefaz-rn',
 ];
 
 const catalogo = JSON.parse(fs.readFileSync('src/data/catalogo/produtos.json', 'utf8')).produtos;
@@ -93,25 +117,42 @@ if (!GRAVAR) { console.log('\n(simulação; rode com --gravar para aplicar)'); p
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, CHAVE, { auth: { persistSession: false } });
 
-// `oculto` e `destaque` não aceitam nulo na tabela, então vão explícitos em
-// toda linha: quem só corrige preço continua visível e sem destaque.
-const linhas = [
-  ...precosValidos.map(([id, preco]) => ({
+/**
+ * Uma linha por produto, e não uma por motivo.
+ *
+ * O combo do SEFAZ-GO aparece nas duas listas: teve o preço corrigido e depois
+ * entrou na leva dos concursos encerrados. Mandar as duas linhas fazia o banco
+ * recusar o lote inteiro ("ON CONFLICT DO UPDATE command cannot affect row a
+ * second time"), porque o mesmo produto vinha duas vezes na mesma gravação.
+ *
+ * Ocultar vence: se o produto sai do ar, o preço dele deixa de importar.
+ */
+const porProduto = new Map();
+
+for (const [id, preco] of precosValidos) {
+  porProduto.set(id, {
     produto_id: id,
     preco,
     oculto: false,
     destaque: false,
     observacao: 'Preço alinhado com o site antigo, conferido na página do produto em 05/09.',
     atualizado_por: AUTOR,
-  })),
-  ...ocultarValidos.map((id) => ({
+  });
+}
+
+for (const id of ocultarValidos) {
+  const jaTinha = porProduto.get(id);
+  porProduto.set(id, {
     produto_id: id,
+    preco: jaTinha?.preco ?? null,
     oculto: true,
     destaque: false,
-    observacao: 'Fora do ar no site antigo e sem caminho de compra: concurso encerrado ou oferta de condição excepcional.',
+    observacao: 'Fora do ar no site antigo ou concurso encerrado: sem público para comprar.',
     atualizado_por: AUTOR,
-  })),
-];
+  });
+}
+
+const linhas = [...porProduto.values()];
 
 const { error } = await supabase.from('produtos_ajustes').upsert(linhas, { onConflict: 'produto_id' });
 if (error) { console.error('erro ao gravar:', error.message); process.exit(1); }
