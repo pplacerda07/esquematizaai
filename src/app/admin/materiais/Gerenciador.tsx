@@ -20,6 +20,8 @@ export type ItemAdmin = {
   observacao: string | null;
   oculto: boolean;
   destaque: boolean;
+  /** posição manual na vitrine; null = ordenação automática */
+  ordem: number | null;
   ajustadoEm: string | null;
 };
 
@@ -284,6 +286,22 @@ export default function Gerenciador({ itens }: { itens: ItemAdmin[] }) {
                 defaultValue={editando.precoAjustado ?? ''}
                 placeholder="deixe vazio para usar o da planilha"
               />
+            </label>
+
+            <label className={styles.campo}>
+              <span className={styles.rotulo}>Posição na vitrine</span>
+              <input
+                className={styles.input}
+                name="ordem"
+                inputMode="numeric"
+                defaultValue={editando.ordem ?? ''}
+                placeholder="vazio = deixa o site decidir"
+              />
+              <span className={styles.ajuda}>
+                Quem tem número aparece primeiro, do menor para o maior. Para colocar dois
+                materiais na frente, dê 1 a um e 2 ao outro; o resto da vitrine se organiza
+                sozinho depois deles.
+              </span>
             </label>
 
             <div className={styles.campo}>

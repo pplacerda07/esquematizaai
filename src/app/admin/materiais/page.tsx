@@ -31,6 +31,7 @@ export default async function MateriaisAdminPage() {
       observacao: (ajuste?.observacao as string | null) ?? null,
       oculto: Boolean(ajuste?.oculto),
       destaque: Boolean(ajuste?.destaque),
+      ordem: (ajuste?.ordem as number | null) ?? null,
       ajustadoEm: (ajuste?.atualizado_em as string | null) ?? null,
     };
   });

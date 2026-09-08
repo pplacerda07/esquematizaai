@@ -9,6 +9,12 @@ import { produtosVendaveis, ofertaAtual, capaDe } from '@/data/catalogo';
 import { rotuloDeFerramenta } from '@/data/catalogo/rotulos';
 import styles from './styles.module.css';
 
+/**
+ * Mesma razão da vitrine: o que o Sérgio edita no painel precisa aparecer sem
+ * depender de deploy. Um minuto, igual às outras páginas do catálogo.
+ */
+export const revalidate = 60;
+
 export function generateStaticParams() {
   return AREAS.map((a) => ({ area: a.slug }));
 }

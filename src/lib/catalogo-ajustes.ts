@@ -25,6 +25,12 @@ export interface Ajuste {
   descricao: string | null;
   oculto: boolean;
   destaque: boolean;
+  /**
+   * Posição manual na vitrine, do menor para o maior. Null deixa a ordenação
+   * automática decidir, e é o padrão: numerar os 173 produtos seria trabalho
+   * sem fim e quebraria a cada item novo da planilha.
+   */
+  ordem: number | null;
 }
 
 const URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -37,7 +43,7 @@ async function buscarAjustes(): Promise<Map<string, Ajuste>> {
     const supabase = createClient(URL, CHAVE, { auth: { persistSession: false } });
     const { data, error } = await supabase
       .from('produtos_ajustes')
-      .select('produto_id, preco, descricao, oculto, destaque');
+      .select('produto_id, preco, descricao, oculto, destaque, ordem');
 
     if (error) {
       console.error('[catalogo] ajustes indisponíveis:', error.message);
@@ -67,6 +73,8 @@ export interface ProdutoAjustado {
   produto: Produto;
   oferta: Oferta;
   destaque: boolean;
+  /** posição que o Sérgio digitou no painel, ou null */
+  ordem: number | null;
   /**
    * Capa do produto criado no painel. Os da planilha continuam com a do
    * capas.json, resolvida por capaDe(); só os do painel guardam a imagem no
@@ -104,6 +112,7 @@ export async function catalogoParaVitrine(): Promise<ProdutoAjustado[]> {
       produto: ajustado,
       oferta,
       destaque: Boolean(a?.destaque),
+      ordem: a?.ordem ?? null,
       capaDoPainel: capas.get(p.id) ?? null,
     });
   }
@@ -134,6 +143,7 @@ export async function produtoAjustado(id: string): Promise<ProdutoAjustado | nul
     produto: ajustado,
     oferta,
     destaque: Boolean(a?.destaque),
+    ordem: a?.ordem ?? null,
     capaDoPainel: capasDoPainel(doPainel).get(base.id) ?? null,
   };
 }

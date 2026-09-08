@@ -15,6 +15,12 @@ import Footer from '@/components/Footer';
 import LeadPopup from '@/components/LeadPopup';
 import styles from './page.module.css';
 
+/**
+ * Mesma razão da vitrine: o que o Sérgio edita no painel precisa aparecer sem
+ * depender de deploy. Um minuto, igual às outras páginas do catálogo.
+ */
+export const revalidate = 60;
+
 export default function Home() {
   return (
     <main className={styles.home}>

@@ -22,6 +22,12 @@ export interface ItemVitrine {
   capa: { src: string; width: number; height: number } | null;
   /** marcado como destaque no painel */
   destaque: boolean;
+  /**
+   * Posição escolhida no painel, do menor para o maior. Null é o normal e
+   * significa "decida você": só os poucos produtos que o Sérgio quer na frente
+   * recebem número.
+   */
+  ordem: number | null;
 }
 
 // fallback desenhado quando o produto ainda não tem capa
@@ -138,7 +144,18 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
     // depois: maiores descontos primeiro e, por fim, ordem alfabética
     const visaoGeral = segmento === 'todos' && area === 'todas' && !termo;
     return lista.sort((a, b) => {
-      // o que o painel marcou como destaque abre a vitrine
+      // A POSIÇÃO DIGITADA NO PAINEL VENCE TUDO.
+      //
+      // O Sérgio pediu em 08/09 para mandar na fila: na área fiscal ele quer o
+      // Combo Resumos e o Combo Flashcards Regular na frente, e antes disso a
+      // vitrine decidia sozinha. Quem tem número vem primeiro, do menor para o
+      // maior; quem está sem número cai na ordenação de sempre, logo depois.
+      if ((a.ordem ?? null) !== (b.ordem ?? null)) {
+        if (a.ordem == null) return 1;
+        if (b.ordem == null) return -1;
+        return a.ordem - b.ordem;
+      }
+      // o que o painel marcou como destaque abre o resto da vitrine
       if (a.destaque !== b.destaque) return a.destaque ? -1 : 1;
       if (visaoGeral && !!a.capa !== !!b.capa) return a.capa ? -1 : 1;
       if (visaoGeral) {

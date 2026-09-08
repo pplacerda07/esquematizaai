@@ -41,6 +41,24 @@ export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste>
   const oculto = String(formData.get('oculto') ?? '') === 'on';
   const destaque = String(formData.get('destaque') ?? '') === 'on';
 
+  /**
+   * Posição na vitrine. Vazio é o normal e devolve o produto para a ordenação
+   * automática; só os poucos que precisam abrir a lista recebem número.
+   *
+   * Recusa texto e número negativo em vez de gravar zero calado: o Sérgio vai
+   * digitar isso no meio de uma lista de 173 produtos, e um valor engolido em
+   * silêncio faria a vitrine ignorar a escolha dele sem dizer por quê.
+   */
+  const ordemBruta = String(formData.get('ordem') ?? '').trim();
+  let ordem: number | null = null;
+  if (ordemBruta) {
+    const n = Number(ordemBruta);
+    if (!Number.isInteger(n) || n < 1) {
+      return { ok: false, erro: 'Posição inválida. Use um número inteiro a partir de 1, ou deixe vazio.' };
+    }
+    ordem = n;
+  }
+
   const { error } = await supabase.from('produtos_ajustes').upsert(
     {
       produto_id,
@@ -49,6 +67,7 @@ export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste>
       observacao,
       oculto,
       destaque,
+      ordem,
       atualizado_por: permissao.email,
     },
     { onConflict: 'produto_id' },

@@ -12,7 +12,7 @@ export const revalidate = 60;
 export default async function ProductVitrine() {
   const catalogo = await catalogoParaVitrine();
 
-  const candidatos: ItemVitrine[] = catalogo.map(({ produto, oferta, destaque, capaDoPainel }) => ({
+  const candidatos: ItemVitrine[] = catalogo.map(({ produto, oferta, destaque, ordem, capaDoPainel }) => ({
     id: produto.id,
     nome: produto.nome,
     categoria: produto.categoria,
@@ -26,12 +26,20 @@ export default async function ProductVitrine() {
     // a do painel vem do Supabase; as 92 da planilha continuam no capas.json
     capa: capaDoPainel ?? capaDe(produto),
     destaque,
+    ordem,
   }));
 
   // a planilha tem produtos gêmeos (mesmo nome ou mesmo checkout em cadastros
   // Eduzz distintos); na vitrine fica um card por nome e por checkout,
   // priorizando o que o painel marcou como destaque e depois a melhor oferta
   candidatos.sort((a, b) => {
+    // a posição digitada no painel decide antes de tudo, inclusive de qual
+    // gêmeo sobrevive à limpeza de duplicados logo abaixo
+    if ((a.ordem ?? null) !== (b.ordem ?? null)) {
+      if (a.ordem == null) return 1;
+      if (b.ordem == null) return -1;
+      return a.ordem - b.ordem;
+    }
     if (a.destaque !== b.destaque) return a.destaque ? -1 : 1;
     return (b.percentualOff ?? -1) - (a.percentualOff ?? -1);
   });
