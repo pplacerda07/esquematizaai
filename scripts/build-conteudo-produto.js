@@ -211,7 +211,14 @@ function lerAcordeao(html) {
 
   for (const [n, p] of lista.entries()) {
     try {
-      const res = await fetch(p.urlSite, { headers: { 'User-Agent': 'EsquematizaBuild/1.0' } });
+      // A loja mudou de endereço na virada de 06/09. A planilha ainda guarda o
+      // endereço antigo, que hoje só redireciona; buscar direto na loja evita o
+      // salto e deixa claro de onde o conteúdo está vindo.
+      const endereco = p.urlSite.replace(
+        /^https?:\/\/(?:www\.)?esquematizaai\.com/i,
+        'https://loja.esquematizaai.com',
+      );
+      const res = await fetch(endereco, { headers: { 'User-Agent': 'EsquematizaBuild/1.0' } });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const html = await res.text();
 
@@ -269,12 +276,39 @@ function lerAcordeao(html) {
 
   if (SO_TESTE) return;
 
+  /**
+   * NÃO APAGA O QUE NÃO CONSEGUIU REBUSCAR.
+   *
+   * A primeira versão gravava só o que a rodada capturou, e isso já custou
+   * caro: em agosto seis produtos do SEFAZ-CE tinham a página fora do ar, a
+   * rodada não os encontrou e o texto deles sumiu do site. Página de venda sem
+   * descrição é pior que descrição velha.
+   *
+   * Agora o resultado da rodada entra POR CIMA do que já existia. Quem falhou
+   * mantém o texto anterior, e o relatório abaixo diz quantos ficaram assim.
+   */
+  const anterior = fs.existsSync(SAIDA)
+    ? JSON.parse(fs.readFileSync(SAIDA, 'utf8')).conteudo ?? {}
+    : {};
+
+  const preservados = Object.keys(anterior).filter((id) => !conteudo[id]);
+  const juntado = { ...anterior, ...conteudo };
+
+  // Sai num arquivo separado quando pedido, para dar para comparar antes de
+  // trocar o que está no ar.
+  const destino = process.argv.includes('--rascunho')
+    ? SAIDA.replace(/\.json$/, '.novo.json')
+    : SAIDA;
+
   fs.writeFileSync(
-    SAIDA,
-    JSON.stringify({ geradoEm: new Date().toISOString().slice(0, 10), fonte: 'páginas de venda do WordPress', conteudo }, null, 1),
+    destino,
+    JSON.stringify({ geradoEm: new Date().toISOString().slice(0, 10), fonte: 'páginas de venda do WordPress', conteudo: juntado }, null, 1),
     'utf8',
   );
 
+  console.log(`\ngravado em: ${destino}`);
+  console.log(`preservados da rodada anterior: ${preservados.length}`);
+  if (preservados.length) preservados.slice(0, 10).forEach((id) => console.log('   ' + id));
   console.log(`\nprodutos com algum conteúdo: ${Object.keys(conteudo).length}/${lista.length}`);
   for (const [k, v] of Object.entries(contagem)) console.log(`  ${k.padEnd(11)} ${v}`);
   console.log(`\níndice: ${SAIDA}`);
