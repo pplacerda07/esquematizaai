@@ -49,6 +49,30 @@ function redirecionamentosDaVirada() {
   ];
 
   return [
+    /**
+     * Download do aluno depois da compra.
+     *
+     * O WooCommerce entrega o arquivo pago por um endereço na RAIZ do site, com
+     * o pedido na query: /?download_file=123&order=wc_order_x&email=...&key=...
+     * Como é a raiz e não um caminho /wp-alguma-coisa, a rede de segurança
+     * abaixo não pegava: o link caía na home deste site, respondia 200 e o aluno
+     * via a vitrine no lugar do PDF que comprou.
+     *
+     * Apareceu em 09/09 com alunos que compraram no dia anterior. O `has` deixa
+     * a regra estreita: só entra quem tem download_file na query, a home normal
+     * não é afetada. O Next repassa a query inteira ao destino, então pedido,
+     * e-mail e chave chegam intactos na loja.
+     *
+     * 307 e não 301 de propósito: é link de pedido, não é página para o Google
+     * indexar, e no dia em que o WordPress gravar o endereço certo na origem
+     * esta regra some sem ficar presa no cache de ninguém.
+     */
+    {
+      source: '/',
+      has: [{ type: 'query' as const, key: 'download_file' }],
+      destination: `${URL_DA_LOJA}/`,
+      permanent: false,
+    },
     ...arquivosDoWordPress.map((source) => ({
       source,
       destination: `${URL_DA_LOJA}${source}`,
