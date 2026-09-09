@@ -136,6 +136,23 @@ const nextConfig: NextConfig = {
         hostname: "xjcasijvuzjtnaxxvunm.supabase.co",
         pathname: "/storage/v1/object/public/**",
       },
+      /**
+       * Biblioteca de mídia do WordPress, para as capas do blog.
+       *
+       * O painel do blog pede a capa como endereço colado, não como arquivo:
+       * não existe upload ali. Sem esta liberação, a equipe do Sérgio subiria a
+       * imagem no lugar mais óbvio que ela conhece, colaria o endereço, e a
+       * página do post quebraria, porque o otimizador recusa host não listado.
+       *
+       * Continua estreito pelo mesmo motivo do bloco acima: só a pasta pública
+       * de uploads da nossa própria loja, só https. Nenhum outro caminho do
+       * WordPress entra.
+       */
+      {
+        protocol: "https",
+        hostname: "loja.esquematizaai.com",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 
