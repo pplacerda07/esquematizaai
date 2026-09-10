@@ -7,6 +7,7 @@ import produtosDb from './produtos.json';
 import cuponsDb from './cupons.json';
 import ofertasDb from './ofertas-personalizadas.json';
 import linksDescontoDb from './links-desconto.json';
+import checkoutsManuaisDb from './checkouts-manuais.json';
 import sumariosDb from './sumarios.json';
 import capasDb from './capas.json';
 import conteudoDb from './conteudo-produto.json';
@@ -118,7 +119,24 @@ export interface ProdutoComDesconto {
   escada: DegrauDesconto[];
 }
 
-export const produtos = produtosDb.produtos as unknown as Produto[];
+/**
+ * Checkout definido a mao, por cima da planilha.
+ *
+ * O produtos.json e GERADO a partir do xlsx do Sergio: qualquer edicao feita
+ * direto nele morre no proximo rebuild. Quando ele decide vender um isolado por
+ * um link direto da Eduzz em vez da pagina da loja, e a planilha ainda nao
+ * reflete isso, o link entra aqui e sobrevive.
+ *
+ * Entra como `checkouts.normal` de proposito: dai a decisao entre link direto e
+ * pagina de vendas continua sendo tomada num lugar so, dentro de ofertaAtual().
+ * Quando a planilha passar a trazer o mesmo link, e so apagar a linha daqui.
+ */
+const CHECKOUTS_MANUAIS = checkoutsManuaisDb.checkouts as Record<string, string>;
+
+export const produtos = (produtosDb.produtos as unknown as Produto[]).map((p) => {
+  const manual = CHECKOUTS_MANUAIS[p.id];
+  return manual ? { ...p, checkouts: { ...p.checkouts, normal: manual } } : p;
+});
 export const cupons = cuponsDb.cupons as unknown as Cupom[];
 export const ofertasPersonalizadas = ofertasDb.ofertas as unknown as OfertaPersonalizada[];
 export const produtosComDesconto = linksDescontoDb.produtos as unknown as ProdutoComDesconto[];

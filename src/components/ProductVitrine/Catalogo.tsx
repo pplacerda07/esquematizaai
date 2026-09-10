@@ -207,6 +207,14 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
             Combos, materiais isolados e assinaturas para concursos das áreas Fiscal, Controle,
             Policial, Tribunais, Bancária e Legislativa. Compra direta no checkout da Eduzz.
           </p>
+
+          <Link href="/mentoria" className={styles.mentoriaCta}>
+            Conheça a Mentoria individual
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </Link>
         </div>
 
         <PassoFiltro numero={1}>Escolha seu produto</PassoFiltro>

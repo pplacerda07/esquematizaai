@@ -680,3 +680,55 @@
     margin-bottom: 2rem;
   }
 }
+
+/**
+ * Atalho para a pagina da mentoria.
+ *
+ * Fica no cabecalho e NAO na faixa de filtros de proposito: os botoes de la
+ * estreitam o catalogo, este leva a pessoa embora da pagina. Misturar os dois
+ * faria alguem clicar esperando ver menos produtos e acabar noutro lugar.
+ *
+ * Dai tambem o fundo solido: as pilulas do filtro sao vazadas, com borda azul
+ * clara. O contraste diz "isto e outra coisa" antes de qualquer leitura.
+ */
+.mentoriaCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+  font-family: var(--font-body, 'Rubik', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-neutral-light, #ffffff);
+  background-color: var(--color-cold-dark, #26344f);
+  border-radius: 2rem;
+  padding: 0.7rem 1.4rem;
+  min-height: 44px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.mentoriaCta:hover,
+.mentoriaCta:focus-visible {
+  background-color: var(--color-hot-primary, #ff7345);
+}
+
+.mentoriaCta svg {
+  transition: transform 0.2s ease;
+}
+
+.mentoriaCta:hover svg,
+.mentoriaCta:focus-visible svg {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mentoriaCta,
+  .mentoriaCta svg {
+    transition: none;
+  }
+  .mentoriaCta:hover svg,
+  .mentoriaCta:focus-visible svg {
+    transform: none;
+  }
+}

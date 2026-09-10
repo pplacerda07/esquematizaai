@@ -4,7 +4,6 @@ import Countdown from './Countdown';
 import UrgencyBar from './UrgencyBar';
 import BuscaEAtalhos from '@/components/BuscaEAtalhos';
 import CarrosselDestaque, { DESTAQUES, type Destaque } from '@/components/CarrosselDestaque';
-import LiveTicker from './LiveTicker';
 import OfferCarousel, { type OfertaHero } from './OfferCarousel';
 import { produtoPor, ofertaAtual, capaDe, formatarPreco } from '@/data/catalogo';
 
@@ -138,8 +137,6 @@ export default function HeroSection() {
                 </svg>
               </a>
             </div>
-
-            <LiveTicker />
 
             {/* saíram os avatares genéricos: a nota real ancora o bloco melhor
                 do que três bolinhas coloridas sem rosto nenhum atrás */}

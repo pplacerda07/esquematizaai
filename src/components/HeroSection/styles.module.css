@@ -329,69 +329,6 @@
   color: var(--color-neutral-light);
 }
 
-/* Live Ticker */
-.liveTicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  background-color: var(--color-neutral-light);
-  border: 1px solid rgba(38, 52, 79, 0.1);
-  padding: 0.55rem 0.95rem 0.55rem 0.7rem;
-  border-radius: 2rem;
-  box-shadow: 0 4px 14px rgba(38, 52, 79, 0.06);
-  margin-bottom: 1.5rem;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: var(--color-neutral-dark);
-  max-width: 100%;
-}
-
-.liveDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #25D366;
-  position: relative;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.18);
-  animation: liveDot 1.8s ease-in-out infinite;
-}
-
-@keyframes liveDot {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.18); }
-  50% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0.05); }
-}
-
-.liveContent {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  flex-wrap: wrap;
-}
-
-.liveVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.liveHidden {
-  opacity: 0;
-  transform: translateY(-4px);
-}
-
-.liveContent strong {
-  font-weight: 600;
-  color: var(--color-cold-dark);
-}
-
-.liveTime {
-  color: var(--color-neutral-dark);
-  opacity: 0.55;
-  font-size: 0.78rem;
-  margin-left: 0.25rem;
-}
-
 /* Social Proof */
 .socialProof {
   display: flex;
