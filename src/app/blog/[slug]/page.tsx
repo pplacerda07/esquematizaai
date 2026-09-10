@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Conteudo from '@/components/Artigo/Conteudo';
+import CtaProduto from '@/components/Artigo/CtaProduto';
 import Sumario from '@/components/Artigo/Sumario';
 import Compartilhar from '@/components/Artigo/Compartilhar';
 import { getPostPorSlug, getSlugsPublicados, getPostsPublicados } from '@/lib/blog';
@@ -160,6 +161,14 @@ export default async function ArtigoPage({
         <Sumario itens={sumario} />
 
         <Conteudo markdown={post.conteudo} />
+
+        {/* Oferta escolhida no painel, no fim da leitura.
+            Fica aqui e não no meio do texto porque quem chegou até o final é
+            quem está mais perto de comprar. Continua valendo o ::produto{...}
+            solto no corpo para quem quiser citar no meio do artigo.
+            Produto que sai do catálogo some daqui sozinho: o CtaProduto
+            devolve null em vez de desenhar um card quebrado. */}
+        {post.produto_id && <CtaProduto id={post.produto_id} />}
 
         <p className={styles.verificacao}>
           Informações conferidas nas fontes citadas e atualizadas em{' '}

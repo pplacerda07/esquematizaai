@@ -41,6 +41,7 @@ export async function salvarPost(formData: FormData): Promise<ResultadoPost> {
   const categoria = String(formData.get('categoria') ?? 'Dicas').trim();
   const autor = String(formData.get('autor') ?? 'Equipe Esquematiza Aí').trim();
   const capa_url = String(formData.get('capa_url') ?? '').trim() || null;
+  const produto_id = String(formData.get('produto_id') ?? '').trim() || null;
   const status = String(formData.get('status') ?? 'rascunho') === 'publicado' ? 'publicado' : 'rascunho';
 
   if (!titulo) return { ok: false, erro: 'O título é obrigatório.' };
@@ -55,7 +56,7 @@ export async function salvarPost(formData: FormData): Promise<ResultadoPost> {
 
     const { error } = await supabase
       .from('posts')
-      .update({ slug, titulo, resumo, conteudo, categoria, autor, capa_url, status, publicado_em })
+      .update({ slug, titulo, resumo, conteudo, categoria, autor, capa_url, produto_id, status, publicado_em })
       .eq('id', id);
 
     if (error) return { ok: false, erro: traduzErro(error.message) };
@@ -63,7 +64,7 @@ export async function salvarPost(formData: FormData): Promise<ResultadoPost> {
     const publicado_em = status === 'publicado' ? new Date().toISOString() : null;
     const { error } = await supabase
       .from('posts')
-      .insert({ slug, titulo, resumo, conteudo, categoria, autor, capa_url, status, publicado_em });
+      .insert({ slug, titulo, resumo, conteudo, categoria, autor, capa_url, produto_id, status, publicado_em });
 
     if (error) return { ok: false, erro: traduzErro(error.message) };
   }

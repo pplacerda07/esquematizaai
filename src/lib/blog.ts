@@ -17,6 +17,14 @@ export interface Post {
   conteudo: string;
   categoria: string;
   capa_url: string | null;
+  /**
+   * Produto do catálogo oferecido no fim do post. null = post sem oferta.
+   *
+   * Guarda só o id: preço, nome e link são lidos do catálogo na hora de
+   * desenhar, então um artigo de meses atrás nunca anuncia preço que a loja
+   * deixou de cobrar. Produto que sai do catálogo some do post sozinho.
+   */
+  produto_id: string | null;
   autor: string;
   status: 'rascunho' | 'publicado';
   publicado_em: string | null;
@@ -28,7 +36,7 @@ export interface Post {
 export type PostResumo = Omit<Post, 'conteudo'>;
 
 const CAMPOS_LISTA =
-  'id, slug, titulo, resumo, categoria, capa_url, autor, status, publicado_em, criado_em, atualizado_em';
+  'id, slug, titulo, resumo, categoria, capa_url, produto_id, autor, status, publicado_em, criado_em, atualizado_em';
 
 /** Posts publicados, do mais novo para o mais antigo. `limite` opcional. */
 export async function getPostsPublicados(limite?: number): Promise<PostResumo[]> {

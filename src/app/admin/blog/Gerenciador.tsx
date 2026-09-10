@@ -14,6 +14,7 @@ type FormState = {
   resumo: string;
   conteudo: string;
   capa_url: string;
+  produto_id: string;
   status: 'publicado' | 'rascunho';
 };
 
@@ -25,6 +26,7 @@ const vazio: FormState = {
   resumo: '',
   conteudo: '',
   capa_url: '',
+  produto_id: '',
   status: 'rascunho',
 };
 
@@ -59,7 +61,13 @@ function formatarData(iso: string | null) {
   return new Date(iso).toLocaleDateString('pt-BR');
 }
 
-export default function Gerenciador({ postsIniciais }: { postsIniciais: PostResumo[] }) {
+export default function Gerenciador({
+  postsIniciais,
+  produtos,
+}: {
+  postsIniciais: PostResumo[];
+  produtos: { id: string; nome: string }[];
+}) {
   const router = useRouter();
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState<FormState>(vazio);
@@ -72,6 +80,19 @@ export default function Gerenciador({ postsIniciais }: { postsIniciais: PostResu
     (p) =>
       p.titulo.toLowerCase().includes(busca.toLowerCase()) ||
       p.categoria.toLowerCase().includes(busca.toLowerCase()),
+  );
+
+  /**
+   * HTML colado no corpo do post.
+   *
+   * O artigo é renderizado como Markdown com diretivas, e HTML cru NÃO é
+   * interpretado: ele aparece escapado na tela, tag e tudo. Isso é proposital,
+   * porque impede que texto do painel vire script no site. Só que quem escreve
+   * cola de um editor de texto e descobre o problema depois de publicar.
+   * Aqui o aviso chega enquanto ainda dá para trocar pela diretiva certa.
+   */
+  const temHtml = /<[/]?(?:p|div|span|br|b|i|u|strong|em|ul|ol|li|h[1-6]|a|img|table|font|section)(?:[ ][^>]*)?>/i.test(
+    form.conteudo,
   );
 
   const avisar = (msg: string) => {
@@ -102,6 +123,7 @@ export default function Gerenciador({ postsIniciais }: { postsIniciais: PostResu
       resumo: p.resumo ?? '',
       conteudo: p.conteudo ?? '',
       capa_url: p.capa_url ?? '',
+      produto_id: p.produto_id ?? '',
       status: p.status ?? 'rascunho',
     });
     setShowForm(true);
@@ -242,14 +264,56 @@ export default function Gerenciador({ postsIniciais }: { postsIniciais: PostResu
                 <div className={styles.field}>
                   <label className={styles.label}>Conteúdo</label>
                   <textarea className={styles.textareaLg} rows={10} placeholder="Escreva o artigo aqui..." value={form.conteudo} onChange={(e) => setForm((f) => ({ ...f, conteudo: e.target.value }))} />
-                  <span style={{ fontSize: '0.78rem', color: '#888', marginTop: '0.4rem', display: 'block' }}>
-                    Dicas de formatação: <code>## Subtítulo</code> · <code>**negrito**</code> · <code>- item de lista</code> · <code>&gt; citação</code>
-                  </span>
+                  {temHtml && (
+                    <p style={{ marginTop: '0.5rem', padding: '0.6rem 0.8rem', background: 'rgba(255,115,69,0.12)', border: '1px solid rgba(255,115,69,0.5)', borderRadius: '0.5rem', fontSize: '0.85rem', color: '#95321F' }}>
+                      <strong>Tem código HTML no texto.</strong> O blog não interpreta HTML: essas tags vão aparecer
+                      escritas na tela, no meio do artigo. Troque pelos símbolos do guia abaixo antes de publicar.
+                    </p>
+                  )}
+
+                  <details style={{ marginTop: '0.5rem', fontSize: '0.82rem', color: '#555' }}>
+                    <summary style={{ cursor: 'pointer', fontWeight: 600, color: '#26344f' }}>
+                      Como formatar o texto
+                    </summary>
+                    <div style={{ marginTop: '0.5rem', display: 'grid', gap: '0.3rem' }}>
+                      <div><code>## Subtítulo</code> vira seção, e entra sozinho no índice do artigo</div>
+                      <div><code>**negrito**</code> · <code>*itálico*</code> · <code>- item de lista</code> · <code>1. lista numerada</code></div>
+                      <div><code>&gt; citação</code> · <code>[texto](https://link)</code></div>
+                      <div><code>:marca[texto]</code> pinta o trecho de amarelo, como marca-texto</div>
+                      <div style={{ marginTop: '0.4rem', fontWeight: 600, color: '#26344f' }}>Caixas coloridas</div>
+                      <div>Abra com <code>:::nome</code>, escreva, e feche com <code>:::</code> numa linha sozinha.</div>
+                      <div>Nomes: <code>importante</code> · <code>dica</code> · <code>sintese</code> · <code>aprofunde</code> · <code>fontes</code></div>
+                      <div>Para trocar o rótulo: <code>:::dica[DICA DE PROVA]</code></div>
+                      <div style={{ marginTop: '0.4rem' }}>
+                        <strong>Não use HTML.</strong> Nada de &lt;p&gt;, &lt;b&gt; ou &lt;br&gt;: o blog mostra a tag escrita na tela.
+                      </div>
+                    </div>
+                  </details>
                 </div>
 
                 <div className={styles.field}>
                   <label className={styles.label}>URL da capa <span style={{ fontWeight: 400, color: '#888' }}>(opcional por enquanto)</span></label>
                   <input className={styles.input} placeholder="https://..." value={form.capa_url} onChange={(e) => setForm((f) => ({ ...f, capa_url: e.target.value }))} />
+                </div>
+
+                <div className={styles.field}>
+                  <label className={styles.label}>
+                    Produto em destaque{' '}
+                    <span style={{ fontWeight: 400, color: '#888' }}>(aparece no fim do artigo)</span>
+                  </label>
+                  <select
+                    className={styles.select}
+                    value={form.produto_id}
+                    onChange={(e) => setForm((f) => ({ ...f, produto_id: e.target.value }))}
+                  >
+                    <option value="">Nenhum</option>
+                    {produtos.map((p) => (
+                      <option key={p.id} value={p.id}>{p.nome}</option>
+                    ))}
+                  </select>
+                  <span style={{ fontSize: '0.78rem', color: '#888', marginTop: '0.3rem', display: 'block' }}>
+                    O preço e o botão vêm do catálogo na hora, então nunca ficam desatualizados.
+                  </span>
                 </div>
 
                 <div className={styles.field}>
