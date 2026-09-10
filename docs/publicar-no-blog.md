@@ -53,12 +53,40 @@ depois de colar.
 O painel pede um endereço de imagem, não um arquivo. O jeito de conseguir esse
 endereço está na seção "A capa do post".
 
-**9. Escolha o status e salve.**
+**9. Escolha o produto em destaque.**
+Uma lista com tudo que está à venda. O que você escolher vira um bloco de oferta
+no fim do artigo, com nome, preço e botão. Deixe em "Nenhum" se o post não for
+vender nada.
+
+O preço e o link vêm do catálogo na hora de mostrar a página. Isso quer dizer que
+um artigo de seis meses atrás nunca anuncia um preço que a loja deixou de cobrar,
+e produto que sai do catálogo some do post sozinho.
+
+**10. Escolha o status e salve.**
 "Salvar como rascunho" guarda sem ninguém ver. "Publicar agora" põe no ar. Na
 dúvida, salve como rascunho, confira no site e publique depois.
 
 O post entra no ar em até um minuto. Se não aparecer de cara, espere e recarregue
 antes de mexer de novo.
+
+---
+
+---
+
+## Nada de HTML
+
+O editor entende Markdown, que são os símbolos da tabela abaixo. **Ele não
+entende HTML.** Se você colar algo como `<p>`, `<b>` ou `<br>`, a tag aparece
+escrita na tela, no meio do artigo, e fica feio para o leitor.
+
+Isso não é defeito, é proteção: o que impede alguém de colar um código malicioso
+no painel e ele rodar no site é justamente o blog não executar HTML.
+
+O editor avisa. Se houver tag no texto, aparece um alerta laranja antes de você
+publicar. Quando ele aparecer, troque pelos símbolos da tabela.
+
+Se você escreve no Word ou no Google Docs, cole primeiro num bloco de notas para
+limpar a formatação, e depois no painel.
 
 ---
 
