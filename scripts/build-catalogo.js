@@ -94,7 +94,13 @@ const PRODUCT_SHEETS = [
   { sheet: 'Combos Regulares', prio: 5, cols: { idEduzz: 'A', nome: 'B', naEduzz: 'C', naAlpa: 'D', status: 'E', tipo: 'F', area: 'G', ferramenta: 'H', formato: 'I', urlSite: 'J', observacao: 'K', preco: 'L', precoPromocional: 'M', pastaGdrive: 'N', chkNormal: 'O', layoutCheckout: 'P', orderbumpProdutos: 'Q', orderbumpPreco: 'R', precoTotalComOrderbump: 'S', chkBlack: 'U', orderbump: 'V', upsell: 'W', atualizacao: 'X', sobre: 'Y', disciplinas: 'Z', cronograma: 'AA' } },
   // untrustedLinks: as linhas dessa aba estão desalinhadas (checkout de um produto na
   // linha do vizinho). Seus links nunca disputam os slots normal/black; viram "outros".
-  { sheet: 'Legislação Tributária', prio: 5, untrustedLinks: true, cols: { idEduzz: 'A', nome: 'B', sefaz: 'C', ferramenta: 'D', urlSite: 'E', preco: 'F', chkNormal: 'G', precoCupom20: 'H', chkCupom20: 'I', chkUpgrade1: 'J', chkUpgrade2: 'K', chkBlack: 'L', orderbump: 'N', upsell: 'O', atualizacao: 'P', sobre: 'Q', disciplinas: 'R', cronograma: 'S' } },
+  // A planilha de setembro/2026 inseriu TRES colunas depois da A nesta aba
+  // (status, ferramenta e area), e todo o resto andou tres casas. Com o
+  // mapeamento antigo o campo "nome" passava a ler a coluna de status: 41
+  // produtos nasciam chamados "ativo", com id "ativo-3048264" e companhia, o que
+  // trocaria o endereco deles no site. Conferido cabecalho por cabecalho:
+  // antigo B=nome virou E, antigo S=cronograma virou V.
+  { sheet: 'Legislação Tributária', prio: 5, untrustedLinks: true, cols: { idEduzz: 'A', status: 'B', area: 'D', nome: 'E', sefaz: 'F', ferramenta: 'G', urlSite: 'H', preco: 'I', chkNormal: 'J', precoCupom20: 'K', chkCupom20: 'L', chkUpgrade1: 'M', chkUpgrade2: 'N', chkBlack: 'O', orderbump: 'Q', upsell: 'R', atualizacao: 'S', sobre: 'T', disciplinas: 'U', cronograma: 'V' } },
   { sheet: 'Produtos Isolados (não há desco', prio: 5, cols: { idEduzz: 'A', nome: 'B', ferramenta: 'C', urlSite: 'D', preco: 'E', chkNormal: 'F', orderbump: 'G', upsell: 'H', atualizacao: 'I', sobre: 'J', disciplinas: 'K', cronograma: 'L' } },
   { sheet: 'Assinatura', prio: 5, cols: { idEduzz: 'A', nome: 'B', naEduzz: 'C', naAlpa: 'D', status: 'E', tipo: 'F', area: 'G', ferramenta: 'H', formato: 'I', urlSite: 'J', observacao: 'K', preco: 'M', pastaGdrive: 'N', chkNormal: 'O', orderbump: 'P', upsell: 'Q', atualizacao: 'R', sobre: 'S', disciplinas: 'T', cronograma: 'U' } },
   { sheet: 'outros-produtos (15.12.25)', prio: 5, cols: { idEduzz: 'A', nome: 'B', naEduzz: 'C', naAlpa: 'D', status: 'E', tipo: 'F', area: 'G', ferramenta: 'H', formato: 'I', urlSite: 'J', observacao: 'K', preco: 'L', precoPromocional: 'M', precoBlack: 'N', pastaGdrive: 'O', chkNormal: 'P', chkBlack: 'Q', orderbump: 'R', upsell: 'S', atualizacao: 'T', sobre: 'U', disciplinas: 'V', cronograma: 'W' } },
@@ -531,12 +537,26 @@ const write = (file, obj) => {
 };
 
 const geradoEm = new Date().toISOString().slice(0, 10);
-write('produtos.json', { geradoEm, fonte: 'Produtos (1).xlsx', total: produtos.length, produtos });
-write('cupons.json', { geradoEm, fonte: 'Produtos (1).xlsx (aba Cupom)', cupons });
-write('ofertas-personalizadas.json', { geradoEm, fonte: 'Produtos (1).xlsx (aba Ofertas personalizadas)', observacao: 'Via de regra utilizar as parcelas COM juros (nota da própria planilha). Links de checkout da Eduzz por valor de oferta, usados pelo atendimento para fechar vendas personalizadas.', ofertas: ofertasPersonalizadas });
-write('links-desconto.json', { geradoEm, fonte: 'Produtos (1).xlsx (aba "link produtos desconto")', observacao: 'Escada de preços por produto: cada degrau é um checkout da Eduzz com cupom pré-aplicado. Usada pelo atendimento/campanhas para ofertar descontos progressivos.', produtos: linksDesconto });
-write('sumarios.json', { geradoEm, fonte: 'Produtos (1).xlsx (abas sumario_* e modulos_*)', ...sumarios });
-write('copy.json', { geradoEm, fonte: 'Produtos (1).xlsx (aba copy)', ...copy });
+write('produtos.json', { geradoEm, fonte: path.basename(XLSX_PATH), total: produtos.length, produtos });
+write('cupons.json', { geradoEm, fonte: path.basename(XLSX_PATH) + ' (aba Cupom)', cupons });
+write('ofertas-personalizadas.json', { geradoEm, fonte: path.basename(XLSX_PATH) + ' (aba Ofertas personalizadas)', observacao: 'Via de regra utilizar as parcelas COM juros (nota da própria planilha). Links de checkout da Eduzz por valor de oferta, usados pelo atendimento para fechar vendas personalizadas.', ofertas: ofertasPersonalizadas });
+write('links-desconto.json', { geradoEm, fonte: path.basename(XLSX_PATH) + ' (aba "link produtos desconto")', observacao: 'Escada de preços por produto: cada degrau é um checkout da Eduzz com cupom pré-aplicado. Usada pelo atendimento/campanhas para ofertar descontos progressivos.', produtos: linksDesconto });
+// A planilha de setembro/2026 veio SEM a aba modulos_*. Sem esta guarda o
+// rebuild zerava os 144 modulos que alimentam o sumario das paginas de produto:
+// o dado sumiria do site sem ninguem pedir, so porque a aba deixou de existir.
+// Planilha que nao traz um bloco NAO e ordem para apagar esse bloco.
+if (sumarios.modulosPorArea.length === 0) {
+  try {
+    const anterior = JSON.parse(fs.readFileSync(path.join(OUT_DIR, 'sumarios.json'), 'utf8'));
+    if (Array.isArray(anterior.modulosPorArea) && anterior.modulosPorArea.length) {
+      sumarios.modulosPorArea = anterior.modulosPorArea;
+      console.warn('AVISO: aba modulos_* ausente na planilha; preservados ' + anterior.modulosPorArea.length + ' modulos da versao anterior');
+    }
+  } catch { /* primeira geracao: nao ha versao anterior para preservar */ }
+}
+
+write('sumarios.json', { geradoEm, fonte: path.basename(XLSX_PATH) + ' (abas sumario_* e modulos_*)', ...sumarios });
+write('copy.json', { geradoEm, fonte: path.basename(XLSX_PATH) + ' (aba copy)', ...copy });
 
 // ---------- estatísticas ----------
 const porCategoria = {};

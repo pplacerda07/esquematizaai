@@ -1,7 +1,7 @@
 {
-  "geradoEm": "2026-08-27",
-  "fonte": "Produtos (1).xlsx",
-  "total": 173,
+  "geradoEm": "2026-09-10",
+  "fonte": "Produtos (4).xlsx",
+  "total": 197,
   "produtos": [
     {
       "id": "assinatura-anual-resumos-flashcards-parcelado-sem-juros",
@@ -165,7 +165,7 @@
       "area": "Fiscal",
       "ferramenta": "Assinatura",
       "formato": "Específico",
-      "sefaz": null,
+      "sefaz": "Todos",
       "urlSite": "https://esquematizaai.com/produto/assinatura-legislacao-tributaria/",
       "observacao": null,
       "precos": {
@@ -177,7 +177,18 @@
       "checkouts": {
         "normal": "https://chk.eduzz.com/7977GN6A9E",
         "black": null,
-        "outros": []
+        "outros": [
+          {
+            "rotulo": "upgrade #1 (R$ 245)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/39YDEZ7J9O?cupom=UPCMB1"
+          },
+          {
+            "rotulo": "upgrade #2 (R$ 157)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/1W3ZA3RQW2?cupom=UPCMB9"
+          }
+        ]
       },
       "orderbump": "Assinatura Básica (Resumo + Flashcards) anual",
       "orderbumpProdutos": null,
@@ -197,11 +208,11 @@
         "leg-tributaria:R2",
         "Assinatura:R2",
         "outros-produtos (15.12.25):R2",
-        "Página6_conflict616946819:R4",
-        "Legislação Tributária:R45"
+        "Legislação Tributária:R2",
+        "Página6_conflict616946819:R4"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 1397 (6 ocorrência(s)); divergente(s): R$ 997 (Legislação Tributária:R45)"
+        "preco-conflito: preço cheio: adotado R$ 1397 (6 ocorrência(s)); divergente(s): R$ 997 (Legislação Tributária:R2)"
       ]
     },
     {
@@ -523,7 +534,7 @@
       ],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": "Combo",
       "area": "Fiscal",
       "ferramenta": "R + F + Q + V",
@@ -564,13 +575,13 @@
         "assinaturas:R34",
         "outros-produtos:R31",
         "leg-tributaria:R50",
+        "Legislação Tributária:R43",
+        "Legislação Tributária:R50",
         "Assinatura:R31",
-        "outros-produtos (15.12.25):R32",
-        "Legislação Tributária:R35",
-        "Legislação Tributária:R43"
+        "outros-produtos (15.12.25):R32"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 397 (5 ocorrência(s)); divergente(s): R$ 497 (Legislação Tributária:R35), R$ 97 (Legislação Tributária:R43)"
+        "preco-conflito: preço cheio: adotado R$ 397 (5 ocorrência(s)); divergente(s): R$ 497 (Legislação Tributária:R43), R$ 97 (Legislação Tributária:R50)"
       ]
     },
     {
@@ -878,7 +889,7 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -912,11 +923,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R49"
+        "Legislação Tributária:R3"
       ],
       "avisos": []
     },
@@ -1122,7 +1133,7 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Combo",
@@ -1160,7 +1171,7 @@
       "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
       "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R25"
+        "Legislação Tributária:R4"
       ],
       "avisos": []
     },
@@ -1171,9 +1182,9 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Combo",
       "formato": null,
       "sefaz": "SEFAZ-MT",
@@ -1214,7 +1225,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R31"
+        "Legislação Tributária:R39"
       ],
       "avisos": []
     },
@@ -1225,9 +1236,9 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Combo",
       "formato": null,
       "sefaz": "SEFA-PA",
@@ -1264,11 +1275,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
-      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R10"
+        "Legislação Tributária:R30"
       ],
       "avisos": []
     },
@@ -1279,7 +1290,7 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Combo",
@@ -1313,11 +1324,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
-      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R16"
+        "Legislação Tributária:R5"
       ],
       "avisos": []
     },
@@ -1328,7 +1339,7 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Combo",
@@ -1362,11 +1373,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "O edital da SEFAZ-SE veio idêntico ao último certame, principalmente, no que diz respeito à “lei seca”. Para promover a compreensão da Legislação Tributária Estadual você não perderá tempo entrando no site e baixando toda a legislação.\n\n➥ só o nosso VADE MECUM, vai te entregar a lei seca:\n▸ compilada;\n▸ organizada; e\n▸ milimétricamente formatada\n\n➥ com o nosso RESUMO ESQUEMATIZADO, você irá ler (de forma leve, sem pausas e com máxima retenção) os pontos mais importantes para dominar a CEBRASPE (nosso material é elaborado com base no HISTÓRICO DE COBRANÇA da banca).\n\n➥ para revisar de forma ativa, você usará nossos FLASHCARDS e QUESTÕES INÉDITAS LITERAIS.",
-      "disciplinas": "O combo conterá os seguintes materiais:\n▸ Vade Mecum em PDF\n▸ Resumos esquematizados em PDF\n▸ Flashcards digitais (plataforma ANKI)\n▸ Questões inéditas literais em PDF (formato CERTO/ERRADO)\n\n—\n\nO material abordará os seguintes tópicos de Legislação Tributária, conforme conteúdo programático:\n\nLEGISLAÇÃO TRIBUTÁRIA\n\n01. Lei Estadual nº 3.796/1996 e Decreto Estadual nº 21.400/2002 e anexos (Regulamento do ICMS)\n02. Lei Estadual nº 7.651/2013 e Decreto Estadual nº 29.803/2014 (Processo Administrativo Fiscal) \n03. Lei Estadual nº 3.140/1991 e suas alterações e Decreto Estadual nº 29.935/2014 (Programa Sergipano de Desenvolvimento Industrial – PSDI)\n04. Fundo Estadual de Equilíbrio Fiscal (FEEF): Lei nº 8.180/2016 e Decreto nº 30.479/2017 (Regulamento do FEEF)\n05. Lei Estadual nº 7.655/2013 e Decreto Estadual nº 29.684/2014 (Regulamento do IPVA)\n06. Lei Estadual nº 7.724/2013 e Decreto Estadual nº 29.994/2015 (Regulamento do ITCMD)\n07. Lei Estadual nº 8.638/2019 – TFSD\n08. Lei nº 4.731/2002 (Dispõe sobre o Fundo Estadual de Combate e Erradicação da Pobreza de Sergipe e sobre a adição de pontos percentuais a alíquotas do ICMS incidentes em determinadas operações e prestações com determinados produtos e serviços, com a correspondente arrecadação vinculada ao mesmo Fundo, e dá providências correlatas)",
-      "cronograma": "DISPONÍVEL PARA DOWNLOAD\nVADE MECUM [Versão 1] | 1033 páginas\n▸ versão vertical 1 coluna\n▸ versão vertical 2 colunas\n▸ versão horizontal 2 colunas\n\nRESUMOS | 320 páginas\n\n▸ Lei nº 8.638/2019 – TFSD ➞ 45 páginas\n\n▸ Lei nº 4.731/2002 – FECEP ➞ 14 páginas\n\n▸ Lei nº 7.724/2013 e Decreto nº 29.994/2015 – ITCMD ➞ 39 páginas\n\n▸Lei nº 7.655/2013 e Decreto nº 29.684/2014 – IPVA ➞ 43 páginas\n\n▸Lei nº 3.796/1996 e Decreto nº 21.400/2002 – ICMS ➞ 77 Páginas\n\n▸ Lei nº 3.140/1991  e Decreto nº 29.935/2014 – PSDI ➞ 24 Páginas\n\n▸ Lei nº 8.180/2016 e Decreto nº 30.479/2017 – FEEF ➞  11 Páginas\n\n▸ Lei nº 7.651/2013 e Decreto nº 29.803/2014 – PAF ➞  67 Páginas\n\n \n\nFLASHCARDS  | 468 cards\n\n▸ Lei nº 8.638/2019 – TFSD ➞ 41 cards\n\n▸ Lei nº 4.731/2002 – FECEP ➞ 12 cards\n\n▸ Lei nº 7.724/2013 e Decreto nº 29.994/2015 – ITCMD ➞ 79 cards\n\n▸ Lei nº 7.655/2013 e Decreto nº 29.684/2014 – IPVA ➞ 93 cards\n\n▸ Lei nº 3.796/1996 e Decreto nº 21.400/2002 – ICMS ➞ 105 cards\n\n▸ Lei nº 3.140/1991  e Decreto nº 29.935/2014 – PSDI ➞ 37 cards\n\n▸ Lei nº 8.180/2016 e Decreto nº 30.479/2017 – FEEF ➞ 14 cards\n\n▸ Lei nº 7.651/2013 e Decreto nº 29.803/2014 – PAF ➞ 87 cards\n\nQUESTÕES INÉDITAS | (formato certo e errado) \n\n▸ Legislação Tributária Estadual SEFAZ – SE  ➞ 200 questões",
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R20"
+        "Legislação Tributária:R29"
       ],
       "avisos": []
     },
@@ -1414,11 +1425,11 @@
         "leg-tributaria:R19",
         "Assinatura:R27",
         "outros-produtos (15.12.25):R27",
-        "Página6_conflict616946819:R26",
-        "Legislação Tributária:R28"
+        "Legislação Tributária:R36",
+        "Página6_conflict616946819:R26"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 597 (6 ocorrência(s)); divergente(s): R$ 397 (Legislação Tributária:R28)",
+        "preco-conflito: preço cheio: adotado R$ 597 (6 ocorrência(s)); divergente(s): R$ 397 (Legislação Tributária:R36)",
         "preco-conflito: preço black: adotado R$ 257 (3 ocorrência(s)); divergente(s): R$ 417.9 (leg-tributaria:R19 +1)"
       ]
     },
@@ -1478,9 +1489,9 @@
       ],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Combo",
       "formato": null,
       "sefaz": "SEFAZ-SP",
@@ -1521,11 +1532,11 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R41",
-        "Legislação Tributária:R44"
+        "Legislação Tributária:R48",
+        "Legislação Tributária:R51"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 497 (1 ocorrência(s)); divergente(s): R$ 257 (Legislação Tributária:R44)"
+        "preco-conflito: preço cheio: adotado R$ 497 (1 ocorrência(s)); divergente(s): R$ 257 (Legislação Tributária:R51)"
       ]
     },
     {
@@ -1582,7 +1593,7 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Combo",
@@ -1604,16 +1615,6 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/6W4GEP1Y0Z"
-          },
-          {
-            "rotulo": "upgrade #1 (R$ 245)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/39YDEZ7J9O?cupom=UPCMB1"
-          },
-          {
-            "rotulo": "upgrade #2 (R$ 157)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/1W3ZA3RQW2?cupom=UPCMB9"
           }
         ]
       },
@@ -1630,7 +1631,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R2"
+        "Legislação Tributária:R6"
       ],
       "avisos": []
     },
@@ -1641,7 +1642,7 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Combo",
@@ -1690,9 +1691,9 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Combo",
       "formato": null,
       "sefaz": "SEFAZ-BA",
@@ -1712,16 +1713,6 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/R9JX71EY0X"
-          },
-          {
-            "rotulo": "upgrade #1 (R$ 245)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/60EE5NA303?cupom=UPCMB1"
-          },
-          {
-            "rotulo": "upgrade #2 (R$ 157)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/60EE5NA303?cupom=UPCMB9"
           }
         ]
       },
@@ -1734,11 +1725,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R19"
+        "Legislação Tributária:R8"
       ],
       "avisos": []
     },
@@ -2009,9 +2000,9 @@
       "nomesAlternativos": [],
       "categoria": "combo",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Combo",
       "formato": null,
       "sefaz": "Receita Federal",
@@ -2043,11 +2034,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R53"
+        "Legislação Tributária:R9"
       ],
       "avisos": []
     },
@@ -2769,7 +2760,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -2803,11 +2794,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R48"
+        "Legislação Tributária:R10"
       ],
       "avisos": []
     },
@@ -4560,6 +4551,135 @@
       "avisos": []
     },
     {
+      "id": "flashcards-isolado-legislacao-tributaria-iss-cuiaba",
+      "idEduzz": null,
+      "nome": "Flashcards isolado Legislação Tributária ISS Cuiabá",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": null,
+      "sefaz": "ISS CUIABÁ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R56"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "flashcards-isolado-legislacao-tributaria-porto-alegre",
+      "idEduzz": null,
+      "nome": "Flashcards isolado Legislação Tributária Porto Alegre",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Flashcards",
+      "formato": null,
+      "sefaz": "ISS POA",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R60"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "flashcards-isolado-legislacao-tributaria-sao-paulo",
+      "idEduzz": null,
+      "nome": "Flashcards isolado Legislação Tributária São Paulo",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "ISS SP",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R64"
+      ],
+      "avisos": []
+    },
+    {
       "id": "flashcards-isolado-legislacao-tributaria-sefa-pa",
       "idEduzz": "2902073",
       "nome": "Flashcards isolado Legislação Tributária SEFA-PA",
@@ -4642,21 +4762,6 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/xfzv2kqx"
-          },
-          {
-            "rotulo": "black (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
-            "preco": null,
-            "url": "https://chk.eduzz.com/rgjnzxs6"
-          },
-          {
-            "rotulo": "upgrade #1 (R$ 245)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/E0D6X7VN91?cupom=UPCMB1"
-          },
-          {
-            "rotulo": "upgrade #2 (R$ 157)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/E0D6X7VN91?cupom=UPCMB9"
           }
         ]
       },
@@ -4669,9 +4774,9 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Sim, nós sabemos… o edital da SEFAZ-GO veio gigantesco: são mais de 880 páginas de “lei seca” só de Legislação Tributária.\n\nPois é, agora, você não perderá tempo entrando no site e baixando toda a legislação (bagunçada, com vários artigos revogados e notas de rodapé sem fim…).\n\n➥ só o nosso VADE MECUM, vai te entregar 354 páginas, com a lei seca:\n▸ compilada;\n▸ organizada; e\n▸ milimétricamente formatada\n\n➥ com o nosso RESUMO ESQUEMATIZADO, você irá ler (de forma leve, sem pausas e com máxima retenção) os pontos mais importantes para dominar a FCC (nosso material é elaborado com base no HISTÓRICO DE COBRANÇA da banca).\n\n➥ para revisar de forma ativa, você usará nossos FLASHCARDS e QUESTÕES INÉDITAS LITERAIS.\n\nBÔNUS\nAo final do curso, iremos liberar um material “bônus”:\n➥ Vade Mecum de legislação tributária grifado\n➥ Resumo compilando os esquemas mais importantes de cada tópico\n➥ Flashcards selecionados a dedo",
-      "disciplinas": "O combo conterá os seguintes materiais:\n▸ Vade Mecum em PDF\n▸ Resumos esquematizados em PDF\n▸ Flashcards digitais (plataforma ANKI)\n▸ Questões inéditas literais em PDF (formato CERTO/ERRADO)\n\n—\n\nO material abordará os seguintes tópicos de Legislação Tributária, conforme conteúdo programático:\n\nLEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "VADE MECUM [Versão 4] | 351 páginas\n▸ versão vertical 1 coluna\n▸ versão vertical 2 colunas\n▸ versão horizontal 2 colunas\n\nㅤ\n\nFLASHCARDS | 983 flashcards\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 55 flashcards\n\n▸ Lei nº 11.180/1990 (FOMENTAR) ➞ 51 flashcards\n\n▸ Lei nº 104/2013 (Código do Contribuinte) ➞ 76 flashcards\n\n▸ Lei nº 20.787/2020 (ProGoiás) ➞ 46 flashcards\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 20 flashcards\n\n▸ Instrução Normativa nº 199/2022 – SRE ➞ 18 flashcards\n\n▸ Ajuste SINIEF nº 19/2016 (Cláusula I a XI) ➞ 40 flashcards\n\n▸ Ajuste SINIEF nº 07/2005 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XIV-A, XV-A)  ➞ 49 flashcards\n\n▸ Ajuste SINIEF nº 21/2010 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 31 flashcards\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 164 flashcards\n\n▸ Lei nº 11.651/1991 (Código Tributário do Estado) ➞ 276 cards\n\n▸ Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞ 49 cards\n\n▸ Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞ 37 cards\n\n▸ Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞ 43 cards\n\n▸ Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final ➞ 14 cards\n\n▸ Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações ➞ 14 cards\n\n \n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n°19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\nRESUMO + FLASHCARDS\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\nQUESTÕES INÉDITAS\n\nAté 10/10/2025 \n\nLista de questões inéditas literais no formato CERTO e ERRADO",
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
         "leg-tributaria:R31",
         "assinaturas:R41",
@@ -4680,11 +4785,11 @@
         "Combos Regulares:R35",
         "Assinatura:R38",
         "outros-produtos (15.12.25):R39",
-        "Legislação Tributária:R12",
+        "Legislação Tributária:R32",
         "Página6_conflict616946819:R28"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 197 (8 ocorrência(s)); divergente(s): R$ 257 (Legislação Tributária:R12)"
+        "preco-conflito: preço cheio: adotado R$ 197 (8 ocorrência(s)); divergente(s): R$ 257 (Legislação Tributária:R32)"
       ]
     },
     {
@@ -4694,9 +4799,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Flashcards",
       "formato": null,
       "sefaz": "SEFAZ-AL",
@@ -4716,11 +4821,6 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/40QR1PGJ9B"
-          },
-          {
-            "rotulo": "black (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
-            "preco": null,
-            "url": "https://chk.eduzz.com/ky23lgzw"
           }
         ]
       },
@@ -4737,7 +4837,7 @@
       "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
       "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R14"
+        "Legislação Tributária:R11"
       ],
       "avisos": []
     },
@@ -4798,9 +4898,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Flashcards",
       "formato": null,
       "sefaz": "SEFAZ-BA",
@@ -4822,14 +4922,19 @@
             "url": "https://chk.eduzz.com/39YNJ3ZJWO"
           },
           {
+            "rotulo": "black (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
+            "preco": null,
+            "url": "https://chk.eduzz.com/rgjnzxs6"
+          },
+          {
             "rotulo": "upgrade #1 (R$ 245)",
             "preco": null,
-            "url": "https://sun.eduzz.com/KW8KDG5D01?cupom=UPCMB1"
+            "url": "https://sun.eduzz.com/E0D6X7VN91?cupom=UPCMB1"
           },
           {
             "rotulo": "upgrade #2 (R$ 157)",
             "preco": null,
-            "url": "https://sun.eduzz.com/KW8KDG5D01?cupom=UPCMB9"
+            "url": "https://sun.eduzz.com/E0D6X7VN91?cupom=UPCMB9"
           }
         ]
       },
@@ -4842,11 +4947,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
-      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "sobre": "Sim, nós sabemos… o edital da SEFAZ-GO veio gigantesco: são mais de 880 páginas de “lei seca” só de Legislação Tributária.\n\nPois é, agora, você não perderá tempo entrando no site e baixando toda a legislação (bagunçada, com vários artigos revogados e notas de rodapé sem fim…).\n\n➥ só o nosso VADE MECUM, vai te entregar 354 páginas, com a lei seca:\n▸ compilada;\n▸ organizada; e\n▸ milimétricamente formatada\n\n➥ com o nosso RESUMO ESQUEMATIZADO, você irá ler (de forma leve, sem pausas e com máxima retenção) os pontos mais importantes para dominar a FCC (nosso material é elaborado com base no HISTÓRICO DE COBRANÇA da banca).\n\n➥ para revisar de forma ativa, você usará nossos FLASHCARDS e QUESTÕES INÉDITAS LITERAIS.\n\nBÔNUS\nAo final do curso, iremos liberar um material “bônus”:\n➥ Vade Mecum de legislação tributária grifado\n➥ Resumo compilando os esquemas mais importantes de cada tópico\n➥ Flashcards selecionados a dedo",
+      "disciplinas": "O combo conterá os seguintes materiais:\n▸ Vade Mecum em PDF\n▸ Resumos esquematizados em PDF\n▸ Flashcards digitais (plataforma ANKI)\n▸ Questões inéditas literais em PDF (formato CERTO/ERRADO)\n\n—\n\nO material abordará os seguintes tópicos de Legislação Tributária, conforme conteúdo programático:\n\nLEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "VADE MECUM [Versão 4] | 351 páginas\n▸ versão vertical 1 coluna\n▸ versão vertical 2 colunas\n▸ versão horizontal 2 colunas\n\nㅤ\n\nFLASHCARDS | 983 flashcards\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 55 flashcards\n\n▸ Lei nº 11.180/1990 (FOMENTAR) ➞ 51 flashcards\n\n▸ Lei nº 104/2013 (Código do Contribuinte) ➞ 76 flashcards\n\n▸ Lei nº 20.787/2020 (ProGoiás) ➞ 46 flashcards\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 20 flashcards\n\n▸ Instrução Normativa nº 199/2022 – SRE ➞ 18 flashcards\n\n▸ Ajuste SINIEF nº 19/2016 (Cláusula I a XI) ➞ 40 flashcards\n\n▸ Ajuste SINIEF nº 07/2005 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XIV-A, XV-A)  ➞ 49 flashcards\n\n▸ Ajuste SINIEF nº 21/2010 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 31 flashcards\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 164 flashcards\n\n▸ Lei nº 11.651/1991 (Código Tributário do Estado) ➞ 276 cards\n\n▸ Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞ 49 cards\n\n▸ Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞ 37 cards\n\n▸ Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞ 43 cards\n\n▸ Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final ➞ 14 cards\n\n▸ Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações ➞ 14 cards\n\n \n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n°19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\nRESUMO + FLASHCARDS\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\nQUESTÕES INÉDITAS\n\nAté 10/10/2025 \n\nLista de questões inéditas literais no formato CERTO e ERRADO",
       "fontes": [
-        "Legislação Tributária:R17"
+        "Legislação Tributária:R12"
       ],
       "avisos": []
     },
@@ -4857,7 +4962,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -4895,7 +5000,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R22"
+        "Legislação Tributária:R34"
       ],
       "avisos": []
     },
@@ -5051,12 +5156,98 @@
       "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
         "leg-tributaria:R43",
-        "Página6_conflict616946819:R33",
-        "Legislação Tributária:R30"
+        "Legislação Tributária:R38",
+        "Página6_conflict616946819:R33"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 197 (2 ocorrência(s)); divergente(s): R$ 257 (Legislação Tributária:R30)"
+        "preco-conflito: preço cheio: adotado R$ 197 (2 ocorrência(s)); divergente(s): R$ 257 (Legislação Tributária:R38)"
       ]
+    },
+    {
+      "id": "flashcards-isolado-legislacao-tributaria-sefaz-pr",
+      "idEduzz": null,
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-PR",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-PR",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R68"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "flashcards-isolado-legislacao-tributaria-sefaz-rj",
+      "idEduzz": null,
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-RJ",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-RJ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R76"
+      ],
+      "avisos": []
     },
     {
       "id": "flashcards-isolado-legislacao-tributaria-sefaz-rn",
@@ -5112,8 +5303,8 @@
         "Combos Regulares:R42",
         "Assinatura:R45",
         "outros-produtos (15.12.25):R46",
-        "Página6_conflict616946819:R31",
-        "Legislação Tributária:R33"
+        "Legislação Tributária:R41",
+        "Página6_conflict616946819:R31"
       ],
       "avisos": [
         "preco-conflito: preço black: adotado R$ 137 (4 ocorrência(s)); divergente(s): R$ 137.9 (leg-tributaria:R41 +1)"
@@ -5126,7 +5317,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -5148,8 +5339,56 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/mzdpsrk2"
+          },
+          {
+            "rotulo": "black (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
+            "preco": null,
+            "url": "https://chk.eduzz.com/smrolhsl"
           }
         ]
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "fontes": [
+        "Legislação Tributária:R13"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "flashcards-isolado-legislacao-tributaria-sefaz-se",
+      "idEduzz": null,
+      "nome": "Flashcards isolado Legislação Tributária SEFAZ-SE",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-SE",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
       },
       "orderbump": null,
       "orderbumpProdutos": null,
@@ -5164,7 +5403,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R40"
+        "Legislação Tributária:R72"
       ],
       "avisos": []
     },
@@ -5214,8 +5453,8 @@
         "Combos Regulares:R44",
         "Assinatura:R47",
         "outros-produtos (15.12.25):R48",
-        "Página6_conflict616946819:R32",
-        "Legislação Tributária:R42"
+        "Legislação Tributária:R49",
+        "Página6_conflict616946819:R32"
       ],
       "avisos": [
         "preco-conflito: preço black: adotado R$ 137 (4 ocorrência(s)); divergente(s): R$ 137.9 (leg-tributaria:R42 +1)"
@@ -5228,7 +5467,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -5250,6 +5489,11 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/7tnzwfzg"
+          },
+          {
+            "rotulo": "black (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
+            "preco": null,
+            "url": "https://chk.eduzz.com/ky23lgzw"
           }
         ]
       },
@@ -5262,11 +5506,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R46"
+        "Legislação Tributária:R14"
       ],
       "avisos": []
     },
@@ -5277,7 +5521,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -5315,7 +5559,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R47"
+        "Legislação Tributária:R15"
       ],
       "avisos": []
     },
@@ -5326,7 +5570,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -5364,7 +5608,7 @@
       "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
       "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R4"
+        "Legislação Tributária:R16"
       ],
       "avisos": []
     },
@@ -5375,7 +5619,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Flashcards",
@@ -5397,6 +5641,16 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/69K18757WO"
+          },
+          {
+            "rotulo": "upgrade #1 (R$ 245)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/KW8KDG5D01?cupom=UPCMB1"
+          },
+          {
+            "rotulo": "upgrade #2 (R$ 157)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/KW8KDG5D01?cupom=UPCMB9"
           }
         ]
       },
@@ -5413,7 +5667,7 @@
       "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
       "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R9"
+        "Legislação Tributária:R17"
       ],
       "avisos": []
     },
@@ -5424,9 +5678,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Flashcards",
       "formato": null,
       "sefaz": "SEFAZ-DF",
@@ -5446,16 +5700,6 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/60E2QYN8W3"
-          },
-          {
-            "rotulo": "upgrade #1 (R$ 245)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/39YDEZ7J9O?cupom=UPCMB1"
-          },
-          {
-            "rotulo": "upgrade #2 (R$ 157)",
-            "preco": null,
-            "url": "https://sun.eduzz.com/39YDEZ7J9O?cupom=UPCMB9"
           }
         ]
       },
@@ -5472,7 +5716,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R27"
+        "Legislação Tributária:R18"
       ],
       "avisos": []
     },
@@ -5828,9 +6072,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Questões Inéditas",
       "formato": null,
       "sefaz": "SEFAZ-RN",
@@ -5866,7 +6110,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R39"
+        "Legislação Tributária:R47"
       ],
       "avisos": []
     },
@@ -5877,9 +6121,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Questões Inéditas",
       "formato": null,
       "sefaz": "ISS-Guarulhos",
@@ -5899,6 +6143,16 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/89AX785E0D"
+          },
+          {
+            "rotulo": "upgrade #1 (R$ 245)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/60EE5NA303?cupom=UPCMB1"
+          },
+          {
+            "rotulo": "upgrade #2 (R$ 157)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/60EE5NA303?cupom=UPCMB9"
           }
         ]
       },
@@ -5915,7 +6169,93 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R6"
+        "Legislação Tributária:R19"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "questoes-ineditas-legislacao-tributaria-iss-cuiaba",
+      "idEduzz": null,
+      "nome": "Questões Inéditas Legislação Tributária ISS Cuiabá",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Questões Inéditas",
+      "formato": null,
+      "sefaz": "ISS CUIABÁ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R57"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "questoes-ineditas-legislacao-tributaria-porto-alegre",
+      "idEduzz": null,
+      "nome": "Questões Inéditas Legislação Tributária Porto Alegre",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Questões Inéditas",
+      "formato": null,
+      "sefaz": "ISS POA",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R61"
       ],
       "avisos": []
     },
@@ -5975,9 +6315,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Questões Inéditas",
       "formato": null,
       "sefaz": "SEFAZ-MT",
@@ -6013,7 +6353,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R34"
+        "Legislação Tributária:R42"
       ],
       "avisos": []
     },
@@ -6024,7 +6364,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Questões Inéditas",
@@ -6058,11 +6398,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
-      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R24"
+        "Legislação Tributária:R35"
       ],
       "avisos": []
     },
@@ -6206,9 +6546,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Resumo",
       "formato": null,
       "sefaz": "Receita Federal",
@@ -6240,11 +6580,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "O edital da SEFAZ-SE veio idêntico ao último certame, principalmente, no que diz respeito à “lei seca”. Para promover a compreensão da Legislação Tributária Estadual você não perderá tempo entrando no site e baixando toda a legislação.\n\n➥ só o nosso VADE MECUM, vai te entregar a lei seca:\n▸ compilada;\n▸ organizada; e\n▸ milimétricamente formatada\n\n➥ com o nosso RESUMO ESQUEMATIZADO, você irá ler (de forma leve, sem pausas e com máxima retenção) os pontos mais importantes para dominar a CEBRASPE (nosso material é elaborado com base no HISTÓRICO DE COBRANÇA da banca).\n\n➥ para revisar de forma ativa, você usará nossos FLASHCARDS e QUESTÕES INÉDITAS LITERAIS.",
+      "disciplinas": "O combo conterá os seguintes materiais:\n▸ Vade Mecum em PDF\n▸ Resumos esquematizados em PDF\n▸ Flashcards digitais (plataforma ANKI)\n▸ Questões inéditas literais em PDF (formato CERTO/ERRADO)\n\n—\n\nO material abordará os seguintes tópicos de Legislação Tributária, conforme conteúdo programático:\n\nLEGISLAÇÃO TRIBUTÁRIA\n\n01. Lei Estadual nº 3.796/1996 e Decreto Estadual nº 21.400/2002 e anexos (Regulamento do ICMS)\n02. Lei Estadual nº 7.651/2013 e Decreto Estadual nº 29.803/2014 (Processo Administrativo Fiscal) \n03. Lei Estadual nº 3.140/1991 e suas alterações e Decreto Estadual nº 29.935/2014 (Programa Sergipano de Desenvolvimento Industrial – PSDI)\n04. Fundo Estadual de Equilíbrio Fiscal (FEEF): Lei nº 8.180/2016 e Decreto nº 30.479/2017 (Regulamento do FEEF)\n05. Lei Estadual nº 7.655/2013 e Decreto Estadual nº 29.684/2014 (Regulamento do IPVA)\n06. Lei Estadual nº 7.724/2013 e Decreto Estadual nº 29.994/2015 (Regulamento do ITCMD)\n07. Lei Estadual nº 8.638/2019 – TFSD\n08. Lei nº 4.731/2002 (Dispõe sobre o Fundo Estadual de Combate e Erradicação da Pobreza de Sergipe e sobre a adição de pontos percentuais a alíquotas do ICMS incidentes em determinadas operações e prestações com determinados produtos e serviços, com a correspondente arrecadação vinculada ao mesmo Fundo, e dá providências correlatas)",
+      "cronograma": "DISPONÍVEL PARA DOWNLOAD\nVADE MECUM [Versão 1] | 1033 páginas\n▸ versão vertical 1 coluna\n▸ versão vertical 2 colunas\n▸ versão horizontal 2 colunas\n\nRESUMOS | 320 páginas\n\n▸ Lei nº 8.638/2019 – TFSD ➞ 45 páginas\n\n▸ Lei nº 4.731/2002 – FECEP ➞ 14 páginas\n\n▸ Lei nº 7.724/2013 e Decreto nº 29.994/2015 – ITCMD ➞ 39 páginas\n\n▸Lei nº 7.655/2013 e Decreto nº 29.684/2014 – IPVA ➞ 43 páginas\n\n▸Lei nº 3.796/1996 e Decreto nº 21.400/2002 – ICMS ➞ 77 Páginas\n\n▸ Lei nº 3.140/1991  e Decreto nº 29.935/2014 – PSDI ➞ 24 Páginas\n\n▸ Lei nº 8.180/2016 e Decreto nº 30.479/2017 – FEEF ➞  11 Páginas\n\n▸ Lei nº 7.651/2013 e Decreto nº 29.803/2014 – PAF ➞  67 Páginas\n\n \n\nFLASHCARDS  | 468 cards\n\n▸ Lei nº 8.638/2019 – TFSD ➞ 41 cards\n\n▸ Lei nº 4.731/2002 – FECEP ➞ 12 cards\n\n▸ Lei nº 7.724/2013 e Decreto nº 29.994/2015 – ITCMD ➞ 79 cards\n\n▸ Lei nº 7.655/2013 e Decreto nº 29.684/2014 – IPVA ➞ 93 cards\n\n▸ Lei nº 3.796/1996 e Decreto nº 21.400/2002 – ICMS ➞ 105 cards\n\n▸ Lei nº 3.140/1991  e Decreto nº 29.935/2014 – PSDI ➞ 37 cards\n\n▸ Lei nº 8.180/2016 e Decreto nº 30.479/2017 – FEEF ➞ 14 cards\n\n▸ Lei nº 7.651/2013 e Decreto nº 29.803/2014 – PAF ➞ 87 cards\n\nQUESTÕES INÉDITAS | (formato certo e errado) \n\n▸ Legislação Tributária Estadual SEFAZ – SE  ➞ 200 questões",
       "fontes": [
-        "Legislação Tributária:R52"
+        "Legislação Tributária:R20"
       ],
       "avisos": []
     },
@@ -7193,6 +7533,135 @@
       "avisos": []
     },
     {
+      "id": "resumo-isolado-legislacao-tributaria-iss-cuiaba",
+      "idEduzz": null,
+      "nome": "Resumo isolado Legislação Tributária ISS Cuiabá",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": null,
+      "sefaz": "ISS CUIABÁ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R54"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "resumo-isolado-legislacao-tributaria-iss-porto-alegre",
+      "idEduzz": null,
+      "nome": "Resumo isolado Legislação Tributária ISS Porto Alegre",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Resumo",
+      "formato": null,
+      "sefaz": "ISS POA",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R58"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "resumo-isolado-legislacao-tributaria-iss-sao-paulo",
+      "idEduzz": null,
+      "nome": "Resumo isolado Legislação Tributária ISS São Paulo",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "ISS SP",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R62"
+      ],
+      "avisos": []
+    },
+    {
       "id": "resumo-isolado-legislacao-tributaria-sefa-pa",
       "idEduzz": "2902063",
       "nome": "Resumo isolado Legislação Tributária SEFA-PA",
@@ -7247,7 +7716,7 @@
         "Combos Regulares:R48",
         "Assinatura:R51",
         "outros-produtos (15.12.25):R52",
-        "Legislação Tributária:R11",
+        "Legislação Tributária:R31",
         "Página6_conflict616946819:R34"
       ],
       "avisos": []
@@ -7309,9 +7778,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Resumo",
       "formato": null,
       "sefaz": "SEFAZ-AL",
@@ -7343,11 +7812,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R15"
+        "Legislação Tributária:R21"
       ],
       "avisos": []
     },
@@ -7408,9 +7877,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Resumo",
       "formato": null,
       "sefaz": "SEFAZ-BA",
@@ -7446,7 +7915,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R18"
+        "Legislação Tributária:R22"
       ],
       "avisos": []
     },
@@ -7457,7 +7926,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Resumo",
@@ -7491,11 +7960,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
-      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R21"
+        "Legislação Tributária:R52"
       ],
       "avisos": []
     },
@@ -7602,11 +8071,11 @@
         "Combos Regulares:R47",
         "Assinatura:R50",
         "outros-produtos (15.12.25):R51",
-        "Página6_conflict616946819:R37",
-        "Legislação Tributária:R29"
+        "Legislação Tributária:R37",
+        "Página6_conflict616946819:R37"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 257 (8 ocorrência(s)); divergente(s): R$ 197 (Legislação Tributária:R29)"
+        "preco-conflito: preço cheio: adotado R$ 257 (8 ocorrência(s)); divergente(s): R$ 197 (Legislação Tributária:R37)"
       ]
     },
     {
@@ -7662,8 +8131,94 @@
       "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
         "leg-tributaria:R59",
-        "Página6_conflict616946819:R40",
-        "Legislação Tributária:R32"
+        "Legislação Tributária:R40",
+        "Página6_conflict616946819:R40"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "resumo-isolado-legislacao-tributaria-sefaz-pr",
+      "idEduzz": null,
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-PR",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-PR",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R66"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "resumo-isolado-legislacao-tributaria-sefaz-rj",
+      "idEduzz": null,
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-RJ",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-RJ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R74"
       ],
       "avisos": []
     },
@@ -7721,12 +8276,55 @@
         "Combos Regulares:R50",
         "Assinatura:R53",
         "outros-produtos (15.12.25):R54",
-        "Página6_conflict616946819:R38",
-        "Legislação Tributária:R36"
+        "Legislação Tributária:R44",
+        "Página6_conflict616946819:R38"
       ],
       "avisos": [
-        "preco-conflito: preço cheio: adotado R$ 257 (8 ocorrência(s)); divergente(s): R$ 197 (Legislação Tributária:R36)"
+        "preco-conflito: preço cheio: adotado R$ 257 (8 ocorrência(s)); divergente(s): R$ 197 (Legislação Tributária:R44)"
       ]
+    },
+    {
+      "id": "resumo-isolado-legislacao-tributaria-sefaz-se",
+      "idEduzz": null,
+      "nome": "Resumo isolado Legislação Tributária SEFAZ-SE",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-SE",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R70"
+      ],
+      "avisos": []
     },
     {
       "id": "resumo-isolado-legislacao-tributaria-sefaz-sp",
@@ -7782,8 +8380,8 @@
         "Combos Regulares:R51",
         "Assinatura:R54",
         "outros-produtos (15.12.25):R55",
-        "Página6_conflict616946819:R39",
-        "Legislação Tributária:R38"
+        "Legislação Tributária:R46",
+        "Página6_conflict616946819:R39"
       ],
       "avisos": []
     },
@@ -7794,9 +8392,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Resumo",
       "formato": null,
       "sefaz": "Receita Federal",
@@ -7832,7 +8430,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R50"
+        "Legislação Tributária:R23"
       ],
       "avisos": []
     },
@@ -7843,9 +8441,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Resumo",
       "formato": null,
       "sefaz": "Receita Federal",
@@ -7877,11 +8475,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": null,
-      "disciplinas": null,
-      "cronograma": null,
+      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
+      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
+      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R51"
+        "Legislação Tributária:R24"
       ],
       "avisos": []
     },
@@ -7892,7 +8490,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Resumo",
@@ -7930,7 +8528,7 @@
       "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
       "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
       "fontes": [
-        "Legislação Tributária:R3"
+        "Legislação Tributária:R25"
       ],
       "avisos": []
     },
@@ -7941,7 +8539,7 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Resumo",
@@ -7975,11 +8573,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
-      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R8"
+        "Legislação Tributária:R26"
       ],
       "avisos": []
     },
@@ -7990,9 +8588,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Resumo",
       "formato": null,
       "sefaz": "SEFAZ-DF",
@@ -8012,6 +8610,16 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/4wemhpjj"
+          },
+          {
+            "rotulo": "upgrade #1 (R$ 245)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/39YDEZ7J9O?cupom=UPCMB1"
+          },
+          {
+            "rotulo": "upgrade #2 (R$ 157)",
+            "preco": null,
+            "url": "https://sun.eduzz.com/39YDEZ7J9O?cupom=UPCMB9"
           }
         ]
       },
@@ -8028,7 +8636,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R26"
+        "Legislação Tributária:R27"
       ],
       "avisos": []
     },
@@ -8280,9 +8888,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Vademecum",
       "formato": null,
       "sefaz": "SEFA-PA",
@@ -8302,11 +8910,6 @@
             "rotulo": "normal (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
             "preco": null,
             "url": "https://chk.eduzz.com/E05X5JDGWX"
-          },
-          {
-            "rotulo": "black (aba antiga \"Legislação Tributária\", linhas desalinhadas; conferir na Eduzz)",
-            "preco": null,
-            "url": "https://chk.eduzz.com/smrolhsl"
           }
         ]
       },
@@ -8319,11 +8922,11 @@
       "pastaGdrive": null,
       "linkEdicaoEduzz": null,
       "atualizacao": null,
-      "sobre": "Revise de forma organizada e assertiva os assuntos mais cobrados na disciplina Legislação Tributária em concursos fiscais. Utilizamos uma metodologia baseada no HISTÓRICO DE COBRANÇA, que permite você revisar os assuntos “prediletos” da banca FCC nas últimas provas!",
-      "disciplinas": "LEGISLAÇÃO TRIBUTÁRIA\n01. Lei nº 11.651/91 – CTE GO\n02. Decreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\n03. Lei nº 16.469/09 – PAT GO\n04. Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST\n05. Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais\n06. Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas\n07. Decreto nº 4.852/97 (Anexo XV) – Operações internas para/ consumidor final\n08. Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de informações\n09. Decreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL\n10. Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A)\n11. Ajuste SINIEF n° 19/16 (Cláusula I a XI)\n12. Ajuste SINIEF 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI)\n13. Lei nº 20.787/2020 (ProGoiás)\n14. Lei nº 21.670/22 (art. 5)\n15. Decreto nº 10.187/22\n16. Instrução Normativa Nº 199/2022-SRE\n17. Lei Complementar estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte)\n18. Lei nº 9.489/1984 e Lei nº 11.180/1990 (FOMENTAR)\n19. Lei nº 13.591/2000 (FUNPRODUZIR)",
-      "cronograma": "DISPONÍVEL\n\nRESUMOS | 580 páginas\n▸ Lei nº 13.591/2000 (FUNPRODUZIR) ➞ 34 páginas\n\n▸ Lei Complementar Estadual nº 104/13 (Cód. de Direitos, Garantias e Obrigações do Contribuinte) ➞ 25 páginas\n\n▸ Lei nº 9.489/1984 e Lei  nº 11.180/1990 (FOMENTAR) ➞ 20 páginas\n\n▸ Lei Lei nº 20.787/2020 (ProGoiás) ➞ 25 páginas\n\n▸ Lei nº 21.670/22 (art. 5) ➞ 07 páginas\n\n▸ Instrução Normativa Nº 199/2022 ➞ 12 páginas\n\n▸ Ajuste SINIEF nº 21/10 (Cláusulas I, II, III, III-A, V, VIII, IX, XI) ➞ 18 páginas\n\n▸ Ajuste SINIEF nº 07/05 (Cláusulas I, II, II-A, III, VI, VII, IX, XI, XII, XIII-A, XII, XIV-A, XV-A) ➞ 28 páginas\n\n▸ Ajuste SINIEF n° 19/16 (Cláusula I a XI) ➞ 24 páginas\n\n▸ Lei nº 16.469/2009 (PAT) ➞ 74 páginas\n\n▸ Lei nº 11.651/1991 – (CTE) ➞ 160 páginas\n\n▸Decreto nº 4.852/97 (Títulos I, II, III, IV, V e VI, capítulo I, seção I do Anexo VIII) – ICMS ST ➞  43 páginas\n\n▸Decreto nº 4.852/97 (Capítulo I e V do Anexo IX) – Benefícios Fiscais ➞  30 páginas\n\n▸Decreto nº 4.852/97 (Capítulos I, II, V, VII, VIII, X, XI, XIII, XV, XVI e XVII do Anexo XII) – Obrigações específicas ➞  58 páginas\n\n▸Decreto nº 4.852/97 (Anexo XV) – Operações internas para consumidor final ➞  11 páginas\n\n▸Decreto nº 4.852/97 (Anexo XVIII) – Fornecimento de Informações ➞  11 páginas\n\n🗓️ EM ELABORAÇÃO\n\nAté 20/09/2025 \n\nDecreto nº 4.852/97 (Livro I, Título V, Capítulo IV-A e Livro III, Título II)\nDecreto nº 4.852/97 (Anexo XX, exceto apêndices) – Apuração e pagamento ICMS DIFAL",
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R13"
+        "Legislação Tributária:R33"
       ],
       "avisos": []
     },
@@ -8334,9 +8937,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Vademecum",
       "formato": null,
       "sefaz": "SEFAZ-RN",
@@ -8372,7 +8975,50 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R37"
+        "Legislação Tributária:R45"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "vade-mecum-iss-cuiaba-legislacao-tributaria",
+      "idEduzz": null,
+      "nome": "Vade Mecum ISS Cuiabá Legislação Tributária",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Vademecum",
+      "formato": null,
+      "sefaz": "ISS CUIABÁ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R55"
       ],
       "avisos": []
     },
@@ -8383,9 +9029,9 @@
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Ativo",
       "tipo": null,
-      "area": null,
+      "area": "Fiscal",
       "ferramenta": "Vademecum",
       "formato": null,
       "sefaz": "ISS-Guarulhos",
@@ -8421,7 +9067,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R5"
+        "Legislação Tributária:R28"
       ],
       "avisos": []
     },
@@ -8475,13 +9121,56 @@
       "avisos": []
     },
     {
+      "id": "vade-mecum-porto-alegre-legislacao-tributaria",
+      "idEduzz": null,
+      "nome": "Vade Mecum Porto Alegre Legislação Tributária",
+      "nomesAlternativos": [],
+      "categoria": "isolado",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": "Vademecum",
+      "formato": null,
+      "sefaz": "ISS POA",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R59"
+      ],
+      "avisos": []
+    },
+    {
       "id": "vade-mecum-legislacao-tributaria-sefaz-ce",
       "idEduzz": "3014368",
       "nome": "Vade Mecum SEFAZ-CE Legislação Tributária",
       "nomesAlternativos": [],
       "categoria": "isolado",
       "campanha": null,
-      "status": null,
+      "status": "Inativo",
       "tipo": null,
       "area": "Fiscal",
       "ferramenta": "Vademecum",
@@ -8519,7 +9208,7 @@
       "disciplinas": null,
       "cronograma": null,
       "fontes": [
-        "Legislação Tributária:R23"
+        "Legislação Tributária:R53"
       ],
       "avisos": []
     },
@@ -8696,6 +9385,350 @@
       "cronograma": null,
       "fontes": [
         "Página6_conflict616946819:R3"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "questoes-ineditas-legislacao-tributaria-sao-paulo",
+      "idEduzz": null,
+      "nome": "Questões Inéditas Legislação Tributária São Paulo",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "ISS SP",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R65"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "questoes-ineditas-legislacao-tributaria-sefaz-pr",
+      "idEduzz": null,
+      "nome": "Questões Inéditas Legislação Tributária SEFAZ-PR",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-PR",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R69"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "questoes-ineditas-legislacao-tributaria-sefaz-rj",
+      "idEduzz": null,
+      "nome": "Questões Inéditas Legislação Tributária SEFAZ-RJ",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-RJ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R77"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "questoes-ineditas-legislacao-tributaria-sefaz-se",
+      "idEduzz": null,
+      "nome": "Questões Inéditas Legislação Tributária SEFAZ-SE",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-SE",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R73"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "vade-mecum-sao-paulo-legislacao-tributaria",
+      "idEduzz": null,
+      "nome": "Vade Mecum São Paulo Legislação Tributária",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "ISS SP",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R63"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "vade-mecum-sefaz-pr-legislacao-tributaria",
+      "idEduzz": null,
+      "nome": "Vade Mecum SEFAZ-PR Legislação Tributária",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-PR",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R67"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "vade-mecum-sefaz-rj-legislacao-tributaria",
+      "idEduzz": null,
+      "nome": "Vade Mecum SEFAZ-RJ Legislação Tributária",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-RJ",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R75"
+      ],
+      "avisos": []
+    },
+    {
+      "id": "vade-mecum-sefaz-se-legislacao-tributaria",
+      "idEduzz": null,
+      "nome": "Vade Mecum SEFAZ-SE Legislação Tributária",
+      "nomesAlternativos": [],
+      "categoria": "outro",
+      "campanha": null,
+      "status": "Inativo",
+      "tipo": null,
+      "area": "Fiscal",
+      "ferramenta": null,
+      "formato": null,
+      "sefaz": "SEFAZ-SE",
+      "urlSite": null,
+      "observacao": null,
+      "precos": {
+        "cheio": null,
+        "promocional": null,
+        "black": null
+      },
+      "precosTexto": null,
+      "checkouts": {
+        "normal": null,
+        "black": null,
+        "outros": []
+      },
+      "orderbump": null,
+      "orderbumpProdutos": null,
+      "orderbumpPreco": null,
+      "precoTotalComOrderbump": null,
+      "layoutCheckout": null,
+      "upsell": null,
+      "pastaGdrive": null,
+      "linkEdicaoEduzz": null,
+      "atualizacao": null,
+      "sobre": null,
+      "disciplinas": null,
+      "cronograma": null,
+      "fontes": [
+        "Legislação Tributária:R71"
       ],
       "avisos": []
     },
