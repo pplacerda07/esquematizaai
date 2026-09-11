@@ -103,7 +103,9 @@ Escreva no campo Conteúdo. O que está à esquerda vira o que está à direita.
 | `1. primeiro passo` | Lista numerada |
 | `> uma citação` | Bloco de citação recuado |
 | `[texto do link](https://...)` | Link clicável |
-| `:marca[1.000 vagas]` | Grifo amarelo no meio da frase |
+| `:marca[1.000 vagas]` | Grifo azul, para número que sustenta o argumento |
+| `:ressalva[R$ 4.200]` | Grifo salmão, para valor com ressalva ou dado já superado |
+| `[Voltar ao índice](#sumario-titulo)` | Link cinza discreto, para o fim de seção longa |
 
 > Todo `##` que você escrever entra automaticamente no índice que aparece do lado
 > do artigo. Por isso vale quebrar o texto em seções: o índice se monta sozinho e
@@ -130,17 +132,43 @@ Não espere o edital para começar.
 :::
 ```
 
-### As cinco caixas disponíveis
+### As caixas disponíveis
 
-| Você escreve | Rótulo que aparece |
-|---|---|
-| `:::importante` | Importante |
-| `:::dica` | Dica de prova |
-| `:::sintese` | Em síntese |
-| `:::aprofunde` | Aprofunde em cada concurso |
-| `:::fontes` | Fontes |
+| Você escreve | Rótulo que aparece | Quando usar |
+|---|---|---|
+| `:::importante` | Importante | Aviso que não pode passar batido |
+| `:::lei[CTN, art. 138]` | O que você escrever nos colchetes | **Citação de lei.** Sempre com a referência |
+| `:::dica` | Dica de prova | Recado de estudo, à parte do texto |
+| `:::sintese` | Em síntese | Fechamento, com lista de estrelas |
+| `:::aprofunde` | Aprofunde em cada concurso | Links para outros conteúdos |
+| `:::faq` | nenhum | Agrupa as perguntas frequentes |
+| `:::fontes` | Fontes | Rodapé com as fontes |
 
 Dentro da caixa o texto continua aceitando negrito, link e lista normalmente.
+
+**Lei e Importante não são a mesma coisa.** Citação de dispositivo vai em
+`:::lei`, com a referência entre colchetes. Observação sua sobre a prova vai em
+`:::importante`. Usar a mesma caixa para as duas deixa o artigo de legislação
+todo no mesmo tom, e o leitor perde o que é texto da lei e o que é comentário.
+
+```
+:::lei[CTN, art. 138 · redação dada pela LC 236/2026]
+A responsabilidade é excluída pela denúncia espontânea da infração.
+:::
+```
+
+**O FAQ precisa do `:::faq` em volta.** Sem ele, cada pergunta entra no índice
+lateral do artigo misturada com os subtítulos de verdade.
+
+```
+:::faq
+### A LC 236 já está valendo?
+Sim, desde a publicação.
+
+### Cai na prova deste ano?
+Depende do edital.
+:::
+```
 
 ---
 
