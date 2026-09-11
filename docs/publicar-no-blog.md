@@ -44,16 +44,24 @@ por alguém.
 Uma ou duas frases. Esse texto aparece no card do blog **e no Google**, então é
 ele que faz a pessoa clicar. Não deixe em branco.
 
-**7. Cole o artigo no Conteúdo.**
+**7. Descrição para o Google, se quiser.**
+Campo opcional, de no máximo 155 caracteres. É o texto que aparece embaixo do
+título na busca e no cartão do WhatsApp.
+
+Deixando vazio, o site usa o seu resumo, cortado automaticamente numa quebra de
+palavra. Preencha quando quiser caprichar num post específico: uma frase que
+funcione sozinha, sem depender de ler o resto.
+
+**8. Cole o artigo no Conteúdo.**
 É um campo de texto simples. Formatação se faz com os símbolos da tabela mais
 abaixo. Colar de Word ou Google Docs perde negrito e títulos, então revise
 depois de colar.
 
-**8. Coloque a capa.**
+**9. Coloque a capa.**
 O painel pede um endereço de imagem, não um arquivo. O jeito de conseguir esse
 endereço está na seção "A capa do post".
 
-**9. Escolha o produto em destaque.**
+**10. Escolha o produto em destaque.**
 Uma lista com tudo que está à venda. O que você escolher vira um bloco de oferta
 no fim do artigo, com nome, preço e botão. Deixe em "Nenhum" se o post não for
 vender nada.
@@ -62,7 +70,7 @@ O preço e o link vêm do catálogo na hora de mostrar a página. Isso quer dize
 um artigo de seis meses atrás nunca anuncia um preço que a loja deixou de cobrar,
 e produto que sai do catálogo some do post sozinho.
 
-**10. Escolha o status e salve.**
+**11. Escolha o status e salve.**
 "Salvar como rascunho" guarda sem ninguém ver. "Publicar agora" põe no ar. Na
 dúvida, salve como rascunho, confira no site e publique depois.
 

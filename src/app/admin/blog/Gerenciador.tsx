@@ -14,6 +14,7 @@ type FormState = {
   resumo: string;
   conteudo: string;
   capa_url: string;
+  descricao_seo: string;
   produto_id: string;
   status: 'publicado' | 'rascunho';
 };
@@ -26,6 +27,7 @@ const vazio: FormState = {
   resumo: '',
   conteudo: '',
   capa_url: '',
+  descricao_seo: '',
   produto_id: '',
   status: 'rascunho',
 };
@@ -123,6 +125,7 @@ export default function Gerenciador({
       resumo: p.resumo ?? '',
       conteudo: p.conteudo ?? '',
       capa_url: p.capa_url ?? '',
+      descricao_seo: p.descricao_seo ?? '',
       produto_id: p.produto_id ?? '',
       status: p.status ?? 'rascunho',
     });
@@ -259,6 +262,34 @@ export default function Gerenciador({
                 <div className={styles.field}>
                   <label className={styles.label}>Resumo <span style={{ fontWeight: 400, color: '#888' }}>(aparece nos cards e no Google)</span></label>
                   <textarea className={styles.textarea} rows={2} placeholder="Uma frase que resume o artigo..." value={form.resumo} onChange={(e) => setForm((f) => ({ ...f, resumo: e.target.value }))} />
+                </div>
+
+                <div className={styles.field}>
+                  <label className={styles.label}>
+                    Descrição para o Google{' '}
+                    <span style={{ fontWeight: 400, color: '#888' }}>(opcional)</span>
+                  </label>
+                  <textarea
+                    className={styles.textarea}
+                    rows={2}
+                    maxLength={170}
+                    placeholder="Deixe vazio para usar o resumo, cortado automaticamente"
+                    value={form.descricao_seo}
+                    onChange={(e) => setForm((f) => ({ ...f, descricao_seo: e.target.value }))}
+                  />
+                  <span
+                    style={{
+                      fontSize: '0.78rem',
+                      marginTop: '0.3rem',
+                      display: 'block',
+                      color: form.descricao_seo.length > 155 ? '#95321F' : '#888',
+                    }}
+                  >
+                    {form.descricao_seo.length}/155 caracteres.{' '}
+                    {form.descricao_seo.length > 155
+                      ? 'O Google vai cortar o que passar disso.'
+                      : 'É o texto que aparece embaixo do título na busca.'}
+                  </span>
                 </div>
 
                 <div className={styles.field}>

@@ -9,7 +9,7 @@ import CtaProduto from '@/components/Artigo/CtaProduto';
 import Sumario from '@/components/Artigo/Sumario';
 import Compartilhar from '@/components/Artigo/Compartilhar';
 import { getPostPorSlug, getSlugsPublicados, getPostsPublicados } from '@/lib/blog';
-import { extrairSumario, tempoDeLeitura, dataPorExtenso } from '@/lib/artigo';
+import { extrairSumario, tempoDeLeitura, dataPorExtenso, descricaoParaBusca } from '@/lib/artigo';
 import { SITE_URL } from '@/config';
 import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from '@/components/Artigo/artigo.module.css';
@@ -30,7 +30,9 @@ export async function generateMetadata({
   const post = await getPostPorSlug(slug);
   if (!post) return { title: 'Artigo não encontrado | Esquematiza Aí' };
 
-  const descricao = post.resumo ?? `${post.titulo} — Esquematiza Aí.`;
+  // o resumo continua inteiro no card da listagem; aqui ele vai cortado,
+  // porque a busca mostra ~155 caracteres e corta o resto onde calhar
+  const descricao = descricaoParaBusca(post.descricao_seo, post.resumo, post.titulo);
   const url = `${SITE_URL}/blog/${post.slug}`;
 
   return {

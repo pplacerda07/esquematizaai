@@ -18,6 +18,14 @@ export interface Post {
   categoria: string;
   capa_url: string | null;
   /**
+   * Descrição para o Google e para o cartão de compartilhamento.
+   *
+   * Separada do resumo porque os dois têm tamanhos diferentes: o resumo pode
+   * ser longo no card da listagem, que o CSS corta em quatro linhas, mas a
+   * busca mostra só uns 155 caracteres. Vazio aqui = usa o resumo cortado.
+   */
+  descricao_seo: string | null;
+  /**
    * Produto do catálogo oferecido no fim do post. null = post sem oferta.
    *
    * Guarda só o id: preço, nome e link são lidos do catálogo na hora de
@@ -36,7 +44,7 @@ export interface Post {
 export type PostResumo = Omit<Post, 'conteudo'>;
 
 const CAMPOS_LISTA =
-  'id, slug, titulo, resumo, categoria, capa_url, produto_id, autor, status, publicado_em, criado_em, atualizado_em';
+  'id, slug, titulo, resumo, descricao_seo, categoria, capa_url, produto_id, autor, status, publicado_em, criado_em, atualizado_em';
 
 /** Posts publicados, do mais novo para o mais antigo. `limite` opcional. */
 export async function getPostsPublicados(limite?: number): Promise<PostResumo[]> {

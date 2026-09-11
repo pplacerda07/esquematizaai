@@ -77,3 +77,42 @@ export function dataPorExtenso(iso: string | null): string {
     timeZone: 'UTC',
   }).format(new Date(iso));
 }
+
+/**
+ * Descrição do post para a busca e para o cartão de compartilhamento.
+ *
+ * O Google mostra cerca de 155 caracteres e corta o resto onde calhar. Medido
+ * em 11/09: 6 dos 8 posts passavam de 200, e o do ISS Aracati tinha 726, com o
+ * corte caindo no meio de "R$ 3.347,94". Os outros 571 caracteres não
+ * apareciam em busca nenhuma.
+ *
+ * Por que não bastava deixar o Google cortar: ele corta no caractere, não na
+ * palavra. Aqui o corte é sempre num espaço, e só entra reticência quando
+ * sobrou texto de fora.
+ *
+ * A ordem é: descrição escrita à mão para a busca, depois o resumo cortado,
+ * depois o título. O resumo continua inteiro no card da listagem, que tem CSS
+ * limitando a quatro linhas e não precisa deste corte.
+ */
+export function descricaoParaBusca(
+  descricaoSeo: string | null | undefined,
+  resumo: string | null | undefined,
+  titulo: string,
+  limite = 155,
+): string {
+  const propria = descricaoSeo?.trim();
+  if (propria) return propria;
+
+  const base = resumo?.trim();
+  if (!base) return `${titulo} | Esquematiza Aí.`;
+  if (base.length <= limite) return base;
+
+  // corta no último espaço antes do limite, para não partir palavra nem valor
+  const pedaco = base.slice(0, limite);
+  const espaco = pedaco.lastIndexOf(' ');
+  const cortado = (espaco > limite * 0.6 ? pedaco.slice(0, espaco) : pedaco).replace(
+    /[\s.,;:·-]+$/,
+    '',
+  );
+  return `${cortado}...`;
+}
