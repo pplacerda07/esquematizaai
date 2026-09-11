@@ -699,8 +699,10 @@
   font-family: var(--font-body, 'Rubik', sans-serif);
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-neutral-light, #ffffff);
-  background-color: var(--color-cold-dark, #26344f);
+  /* verde da paleta com texto navy, o mesmo par do botão de compra do site.
+     Verde claro pede texto escuro: branco sobre #8be095 não tem contraste. */
+  color: var(--color-cold-dark, #26344f);
+  background-color: var(--color-green-primary, #8be095);
   border-radius: 2rem;
   padding: 0.7rem 1.4rem;
   min-height: 44px;
@@ -710,7 +712,7 @@
 
 .mentoriaCta:hover,
 .mentoriaCta:focus-visible {
-  background-color: var(--color-hot-primary, #ff7345);
+  background-color: var(--color-green-light, #d1f0d5);
 }
 
 .mentoriaCta svg {
