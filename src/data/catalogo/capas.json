@@ -1,646 +1,671 @@
 {
- "geradoEm": "2026-09-11",
- "fonte": "og:image das páginas de venda, somado ao índice anterior",
- "capas": {
-  "flashcards-adm-financeira-e-orcamentaria-afo": {
-   "src": "/capas/flashcards-adm-financeira-e-orcamentaria-afo.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-administracao-publica": {
-   "src": "/capas/flashcards-isoladas-administracao-publica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-analise-das-demonstracoes-contabeis": {
-   "src": "/capas/flashcards-isoladas-analise-das-demonstracoes-contabeis.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-auditoria-governamental": {
-   "src": "/capas/flashcards-isoladas-auditoria-governamental.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-auditoria-privada": {
-   "src": "/capas/flashcards-isoladas-auditoria-privada.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-banco-de-dados-dimensional-ti": {
-   "src": "/capas/flashcards-isoladas-banco-de-dados-dimensional-ti.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-banco-de-dados-relacional-ti": {
-   "src": "/capas/flashcards-isoladas-banco-de-dados-relacional-ti.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-contabilidade-publica-casp": {
-   "src": "/capas/flashcards-isoladas-contabilidade-publica-casp.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-contabilidade-total": {
-   "src": "/capas/flashcards-contabilidade-total.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-contabilidade-de-custos": {
-   "src": "/capas/flashcards-isoladas-contabilidade-de-custos.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-direito-administrativo": {
-   "src": "/capas/flashcards-isoladas-direito-administrativo.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-direito-civil": {
-   "src": "/capas/flashcards-isoladas-direito-civil.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-direito-constitucional": {
-   "src": "/capas/flashcards-isoladas-direito-constitucional.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-direito-empresarial": {
-   "src": "/capas/flashcards-isoladas-direito-empresarial.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-direito-penal": {
-   "src": "/capas/flashcards-isoladas-direito-penal.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-direito-processual-civil": {
-   "src": "/capas/flashcards-direito-processual-civil.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolada-direito-processual-penal": {
-   "src": "/capas/flashcards-isolada-direito-processual-penal.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-direito-tributario": {
-   "src": "/capas/flashcards-isoladas-direito-tributario.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolada-direitos-humanos": {
-   "src": "/capas/flashcards-isolada-direitos-humanos.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-estatistica": {
-   "src": "/capas/flashcards-estatistica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-gestao-e-governanca-ti": {
-   "src": "/capas/flashcards-isoladas-gestao-e-governanca-ti.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-iss-guarulhos-legislacao-tributaria": {
-   "src": "/capas/flashcards-iss-guarulhos-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-iss-manaus-legislacao-tributaria": {
-   "src": "/capas/flashcards-iss-manaus-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-informatica": {
-   "src": "/capas/flashcards-informatica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-jurisprudencia-direito-constitucional": {
-   "src": "/capas/flashcards-isoladas-jurisprudencia-direito-constitucional.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-jurisprudencia-direito-tributario": {
-   "src": "/capas/flashcards-isoladas-jurisprudencia-direito-tributario.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-jurisprudencia-de-direito-administrativo": {
-   "src": "/capas/flashcards-isoladas-jurisprudencia-de-direito-administrativo.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolada-legislacao-penal-extravagante": {
-   "src": "/capas/flashcards-isolada-legislacao-penal-extravagante.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-legislacao-tributaria-estadual-geral": {
-   "src": "/capas/flashcards-isoladas-legislacao-tributaria-estadual-geral.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-legislacao-tributaria-municipal-geral": {
-   "src": "/capas/flashcards-isoladas-legislacao-tributaria-municipal-geral.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-matematica-financeira": {
-   "src": "/capas/flashcards-isoladas-matematica-financeira.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-portugues": {
-   "src": "/capas/flashcards-portugues.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-pronunciamentos-contabeis": {
-   "src": "/capas/flashcards-isoladas-pronunciamentos-contabeis.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-raciocinio-logico": {
-   "src": "/capas/flashcards-isoladas-raciocinio-logico.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-reforma-tributaria": {
-   "src": "/capas/flashcards-reforma-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-regimento-interno-camara-dos-deputados": {
-   "src": "/capas/flashcards-regimento-interno-camara-dos-deputados.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolado-legislacao-tributaria-sefaz-al": {
-   "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-al.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolado-legislacao-tributaria-sefaz-ba": {
-   "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-ba.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolado-legislacao-tributaria-sefaz-ce": {
-   "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-ce.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolado-legislacao-tributaria-sefaz-df": {
-   "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-df.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolado-legislacao-tributaria-sefaz-rs": {
-   "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-rs.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isolada-simples-nacional": {
-   "src": "/capas/flashcards-isolada-simples-nacional.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-tecnologia-da-informacao": {
-   "src": "/capas/flashcards-tecnologia-da-informacao.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-economia-e-financas-publicas": {
-   "src": "/capas/flashcards-economia-e-financas-publicas.webp",
-   "width": 452,
-   "height": 640
-  },
-  "questoes-ineditas-legislacao-tributaria-sefaz-ce": {
-   "src": "/capas/questoes-ineditas-legislacao-tributaria-sefaz-ce.webp",
-   "width": 452,
-   "height": 640
-  },
-  "direito-tributario-decifrado-iss-guarulhos": {
-   "src": "/capas/direito-tributario-decifrado-iss-guarulhos.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isoladas-administracao-financeira-e-orcamentaria-afo": {
-   "src": "/capas/resumo-isoladas-administracao-financeira-e-orcamentaria-afo.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-administracao-geral": {
-   "src": "/capas/resumo-administracao-geral.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-administracao-publica": {
-   "src": "/capas/resumo-administracao-publica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-auditoria-fiscal-eletronica": {
-   "src": "/capas/resumo-auditoria-fiscal-eletronica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-auditoria-governamental": {
-   "src": "/capas/resumo-isolada-auditoria-governamental.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-auditoria-privada": {
-   "src": "/capas/resumo-auditoria-privada.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-contabilidade-geral-e-avancada": {
-   "src": "/capas/resumo-isolada-contabilidade-geral-e-avancada.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-contabilidade-publica-casp": {
-   "src": "/capas/resumo-isolada-contabilidade-publica-casp.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-direito-administrativo": {
-   "src": "/capas/resumo-isolada-direito-administrativo.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isoladas-direito-civil": {
-   "src": "/capas/resumo-isoladas-direito-civil.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-direito-constitucional": {
-   "src": "/capas/resumo-isolada-direito-constitucional.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-direito-empresarial": {
-   "src": "/capas/resumo-direito-empresarial.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isoladas-direito-penal": {
-   "src": "/capas/resumo-isoladas-direito-penal.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-direito-processual-civil": {
-   "src": "/capas/resumo-direito-processual-civil.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-direito-tributario": {
-   "src": "/capas/resumo-isolada-direito-tributario.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-estatistica": {
-   "src": "/capas/resumo-estatistica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-iss-guarulhos-legislacao-tributaria": {
-   "src": "/capas/resumo-iss-guarulhos-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-iss-mao-legislacao-tributaria": {
-   "src": "/capas/resumo-iss-mao-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-legislacao-tributaria-estadual-geral": {
-   "src": "/capas/resumo-isolada-legislacao-tributaria-estadual-geral.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-legislacao-tributaria-municipal-geral": {
-   "src": "/capas/resumo-legislacao-tributaria-municipal-geral.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isoladas-lingua-portuguesa": {
-   "src": "/capas/resumo-isoladas-lingua-portuguesa.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-matematica-financeira": {
-   "src": "/capas/resumo-isolada-matematica-financeira.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-raciocinio-logico": {
-   "src": "/capas/resumo-isolada-raciocinio-logico.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolada-reforma-tributaria": {
-   "src": "/capas/resumo-isolada-reforma-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolado-legislacao-tributaria-sefaz-al": {
-   "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-al.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolado-legislacao-tributaria-sefaz-ba": {
-   "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-ba.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolado-legislacao-tributaria-sefaz-ce": {
-   "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-ce.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-isolado-legislacao-tributaria-sefaz-df": {
-   "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-df.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-simples-nacional": {
-   "src": "/capas/resumo-simples-nacional.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-de-economia": {
-   "src": "/capas/resumo-de-economia.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-de-lei-de-responsabilidade-fiscal-lrf": {
-   "src": "/capas/resumo-de-lei-de-responsabilidade-fiscal-lrf.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-de-licitacoes-e-contratos-lei-14-133-2021": {
-   "src": "/capas/resumo-de-licitacoes-e-contratos-lei-14-133-2021.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-de-matematica-basica": {
-   "src": "/capas/resumo-de-matematica-basica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "vade-mecum-legislacao-tributaria-sefaz-ce": {
-   "src": "/capas/vade-mecum-legislacao-tributaria-sefaz-ce.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-camara-dos-deputados": {
-   "src": "/capas/combo-flashcards-camara-dos-deputados.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-combo-exame-oab": {
-   "src": "/capas/flashcards-combo-exame-oab.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-fiscal-regular": {
-   "src": "/capas/combo-flashcards-fiscal-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-gestao-e-controle-regular": {
-   "src": "/capas/combo-flashcards-gestao-e-controle-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-tj-sp-pos-edital": {
-   "src": "/capas/combo-flashcards-tj-sp-pos-edital.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-area-policial": {
-   "src": "/capas/flashcards-area-policial.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-tribunais-regular": {
-   "src": "/capas/combo-flashcards-tribunais-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-iss-guarulhos-legislacao-tributaria": {
-   "src": "/capas/combo-iss-guarulhos-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-iss-manaus-legislacao-tributaria": {
-   "src": "/capas/combo-iss-manaus-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-sefaz-al-legislacao-tributaria": {
-   "src": "/capas/combo-sefaz-al-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-legislacao-tributaria-estadual-sefaz-ce": {
-   "src": "/capas/combo-legislacao-tributaria-estadual-sefaz-ce.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-sefaz-df-legislacao-tributaria": {
-   "src": "/capas/combo-sefaz-df-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-regular-reforma-tributaria-para-concursos-publicos": {
-   "src": "/capas/combo-regular-reforma-tributaria-para-concursos-publicos.webp",
-   "width": 452,
-   "height": 640
-  },
-  "reforma-tributaria-sefaz-ce-pos-edital": {
-   "src": "/capas/reforma-tributaria-sefaz-ce-pos-edital.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-regimentos-camara-dos-deputados": {
-   "src": "/capas/combo-flashcards-regimentos-camara-dos-deputados.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumo-fiscal-regular": {
-   "src": "/capas/combo-resumo-fiscal-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumo-gestao-e-controle-regular": {
-   "src": "/capas/combo-resumo-gestao-e-controle-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumos-policial-regular": {
-   "src": "/capas/combo-resumos-policial-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumo-tribunais-regular": {
-   "src": "/capas/combo-resumo-tribunais-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumos-flashcards-fiscal-regular": {
-   "src": "/capas/combo-resumos-flashcards-fiscal-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumos-flashcards-controle-regular": {
-   "src": "/capas/combo-resumos-flashcards-controle-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumos-flashcards-policial-regular": {
-   "src": "/capas/combo-resumos-flashcards-policial-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumos-flashcards-tribunais-regular": {
-   "src": "/capas/combo-resumos-flashcards-tribunais-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "assinatura-flashcards-regular": {
-   "src": "/capas/assinatura-flashcards-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "assinatura-legislacao-tributaria": {
-   "src": "/capas/assinatura-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "assinatura-resumos-regular-flashcards-regular": {
-   "src": "/capas/assinatura-resumos-regular-flashcards-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "assinatura-resumos-regular": {
-   "src": "/capas/assinatura-resumos-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-area-bancaria-regular": {
-   "src": "/capas/combo-flashcards-area-bancaria-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-receita-federal": {
-   "src": "/capas/combo-flashcards-receita-federal.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-flashcards-reta-final-camara-dos-deputados": {
-   "src": "/capas/combo-flashcards-reta-final-camara-dos-deputados.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-legislacao-tributaria-estadual-sefaz-go-pos-edital": {
-   "src": "/capas/combo-legislacao-tributaria-estadual-sefaz-go-pos-edital.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-regimento-interno-regimento-comum-e-codigo-de-etica-camara-dos-deputados": {
-   "src": "/capas/combo-regimento-interno-regimento-comum-e-codigo-de-etica-camara-dos-deputados.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumos-area-bancaria-regular": {
-   "src": "/capas/combo-resumos-area-bancaria-regular.webp",
-   "width": 452,
-   "height": 640
-  },
-  "pacote-resumos-e-flashcards-legislacao-tributaria": {
-   "src": "/capas/pacote-resumos-e-flashcards-legislacao-tributaria.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-comercio-internacional-receita-federal": {
-   "src": "/capas/flashcards-comercio-internacional-receita-federal.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-economia-micro-macro-e-financas-publicas": {
-   "src": "/capas/flashcards-economia-micro-macro-e-financas-publicas.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-estatistica": {
-   "src": "/capas/flashcards-isoladas-estatistica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-informatica": {
-   "src": "/capas/flashcards-isoladas-informatica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-isoladas-portugues": {
-   "src": "/capas/flashcards-isoladas-portugues.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-legislacao-aduaneira-receita-federal": {
-   "src": "/capas/flashcards-legislacao-aduaneira-receita-federal.webp",
-   "width": 452,
-   "height": 640
-  },
-  "flashcards-legislacao-tributaria-federal-receita-federal": {
-   "src": "/capas/flashcards-legislacao-tributaria-federal-receita-federal.webp",
-   "width": 452,
-   "height": 640
-  },
-  "questoes-ineditas-lte-sefaz-mt": {
-   "src": "/capas/questoes-ineditas-lte-sefaz-mt.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-comercio-internacional-receita-federal": {
-   "src": "/capas/resumo-comercio-internacional-receita-federal.webp",
-   "width": 452,
-   "height": 639
-  },
-  "resumo-isolada-estatistica": {
-   "src": "/capas/resumo-isolada-estatistica.webp",
-   "width": 452,
-   "height": 640
-  },
-  "resumo-legislacao-tributaria-sefaz-df": {
-   "src": "/capas/resumo-legislacao-tributaria-sefaz-df.webp",
-   "width": 452,
-   "height": 640
-  },
-  "combo-resumo-ltf-leg-aduaneira-comercio-internacional-receita-federal": {
-   "src": "/capas/combo-resumo-ltf-leg-aduaneira-comercio-internacional-receita-federal.webp",
-   "width": 452,
-   "height": 639
-  },
-  "resumo-legislacao-aduaneira-receita-federal": {
-   "src": "/capas/resumo-legislacao-aduaneira-receita-federal.webp",
-   "width": 452,
-   "height": 639
-  },
-  "resumo-legislacao-tributaria-federal-receita-federal": {
-   "src": "/capas/resumo-legislacao-tributaria-federal-receita-federal.webp",
-   "width": 452,
-   "height": 639
+  "geradoEm": "2026-09-11",
+  "fonte": "og:image das páginas de venda, somado ao índice anterior",
+  "capas": {
+    "flashcards-adm-financeira-e-orcamentaria-afo": {
+      "src": "/capas/flashcards-adm-financeira-e-orcamentaria-afo.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-administracao-publica": {
+      "src": "/capas/flashcards-isoladas-administracao-publica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-analise-das-demonstracoes-contabeis": {
+      "src": "/capas/flashcards-isoladas-analise-das-demonstracoes-contabeis.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-auditoria-governamental": {
+      "src": "/capas/flashcards-isoladas-auditoria-governamental.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-auditoria-privada": {
+      "src": "/capas/flashcards-isoladas-auditoria-privada.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-banco-de-dados-dimensional-ti": {
+      "src": "/capas/flashcards-isoladas-banco-de-dados-dimensional-ti.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-banco-de-dados-relacional-ti": {
+      "src": "/capas/flashcards-isoladas-banco-de-dados-relacional-ti.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-contabilidade-publica-casp": {
+      "src": "/capas/flashcards-isoladas-contabilidade-publica-casp.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-contabilidade-total": {
+      "src": "/capas/flashcards-contabilidade-total.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-contabilidade-de-custos": {
+      "src": "/capas/flashcards-isoladas-contabilidade-de-custos.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-direito-administrativo": {
+      "src": "/capas/flashcards-isoladas-direito-administrativo.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-direito-civil": {
+      "src": "/capas/flashcards-isoladas-direito-civil.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-direito-constitucional": {
+      "src": "/capas/flashcards-isoladas-direito-constitucional.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-direito-empresarial": {
+      "src": "/capas/flashcards-isoladas-direito-empresarial.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-direito-penal": {
+      "src": "/capas/flashcards-isoladas-direito-penal.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-direito-processual-civil": {
+      "src": "/capas/flashcards-direito-processual-civil.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolada-direito-processual-penal": {
+      "src": "/capas/flashcards-isolada-direito-processual-penal.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-direito-tributario": {
+      "src": "/capas/flashcards-isoladas-direito-tributario.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolada-direitos-humanos": {
+      "src": "/capas/flashcards-isolada-direitos-humanos.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-estatistica": {
+      "src": "/capas/flashcards-estatistica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-gestao-e-governanca-ti": {
+      "src": "/capas/flashcards-isoladas-gestao-e-governanca-ti.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-iss-guarulhos-legislacao-tributaria": {
+      "src": "/capas/flashcards-iss-guarulhos-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-iss-manaus-legislacao-tributaria": {
+      "src": "/capas/flashcards-iss-manaus-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-informatica": {
+      "src": "/capas/flashcards-informatica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-jurisprudencia-direito-constitucional": {
+      "src": "/capas/flashcards-isoladas-jurisprudencia-direito-constitucional.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-jurisprudencia-direito-tributario": {
+      "src": "/capas/flashcards-isoladas-jurisprudencia-direito-tributario.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-jurisprudencia-de-direito-administrativo": {
+      "src": "/capas/flashcards-isoladas-jurisprudencia-de-direito-administrativo.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolada-legislacao-penal-extravagante": {
+      "src": "/capas/flashcards-isolada-legislacao-penal-extravagante.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-legislacao-tributaria-estadual-geral": {
+      "src": "/capas/flashcards-isoladas-legislacao-tributaria-estadual-geral.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-legislacao-tributaria-municipal-geral": {
+      "src": "/capas/flashcards-isoladas-legislacao-tributaria-municipal-geral.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-matematica-financeira": {
+      "src": "/capas/flashcards-isoladas-matematica-financeira.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-portugues": {
+      "src": "/capas/flashcards-portugues.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-pronunciamentos-contabeis": {
+      "src": "/capas/flashcards-isoladas-pronunciamentos-contabeis.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-raciocinio-logico": {
+      "src": "/capas/flashcards-isoladas-raciocinio-logico.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-reforma-tributaria": {
+      "src": "/capas/flashcards-reforma-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-regimento-interno-camara-dos-deputados": {
+      "src": "/capas/flashcards-regimento-interno-camara-dos-deputados.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-al": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-al.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-ba": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-ba.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-ce": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-ce.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-df": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-df.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-rs": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-rs.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolada-simples-nacional": {
+      "src": "/capas/flashcards-isolada-simples-nacional.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-tecnologia-da-informacao": {
+      "src": "/capas/flashcards-tecnologia-da-informacao.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-economia-e-financas-publicas": {
+      "src": "/capas/flashcards-economia-e-financas-publicas.webp",
+      "width": 452,
+      "height": 640
+    },
+    "questoes-ineditas-legislacao-tributaria-sefaz-ce": {
+      "src": "/capas/questoes-ineditas-legislacao-tributaria-sefaz-ce.webp",
+      "width": 452,
+      "height": 640
+    },
+    "direito-tributario-decifrado-iss-guarulhos": {
+      "src": "/capas/direito-tributario-decifrado-iss-guarulhos.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isoladas-administracao-financeira-e-orcamentaria-afo": {
+      "src": "/capas/resumo-isoladas-administracao-financeira-e-orcamentaria-afo.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-administracao-geral": {
+      "src": "/capas/resumo-administracao-geral.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-administracao-publica": {
+      "src": "/capas/resumo-administracao-publica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-auditoria-fiscal-eletronica": {
+      "src": "/capas/resumo-auditoria-fiscal-eletronica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-auditoria-governamental": {
+      "src": "/capas/resumo-isolada-auditoria-governamental.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-auditoria-privada": {
+      "src": "/capas/resumo-auditoria-privada.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-contabilidade-geral-e-avancada": {
+      "src": "/capas/resumo-isolada-contabilidade-geral-e-avancada.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-contabilidade-publica-casp": {
+      "src": "/capas/resumo-isolada-contabilidade-publica-casp.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-direito-administrativo": {
+      "src": "/capas/resumo-isolada-direito-administrativo.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isoladas-direito-civil": {
+      "src": "/capas/resumo-isoladas-direito-civil.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-direito-constitucional": {
+      "src": "/capas/resumo-isolada-direito-constitucional.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-direito-empresarial": {
+      "src": "/capas/resumo-direito-empresarial.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isoladas-direito-penal": {
+      "src": "/capas/resumo-isoladas-direito-penal.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-direito-processual-civil": {
+      "src": "/capas/resumo-direito-processual-civil.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-direito-tributario": {
+      "src": "/capas/resumo-isolada-direito-tributario.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-estatistica": {
+      "src": "/capas/resumo-estatistica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-iss-guarulhos-legislacao-tributaria": {
+      "src": "/capas/resumo-iss-guarulhos-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-iss-mao-legislacao-tributaria": {
+      "src": "/capas/resumo-iss-mao-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-legislacao-tributaria-estadual-geral": {
+      "src": "/capas/resumo-isolada-legislacao-tributaria-estadual-geral.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-legislacao-tributaria-municipal-geral": {
+      "src": "/capas/resumo-legislacao-tributaria-municipal-geral.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isoladas-lingua-portuguesa": {
+      "src": "/capas/resumo-isoladas-lingua-portuguesa.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-matematica-financeira": {
+      "src": "/capas/resumo-isolada-matematica-financeira.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-raciocinio-logico": {
+      "src": "/capas/resumo-isolada-raciocinio-logico.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolada-reforma-tributaria": {
+      "src": "/capas/resumo-isolada-reforma-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-al": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-al.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-ba": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-ba.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-ce": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-ce.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-df": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-df.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-simples-nacional": {
+      "src": "/capas/resumo-simples-nacional.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-de-economia": {
+      "src": "/capas/resumo-de-economia.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-de-lei-de-responsabilidade-fiscal-lrf": {
+      "src": "/capas/resumo-de-lei-de-responsabilidade-fiscal-lrf.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-de-licitacoes-e-contratos-lei-14-133-2021": {
+      "src": "/capas/resumo-de-licitacoes-e-contratos-lei-14-133-2021.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-de-matematica-basica": {
+      "src": "/capas/resumo-de-matematica-basica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "vade-mecum-legislacao-tributaria-sefaz-ce": {
+      "src": "/capas/vade-mecum-legislacao-tributaria-sefaz-ce.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-camara-dos-deputados": {
+      "src": "/capas/combo-flashcards-camara-dos-deputados.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-combo-exame-oab": {
+      "src": "/capas/flashcards-combo-exame-oab.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-fiscal-regular": {
+      "src": "/capas/combo-flashcards-fiscal-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-gestao-e-controle-regular": {
+      "src": "/capas/combo-flashcards-gestao-e-controle-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-tj-sp-pos-edital": {
+      "src": "/capas/combo-flashcards-tj-sp-pos-edital.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-area-policial": {
+      "src": "/capas/flashcards-area-policial.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-tribunais-regular": {
+      "src": "/capas/combo-flashcards-tribunais-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-iss-guarulhos-legislacao-tributaria": {
+      "src": "/capas/combo-iss-guarulhos-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-iss-manaus-legislacao-tributaria": {
+      "src": "/capas/combo-iss-manaus-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-sefaz-al-legislacao-tributaria": {
+      "src": "/capas/combo-sefaz-al-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-legislacao-tributaria-estadual-sefaz-ce": {
+      "src": "/capas/combo-legislacao-tributaria-estadual-sefaz-ce.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-sefaz-df-legislacao-tributaria": {
+      "src": "/capas/combo-sefaz-df-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-regular-reforma-tributaria-para-concursos-publicos": {
+      "src": "/capas/combo-regular-reforma-tributaria-para-concursos-publicos.webp",
+      "width": 452,
+      "height": 640
+    },
+    "reforma-tributaria-sefaz-ce-pos-edital": {
+      "src": "/capas/reforma-tributaria-sefaz-ce-pos-edital.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-regimentos-camara-dos-deputados": {
+      "src": "/capas/combo-flashcards-regimentos-camara-dos-deputados.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumo-fiscal-regular": {
+      "src": "/capas/combo-resumo-fiscal-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumo-gestao-e-controle-regular": {
+      "src": "/capas/combo-resumo-gestao-e-controle-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumos-policial-regular": {
+      "src": "/capas/combo-resumos-policial-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumo-tribunais-regular": {
+      "src": "/capas/combo-resumo-tribunais-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumos-flashcards-fiscal-regular": {
+      "src": "/capas/combo-resumos-flashcards-fiscal-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumos-flashcards-controle-regular": {
+      "src": "/capas/combo-resumos-flashcards-controle-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumos-flashcards-policial-regular": {
+      "src": "/capas/combo-resumos-flashcards-policial-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumos-flashcards-tribunais-regular": {
+      "src": "/capas/combo-resumos-flashcards-tribunais-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "assinatura-flashcards-regular": {
+      "src": "/capas/assinatura-flashcards-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "assinatura-legislacao-tributaria": {
+      "src": "/capas/assinatura-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "assinatura-resumos-regular-flashcards-regular": {
+      "src": "/capas/assinatura-resumos-regular-flashcards-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "assinatura-resumos-regular": {
+      "src": "/capas/assinatura-resumos-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-area-bancaria-regular": {
+      "src": "/capas/combo-flashcards-area-bancaria-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-receita-federal": {
+      "src": "/capas/combo-flashcards-receita-federal.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-flashcards-reta-final-camara-dos-deputados": {
+      "src": "/capas/combo-flashcards-reta-final-camara-dos-deputados.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-legislacao-tributaria-estadual-sefaz-go-pos-edital": {
+      "src": "/capas/combo-legislacao-tributaria-estadual-sefaz-go-pos-edital.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-regimento-interno-regimento-comum-e-codigo-de-etica-camara-dos-deputados": {
+      "src": "/capas/combo-regimento-interno-regimento-comum-e-codigo-de-etica-camara-dos-deputados.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumos-area-bancaria-regular": {
+      "src": "/capas/combo-resumos-area-bancaria-regular.webp",
+      "width": 452,
+      "height": 640
+    },
+    "pacote-resumos-e-flashcards-legislacao-tributaria": {
+      "src": "/capas/pacote-resumos-e-flashcards-legislacao-tributaria.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-comercio-internacional-receita-federal": {
+      "src": "/capas/flashcards-comercio-internacional-receita-federal.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-economia-micro-macro-e-financas-publicas": {
+      "src": "/capas/flashcards-economia-micro-macro-e-financas-publicas.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-estatistica": {
+      "src": "/capas/flashcards-isoladas-estatistica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-informatica": {
+      "src": "/capas/flashcards-isoladas-informatica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isoladas-portugues": {
+      "src": "/capas/flashcards-isoladas-portugues.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-legislacao-aduaneira-receita-federal": {
+      "src": "/capas/flashcards-legislacao-aduaneira-receita-federal.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-legislacao-tributaria-federal-receita-federal": {
+      "src": "/capas/flashcards-legislacao-tributaria-federal-receita-federal.webp",
+      "width": 452,
+      "height": 640
+    },
+    "questoes-ineditas-lte-sefaz-mt": {
+      "src": "/capas/questoes-ineditas-lte-sefaz-mt.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-comercio-internacional-receita-federal": {
+      "src": "/capas/resumo-comercio-internacional-receita-federal.webp",
+      "width": 452,
+      "height": 639
+    },
+    "resumo-isolada-estatistica": {
+      "src": "/capas/resumo-isolada-estatistica.webp",
+      "width": 452,
+      "height": 640
+    },
+    "resumo-legislacao-tributaria-sefaz-df": {
+      "src": "/capas/resumo-legislacao-tributaria-sefaz-df.webp",
+      "width": 452,
+      "height": 640
+    },
+    "combo-resumo-ltf-leg-aduaneira-comercio-internacional-receita-federal": {
+      "src": "/capas/combo-resumo-ltf-leg-aduaneira-comercio-internacional-receita-federal.webp",
+      "width": 452,
+      "height": 639
+    },
+    "resumo-legislacao-aduaneira-receita-federal": {
+      "src": "/capas/resumo-legislacao-aduaneira-receita-federal.webp",
+      "width": 452,
+      "height": 639
+    },
+    "resumo-legislacao-tributaria-federal-receita-federal": {
+      "src": "/capas/resumo-legislacao-tributaria-federal-receita-federal.webp",
+      "width": 452,
+      "height": 639
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-al-3048260": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-al-3048260.webp",
+      "width": 452,
+      "height": 683
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-ba-3048268": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-ba-3048268.webp",
+      "width": 452,
+      "height": 686
+    },
+    "flashcards-legislacao-tributaria-sefaz-df": {
+      "src": "/capas/flashcards-legislacao-tributaria-sefaz-df.webp",
+      "width": 452,
+      "height": 683
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-al-3048259": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-al-3048259.webp",
+      "width": 452,
+      "height": 686
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-ba-3048267": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-ba-3048267.webp",
+      "width": 452,
+      "height": 686
+    }
   }
- }
 }
