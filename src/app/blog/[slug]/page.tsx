@@ -45,7 +45,16 @@ export async function generateMetadata({
       publishedTime: post.publicado_em ?? undefined,
       modifiedTime: post.atualizado_em,
       authors: [post.autor],
-      images: post.capa_url ? [{ url: post.capa_url }] : undefined,
+      /**
+       * Post sem capa cai na imagem padrão do site.
+       *
+       * Definir `openGraph` aqui desliga o opengraph-image.png do layout: o
+       * Next entende que esta página cuida do próprio cartão. Com `images`
+       * vazio, o post saía sem imagem NENHUMA, e o link virava retângulo cinza
+       * no WhatsApp. Atinge 9 dos 39 publicados, e são justamente os
+       * depoimentos de aprovados, que é o que mais se compartilha.
+       */
+      images: [{ url: post.capa_url || '/opengraph-image.png' }],
     },
   };
 }
