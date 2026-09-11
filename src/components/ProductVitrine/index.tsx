@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { capaDe } from '@/data/catalogo';
 import { catalogoParaVitrine } from '@/lib/catalogo-ajustes';
 import Catalogo, { type ItemVitrine } from './Catalogo';
@@ -9,7 +8,13 @@ export const revalidate = 60;
 
 // Server component: reduz o catálogo ao mínimo que a vitrine precisa,
 // para o navegador não receber os textos longos do produtos.json.
-export default async function ProductVitrine() {
+export default async function ProductVitrine({
+  tudoVisivel = false,
+  comoH1 = false,
+}: {
+  tudoVisivel?: boolean;
+  comoH1?: boolean;
+} = {}) {
   const catalogo = await catalogoParaVitrine();
 
   const candidatos: ItemVitrine[] = catalogo.map(({ produto, oferta, destaque, ordem, capaDoPainel }) => ({
@@ -55,14 +60,15 @@ export default async function ProductVitrine() {
   }
 
   /**
-   * Suspense obrigatório: o Catalogo lê a busca e o tipo da URL com
-   * useSearchParams, e sem esta fronteira o Next não consegue pré-renderizar
-   * /vitrine, derrubando o build. Com ela, a página continua estática e só a
-   * leitura dos parâmetros acontece no cliente.
+   * Sem Suspense, e isso é o ponto.
+   *
+   * A fronteira existia porque o Catalogo lia a URL com useSearchParams, o que
+   * impedia a pré-renderização. Na prática o fallback era `null`, então o HTML
+   * de /vitrine saía com 83 KB e zero produto: nem o Google nem quem abre no
+   * celular via nada até o JavaScript chegar.
+   *
+   * Agora o Catalogo monta com o filtro padrão e lê a URL depois de montado, o
+   * que dispensa a fronteira e faz o catálogo sair pronto do servidor.
    */
-  return (
-    <Suspense fallback={null}>
-      <Catalogo itens={itens} />
-    </Suspense>
-  );
+  return <Catalogo itens={itens} tudoVisivel={tudoVisivel} comoH1={comoH1} />;
 }

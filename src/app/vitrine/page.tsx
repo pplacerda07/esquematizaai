@@ -32,7 +32,10 @@ export default function VitrinePage() {
           Sérgio pediu que ele aparecesse aqui também, e é aqui que a escolha
           do material acontece. */}
       <UrgencyBar />
-      <ProductVitrine />
+      {/* Esta é a página que existe para listar tudo, então o catálogo sai
+          inteiro e o título dele é o h1 da página. Na home o mesmo componente
+          continua sendo amostra, com h2 e o "Mostrar mais". */}
+      <ProductVitrine tudoVisivel comoH1 />
       <Footer />
     </main>
   );

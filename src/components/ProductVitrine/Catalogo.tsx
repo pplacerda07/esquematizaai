@@ -1,7 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState, type ReactNode } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { rotuloDeFerramenta, ehLegislacaoTributaria } from '@/data/catalogo/rotulos';
@@ -101,31 +100,72 @@ function normalizar(texto: string) {
     .trim();
 }
 
-export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
+export default function Catalogo({
+  itens,
+  tudoVisivel = false,
+  comoH1 = false,
+}: {
+  itens: ItemVitrine[];
   /**
-   * A busca e o tipo podem vir pela URL: /vitrine?busca=tributaria&tipo=combo
+   * Mostrar o catálogo inteiro de uma vez, sem o "Mostrar mais".
    *
-   * É o que permite a caixa de busca e os botões da home levarem a pessoa
-   * direto ao resultado. Sem isso, os dois só rolariam a página até aqui e ela
-   * teria de repetir o filtro na mão, o que faria a busca da home ser enfeite.
-   *
-   * Vale só na primeira renderização: depois quem manda são os controles daqui,
-   * senão mexer no filtro brigaria com o endereço.
+   * Ligado só na /vitrine, que é a página que existe para listar tudo. Na home
+   * o catálogo é amostra: mostra alguns e convida a ver o resto na vitrine,
+   * que é para onde o link ao lado do botão leva.
    */
-  const parametros = useSearchParams();
-  const buscaInicial = parametros.get('busca') ?? '';
-  const tipoInicial = parametros.get('tipo') ?? 'todos';
-
-  // aceita qualquer filtro da faixa, para os atalhos da home poderem apontar
-  // direto para um deles pela URL (?tipo=combo, ?tipo=assinatura...)
-  const [segmento, setSegmento] = useState<string>(
-    SEGMENTOS.some((s) => s.valor === tipoInicial) ? tipoInicial : 'todos',
-  );
+  tudoVisivel?: boolean;
+  /**
+   * Usar h1 no título do catálogo.
+   *
+   * Na /vitrine sim, porque a página não tinha nenhum h1: era um h2 solto
+   * seguido de 110 h3. Na home não, senão seriam dois h1 na mesma página,
+   * disputando qual é o assunto dela.
+   */
+  comoH1?: boolean;
+}) {
+  /**
+   * O catálogo abre sem filtro, igual no servidor e no navegador.
+   *
+   * Isso não é detalhe de estilo, é o que permite a página inteira sair pronta
+   * do servidor. Antes o filtro inicial vinha de useSearchParams, que só existe
+   * no navegador: o Next não conseguia pré-renderizar, caía no fallback vazio
+   * do Suspense, e o HTML que o Google recebia tinha 83 KB sem um nome de
+   * produto sequer. Quem abria no celular olhava espaço em branco até o
+   * JavaScript chegar.
+   *
+   * Se o estado inicial dependesse da URL, servidor e navegador montariam
+   * listas diferentes na primeira renderização, e aí o React reclama e o
+   * conteúdo pisca. Por isso o padrão primeiro, e a URL logo depois.
+   */
+  const [segmento, setSegmento] = useState<string>('todos');
   const [area, setArea] = useState<string>('todas');
-  const [visiveis, setVisiveis] = useState(POR_PAGINA);
-  const [buscaAberta, setBuscaAberta] = useState(buscaInicial !== '');
-  const [busca, setBusca] = useState(buscaInicial);
+  // na vitrine tudo aparece de uma vez; na home, de seis em seis
+  const inicialVisivel = tudoVisivel ? itens.length : POR_PAGINA;
+  const [visiveis, setVisiveis] = useState(inicialVisivel);
+  const [buscaAberta, setBuscaAberta] = useState(false);
+  const [busca, setBusca] = useState('');
   const inputBusca = useRef<HTMLInputElement>(null);
+
+  /**
+   * O filtro que veio na URL, aplicado assim que monta.
+   *
+   * /vitrine?tipo=combo e /vitrine?busca=tributaria continuam funcionando: é o
+   * que faz os atalhos da home e a busca do topo levarem direto ao resultado,
+   * em vez de só rolar a página até aqui.
+   *
+   * Roda uma vez. Depois quem manda são os controles desta tela, senão mexer no
+   * filtro brigaria com o endereço.
+   */
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    const tipo = p.get('tipo') ?? '';
+    const termo = p.get('busca') ?? '';
+    if (SEGMENTOS.some((s) => s.valor === tipo)) setSegmento(tipo);
+    if (termo) {
+      setBusca(termo);
+      setBuscaAberta(true);
+    }
+  }, []);
 
   const filtrados = useMemo(() => {
     const termo = normalizar(busca);
@@ -186,12 +226,12 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
 
   const trocarSegmento = (valor: string) => {
     setSegmento(valor);
-    setVisiveis(POR_PAGINA);
+    setVisiveis(inicialVisivel);
   };
 
   const trocarArea = (valor: string) => {
     setArea(valor);
-    setVisiveis(POR_PAGINA);
+    setVisiveis(inicialVisivel);
   };
 
   const emTela = filtrados.slice(0, visiveis);
@@ -200,9 +240,15 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
     <section className={styles.vitrineSection} id="vitrine">
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
-            Catálogo <span className={styles.titleAccent}>Completo</span>
-          </h2>
+          {comoH1 ? (
+            <h1 className={styles.title}>
+              Catálogo <span className={styles.titleAccent}>Completo</span>
+            </h1>
+          ) : (
+            <h2 className={styles.title}>
+              Catálogo <span className={styles.titleAccent}>Completo</span>
+            </h2>
+          )}
           <p className={styles.subtitle}>
             Combos, materiais isolados e assinaturas para concursos das áreas Fiscal, Controle,
             Policial, Tribunais, Bancária e Legislativa. Compra direta no checkout da Eduzz.
@@ -242,7 +288,7 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
               const abrindo = !buscaAberta;
               setBuscaAberta(abrindo);
               if (abrindo) setTimeout(() => inputBusca.current?.focus(), 60);
-              else { setBusca(''); setVisiveis(POR_PAGINA); }
+              else { setBusca(''); setVisiveis(inicialVisivel); }
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -265,7 +311,7 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
                 className={styles.searchInput}
                 placeholder="Buscar material pelo nome. Ex.: legislação tributária"
                 value={busca}
-                onChange={(e) => { setBusca(e.target.value); setVisiveis(POR_PAGINA); }}
+                onChange={(e) => { setBusca(e.target.value); setVisiveis(inicialVisivel); }}
                 onKeyDown={(e) => { if (e.key === 'Escape') { setBusca(''); setBuscaAberta(false); } }}
                 aria-label="Buscar material pelo nome"
               />
@@ -273,7 +319,7 @@ export default function Catalogo({ itens }: { itens: ItemVitrine[] }) {
                 <button
                   type="button"
                   className={styles.searchClear}
-                  onClick={() => { setBusca(''); setVisiveis(POR_PAGINA); inputBusca.current?.focus(); }}
+                  onClick={() => { setBusca(''); setVisiveis(inicialVisivel); inputBusca.current?.focus(); }}
                   aria-label="Limpar busca"
                 >
                   ✕
