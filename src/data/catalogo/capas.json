@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-08-28",
+ "geradoEm": "2026-09-11",
  "fonte": "og:image das páginas de venda, somado ao índice anterior",
  "capas": {
   "flashcards-adm-financeira-e-orcamentaria-afo": {
@@ -615,7 +615,7 @@
   "resumo-comercio-internacional-receita-federal": {
    "src": "/capas/resumo-comercio-internacional-receita-federal.webp",
    "width": 452,
-   "height": 640
+   "height": 639
   },
   "resumo-isolada-estatistica": {
    "src": "/capas/resumo-isolada-estatistica.webp",
@@ -626,6 +626,21 @@
    "src": "/capas/resumo-legislacao-tributaria-sefaz-df.webp",
    "width": 452,
    "height": 640
+  },
+  "combo-resumo-ltf-leg-aduaneira-comercio-internacional-receita-federal": {
+   "src": "/capas/combo-resumo-ltf-leg-aduaneira-comercio-internacional-receita-federal.webp",
+   "width": 452,
+   "height": 639
+  },
+  "resumo-legislacao-aduaneira-receita-federal": {
+   "src": "/capas/resumo-legislacao-aduaneira-receita-federal.webp",
+   "width": 452,
+   "height": 639
+  },
+  "resumo-legislacao-tributaria-federal-receita-federal": {
+   "src": "/capas/resumo-legislacao-tributaria-federal-receita-federal.webp",
+   "width": 452,
+   "height": 639
   }
  }
 }
