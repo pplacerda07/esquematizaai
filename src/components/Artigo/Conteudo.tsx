@@ -23,6 +23,10 @@ const ROTULO_PADRAO: Record<string, string> = {
   sintese: 'Em síntese',
   aprofunde: 'Aprofunde em cada concurso',
   fontes: 'Fontes',
+  // a lei não tem rótulo padrão de propósito: quem escreve informa o
+  // dispositivo em `:::lei[Art. 5º da LC 236]`, e sem referência a caixa perde
+  // a função. Caindo aqui, o nome do bloco aparece e denuncia o esquecimento.
+  lei: 'Dispositivo legal',
 };
 
 const CLASSE_DA_CAIXA: Record<string, string> = {
@@ -31,7 +35,36 @@ const CLASSE_DA_CAIXA: Record<string, string> = {
   sintese: styles.caixaSintese,
   aprofunde: styles.caixaAprofunde,
   fontes: styles.caixaFontes,
+  lei: styles.caixaLei,
 };
+
+/**
+ * Linha onde começa o primeiro parágrafo de texto do artigo.
+ *
+ * O primeiro parágrafo sai em corpo maior (`lede`), como no modelo do
+ * WordPress. Para saber qual é ele sem depender da ordem em que o React
+ * renderiza, a linha é calculada uma vez a partir do Markdown e comparada com
+ * a posição que o parser devolve em cada parágrafo.
+ *
+ * Título, caixa, tabela, lista, citação e imagem não contam: o lede é o
+ * primeiro texto corrido de verdade.
+ */
+function linhaDoLede(markdown: string): number | null {
+  const linhas = markdown.split('\n');
+  let dentroDeCodigo = false;
+
+  for (let i = 0; i < linhas.length; i++) {
+    const linha = linhas[i].trim();
+    if (/^```/.test(linha)) {
+      dentroDeCodigo = !dentroDeCodigo;
+      continue;
+    }
+    if (dentroDeCodigo || !linha) continue;
+    if (/^(#|:::|::|>|\||-|\*|\d+\.|!\[)/.test(linha)) continue;
+    return i + 1; // o parser conta a partir de 1
+  }
+  return null;
+}
 
 type PropsDiv = ComponentPropsWithoutRef<'div'> & {
   'data-bloco'?: string;
@@ -40,6 +73,8 @@ type PropsDiv = ComponentPropsWithoutRef<'div'> & {
 };
 
 export default function Conteudo({ markdown }: { markdown: string }) {
+  const lede = linhaDoLede(markdown);
+
   return (
     <div className={styles.corpo}>
       <ReactMarkdown
@@ -57,6 +92,18 @@ export default function Conteudo({ markdown }: { markdown: string }) {
               return id ? <CtaProduto id={id} /> : null;
             }
 
+            /**
+             * :::faq agrupa as perguntas frequentes.
+             *
+             * Existe por causa do índice: ele monta a partir de H2 e H3, então
+             * sem o agrupamento cada pergunta do FAQ entraria na navegação
+             * lateral misturada com os subtítulos do artigo. É também o que
+             * permite gerar o schema de FAQ depois.
+             */
+            if (bloco === 'faq') {
+              return <section className={styles.faq}>{children}</section>;
+            }
+
             const classe = CLASSE_DA_CAIXA[bloco];
             if (!classe) return <div {...resto}>{children}</div>;
 
@@ -70,8 +117,15 @@ export default function Conteudo({ markdown }: { markdown: string }) {
 
           span(props: ComponentPropsWithoutRef<'span'> & { 'data-bloco'?: string }) {
             const { 'data-bloco': bloco, children, ...resto } = props;
-            // grifo de marca-texto, o mesmo do modelo do WordPress
+            /**
+             * Dois marca-textos, com significados diferentes.
+             *
+             * Azul é número que sustenta o argumento. Salmão é valor com
+             * ressalva ou dado que foi superado. Ter só um apaga essa distinção
+             * em todo artigo que veio do blog antigo.
+             */
             if (bloco === 'marca') return <mark className={styles.marca}>{children}</mark>;
+            if (bloco === 'ressalva') return <mark className={styles.ressalva}>{children}</mark>;
             return <span {...resto}>{children}</span>;
           },
 
@@ -121,7 +175,29 @@ export default function Conteudo({ markdown }: { markdown: string }) {
             return <tr {...resto}>{children}</tr>;
           },
 
+          p({ children, node }) {
+            // primeiro parágrafo de texto do artigo em corpo maior
+            const ehLede = lede !== null && node?.position?.start.line === lede;
+            return <p className={ehLede ? styles.lede : undefined}>{children}</p>;
+          },
+
           a({ href, children, ...resto }) {
+            /**
+             * Voltar ao índice.
+             *
+             * Não precisa de diretiva nova: quem escreve já põe um link comum
+             * apontando para a âncora do sumário, e o renderizador reconhece o
+             * destino e troca o estilo. Assim o link fica discreto e cinza em
+             * vez de azul, competindo com os links de conteúdo.
+             */
+            if (href === '#sumario-titulo') {
+              return (
+                <a href={href} className={styles.voltar} {...resto}>
+                  {children}
+                </a>
+              );
+            }
+
             const externo = !!href && /^https?:\/\//.test(href) && !href.includes('esquematizaai.com');
             return (
               <a

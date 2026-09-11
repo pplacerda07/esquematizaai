@@ -1,24 +1,59 @@
-/* Corpo do artigo: tipografia de leitura longa + os blocos do modelo editorial. */
+/*
+ * Corpo do artigo.
+ *
+ * Os valores aqui seguem o design system .eqz-art do blog do WordPress, para
+ * um mesmo texto sair igual nos dois lugares. Onde este arquivo diverge de
+ * propósito, tem comentário dizendo por quê: são coisas que o WordPress não
+ * precisa resolver e este site precisa (navbar fixa, tabela em celular).
+ */
 
 .corpo {
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: var(--color-neutral-dark);
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--color-cold-dark);
 }
 
 .corpo p {
-  margin: 0 0 1.35rem;
+  margin: 0 0 14px;
 }
 
 .corpo ul,
 .corpo ol {
-  margin: 0 0 1.35rem;
+  margin: 0 0 14px;
   padding-left: 1.4rem;
 }
 
 .corpo li {
   margin-bottom: 0.55rem;
+}
+
+/*
+ * Lista do corpo com triângulo navy, não bolinha.
+ *
+ * Só as listas soltas no texto, por isso o `>` direto. As listas dentro de
+ * caixa ficam de fora porque cada caixa tem o marcador dela (estrela na
+ * síntese, triângulo azul no aprofunde), e uma regra genérica atropelaria
+ * as duas.
+ */
+.corpo > ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.corpo > ul > li {
+  position: relative;
+  padding: 0 0 0 28px;
+  margin: 0 0 8px;
+}
+
+.corpo > ul > li::before {
+  content: "\25B8";
+  color: var(--color-cold-dark);
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .corpo strong {
@@ -33,91 +68,189 @@
   margin: 0.5rem 0 1.5rem;
 }
 
+/* separador entre blocos do artigo */
+.corpo hr {
+  border: none;
+  border-top: 1px solid #e0dfe4;
+  margin: 26px 0;
+}
+
+/*
+ * Primeiro parágrafo em corpo maior.
+ *
+ * Abre o texto com peso, como no original. Não confundir com o resumo: aquele
+ * alimenta o card da listagem e o Google, este é leitura.
+ */
+.lede {
+  font-size: 19px;
+  color: #333333;
+  line-height: 1.72;
+  margin: 0 0 20px;
+}
+
+/*
+ * Link do corpo.
+ *
+ * Regra editorial da marca: o leitor reconhece o link sem ler a frase inteira.
+ * Por isso azul, semibold e sublinhado, nunca da cor do corpo.
+ */
 .link {
   color: var(--color-cold-primary);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(78, 174, 217, 0.4);
-  transition: color 0.15s ease, border-color 0.15s ease;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-cold-primary);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
 .link:hover {
   color: var(--color-hot-primary);
-  border-bottom-color: var(--color-hot-primary);
+  text-decoration-color: var(--color-hot-primary);
 }
 
 /* ---------------------------------------------------------------- títulos */
 
-/* barra escura preenchida, como no modelo do blog atual */
+/* faixa navy preenchida */
 .h2 {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--color-neutral-light);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  color: #ffffff;
   background-color: var(--color-cold-dark);
-  padding: 0.7rem 1.1rem;
-  border-radius: 0.4rem;
-  margin: 3rem 0 1.5rem;
-  scroll-margin-top: 90px; /* o link do sumário não esconde o título sob a navbar */
+  padding: 8px 14px;
+  border-radius: 5px;
+  margin: 34px 0 14px;
+  /* o link do sumário não esconde o título sob a navbar fixa. Não existe no
+     WordPress, onde não há navbar por cima do conteúdo. */
+  scroll-margin-top: 90px;
 }
 
 .h3 {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 23px;
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-cold-dark);
-  margin: 2.25rem 0 1rem;
+  margin: 22px 0 8px;
   scroll-margin-top: 90px;
 }
 
-/* grifo de marca-texto */
+/* ------------------------------------------------------------------ realces */
+
+/* marca-texto azul: número-chave, dado que sustenta o argumento */
 .marca {
-  background-color: #fff3a3;
-  color: inherit;
-  padding: 0.1em 0.15em;
-  border-radius: 0.15em;
+  background-color: var(--color-cold-light);
+  color: var(--color-cold-dark);
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+/* marca-texto salmão: valor com ressalva ou dado que foi superado */
+.ressalva {
+  background-color: #ffcdc3;
+  color: var(--color-cold-dark);
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+/*
+ * Voltar ao índice.
+ *
+ * Link discreto ao fim de seção longa. Cinza e em caixa alta para não competir
+ * com os links de conteúdo, que são azuis.
+ */
+.voltar {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  color: #6b7688;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 6px 0 0;
+  text-decoration: none;
+  border-bottom: 1px solid #e0dfe4;
+}
+
+.voltar:hover {
+  color: var(--color-cold-dark);
+  border-bottom-color: var(--color-cold-dark);
 }
 
 /* ---------------------------------------------------------------- tabelas */
 
-/* a tabela rola dentro da própria caixa: a página nunca ganha scroll lateral */
 .tabelaWrap {
+  background-color: #fbfbfc;
+  border: 1px solid #e0dfe4;
+  border-radius: 8px;
+  padding: 6px 4px;
+  margin: 18px 0;
+  /* a tabela rola dentro da própria caixa: a página nunca ganha scroll lateral */
   overflow-x: auto;
-  margin: 0 0 1.75rem;
-  border: 1px solid rgba(38, 52, 79, 0.14);
-  border-radius: 0.5rem;
   -webkit-overflow-scrolling: touch;
 }
 
 .tabela {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.92rem;
+  font-size: 15.5px;
+  /* piso de largura para a tabela não espremer no celular. O WordPress não
+     precisa disto porque o tema dele empilha a tabela em telas estreitas. */
   min-width: 520px;
 }
 
 .tabela th {
   background-color: var(--color-cold-dark);
-  color: var(--color-neutral-light);
+  color: #ffffff;
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   text-align: left;
-  padding: 0.7rem 0.9rem;
+  padding: 9px 12px;
 }
 
 .tabela td {
-  padding: 0.7rem 0.9rem;
-  border-top: 1px solid rgba(38, 52, 79, 0.1);
+  padding: 9px 14px;
+  border-bottom: 1px solid #eceaf0;
   vertical-align: top;
-  line-height: 1.45;
+  color: var(--color-cold-dark);
 }
 
-.tabela tbody tr:nth-child(even) td {
-  background-color: rgba(187, 227, 240, 0.16);
+.tabela tr:last-child td {
+  border-bottom: none;
+}
+
+/* ficha de dados de duas colunas: rótulo em negrito à esquerda */
+.tabela td:first-child {
+  font-weight: 600;
+  color: var(--color-cold-dark);
+  width: 44%;
+}
+
+/*
+ * Coluna numérica.
+ *
+ * Vem do alinhamento que o próprio Markdown já oferece com |---:| e |:--:|,
+ * então não exige convenção nova para o autor decorar.
+ */
+.tabela th[align="center"],
+.tabela td[align="center"],
+.tabela th[align="right"],
+.tabela td[align="right"] {
+  white-space: nowrap;
+  width: auto;
+}
+
+.tabela tfoot td {
+  background-color: #eef1f6;
+  font-weight: 700;
+  color: var(--color-cold-dark);
+  border-top: 2px solid var(--color-cold-dark);
+  border-bottom: none;
 }
 
 /* faixa de agrupamento dentro da tabela ("Estaduais e federal") */
@@ -130,6 +263,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.5rem 0.9rem;
+  width: auto;
 }
 
 .linhaGrupo td strong {
@@ -139,18 +273,18 @@
 /* ---------------------------------------------------------------- caixas */
 
 .caixa {
-  margin: 0 0 1.75rem;
-  padding: 1.15rem 1.35rem 1.25rem;
-  border-radius: 0.6rem;
+  margin: 22px 0;
+  padding: 14px 18px;
+  border-radius: 6px;
 }
 
 .caixaRotulo {
   font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin: 0 0 0.65rem;
+  margin: 0 0 10px;
 }
 
 .caixaCorpo > :last-child {
@@ -161,30 +295,45 @@
   margin-bottom: 0.85rem;
 }
 
-/* IMPORTANTE: contorno cheio, o aviso que não pode passar batido */
+/* IMPORTANTE: contorno cheio sobre fundo claro, o aviso que não passa batido */
 .caixaImportante {
-  border: 1.5px solid var(--color-cold-dark);
-  background-color: transparent;
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--color-cold-dark);
+  background-color: var(--color-neutral-light);
+  border: 1px solid var(--color-cold-dark);
 }
 
 .caixaImportante .caixaRotulo {
   color: var(--color-cold-dark);
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
-/* DICA DE PROVA: contorno tracejado, para ler como recado à parte */
+/* DICA DE PROVA: sem fundo, a caixa é o tracejado */
 .caixaDica {
-  border: 1.5px dashed var(--color-hot-primary);
-  background-color: rgba(255, 115, 69, 0.04);
+  font-size: 16.5px;
+  line-height: 1.68;
+  color: var(--color-cold-dark);
+  background-color: transparent;
+  border: 1.5px dashed var(--color-cold-dark);
+  padding: 16px 18px;
+  margin: 24px 0;
 }
 
 .caixaDica .caixaRotulo {
-  color: var(--color-hot-dark);
+  color: var(--color-hot-primary);
+  font-size: 17px;
 }
 
 /* EM SÍNTESE: fundo claro e marcador em estrela */
 .caixaSintese {
-  background-color: rgba(187, 227, 240, 0.28);
-  border: 1px solid rgba(38, 52, 79, 0.1);
+  font-size: 17px;
+  color: var(--color-cold-dark);
+  background-color: var(--color-neutral-light);
+  border: 1px solid var(--color-cold-dark);
+  padding: 16px 20px;
+  margin: 28px 0;
 }
 
 .caixaSintese .caixaRotulo {
@@ -198,28 +347,35 @@
 }
 
 .caixaSintese li {
+  list-style: none;
   position: relative;
-  padding-left: 1.6rem;
-  margin-bottom: 0.9rem;
+  padding: 0 0 0 28px;
+  margin: 0 0 8px;
 }
 
 .caixaSintese li::before {
-  content: '★';
+  content: "\2605";
   position: absolute;
   left: 0;
   top: 0;
   color: var(--color-hot-primary);
+  font-weight: 600;
 }
 
 /* APROFUNDE: filete azul à esquerda, lista de links internos */
 .caixaAprofunde {
-  background-color: rgba(187, 227, 240, 0.2);
+  background-color: var(--color-neutral-light);
   border-left: 4px solid var(--color-cold-primary);
-  border-radius: 0 0.6rem 0.6rem 0;
+  border-radius: 0 6px 6px 0;
+  padding: 14px 18px;
+  margin: 22px 0;
 }
 
 .caixaAprofunde .caixaRotulo {
   color: var(--color-cold-primary);
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
 }
 
 .caixaAprofunde ul {
@@ -229,79 +385,161 @@
 }
 
 .caixaAprofunde li {
+  list-style: none;
   position: relative;
-  padding-left: 1.3rem;
-  margin-bottom: 0.6rem;
+  padding: 0 0 0 24px;
+  margin: 0 0 6px;
+  font-size: 15.5px;
+  line-height: 1.5;
 }
 
 .caixaAprofunde li::before {
-  content: '▸';
+  content: "\25B8";
   position: absolute;
   left: 0;
+  top: 0;
   color: var(--color-cold-primary);
+  font-weight: 600;
 }
 
-/* FONTES: letra menor, é aparato e não leitura principal */
+.caixaAprofunde .link {
+  color: var(--color-cold-dark);
+  font-weight: 400;
+  text-decoration-color: var(--color-cold-primary);
+}
+
+/*
+ * DISPOSITIVO LEGAL.
+ *
+ * Citação de lei e observação de prova são coisas diferentes e precisam de
+ * pesos diferentes. Antes as duas caíam em :::importante, e o artigo de
+ * legislação, que é a maior parte do blog, ficava com tudo no mesmo tom.
+ */
+.caixaLei {
+  font-size: 16px;
+  line-height: 1.62;
+  color: #33404f;
+  background-color: #fbfbfc;
+  border-left: 4px solid var(--color-cold-dark);
+  border-radius: 0 6px 6px 0;
+  padding: 14px 18px;
+  margin: 18px 0;
+}
+
+.caixaLei .caixaRotulo {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--color-cold-dark);
+  margin: 0 0 6px;
+}
+
+/*
+ * FONTES: rodapé discreto, não caixa.
+ *
+ * No modelo do WordPress as fontes não têm fundo nem borda: são aparato no fim
+ * do texto, e não mais um bloco disputando atenção com o artigo.
+ */
 .caixaFontes {
-  border-top: 1px solid rgba(38, 52, 79, 0.14);
+  font-size: 14px;
+  line-height: 1.7;
+  color: #6b7688;
+  background-color: transparent;
+  border: none;
   border-radius: 0;
-  padding: 1.25rem 0 0;
-  font-size: 0.86rem;
-  line-height: 1.6;
-  color: rgba(35, 33, 44, 0.75);
+  padding: 0;
+  margin: 26px 0 0;
 }
 
 .caixaFontes .caixaRotulo {
-  color: rgba(35, 33, 44, 0.55);
+  color: #6b7688;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 0 0 4px;
 }
 
 .caixaFontes .link {
-  border-bottom: none;
-  text-decoration: underline;
+  font-weight: 400;
   text-underline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------- FAQ */
+
+/*
+ * Bloco de perguntas frequentes.
+ *
+ * Existe para agrupar: sem ele os H3 das perguntas entram no índice do artigo
+ * misturados com os subtítulos de verdade, porque o índice lê H2 e H3.
+ */
+.faq {
+  margin: 22px 0;
+}
+
+.faq h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-cold-dark);
+  font-size: 21px;
+  line-height: 1.25;
+  margin: 18px 0 6px;
+}
+
+.faq p {
+  font-size: 16.5px;
+  margin: 0 0 12px;
 }
 
 /* ------------------------------------------------------- oferta no artigo */
 
 .ctaProduto {
   background-color: var(--color-cold-dark);
-  color: var(--color-neutral-light);
-  border-radius: 0.9rem;
-  padding: 1.6rem 1.7rem 1.75rem;
-  margin: 2.5rem 0;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  margin: 34px 0;
 }
 
 .ctaEtiqueta {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--color-hot-primary);
-  margin: 0 0 0.6rem;
+  margin: 0 0 6px;
 }
 
 .ctaTitulo {
   font-family: var(--font-heading);
-  font-size: 1.45rem;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 0 0.75rem;
-  color: var(--color-neutral-light);
+  margin: 0 0 8px;
+  color: #ffffff;
 }
 
 .ctaTexto {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  margin: 0 0 1.1rem;
+  color: #dfe4ec;
+  margin: 0 0 16px;
+}
+
+.ctaLista {
+  margin: 0 0 16px;
+  padding: 0 0 0 20px;
+  list-style: disc;
+}
+
+.ctaLista li {
+  color: var(--color-neutral-light);
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0 0 8px;
 }
 
 .ctaPreco {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
-  margin-bottom: 1.1rem;
+  margin: 0 0 16px;
   flex-wrap: wrap;
 }
 
@@ -313,9 +551,17 @@
 
 .ctaValor {
   font-family: var(--font-heading);
-  font-size: 2rem;
-  line-height: 1;
+  font-size: 26px;
+  line-height: 1.2;
   font-weight: 700;
+  color: #ffffff;
+}
+
+.ctaParcelado {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 16px;
+  color: #aeb8c9;
 }
 
 .ctaBotao {
@@ -324,19 +570,19 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-hot-primary);
-  color: var(--color-neutral-light);
+  color: #12202f;
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1rem;
-  padding: 0.9rem 1.6rem;
-  border-radius: 0.55rem;
+  font-size: 16px;
+  padding: 14px 26px;
+  border-radius: 8px;
   text-decoration: none;
   min-height: 48px;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .ctaBotao:hover {
-  background-color: var(--color-hot-dark);
+  background-color: #ff8a63;
   transform: translateY(-2px);
 }
 
@@ -345,29 +591,33 @@
   outline-offset: 3px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .ctaBotao {
+    transition: none;
+  }
+  .ctaBotao:hover {
+    transform: none;
+  }
+}
+
 @media (max-width: 640px) {
   .corpo {
-    font-size: 1rem;
+    font-size: 16px;
   }
   .h2 {
-    font-size: 1.15rem;
-    padding: 0.6rem 0.85rem;
-    margin: 2.25rem 0 1.15rem;
+    font-size: 18px;
   }
   .h3 {
-    font-size: 1.2rem;
-  }
-  .caixa {
-    padding: 1rem 1.05rem 1.1rem;
+    font-size: 20px;
   }
   .ctaProduto {
-    padding: 1.25rem 1.15rem 1.35rem;
+    padding: 20px 18px;
   }
   .ctaTitulo {
-    font-size: 1.2rem;
+    font-size: 21px;
   }
   .ctaValor {
-    font-size: 1.7rem;
+    font-size: 23px;
   }
   .ctaBotao {
     width: 100%;
