@@ -3,7 +3,22 @@
 // Mentoria: aplicação pelo Typeform (todos os CTAs de /mentoria apontam aqui).
 // Substituiu o Typebot no WhatsApp em 27/08, a pedido do Sérgio, junto com o
 // lançamento da mentoria para SEFAZ-AL.
-export const CHECKOUT_URL = 'https://esquematizaai.typeform.com/mentoria';
+/**
+ * Formulário de aplicação da mentoria, usado pelos quatro CTAs de /mentoria.
+ *
+ * Endereço NOSSO, de propósito. Antes apontava direto para o Typeform, e trocar
+ * de plataforma obrigava a mexer no site. Agora /anamnese redireciona para a
+ * loja, que por sua vez aponta para o formulário do momento: o Sérgio troca a
+ * ferramenta no WordPress e nada aqui precisa mudar.
+ *
+ * Os parâmetros de rastreio de canal viajam inteiros até o formulário. O Next
+ * repassa a query no redirecionamento e o WordPress também; a cadeia foi
+ * conferida ponta a ponta em 12/09.
+ *
+ * O nome CHECKOUT_URL ficou herdado de quando isto era um checkout de verdade.
+ * Hoje é formulário de aplicação, e não há venda direta nesta página.
+ */
+export const CHECKOUT_URL = '/anamnese?origem=site&campanha=mentoria';
 
 // CGU (LP de captura): grupo VIP no WhatsApp (todos os CTAs de /cgu apontam aqui).
 export const GRUPO_VIP_URL = 'https://chat.whatsapp.com/DfqbvIRKC1UBQKdZL7qrar';

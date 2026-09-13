@@ -156,8 +156,30 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  /**
+   * Endereço fixo do formulário da mentoria.
+   *
+   * Fica FORA de redirecionamentosDaVirada() de propósito: aquelas regras só
+   * existem enquanto a loja mora noutro domínio, e esta precisa valer sempre.
+   *
+   * A query passa sozinha. O Next repassa os parâmetros da origem para o
+   * destino quando o destino não traz query própria, e é por isso que
+   * /anamnese?origem=site&campanha=mentoria chega no formulário com o rastreio
+   * de canal intacto. A cadeia tem dois saltos, este e o do WordPress, e foi
+   * conferida inteira em 12/09.
+   *
+   * 308 (permanent) porque o endereço é para durar: quem trocar de ferramenta
+   * de formulário mexe no WordPress, não aqui.
+   */
   async redirects() {
-    return redirecionamentosDaVirada();
+    return [
+      {
+        source: '/anamnese',
+        destination: `${URL_DA_LOJA}/anamnese`,
+        permanent: true,
+      },
+      ...redirecionamentosDaVirada(),
+    ];
   },
 
   async headers() {
