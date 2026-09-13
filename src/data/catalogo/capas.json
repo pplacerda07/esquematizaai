@@ -671,6 +671,51 @@
       "src": "/capas/combo-legislacao-tributaria-sefaz-ba.webp",
       "width": 452,
       "height": 686
+    },
+    "combo-legislacao-tributaria-estadual-sefaz-sp-pre-pos-edital": {
+      "src": "/capas/combo-legislacao-tributaria-estadual-sefaz-sp-pre-pos-edital.webp",
+      "width": 452,
+      "height": 640
+    },
+    "flashcards-isolado-legislacao-tributaria-sefa-pa": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefa-pa.webp",
+      "width": 452,
+      "height": 690
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-mt": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-mt.webp",
+      "width": 452,
+      "height": 691
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-rn": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-rn.webp",
+      "width": 452,
+      "height": 682
+    },
+    "flashcards-isolado-legislacao-tributaria-sefaz-sp": {
+      "src": "/capas/flashcards-isolado-legislacao-tributaria-sefaz-sp.webp",
+      "width": 452,
+      "height": 689
+    },
+    "resumo-isolado-legislacao-tributaria-sefa-pa": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefa-pa.webp",
+      "width": 452,
+      "height": 690
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-mt": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-mt.webp",
+      "width": 452,
+      "height": 692
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-rn": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-rn.webp",
+      "width": 452,
+      "height": 683
+    },
+    "resumo-isolado-legislacao-tributaria-sefaz-sp": {
+      "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-sp.webp",
+      "width": 452,
+      "height": 687
     }
   }
 }
