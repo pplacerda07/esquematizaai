@@ -21,11 +21,18 @@ O objetivo: as próximas etapas (vitrine, páginas de produto, checkout) só pre
 ## Como usar no código
 
 ```ts
-import { produtos, produtosPorCategoria, produtosVendaveis, checkoutPrincipal } from '@/data/catalogo';
+import { produtos, produtosPorCategoria, ofertaAtual } from '@/data/catalogo';
+import { catalogoParaVitrine } from '@/lib/catalogo-ajustes';
 
 const combos = produtosPorCategoria('combo');
-const naVitrine = produtosVendaveis(); // ativos e com link de compra
-const linkDeCompra = checkoutPrincipal(combos[0]); // https://chk.eduzz.com/...
+
+// preço e link de compra do produto, já resolvendo campanha e página de vendas
+const oferta = ofertaAtual(combos[0]);
+
+// para a VITRINE, use isto: aplica o que o Sérgio ajustou no painel
+// (preço, produto oculto, destaque e posição). Sem isso a página mostra
+// produto que ele escondeu.
+const naVitrine = await catalogoParaVitrine();
 ```
 
 ## O modelo de produto (resumo)
