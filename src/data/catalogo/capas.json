@@ -716,6 +716,36 @@
       "src": "/capas/resumo-isolado-legislacao-tributaria-sefaz-sp.webp",
       "width": 452,
       "height": 687
+    },
+    "assinatura-flashcards-regular-2-anos": {
+      "src": "/capas/assinatura-flashcards-regular-2-anos.webp",
+      "width": 452,
+      "height": 644
+    },
+    "assinatura-resumos-regular-2-anos": {
+      "src": "/capas/assinatura-resumos-regular-2-anos.webp",
+      "width": 452,
+      "height": 687
+    },
+    "assinatura-resumos-regular-flashcards-regular-1-ano": {
+      "src": "/capas/assinatura-resumos-regular-flashcards-regular-1-ano.webp",
+      "width": 452,
+      "height": 685
+    },
+    "assinatura-resumos-regular-flashcards-regular-2-anos": {
+      "src": "/capas/assinatura-resumos-regular-flashcards-regular-2-anos.webp",
+      "width": 452,
+      "height": 685
+    },
+    "assinatura-resumos-regular-flashcards-regular-2-anos-2901047": {
+      "src": "/capas/assinatura-resumos-regular-flashcards-regular-2-anos-2901047.webp",
+      "width": 452,
+      "height": 685
+    },
+    "combo-resumos-flashcards-tribunal-regular": {
+      "src": "/capas/combo-resumos-flashcards-tribunal-regular.webp",
+      "width": 452,
+      "height": 685
     }
   }
 }
