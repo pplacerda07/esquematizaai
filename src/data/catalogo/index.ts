@@ -168,13 +168,6 @@ export function produtosVendaveis(): Produto[] {
   );
 }
 
-/** Link de compra principal do produto (checkout direto; cai para a página de vendas). */
-export function checkoutPrincipal(p: Produto): string | null {
-  return (
-    p.checkouts.normal ?? p.checkouts.black ?? p.checkouts.outros[0]?.url ?? p.urlSite ?? null
-  );
-}
-
 /** Escada de descontos de um produto (links com cupom aplicado), se houver. */
 export function escadaDeDesconto(p: Produto): ProdutoComDesconto | undefined {
   return produtosComDesconto.find((d) => d.idEduzz && d.idEduzz === p.idEduzz);
