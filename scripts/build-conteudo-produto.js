@@ -57,6 +57,47 @@ function recortar(html, marcador, container) {
   return html.slice(ini, abre > ini ? abre : fim);
 }
 
+/**
+ * Corta o que veio junto por acidente: o cronograma e o mural de depoimentos.
+ *
+ * O recorte acima para no próximo limite do Elementor, e nessas páginas o bloco
+ * das disciplinas, o cronograma e os depoimentos moram todos dentro do mesmo
+ * elemento. Resultado: o campo `detalhes` levava junto "Cronograma de entrega"
+ * (que tem campo próprio) e, depois dele, "🏆 Depoimentos de Alunos Aprovados"
+ * com os depoimentos inteiros.
+ *
+ * O Sérgio viu isso na tela em 15/09, no Combo Resumos Policial: o depoimento
+ * emendado na descrição do produto. Eram 99 campos, em 92 produtos, meio
+ * megabyte de texto repetido.
+ *
+ * Antes disso o estrago era invisível e pior: a página do WordPress sorteia um
+ * depoimento diferente a cada carregamento, então toda raspagem acusava 85
+ * produtos "alterados" sem uma linha de conteúdo real ter mudado.
+ *
+ * Cortar por cabeçalho, e não pelo HTML, porque o cabeçalho é estável e o
+ * agrupamento do Elementor muda quando alguém edita a página.
+ */
+const CABECALHOS_INTRUSOS = {
+  sobre: [/\n\s*Cronograma de entrega\s*\n/i, /🏆?\s*Depoimentos de Alunos Aprovados/i],
+  detalhes: [/\n\s*Cronograma de entrega\s*\n/i, /🏆?\s*Depoimentos de Alunos Aprovados/i],
+  sumario: [/\n\s*Cronograma de entrega\s*\n/i, /🏆?\s*Depoimentos de Alunos Aprovados/i],
+  // o cronograma não se corta no próprio nome
+  cronograma: [/🏆?\s*Depoimentos de Alunos Aprovados/i],
+};
+
+function podar(texto, chave) {
+  const regras = CABECALHOS_INTRUSOS[chave];
+  if (!texto || !regras) return texto;
+
+  let corte = -1;
+  for (const re of regras) {
+    const i = texto.search(re);
+    if (i >= 0 && (corte < 0 || i < corte)) corte = i;
+  }
+  if (corte < 0) return texto;
+  return texto.slice(0, corte).replace(/\s+$/, '') || null;
+}
+
 /** HTML do WordPress -> Markdown com a marcação que o site já entende. */
 function paraMarkdown(bloco) {
   let t = bloco;
@@ -226,8 +267,8 @@ function lerAcordeao(html) {
       for (const b of BLOCOS) {
         const bruto = recortar(html, b.marcador, b.container);
         if (!bruto) continue;
-        const md = paraMarkdown(bruto);
-        if (md.length < b.minimo) continue;
+        const md = podar(paraMarkdown(bruto), b.chave);
+        if (!md || md.length < b.minimo) continue;
         item[b.chave] = md;
         contagem[b.chave]++;
       }
@@ -237,8 +278,8 @@ function lerAcordeao(html) {
       const abaDetalhes = abas.find((a) => a !== abaSumario);
 
       if (abaDetalhes) {
-        const md = paraMarkdown(abaDetalhes.html);
-        if (md.length >= 30) {
+        const md = podar(paraMarkdown(abaDetalhes.html), 'detalhes');
+        if (md && md.length >= 30) {
           item.detalhes = md;
           // alternação, não classe: emoji em [] quebra o par de substitutos
           item.detalhesTitulo = abaDetalhes.titulo.replace(/^(📚|📖|📝)\s*/u, '').trim();
@@ -246,8 +287,8 @@ function lerAcordeao(html) {
         }
       }
       if (abaSumario) {
-        const md = paraMarkdown(abaSumario.html);
-        if (md.length >= 30) { item.sumario = md; contagem.sumario++; }
+        const md = podar(paraMarkdown(abaSumario.html), 'sumario');
+        if (md && md.length >= 30) { item.sumario = md; contagem.sumario++; }
       }
 
       // As perguntas do FAQ vêm no mesmo acordeão e antes eram só descartadas.
