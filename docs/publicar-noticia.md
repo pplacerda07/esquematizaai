@@ -9,23 +9,24 @@ que vai publicar as notícias e ele vai saber o que fazer.
 
 | Item | Onde conseguir |
 |---|---|
-| Endereço | `https://esquematizaai.vercel.app/api/noticias` |
+| Endereço | `https://esquematizaai.com/api/noticias` |
 | Token | Com o Pedro. É uma senha: não cole em conversa pública nem em arquivo compartilhado. |
 
-> **Atenção ao endereço.** Hoje o site novo responde em `esquematizaai.vercel.app`.
-> O domínio `esquematizaai.com` ainda aponta para o WordPress antigo, e chamar
-> a rota por lá dá erro de conexão. Quando o domínio for apontado para o site
-> novo, troque o endereço aqui e nos comandos abaixo.
+> **O endereço mudou em 06/09.** Antes a rota só respondia em
+> `esquematizaai.com`, porque `esquematizaai.com` ainda era o WordPress.
+> Hoje o domínio é deste site e é por ele que se chama a rota. O endereço da
+> Vercel continua funcionando, mas não use: ele muda sozinho quando o projeto é
+> renomeado ou movido de conta.
 
 ## Passo 1: teste antes de escrever qualquer matéria
 
 Este teste responde duas perguntas de uma vez: se você consegue acessar a
 internet e se o token está certo. Faça uma requisição GET para
-`https://esquematizaai.vercel.app/api/noticias`, com o cabeçalho
+`https://esquematizaai.com/api/noticias`, com o cabeçalho
 `Authorization: Bearer SEU_TOKEN`, e diga ao Sérgio o que voltou.
 
 ```bash
-curl https://esquematizaai.vercel.app/api/noticias \
+curl https://esquematizaai.com/api/noticias \
   -H "Authorization: Bearer SEU_TOKEN"
 ```
 
@@ -44,7 +45,7 @@ Só siga para o resto do documento depois deste teste.
 Uma requisição `POST` com o texto da matéria em JSON.
 
 ```bash
-curl -X POST https://esquematizaai.vercel.app/api/noticias \
+curl -X POST https://esquematizaai.com/api/noticias \
   -H "Authorization: Bearer SEU_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
