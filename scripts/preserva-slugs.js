@@ -4,9 +4,17 @@
  * Duas coisas: o ENDEREÇO do produto, quando a planilha só mudou o nome dele,
  * e a ÁREA, quando a planilha nova veio com a coluna em branco.
  *
- * Uso:  node scripts/preserva-slugs.js <catalogo-de-referencia.json>
+ * ISTO RODA SOZINHO DENTRO DO build-catalogo.js. Antes era um passo manual, e
+ * um passo manual que ninguém pode esquecer é um defeito esperando acontecer:
+ * quem rodasse a importação e fosse dormir publicava 22 links quebrados. Hoje o
+ * build lê o produtos.json que ainda está no disco, usa como referência e
+ * aplica isto antes de gravar por cima.
  *
- * Rodar SEMPRE logo depois de build-catalogo.js, antes de qualquer outra coisa.
+ * A linha de comando continua existindo para conferir contra uma referência
+ * específica, por exemplo a versão que está no ar:
+ *
+ *   git show HEAD:src/data/catalogo/produtos.json > antes.json
+ *   node scripts/preserva-slugs.js antes.json
  *
  * O PROBLEMA QUE ISSO RESOLVE: o id do produto é gerado a partir do nome, e o
  * Sérgio renomeia produto com frequência. "Combo ISS-Guarulhos Legislação
@@ -32,14 +40,6 @@ const fs = require('fs');
 const path = require('path');
 
 const ARQUIVO = path.join(__dirname, '..', 'src/data/catalogo/produtos.json');
-const REFERENCIA = process.argv[2];
-
-if (!REFERENCIA) {
-  console.error('falta o catálogo de referência.');
-  console.error('exemplo: git show HEAD:src/data/catalogo/produtos.json > antes.json');
-  console.error('         node scripts/preserva-slugs.js antes.json');
-  process.exit(1);
-}
 
 const chaves = (p) => {
   const saida = [];
@@ -50,11 +50,11 @@ const chaves = (p) => {
   return saida;
 };
 
-function main() {
-  const antes = JSON.parse(fs.readFileSync(REFERENCIA, 'utf8')).produtos;
-  const bruto = JSON.parse(fs.readFileSync(ARQUIVO, 'utf8'));
-  const agora = bruto.produtos;
-
+/**
+ * Aplica a preservação em `agora` (a lista nova, MUTADA no lugar) usando
+ * `antes` como referência. Devolve o relatório para quem chamou imprimir.
+ */
+function preservar(antes, agora, { log = console.log } = {}) {
   // de cada chave estável para o id antigo
   const idAntigo = new Map();
   for (const p of antes) for (const k of chaves(p)) if (!idAntigo.has(k)) idAntigo.set(k, p.id);
@@ -77,11 +77,11 @@ function main() {
     // dois produtos novos apontando para o mesmo id antigo: o primeiro fica com
     // ele, o segundo mantém o seu, para não criar id repetido
     if (jaUsados.has(alvo) || (idsNovos.has(alvo) && agora.find((x) => x.id === alvo && x !== p))) {
-      console.log('  conflito, mantido como está: ' + p.id);
+      log('  conflito, mantido como está: ' + p.id);
       continue;
     }
 
-    console.log('  ' + alvo.padEnd(50) + ' <- era ' + p.id);
+    log('  ' + alvo.padEnd(50) + ' <- era ' + p.id);
     if (!p.nomesAlternativos) p.nomesAlternativos = [];
     p.id = alvo;
     jaUsados.add(alvo);
@@ -111,19 +111,46 @@ function main() {
     }
   }
 
-  fs.writeFileSync(ARQUIVO, JSON.stringify(bruto, null, 2) + '\n', 'utf8');
-  console.log('\n  endereços preservados: ' + mantidos);
-  console.log('  áreas herdadas       : ' + areasHerdadas);
-  console.log('  ainda sem área       : ' + agora.filter((p) => !p.area).length);
-  console.log('  total no catálogo    : ' + agora.length);
-
   const contagem = {};
   for (const p of agora) contagem[p.id] = (contagem[p.id] ?? 0) + 1;
   const repetidos = Object.entries(contagem).filter(([, n]) => n > 1);
-  if (repetidos.length) {
-    console.log('\n  ATENÇÃO, ids repetidos: ' + repetidos.map(([id, n]) => id + ' x' + n).join(', '));
-    process.exitCode = 1;
-  }
+
+  return { mantidos, areasHerdadas, semArea: agora.filter((p) => !p.area).length, repetidos };
 }
 
-main();
+/** Imprime o relatório e devolve true se estiver tudo certo. */
+function relatar(rel, total, log = console.log) {
+  log('\n  endereços preservados: ' + rel.mantidos);
+  log('  áreas herdadas       : ' + rel.areasHerdadas);
+  log('  ainda sem área       : ' + rel.semArea);
+  log('  total no catálogo    : ' + total);
+  if (rel.repetidos.length) {
+    log('\n  ATENÇÃO, ids repetidos: ' + rel.repetidos.map(([id, n]) => id + ' x' + n).join(', '));
+    return false;
+  }
+  return true;
+}
+
+function main() {
+  const REFERENCIA = process.argv[2];
+  if (!REFERENCIA) {
+    console.error('falta o catálogo de referência.');
+    console.error('exemplo: git show HEAD:src/data/catalogo/produtos.json > antes.json');
+    console.error('         node scripts/preserva-slugs.js antes.json');
+    console.error('\n(o build-catalogo.js já faz isto sozinho; isto aqui é para conferir');
+    console.error(' contra uma referência específica, como a versão que está no ar)');
+    process.exit(1);
+  }
+
+  const antes = JSON.parse(fs.readFileSync(REFERENCIA, 'utf8')).produtos;
+  const bruto = JSON.parse(fs.readFileSync(ARQUIVO, 'utf8'));
+  const agora = bruto.produtos;
+
+  const rel = preservar(antes, agora);
+  fs.writeFileSync(ARQUIVO, JSON.stringify(bruto, null, 2) + '\n', 'utf8');
+  if (!relatar(rel, agora.length)) process.exitCode = 1;
+}
+
+module.exports = { preservar, relatar };
+
+if (require.main === module) main();

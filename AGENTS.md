@@ -54,7 +54,11 @@ scripts/            geradores; rodam à mão, nunca no build
 O produto do site vem de **três camadas empilhadas**, nesta ordem:
 
 **1. A planilha do Sérgio.** Um `.xlsx` vira `src/data/catalogo/produtos.json`
-rodando `scripts/build-catalogo.js`. Esse arquivo é **gerado**.
+e mais cinco arquivos. Esses arquivos são **gerados**:
+
+```
+npm run catalogo -- "C:\caminho\Produtos (5).xlsx"
+```
 
 > **Nunca edite `produtos.json` à mão.** A próxima importação apaga o que você
 > escreveu. Vale também para `cupons.json`, `sumarios.json`, `copy.json`,
@@ -79,14 +83,23 @@ O id vira endereço: `/vitrine/produto/<id>`. Renomear um produto na planilha mu
 o id, e com ele o endereço, o texto raspado e o ajuste do painel, que são
 guardados por id.
 
-Depois de rodar `build-catalogo.js`, **rode sempre**:
+O `build-catalogo.js` já cuida disso sozinho: antes de gravar, ele lê o
+`produtos.json` que ainda está no disco e reconhece cada produto pelo checkout,
+não pelo nome. Quem foi renomeado fica com o endereço antigo, e quem veio sem
+área herda a que tinha. Na importação de setembro isso salvou 14 produtos de
+virarem link quebrado.
+
+Era um segundo comando, à mão, que ninguém podia esquecer. Virou parte do
+build. O `scripts/preserva-slugs.js` continua rodando solto quando você quer
+conferir contra uma referência específica, por exemplo a versão que está no ar:
 
 ```
-node scripts/preserva-slugs.js <catalogo-anterior.json>
+git show HEAD:src/data/catalogo/produtos.json > antes.json
+node scripts/preserva-slugs.js antes.json
 ```
 
-Ele reconhece o mesmo produto pelo checkout, não pelo nome, e mantém o endereço.
-Na importação de setembro isso salvou 14 produtos de virarem link quebrado.
+Se o relatório terminar com `ids repetidos`, dois produtos estão disputando o
+mesmo endereço: pare e resolva antes de commitar.
 
 ## Armadilhas que já custaram caro
 

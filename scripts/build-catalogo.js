@@ -463,6 +463,33 @@ for (const p of produtos) {
 }
 produtos.sort((a, b) => a.categoria.localeCompare(b.categoria) || a.nome.localeCompare(b.nome));
 
+/**
+ * Preserva endereço e área do catálogo anterior.
+ *
+ * Isto era um segundo comando que tinha que ser lembrado à mão depois de toda
+ * importação, e esquecer quebrava link de produto: o id vem do nome, e o Sérgio
+ * renomeia produto com frequência. Em setembro passou perto.
+ *
+ * A referência é o próprio produtos.json que ainda está no disco, porque este
+ * script só grava por cima no final. Se não existir, é a primeira geração e não
+ * há nada a preservar.
+ */
+{
+  const { preservar, relatar } = require('./preserva-slugs.js');
+  try {
+    const antes = JSON.parse(fs.readFileSync(path.join(OUT_DIR, 'produtos.json'), 'utf8')).produtos;
+    console.log();
+    console.log('--- PRESERVANDO ENDEREÇOS E ÁREAS DO CATÁLOGO ANTERIOR ---');
+    const rel = preservar(antes, produtos);
+    // id repetido é erro de verdade: dois produtos disputando o mesmo endereço.
+    // Sai com código diferente de zero para quem rodar isso numa automação ver.
+    if (!relatar(rel, produtos.length)) process.exitCode = 1;
+  } catch (e) {
+    if (e.code !== 'ENOENT') throw e;
+    console.log('primeira geração: não há catálogo anterior para preservar');
+  }
+}
+
 // ---------- 6. sumários ----------
 const sumarios = { resumosRegulares: { totalPaginas: null, totalDisciplinas: null, disciplinas: [] }, flashcardsRegulares: [], modulosPorArea: [] };
 {

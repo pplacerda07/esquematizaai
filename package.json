@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "catalogo": "node scripts/build-catalogo.js"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.3",
