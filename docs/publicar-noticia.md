@@ -13,7 +13,7 @@ que vai publicar as notícias e ele vai saber o que fazer.
 | Token | Com o Pedro. É uma senha: não cole em conversa pública nem em arquivo compartilhado. |
 
 > **O endereço mudou em 06/09.** Antes a rota só respondia em
-> `esquematizaai.com`, porque `esquematizaai.com` ainda era o WordPress.
+> `esquematizaai.vercel.app`, porque `esquematizaai.com` ainda era o WordPress.
 > Hoje o domínio é deste site e é por ele que se chama a rota. O endereço da
 > Vercel continua funcionando, mas não use: ele muda sozinho quando o projeto é
 > renomeado ou movido de conta.
