@@ -112,9 +112,49 @@ function ehPaginaDeProduto(endereco) {
   return /\/produto\/[^/]+\/?$/.test(new URL(endereco).pathname);
 }
 
-const alvos = produtosDb.produtos.filter(
-  (p) => p.precos?.cheio != null && !manuais.checkouts[p.id] && !p.checkouts?.normal && p.urlSite,
-);
+/**
+ * Produto escondido no painel não entra na conferência.
+ *
+ * Sem isto o relatório mistura duas coisas muito diferentes: produto quebrado
+ * que o visitante vê, e produto que já foi tirado do ar de propósito. Aconteceu
+ * em 16/09: reportei 13 produtos com o botão de compra sem destino, e 12 deles
+ * já estavam escondidos havia mais de uma semana. Só um estava mesmo à venda.
+ *
+ * A planilha não sabe disso, quem sabe é a tabela produtos_ajustes. Sem a chave
+ * no .env.local o script segue em frente e avisa, porque conferir checkout
+ * continua valendo; o que não vale é apresentar o resultado como se fosse a
+ * vitrine.
+ */
+async function escondidosNoPainel() {
+  let env = '';
+  try {
+    env = fs.readFileSync(path.join(__dirname, '..', '.env.local'), 'utf8');
+  } catch {
+    console.warn('AVISO: sem .env.local. O relatório vai incluir produtos que já estão escondidos no painel.\n');
+    return new Set();
+  }
+
+  const ler = (chave) =>
+    env.split(/\r?\n/).find((l) => l.startsWith(chave + '='))?.slice(chave.length + 1).trim().replace(/^["']|["']$/g, '');
+
+  const endereco = ler('NEXT_PUBLIC_SUPABASE_URL');
+  const chave = ler('SUPABASE_SERVICE_ROLE_KEY');
+  if (!endereco || !chave) {
+    console.warn('AVISO: faltam as variáveis do Supabase. O relatório vai incluir produtos já escondidos.\n');
+    return new Set();
+  }
+
+  const r = await fetch(endereco + '/rest/v1/produtos_ajustes?select=produto_id&oculto=is.true', {
+    headers: { apikey: chave, authorization: 'Bearer ' + chave },
+  });
+  if (!r.ok) {
+    console.warn('AVISO: não consegui ler o painel (HTTP ' + r.status + '). O relatório vai incluir produtos já escondidos.\n');
+    return new Set();
+  }
+  return new Set((await r.json()).map((x) => x.produto_id));
+}
+
+let alvos = [];
 
 const relatorio = {
   confirmados: [],
@@ -127,6 +167,17 @@ const relatorio = {
 };
 
 async function main() {
+  const escondidos = await escondidosNoPainel();
+  alvos = produtosDb.produtos.filter(
+    (p) =>
+      p.precos?.cheio != null &&
+      !escondidos.has(p.id) &&
+      !manuais.checkouts[p.id] &&
+      !p.checkouts?.normal &&
+      p.urlSite,
+  );
+
+  console.log('escondidos no painel, fora da conferência: ' + escondidos.size);
   console.log('produtos a conferir: ' + alvos.length + '\n');
 
   for (const [i, p] of alvos.entries()) {
