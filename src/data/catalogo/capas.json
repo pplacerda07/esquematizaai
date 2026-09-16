@@ -746,6 +746,16 @@
       "src": "/capas/combo-resumos-flashcards-tribunal-regular.webp",
       "width": 452,
       "height": 685
+    },
+    "combo-resumo-area-legislativa-regular": {
+      "src": "/capas/combo-resumo-area-legislativa-regular.webp",
+      "width": 447,
+      "height": 629
+    },
+    "combo-flashcards-area-legislativa-regular": {
+      "src": "/capas/combo-flashcards-area-legislativa-regular.webp",
+      "width": 451,
+      "height": 622
     }
   }
 }
