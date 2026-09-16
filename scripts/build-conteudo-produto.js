@@ -32,7 +32,10 @@ const decodar = (s) =>
   s
     .replace(/&#8220;|&#8221;/g, '"')
     .replace(/&#8217;|&#8216;/g, "'")
-    .replace(/&#8211;|&#8212;/g, ', ') // o cliente não usa travessão
+    // O cliente não usa travessão. Os espaços ao redor entram na troca de
+    // propósito: sem isso " – " virava " , " e saía "MÓDULO I , RESUMOS" na
+    // tela, com espaço antes da vírgula. O Sérgio apontou em 16/09.
+    .replace(/\s*(?:&#8211;|&#8212;)\s*/g, ', ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')

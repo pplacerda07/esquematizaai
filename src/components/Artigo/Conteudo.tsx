@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkDirective from 'remark-directive';
 import remarkBlocos from './remarkBlocos';
+import remarkDisciplinas from './remarkDisciplinas';
 import CtaProduto from './CtaProduto';
 import { ancora } from '@/lib/artigo';
 import styles from './conteudo.module.css';
@@ -78,7 +79,7 @@ export default function Conteudo({ markdown }: { markdown: string }) {
   return (
     <div className={styles.corpo}>
       <ReactMarkdown
-        remarkPlugins={[remarkGfm, remarkDirective, remarkBlocos]}
+        remarkPlugins={[remarkGfm, remarkDirective, remarkBlocos, remarkDisciplinas]}
         components={{
           div(props: PropsDiv) {
             const { 'data-bloco': bloco, 'data-rotulo': rotulo, children, ...resto } = props;

@@ -93,3 +93,22 @@ desses itens precisam de texto revisado antes de ir ao ar.
 
 Os cupons `BLACK30`, `BLACKVL30` e os 4 de SOCIAL SELLER não têm lista de produtos elegíveis
 na planilha. Antes de expor cupom no site, confirmar onde cada um vale.
+
+## O raspador de conteúdo quebrou contra o WordPress atual (16/09)
+
+**Não rode `scripts/build-conteudo-produto.js` até isto ser resolvido.** Rodei
+em 16/09 e conferi o diff antes de aceitar: ele estraga o que hoje está certo.
+
+O que volta errado:
+
+- **A resposta de cada FAQ vem com lixo no fim**, um pedaço de HTML cru do tipo
+  `<div id="..." class="elementor-tab-title`. O recorte da FAQ não acha mais o
+  limite do bloco, porque a página de vendas mudou de estrutura. Isso apareceria
+  na tela do aluno.
+- Uma das respostas ganha um `Resposta: ` na frente, que não existia.
+
+O que mudou de verdade na loja, e é decisão do Sérgio, não defeito:
+
+- **O telefone da FAQ virou (12) 9 9615-2509.** O site usa (11) 5286-5954, que
+  está em `WHATSAPP_NUMERO` no `src/config.ts` e vale para todos os botões.
+  Confirmar qual é o certo antes de mexer.

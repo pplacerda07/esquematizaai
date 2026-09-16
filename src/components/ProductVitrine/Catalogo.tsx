@@ -224,8 +224,20 @@ export default function Catalogo({
     return mapa;
   }, [itens]);
 
+  /**
+   * Trocar o tipo de produto sempre volta a área para "Todas as áreas".
+   *
+   * Os dois filtros se cruzam, e nem toda combinação existe: quem tivesse
+   * "Controle" marcado e clicasse em "Assinaturas" via a tela vazia, sem
+   * entender que o culpado era um filtro de cima que ele já tinha esquecido.
+   * O Sérgio topou com isso em 16/09 e pediu esta regra.
+   *
+   * O caminho contrário não zera nada de propósito: escolher a área depois do
+   * tipo é a pessoa refinando o que já viu, e aí a combinação é intencional.
+   */
   const trocarSegmento = (valor: string) => {
     setSegmento(valor);
+    setArea('todas');
     setVisiveis(inicialVisivel);
   };
 
