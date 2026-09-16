@@ -79,6 +79,41 @@ function semelhanca(nomeDoCatalogo, tituloDaEduzz) {
   return iguais / a.size;
 }
 
+/**
+ * Link que põe o material no carrinho da loja, para quem não tem Eduzz.
+ *
+ * Metade dos produtos sem checkout é vendida pelo carrinho do WooCommerce, e
+ * para eles o botão do site largava a pessoa na página de vendas. O Sérgio
+ * perguntou em 16/09 se dava para apontar direto para o carrinho. Dá: o
+ * WooCommerce aceita `?add-to-cart=<id>` em qualquer página.
+ *
+ * Conferido na loja em 16/09 com o Flashcards Contabilidade Total: o link põe
+ * o item no carrinho e a pessoa cai no carrinho com ele lá, ao lado do botão de
+ * finalizar. Não cai direto na tela de pagamento porque a loja está com
+ * "redirecionar para o carrinho após adicionar" ligado, que é uma caixinha em
+ * WooCommerce > Configurações > Produtos.
+ *
+ * TRÊS RECUSAS, e todas já custaram caro em outro lugar:
+ *  - preço da loja diferente do preço do site: a pessoa clicaria em comprar por
+ *    um valor e veria outro no carrinho;
+ *  - produto variável: precisa de variação e atributo na URL, e sem isso o
+ *    carrinho recebe o item errado ou nenhum;
+ *  - página sem o botão de adicionar: produto esgotado ou só de leitura.
+ */
+function linkDeCarrinho(html, precoDoCatalogo, precoBate) {
+  if (!precoBate) return { ok: false, motivo: 'preço da loja diferente de R$ ' + precoDoCatalogo };
+  if (!/product-type-simple/.test(html)) return { ok: false, motivo: 'produto não é simples na loja' };
+
+  const m = /name="add-to-cart"\s+value="(\d+)"/.exec(html);
+  if (!m) return { ok: false, motivo: 'página sem botão de adicionar ao carrinho' };
+
+  return {
+    ok: true,
+    idNaLoja: m[1],
+    url: URL_DA_LOJA + '/finalizacao-de-compra/?add-to-cart=' + m[1],
+  };
+}
+
 function precoNaPagina(html) {
   const precos = new Set();
   for (const m of html.matchAll(/woocommerce-Price-amount[\s\S]{0,200}?([\d.]+,\d{2})/g)) {
@@ -160,6 +195,7 @@ const relatorio = {
   confirmados: [],
   precoDivergente: [],
   semCheckout: [],
+  carrinho: [],
   paginaFora: [],
   saiuDaLoja: [],
   nomeDivergente: [],
@@ -205,18 +241,32 @@ async function main() {
       continue;
     }
 
-    const codigos = checkoutsNaPagina(resposta.html);
-    if (codigos.length === 0) {
-      relatorio.semCheckout.push({ id: p.id, endereco });
-      console.log(posicao + '  sem checkout  ' + p.id);
-      continue;
-    }
-
     const precos = precoNaPagina(resposta.html);
     const doCatalogo = p.precos.cheio;
     // a página lista o preço em mais de um lugar (caixa de compra, produtos
     // relacionados); basta que UM deles seja o preço que o site anuncia
     const precoBate = precos.includes(doCatalogo);
+
+    const codigos = checkoutsNaPagina(resposta.html);
+    if (codigos.length === 0) {
+      /**
+       * Sem checkout da Eduzz, a venda é pelo carrinho do próprio WooCommerce.
+       * Para esses o destino é o link que já joga o material no carrinho, em
+       * vez de largar a pessoa na página de vendas para procurar o botão.
+       */
+      const carrinho = linkDeCarrinho(resposta.html, doCatalogo, precoBate);
+      if (!carrinho.ok) {
+        relatorio.semCheckout.push({ id: p.id, endereco, motivo: carrinho.motivo });
+        console.log(posicao + '  sem checkout  ' + p.id + '  (' + carrinho.motivo + ')');
+        continue;
+      }
+      relatorio.carrinho.push({
+        id: p.id, nome: p.nome, checkout: carrinho.url,
+        idNaLoja: carrinho.idNaLoja, doCatalogo, naLoja: precos, endereco,
+      });
+      console.log(posicao + '  carrinho      ' + p.id + '  -> add-to-cart=' + carrinho.idNaLoja);
+      continue;
+    }
 
     const checkout = 'https://chk.eduzz.com/' + codigos[0];
     const registro = { id: p.id, nome: p.nome, checkout, doCatalogo, naLoja: precos, endereco };
@@ -291,6 +341,7 @@ async function main() {
   console.log('preço divergente        : ' + relatorio.precoDivergente.length);
   console.log('nome não bate na Eduzz  : ' + relatorio.nomeDivergente.length);
   console.log('checkout repetido       : ' + relatorio.checkoutRepetido.length);
+  console.log('pelo carrinho da loja   : ' + relatorio.carrinho.length);
   console.log('página sem checkout     : ' + relatorio.semCheckout.length);
   console.log('saiu da loja (redirect) : ' + relatorio.saiuDaLoja.length);
   console.log('página fora do ar       : ' + relatorio.paginaFora.length);
@@ -305,9 +356,14 @@ async function main() {
     return;
   }
 
-  for (const c of relatorio.confirmados) manuais.checkouts[c.id] = c.checkout;
+  for (const c of [...relatorio.confirmados, ...relatorio.carrinho]) {
+    manuais.checkouts[c.id] = c.checkout;
+  }
   fs.writeFileSync(ARQUIVO_MANUAIS, JSON.stringify(manuais, null, 2) + '\n', 'utf8');
-  console.log('gravados ' + relatorio.confirmados.length + ' checkouts em checkouts-manuais.json');
+  console.log(
+    'gravados ' + relatorio.confirmados.length + ' checkouts da Eduzz e ' +
+    relatorio.carrinho.length + ' links de carrinho em checkouts-manuais.json',
+  );
 }
 
 main();

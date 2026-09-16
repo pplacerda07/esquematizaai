@@ -19,7 +19,7 @@ import CarrosselProva from '@/components/CarrosselProva';
 import { produtos, produtoPor, ofertaAtual, formatarPreco, capaDe, conteudoDe, selosDe, type Produto } from '@/data/catalogo';
 import { produtoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta, SLUG_DA_AREA } from '@/data/catalogo/rotulos';
-import { SITE_URL, AMOSTRAS_DRIVE_URL, textoParaLoja } from '@/config';
+import { SITE_URL, URL_DA_LOJA, AMOSTRAS_DRIVE_URL, textoParaLoja } from '@/config';
 import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from './styles.module.css';
 
@@ -189,10 +189,19 @@ export default async function ProdutoPage({
         <span className={styles.amostraPeso}>abre a pasta no Google Drive</span>
       </a>
 
+      {/* Diz para onde o botão leva, sem prometer o que não vai acontecer.
+          São três destinos diferentes e o texto muda com o endereço, não com
+          um campo à parte que alguém esqueceria de atualizar: material da
+          Eduzz vai para o checkout dela, material vendido pela loja vai para o
+          carrinho já com o item dentro, e quem não tem nenhum dos dois ainda
+          cai na página de vendas. Dizer "Eduzz" num que é do carrinho seria
+          mentira na última tela antes de pagar. */}
       <p className={styles.buyNote}>
         {oferta.viaPaginaDeVendas
           ? 'A compra é finalizada na página do produto.'
-          : 'Pagamento processado pela Eduzz.'}
+          : oferta.checkout.startsWith(URL_DA_LOJA)
+            ? 'Você vai para o carrinho da loja, com o material já adicionado.'
+            : 'Pagamento processado pela Eduzz.'}
       </p>
 
       {/* Aviso dos termos, pedido pelo Sérgio em 15/09 para ficar igual ao que
