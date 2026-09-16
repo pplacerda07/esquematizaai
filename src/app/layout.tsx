@@ -7,9 +7,17 @@ import { SITE_URL } from "@/config";
 const DESCRICAO =
   'Resumos e flashcards para concursos públicos, feitos a partir do histórico de cobrança das bancas. Áreas fiscal, controle, policial, tribunais e legislativa.';
 
+/**
+ * Título único do site, pedido pelo Sérgio em 15/09 junto com a troca do
+ * cartão de compartilhamento. Antes eram dois: "Plataforma de Educação Online"
+ * na aba do navegador e no Google, e outro no cartão do WhatsApp. Este diz o
+ * que a empresa vende e vale nos dois lugares.
+ */
+const TITULO = 'Esquematiza Aí | Mentoria, Resumos e Flashcards para concursos públicos';
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Esquematiza Aí | Plataforma de Educação Online",
+  title: TITULO,
   // "Jornal do Marco" saiu daqui junto com o do rodapé, a pedido do Sérgio.
   // Esta descrição é a que aparece no Google e ao compartilhar o link, então
   // ganhou uma frase que diz o que o site vende.
@@ -35,12 +43,12 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: SITE_URL,
     siteName: 'Esquematiza Aí',
-    title: 'Esquematiza Aí | Resumos e flashcards para concursos públicos',
+    title: TITULO,
     description: DESCRICAO,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Esquematiza Aí | Resumos e flashcards para concursos públicos',
+    title: TITULO,
     description: DESCRICAO,
   },
 };

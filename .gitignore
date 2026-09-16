@@ -25,3 +25,6 @@ yarn-error.log*
 # typescript
 tsconfig.tsbuildinfo
 next-env.d.ts
+
+# relatório da conferência de checkouts: é foto do momento, se refaz rodando o script
+scripts/dados/conferencia-checkouts.json

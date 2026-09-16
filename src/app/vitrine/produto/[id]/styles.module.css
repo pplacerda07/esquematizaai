@@ -332,6 +332,25 @@
   margin: 0;
 }
 
+/* Aviso legal: menor e mais apagado que a nota de pagamento, porque é letra
+   miúda de verdade. O link é o único pedaço com contraste cheio, senão vira
+   texto cinza que ninguém percebe que dá para clicar. */
+.termosNote {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--color-neutral-dark);
+  opacity: 0.6;
+  text-align: center;
+  margin: 0.5rem 0 0;
+}
+
+.termosNote a {
+  color: var(--color-cold-dark);
+  text-decoration: underline;
+  opacity: 1;
+}
+
 /* ---------- rodapé da página ---------- */
 
 .backRow {

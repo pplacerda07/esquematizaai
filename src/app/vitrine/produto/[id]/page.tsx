@@ -195,6 +195,16 @@ export default async function ProdutoPage({
           : 'Pagamento processado pela Eduzz.'}
       </p>
 
+      {/* Aviso dos termos, pedido pelo Sérgio em 15/09 para ficar igual ao que
+          o checkout da Eduzz já mostra embaixo do botão. Aqui é a última tela
+          nossa antes de a pessoa sair para pagar, então é aqui que o aviso
+          precisa aparecer. O link abre na mesma aba de propósito: quem clicar
+          está lendo, não comprando, e volta pelo botão do navegador. */}
+      <p className={styles.termosNote}>
+        Ao concluir a compra, você declara ter lido e concorda com os{' '}
+        <Link href="/termos-de-uso">Termos de Uso</Link>.
+      </p>
+
       {/* letreiro com o que está incluído; os selos saem do texto do próprio
           produto, então nenhum deles promete algo que aquele item não tem */}
       <SelosTicker selos={selos} />
