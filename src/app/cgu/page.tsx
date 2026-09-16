@@ -9,11 +9,13 @@ import RevealController from '@/components/RevealController';
 import CountUp from '@/components/CountUp';
 import YouTubeEmbed from '@/components/YouTubeEmbed';
 import MentorPhoto from '@/components/MentorPhoto';
+import { SITE_URL } from '@/config';
 
 export const metadata: Metadata = {
   title: 'Pré-edital CGU | Aula gratuita + grupo VIP · Esquematiza Aí',
   description:
     'O concurso da CGU já foi autorizado. Assista à aula gratuita e entre no grupo VIP do pré-edital para receber o ciclo de estudos e largar na frente.',
+  alternates: { canonical: `${SITE_URL}/cgu` },
 };
 
 const delay = (ms: number) => ({ ['--reveal-delay']: `${ms}ms` } as React.CSSProperties);

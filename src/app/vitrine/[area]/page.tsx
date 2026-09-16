@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
@@ -7,6 +8,7 @@ import AreaCarousel, { type AreaSection, type VitrineItem } from '@/components/A
 import { AREAS, findArea } from '@/components/Navbar/areas';
 import { produtosVendaveis, ofertaAtual, capaDe } from '@/data/catalogo';
 import { rotuloDeFerramenta } from '@/data/catalogo/rotulos';
+import { SITE_URL } from '@/config';
 import styles from './styles.module.css';
 
 /**
@@ -17,6 +19,40 @@ export const revalidate = 60;
 
 export function generateStaticParams() {
   return AREAS.map((a) => ({ area: a.slug }));
+}
+
+/**
+ * Título, descrição e endereço oficial de cada área.
+ *
+ * Esta rota não declarava metadata nenhuma. Sem isso o Next herda a do layout
+ * raiz, e as seis páginas de área entravam no Google com o MESMO título e a
+ * MESMA descrição da home, palavra por palavra. Conferi no ar: /vitrine/fiscal
+ * saía com "Esquematiza Aí | Mentoria, Resumos e Flashcards para concursos
+ * públicos", idêntico à home.
+ *
+ * Seis endereços com o mesmo título, a mesma descrição e sem canonical é a
+ * receita do aviso que o Search Console mandou em 16/09.
+ */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ area: string }>;
+}): Promise<Metadata> {
+  const { area } = await params;
+  const encontrada = findArea(area);
+  if (!encontrada) return { title: 'Área não encontrada' };
+
+  const quantos = encontrada.catalogoArea
+    ? produtosVendaveis().filter((p) => p.area === encontrada.catalogoArea).length
+    : 0;
+
+  return {
+    title: `Concursos da área ${encontrada.name} | Esquematiza Aí`,
+    description: quantos
+      ? `${quantos} materiais do Esquematiza Aí para concursos da área ${encontrada.name}: resumos esquematizados, flashcards, vade mecum e questões inéditas.`
+      : `Materiais do Esquematiza Aí para concursos da área ${encontrada.name}.`,
+    alternates: { canonical: `${SITE_URL}/vitrine/${encontrada.slug}` },
+  };
 }
 
 // Monta as seções da vitrine de uma área a partir do catálogo real.

@@ -13,6 +13,7 @@ import Arsenal from '@/components/Arsenal';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import LeadPopup from '@/components/LeadPopup';
+import { SITE_URL } from '@/config';
 import styles from './page.module.css';
 
 /**
@@ -20,6 +21,23 @@ import styles from './page.module.css';
  * depender de deploy. Um minuto, igual às outras páginas do catálogo.
  */
 export const revalidate = 60;
+
+/**
+ * Só o endereço oficial. Título e descrição continuam vindo do layout raiz,
+ * porque a metadata do Next se junta campo a campo: declarar `alternates` aqui
+ * não apaga o resto.
+ *
+ * A home recebe link de campanha o tempo todo, com utm e fbclid colados no fim,
+ * e cada um desses vira um endereço diferente aos olhos do Google. Esta linha
+ * diz que todos são a mesma página.
+ *
+ * O canonical NÃO pode morar no layout raiz: lá ele seria herdado por toda
+ * página que não declarasse a sua, e cada uma passaria a se apresentar como a
+ * home. Por isso é declarado página a página.
+ */
+export const metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
 export default function Home() {
   return (

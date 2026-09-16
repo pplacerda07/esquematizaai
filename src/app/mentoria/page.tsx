@@ -17,11 +17,13 @@ import BonusFlip from '@/components/BonusFlip';
 import Pilares from '@/components/Pilares';
 import VideosDepoimentos from '@/components/VideosDepoimentos';
 import PlanosMentoria from '@/components/PlanosMentoria';
+import { SITE_URL } from '@/config';
 
 export const metadata: Metadata = {
   title: 'Esquematiza Mentoria | Aprovação em concursos públicos com método e revisão',
   description:
     'A mentoria que prioriza o que cada banca cobra, com plano individual e acompanhamento de quem já foi aprovado. Nossos alunos nas listas de SEFAZ-SP, SEFA-PA, SEFAZ-MT e SEFAZ-RN em 2026.',
+  alternates: { canonical: `${SITE_URL}/mentoria` },
 };
 
 // stagger: define o atraso da animação de entrada de cada elemento

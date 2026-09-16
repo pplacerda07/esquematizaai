@@ -58,6 +58,26 @@ export async function generateMetadata({
   return {
     title: `${produto.nome} | Esquematiza Aí`,
     description: descricao,
+    /**
+     * Endereço oficial desta página, declarado.
+     *
+     * O texto de venda daqui foi raspado da página do produto na loja em
+     * WordPress, então o mesmo parágrafo existe nos dois domínios. A página da
+     * loja declara canonical apontando para ela mesma, pelo Yoast; esta não
+     * declarava nada. Numa disputa entre uma página que se diz original e outra
+     * calada, o Google fica com a que fala, e a calada some do índice.
+     *
+     * Foi o que o Search Console avisou em 16/09: "cópia sem página canônica
+     * selecionada pelo usuário", que em português claro é "você não disse qual
+     * vale, então eu escolhi".
+     *
+     * APONTA PARA SI MESMA, e não para a loja, de propósito. O canonical entre
+     * domínios só é respeitado quando as duas páginas são quase equivalentes, e
+     * aqui a sobreposição medida foi de 48%: preço, botão e selos são nossos.
+     * Um canonical cruzado seria ignorado e voltaríamos ao silêncio. Decidir de
+     * quem é o texto de venda é outra conversa, e é do Sérgio.
+     */
+    alternates: { canonical: `${SITE_URL}/vitrine/produto/${produto.id}` },
   };
 }
 

@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProductVitrine from '@/components/ProductVitrine';
 import UrgencyBar from '@/components/HeroSection/UrgencyBar';
+import { SITE_URL } from '@/config';
 import styles from './styles.module.css';
 
 /**
@@ -21,6 +22,19 @@ export const metadata = {
   title: 'Vitrine | Esquematiza Aí',
   description:
     'Todos os combos, materiais isolados e assinaturas do Esquematiza Aí para concursos das áreas Fiscal, Controle, Policial, Tribunais, Bancária e Legislativa.',
+  /**
+   * Endereço oficial fixo, sem os parâmetros.
+   *
+   * O filtro da vitrine roda no navegador: o servidor ignora `?tipo=` e
+   * `?busca=` e devolve o mesmo documento, byte a byte (medi: 263.877 bytes em
+   * /vitrine e em /vitrine?tipo=combo). O rodapé publica quatro desses links
+   * com parâmetro em toda página do site, então o Google chega neles seguindo
+   * link, sem depender do sitemap, e enxerga quatro cópias da vitrine.
+   *
+   * Esta linha diz que todas são a mesma página. Vale também para o que chega
+   * de campanha com utm e fbclid colados no fim.
+   */
+  alternates: { canonical: `${SITE_URL}/vitrine` },
 };
 
 export default function VitrinePage() {

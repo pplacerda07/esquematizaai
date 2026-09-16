@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Termos, { type DocumentoTermos } from '@/components/Termos';
 import documento from '@/data/termos/privacidade.json';
+import { SITE_URL } from '@/config';
 
 /**
  * Política de privacidade.
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
   title: 'Política de Privacidade | Esquematiza Aí',
   description:
     'Como o Esquematiza Aí trata as informações de quem usa o site: dados coletados, cookies próprios e de terceiros, e o compromisso do usuário.',
+  alternates: { canonical: `${SITE_URL}/politica-de-privacidade` },
 };
 
 export default function PoliticaDePrivacidadePage() {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Termos, { type DocumentoTermos } from '@/components/Termos';
 import documento from '@/data/termos/mentoria.json';
+import { SITE_URL } from '@/config';
 
 /**
  * Termos de uso da mentoria.
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   title: 'Termos de uso da mentoria | Esquematiza Aí',
   description:
     'Termos e condições de uso da Esquematiza Aí Mentoria: objeto, planos, cancelamento, reembolso, propriedade intelectual e proteção de dados.',
+  alternates: { canonical: `${SITE_URL}/termos-de-uso-mentoria` },
 };
 
 export default function TermosDaMentoriaPage() {

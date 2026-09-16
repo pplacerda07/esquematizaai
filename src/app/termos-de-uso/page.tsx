@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Termos, { type DocumentoTermos } from '@/components/Termos';
 import documento from '@/data/termos/materiais.json';
+import { SITE_URL } from '@/config';
 
 /**
  * Termos de uso dos materiais.
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   title: 'Termos de uso dos materiais | Esquematiza Aí',
   description:
     'Termos e condições de uso e conduta dos materiais e produtos digitais do Esquematiza Aí: acesso, liberação programada, reembolso e propriedade intelectual.',
+  alternates: { canonical: `${SITE_URL}/termos-de-uso` },
 };
 
 export default function TermosDeUsoPage() {
