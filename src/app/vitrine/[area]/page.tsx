@@ -6,7 +6,8 @@ import UrgencyBar from '@/components/HeroSection/UrgencyBar';
 import Footer from '@/components/Footer';
 import AreaCarousel, { type AreaSection, type VitrineItem } from '@/components/AreaCarousel';
 import { AREAS, findArea } from '@/components/Navbar/areas';
-import { produtosVendaveis, ofertaAtual, capaDe } from '@/data/catalogo';
+import { produtosVendaveis, capaDe } from '@/data/catalogo';
+import { catalogoParaVitrine, type ProdutoAjustado } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta } from '@/data/catalogo/rotulos';
 import { SITE_URL } from '@/config';
 import styles from './styles.module.css';
@@ -55,12 +56,19 @@ export async function generateMetadata({
   };
 }
 
-// Monta as seções da vitrine de uma área a partir do catálogo real.
-function secoesDaArea(catalogoArea: string): AreaSection[] {
-  const vendaveis = produtosVendaveis().filter((p) => p.categoria !== 'oferta-personalizada');
+/**
+ * Monta as seções da área a partir do catálogo JÁ AJUSTADO pelo painel.
+ *
+ * Lia a planilha crua, e por isso mostrava preço diferente do que a vitrine
+ * cobrava pelo mesmo produto, além de continuar exibindo o que o Sérgio tinha
+ * escondido. O defeito apareceu em 17/09 nas assinaturas, mas valia para os
+ * cerca de 100 produtos destas páginas.
+ */
+function secoesDaArea(catalogo: ProdutoAjustado[], catalogoArea: string): AreaSection[] {
+  const vendaveis = catalogo.filter((a) => a.produto.categoria !== 'oferta-personalizada');
 
-  const paraItem = (p: (typeof vendaveis)[number]): VitrineItem | null => {
-    const oferta = ofertaAtual(p);
+  const paraItem = (a: ProdutoAjustado): VitrineItem | null => {
+    const { produto: p, oferta } = a;
     if (!oferta) return null;
     return {
       id: p.id,
@@ -71,7 +79,7 @@ function secoesDaArea(catalogoArea: string): AreaSection[] {
       percentualOff: oferta.percentualOff,
       checkout: oferta.checkout,
       viaPaginaDeVendas: oferta.viaPaginaDeVendas,
-      capa: capaDe(p),
+      capa: a.capaDoPainel ?? capaDe(p),
     };
   };
 
@@ -91,15 +99,15 @@ function secoesDaArea(catalogoArea: string): AreaSection[] {
     return out;
   };
 
-  const daArea = (extra: (p: (typeof vendaveis)[number]) => boolean) =>
-    vendaveis.filter((p) => p.area === catalogoArea && extra(p));
+  const daArea = (extra: (p: ProdutoAjustado['produto']) => boolean) =>
+    vendaveis.filter((a) => a.produto.area === catalogoArea && extra(a.produto));
 
   const candidatas: AreaSection[] = [
     {
       key: 'assinaturas',
       title: 'Assinaturas',
       subtitle: 'Acesso a todos os resumos e flashcards regulares por um período.',
-      items: montar(vendaveis.filter((p) => p.categoria === 'assinatura')),
+      items: montar(vendaveis.filter((a) => a.produto.categoria === 'assinatura')),
     },
     {
       key: 'combos',
@@ -136,7 +144,8 @@ export default async function AreaVitrinePage({
     notFound();
   }
 
-  const sections = matched.catalogoArea ? secoesDaArea(matched.catalogoArea) : [];
+  const catalogo = await catalogoParaVitrine();
+  const sections = matched.catalogoArea ? secoesDaArea(catalogo, matched.catalogoArea) : [];
 
   return (
     <main className={styles.main}>

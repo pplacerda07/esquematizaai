@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.css';
-import { produtoPor, ofertaAtual, formatarPreco, capaDe, type Produto, type Oferta } from '@/data/catalogo';
+import { formatarPreco, capaDe, type Produto, type Oferta } from '@/data/catalogo';
+import { ajustadosPorId } from '@/lib/catalogo-ajustes';
 import { rotuloDeFerramenta } from '@/data/catalogo/rotulos';
 
 // As assinaturas em destaque. Se uma perder preço ou destino de compra no
@@ -18,11 +19,21 @@ const ID_EM_EVIDENCIA = 'assinatura-resumos-regular-flashcards-regular';
 
 type Plano = { produto: Produto; oferta: Oferta };
 
-export default function FeaturedCourses() {
+export default async function FeaturedCourses() {
+  /**
+   * PELO PAINEL, não pela planilha.
+   *
+   * Era daqui que saía o preço divergente que o Sérgio viu em 17/09: a mesma
+   * Assinatura Resumos Regular aparecia a R$ 897 na vitrine, que lê o painel, e
+   * a R$ 797 neste bloco, que lia a planilha. O barato era o errado.
+   *
+   * De quebra, quem o Sérgio esconde no painel some daqui sozinho, em vez de
+   * continuar em destaque na home depois de tirado de venda.
+   */
+  const ajustados = await ajustadosPorId(ASSINATURA_IDS);
   const planos: Plano[] = ASSINATURA_IDS.flatMap((id) => {
-    const produto = produtoPor(id);
-    const oferta = produto ? ofertaAtual(produto) : null;
-    return produto && oferta ? [{ produto, oferta }] : [];
+    const ajustado = ajustados.get(id);
+    return ajustado ? [{ produto: ajustado.produto, oferta: ajustado.oferta }] : [];
   });
 
   if (planos.length === 0) return null;

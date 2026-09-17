@@ -5,7 +5,8 @@ import UrgencyBar from './UrgencyBar';
 import BuscaEAtalhos from '@/components/BuscaEAtalhos';
 import CarrosselDestaque, { DESTAQUES, type Destaque } from '@/components/CarrosselDestaque';
 import OfferCarousel, { type OfertaHero } from './OfferCarousel';
-import { produtoPor, ofertaAtual, capaDe, formatarPreco } from '@/data/catalogo';
+import { capaDe, formatarPreco } from '@/data/catalogo';
+import { ajustadosPorId } from '@/lib/catalogo-ajustes';
 
 // Ofertas reais que giram no card do hero: o combo completo de cada área + a
 // assinatura mais completa. Se um produto perder preço ou destino de compra no
@@ -39,10 +40,16 @@ const CamadaDaMarca = ({ className }: { className: string }) => (
   </svg>
 );
 
-export default function HeroSection() {
+export default async function HeroSection() {
+  // Preço do painel, igual à vitrine. Lendo a planilha crua, este bloco
+  // anunciava na primeira tela da home um valor diferente do que a vitrine
+  // logo abaixo cobrava pelo mesmo material.
+  const ajustados = await ajustadosPorId(HERO_OFERTA_IDS);
+
   const ofertas: OfertaHero[] = HERO_OFERTA_IDS.flatMap((id) => {
-    const p = produtoPor(id);
-    const o = p ? ofertaAtual(p) : null;
+    const ajustado = ajustados.get(id);
+    const p = ajustado?.produto ?? null;
+    const o = ajustado?.oferta ?? null;
     return p && o
       ? [{
           id: p.id,
@@ -62,8 +69,9 @@ export default function HeroSection() {
    * Produto sem capa fica de fora, senão o slide abriria um retângulo vazio.
    */
   const destaquesDosProdutos: Destaque[] = HERO_OFERTA_IDS.flatMap((id) => {
-    const p = produtoPor(id);
-    const o = p ? ofertaAtual(p) : null;
+    const ajustado = ajustados.get(id);
+    const p = ajustado?.produto ?? null;
+    const o = ajustado?.oferta ?? null;
     const capa = p ? capaDe(p) : null;
     if (!p || !o || !capa) return [];
 

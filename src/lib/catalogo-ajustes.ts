@@ -120,6 +120,53 @@ export async function catalogoParaVitrine(): Promise<ProdutoAjustado[]> {
   return saida;
 }
 
+/**
+ * Ajuste aplicado numa lista fixa de ids, para quem monta vitrine própria.
+ *
+ * POR QUE ISTO EXISTE: os blocos que montam cartão a partir de uma lista de ids
+ * escrita no código (destaques da home, planos de assinatura) liam a planilha
+ * crua. Com isso o MESMO produto aparecia com dois preços em duas partes do
+ * site: a vitrine mostrava o preço do painel e o bloco de destaque mostrava o
+ * da planilha. O Sérgio viu isso em 17/09, com a Assinatura Resumos Regular
+ * saindo a R$ 897 na vitrine e a R$ 797 no bloco de cima.
+ *
+ * Isso é pior que feio: o preço mais barato era o errado, e anunciar abaixo do
+ * que se cobra é o mesmo defeito de setembro, com a empresa respondendo por ele.
+ *
+ * Uma leitura só do painel para a lista inteira, em vez de uma por produto.
+ * Quem está oculto NÃO volta no mapa, então some do bloco junto com a vitrine.
+ */
+export async function ajustadosPorId(ids: string[]): Promise<Map<string, ProdutoAjustado>> {
+  const [ajustes, doPainel] = await Promise.all([buscarAjustes(), lerProdutosDoPainel()]);
+  const capas = capasDoPainel(doPainel);
+  const referencias = referenciasDoPainel(doPainel);
+  const saida = new Map<string, ProdutoAjustado>();
+
+  for (const id of ids) {
+    const base =
+      produtos.find((p) => p.id === id || p.idEduzz === id) ??
+      somenteOsQueFaltam(doPainel, produtos).find((p) => p.id === id);
+    if (!base) continue;
+
+    const a = ajustes.get(base.id);
+    if (a?.oculto) continue;
+
+    const ajustado = aplicar(base, a);
+    const oferta = ofertaAtual(ajustado, referencias.get(base.id) ?? null);
+    if (!oferta) continue;
+
+    saida.set(id, {
+      produto: ajustado,
+      oferta,
+      destaque: Boolean(a?.destaque),
+      ordem: a?.ordem ?? null,
+      capaDoPainel: capas.get(base.id) ?? null,
+    });
+  }
+
+  return saida;
+}
+
 /** Um produto com ajuste, para a página dele. null = oculto ou inexistente. */
 export async function produtoAjustado(id: string): Promise<ProdutoAjustado | null> {
   let base = produtos.find((p) => p.id === id || p.idEduzz === id);
