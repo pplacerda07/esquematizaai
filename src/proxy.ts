@@ -58,6 +58,25 @@ export async function proxy(request: NextRequest) {
    */
   const ehAdmin = user ? Boolean((await supabase.rpc('eh_admin')).data) : false;
 
+  /**
+   * Cada área do painel pede o seu papel.
+   *
+   * Sem isto, quem só cuida de produto abriria /admin/blog, escreveria o artigo
+   * inteiro e só descobriria na hora de salvar, quando o banco recusasse. O
+   * trabalho perdido seria dela, e a culpa pareceria do site.
+   *
+   * Isto é conveniência, não segurança: quem manda são as políticas do banco,
+   * que perguntam por pode_produtos() e pode_blog() em cada tabela. Mesmo
+   * chamando a API por fora, sem passar por aqui, a escrita é recusada.
+   */
+  const PAPEL_DA_AREA: { prefixo: string; rpc: string }[] = [
+    { prefixo: '/admin/materiais', rpc: 'pode_produtos' },
+    { prefixo: '/admin/sumarios', rpc: 'pode_produtos' },
+    { prefixo: '/admin/cursos', rpc: 'pode_produtos' },
+    { prefixo: '/admin/blog', rpc: 'pode_blog' },
+    { prefixo: '/admin/noticias', rpc: 'pode_blog' },
+  ];
+
   // Tela de login: só quem já é administrador é levado direto ao painel.
   if (ehLogin) {
     if (ehAdmin) {
@@ -75,6 +94,18 @@ export async function proxy(request: NextRequest) {
     url.pathname = '/admin/login';
     url.search = user ? '?erro=sem-permissao' : '';
     return NextResponse.redirect(url);
+  }
+
+  // Está no painel, mas esta área pode não ser dela.
+  const area = PAPEL_DA_AREA.find((a) => pathname.startsWith(a.prefixo));
+  if (area) {
+    const podeNestaArea = Boolean((await supabase.rpc(area.rpc)).data);
+    if (!podeNestaArea) {
+      const url = request.nextUrl.clone();
+      url.pathname = '/admin';
+      url.search = '?erro=area-sem-acesso';
+      return NextResponse.redirect(url);
+    }
   }
 
   return response;

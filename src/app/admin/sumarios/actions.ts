@@ -35,7 +35,7 @@ function emLinhas(texto: string): string[] {
 }
 
 export async function salvarSumario(formData: FormData): Promise<Resultado> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const id = String(formData.get('id') ?? '').trim();
@@ -98,7 +98,7 @@ export async function salvarSumario(formData: FormData): Promise<Resultado> {
  * ficaria preso mantendo à mão uma disciplina que ele só queria espiar.
  */
 export async function devolverParaPlanilha(formData: FormData): Promise<Resultado> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const id = String(formData.get('id') ?? '').trim();
@@ -135,7 +135,7 @@ export async function devolverParaPlanilha(formData: FormData): Promise<Resultad
  * nova nasce já adotada, porque ela não tem de onde herdar nada.
  */
 export async function criarDisciplina(formData: FormData): Promise<Resultado> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const nome = String(formData.get('nome') ?? '').trim();
@@ -205,7 +205,7 @@ export async function criarDisciplina(formData: FormData): Promise<Resultado> {
  * de reescrever o sumário delas.
  */
 export async function salvarArea(formData: FormData): Promise<Resultado> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const id = String(formData.get('id') ?? '').trim();

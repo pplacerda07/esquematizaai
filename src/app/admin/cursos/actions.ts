@@ -22,7 +22,7 @@ function revalidarTudo() {
  * propósito: é o caminho de volta para quem mexeu e se arrependeu.
  */
 export async function salvarDisciplinasDoCurso(formData: FormData): Promise<Resultado> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const produto_id = String(formData.get('produto_id') ?? '').trim();
@@ -51,7 +51,7 @@ export async function salvarDisciplinasDoCurso(formData: FormData): Promise<Resu
 
 /** volta o curso para a regra automática */
 export async function limparDisciplinasDoCurso(formData: FormData): Promise<Resultado> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const produto_id = String(formData.get('produto_id') ?? '').trim();

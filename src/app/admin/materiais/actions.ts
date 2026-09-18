@@ -22,7 +22,7 @@ function revalidarLoja() {
 }
 
 export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();
@@ -81,7 +81,7 @@ export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste>
 
 /** Devolve o produto ao que a planilha diz, apagando o ajuste inteiro. */
 export async function limparAjuste(produto_id: string): Promise<ResultadoAjuste> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();
@@ -103,7 +103,7 @@ export async function limparAjuste(produto_id: string): Promise<ResultadoAjuste>
  * isso a validação abaixo recusa checkout ou página que já pertençam a alguém.
  */
 export async function criarMaterial(formData: FormData): Promise<ResultadoAjuste> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const nome = String(formData.get('nome') ?? '').trim();
@@ -188,7 +188,7 @@ export async function criarMaterial(formData: FormData): Promise<ResultadoAjuste
 
 /** Apaga um material criado no painel. Não mexe nos que vêm da planilha. */
 export async function apagarMaterialDoPainel(id: string): Promise<ResultadoAjuste> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();

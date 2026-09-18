@@ -31,7 +31,7 @@ function revalidarNoticias() {
  * matéria nossa, não aparece em lugar nenhum.
  */
 export async function salvarNoticia(formData: FormData): Promise<ResultadoNoticia> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('blog');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();
@@ -75,7 +75,7 @@ export async function salvarNoticia(formData: FormData): Promise<ResultadoNotici
 }
 
 export async function excluirNoticia(id: string): Promise<ResultadoNoticia> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('blog');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();
@@ -89,7 +89,7 @@ export async function alternarPublicacaoNoticia(
   id: string,
   novoStatus: 'publicado' | 'rascunho',
 ): Promise<ResultadoNoticia> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('blog');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();

@@ -29,7 +29,7 @@ function revalidarBlog() {
  * publicado_em é preenchido na primeira vez que vira "publicado".
  */
 export async function salvarPost(formData: FormData): Promise<ResultadoPost> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('blog');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();
@@ -75,7 +75,7 @@ export async function salvarPost(formData: FormData): Promise<ResultadoPost> {
 }
 
 export async function excluirPost(id: string): Promise<ResultadoPost> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('blog');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();
@@ -87,7 +87,7 @@ export async function excluirPost(id: string): Promise<ResultadoPost> {
 
 /** Alterna publicado <-> rascunho direto da lista. */
 export async function alternarPublicacao(id: string, novoStatus: 'publicado' | 'rascunho'): Promise<ResultadoPost> {
-  const permissao = await exigirAdmin();
+  const permissao = await exigirAdmin('blog');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
   const supabase = await criarSupabaseServer();
