@@ -1,6 +1,8 @@
 import { criarSupabaseServer } from '@/lib/supabase/server';
 import { produtos, ofertaAtual } from '@/data/catalogo';
 import Gerenciador, { type ItemAdmin, type MaterialDoPainel } from './Gerenciador';
+import { textoDoModelo } from './script-modelo';
+import { textoDaLojaInteira } from '@/lib/catalogo-exportacao';
 
 // Sempre dinâmico: reflete os ajustes na hora em que são salvos.
 export const dynamic = 'force-dynamic';
@@ -75,5 +77,16 @@ export default async function MateriaisAdminPage() {
     };
   });
 
-  return <Gerenciador itens={itens} criadosAqui={criadosAqui} />;
+  // os dois textos sao montados no SERVIDOR: o da loja inteira precisa do
+  // catalogo ja ajustado pelo painel, que o navegador nao tem
+  const hoje = new Date().toLocaleDateString('pt-BR');
+
+  return (
+    <Gerenciador
+      itens={itens}
+      criadosAqui={criadosAqui}
+      modeloDoScript={textoDoModelo()}
+      exportacaoDaLoja={await textoDaLojaInteira(hoje)}
+    />
+  );
 }

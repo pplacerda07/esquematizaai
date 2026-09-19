@@ -4,6 +4,7 @@ import { useMemo, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { salvarAjuste, limparAjuste, criarMaterial, apagarMaterialDoPainel } from './actions';
 import CapaUpload from './CapaUpload';
+import PainelScript from './PainelScript';
 import styles from './page.module.css';
 
 export type ItemAdmin = {
@@ -80,9 +81,15 @@ function normalizar(t: string) {
 export default function Gerenciador({
   itens,
   criadosAqui,
+  modeloDoScript,
+  exportacaoDaLoja,
 }: {
   itens: ItemAdmin[];
   criadosAqui: MaterialDoPainel[];
+  /** texto do modelo que o Sérgio manda para o Claude dele preencher */
+  modeloDoScript: string;
+  /** a loja inteira, para consulta; montada no servidor, só sai daqui */
+  exportacaoDaLoja: string;
 }) {
   const router = useRouter();
   const [apagando, setApagando] = useState<string | null>(null);
@@ -156,6 +163,8 @@ export default function Gerenciador({
       </header>
 
       {avisoNovo && <p className={styles.sucessoNovo}>{avisoNovo}</p>}
+
+      <PainelScript modelo={modeloDoScript} exportacao={exportacaoDaLoja} />
 
       {/* Cadastro de material que ainda não existe na planilha. Até agora isso
           dependia de mandar a planilha e alguém rodar a importação, e nesta

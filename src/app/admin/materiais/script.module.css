@@ -1,0 +1,242 @@
+/* Trabalhar por script. Fica recolhido por padrão: quem só quer ajustar um
+   preço não precisa ver a caixa de colar todo dia. */
+
+.caixa {
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.14);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.25rem;
+  margin: 0 0 1.5rem;
+}
+
+.topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.titulo {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-cold-dark);
+  margin: 0 0 0.15rem;
+}
+
+.subtitulo {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-neutral-dark);
+  opacity: 0.7;
+  margin: 0;
+  max-width: 52ch;
+}
+
+.btnAbrir,
+.btnSec,
+.btnPrim {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btnAbrir,
+.btnSec {
+  color: var(--color-cold-dark);
+  background-color: #fff;
+  border: 1px solid rgba(38, 52, 79, 0.28);
+}
+
+.btnAbrir:hover,
+.btnSec:hover:not(:disabled) {
+  background-color: rgba(187, 227, 240, 0.35);
+}
+
+.btnPrim {
+  color: #fff;
+  background-color: var(--color-hot-primary);
+  border: 1px solid var(--color-hot-primary);
+}
+
+.btnSec:disabled,
+.btnPrim:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.corpo {
+  margin-top: 1.1rem;
+  border-top: 1px solid rgba(38, 52, 79, 0.1);
+  padding-top: 1.1rem;
+}
+
+.botoes {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.aviso {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--color-neutral-dark);
+  opacity: 0.7;
+  margin: 0.6rem 0 1.1rem;
+}
+
+.campo {
+  display: block;
+}
+
+.rotulo {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-cold-dark);
+  margin-bottom: 0.3rem;
+}
+
+/* Monoespaçada: o script é campo a campo, e alinhar os dois pontos deixa
+   visível na hora quando uma linha veio torta do chat. */
+.area {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--color-cold-dark);
+  background-color: #fbfbfc;
+  border: 1px solid rgba(38, 52, 79, 0.22);
+  border-radius: 0.4rem;
+  padding: 0.7rem 0.85rem;
+  resize: vertical;
+}
+
+.acoes {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.sucesso {
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  color: #1a7f4b;
+  background-color: rgba(139, 224, 149, 0.22);
+  border-left: 3px solid var(--color-green-primary);
+  border-radius: 0 0.35rem 0.35rem 0;
+  padding: 0.6rem 0.85rem;
+  margin: 0.9rem 0 0;
+}
+
+/* ---------------------------------------------------------- erros */
+
+.erros {
+  margin-top: 1rem;
+  background-color: rgba(180, 35, 24, 0.06);
+  border-left: 3px solid #b42318;
+  border-radius: 0 0.35rem 0.35rem 0;
+  padding: 0.8rem 0.95rem;
+}
+
+.errosTitulo {
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: #b42318;
+  margin: 0 0 0.4rem;
+}
+
+.listaErros {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-cold-dark);
+  margin: 0 0 0.75rem;
+  padding-left: 1.1rem;
+}
+
+.listaErros li {
+  margin-bottom: 0.25rem;
+}
+
+/* ---------------------------------------------------- conferência */
+
+.conferencia {
+  margin-top: 1rem;
+  background-color: rgba(187, 227, 240, 0.22);
+  border-left: 3px solid var(--color-cold-primary);
+  border-radius: 0 0.35rem 0.35rem 0;
+  padding: 0.85rem 1rem;
+}
+
+.conferenciaTitulo {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-cold-dark);
+  margin: 0 0 0.7rem;
+}
+
+/* Campo a campo, em duas colunas, em vez de imitar o cartão da vitrine: o
+   cartão esconde checkout, endereço e descrição, que são justamente os campos
+   que quebram coisa quando vêm errados. */
+.tabela {
+  display: grid;
+  grid-template-columns: minmax(9rem, 14rem) 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
+.chave {
+  color: var(--color-neutral-dark);
+  opacity: 0.75;
+}
+
+.valor {
+  color: var(--color-cold-dark);
+  font-weight: 500;
+  margin: 0;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.nota {
+  display: block;
+  font-weight: 400;
+  font-size: 0.78rem;
+  opacity: 0.7;
+  margin-top: 0.1rem;
+}
+
+.listaAvisos {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--color-neutral-dark);
+  opacity: 0.85;
+  margin: 0.85rem 0 0;
+  padding-left: 1.1rem;
+}
+
+@media (max-width: 640px) {
+  .tabela {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .chave {
+    margin-top: 0.5rem;
+  }
+}

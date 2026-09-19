@@ -6,6 +6,7 @@ import { exigirAdmin } from '@/lib/supabase/admin-guard';
 import { enviarImagem } from '@/lib/supabase/enviar-imagem';
 import { produtos } from '@/data/catalogo';
 import { comparavel } from '@/lib/produtos-do-painel';
+import { lerScript } from './script-ler';
 
 export type ResultadoAjuste = { ok: boolean; erro?: string };
 
@@ -269,4 +270,123 @@ export async function apagarMaterialDoPainel(id: string): Promise<ResultadoAjust
 export async function enviarCapa(formData: FormData) {
   const pasta = String(formData.get('pasta') ?? 'produtos');
   return enviarImagem(pasta === 'blog' ? 'blog' : 'produtos', formData, 'imagem');
+}
+
+/* ==================================================================
+   Script de produto: conferir, gravar e exportar
+   ================================================================== */
+
+export type ConferenciaDoScript = {
+  ok: boolean;
+  erros: string[];
+  avisos: string[];
+  /** o que vai ser gravado, campo a campo, para a tela mostrar */
+  campos?: {
+    nome: string;
+    tipo: string;
+    preco: number;
+    precoDe: number | null;
+    checkout: string | null;
+    paginaDeVendas: string | null;
+    area: string | null;
+    ferramenta: string | null;
+    formato: string | null;
+    descricao: string | null;
+    endereco: string;
+    enderecoVeioDoNome: boolean;
+  };
+};
+
+/**
+ * Lê o script e diz o que ele vira, SEM GRAVAR NADA.
+ *
+ * Separado do gravar de propósito: a tela de conferência é o pedido central do
+ * Sérgio ("produto ficou assim, conferido"), e ela precisa poder errar à
+ * vontade sem consequência.
+ */
+export async function conferirScript(texto: string): Promise<ConferenciaDoScript> {
+  const permissao = await exigirAdmin('produtos');
+  if (!permissao.ok) return { ok: false, erros: [permissao.erro], avisos: [] };
+
+  const leitura = lerScript(texto);
+  if (!leitura.ok) return { ok: false, erros: leitura.erros, avisos: leitura.avisos };
+
+  const erros: string[] = [];
+
+  // Colisões, que precisam de banco e por isso ficam fora do leitor puro.
+  const conflito = await conflitoDeLink(leitura.campos.checkout, leitura.campos.paginaDeVendas);
+  if (conflito) erros.push(conflito);
+
+  const daPlanilha = produtos.find((p) => p.id === leitura.campos.endereco);
+  if (daPlanilha) {
+    erros.push(
+      `endereço: "${leitura.campos.endereco}" já é o endereço de "${daPlanilha.nome}", que vem da planilha. Escreva um campo "endereco:" diferente no script.`,
+    );
+  } else {
+    const supabase = await criarSupabaseServer();
+    const { data } = await supabase
+      .from('produtos_novos')
+      .select('nome')
+      .eq('id', leitura.campos.endereco)
+      .maybeSingle();
+    if (data) {
+      erros.push(
+        `endereço: "${leitura.campos.endereco}" já é de "${data.nome}", cadastrado aqui no painel. Para mudar aquele material, use o botão Ajustar.`,
+      );
+    }
+  }
+
+  return {
+    ok: erros.length === 0,
+    erros,
+    avisos: leitura.avisos,
+    campos: leitura.campos,
+  };
+}
+
+/**
+ * Grava o produto do script.
+ *
+ * RELÊ O TEXTO DO ZERO, e não recebe o objeto montado pelo navegador. Se
+ * confiasse no objeto, bastaria adulterar a requisição para gravar um preço que
+ * a conferência nunca viu. O texto colado é o único dado que atravessa.
+ *
+ * Copia campo a campo, por nome. Nunca espalha objeto: nenhum campo do arquivo
+ * escolhe comportamento, e `atualizado_por` vem sempre de quem está logado.
+ */
+export async function gravarScript(texto: string): Promise<ResultadoAjuste> {
+  const permissao = await exigirAdmin('produtos');
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
+  const conferencia = await conferirScript(texto);
+  if (!conferencia.ok || !conferencia.campos) {
+    return { ok: false, erro: conferencia.erros[0] ?? 'O script não passou na conferência.' };
+  }
+
+  const c = conferencia.campos;
+  const supabase = await criarSupabaseServer();
+  const { error } = await supabase.from('produtos_novos').insert({
+    id: c.endereco,
+    nome: c.nome,
+    categoria: c.tipo,
+    area: c.area,
+    ferramenta: c.ferramenta,
+    formato: c.formato,
+    preco: c.preco,
+    preco_de: c.precoDe,
+    checkout: c.checkout,
+    url_site: c.paginaDeVendas,
+    descricao: c.descricao,
+    atualizado_por: permissao.email,
+  });
+
+  if (error) {
+    if (error.code === '23505') {
+      return { ok: false, erro: `Já existe um material no endereço "${c.endereco}".` };
+    }
+    return { ok: false, erro: 'Não foi possível cadastrar: ' + error.message };
+  }
+
+  revalidarLoja();
+  return { ok: true };
 }
