@@ -51,6 +51,28 @@ const SEGMENTOS = [
   { valor: 'assinatura', rotulo: 'Assinaturas' },
 ];
 
+/**
+ * O que dá para escrever na descrição, dito na hora de escrever.
+ *
+ * O Sérgio perguntou em 19/09 se o campo aceitava HTML, porque queria pôr cor.
+ * Não aceita e não vai aceitar: HTML no campo do painel viraria código rodando
+ * no site. Mas ele também não sabia que tinha Markdown, e ficava sem destaque
+ * nenhum por não saber o que pedir.
+ *
+ * Cor livre continua fora de propósito: dez produtos com dez cores escolhidas
+ * na hora acabam com a identidade visual e não tem volta fácil.
+ */
+function AjudaDeFormatacao() {
+  return (
+    <span className={styles.dicaForm}>
+      Dá para formatar: <code>**negrito**</code>, <code>## título</code>,{' '}
+      <code>- item de lista</code> e <code>[texto](endereço)</code>. As caixas coloridas do blog
+      também funcionam, como <code>:::importante</code> e <code>:::dica</code>. HTML não funciona,
+      e é de propósito: as tags apareceriam escritas na página.
+    </span>
+  );
+}
+
 function normalizar(t: string) {
   return t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
@@ -243,6 +265,7 @@ export default function Gerenciador({
               sozinhos na próxima raspagem. Sem ele, o que estiver escrito aqui é tudo que a página
               vai ter.
             </span>
+            <AjudaDeFormatacao />
           </label>
 
           <div className={styles.acoesForm}>
@@ -351,6 +374,7 @@ export default function Gerenciador({
               rows={4}
               defaultValue={editando.descricaoAjustada ?? ''}
             />
+            <AjudaDeFormatacao />
           </label>
 
           <label className={styles.campo}>

@@ -509,3 +509,14 @@
   opacity: 0.55;
   cursor: progress;
 }
+
+/* Os exemplos de formatação na ajuda da descrição. Fundo leve para o
+   "**negrito**" se distinguir do texto que explica o que ele faz. */
+.dicaForm code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.92em;
+  background-color: rgba(38, 52, 79, 0.07);
+  border-radius: 0.25rem;
+  padding: 0.08rem 0.3rem;
+  white-space: nowrap;
+}

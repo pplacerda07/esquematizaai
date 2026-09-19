@@ -351,11 +351,18 @@ export default async function ProdutoPage({
                 <h2 className={styles.sectionTitle}>
                   Sobre o <span className={styles.sectionAccent}>material</span>
                 </h2>
-                {sobre ? (
-                  <Conteudo markdown={sobre} />
-                ) : (
-                  <div className={styles.longText}>{produto.sobre}</div>
-                )}
+                {/* Os dois passam pelo mesmo renderizador de Markdown.
+                    A descrição escrita no painel caía num <div> de texto cru,
+                    então negrito, lista e título apareciam com os sinais à
+                    mostra. O Sérgio perguntou em 19/09 se aceitava HTML para
+                    conseguir destaque; HTML continua não passando, de
+                    propósito, mas agora ele tem negrito, lista, título e as
+                    caixas coloridas que já existem no blog.
+
+                    HTML cru continua saindo escapado, porque rehype-raw segue
+                    desligado. É o que impede texto do painel virar script na
+                    página. */}
+                <Conteudo markdown={sobre ?? produto.sobre ?? ''} />
               </section>
             )}
 
