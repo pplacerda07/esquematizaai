@@ -16,16 +16,21 @@ const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' 
  *
  * O formulário manual continua existindo ao lado, intacto. Isto é adição.
  *
- * Copiar para a área de transferência em vez de baixar arquivo: o texto veio de
- * um chat e vai voltar para um chat, e arquivo no meio do caminho só adiciona
- * um lugar para se perder.
+ * DOIS CAMINHOS DIFERENTES DE PROPÓSITO: o modelo de um produto tem 2 KB e vai
+ * COPIADO, porque veio de um chat e volta para um chat. A loja inteira tem 148
+ * materiais e BAIXA como arquivo, porque ninguém cola isso numa conversa.
  */
 export default function PainelScript({
   modelo,
   exportacao,
+  hoje,
+  quantosMateriais,
 }: {
   modelo: string;
   exportacao: string;
+  /** data de hoje, ja formatada no servidor, para o nome do arquivo */
+  hoje: string;
+  quantosMateriais: number;
 }) {
   const router = useRouter();
   const [aberto, setAberto] = useState(false);
@@ -45,6 +50,25 @@ export default function PainelScript({
       // para a pessoa copiar à mão, em vez de não acontecer nada
       window.prompt('Copie o texto abaixo:', oQue);
     }
+  }
+
+  /**
+   * A loja inteira baixa como arquivo, não vai para a área de transferência.
+   *
+   * São 148 materiais, uns 18 KB. Ninguém cola isso num chat: anexa. O modelo
+   * de UM produto continua indo copiado, porque tem 2 KB e vai direto na
+   * conversa.
+   */
+  function baixar(conteudo: string, nomeDoArquivo: string) {
+    const url = URL.createObjectURL(new Blob([conteudo], { type: 'text/plain;charset=utf-8' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = nomeDoArquivo;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    // solta a memória do Blob; sem isso o arquivo fica pendurado até recarregar
+    URL.revokeObjectURL(url);
   }
 
   return (
@@ -76,15 +100,16 @@ export default function PainelScript({
             <button
               type="button"
               className={styles.btnSec}
-              onClick={() => copiar(exportacao, 'loja')}
+              onClick={() => baixar(exportacao, `esquematiza-loja-${hoje}.txt`)}
             >
-              {copiado === 'loja' ? 'Lista copiada' : 'Copiar a loja inteira, para consultar'}
+              Baixar a loja inteira ({quantosMateriais} materiais)
             </button>
           </div>
 
           <p className={styles.aviso}>
-            A lista da loja inteira serve para consultar, não volta para cá. Para cadastrar, use o
-            modelo de um produto.
+            O modelo vai copiado, para você colar direto na conversa. A loja inteira{' '}
+            <strong>baixa como arquivo</strong>, porque são {quantosMateriais} materiais e ninguém
+            cola isso num chat: anexe o arquivo. Ele serve para consultar e não volta para cá.
           </p>
 
           <label className={styles.campo}>

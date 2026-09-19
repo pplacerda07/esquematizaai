@@ -2,7 +2,7 @@ import { criarSupabaseServer } from '@/lib/supabase/server';
 import { produtos, ofertaAtual } from '@/data/catalogo';
 import Gerenciador, { type ItemAdmin, type MaterialDoPainel } from './Gerenciador';
 import { textoDoModelo } from './script-modelo';
-import { textoDaLojaInteira } from '@/lib/catalogo-exportacao';
+import { exportacaoDaLoja } from '@/lib/catalogo-exportacao';
 
 // Sempre dinâmico: reflete os ajustes na hora em que são salvos.
 export const dynamic = 'force-dynamic';
@@ -77,16 +77,24 @@ export default async function MateriaisAdminPage() {
     };
   });
 
-  // os dois textos sao montados no SERVIDOR: o da loja inteira precisa do
-  // catalogo ja ajustado pelo painel, que o navegador nao tem
-  const hoje = new Date().toLocaleDateString('pt-BR');
+  /**
+   * Os dois textos sao montados no SERVIDOR: o da loja inteira precisa do
+   * catalogo ja ajustado pelo painel, que o navegador nao tem.
+   *
+   * Duas formas da data: a de nome de arquivo (ano-mes-dia, que ordena sozinha
+   * na pasta de downloads) e a de ler (dia/mes/ano, dentro do arquivo).
+   */
+  const paraArquivo = new Date().toISOString().slice(0, 10);
+  const daLoja = await exportacaoDaLoja(new Date().toLocaleDateString('pt-BR'));
 
   return (
     <Gerenciador
       itens={itens}
       criadosAqui={criadosAqui}
       modeloDoScript={textoDoModelo()}
-      exportacaoDaLoja={await textoDaLojaInteira(hoje)}
+      exportacaoDaLoja={daLoja.texto}
+      hoje={paraArquivo}
+      quantosMateriais={daLoja.quantos}
     />
   );
 }

@@ -83,6 +83,8 @@ export default function Gerenciador({
   criadosAqui,
   modeloDoScript,
   exportacaoDaLoja,
+  hoje,
+  quantosMateriais,
 }: {
   itens: ItemAdmin[];
   criadosAqui: MaterialDoPainel[];
@@ -90,6 +92,9 @@ export default function Gerenciador({
   modeloDoScript: string;
   /** a loja inteira, para consulta; montada no servidor, só sai daqui */
   exportacaoDaLoja: string;
+  /** data de hoje no formato de nome de arquivo */
+  hoje: string;
+  quantosMateriais: number;
 }) {
   const router = useRouter();
   const [apagando, setApagando] = useState<string | null>(null);
@@ -164,7 +169,12 @@ export default function Gerenciador({
 
       {avisoNovo && <p className={styles.sucessoNovo}>{avisoNovo}</p>}
 
-      <PainelScript modelo={modeloDoScript} exportacao={exportacaoDaLoja} />
+      <PainelScript
+        modelo={modeloDoScript}
+        exportacao={exportacaoDaLoja}
+        hoje={hoje}
+        quantosMateriais={quantosMateriais}
+      />
 
       {/* Cadastro de material que ainda não existe na planilha. Até agora isso
           dependia de mandar a planilha e alguém rodar a importação, e nesta
