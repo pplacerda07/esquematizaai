@@ -15,6 +15,18 @@ export default function WhatsAppButton() {
     return null;
   }
 
+  /**
+   * O painel não é lugar de botão de suporte ao ALUNO.
+   *
+   * Este componente vem do layout raiz, então aparecia também dentro de /admin,
+   * onde ninguém precisa falar com o suporte. Pior: ocupava o canto de baixo à
+   * direita, que é o lugar mais valioso da tela, e lá agora mora o botão de
+   * criar material, sumário ou curso.
+   */
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
+
   // número vem do config: este componente tinha a própria cópia, e o número
   // ficava desatualizado em metade do site quando alguém trocava só um lugar
   const href = whatsappUrl(MESSAGE);

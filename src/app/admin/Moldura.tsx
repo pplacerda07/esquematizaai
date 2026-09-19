@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { sair } from './login/actions';
+import BotaoCriar from './BotaoCriar';
 import type { Funcao } from '@/lib/supabase/admin-guard';
 import styles from './layout.module.css';
 
@@ -126,6 +127,11 @@ export default function Moldura({
       <main className={styles.main}>
         {children}
       </main>
+
+      {/* No canto onde vivia o botão de WhatsApp do site, que é o suporte ao
+          aluno e não tinha o que fazer dentro do painel da equipe. Oferece o
+          que a pessoa PODE criar, conforme o papel dela. */}
+      <BotaoCriar funcoes={funcoes} />
     </div>
   );
 }

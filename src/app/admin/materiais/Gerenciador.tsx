@@ -1,8 +1,8 @@
 'use client';
 
-import { useMemo, useState, useTransition } from 'react';
+import { useEffect, useMemo, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { salvarAjuste, limparAjuste, criarMaterial, apagarMaterialDoPainel } from './actions';
+import { salvarAjuste, limparAjuste, criarMaterial, apagarMaterialDoPainel, trocarCapaDoPainel } from './actions';
 import CapaUpload from './CapaUpload';
 import PainelScript from './PainelScript';
 import styles from './page.module.css';
@@ -98,6 +98,7 @@ export default function Gerenciador({
 }) {
   const router = useRouter();
   const [apagando, setApagando] = useState<string | null>(null);
+  const [trocandoCapa, setTrocandoCapa] = useState<string | null>(null);
   const [busca, setBusca] = useState('');
   const [segmento, setSegmento] = useState('todos');
   const [soAjustados, setSoAjustados] = useState(false);
@@ -106,6 +107,21 @@ export default function Gerenciador({
   const [criando, setCriando] = useState(false);
   const [avisoNovo, setAvisoNovo] = useState('');
   const [salvando, iniciar] = useTransition();
+
+  /**
+   * O botão "+" do canto manda para cá com ?novo=1 e o formulário já abre.
+   *
+   * Sem isto ele levaria a pessoa até a tela e a deixaria procurando o botão de
+   * cadastrar, que é exatamente o que ela acabou de clicar. O parâmetro sai da
+   * barra de endereços depois de abrir, para recarregar a página não reabrir o
+   * formulário sozinho.
+   */
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    if (p.get('novo') !== '1') return;
+    setCriando(true);
+    window.history.replaceState(null, '', window.location.pathname);
+  }, []);
 
   const foiAjustado = (i: ItemAdmin) =>
     i.precoAjustado !== null || i.descricaoAjustada !== null || i.oculto || i.destaque;
@@ -472,6 +488,14 @@ export default function Gerenciador({
                 </div>
 
                 <div className={styles.itemAcoes}>
+                  <button
+                    type="button"
+                    className={styles.btnSecundario}
+                    onClick={() => setTrocandoCapa(trocandoCapa === m.id ? null : m.id)}
+                    aria-expanded={trocandoCapa === m.id}
+                  >
+                    {m.capaUrl ? 'Trocar capa' : 'Pôr capa'}
+                  </button>
                   <a
                     className={styles.btnSecundario}
                     href={`/vitrine/produto/${m.id}`}
@@ -506,6 +530,42 @@ export default function Gerenciador({
                     {apagando === m.id ? 'Apagando...' : 'Apagar'}
                   </button>
                 </div>
+
+                {/* A capa fica aqui e não no script de propósito: um Claude de
+                    chat não consegue produzir endereço do nosso armazenamento,
+                    e link de fora derrubaria a página. Resolvendo na lista,
+                    serve para os dois caminhos de cadastro e também para
+                    trocar uma capa feia meses depois. */}
+                {trocandoCapa === m.id && (
+                  <form
+                    className={styles.formCapa}
+                    action={(fd) => {
+                      fd.set('id', m.id);
+                      setErro('');
+                      iniciar(async () => {
+                        const r = await trocarCapaDoPainel(fd);
+                        if (!r.ok) return setErro(r.erro ?? 'Não foi possível trocar a capa.');
+                        setTrocandoCapa(null);
+                        setAvisoNovo(`Capa de "${m.nome}" atualizada.`);
+                        router.refresh();
+                      });
+                    }}
+                  >
+                    <CapaUpload />
+                    <div className={styles.acoesForm}>
+                      <button type="submit" className={styles.btnPrimario} disabled={salvando}>
+                        {salvando ? 'Salvando...' : 'Salvar a capa'}
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.btnSecundario}
+                        onClick={() => setTrocandoCapa(null)}
+                      >
+                        Cancelar
+                      </button>
+                    </div>
+                  </form>
+                )}
               </article>
             ))}
           </div>

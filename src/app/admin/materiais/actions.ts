@@ -390,3 +390,61 @@ export async function gravarScript(texto: string): Promise<ResultadoAjuste> {
   revalidarLoja();
   return { ok: true };
 }
+
+/**
+ * Troca a capa de um material criado no painel.
+ *
+ * Faltava caminho para isto. O cadastro pelo formulário manual tem o botão de
+ * capa embutido, mas quem cadastra por script fica sem: o script não carrega
+ * imagem de propósito, porque um Claude de chat não consegue produzir endereço
+ * do nosso armazenamento, e link de fora não carrega no site.
+ *
+ * Então a capa se resolve DEPOIS, na lista, onde o material já está. Vale para
+ * os dois caminhos, e também para trocar uma capa feia meses depois.
+ */
+export async function trocarCapaDoPainel(formData: FormData): Promise<ResultadoAjuste> {
+  const permissao = await exigirAdmin('produtos');
+  if (!permissao.ok) return { ok: false, erro: permissao.erro };
+
+  const id = String(formData.get('id') ?? '').trim();
+  if (!id) return { ok: false, erro: 'Material não identificado.' };
+
+  const capaUrl = String(formData.get('capa_url') ?? '').trim() || null;
+  const largura = Number(formData.get('capa_largura')) || null;
+  const altura = Number(formData.get('capa_altura')) || null;
+
+  /**
+   * Só endereço do nosso armazenamento entra.
+   *
+   * O next/image LANÇA para host fora da lista do next.config, e a capa é
+   * desenhada em componente de servidor na home, na página de área e na do
+   * produto. Uma capa de host estranho derrubaria a home da loja, não só o
+   * produto. O botão de enviar já devolve o endereço certo; esta checagem é
+   * para o caso de alguém montar a requisição por fora.
+   */
+  if (capaUrl) {
+    const permitidos = [
+      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/`,
+      'https://loja.esquematizaai.com/wp-content/uploads/',
+    ];
+    if (!permitidos.some((p) => capaUrl.startsWith(p))) {
+      return { ok: false, erro: 'Esse endereço de capa não é aceito. Envie a imagem pelo botão.' };
+    }
+  }
+
+  const supabase = await criarSupabaseServer();
+  const { error } = await supabase
+    .from('produtos_novos')
+    .update({
+      capa_url: capaUrl,
+      capa_largura: capaUrl ? largura : null,
+      capa_altura: capaUrl ? altura : null,
+      atualizado_por: permissao.email,
+    })
+    .eq('id', id);
+
+  if (error) return { ok: false, erro: 'Não foi possível trocar a capa: ' + error.message };
+
+  revalidarLoja();
+  return { ok: true };
+}

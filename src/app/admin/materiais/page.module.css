@@ -520,3 +520,13 @@
   padding: 0.08rem 0.3rem;
   white-space: nowrap;
 }
+
+/* O bloco de capa abre dentro do cartão do material do painel, em vez de numa
+   tela à parte: a pessoa vê o nome do material logo acima enquanto escolhe a
+   imagem, e não tem como trocar a capa do produto errado. */
+.formCapa {
+  grid-column: 1 / -1;
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(38, 52, 79, 0.12);
+}
