@@ -25,6 +25,25 @@ function revalidarLoja() {
 }
 
 /**
+ * Só endereço do nosso armazenamento, ou da loja, vira capa.
+ *
+ * NÃO É PRECIOSISMO: o next/image LANÇA para host fora da lista do
+ * next.config, e a capa é desenhada em componente de servidor na home, na
+ * página de área e na do produto. Capa de host estranho derrubaria a home da
+ * loja, não só aquele produto.
+ *
+ * O botão de enviar já devolve o endereço certo. Isto existe para o caso de
+ * alguém montar a requisição por fora do painel.
+ */
+function capaDeHostPermitido(url: string): boolean {
+  const permitidos = [
+    `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/`,
+    'https://loja.esquematizaai.com/wp-content/uploads/',
+  ];
+  return permitidos.some((p) => url.startsWith(p));
+}
+
+/**
  * Recusa link de compra que já pertence a outro produto.
  *
  * ISTO É O CONTRÁRIO DE PRECIOSISMO. O `somenteOsQueFaltam()` identifica
@@ -354,13 +373,31 @@ export async function conferirScript(texto: string): Promise<ConferenciaDoScript
  * Copia campo a campo, por nome. Nunca espalha objeto: nenhum campo do arquivo
  * escolhe comportamento, e `atualizado_por` vem sempre de quem está logado.
  */
-export async function gravarScript(texto: string): Promise<ResultadoAjuste> {
+export async function gravarScript(formData: FormData): Promise<ResultadoAjuste> {
   const permissao = await exigirAdmin('produtos');
   if (!permissao.ok) return { ok: false, erro: permissao.erro };
 
+  const texto = String(formData.get('script') ?? '');
   const conferencia = await conferirScript(texto);
   if (!conferencia.ok || !conferencia.campos) {
     return { ok: false, erro: conferencia.erros[0] ?? 'O script não passou na conferência.' };
+  }
+
+  /**
+   * A capa entra JUNTO, na mesma gravação.
+   *
+   * Ela vinha depois, num segundo passo na lista, e o Pedro apontou o custo:
+   * o Sérgio precisa de velocidade, e mandar ele cadastrar, procurar o material
+   * na lista e só então pôr a imagem são três viagens para uma tarefa só.
+   *
+   * O script continua sem carregar capa, porque um Claude de chat não produz
+   * endereço do nosso armazenamento. O que mudou é que o botão de enviar imagem
+   * agora fica na mesma tela da conferência, e o endereço dele viaja neste
+   * formulário.
+   */
+  const capaUrl = String(formData.get('capa_url') ?? '').trim() || null;
+  if (capaUrl && !capaDeHostPermitido(capaUrl)) {
+    return { ok: false, erro: 'Esse endereço de capa não é aceito. Envie a imagem pelo botão.' };
   }
 
   const c = conferencia.campos;
@@ -377,6 +414,9 @@ export async function gravarScript(texto: string): Promise<ResultadoAjuste> {
     checkout: c.checkout,
     url_site: c.paginaDeVendas,
     descricao: c.descricao,
+    capa_url: capaUrl,
+    capa_largura: capaUrl ? Number(formData.get('capa_largura')) || null : null,
+    capa_altura: capaUrl ? Number(formData.get('capa_altura')) || null : null,
     atualizado_por: permissao.email,
   });
 
@@ -422,14 +462,8 @@ export async function trocarCapaDoPainel(formData: FormData): Promise<ResultadoA
    * produto. O botão de enviar já devolve o endereço certo; esta checagem é
    * para o caso de alguém montar a requisição por fora.
    */
-  if (capaUrl) {
-    const permitidos = [
-      `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/`,
-      'https://loja.esquematizaai.com/wp-content/uploads/',
-    ];
-    if (!permitidos.some((p) => capaUrl.startsWith(p))) {
-      return { ok: false, erro: 'Esse endereço de capa não é aceito. Envie a imagem pelo botão.' };
-    }
+  if (capaUrl && !capaDeHostPermitido(capaUrl)) {
+    return { ok: false, erro: 'Esse endereço de capa não é aceito. Envie a imagem pelo botão.' };
   }
 
   const supabase = await criarSupabaseServer();

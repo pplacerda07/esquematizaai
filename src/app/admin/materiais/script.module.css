@@ -240,3 +240,11 @@
     margin-top: 0.5rem;
   }
 }
+
+/* A capa dentro da conferência, separada por uma linha: ela é a última coisa
+   que falta antes de gravar, e não mais um campo da tabela de conferência. */
+.capaNaConferencia {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(38, 52, 79, 0.12);
+}

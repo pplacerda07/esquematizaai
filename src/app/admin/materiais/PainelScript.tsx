@@ -3,6 +3,7 @@
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { conferirScript, gravarScript, type ConferenciaDoScript } from './actions';
+import CapaUpload from './CapaUpload';
 import styles from './script.module.css';
 
 const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -140,30 +141,6 @@ export default function PainelScript({
               {trabalhando && !conferencia ? 'Conferindo...' : 'Conferir'}
             </button>
 
-            {conferencia?.ok && (
-              <button
-                type="button"
-                className={styles.btnPrim}
-                disabled={trabalhando}
-                onClick={() => {
-                  iniciar(async () => {
-                    const r = await gravarScript(texto);
-                    if (!r.ok) {
-                      setConferencia({ ok: false, erros: [r.erro ?? 'Falhou.'], avisos: [] });
-                      return;
-                    }
-                    setSucesso(
-                      `"${conferencia.campos?.nome}" foi cadastrado. Aparece na vitrine em até 1 minuto.`,
-                    );
-                    setTexto('');
-                    setConferencia(null);
-                    router.refresh();
-                  });
-                }}
-              >
-                {trabalhando ? 'Gravando...' : 'Gravar este material'}
-              </button>
-            )}
           </div>
 
           {sucesso && <p className={styles.sucesso}>{sucesso}</p>}
@@ -199,7 +176,32 @@ export default function PainelScript({
           )}
 
           {conferencia?.ok && conferencia.campos && (
-            <div className={styles.conferencia}>
+            /* A conferência é um formulário, e não uma caixa com um botão, para
+               a capa entrar NA MESMA GRAVAÇÃO. Antes ela vinha num segundo
+               passo, na lista, e o Sérgio precisaria cadastrar, procurar o
+               material e só então pôr a imagem: três viagens para uma tarefa.
+
+               O texto do script vai num campo escondido junto, e o servidor o
+               relê do zero. Nada do que a tela mostra é usado para gravar. */
+            <form
+              className={styles.conferencia}
+              action={(fd) => {
+                iniciar(async () => {
+                  const r = await gravarScript(fd);
+                  if (!r.ok) {
+                    setConferencia({ ok: false, erros: [r.erro ?? 'Falhou.'], avisos: [] });
+                    return;
+                  }
+                  setSucesso(
+                    `"${conferencia.campos?.nome}" foi cadastrado. Aparece na vitrine em até 1 minuto.`,
+                  );
+                  setTexto('');
+                  setConferencia(null);
+                  router.refresh();
+                });
+              }}
+            >
+              <input type="hidden" name="script" value={texto} />
               <p className={styles.conferenciaTitulo}>O produto vai ficar assim:</p>
               <dl className={styles.tabela}>
                 <Linha rotulo="Nome" valor={conferencia.campos.nome} />
@@ -242,7 +244,20 @@ export default function PainelScript({
                   ))}
                 </ul>
               )}
-            </div>
+
+              {/* A capa aqui e não depois: é a última coisa que falta antes de
+                  o material existir, e o Sérgio escolhe a imagem olhando para o
+                  nome e o preço que acabou de conferir. */}
+              <div className={styles.capaNaConferencia}>
+                <CapaUpload />
+              </div>
+
+              <div className={styles.acoes}>
+                <button type="submit" className={styles.btnPrim} disabled={trabalhando}>
+                  {trabalhando ? 'Gravando...' : 'Gravar este material'}
+                </button>
+              </div>
+            </form>
           )}
         </div>
       )}
