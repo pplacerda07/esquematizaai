@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { salvarAjuste, limparAjuste, criarMaterial } from './actions';
+import { salvarAjuste, limparAjuste, criarMaterial, apagarMaterialDoPainel } from './actions';
 import CapaUpload from './CapaUpload';
 import styles from './page.module.css';
 
@@ -25,6 +25,23 @@ export type ItemAdmin = {
   ajustadoEm: string | null;
 };
 
+/** Material criado aqui no painel, que não existe na planilha. */
+export type MaterialDoPainel = {
+  id: string;
+  nome: string;
+  categoria: string;
+  area: string | null;
+  ferramenta: string | null;
+  preco: number;
+  precoDe: number | null;
+  checkout: string | null;
+  urlSite: string | null;
+  capaUrl: string | null;
+  descricao: string | null;
+  oculto: boolean;
+  criadoEm: string | null;
+};
+
 const brl = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 
 const SEGMENTOS = [
@@ -38,8 +55,15 @@ function normalizar(t: string) {
   return t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
 
-export default function Gerenciador({ itens }: { itens: ItemAdmin[] }) {
+export default function Gerenciador({
+  itens,
+  criadosAqui,
+}: {
+  itens: ItemAdmin[];
+  criadosAqui: MaterialDoPainel[];
+}) {
   const router = useRouter();
+  const [apagando, setApagando] = useState<string | null>(null);
   const [busca, setBusca] = useState('');
   const [segmento, setSegmento] = useState('todos');
   const [soAjustados, setSoAjustados] = useState(false);
@@ -367,6 +391,82 @@ export default function Gerenciador({ itens }: { itens: ItemAdmin[] }) {
             )}
           </div>
         </form>
+      )}
+
+      {/* Os criados aqui vêm ANTES da lista da planilha, e separados.
+          A tela mostrava só os 197 da planilha, então o material que o Sérgio
+          cadastrou em 18/09 existia no site e não aparecia no painel: sem jeito
+          de ver, corrigir nem apagar. São poucos e são os que mudam, por isso
+          ficam no topo. */}
+      {criadosAqui.length > 0 && (
+        <section className={styles.secaoPainel}>
+          <h2 className={styles.tituloSecao}>
+            Cadastrados aqui no painel ({criadosAqui.length})
+          </h2>
+          <p className={styles.subtituloSecao}>
+            Estes não vêm da planilha. Quando a planilha trouxer o mesmo material,
+            casado pelo link de compra, o daqui sai de cena sozinho.
+          </p>
+
+          <div className={styles.lista}>
+            {criadosAqui.map((m) => (
+              <article key={m.id} className={`${styles.item} ${m.oculto ? styles.itemOculto : ''}`}>
+                <div className={styles.itemTexto}>
+                  <div className={styles.itemTopo}>
+                    <span className={styles.seloPainel}>Do painel</span>
+                    <span className={styles.selo}>{m.categoria}</span>
+                    {m.area && <span className={styles.seloArea}>{m.area}</span>}
+                    {m.oculto && <span className={styles.seloOculto}>Oculto</span>}
+                  </div>
+                  <h2 className={styles.itemTitulo}>{m.nome}</h2>
+                  <p className={styles.itemPreco}>
+                    <span className={styles.precoNovo}>{brl.format(m.preco)}</span>
+                    {m.precoDe != null && (
+                      <span className={styles.precoAntigo}>de {brl.format(m.precoDe)}</span>
+                    )}
+                  </p>
+                  <p className={styles.itemEndereco}>/vitrine/produto/{m.id}</p>
+                </div>
+
+                <div className={styles.itemAcoes}>
+                  <a
+                    className={styles.btnSecundario}
+                    href={`/vitrine/produto/${m.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver no site
+                  </a>
+                  <button
+                    type="button"
+                    className={styles.btnPerigo}
+                    disabled={apagando === m.id}
+                    onClick={() => {
+                      // confirmação com o endereço escrito: apagar é definitivo
+                      // e leva a página junto, e o nome sozinho não deixa isso
+                      // óbvio para quem cadastrou dez materiais parecidos
+                      const certeza = window.confirm(
+                        `Apagar "${m.nome}" de vez?\n\nO endereço /vitrine/produto/${m.id} deixa de existir. Isso não tem desfazer.`,
+                      );
+                      if (!certeza) return;
+                      setApagando(m.id);
+                      setErro('');
+                      iniciar(async () => {
+                        const r = await apagarMaterialDoPainel(m.id);
+                        setApagando(null);
+                        if (!r.ok) return setErro(r.erro ?? 'Não foi possível apagar.');
+                        setAvisoNovo(`"${m.nome}" foi apagado.`);
+                        router.refresh();
+                      });
+                    }}
+                  >
+                    {apagando === m.id ? 'Apagando...' : 'Apagar'}
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       )}
 
       <p className={styles.contador}>{lista.length} de {itens.length}</p>

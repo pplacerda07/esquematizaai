@@ -427,3 +427,85 @@
   font-family: var(--font-body);
   font-size: 0.88rem;
 }
+
+/* ------------------------------------------- criados aqui no painel */
+
+/* Os materiais cadastrados pelo painel ficam numa seção própria, acima da
+   lista da planilha. A tela lia só produtos_ajustes, então o que o Sérgio
+   cadastrou em 18/09 existia no site e não aparecia aqui: ele não tinha como
+   ver, corrigir nem apagar. São poucos e são os que mudam, por isso no topo. */
+.secaoPainel {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.25rem 0.5rem;
+  background-color: #fff;
+  border: 1px solid rgba(78, 174, 217, 0.4);
+  border-radius: 0.6rem;
+}
+
+.tituloSecao {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-cold-dark);
+  margin: 0 0 0.2rem;
+}
+
+.subtituloSecao {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-neutral-dark);
+  opacity: 0.7;
+  margin: 0 0 1rem;
+}
+
+/* Selo que separa na hora o que é do painel do que vem da planilha: as duas
+   listas têm o mesmo desenho de cartão, e sem marca ninguém distingue. */
+.seloPainel {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--color-cold-primary);
+  border-radius: 0.3rem;
+  padding: 0.18rem 0.45rem;
+}
+
+/* O endereço escrito, porque é o que quebra quando se apaga o material, e é a
+   informação que falta para decidir com segurança. */
+.itemEndereco {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--color-neutral-dark);
+  opacity: 0.6;
+  margin: 0.3rem 0 0;
+  word-break: break-all;
+}
+
+/* Vermelho de verdade e só aqui: apagar material do painel é a única ação
+   desta tela sem desfazer. */
+.btnPerigo {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #b42318;
+  background-color: #fff;
+  border: 1px solid rgba(180, 35, 24, 0.45);
+  border-radius: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btnPerigo:hover:not(:disabled) {
+  background-color: #b42318;
+  border-color: #b42318;
+  color: #fff;
+}
+
+.btnPerigo:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}

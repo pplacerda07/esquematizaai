@@ -23,6 +23,38 @@ import { SITE_URL, URL_DA_LOJA, AMOSTRAS_DRIVE_URL, textoParaLoja } from '@/conf
 import { jsonLdSeguro } from '@/lib/json-ld';
 import styles from './styles.module.css';
 
+/**
+ * O aviso embaixo do botão de comprar, escolhido pelo endereço de destino.
+ *
+ * ELE JÁ MENTIU EM PRODUÇÃO. A primeira versão conhecia dois destinos, a loja e
+ * a Eduzz, e mandava todo o resto para o texto da Eduzz. Em 18/09 o Sérgio
+ * cadastrou pelo painel um material cobrado pela Tutory, e a página passou a
+ * dizer "Pagamento processado pela Eduzz" logo abaixo de um botão que ia para
+ * outra empresa. Na última tela antes de pagar.
+ *
+ * Por isso a lista deixou de ser fechada. O catálogo já tem três destinos em
+ * uso e vai ter mais: quem não for reconhecido recebe uma frase verdadeira e
+ * genérica, nunca o nome de uma empresa por eliminação. Afirmar a mais é pior
+ * que afirmar de menos quando o assunto é para onde vai o dinheiro.
+ */
+function avisoDePagamento(oferta: { checkout: string; viaPaginaDeVendas: boolean }): string {
+  if (oferta.viaPaginaDeVendas) return 'A compra é finalizada na página do produto.';
+  if (oferta.checkout.startsWith(URL_DA_LOJA)) {
+    return 'Você vai para o carrinho da loja, com o material já adicionado.';
+  }
+  // endereço torto não pode derrubar a página inteira do produto: o campo vem
+  // do painel, digitado à mão, e um espaço a mais já quebraria o new URL()
+  let host = '';
+  try {
+    host = new URL(oferta.checkout).hostname;
+  } catch {
+    return 'Você vai para o checkout seguro do material.';
+  }
+
+  if (/(^|\.)eduzz\.com$/i.test(host)) return 'Pagamento processado pela Eduzz.';
+  return 'Você vai para o checkout seguro do material.';
+}
+
 // Uma página por produto vendável (mesmo critério da vitrine da home):
 // precisa ter par consistente de preço + checkout.
 function publicaveis(): Produto[] {
@@ -50,7 +82,19 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const produto = produtoPor(id);
+
+  /**
+   * Procura na planilha E no painel, igual à página faz.
+   *
+   * Procurava só na planilha, e o material cadastrado pelo painel saía com
+   * <title>Produto não encontrado</title> numa página que renderizava certinho,
+   * com nome, preço e botão de comprar. Quem passasse o mouse na aba lia
+   * "não encontrado", e era isso que o Google indexava.
+   *
+   * Apareceu em 19/09 no primeiro material que o Sérgio cadastrou sozinho, o
+   * Flashcards Reta Final SEFAZ-AL, que estava assim em produção.
+   */
+  const produto = produtoPor(id) ?? (await produtoAjustado(id))?.produto ?? null;
   if (!produto) return { title: 'Produto não encontrado' };
   const descricao = produto.sobre
     ? produto.sobre.replace(/\s+/g, ' ').trim().slice(0, 155)
@@ -209,20 +253,8 @@ export default async function ProdutoPage({
         <span className={styles.amostraPeso}>abre a pasta no Google Drive</span>
       </a>
 
-      {/* Diz para onde o botão leva, sem prometer o que não vai acontecer.
-          São três destinos diferentes e o texto muda com o endereço, não com
-          um campo à parte que alguém esqueceria de atualizar: material da
-          Eduzz vai para o checkout dela, material vendido pela loja vai para o
-          carrinho já com o item dentro, e quem não tem nenhum dos dois ainda
-          cai na página de vendas. Dizer "Eduzz" num que é do carrinho seria
-          mentira na última tela antes de pagar. */}
-      <p className={styles.buyNote}>
-        {oferta.viaPaginaDeVendas
-          ? 'A compra é finalizada na página do produto.'
-          : oferta.checkout.startsWith(URL_DA_LOJA)
-            ? 'Você vai para o carrinho da loja, com o material já adicionado.'
-            : 'Pagamento processado pela Eduzz.'}
-      </p>
+      {/* Diz para onde o botão leva, sem prometer o que não vai acontecer. */}
+      <p className={styles.buyNote}>{avisoDePagamento(oferta)}</p>
 
       {/* Aviso dos termos, pedido pelo Sérgio em 15/09 para ficar igual ao que
           o checkout da Eduzz já mostra embaixo do botão. Aqui é a última tela

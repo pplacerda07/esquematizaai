@@ -4,6 +4,8 @@ import { revalidatePath } from 'next/cache';
 import { criarSupabaseServer } from '@/lib/supabase/server';
 import { exigirAdmin } from '@/lib/supabase/admin-guard';
 import { enviarImagem } from '@/lib/supabase/enviar-imagem';
+import { produtos } from '@/data/catalogo';
+import { comparavel } from '@/lib/produtos-do-painel';
 
 export type ResultadoAjuste = { ok: boolean; erro?: string };
 
@@ -19,6 +21,56 @@ function revalidarLoja() {
   revalidatePath('/');
   revalidatePath('/vitrine');
   revalidatePath('/admin/materiais');
+}
+
+/**
+ * Recusa link de compra que já pertence a outro produto.
+ *
+ * ISTO É O CONTRÁRIO DE PRECIOSISMO. O `somenteOsQueFaltam()` identifica
+ * produto pelo checkout e pela página de vendas, de propósito: é assim que um
+ * material cadastrado aqui some sozinho quando a planilha finalmente o alcança.
+ * O efeito colateral é que checkout repetido faz o produto novo DESAPARECER da
+ * vitrine sem erro nenhum, sem aviso e sem ninguém descobrir.
+ *
+ * A documentação do criarMaterial dizia que essa conferência existia. Não
+ * existia: conferi o código em 19/09, depois que o Sérgio cadastrou o primeiro
+ * material de verdade pelo painel.
+ *
+ * Confere contra os 197 da planilha INCLUSIVE os ocultos e inativos, porque
+ * produto fora do ar continua ocupando o link dele, e contra os já criados no
+ * painel. `ignorarId` existe para a edição não brigar com o próprio cadastro.
+ */
+async function conflitoDeLink(
+  checkout: string | null,
+  urlSite: string | null,
+  ignorarId?: string,
+): Promise<string | null> {
+  const meus = [checkout, urlSite].filter((v): v is string => Boolean(v)).map(comparavel);
+  if (meus.length === 0) return null;
+
+  for (const p of produtos) {
+    if (p.id === ignorarId) continue;
+    const dele = [p.checkouts?.normal, p.checkouts?.black, p.urlSite]
+      .filter((v): v is string => Boolean(v))
+      .map(comparavel);
+    if (dele.some((d) => meus.includes(d))) {
+      return `Esse link já é de "${p.nome}", que vem da planilha. Dois produtos com o mesmo link fazem o novo sumir da vitrine sem aviso.`;
+    }
+  }
+
+  const supabase = await criarSupabaseServer();
+  const { data } = await supabase.from('produtos_novos').select('id, nome, checkout, url_site');
+  for (const p of data ?? []) {
+    if (p.id === ignorarId) continue;
+    const dele = [p.checkout, p.url_site]
+      .filter((v): v is string => Boolean(v))
+      .map(comparavel);
+    if (dele.some((d) => meus.includes(d))) {
+      return `Esse link já é de "${p.nome}", que você cadastrou aqui no painel.`;
+    }
+  }
+
+  return null;
 }
 
 export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste> {
@@ -144,6 +196,12 @@ export async function criarMaterial(formData: FormData): Promise<ResultadoAjuste
     return v;
   };
 
+  // Barreira que a documentacao prometia e o codigo nao tinha. Roda DEPOIS de
+  // normalizar o link, senao "chk.eduzz.com/x" e "https://chk.eduzz.com/x"
+  // passariam como dois links diferentes.
+  const conflito = await conflitoDeLink(paraLink(checkout), paraLink(urlSite));
+  if (conflito) return { ok: false, erro: conflito };
+
   const supabase = await criarSupabaseServer();
 
   // o id é o endereço da página; sai do nome, como na planilha
@@ -153,7 +211,9 @@ export async function criarMaterial(formData: FormData): Promise<ResultadoAjuste
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-    .slice(0, 80);
+    .slice(0, 80)
+    // de novo depois do corte: cortar em 80 podia deixar o hifen solto no fim
+    .replace(/-+$/, '');
 
   if (!id) return { ok: false, erro: 'O nome precisa ter letras ou números.' };
 

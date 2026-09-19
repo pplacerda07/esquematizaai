@@ -138,7 +138,7 @@ export async function lerProdutosDoPainel(): Promise<ProdutoDoPainel[]> {
  * O caminho continua sensível a maiúscula, de propósito: os códigos da Eduzz
  * misturam caixa ("G92EX64OWE" e "7tnzwfzg") e são identificadores, não texto.
  */
-function comparavel(link: string): string {
+export function comparavel(link: string): string {
   return link
     .trim()
     .replace(/^https?:\/\//i, '')
