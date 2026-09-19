@@ -72,27 +72,36 @@
  * Quem marca a lista é o remarkDisciplinas, e só quando TODOS os itens seguem
  * o padrão, para não enfeitar lista numerada de outra coisa no blog.
  */
+/*
+ * A NUMERAÇÃO É CORRIDA ENTRE OS MÓDULOS, e quem manda nela é o Markdown.
+ *
+ * A primeira versão disto usava contador próprio do CSS, com counter-reset em
+ * cada lista. Só que cada MÓDULO é uma lista separada, então o contador
+ * reiniciava e os três módulos saíam todos começando em 01. O Sérgio apontou em
+ * 19/09 no Combo Fiscal Resumos, e a intenção dele é justamente a oposta: a
+ * numeração corre até o fim para o aluno ver quantos resumos o produto tem.
+ *
+ * O texto raspado já numera certo (01 a 05, depois 06 a 11, depois 12), e o
+ * remark transforma isso em <ol start="6"> e <ol start="12">. Ou seja, o
+ * navegador sempre soube o número certo; o contador é que atropelava.
+ *
+ * Por isso aqui não há contador nenhum: decimal-leading-zero é a numeração
+ * nativa da lista, que respeita o start sozinha e ainda põe o zero na frente.
+ * Menos código e um jeito a menos de a conta sair errada.
+ */
 .corpo ol[data-disciplinas] {
-  list-style: none;
-  counter-reset: disciplina;
-  padding-left: 0;
+  list-style: decimal-leading-zero;
+  padding-left: 2.5rem;
 }
 
 .corpo ol[data-disciplinas] > li {
-  counter-increment: disciplina;
-  position: relative;
-  padding-left: 2.6rem;
   margin-bottom: 0.45rem;
+  padding-left: 0.35rem;
 }
 
-.corpo ol[data-disciplinas] > li::before {
-  content: counter(disciplina, decimal-leading-zero) ".";
-  position: absolute;
-  left: 0;
-  top: 0;
+.corpo ol[data-disciplinas] > li::marker {
   font-weight: 500;
   color: var(--color-cold-dark);
-  font-variant-numeric: tabular-nums;
 }
 
 .corpo ol[data-disciplinas] [data-nome] {
