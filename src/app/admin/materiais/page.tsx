@@ -19,7 +19,7 @@ export default async function MateriaisAdminPage() {
    */
   const { data: ajustes } = await supabase
     .from('produtos_ajustes')
-    .select('produto_id, preco, descricao, observacao, oculto, destaque, ordem, atualizado_em');
+    .select('produto_id, preco, descricao, observacao, oculto, destaque, ordem, checkout, atualizado_em');
 
   /**
    * Os materiais criados aqui no painel.
@@ -73,6 +73,8 @@ export default async function MateriaisAdminPage() {
       oculto: Boolean(ajuste?.oculto),
       destaque: Boolean(ajuste?.destaque),
       ordem: (ajuste?.ordem as number | null) ?? null,
+      checkoutPlanilha: p.checkouts.normal,
+      checkoutAjustado: (ajuste?.checkout as string | null) ?? null,
       ajustadoEm: (ajuste?.atualizado_em as string | null) ?? null,
     };
   });

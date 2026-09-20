@@ -31,6 +31,15 @@ export interface Ajuste {
    * sem fim e quebraria a cada item novo da planilha.
    */
   ordem: number | null;
+  /**
+   * Para onde o botão de comprar manda. Null = usa o da planilha.
+   *
+   * O site é vitrine: não processa pedido, não cobra, não entrega arquivo. A
+   * única coisa que ele decide por produto é esta. Até 19/09 era justamente a
+   * única que o Sérgio não conseguia mudar sozinho, e ele precisa, porque usa
+   * plataformas diferentes em produtos diferentes.
+   */
+  checkout: string | null;
 }
 
 const URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -43,7 +52,7 @@ async function buscarAjustes(): Promise<Map<string, Ajuste>> {
     const supabase = createClient(URL, CHAVE, { auth: { persistSession: false } });
     const { data, error } = await supabase
       .from('produtos_ajustes')
-      .select('produto_id, preco, descricao, oculto, destaque, ordem');
+      .select('produto_id, preco, descricao, oculto, destaque, ordem, checkout');
 
     if (error) {
       console.error('[catalogo] ajustes indisponíveis:', error.message);
@@ -59,13 +68,28 @@ async function buscarAjustes(): Promise<Map<string, Ajuste>> {
 /** Produto com o ajuste já aplicado por cima da planilha. */
 function aplicar(p: Produto, a: Ajuste | undefined): Produto {
   if (!a) return p;
+
+  /**
+   * A ordem de quem manda no link de compra, de baixo para cima:
+   *   1. a planilha do Sérgio
+   *   2. checkouts-manuais.json, arquivo do repositório, exige deploy
+   *   3. ESTE ajuste do painel, que ele muda sozinho e vale em um minuto
+   *
+   * O painel fica no topo de propósito: quando ele troca a plataforma de um
+   * produto, precisa valer na hora, e não esperar alguém abrir o repositório.
+   */
+  const checkouts = { ...p.checkouts };
+  if (a.checkout) checkouts.normal = a.checkout;
+
+  // ajuste de preço invalida o checkout Black, que cobra o valor antigo;
+  // sem isso o site mostraria o preço novo com o link do preço velho
+  if (a.preco != null) checkouts.black = null;
+
   return {
     ...p,
     precos: a.preco != null ? { ...p.precos, cheio: a.preco, black: null } : p.precos,
     sobre: a.descricao ?? p.sobre,
-    // ajuste de preço invalida o checkout Black, que cobra o valor antigo;
-    // sem isso o site mostraria o preço novo com o link do preço velho
-    checkouts: a.preco != null ? { ...p.checkouts, black: null } : p.checkouts,
+    checkouts,
   };
 }
 

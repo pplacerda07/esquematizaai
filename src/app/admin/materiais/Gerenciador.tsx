@@ -23,6 +23,10 @@ export type ItemAdmin = {
   destaque: boolean;
   /** posição manual na vitrine; null = ordenação automática */
   ordem: number | null;
+  /** link de compra que vem da planilha */
+  checkoutPlanilha: string | null;
+  /** link de compra trocado no painel; null = usa o da planilha */
+  checkoutAjustado: string | null;
   ajustadoEm: string | null;
 };
 
@@ -124,7 +128,11 @@ export default function Gerenciador({
   }, []);
 
   const foiAjustado = (i: ItemAdmin) =>
-    i.precoAjustado !== null || i.descricaoAjustada !== null || i.oculto || i.destaque;
+    i.precoAjustado !== null ||
+    i.descricaoAjustada !== null ||
+    i.checkoutAjustado !== null ||
+    i.oculto ||
+    i.destaque;
 
   const lista = useMemo(() => {
     const termo = normalizar(busca.trim());
@@ -399,6 +407,31 @@ export default function Gerenciador({
             </div>
           </div>
 
+          {/* O link de compra, que é a única coisa que o site decide por
+              produto: ele não cobra, não entrega, só redireciona. Era a única
+              que o Sérgio não conseguia mudar sozinho, e ele precisa, porque
+              usa plataformas diferentes em produtos diferentes. */}
+          <label className={styles.campoLargo}>
+            <span className={styles.rotulo}>
+              Link de compra{' '}
+              <em className={styles.ajuda}>
+                {editando.checkoutPlanilha
+                  ? `planilha: ${editando.checkoutPlanilha}`
+                  : 'a planilha não tem link; hoje o botão leva para a página de vendas'}
+              </em>
+            </span>
+            <input
+              className={styles.input}
+              name="checkout"
+              defaultValue={editando.checkoutAjustado ?? ''}
+              placeholder="deixe vazio para usar o da planilha"
+            />
+            <span className={styles.dicaForm}>
+              Para onde o botão de comprar manda. Serve para trocar a plataforma de pagamento de um
+              material sem mexer em mais nada. Apagar o campo devolve o link da planilha.
+            </span>
+          </label>
+
           <label className={styles.campo}>
             <span className={styles.rotulo}>
               Descrição <em className={styles.ajuda}>vazio = usa a da página de vendas</em>
@@ -582,6 +615,7 @@ export default function Gerenciador({
                 <span className={styles.selo}>{i.categoria}</span>
                 {i.area && <span className={styles.seloArea}>{i.area}</span>}
                 {i.destaque && <span className={styles.seloDestaque}>Destaque</span>}
+                {i.checkoutAjustado && <span className={styles.seloNeutro}>Link trocado</span>}
                 {i.oculto && <span className={styles.seloOculto}>Oculto</span>}
                 {!i.vendavel && <span className={styles.seloAlerta}>Sem destino de compra</span>}
                 {!i.temCheckout && i.vendavel && (

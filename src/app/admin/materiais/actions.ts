@@ -131,6 +131,33 @@ export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste>
     ordem = n;
   }
 
+  /**
+   * Para onde o botão de comprar manda.
+   *
+   * O site é vitrine: não cobra, não entrega, só redireciona. Trocar este link
+   * é a única coisa que muda a venda de um produto, e era a única que o Sérgio
+   * não conseguia fazer sozinho. Ele usa plataformas diferentes em produtos
+   * diferentes, e trocar uma dependia de mexer no repositório e esperar deploy.
+   *
+   * Vazio APAGA o ajuste e devolve o produto ao link da planilha, em vez de
+   * gravar string vazia. Botão apontando para lugar nenhum é pior que botão
+   * apontando para o link antigo.
+   */
+  const checkoutBruto = String(formData.get('checkout') ?? '').trim();
+  let checkout: string | null = null;
+  if (checkoutBruto) {
+    checkout = /^https?:\/\//i.test(checkoutBruto) ? checkoutBruto : `https://${checkoutBruto}`;
+    try {
+      const u = new URL(checkout);
+      if (!u.hostname.includes('.')) throw new Error('sem domínio');
+    } catch {
+      return { ok: false, erro: `"${checkoutBruto}" não parece um link de compra válido.` };
+    }
+
+    const conflito = await conflitoDeLink(checkout, null, produto_id);
+    if (conflito) return { ok: false, erro: conflito };
+  }
+
   const { error } = await supabase.from('produtos_ajustes').upsert(
     {
       produto_id,
@@ -140,6 +167,7 @@ export async function salvarAjuste(formData: FormData): Promise<ResultadoAjuste>
       oculto,
       destaque,
       ordem,
+      checkout,
       atualizado_por: permissao.email,
     },
     { onConflict: 'produto_id' },
