@@ -71,6 +71,17 @@ const DEPOIMENTOS: Depoimento[] = [
     aprovacao: 'Multi aprovado: 2º na SEFA-PA, 5º na SEFAZ-SE e 18º na SEFAZ-SP',
   },
   {
+    /**
+     * A aprovação veio do card do próprio vídeo, não de fonte separada: ele
+     * diz "Analista Legislativa na Câmara dos Deputados" e "Aprovada na
+     * SEFAZ-AM, TRF e outros concursos". Aqui em terceiro porque é multi
+     * aprovação, como os dois de cima, mas sem colocação declarada.
+     */
+    slug: 'priscila-neckel',
+    nome: 'Priscila Neckel',
+    aprovacao: 'Analista Legislativa na Câmara dos Deputados, aprovada na SEFAZ-AM e no TRF',
+  },
+  {
     slug: 'iury-neiva',
     nome: 'Iury Neiva',
     aprovacao: 'Aprovado em 5º lugar, Fiscal de Rendas na SEFA-PA',
