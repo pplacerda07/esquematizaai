@@ -11,7 +11,7 @@ ninguém mexer no código.
 |---|---|
 | Endereço do painel | `https://esquematizaai.com/admin/login` |
 | Tela | **Materiais**, no menu da esquerda |
-| Acesso | Peça ao Pedro |
+| Acesso | Peça ao Pedro ou ao Sérgio |
 
 O catálogo do site nasce da planilha do Sérgio. Esta tela serve para **duas
 coisas**: cadastrar algo que ainda não está na planilha, e ajustar o que já está
@@ -212,4 +212,4 @@ trocado ganham o selo **"Link trocado"** no cartão.
 | Cadastrei e não apareceu | O site se refaz a cada minuto. Espere e recarregue antes de cadastrar de novo |
 | Sumiu o menu do Blog | Sua conta não tem essa permissão. Não é defeito |
 | "Esse link já é de X" | Dois materiais não podem dividir o mesmo link de compra |
-| Esqueci a senha | Hoje não tem recuperação sozinha. Fale com o Pedro |
+| Esqueci a senha | O site ainda não envia e-mail de recuperação. Peça ao Pedro ou ao Sérgio: eles trocam a sua senha na tela **Acessos**, em segundos |
