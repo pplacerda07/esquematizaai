@@ -1,7 +1,7 @@
 import { criarSupabaseServer } from './server';
 
 /**
- * Os dois papéis do painel.
+ * Os papéis do painel.
  *
  * `produtos` cobre o que descreve material à venda: materiais, sumários e
  * cursos. `blog` cobre publicação editorial: posts e notícias.
@@ -11,17 +11,27 @@ import { criarSupabaseServer } from './server';
  * produto. Papel mais fino, do tipo "pode editar mas não apagar", fica para
  * quando alguém precisar: inventar permissão que ninguém pediu só aumenta o
  * número de jeitos de travar quem está trabalhando.
+ *
+ * `dono` é de outra natureza: não abre uma área de conteúdo, abre a lista de
+ * quem entra no painel. Quem tem esse papel cria acesso, tira acesso e troca o
+ * papel dos outros, então é o único que consegue alterar o próprio alcance de
+ * todo mundo. Hoje são duas pessoas, o Pedro e o Sérgio.
  */
-export type Funcao = 'produtos' | 'blog';
+export type Funcao = 'produtos' | 'blog' | 'dono';
 
 const RPC_DA_FUNCAO: Record<Funcao, string> = {
   produtos: 'pode_produtos',
   blog: 'pode_blog',
+  dono: 'eh_dono',
 };
 
 const NOME_DA_FUNCAO: Record<Funcao, string> = {
   produtos: 'materiais e cursos',
   blog: 'blog e notícias',
+  // frase genérica de propósito: a mensagem vira "não tem acesso a esta parte
+  // do painel", e quem não é dono não precisa saber que existe uma lista de
+  // acessos para ficar tentando chegar nela
+  dono: 'esta parte do painel',
 };
 
 /**

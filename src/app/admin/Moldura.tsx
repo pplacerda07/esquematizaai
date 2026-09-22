@@ -19,6 +19,12 @@ const IconFile = () => (
     <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
   </svg>
 );
+const IconUsers = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </svg>
+);
 const IconArrowLeft = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
@@ -41,12 +47,25 @@ const navItems: { href: string; label: string; icon: React.ReactNode; funcao: Fu
   { href: '/admin/cursos', label: 'Cursos', icon: <IconPackage />, funcao: 'produtos' },
   { href: '/admin/noticias', label: 'Notícias', icon: <IconFile />, funcao: 'blog' },
   { href: '/admin/blog', label: 'Blog', icon: <IconFile />, funcao: 'blog' },
+  { href: '/admin/acessos', label: 'Acessos', icon: <IconUsers />, funcao: 'dono' },
 ];
 
 const ROTULO_DO_PAPEL: Record<Funcao, string> = {
   produtos: 'Materiais e cursos',
   blog: 'Blog e notícias',
+  dono: 'Dono',
 };
+
+/**
+ * "Materiais e cursos e Blog e notícias e Dono" era o que saía do join simples,
+ * com três papéis. Vírgula no meio e "e" só no último é como se lê em voz alta.
+ */
+function descreverPapeis(funcoes: Funcao[]): string {
+  const nomes = funcoes.map((f) => ROTULO_DO_PAPEL[f]);
+  if (nomes.length === 0) return 'Sem acesso';
+  if (nomes.length === 1) return nomes[0];
+  return `${nomes.slice(0, -1).join(', ')} e ${nomes.at(-1)}`;
+}
 
 export default function Moldura({
   children,
@@ -107,11 +126,7 @@ export default function Moldura({
             <div className={styles.userAvatar}>{(email ?? 'A').charAt(0).toUpperCase()}</div>
             <div className={styles.userInfo}>
               <span className={styles.userName}>{email ?? 'Administrador'}</span>
-              <span className={styles.userRole}>
-                {funcoes.length === 0
-                  ? 'Sem acesso'
-                  : funcoes.map((f) => ROTULO_DO_PAPEL[f]).join(' e ')}
-              </span>
+              <span className={styles.userRole}>{descreverPapeis(funcoes)}</span>
             </div>
           </div>
           <Link href="/" className={styles.backLink}>

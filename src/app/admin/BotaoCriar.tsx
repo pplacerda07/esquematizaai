@@ -33,6 +33,7 @@ const OPCOES: Opcao[] = [
   { rotulo: 'Curso', descricao: 'agrupa disciplinas por concurso', href: '/admin/cursos', funcao: 'produtos' },
   { rotulo: 'Post do blog', descricao: 'artigo do blog', href: '/admin/blog?novo=1', funcao: 'blog' },
   { rotulo: 'Notícia', descricao: 'notícia de concurso', href: '/admin/noticias?novo=1', funcao: 'blog' },
+  { rotulo: 'Acesso', descricao: 'libera o painel para alguém', href: '/admin/acessos?novo=1', funcao: 'dono' },
 ];
 
 const CHAVE_DA_DICA = 'esquematiza:admin:ja-viu-o-botao-criar';
