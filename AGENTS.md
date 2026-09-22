@@ -118,6 +118,19 @@ de artigo do blog. Não grave preço no texto. Em setembro dezesseis produtos
 foram anunciados abaixo do valor real porque um checkout de campanha encerrada
 tinha sido guardado à parte.
 
+**A permissão de leitura do Supabase é por COLUNA, não por tabela.** O site
+público lê o que descreve o produto e não enxerga coluna de controle, como
+`atualizado_por`. Coluna nova **não herda** isso, e quando o site pede uma
+coluna que não pode ler o Postgres recusa a consulta inteira com `permission
+denied for table X`. O catálogo trata esse erro caindo para a planilha, então
+nada quebra: o painel simplesmente para de valer no site, em silêncio. Em 21/09
+a vitrine passou dias mostrando produto escondido e preço antigo por causa de
+uma coluna `checkout` criada sem `grant`. Depois de mexer em coluna:
+
+```
+npm run confere-leitura
+```
+
 **A vitrine e a página de produto se refazem a cada 60 segundos**
 (`revalidate`). Ajuste no painel aparece sozinho, sem deploy. Mudança de código
 precisa de deploy. Se algo "não mudou", espere um minuto antes de investigar.
