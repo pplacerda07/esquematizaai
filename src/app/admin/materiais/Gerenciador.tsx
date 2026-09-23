@@ -66,14 +66,23 @@ const SEGMENTOS = [
  *
  * Cor livre continua fora de propósito: dez produtos com dez cores escolhidas
  * na hora acabam com a identidade visual e não tem volta fácil.
+ *
+ * LINK SAIU DESTA LISTA EM 22/09. Era o próprio painel ensinando a escrever o
+ * que o Sérgio acabara de mandar tirar de 25 páginas: link no meio da descrição
+ * manda embora quem chegou ali para decidir a compra. O aviso trocou de lado e
+ * agora conta também o que acontece sozinho, porque endereço colado vira link
+ * sem ninguém pedir e a pessoa não ia entender de onde saiu.
  */
 function AjudaDeFormatacao() {
   return (
     <span className={styles.dicaForm}>
-      Dá para formatar: <code>**negrito**</code>, <code>## título</code>,{' '}
-      <code>- item de lista</code> e <code>[texto](endereço)</code>. As caixas coloridas do blog
-      também funcionam, como <code>:::importante</code> e <code>:::dica</code>. HTML não funciona,
-      e é de propósito: as tags apareceriam escritas na página.
+      Dá para formatar: <code>**negrito**</code>, <code>## título</code> e{' '}
+      <code>- item de lista</code>. As caixas coloridas do blog também funcionam, como{' '}
+      <code>:::importante</code> e <code>:::dica</code>. HTML não funciona, e é de propósito: as
+      tags apareceriam escritas na página.
+      <br />
+      Não ponha link: ele tira da página quem está decidindo comprar. Endereço colado no meio do
+      texto vira link sozinho, então escreva só o nome do material.
     </span>
   );
 }

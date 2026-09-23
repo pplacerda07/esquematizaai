@@ -16,7 +16,7 @@ import { ajustadosPorId } from '@/lib/catalogo-ajustes';
 /**
  * Liga e desliga o bloco de oferta do hero (cronômetro + carrossel de produtos).
  *
- * Desligado hoje: com a barra do cupom ESQ10 no topo, seriam dois cronômetros
+ * Desligado hoje: com a barra do cupom ESQUEMATIZA10 no topo, seriam dois cronômetros
  * correndo na mesma tela, e isso dá cara de página cheia de gatilho. O código
  * fica de pé para voltar num lançamento ou masterclass.
  */

@@ -13,7 +13,7 @@ export default function UrgencyBar() {
         <span className={styles.urgencyFlash}>🔥</span>
         <span className={styles.urgencyText}>
           Cupom de <strong>10% OFF</strong> na sua primeira compra. Use o código{' '}
-          <span className={styles.urgencyCupom}>ESQ10</span> em qualquer produto do site,
+          <span className={styles.urgencyCupom}>ESQUEMATIZA10</span> em qualquer produto do site,
           menos a mentoria.
         </span>
         {/* Relógio e botão andam juntos num bloco só.

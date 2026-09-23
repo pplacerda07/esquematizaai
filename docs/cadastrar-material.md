@@ -129,9 +129,17 @@ comprar não serve para nada.
 
 **8. Descrição, se quiser.**
 
-Aceita formatação: `**negrito**`, `## título`, `- item de lista`,
-`[texto](endereço)` e as caixas coloridas do blog, como `:::importante` e
-`:::dica`.
+Aceita formatação: `**negrito**`, `## título`, `- item de lista` e as caixas
+coloridas do blog, como `:::importante` e `:::dica`.
+
+**Não coloque link aqui.** Em 22/09 o Sérgio mandou tirar todos os links que
+existiam nas descrições: quem chega na página do produto está decidindo a
+compra, e link leva a pessoa embora no meio da decisão. Se precisar citar outro
+material, escreva o nome dele sem link.
+
+Cuidado, porque isso acontece sozinho: endereço colado no meio do texto vira
+link clicável sem você pedir. `https://algumacoisa.com` e `www.algumacoisa.com`
+viram link; escrito sem o `https://` e sem o `www.`, não vira.
 
 **Não aceita HTML**, e isso é de propósito. As tags apareceriam escritas na
 página.

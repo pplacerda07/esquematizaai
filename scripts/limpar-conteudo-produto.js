@@ -57,6 +57,46 @@ const WHATSAPP_ATUAL = '(11) 5286-5954';
 const FIM_DO_SOBRE = /(\*\*CONTEÚDO ABORDADO|CONTEÚDO ABORDADO:|Em dúvida entre|Produtos relacionados)/i;
 
 /**
+ * Link dentro do texto de produto, que o Sérgio mandou tirar em 22/09.
+ *
+ * "Retirar esses links que levam para outra página. Várias páginas estão com
+ * isso, precisamos retirar." Quem chegou na página para decidir a compra era
+ * mandado embora no meio da decisão, e um desses links já nem existia mais: o
+ * guia da área fiscal respondia 404.
+ *
+ * ESTA REGRA MORA AQUI, E NÃO SÓ NO ARQUIVO JÁ LIMPO, porque quem cria os links
+ * é o raspador: build-conteudo-produto.js transforma toda tag <a> da página do
+ * WordPress em link markdown. Sem isto, a próxima raspagem desfaz o pedido dele
+ * em silêncio, e ninguém vai lembrar por quê.
+ *
+ * São três formas, e cada uma pede um corte diferente:
+ *  - a caixa :::destaque, que só existia para empurrar outro produto: sai
+ *    inteira, porque não sobra frase órfã
+ *  - o parágrafo inteiro, quando ele só serve para isso: "Produtos
+ *    relacionados" e "O edital está chegando"
+ *  - o link solto dentro de frase que vale ("este combo reúne os três produtos
+ *    avulsos: X, Y e Z"): sai só o endereço, o texto continua
+ *
+ * "Produtos relacionados" também está no FIM_DO_SOBRE acima, mas lá o corte é
+ * na palavra, e sobra o `**` que abria o negrito. Aqui sai o parágrafo inteiro,
+ * e por isso esta regra roda ANTES daquele corte: quando o FIM_DO_SOBRE olha, o
+ * parágrafo já não existe e não há o que cortar pela metade.
+ */
+const CAIXA_DE_VENDA_CRUZADA = /\n*:::destaque\r?\n[\s\S]*?\r?\n:::[ \t]*\n*/g;
+const PARAGRAFO_DE_VENDA_CRUZADA =
+  /\n*(\*\*)?(📰\s*)?(\*\*)?(Produtos relacionados|O edital está chegando)[\s\S]*?(?=\n\n|$)/g;
+const LINK_MARKDOWN = /\[([^\]]+)\]\((https?:[^)]+)\)/g;
+
+function tirarVendaCruzada(texto) {
+  return texto
+    .replace(CAIXA_DE_VENDA_CRUZADA, '\n\n')
+    .replace(PARAGRAFO_DE_VENDA_CRUZADA, '\n\n')
+    .replace(LINK_MARKDOWN, (_, escrito) => escrito)
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+/**
  * Cronograma que só anuncia que o material está pronto não é cronograma: é uma
  * seção inteira, com título, para dizer "já pode baixar". A página de produto
  * deixa de mostrá-la nesses casos.
@@ -108,6 +148,7 @@ function main() {
   let caracteresRemovidos = 0;
   let camposDeTextoLimpos = 0;
   let sobreCortado = 0;
+  let vendaCruzadaTirada = 0;
   let checksSeparados = 0;
   let cronogramasVazios = 0;
 
@@ -116,6 +157,18 @@ function main() {
 
   for (const dados of Object.values(mapa)) {
     // --- pedidos do Sérgio, antes da limpeza geral ---
+
+    // primeiro a venda cruzada, nos dois campos que o site desenha como texto
+    // rico e que já trouxeram link do WordPress. Vem antes do FIM_DO_SOBRE de
+    // propósito, para o corte por palavra não pegar um parágrafo pela metade.
+    for (const campo of ['sobre', 'detalhes']) {
+      if (typeof dados[campo] !== 'string' || !dados[campo]) continue;
+      const semVendaCruzada = tirarVendaCruzada(dados[campo]);
+      if (semVendaCruzada !== dados[campo]) {
+        dados[campo] = semVendaCruzada;
+        vendaCruzadaTirada++;
+      }
+    }
 
     if (dados.sobre) {
       const corte = dados.sobre.search(FIM_DO_SOBRE);
@@ -182,6 +235,7 @@ function main() {
   fs.writeFileSync(ARQUIVO, JSON.stringify(bruto, null, 2) + '\n', 'utf8');
 
   console.log('"sobre" cortados           :', sobreCortado, '(conteúdo abordado, em dúvida entre, relacionados)');
+  console.log('campos sem venda cruzada   :', vendaCruzadaTirada, '(caixa :::destaque, edital, link solto)');
   console.log('listas de ✅ separadas      :', checksSeparados);
   console.log('cronogramas removidos      :', cronogramasVazios, '(só diziam que o material está pronto)');
   console.log('campos de texto limpos     :', camposDeTextoLimpos);

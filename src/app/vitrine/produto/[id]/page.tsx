@@ -187,9 +187,11 @@ export default async function ProdutoPage({
   // o que o Sérgio editou no painel entra por cima do que veio da planilha
   const sobreposicao = await lerSobreposicaoSumario();
   const disciplinasDoSumario = sumarioDoProduto(produto, temResumos, temFlashcards, sobreposicao);
-  // O texto de venda veio do site antigo e cita outros produtos por link. Passa
-  // por textoParaLoja para que, depois da virada do domínio, esses links vão
-  // direto ao novo endereço da loja em vez de passar pelo redirecionamento.
+  // O texto de venda veio do site antigo e citava outros produtos por link, o
+  // que tirava daqui quem estava decidindo comprar. Esses links saíram em 22/09.
+  // textoParaLoja continua no caminho para o dia em que o raspador rodar de novo:
+  // ele só alcança ESTE texto, o importado. A descrição escrita no painel chega
+  // por produto.sobre, mais abaixo, e não passa por ele.
   const conteudoBruto = conteudoDe(produto);
   const conteudo = {
     ...conteudoBruto,

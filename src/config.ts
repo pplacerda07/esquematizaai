@@ -65,10 +65,19 @@ export function paraLoja(link: string): string {
 /**
  * O mesmo, para os links soltos DENTRO de um texto de venda.
  *
- * O texto dos produtos veio do site antigo e traz links de venda cruzada
+ * O texto dos produtos veio do site antigo e trazia links de venda cruzada
  * ("Prefere revisar com flashcards? Conheça o..."). Depois da virada eles ainda
  * funcionariam, porque o redirecionamento os pegaria, mas com um pulo a mais e
- * uma piscada no navegador. Reapontar aqui evita isso.
+ * uma piscada no navegador. Reapontar aqui evitava isso.
+ *
+ * ESSES LINKS SAÍRAM EM 22/09, a pedido do Sérgio: quem está decidindo comprar
+ * era mandado para outra página no meio da decisão. Hoje não sobra nenhum no
+ * conteudo-produto.json, então esta função passa direto e fica de pé só para o
+ * dia em que o raspador do WordPress rodar de novo e trouxer link outra vez.
+ *
+ * NÃO É REDE PARA O QUE VEM DO PAINEL. Só o texto importado passa por aqui: a
+ * descrição escrita no painel entra por `produto.sobre` e é desenhada crua. Um
+ * endereço colado no painel não é reapontado por ninguém.
  *
  * SÓ MEXE EM /produto: link para artigo do blog ou para a home continua no site
  * novo, que é onde esse conteúdo passou a morar.
