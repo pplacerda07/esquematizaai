@@ -113,6 +113,20 @@ export const DEPOIMENTOS_VIDEO_BASE =
 // Google Analytics 4. Vazio desliga a medição em todo o site.
 export const GA_MEDICAO_ID = 'G-ZLPK9R4PZ6';
 
+/**
+ * Google Tag Manager da TAOS, a agência de tráfego. Vazio desliga em todo o
+ * site, que é o jeito de desligar o pixel do Meta sem depender deles.
+ *
+ * É o MESMO container que roda na loja.esquematizaai.com, de propósito: assim a
+ * visita aqui e a compra lá contam como uma jornada só.
+ *
+ * Quem publica tag dentro dele é a agência. Na prática isso quer dizer que eles
+ * conseguem rodar JavaScript em toda página pública do site, sem passar por
+ * aqui. É como o mercado trabalha, e é bom saber o que está sendo dado: por
+ * isso o componente deixa o /admin de fora.
+ */
+export const GTM_CONTAINER_ID = 'GTM-MGPVKJSG';
+
 // VSL padrão (usada em /mentoria pelo componente YouTubeEmbed).
 // Reformulada pelo Sérgio em 03/09; a anterior era 'cr-ZiaBDSf8'. Conferi na
 // API do YouTube que o vídeo é do canal Esquematiza Aí e que o título é

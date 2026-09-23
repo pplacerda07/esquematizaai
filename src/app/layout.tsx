@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Analytics from "@/components/Analytics";
+import TagManager from "@/components/TagManager";
 import { SITE_URL } from "@/config";
 
 const DESCRICAO =
@@ -64,6 +65,12 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <Analytics />
+        {/* O GTM vem depois do Analytics de propósito: os dois escrevem no
+            mesmo window.dataLayer, e o gtag precisa tê-lo criado antes. Na
+            prática qualquer ordem funciona, porque os dois criam o array se
+            não existir, mas ler o arquivo nesta ordem conta a história certa:
+            a medição nossa primeiro, a da agência em cima. */}
+        <TagManager />
       </body>
     </html>
   );

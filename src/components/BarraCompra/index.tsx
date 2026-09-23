@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { avisarGtm, comCampanha, type ItemMedido } from '@/lib/rastreio';
 import styles from './styles.module.css';
 
 /**
@@ -19,6 +20,7 @@ export default function BarraCompra({
   precoAntigo,
   rotulo,
   href,
+  item,
   externo,
 }: {
   /** id do elemento que, ao sair da tela, faz a barra aparecer */
@@ -27,6 +29,8 @@ export default function BarraCompra({
   precoAntigo?: string | null;
   rotulo: string;
   href: string;
+  /** o produto, para medir o clique. Sem ele a barra segue funcionando sem medir. */
+  item?: ItemMedido;
   externo: boolean;
 }) {
   const [visivel, setVisivel] = useState(false);
@@ -47,6 +51,19 @@ export default function BarraCompra({
     obs.observe(alvo);
     return () => obs.disconnect();
   }, [alvoId]);
+
+  /**
+   * Mede o clique e leva a campanha junto, igual ao botão do card.
+   *
+   * São dois botões que fazem a mesma coisa na mesma página, e por isso os dois
+   * precisam medir: no celular esta barra é quem a pessoa clica quase sempre,
+   * porque o card já saiu da tela quando ela terminou de ler.
+   */
+  function aoClicar(evento: React.MouseEvent<HTMLAnchorElement>) {
+    if (!item) return;
+    avisarGtm('begin_checkout', item);
+    evento.currentTarget.href = comCampanha(href);
+  }
 
   /**
    * Avisa o resto da página que esta barra está no ar, e o quanto ela ocupa.
@@ -91,6 +108,7 @@ export default function BarraCompra({
           /* fora de vista a barra sai da ordem de tabulação, senão o teclado
              para num botão que ninguém enxerga */
           tabIndex={visivel ? 0 : -1}
+          onClick={aoClicar}
         >
           {rotulo}
         </a>

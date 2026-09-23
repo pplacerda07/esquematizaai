@@ -8,6 +8,8 @@ import Footer from '@/components/Footer';
 import Conteudo from '@/components/Artigo/Conteudo';
 import SelosTicker from '@/components/SelosTicker';
 import BarraCompra from '@/components/BarraCompra';
+import BotaoCompra from '@/components/BotaoCompra';
+import MedicaoDeProduto from '@/components/MedicaoDeProduto';
 import FaqProduto from '@/components/FaqProduto';
 import AutoridadeCientifica from '@/components/AutoridadeCientifica';
 import GaleriaMaterial from '@/components/GaleriaMaterial';
@@ -201,6 +203,17 @@ export default async function ProdutoPage({
   const sobre = conteudo.sobre ?? null;
   const selos = selosDe(produto);
 
+  /**
+   * O produto do jeito que a medição da TAOS espera.
+   *
+   * Um objeto só, usado pelo view_item e pelos dois botões de compra, para o
+   * Meta não receber nome ou preço diferentes do mesmo produto dependendo de
+   * onde a pessoa clicou. O preço é o à vista, o mesmo que está escrito no
+   * botão: é o valor que a pessoa viu, e é ele que a agência compara com a
+   * venda que chega da Eduzz.
+   */
+  const itemMedido = { id: produto.id, nome: produto.nome, preco: oferta.preco };
+
   const cardCompra = (
     <div className={styles.buyCard} id="card-compra">
       {capa && (
@@ -231,15 +244,14 @@ export default async function ProdutoPage({
           </span>
         )}
       </div>
-      <a
+      <BotaoCompra
         className={styles.btnBuy}
         href={oferta.checkout}
-        target="_blank"
-        rel="noopener noreferrer"
+        item={itemMedido}
         aria-label={`${oferta.viaPaginaDeVendas ? 'Ver na loja' : 'Comprar'} ${produto.nome} por ${formatarPreco(oferta.preco)}`}
       >
         {oferta.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
-      </a>
+      </BotaoCompra>
 
       {/* Amostras: aparece em TODO produto e leva à pasta compartilhada no Drive,
           em vez de servir um PDF por produto. A segunda linha avisa que abre no
@@ -474,8 +486,12 @@ export default async function ProdutoPage({
         precoAntigo={oferta.precoAntigo !== null ? formatarPreco(oferta.precoAntigo) : null}
         rotulo={oferta.viaPaginaDeVendas ? 'Ver na loja →' : 'Comprar agora →'}
         href={oferta.checkout}
+        item={itemMedido}
         externo
       />
+
+      {/* avisa o GTM que alguém está vendo este produto. Não desenha nada. */}
+      <MedicaoDeProduto item={itemMedido} />
 
       <Footer />
     </main>
