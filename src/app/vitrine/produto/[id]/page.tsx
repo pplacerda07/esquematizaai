@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
-import UrgencyBar from '@/components/HeroSection/UrgencyBar';
 import Footer from '@/components/Footer';
 import Conteudo from '@/components/Artigo/Conteudo';
 import SelosTicker from '@/components/SelosTicker';
@@ -325,8 +324,16 @@ export default async function ProdutoPage({
   return (
     <main className={styles.main}>
       <Navbar />
-      {/* o cupom acompanha a pessoa ate onde ela decide a compra */}
-      <UrgencyBar />
+      {/* A BARRA DE CUPOM SAIU DAQUI EM 23/09, a pedido do Sérgio, e o motivo
+          dele é bom: o botão "QUERO MEU DESCONTO" leva para a vitrine. Numa
+          página de área ou na home isso é ajuda, mas na página do produto é a
+          única tela em que a pessoa já escolheu o que quer, e o botão a mandava
+          de volta para escolher de novo. "Ele sai da página e pode acabar se
+          perdendo", nas palavras dele, com ADS começando a rodar para cá.
+
+          Ela continua na home, na vitrine e na página de área: lá a pessoa
+          ainda está procurando, e o cupom empurra para a escolha em vez de
+          atrapalhar uma decisão já tomada. */}
 
       <script
         type="application/ld+json"
