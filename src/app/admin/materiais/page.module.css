@@ -173,12 +173,29 @@
 
 .check {
   display: flex;
-  align-items: center;
+  /* era `center`, e virou `flex-start` quando a caixa de "Destacar" ganhou uma
+     segunda linha explicando o que ela faz: centralizado, o quadradinho
+     descia para o meio do parágrafo e parecia marcar a explicação */
+  align-items: flex-start;
   gap: 0.45rem;
   font-family: var(--font-body);
   font-size: 0.88rem;
   color: var(--color-neutral-dark);
   cursor: pointer;
+}
+
+.check input {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+/* a linha que conta o efeito da caixinha, logo abaixo do nome dela */
+.dicaCheck {
+  display: block;
+  font-style: normal;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(35, 33, 44, 0.6);
 }
 
 .erro {

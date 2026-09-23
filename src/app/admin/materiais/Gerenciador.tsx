@@ -405,9 +405,21 @@ export default function Gerenciador({
 
             <div className={styles.campo}>
               <span className={styles.rotulo}>Exibição</span>
+              {/* O rótulo dizia só "Destacar na vitrine", e desde 23/09 esta
+                  caixinha faz mais do que isso: é ela que escolhe o carrossel
+                  da primeira tela da home. Era o que o Sérgio pediu sem saber
+                  que já existia, perguntando "como faço para editar os cursos
+                  aqui?". Um controle que faz duas coisas precisa dizer as duas,
+                  senão ele marca e não entende o que mudou. */}
               <label className={styles.check}>
                 <input type="checkbox" name="destaque" defaultChecked={editando.destaque} />
-                Destacar na vitrine
+                <span>
+                  Destacar
+                  <em className={styles.dicaCheck}>
+                    entra no carrossel da primeira tela da home, até 6 materiais, na ordem do
+                    campo Posição acima. Na vitrine, vem à frente de quem não tem Posição.
+                  </em>
+                </span>
               </label>
               <label className={styles.check}>
                 <input type="checkbox" name="oculto" defaultChecked={editando.oculto} />

@@ -6,7 +6,7 @@ import BuscaEAtalhos from '@/components/BuscaEAtalhos';
 import CarrosselDestaque, { DESTAQUES, type Destaque } from '@/components/CarrosselDestaque';
 import OfferCarousel, { type OfertaHero } from './OfferCarousel';
 import { capaDe, formatarPreco } from '@/data/catalogo';
-import { ajustadosPorId } from '@/lib/catalogo-ajustes';
+import { ajustadosPorId, destaquesDaHome } from '@/lib/catalogo-ajustes';
 
 // Ofertas reais que giram no card do hero: o combo completo de cada área + a
 // assinatura mais completa. Se um produto perder preço ou destino de compra no
@@ -22,6 +22,16 @@ import { ajustadosPorId } from '@/lib/catalogo-ajustes';
  */
 const MOSTRAR_OFERTA_NO_HERO = false;
 
+/**
+ * A rede, não a escolha.
+ *
+ * QUEM ESCOLHE O QUE APARECE NO CARROSSEL É O PAINEL, pela marca "Destacar",
+ * desde 23/09. Esta lista só entra quando não há nenhum material marcado, para
+ * a primeira tela da home nunca abrir com metade vazia por causa de uma
+ * caixinha desmarcada sem querer.
+ *
+ * Continua sendo o card de oferta do hero também, que hoje está desligado.
+ */
 const HERO_OFERTA_IDS = [
   'combo-resumos-flashcards-fiscal-regular',
   'combo-resumos-flashcards-controle-regular',
@@ -64,16 +74,31 @@ export default async function HeroSection() {
   });
 
   /**
-   * Destaques do carrossel enquanto não há campanha: os mesmos materiais da
-   * lista acima, com capa, preço e link tirados do catálogo. Nada inventado.
-   * Produto sem capa fica de fora, senão o slide abriria um retângulo vazio.
+   * Destaques do carrossel enquanto não há campanha, com capa, preço e link
+   * tirados do catálogo. Nada inventado.
+   *
+   * VEM DO PAINEL: os materiais que o Sérgio marcou como destaque, na ordem do
+   * campo "Posição". Só cai na lista escrita no código quando ele não marcou
+   * nenhum, para a home não abrir com um buraco ao lado da chamada.
+   *
+   * A capa do painel entra junto com a da planilha. Sem isso, material
+   * cadastrado por ele sumiria do carrossel em silêncio, porque a capa dele não
+   * está no capas.json: foi o caso do Flashcards Reta Final SEFAZ-AL, um dos
+   * quatro que ele pediu.
    */
-  const destaquesDosProdutos: Destaque[] = HERO_OFERTA_IDS.flatMap((id) => {
-    const ajustado = ajustados.get(id);
-    const p = ajustado?.produto ?? null;
-    const o = ajustado?.oferta ?? null;
-    const capa = p ? capaDe(p) : null;
-    if (!p || !o || !capa) return [];
+  const marcadosNoPainel = await destaquesDaHome();
+  const fonte =
+    marcadosNoPainel.length > 0
+      ? marcadosNoPainel
+      : HERO_OFERTA_IDS.flatMap((id) => {
+          const a = ajustados.get(id);
+          return a ? [a] : [];
+        });
+
+  const destaquesDosProdutos: Destaque[] = fonte.flatMap(({ produto: p, oferta: o, capaDoPainel }) => {
+    const capa = capaDoPainel ?? capaDe(p);
+    // produto sem capa fica de fora, senão o slide abriria um retângulo vazio
+    if (!capa) return [];
 
     return [{
       src: capa.src,

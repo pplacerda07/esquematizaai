@@ -4,6 +4,7 @@ import {
   lerProdutosDoPainel,
   somenteOsQueFaltam,
   capasDoPainel,
+  destaquesDoPainel,
   referenciasDoPainel,
 } from '@/lib/produtos-do-painel';
 
@@ -119,6 +120,7 @@ export async function catalogoParaVitrine(): Promise<ProdutoAjustado[]> {
   // quando ela alcançar um deles, ele sai daqui sozinho
   const todos = [...produtos, ...somenteOsQueFaltam(doPainel, produtos)];
   const capas = capasDoPainel(doPainel);
+  const destacadosNoPainel = destaquesDoPainel(doPainel);
   const referencias = referenciasDoPainel(doPainel);
 
   for (const p of todos) {
@@ -135,7 +137,7 @@ export async function catalogoParaVitrine(): Promise<ProdutoAjustado[]> {
     saida.push({
       produto: ajustado,
       oferta,
-      destaque: Boolean(a?.destaque),
+      destaque: Boolean(a?.destaque) || destacadosNoPainel.has(p.id),
       ordem: a?.ordem ?? null,
       capaDoPainel: capas.get(p.id) ?? null,
     });
@@ -163,6 +165,7 @@ export async function catalogoParaVitrine(): Promise<ProdutoAjustado[]> {
 export async function ajustadosPorId(ids: string[]): Promise<Map<string, ProdutoAjustado>> {
   const [ajustes, doPainel] = await Promise.all([buscarAjustes(), lerProdutosDoPainel()]);
   const capas = capasDoPainel(doPainel);
+  const destacadosNoPainel = destaquesDoPainel(doPainel);
   const referencias = referenciasDoPainel(doPainel);
   const saida = new Map<string, ProdutoAjustado>();
 
@@ -182,13 +185,46 @@ export async function ajustadosPorId(ids: string[]): Promise<Map<string, Produto
     saida.set(id, {
       produto: ajustado,
       oferta,
-      destaque: Boolean(a?.destaque),
+      destaque: Boolean(a?.destaque) || destacadosNoPainel.has(base.id),
       ordem: a?.ordem ?? null,
       capaDoPainel: capas.get(base.id) ?? null,
     });
   }
 
   return saida;
+}
+
+/**
+ * Os materiais que o painel mandou para o carrossel da home.
+ *
+ * ATÉ 23/09 A LISTA DA HOME ERA ESCRITA NO CÓDIGO. O Sérgio perguntou "como
+ * faço para editar os cursos aqui?" e a resposta honesta era: não faz, pede
+ * para o Pedro. Agora quem decide é a marca "Destacar" do painel, que já
+ * existia e que ninguém usava: zero materiais marcados até hoje.
+ *
+ * A MESMA MARCA VALE NOS DOIS LUGARES, home e vitrine, de propósito. Dois
+ * controles parecidos em telas diferentes é o tipo de coisa que faz alguém
+ * marcar um e jurar que o site está quebrado. Se um dia precisarem escolher
+ * coisas diferentes para cada lugar, aí sim vale separar.
+ *
+ * A ORDEM É A DO CAMPO "Posição", o mesmo da vitrine. Quem não tem número vai
+ * para o fim, em vez de sumir.
+ *
+ * `limite` existe porque carrossel não é vitrine: marcar quinze materiais não
+ * pode virar quinze slides que ninguém passa até o fim.
+ */
+export async function destaquesDaHome(limite = 6): Promise<ProdutoAjustado[]> {
+  const catalogo = await catalogoParaVitrine();
+
+  return catalogo
+    .filter((item) => item.destaque)
+    .sort((a, b) => {
+      if (a.ordem === b.ordem) return 0;
+      if (a.ordem === null) return 1;
+      if (b.ordem === null) return -1;
+      return a.ordem - b.ordem;
+    })
+    .slice(0, limite);
 }
 
 /** Um produto com ajuste, para a página dele. null = oculto ou inexistente. */
@@ -213,7 +249,7 @@ export async function produtoAjustado(id: string): Promise<ProdutoAjustado | nul
   return {
     produto: ajustado,
     oferta,
-    destaque: Boolean(a?.destaque),
+    destaque: Boolean(a?.destaque) || destaquesDoPainel(doPainel).has(base.id),
     ordem: a?.ordem ?? null,
     capaDoPainel: capasDoPainel(doPainel).get(base.id) ?? null,
   };

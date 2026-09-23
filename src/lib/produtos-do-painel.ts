@@ -177,6 +177,21 @@ export function referenciasDoPainel(doPainel: ProdutoDoPainel[]): Map<string, nu
 }
 
 /** capas dos produtos do painel, no formato que o next/image espera */
+/**
+ * Quem o painel marcou como destaque, entre os materiais criados por lá.
+ *
+ * SEM ISTO A MARCA NÃO VALIA PARA ELES. O destaque saía de produtos_ajustes,
+ * que é a tabela dos materiais da planilha; material criado no painel guarda a
+ * marca na tabela dele, produtos_novos, e ninguém lia. O Sérgio clicava em
+ * "Destacar", salvava, e o site não mudava.
+ *
+ * Apareceu em 23/09, quando ele pediu quatro materiais na home e um deles era o
+ * Flashcards Reta Final SEFAZ-AL, o primeiro que ele mesmo cadastrou.
+ */
+export function destaquesDoPainel(doPainel: ProdutoDoPainel[]): Set<string> {
+  return new Set(doPainel.filter((p) => p.destaque).map((p) => p.id));
+}
+
 export function capasDoPainel(
   doPainel: ProdutoDoPainel[],
 ): Map<string, { src: string; width: number; height: number }> {
