@@ -1,6 +1,7 @@
 import { criarSupabaseServer } from '@/lib/supabase/server';
 import { produtos } from '@/data/catalogo';
 import { sumarioDoProduto } from '@/lib/sumario-produto';
+import { lerProdutosDoPainel, somenteOsQueFaltam } from '@/lib/produtos-do-painel';
 import { lerSobreposicaoSumario } from '@/lib/sumarios-painel';
 import Gerenciador, { type CursoAdmin, type OpcaoDisciplina } from './Gerenciador';
 
@@ -53,7 +54,21 @@ export default async function CursosAdminPage() {
   // e uma consulta por produto seria uma consulta por produto
   const sobreposicao = await lerSobreposicaoSumario();
 
-  const cursos: CursoAdmin[] = produtos
+  /**
+   * A lista inclui o que foi cadastrado no painel, não só o da planilha.
+   *
+   * ATÉ 23/09 ERA SÓ A PLANILHA, e por isso o Flashcards Reta Final SEFAZ-AL
+   * não aparecia aqui. O Sérgio tinha digitado as 16 disciplinas dele na tela
+   * de Sumários, todas certas, e não existia tela nenhuma onde ligar essas
+   * disciplinas ao material. O trabalho estava feito e invisível.
+   *
+   * `somenteOsQueFaltam` é o mesmo filtro que a vitrine usa: material do painel
+   * que a planilha já alcançou não entra duas vezes.
+   */
+  const doPainel = await lerProdutosDoPainel();
+  const todosOsProdutos = [...produtos, ...somenteOsQueFaltam(doPainel, produtos)];
+
+  const cursos: CursoAdmin[] = todosOsProdutos
     .filter((p) => COM_SUMARIO.includes(p.categoria) && p.status !== 'inativo')
     .map((p) => {
       const ferramenta = String(p.ferramenta ?? '');

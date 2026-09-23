@@ -255,6 +255,45 @@ function comSobreposicao(
   };
 }
 
+/**
+ * Uma disciplina que existe SÓ no painel, sem par na planilha.
+ *
+ * ELA SUMIA EM SILÊNCIO ATÉ 23/09. O caminho manual do sumário procurava cada
+ * disciplina escolhida dentro da planilha e, não achando, seguia para a
+ * próxima. Quem cadastrasse disciplina nova pelo painel, marcasse no curso e
+ * fosse olhar a página não via nada, e não havia erro em lugar nenhum para
+ * explicar o porquê.
+ *
+ * Apareceu quando o Sérgio digitou as 16 disciplinas do Flashcards Reta Final
+ * SEFAZ-AL, todas novas, nenhuma na planilha. Ele fez a parte dele inteira e a
+ * página continuou vazia.
+ *
+ * Tudo o que a tela precisa já está na sobreposição: o nome e o formato saem da
+ * própria chave, os tópicos e a medida vêm dos mapas. A planilha simplesmente
+ * não participa.
+ */
+function soDoPainel(chave: string, sobre: SobreposicaoSumario): DisciplinaSumario | null {
+  const topicos = sobre.topicos.get(chave);
+  if (!topicos || topicos.length === 0) return null;
+
+  const corte = chave.indexOf('::');
+  if (corte === -1) return null;
+
+  const formato = chave.slice(0, corte);
+  const disciplina = chave.slice(corte + 2);
+  if (formato !== 'Resumo' && formato !== 'Flashcards') return null;
+
+  const medida = sobre.medidas.get(chave);
+
+  return {
+    disciplina,
+    formato,
+    topicos,
+    paginas: medida?.paginas ?? undefined,
+    cards: medida?.cards ?? undefined,
+  };
+}
+
 export function sumarioDoProduto(
   produto: Produto,
   temResumos: boolean,
@@ -276,9 +315,10 @@ export function sumarioDoProduto(
     const todas = [...RESUMOS.map(comoResumo), ...FLASHCARDS.map(comoFlashcards)];
     for (const k of escolhidas) {
       const achada = todas.find((d) => chaveDisciplina(d.disciplina, d.formato) === k);
-      if (!achada) continue;
-      const pronta = comSobreposicao(achada, sobre);
-      if (pronta.topicos.length > 0) saida.push(pronta);
+      // disciplina que NÃO está na planilha ainda pode existir só no painel, e
+      // era aqui que ela se perdia: o `continue` jogava fora em silêncio
+      const pronta = achada ? comSobreposicao(achada, sobre) : soDoPainel(k, sobre);
+      if (pronta && pronta.topicos.length > 0) saida.push(pronta);
     }
     return saida;
   }
